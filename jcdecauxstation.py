@@ -21,7 +21,7 @@ class JCDecauxStation(Station):
       soup = BeautifulStoneSoup(xml_data)
       self.bikes = int(soup.find('available').contents[0])
       self.free = int(soup.find('free').contents[0])
-      
+      self.timestamp = datetime.now()     
       return self
     
   def from_xml(self, xml_data):

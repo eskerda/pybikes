@@ -13,6 +13,24 @@ import velib
 import velo
 import veloh
 import villo
+import bicing
+import cristolib
+import cyclic
+import velostanlib
+import bicloo
+import velocite
+import ecobici
+
+import tusbic
+import goteborg
+import citycycle
+import wien
+import velcom
+import mulhouse
+import levelo
+import cergy
+import vhello
+import velam
 
 import memcache
 import time
@@ -42,14 +60,14 @@ def multiupdate(system,fr,to):
   cache = memcache.Client(["127.0.0.1:11211"])
   while True:
     for i in range(fr,to+1):
-      try:
-	station = cache.get(system+"_station_"+str(i))
-	station.update()
-	cache.set(system+"_station_"+str(i),station,EXPIRY)
-	print "Updated station "+str(station.idx)
+	try:
+		station = cache.get(system+"_station_"+str(i))
+		station.update()
+		cache.set(system+"_station_"+str(i),station,EXPIRY)
+		print "Updated station "+str(station.idx)
+	except Exception:
+		print "Error getting station "+str(station.idx)
 	time.sleep(1)
-      except Exception:
-	print "Error getting "+str(i)
   
 def main(argv):
   if str(argv[0])=="stats":
@@ -60,7 +78,12 @@ def main(argv):
     if (str(argv[2]))=="populate":
       populate(system)
     elif (str(argv[2]))=="multiupdate":
-      multiupdate(system_str,int(argv[3]),int(argv[4]))
+      if (system_str == "bicing"):
+	while True:
+	  populate(system)
+	  time.sleep(5)
+      else:
+	multiupdate(system_str,int(argv[3]),int(argv[4]))
     elif str(argv[2])=="all":
       procs = int(argv[3])
       n_stations = populate(system)
@@ -85,14 +108,14 @@ def main(argv):
 	subprocess.Popen(args)
 	
     elif str(argv[2])=="json":
-      cache = memcache.Client(["127.0.0.1:11211"])
-      n_stations = cache.get(system_str+"_n_stations")
-      sys.stdout.write('[');
-      for i in range(n_stations):
-	station = cache.get(system_str+"_station_"+str(i))
-	station.to_json()
-	if (i+1!=n_stations):
-	  sys.stdout.write(',')
-      sys.stdout.write(']')
+	cache = memcache.Client(["127.0.0.1:11211"])
+      	n_stations = cache.get(system_str+"_n_stations")
+      	sys.stdout.write('[')
+      	for i in range(n_stations):
+		station = cache.get(system_str+"_station_"+str(i))
+		station.to_json()
+		if (i+1!=n_stations):
+	  		sys.stdout.write(',')
+      	sys.stdout.write(']')
 if __name__ == "__main__" :
     main(sys.argv[1:])
