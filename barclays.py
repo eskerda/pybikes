@@ -56,7 +56,7 @@ class BarclaysStation(Station):
     return self
     
   def to_json(self):
-    text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "installed":%s, "locked":%s, "temporary":%s, "coordinates":"%s"}' % \
+    text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "installed":"%s", "locked":"%s", "temporary":"%s", "coordinates":"%s"}' % \
     (self.idx, self.name, self.lat, self.lng, self.timestamp, self.bikes, self.free, self.installed, self.locked, self.temporary, self.coordinates)
     print text.encode('utf-8'),
     return text.encode('utf-8')

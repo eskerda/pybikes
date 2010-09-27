@@ -43,7 +43,7 @@ class BixiStation(Station):
   main_url = URL
 
   def to_json(self):
-    text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "number":"%s", "internal_id":"%s", "locked":%s, "temporary":%s, "installed":%s }' % \
+    text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "number":"%s", "internal_id":"%s", "locked":"%s", "temporary":"%s", "installed":"%s" }' % \
     (self.idx, self.name, self.lat, self.lng, self.timestamp, self.bikes, self.free, self.number, self.internal_id, self.locked, self.temporary, self.installed)
     print text.encode('utf-8'),
     return text.encode('utf-8')

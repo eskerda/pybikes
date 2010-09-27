@@ -32,6 +32,8 @@ import cergy
 import vhello
 import velam
 
+import velov
+
 import memcache
 import time
 import subprocess

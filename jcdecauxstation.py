@@ -12,10 +12,13 @@ class JCDecauxStation(Station):
   
   prefix = ""
   main_url = ""
+  station_url = ""
     
   def update(self):
       print "Updating "+str(self.number)
-      usock = urllib.urlopen(self.main_url + STATION_URL + str(self.number))
+      if self.station_url == "":
+	self.station_url = STATION_URL
+      usock = urllib.urlopen(self.main_url + self.station_url + str(self.number))
       xml_data = usock.read()
       usock.close()
       soup = BeautifulStoneSoup(xml_data)
