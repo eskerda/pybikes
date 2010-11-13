@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
-import sys
+import sys,os
+
+sys.path.append("lib/")
 
 import valenbisi
 import sevici
@@ -19,6 +21,7 @@ import cyclic
 import velostanlib
 import bicloo
 import velocite
+import barclays
 import ecobici
 
 import tusbic
@@ -34,12 +37,18 @@ import velam
 
 import velov
 
+import bixi
+
+import melbourne
+
+import girocleta
+
 import memcache
 import time
 import subprocess
 
 EXPIRY = 2500000
-
+not_update = ["bicing","barclays","wien","bixi","melbourne","girocleta"]
 
 def populate(system):
   try:
@@ -52,8 +61,9 @@ def populate(system):
       print "Added to memcache station "+station.prefix+" "+str(station.idx)
     cache.set(system_str+"_n_stations",n_stations,EXPIRY)
     return n_stations
-  except Exception:
+  except Exception as inst:
     print "Error Populating, Sleeping and retrying!"
+    print type(inst)
     time.sleep(5)
     return populate(system)
     
@@ -69,7 +79,8 @@ def multiupdate(system,fr,to):
 		print "Updated station "+str(station.idx)
 	except Exception:
 		print "Error getting station "+str(station.idx)
-  	time.sleep(2)
+	time.sleep(1)
+  
 def main(argv):
   if str(argv[0])=="stats":
     print "STATS ARE AWESOME!"
@@ -79,10 +90,10 @@ def main(argv):
     if (str(argv[2]))=="populate":
       populate(system)
     elif (str(argv[2]))=="multiupdate":
-      if (system_str == "bicing"):
+      if (system_str in not_update):
 	while True:
 	  populate(system)
-	  time.sleep(5)
+	  time.sleep(30)
       else:
 	multiupdate(system_str,int(argv[3]),int(argv[4]))
     elif str(argv[2])=="all":
