@@ -2,12 +2,12 @@
 from jcdecauxstation import JCDecauxStation
 import jcdecauxstation
 
-PREFIX = "cyclic"
-URL = "http://cyclic.rouen.fr"
+PREFIX = "velib"
+URL = "http://www.velib.paris.fr"
 
 def get_all():
-  return jcdecauxstation.get_all(CyclicStation)
+  return jcdecauxstation.get_all(VelibStation)
 
-class CyclicStation(JCDecauxStation):
+class VelibStation(JCDecauxStation):
   prefix = PREFIX
   main_url = URL

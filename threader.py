@@ -69,8 +69,7 @@ def multiupdate(system,fr,to):
 		print "Updated station "+str(station.idx)
 	except Exception:
 		print "Error getting station "+str(station.idx)
-	time.sleep(1)
-  
+  	time.sleep(2)
 def main(argv):
   if str(argv[0])=="stats":
     print "STATS ARE AWESOME!"
