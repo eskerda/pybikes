@@ -43,12 +43,16 @@ import melbourne
 
 import girocleta
 
+import capitalbikeshare
+
+import decobike
+
 import memcache
 import time
 import subprocess
 
 EXPIRY = 2500000
-not_update = ["bicing","barclays","wien","bixi","melbourne","girocleta"]
+not_update = ["bicing","barclays","wien","bixi","melbourne","girocleta","capitalbikeshare","decobike"]
 
 def populate(system):
   try:

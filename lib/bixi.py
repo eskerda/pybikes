@@ -22,17 +22,18 @@ def getText(nodelist):
             rc.append(node.data)
     return ''.join(rc)
     
-    
 
-def get_all():
-  usock = urllib2.urlopen(URL)
+def get_all(spec = None):
+  if spec is None:
+    spec = BixiStation
+  usock = urllib2.urlopen(spec.main_url)
   xml_data = usock.read()
   usock.close()
   dom = minidom.parseString(xml_data)
   markers = dom.getElementsByTagName('station')
   stations = []
   for index, marker in enumerate(markers):
-    station = BixiStation(index)
+    station = spec(index)
     station.from_xml(marker)
     stations.append(station)
   return stations

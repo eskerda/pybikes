@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from station import Station
 
-import re
 import urllib,urllib2
 from datetime import datetime
 import demjson
