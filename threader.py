@@ -47,6 +47,8 @@ import capitalbikeshare
 
 import decobike
 
+import niceride
+
 import memcache
 import time
 import subprocess
