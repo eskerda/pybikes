@@ -6,7 +6,7 @@ import urllib,urllib2
 from datetime import datetime
 
 LIST_URL = '/service/carto'
-STATION_URL = '/service/stationdetails/'
+STATION_URL = '/service/stationdetails/%s/'
 
 class JCDecauxStation(Station):
   
@@ -14,11 +14,11 @@ class JCDecauxStation(Station):
   main_url = ""
   station_url = ""
     
-  def update(self):
-      print "Updating "+str(self.number)
+  def update(self, prefix = ""):
+      #print "Updating "+str(self.number)
       if self.station_url == "":
-	self.station_url = STATION_URL
-      usock = urllib.urlopen(self.main_url + self.station_url + str(self.number))
+	self.station_url = STATION_URL % self.city
+      usock = urllib.urlopen(prefix+self.main_url + self.station_url + str(self.number))
       xml_data = usock.read()
       usock.close()
       soup = BeautifulStoneSoup(xml_data)
@@ -46,8 +46,8 @@ class JCDecauxStation(Station):
     self.lng = int(float(soup.contents[0].get("lng"))*1E6)
     
 
-def get_all(spec):
-  usock = urllib2.urlopen(spec.main_url+LIST_URL)
+def get_all(spec, prefix = ""):
+  usock = urllib2.urlopen(prefix+spec.main_url+LIST_URL)
   xml_data = usock.read()
   usock.close()
   soup = BeautifulStoneSoup(xml_data)

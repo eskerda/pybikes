@@ -5,19 +5,22 @@ import urllib,urllib2
 import re
 from datetime import datetime
 from xml.dom import minidom
+import os
+import random
+import sys
 
 
 PREFIX = "svd"
-HASH_URL = "http://clearchannel.stare-d.se/"
-URL = HASH_URL + "ajax/getRacks/%s"
+URL = "http://api.clearchannel.stare-d.se/fc0f077194a3f94fa16996d47ac237e5/getRacks/1/xmlAndroid/noupdate"
 
-HASH_RGX = 'var hash \= \"(.*?)\"'
+headers = {
+  'User-Agent':'Apache-HttpClient/UNAVAILABLE (java 1.4)'
+}
+
+"""
 
 
-
-def getHash(html):
-  hashs = re.findall(HASH_RGX, html)
-  return hashs[0]
+"""
   
 def getText(nodelist):
     rc = []
@@ -27,14 +30,11 @@ def getText(nodelist):
     return ''.join(rc)
     
     
-
 def get_all():
-  usock = urllib2.urlopen(HASH_URL)
-  hash_data = usock.read()
-  evil_hash = getHash(hash_data)
-  usock = urllib2.urlopen(URL % evil_hash)
+  usock = urllib2.urlopen(URL)
   xml_data = usock.read()
   usock.close()
+  print xml_data
   dom = minidom.parseString(xml_data)
   markers = dom.getElementsByTagName('station')
   stations = []
@@ -43,7 +43,6 @@ def get_all():
     station.from_xml(marker)
     stations.append(station)
   return stations
-  
   
 class StockholmStation(Station):
   prefix = PREFIX

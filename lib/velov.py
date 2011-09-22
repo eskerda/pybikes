@@ -12,11 +12,11 @@ STATIONS_BY_BOROUGH_URL = "StationsParArrondissement.php?arrondissement="
 BOROUHS = [69381, 69382, 69383, 69384, 69385, 69386, 69387, 69388, 69389, 69266, 69034, 69256]
 STATION_URL = 'DispoStationsParId.php?id='
 
-def get_all():
+def get_all(prefix = ""):
   stations = []
   index = 0
   for borough in BOROUHS:
-    usock = urllib2.urlopen(URL+STATIONS_BY_BOROUGH_URL+str(borough))
+    usock = urllib2.urlopen(prefix+URL+STATIONS_BY_BOROUGH_URL+str(borough))
     data = usock.read()
     usock.close()
     for marker in demjson.decode(data)['markers']:

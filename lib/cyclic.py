@@ -4,10 +4,12 @@ import jcdecauxstation
 
 PREFIX = "cyclic"
 URL = "http://cyclic.rouen.fr"
+CITY = "rouen"
 
-def get_all():
-  return jcdecauxstation.get_all(CyclicStation)
+def get_all(prefix = ""):
+  return jcdecauxstation.get_all(CyclicStation, prefix)
 
 class CyclicStation(JCDecauxStation):
   prefix = PREFIX
   main_url = URL
+  city = CITY

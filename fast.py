@@ -55,7 +55,6 @@ import denver
 import desmoines
 import sanantonio
 import hawaii
-
 import nextbike
 
 import tobike
@@ -66,19 +65,16 @@ import bikemi
 import hangzhou
 import boulder
 
-import ambiciat
-
-import mejorenbici
-
-
 import memcache
 import time
 import subprocess
 
+
+import urllib, urllib2
 from datetime import datetime
 
 EXPIRY = 2500000
-not_update = ["barclays","wien","bixi","melbourne","girocleta","capitalbikeshare","decobike","niceride","chicago","denver","desmoines","sanantonio","nextbike","tobike","hawaii","svd","hangzhou","boulder","bikemi","ambiciat","mejorenbici"]
+not_update = ["bicing","barclays","wien","bixi","melbourne","girocleta","capitalbikeshare","decobike","niceride","chicago","denver","desmoines","sanantonio","nextbike","tobike","hawaii","svd","hangzhou","boulder","bikemi"]
 def populate(system):
   try:
     stations = system.get_all()
@@ -87,8 +83,8 @@ def populate(system):
 	print "[%s]Error populating %s, trying tor" % (datetime.now(),system.__name__)
 	stations = system.get_all("http://api.citybik.es/torify/")
     except Exception:
-    	print "[%s]Fatal error populating %s, sleeping and retrying" % (datetime.now(),system.__name__)
-    	time.sleep(120)
+    	print "Fatal error, sleeping and retrying"
+    	time.sleep(60)
     	return populate(system)
   n_stations = len(stations)
   cache = memcache.Client(['127.0.0.1:11211'])
@@ -105,7 +101,7 @@ def populate(system):
       ct = ct + 1
     return n_stations
   else:
-    system_str = system.__name__
+    system_str = stations[0].prefix
     for station in stations:
       cache.set(station.prefix+"_"+"station_"+str(station.idx),station,EXPIRY)
     cache.set(system_str+"_n_stations",n_stations,EXPIRY)
@@ -121,18 +117,18 @@ def multiupdate(system,fr,to):
 	try:
 	  station.update()
 	except Exception:
-	  print "[%s]Error getting station from %s, trying Tor" % (datetime.now(),str(station.prefix))
+	  print "[%s]Error getting %s station %d trying Tor" % (datetime.now(), system, station.idx)
 	  try:
 	    station.update("http://api.citybik.es/torify/")
 	    print "[%s]Tor went okay.. %s %d" % (datetime.now(), system, station.idx)
 	    time.sleep(0.5)
 	  except Exception:
-	    print "[%s]Fatal Error getting station from %s" % (datetime.now(), system)
+	    print "[%s]Fatal Error getting %s station %d" % (datetime.now(), system, station.idx)
 	    time.sleep(8)
 	    continue
 	cache.set(system+"_station_"+str(i),station,EXPIRY)
-	time.sleep(0.8)
-  
+  	time.sleep(0.5)
+
 def main(argv):
   if str(argv[0])=="stats":
     print "STATS ARE AWESOME!"
@@ -145,7 +141,7 @@ def main(argv):
       if (system_str in not_update):
 	while True:
 	  populate(system)
-	  time.sleep(120)
+	  time.sleep(30)
       else:
 	multiupdate(system_str,int(argv[3]),int(argv[4]))
     elif str(argv[2])=="all":
@@ -163,6 +159,7 @@ def main(argv):
 	  n_stations = populate(system)
       else:
 	n_stations = populate(system)
+      print str(n_stations)
       stat_proc = n_stations/procs
       rest = n_stations%procs
       init_stat = 0
@@ -179,12 +176,10 @@ def main(argv):
 	  to = init_stat + stat_proc - 1
 	  fr = init_stat
 	  init_stat += stat_proc
-	args = ['%s/threader.py' % full_path,'system',system_str,'multiupdate',str(fr), str(to)]
-	if n_stations == 0:
-	  print "%s returned 0 stations, strange, retrying in 300s" % system_str
-	  time.sleep(300)
-	  args = ['%s/threader.py' % full_path,'system',system_str,'all',str(procs)]
+	args = ['%s/fast.py' % full_path,'system',system_str,'multiupdate',str(fr), 
+str(to)]
 	subprocess.Popen(args)
+	
     elif str(argv[2])=="json":
 	cache = memcache.Client(["127.0.0.1:11211"])
       	n_stations = cache.get(system_str+"_n_stations")

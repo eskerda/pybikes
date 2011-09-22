@@ -4,10 +4,12 @@ import jcdecauxstation
 
 PREFIX = 'villo'
 URL = 'http://www.villo.be'
+CITY = "bruxelles"
 
-def get_all():
-  return jcdecauxstation.get_all(VilloStation)
+def get_all(prefix = ""):
+  return jcdecauxstation.get_all(VilloStation, prefix)
 
 class VilloStation(JCDecauxStation):
   prefix = PREFIX
   main_url = URL
+  city = CITY

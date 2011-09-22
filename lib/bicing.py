@@ -3,64 +3,71 @@ from station import Station
 
 import re
 import urllib,urllib2
+from BeautifulSoup import BeautifulSoup
 from datetime import datetime
-from xml.dom import minidom
 
 PREFIX = "bicing"
-URL = "http://www.bicing.cat/localizaciones/localizaciones.php"
+URL = "http://www.bicing.cat"
+LIST_URL = "/localizaciones/localizaciones.php"
+STATION_URL = "/CallWebService/StationBussinesStatus.php"
 
-# How to scrape the data
-XML_RE = re.compile(r"exml.parseString\('(.*)'\);")
+LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
+ID_ADD_RGX = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\"\+\"\&s\_id\_idioma'
 
 
+def getStats(txt):
+  re1='.*?'	# Non-greedy match on filler
+  re2='\\d+'	# Uninteresting: int
+  re3='.*?'	# Non-greedy match on filler
+  re4='(\\d+)'	# Integer Number 1
+  re5='.*?'	# Non-greedy match on filler
+  re6='(\\d+)'	# Integer Number 2
+
+  rg = re.compile(re1+re2+re3+re4+re5+re6,re.IGNORECASE|re.DOTALL)
+  m = rg.search(txt)
+  if m:
+    int1=m.group(1)
+    int2=m.group(2)
+    res = [int1,int2]
+    return res
+    
+    
 def get_all():
-  usock = urllib2.urlopen(URL)
+  usock = urllib2.urlopen(URL+LIST_URL)
   data = usock.read()
   usock.close()
-  xml = XML_RE.search(data).groups()[0]
-  dom = minidom.parseString(xml.decode('iso-8859-15').encode('utf-8'))
-  placemarks = dom.getElementsByTagName('Placemark')
-  stations = []
-  for index, placemark in enumerate(placemarks):
-        station = BicingStation(index)
-        station.from_xml(placemark)
-        station.timestamp = datetime.now()
-        stations.append(station)
-  return stations
 
-class BicingStation(Station):
+  geopoints = re.findall(LAT_LNG_RGX, data)
+  ids_addrs = re.findall(ID_ADD_RGX, data)
+  
+  stations = []
+  for index,geopoint in enumerate(geopoints):
+    station = BiziStation(index)
+    station.lat = int(float(geopoint[0])*1E6)
+    station.lng = int(float(geopoint[1])*1E6)
+    station.number = int(ids_addrs[index][0])
+    station.address = ids_addrs[index][1]
+    stations.append(station)
+  return stations
+  
+
+class BiziStation(Station):
   prefix = PREFIX
   main_url = URL
-
-  def to_json(self):
-    text =  '{id:"%s", name:"%s", coordinates: "%s", x:"%s", y:"%s", lat:"%s", lng:"%s", timestamp:"%s", bikes:%s, free:%s }' % \
-    (self.idx, self.name, self.coordinates, self.lat, self.lng, self.lat, self.lng, self.timestamp, self.bikes, self.free)
-    print text.encode('utf-8'),
-    return text.encode('utf-8')
-
-  def from_xml(self, placemark):
-    """
-    Set the values of the fields from an XML placemark node.
-
-    @param placemark: the XML node containing the data about the station
-    @type placemark:  L{xml.dom.minidom.Element}
-    """
-    description = placemark.getElementsByTagName('description')[0]
-    xml = description.firstChild.nodeValue
-    dom = minidom.parseString(xml.encode('utf-8'))
-    divs = dom.firstChild.getElementsByTagName('div')
-    self.name = divs[0].firstChild.nodeValue
-    self.bikes = int(divs[2].childNodes[0].nodeValue)
-    try:
-	self.free = int(divs[2].childNodes[2].nodeValue)
-    except (ValueError, IndexError, TypeError):
-	self.free = 0
-    point = placemark.getElementsByTagName('Point')[0]
-    self.coordinates = str(point.firstChild.firstChild.nodeValue)
-    p = re.compile('[^0-9.,]')
-    shit = p.sub('',self.coordinates)
-    awesome = shit.split(',')
-    self.lat = int(float(awesome[1])*1000000)
-    self.lng = int(float(awesome[0])*1000000)
-    
-  
+  address = ""
+      
+  def update(self):
+    print "Updating "+str(self.number)
+    parameters = {'idStation':self.number,'addressnew':self.address}
+    data = urllib.urlencode(parameters)
+    request = urllib2.Request(URL+STATION_URL,data)
+    response = urllib2.urlopen(request)
+    txt = response.read()
+    soup = BeautifulSoup(txt)
+    name = soup.div.contents[1].contents[0]
+    stats = getStats(soup.div.contents[3].prettify())
+    self.name = unicode(BeautifulSoup(name,convertEntities=BeautifulSoup.HTML_ENTITIES )).replace('\n','')
+    self.bikes = stats[0]
+    self.free = stats[1]
+    self.timestamp = datetime.now()  
+    return self
