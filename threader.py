@@ -70,6 +70,9 @@ import ambiciat
 
 import mejorenbici
 
+import palma
+
+import bikla
 
 import memcache
 import time
@@ -78,7 +81,7 @@ import subprocess
 from datetime import datetime
 
 EXPIRY = 2500000
-not_update = ["barclays","wien","bixi","melbourne","girocleta","capitalbikeshare","decobike","niceride","chicago","denver","desmoines","sanantonio","nextbike","tobike","hawaii","svd","hangzhou","boulder","bikemi","ambiciat","mejorenbici"]
+not_update = ["barclays","wien","bixi","melbourne","girocleta","capitalbikeshare","decobike","niceride","chicago","denver","desmoines","sanantonio","nextbike","tobike","hawaii","svd","hangzhou","boulder","bikemi","ambiciat","mejorenbici","palma","bicing","bikla"]
 def populate(system):
   try:
     stations = system.get_all()
@@ -142,10 +145,18 @@ def main(argv):
     if (str(argv[2]))=="populate":
       populate(system)
     elif (str(argv[2]))=="multiupdate":
-      if (system_str in not_update):
+      try:
+	# GUESS IF THIS IS JCDECAUX
+	if system.CITY is not None and system.CITY != "creteil":
+	  jcd = True
+	else:
+	  jcd = False
+      except Exception:
+	  jcd = False
+      if (system_str in not_update) or (jcd):
 	while True:
 	  populate(system)
-	  time.sleep(120)
+	  time.sleep(45)
       else:
 	multiupdate(system_str,int(argv[3]),int(argv[4]))
     elif str(argv[2])=="all":

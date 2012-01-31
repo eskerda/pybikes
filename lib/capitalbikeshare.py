@@ -3,7 +3,7 @@ from bixi import BixiStation
 import bixi
 
 PREFIX = "capitalbikeshare"
-URL = "http://capitalbikeshare.com/stations/bikeStations.xml"
+URL = "http://capitalbikeshare.com/data/stations/bikeStations.xml"
 
 
 
