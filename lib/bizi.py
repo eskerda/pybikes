@@ -7,7 +7,7 @@ from BeautifulSoup import BeautifulSoup
 from datetime import datetime
 
 PREFIX = "bizi"
-URL = "http://www.bizizaragoza.com"
+URL = "https://www.bizizaragoza.com"
 LIST_URL = "/localizaciones/localizaciones.php"
 STATION_URL = "/CallWebService/StationBussinesStatus.php"
 

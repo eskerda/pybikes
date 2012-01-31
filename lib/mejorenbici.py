@@ -3,11 +3,17 @@ from station import Station
 
 import urllib,urllib2
 from datetime import datetime
-from xml.dom import minidom
+import re
+from BeautifulSoup import BeautifulSoup
 
+RE_LATLNG = "new\ GMarker\(new\ GLatLng\((.*?)\,(.*?)\)"
 
+"""
+openInfoWindowHtml('<div style="height:100px;"><span class="style1">RETIRO</span><br><span class="style2">Cant. Bicicletas disponibles: 33</span><br></div>',{maxWidth:10}); });
+"""
+RE_HTMLCONTENT = "openInfoWindowHtml\((.*?)\,[^\)]+\)"
 PREFIX = "mejorenbici"
-URL = "http://www.insomniabs.net/maps3/CicloviasSense.kml"
+URL = "http://www.bicicletapublica.com.ar/mapa.aspx"
 
 
 def getText(nodelist):
@@ -17,23 +23,30 @@ def getText(nodelist):
             rc.append(node.data)
     return ''.join(rc)
     
-    
+def getBikes(raw):
+  re1='.*?'	# Non-greedy match on filler
+  re2='(\\d+)'	# Integer Number 1
+
+  rg = re.compile(re1+re2,re.IGNORECASE|re.DOTALL)
+  m = rg.search(raw)
+  if m:
+    int1=m.group(1)
+    return int1
+  else:
+    return -1
 
 def get_all():
   usock = urllib2.urlopen(URL)
-  xml_data = usock.read()
+  html_data = usock.read()
   usock.close()
-  dom = minidom.parseString(xml_data)
-  markers = dom.getElementsByTagName('Placemark')
+  latlngs = re.findall(RE_LATLNG, html_data)
+  content = re.findall(RE_HTMLCONTENT, html_data)
   stations = []
-  index = 0
-  for idx,marker in enumerate(markers):
-    station = MejorEnBiciStation(index)
-    if station.from_xml(marker):
-      stations.append(station)
-      index = index+1
+  for idx, ll in enumerate(latlngs):
+    station = MejorEnBiciStation(idx)
+    station.from_mdata(ll, content[idx])
+    stations.append(station)
   return stations
-  
   
 class MejorEnBiciStation(Station):
   prefix = PREFIX
@@ -42,25 +55,12 @@ class MejorEnBiciStation(Station):
   def update(self):
     return self
     
-  def from_xml(self, xml_data):
-    
-    """ 
-    <Placemark>
-    <name>Estacion Plaza Hussay</name>
-    <description></description><styleUrl>#style17</styleUrl>
-    <Point><coordinates>-58.398170,-34.599091,0.000000</coordinates></Point>
-    </Placemark>
-    Ignore anything without Point and coordinates (there are paths)
-    """
-    
-    self.name = getText(xml_data.getElementsByTagName("name")[0].childNodes)
-    self.description = getText(xml_data.getElementsByTagName("description")[0].childNodes)
-    coords = getText(xml_data.getElementsByTagName("coordinates")[0].childNodes).split(',')
-    if len(coords) == 3:
-      self.lat = int(float(coords[1])*1E6)
-      self.lng = int(float(coords[0])*1E6)
-      self.bikes = -1
-      self.free = -1
-      return True
-    else:
-      return False
+  def from_mdata(self, latlng, htmlcontent):
+    self.lat = int(float(latlng[0])*1E6)
+    self.lng = int(float(latlng[1])*1E6)
+    raw = BeautifulSoup(htmlcontent)
+    self.name = raw.contents[1].contents[0].string
+    rawBikes = raw.contents[1].contents[2].string
+    self.bikes = getBikes(rawBikes)
+    self.free = -1
+    return self
