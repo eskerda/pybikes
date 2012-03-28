@@ -41,6 +41,6 @@ class Station(object):
     
     
   def to_json(self):
-    text = '{id:"%s", name:"%s", lat:"%s", lng:"%s", timestamp:"%s", bikes:%s, free:%s}' % \
-    (self.idx, self.name, self.lat, self.lng, self.timestamp, self.bikes, self.free)
+    text = '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%d, "free":%d}' % \
+    (self.idx, self.name, self.lat, self.lng, self.timestamp, int(self.bikes), int(self.free))
     return text.encode('utf-8')
