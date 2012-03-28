@@ -33,7 +33,7 @@ class BikemiStation(Station):
   main_url = URL
 
   def to_json(self):
-    text =  '{id:"%s", name:"%s", coordinates: "%s", x:"%s", y:"%s", lat:"%s", lng:"%s", timestamp:"%s", bikes:%s, free:%s }' % \
+    text =  '{"id":"%s", "name":"%s", "coordinates": "%s", "x":"%s", "y":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s }' % \
     (self.idx, self.name, self.coordinates, self.lat, self.lng, self.lat, self.lng, self.timestamp, self.bikes, self.free)
     return text.encode('utf-8')
 
