@@ -5,29 +5,20 @@ from station import Station
 import re
 import urllib,urllib2
 
-RE_GIF="TemporaryFiles/(.*?)'"
 RE_INFO="RefreshMap\((.*?)\)"
 PREFIX = "tobike"
 URL = "http://www.tobike.it/frmLeStazioni.aspx"
-URL_INFO = "http://comunicareImages.tobike.it/TemporaryFiles/"
 
 def get_all():
     
     usock = urllib2.urlopen(URL)
     data = usock.read()
     usock.close()
-    gif = re.findall(RE_GIF, data)
-
-    usock = urllib2.urlopen(URL_INFO+gif[0])
-    data = usock.read()
-    usock.close()
 	
     raw = re.findall(RE_INFO, data)
-    info = re.findall("\'(.*?)\'",raw[0])
+    info = re.findall("\'(.*?)\'",raw[1])
     for idx,inf in enumerate(info):
       info[idx] = inf.split('|')
-    info.remove(info[9])
-
     stations = []
 
     for idx in range(len(info[0])):
