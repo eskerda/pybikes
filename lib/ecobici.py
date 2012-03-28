@@ -67,7 +67,7 @@ class EcobiciStation(Station):
     name = soup.div.contents[1].contents[0]
     stats = getStats(soup.div.contents[3].prettify())
     self.name = unicode(BeautifulSoup(name,convertEntities=BeautifulSoup.ALL_ENTITIES )).strip()
-    self.bikes = stats[0]
-    self.free = stats[1]
+    self.bikes = int(stats[0])
+    self.free = int(stats[1])
     self.timestamp = datetime.now()  
     return self
