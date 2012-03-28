@@ -10,7 +10,7 @@ import demjson
 PREFIX = "barclays"
 URL = "https://web.barclayscyclehire.tfl.gov.uk/maps"
 
-STATION_RE = "station\=\{(.*)\}\;"
+STATION_RE = "station\=\{(.*?)\}\;"
 
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
@@ -22,7 +22,6 @@ def get_all():
   usock.close()
   
   raw = re.findall(STATION_RE, data)
-  
   stations = []
   for index,raw in enumerate(raw):
     station = BarclaysStation(index)
@@ -58,5 +57,4 @@ class BarclaysStation(Station):
   def to_json(self):
     text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "installed":"%s", "locked":"%s", "temporary":"%s", "coordinates":"%s"}' % \
     (self.idx, self.name, self.lat, self.lng, self.timestamp, self.bikes, self.free, self.installed, self.locked, self.temporary, self.coordinates)
-    print text.encode('utf-8'),
     return text.encode('utf-8')
