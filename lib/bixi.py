@@ -7,7 +7,7 @@ from xml.dom import minidom
 
 
 PREFIX = "bixi"
-URL = "https://profil.bixi.ca/data/bikeStations.xml"
+URL = "https://montreal.bixi.com/data/bikeStations.xml"
 
 
 
