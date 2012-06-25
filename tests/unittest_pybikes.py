@@ -1,16 +1,19 @@
+#!/usr/bin/python2
+
 import unittest
 import json
 
-from pybikes import BikeShareSystem, MontrealSystem
-from pybikes import BikeShareStationEncoder
+from pybikes import *
+import pybikes
 
 class TestMontrealBikeShareSystem(unittest.TestCase):
-	def setUp(self):
-		self.montrealSystem = MontrealSystem()
 
 	def test_update(self):
-		self.montrealSystem.update()
-		self.assertTrue(len(self.montrealSystem.stations) > 0)
+		for sys in pybikes.__systems__:
+			instance = eval(sys)()
+			print ("\nDownloading %s data, please wait" % sys)
+			instance.update()
+			self.assertTrue(len(instance.stations) > 0)
 
 class TestBikeShareSystemInstance(unittest.TestCase):
 	
