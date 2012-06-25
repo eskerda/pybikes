@@ -1,5 +1,5 @@
 import unittest
-import pybikes
+from pybikes import BikeShareSystem
 
 class TestBikeShareSystemInstance(unittest.TestCase):
 	def setUp(self):
@@ -25,11 +25,11 @@ class TestBikeShareSystemInstance(unittest.TestCase):
 
 		# Instance foo has all the metadata complete, and includes
 		# no extra metadata
-		instanceFoo = pybikes.BikeShareSystem('foo',metaFoo)
+		instanceFoo = BikeShareSystem('foo',metaFoo)
 		
 		# Instance bar has does not have all the basic metadata
 		# set, but has extra metadata
-		instanceBar = pybikes.BikeShareSystem('bar',metaBar)
+		instanceBar = BikeShareSystem('bar',metaBar)
 
 		self.battery = []
 		self.battery.append({
@@ -61,7 +61,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
 
 			# Check that all metainfo not set on instantiation
 			# appears on the instance as None
-			for meta in pybikes.BikeShareSystem.meta:
+			for meta in BikeShareSystem.meta:
 				if meta not in unit.get('meta'):
 					self.assertIn(meta, unit.get('instance').meta)
 					self.assertEqual(

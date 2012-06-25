@@ -1,14 +1,4 @@
-"""PyBikes
-PyBikes is a parsing library to extract bike sharing information from multiple
-sources. It contains multiple classes to handle this sort of information,
-and is not a class itself. The idea is to be able to call it like:
-
-from pybikes import BicingShareSystem, BicingStation
-
-bicing = new BicingShareSystem() <- Returns BicingShareSystem
-print "%s: %s" % ("Bicing City is", bicing.meta.city)
-stations = bicing.get_stations() <- Returns Array[BicingStation]
-
+"""
 Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -35,6 +25,34 @@ __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
 __license__ = "AGPL"
 
+class BikeShareStation(object):
+    """A base class to name a bike sharing Station. It can be:
+        - Specific (cities):
+            - BicingStation, VelibStation, ...
+        - General (companies):
+            - JCDecauxStation, ClearChannelStation
+    """
+
+    def __init__(self, id):
+
+        self.id = id
+        self.name = None
+        self.latitude = None
+        self.longitude = None
+        self.bikes = None
+        self.slots = None
+        self.timestamp = datetime.utcnow()      # Store timestamp in UTC!
+
+    def update(self):
+        self.timestamp = datetime.utcnow()
+
+class BikeShareStationEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        else:
+            return obj.__dict__
+        return json.JSONEncoder.default(self, obj)
 
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
