@@ -44,15 +44,25 @@ class BikeShareStation(object):
         self.timestamp = datetime.utcnow()      # Store timestamp in UTC!
 
     def update(self):
+        """ Base update method for BikeShareStation, any subclass can
+            override this method, and should/could call it from inside
+        """
         self.timestamp = datetime.utcnow()
 
+    def to_json(self):
+        """ Dump a json string using the BikeShareStationEncoder with a
+            set of default options
+        """
+        return json.dumps(self, cls = BikeShareStationEncoder, sort_keys = True)
+
 class BikeShareStationEncoder(json.JSONEncoder):
+
     def default(self, obj):
+        
         if isinstance(obj, datetime):
             return obj.isoformat()
         else:
             return obj.__dict__
-        return json.JSONEncoder.default(self, obj)
 
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
@@ -66,6 +76,7 @@ class BikeShareSystem(object):
         This class might or not have METADATA assigned, usually intended
         for specific cases. This METADATA is dict / json formatted.
     """
+
     tag = None
 
     meta = {
@@ -83,6 +94,7 @@ class BikeShareSystem(object):
         self.meta = dict(self.meta.items() + meta.items())
 
     def __str__(self):
+
         base = """--- {name} ---
 Uname: {uname}
 City: {city}
