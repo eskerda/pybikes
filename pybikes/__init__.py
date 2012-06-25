@@ -28,6 +28,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from base import BikeShareSystem, BikeShareStation, BikeShareStationEncoder
 
+from bixi import BixiSystem, Bixi, CapitalBikeShare
+
 __all__ = [ 'BikeShareSystem',
             'BikeShareStation',
-            'BikeShareStationEncoder']
+            'BikeShareStationEncoder',
+            'BixiSystem', 'Bixi', 'CapitalBikeShare'
+        ]
+
+__systems__ = sorted([cName 
+    for cName in __all__ 
+        if  issubclass(eval(cName), BikeShareSystem) and
+            eval(cName).tag is not None ])

@@ -1,10 +1,21 @@
 import unittest
-from pybikes import BikeShareSystem
+import json
+
+from pybikes import BikeShareSystem, MontrealSystem
+from pybikes import BikeShareStationEncoder
+
+class TestMontrealBikeShareSystem(unittest.TestCase):
+	def setUp(self):
+		self.montrealSystem = MontrealSystem()
+
+	def test_update(self):
+		self.montrealSystem.update()
+		self.assertTrue(len(self.montrealSystem.stations) > 0)
 
 class TestBikeShareSystemInstance(unittest.TestCase):
+	
 	def setUp(self):
 
-		
 		metaFoo = {
 			'name' : 'Foo',
 			'uname' : 'foo',
@@ -23,24 +34,24 @@ class TestBikeShareSystemInstance(unittest.TestCase):
 			'population' : 100000
 		}
 
-		# Instance foo has all the metadata complete, and includes
-		# no extra metadata
-		instanceFoo = BikeShareSystem('foo',metaFoo)
-		
-		# Instance bar has does not have all the basic metadata
-		# set, but has extra metadata
-		instanceBar = BikeShareSystem('bar',metaBar)
+		class FooSystem(BikeShareSystem):
+			tag = 'foo'
+			meta = dict(BikeShareSystem.meta, **metaFoo)
+
+		class BarSystem(BikeShareSystem):
+			tag = 'bar'
+			meta = dict(BikeShareSystem.meta, **metaBar)
 
 		self.battery = []
 		self.battery.append({
 						'tag': 'foo',
 						'meta': metaFoo,
-						'instance': instanceFoo
+						'instance': FooSystem()
 					})
 		self.battery.append({
 						'tag': 'bar',
 						'meta': metaBar,
-						'instance': instanceBar
+						'instance': BarSystem()
 					})
 
 	def test_instantiation(self):

@@ -20,6 +20,8 @@ import sys
 from datetime import datetime
 import json
 
+from utils import PyBikesScrapper
+
 __author__ = "eskerda (eskerda@gmail.com)"
 __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
@@ -33,15 +35,15 @@ class BikeShareStation(object):
             - JCDecauxStation, ClearChannelStation
     """
 
-    def __init__(self, id):
+    def __init__(self, id, timestamp = datetime.utcnow() ):
 
         self.id = id
         self.name = None
         self.latitude = None
         self.longitude = None
         self.bikes = None
-        self.slots = None
-        self.timestamp = datetime.utcnow()      # Store timestamp in UTC!
+        self.free = None
+        self.timestamp = timestamp     # Store timestamp in UTC!
 
     def update(self):
         """ Base update method for BikeShareStation, any subclass can
@@ -88,12 +90,13 @@ class BikeShareSystem(object):
         'company' : None
     }
 
+    sync = True
+
     stations = []
 
-    def __init__(self, tag, meta):
-        
-        self.tag = tag
-        self.meta = dict(self.meta.items() + meta.items())
+    def __init__(self):
+
+        self.scrapper = PyBikesScrapper()
 
     def __str__(self):
 
