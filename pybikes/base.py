@@ -58,7 +58,7 @@ class BikeShareStation(object):
 class BikeShareStationEncoder(json.JSONEncoder):
 
     def default(self, obj):
-        
+
         if isinstance(obj, datetime):
             return obj.isoformat()
         else:
@@ -87,6 +87,8 @@ class BikeShareSystem(object):
         'longitude' : None,
         'company' : None
     }
+
+    stations = []
 
     def __init__(self, tag, meta):
         
