@@ -121,8 +121,8 @@ bcycle_systems = [
             'latitude': 40.0149856,
             'longitude': -105.2705455
             }
-    },
-    {
+    }
+    ,{
         'clsName': 'Chicago',
         'system': 'chicago',
         'tag': 'chicago_bcycle',
@@ -133,8 +133,8 @@ bcycle_systems = [
             'latitude': 41.8781136,
             'longitude': -87.6297981
             }
-    },
-    {
+    }
+    ,{
         'clsName': 'Broward',
         'system': 'broward',
         'tag': 'broward_bcycle',
