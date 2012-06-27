@@ -97,10 +97,8 @@ class BikeShareSystem(object):
 
     sync = True
 
-    stations = []
-
     def __init__(self):
-
+        self.stations = []
         self.scrapper = PyBikesScrapper()
 
     def __str__(self):
