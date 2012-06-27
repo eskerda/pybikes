@@ -26,6 +26,18 @@ __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
 __license__ = "AGPL"
 
+__all__ = ['BikeShareStationEncoder', 'BikeShareStation', 'BikeShareSystem' ]
+
+
+class BikeShareStationEncoder(json.JSONEncoder):
+
+    def default(self, obj):
+
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        else:
+            return obj.__dict__
+
 class BikeShareStation(object):
     """A base class to name a bike sharing Station. It can be:
         - Specific (cities):
@@ -50,20 +62,14 @@ class BikeShareStation(object):
         """
         self.timestamp = datetime.utcnow()
 
-    def to_json(self):
+    def to_json(self, **args):
         """ Dump a json string using the BikeShareStationEncoder with a
             set of default options
         """
-        return json.dumps(self, cls = BikeShareStationEncoder, sort_keys = True)
+        if 'cls' not in args:   # Set defaults here
+            args['cls'] = BikeShareStationEncoder
 
-class BikeShareStationEncoder(json.JSONEncoder):
-
-    def default(self, obj):
-
-        if isinstance(obj, datetime):
-            return obj.isoformat()
-        else:
-            return obj.__dict__
+        return json.dumps(self, **args)
 
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
