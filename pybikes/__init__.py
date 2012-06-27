@@ -27,15 +27,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 
-from base import BikeShareSystem, BikeShareStation, BikeShareStationEncoder
+from base import *
+from bixi import *
+from bcycle import *
 
-from bixi import BixiSystem, Bixi, CapitalBikeShare
-
-__all__ = [ 'BikeShareSystem',
-            'BikeShareStation',
-            'BikeShareStationEncoder',
-            'BixiSystem', 'Bixi', 'CapitalBikeShare'
-        ]
+__all__ = base.__all__ + bixi.__all__ + bcycle.__all__
 
 __systems__ = sorted([cName 
     for cName in __all__ 
