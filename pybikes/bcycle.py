@@ -133,6 +133,18 @@ bcycle_systems = [
             'latitude': 41.8781136,
             'longitude': -87.6297981
             }
+    },
+    {
+        'clsName': 'Broward',
+        'system': 'broward',
+        'tag': 'broward_bcycle',
+        'meta': {
+            'name': 'Broward B-Cycle',
+            'city': 'Broward, FL',
+            'country': 'USA',
+            'latitude': 26.190096,
+            'longitude': -80.365864
+            }
     }
 ]
 
