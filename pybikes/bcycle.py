@@ -146,6 +146,18 @@ bcycle_systems = [
             'longitude': -80.365864
             }
     }
+    ,{
+        'clsName': 'Denver',
+        'system': 'denver',
+        'tag': 'denver_bcycle',
+        'meta': {
+            'name': 'Denver Bikes',
+            'city': 'Denver, CO',
+            'country': 'USA',
+            'latitude': 39.737567,
+            'longitude': -104.984717
+            }
+    }
 ]
 
 for system in bcycle_systems:
