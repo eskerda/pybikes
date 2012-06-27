@@ -22,12 +22,17 @@ from xml.dom import minidom
 from base import BikeShareSystem, BikeShareStation
 import utils
 
+__all__ = ['BixiSystem', 'BixiStation', 'Bixi', 'CapitalBikeShare']
+
 class BixiSystem(BikeShareSystem):
 
     feed_url = "https://{system}.bixi.com/data/bikeStations.xml"
     sync = True
 
-    meta = dict(BikeShareSystem.meta, **{'company': 'PBSC'})
+    meta = dict(BikeShareSystem.meta, **{
+                                            'system': 'Bixi',
+                                            'company': 'PBSC'
+                                        })
 
     def update(self):
 
