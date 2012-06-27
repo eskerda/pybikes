@@ -21,13 +21,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import unittest
 import json
 
-from pybikes import *
 import pybikes
 
-class TestMontrealBikeShareSystem(unittest.TestCase):
+from pybikes import bcycle
+from pybikes import bixi
 
-	def test_update(self):
-		for sys in pybikes.__systems__:
+from pybikes import *
+
+class TestSystems(unittest.TestCase):
+
+	def test_bixi(self):
+		print "Testing Bixi..."
+		self._test_update('bixi')
+
+	def test_bcycle(self):
+		print "Testing Bcycle..."
+		self._test_update('bcycle')
+
+	def _test_update(self, base = 'pybikes'):
+		systems = [sys for sys in eval(base).__all__ if sys in pybikes.__systems__]
+		print systems
+		for sys in systems:
 			instance = eval(sys)()
 			print ("\nDownloading %s data, please wait" % sys)
 			instance.update()
