@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """PyBikes
 PyBikes is a parsing library to extract bike sharing information from multiple
 sources. It contains multiple classes to handle this sort of information,
