@@ -158,6 +158,18 @@ bcycle_systems = [
             'longitude': -104.984717
             }
     }
+    ,{
+        'clsName': 'DesMoines',
+        'system': 'desmoines',
+        'tag': 'des_moines_bcycle',
+        'meta': {
+            'name': 'Des Moines B-cycle',
+            'city': 'Des Moines, IA',
+            'country': 'USA',
+            'latitude': 41.6005448,
+            'longitude': -93.6091063
+            }
+    }
 ]
 
 for system in bcycle_systems:
