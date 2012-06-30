@@ -29,65 +29,6 @@ __all__ = ['BCycleSystem', 'BCycleStation']
 LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
 DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
 
-
-BCYCLE_SYSTEMS = {
-    'boulder': {
-        'system': 'boulder',
-        'tag': 'boulder_bcycle',
-        'meta': {
-            'name': 'Boulder B-Cycle',
-            'city': 'Boulder, CO',
-            'country': 'USA',
-            'latitude': 40.0149856,
-            'longitude': -105.2705455
-            }
-    }
-    ,'chicago': {
-        'system': 'chicago',
-        'tag': 'chicago_bcycle',
-        'meta': {
-            'name': 'Chicago Bikes',
-            'city': 'Chicago, IL',
-            'country': 'USA',
-            'latitude': 41.8781136,
-            'longitude': -87.6297981
-            }
-    }
-    ,'broward': {
-        'system': 'broward',
-        'tag': 'broward_bcycle',
-        'meta': {
-            'name': 'Broward B-Cycle',
-            'city': 'Broward, FL',
-            'country': 'USA',
-            'latitude': 26.190096,
-            'longitude': -80.365864
-            }
-    }
-    ,'denver': {
-        'system': 'denver',
-        'tag': 'denver_bcycle',
-        'meta': {
-            'name': 'Denver Bikes',
-            'city': 'Denver, CO',
-            'country': 'USA',
-            'latitude': 39.737567,
-            'longitude': -104.984717
-            }
-    }
-    ,'des_moines': {
-        'system': 'desmoines',
-        'tag': 'des_moines_bcycle',
-        'meta': {
-            'name': 'Des Moines B-cycle',
-            'city': 'Des Moines, IA',
-            'country': 'USA',
-            'latitude': 41.6005448,
-            'longitude': -93.6091063
-            }
-    }
-}
-
 class BCycleError(Exception):
     def __init__(self, msg):
             self.msg = msg
@@ -108,6 +49,15 @@ class BCycleSystem(BikeShareSystem):
                      ,'Humana'
                      ,'Crispin Porter + Bogusky' ]
         })
+
+    def __init__(self, tag, meta, system = None, feed_url = None):
+        super( BCycleSystem, self).__init__()
+        self.tag = tag
+        if feed_url is not None:
+            self.feed_url = feed_url
+        else:
+            self.feed_url = BCycleSystem.feed_url.format(system =  system)
+        self.meta = dict(BCycleSystem.meta, **meta)
 
     def update(self):
 
@@ -151,16 +101,3 @@ class BCycleStation(BikeShareStation):
         self.extra = {'address' : "%s - %s" % (
                         str(soup.contents[1].contents[2]),
                         str(soup.contents[1].contents[4]))}
-
-def system(key):
-    if key not in BCYCLE_SYSTEMS:
-        raise BCycleError('Invalid system or not implemented')
-    
-    sys_data = BCYCLE_SYSTEMS.get(key)
-    
-    r = BCycleSystem()
-    r.feed_url = BCycleSystem.feed_url.format(system = sys_data.get('system'))
-    r.tag = sys_data.get('tag')
-    r.meta = dict( BCycleSystem.meta, **sys_data.get('meta'))
-
-    return r

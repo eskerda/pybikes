@@ -23,97 +23,95 @@ import json
 
 import pybikes
 
-from pybikes import bcycle
-from pybikes import bixi
-
 from pybikes import *
 
 class TestSystems(unittest.TestCase):
 
-	def test_bixi(self):
-		print "Testing Bixi..."
-		self._test_update('bixi')
+    def test_bixi(self):
+        self._test_file('data/bixi.json', BixiSystem)
 
-	def test_bcycle(self):
-		print "Testing Bcycle..."
-		self._test_update('bcycle')
+    def test_bcycle(self):
+        self._test_file('data/bcycle.json', BCycleSystem)
 
-	def _test_update(self, base = 'pybikes'):
-		systems = [sys for sys in eval(base).__all__ if sys in pybikes.__systems__]
-		print systems
-		for sys in systems:
-			instance = eval(sys)()
-			print ("\nDownloading %s data, please wait" % sys)
-			instance.update()
-			self.assertTrue(len(instance.stations) > 0)
+    def _test_file(self, file, cls):
+        f = open(file)
+        data = json.loads(f.read())
+        for system in data.get('instances'):
+            sys = cls(** system)
+            print sys
+            self._test_update(sys)
+
+    def _test_update(self, instance):
+            instance.update()
+            self.assertTrue(len(instance.stations) > 0)
 
 class TestBikeShareSystemInstance(unittest.TestCase):
-	
-	def setUp(self):
+    
+    def setUp(self):
 
-		metaFoo = {
-			'name' : 'Foo',
-			'uname' : 'foo',
-			'city' : 'Fooland',
-			'country' : 'FooEmpire',
-			'latitude' : 10.12312,
-			'longitude' : 1.12312,
-			'company' : 'FooCompany'
-		}
+        metaFoo = {
+            'name' : 'Foo',
+            'uname' : 'foo',
+            'city' : 'Fooland',
+            'country' : 'FooEmpire',
+            'latitude' : 10.12312,
+            'longitude' : 1.12312,
+            'company' : 'FooCompany'
+        }
 
-		metaBar = {
-			'name' : 'Bar',
-			'uname' : 'bar',
-			'city' : 'Barland',
-			'company' : 'BarCompany',
-			'population' : 100000
-		}
+        metaBar = {
+            'name' : 'Bar',
+            'uname' : 'bar',
+            'city' : 'Barland',
+            'company' : 'BarCompany',
+            'population' : 100000
+        }
 
-		class FooSystem(BikeShareSystem):
-			tag = 'foo'
-			meta = dict(BikeShareSystem.meta, **metaFoo)
+        class FooSystem(BikeShareSystem):
+            tag = 'foo'
+            meta = dict(BikeShareSystem.meta, **metaFoo)
 
-		class BarSystem(BikeShareSystem):
-			tag = 'bar'
-			meta = dict(BikeShareSystem.meta, **metaBar)
+        class BarSystem(BikeShareSystem):
+            tag = 'bar'
+            meta = dict(BikeShareSystem.meta, **metaBar)
 
-		self.battery = []
-		self.battery.append({
-						'tag': 'foo',
-						'meta': metaFoo,
-						'instance': FooSystem()
-					})
-		self.battery.append({
-						'tag': 'bar',
-						'meta': metaBar,
-						'instance': BarSystem()
-					})
+        self.battery = []
+        self.battery.append({
+                        'tag': 'foo',
+                        'meta': metaFoo,
+                        'instance': FooSystem()
+                    })
+        self.battery.append({
+                        'tag': 'bar',
+                        'meta': metaBar,
+                        'instance': BarSystem()
+                    })
 
-	def test_instantiation(self):
-		# make sure instantiation parameters are correctly stored
+    def test_instantiation(self):
+        # make sure instantiation parameters are correctly stored
 
-		for unit in self.battery:
-			
-			self.assertEqual(unit.get('tag'), unit.get('instance').tag)
+        for unit in self.battery:
+            
+            self.assertEqual(unit.get('tag'), unit.get('instance').tag)
 
-			# Check that all metainfo set on instantiation
-			# appears on the instance
-			for meta in unit.get('meta'):
-				self.assertIn(meta,unit.get('instance').meta)
-				self.assertEqual(
-						unit.get('meta').get(meta), 
-						unit.get('instance').meta.get(meta)
-					)
+            # Check that all metainfo set on instantiation
+            # appears on the instance
+            for meta in unit.get('meta'):
+                self.assertIn(meta,unit.get('instance').meta)
+                self.assertEqual(
+                        unit.get('meta').get(meta), 
+                        unit.get('instance').meta.get(meta)
+                    )
 
-			# Check that all metainfo not set on instantiation
-			# appears on the instance as None
-			for meta in BikeShareSystem.meta:
-				if meta not in unit.get('meta'):
-					self.assertIn(meta, unit.get('instance').meta)
-					self.assertEqual(
-						None, 
-						unit.get('instance').meta.get(meta)
-					)
+            # Check that all metainfo not set on instantiation
+            # appears on the instance as None
+            for meta in BikeShareSystem.meta:
+                if meta not in unit.get('meta'):
+                    self.assertIn(meta, unit.get('instance').meta)
+                    self.assertEqual(
+                        None, 
+                        unit.get('instance').meta.get(meta)
+                    )
 
 if __name__ == '__main__':
     unittest.main()

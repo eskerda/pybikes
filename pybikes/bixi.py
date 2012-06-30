@@ -22,17 +22,22 @@ from xml.dom import minidom
 from base import BikeShareSystem, BikeShareStation
 import utils
 
-__all__ = ['BixiSystem', 'BixiStation', 'Bixi', 'CapitalBikeShare']
+__all__ = ['BixiSystem', 'BixiStation']
 
 class BixiSystem(BikeShareSystem):
 
-    feed_url = "https://{system}.bixi.com/data/bikeStations.xml"
+    feed_url = "{root_url}bikeStations.xml"
     sync = True
 
-    meta = dict(BikeShareSystem.meta, **{
-                                            'system': 'Bixi',
-                                            'company': 'PBSC'
-                                        })
+    meta = dict(BikeShareSystem.meta, **{ 'system': 'Bixi',
+                                          'company': 'PBSC' })
+
+    def __init__(self, tag, root_url, meta):
+        super( BixiSystem, self).__init__()
+        self.tag = tag
+        self.feed_url = BixiSystem.feed_url.format(root_url = root_url)
+        self.meta = dict(BixiSystem.meta,
+            **meta)
 
     def update(self):
 
@@ -90,31 +95,3 @@ class BixiStation(BikeShareStation):
             'removalDate': utils.getTextTag(xml_data, 'removalDate'),
             'latestUpdateTime': utils.getTextTag(xml_data, 'latestUpdateTime'),
         }
-
-class Bixi(BixiSystem):
-
-    feed_url = BixiSystem.feed_url.format(system = 'montreal')
-
-    meta = dict(BixiSystem.meta, **{
-            'name': 'Bixi',
-            'city': 'Montreal',
-            'country': 'CAN',
-            'latitude': 45.5086699,
-            'longitude': -73.5539925 
-            })
-
-    tag = 'bixi'
-
-class CapitalBikeShare(BixiSystem):
-
-    feed_url = 'http://capitalbikeshare.com/data/stations/bikeStations.xml'
-
-    meta = dict(BixiSystem.meta, **{
-        'name': 'Capital BikeShare',
-        'city': 'Washington, DC - Arlington, VA',
-        'country': 'USA',
-        'latitude': 38.8951118,
-        'longitude': -77.0363658
-        })
-
-    tag = 'cabi'

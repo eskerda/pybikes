@@ -1,0 +1,60 @@
+{
+    "system": "bcycle",
+    "instances": [
+        {
+            "tag": "boulder",
+            "system": "boulder",
+            "meta": {
+                "name": "Boulder B-Cycle",
+                "city": "Boulder, CO",
+                "country": "USA",
+                "latitude": 40.0149856,
+                "longitude": -105.2705455
+            }
+        }
+        ,{
+            "tag": "chicago",
+            "system": "chicago",
+            "meta": {
+                "name": "Chicago Bikes",
+                "city": "Chicago, IL",
+                "country": "USA",
+                "latitude": 41.8781136,
+                "longitude": -87.6297981
+            }
+        }
+        ,{
+            "tag": "broward",
+            "system": "broward",
+            "meta": {
+                "name": "Broward B-Cycle",
+                "city": "Broward, FL",
+                "country": "USA",
+                "latitude": 26.190096,
+                "longitude": -80.365864
+            }
+        }
+        ,{
+            "tag": "denver",
+            "system": "denver",
+            "meta": {
+                "name": "Denver Bikes",
+                "city": "Denver, CO",
+                "country": "USA",
+                "latitude": 39.737567,
+                "longitude": -104.984717
+            }
+        }
+        ,{
+            "tag": "des_moines",
+            "system": "desmoines",
+            "meta": {
+                "name": "Des Moines B-cycle",
+                "city": "Des Moines, IA",
+                "country": "USA",
+                "latitude": 41.6005448,
+                "longitude": -93.6091063
+            }
+        }
+    ]
+}

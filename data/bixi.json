@@ -1,0 +1,27 @@
+{
+    "system": "bixi",
+    "instances": [
+        {
+            "tag": "montreal",
+            "root_url": "https://montreal.bixi.com/data/",
+            "meta": {
+                "name": "Bixi",
+                "city": "Montreal",
+                "country": "CAN",
+                "latitude": 45.5086699,
+                "longitude": -73.5539925
+            }
+        }
+        ,{
+            "tag": "cabi",
+            "root_url": "http://capitalbikeshare.com/data/stations/",
+            "meta": {
+                "name": "Capital BikeShare",
+                "city": "Washington, DC - Arlington, VA",
+                "country": "USA",
+                "latitude": 38.8951118,
+                "longitude": -77.0363658
+            }
+        }
+    ]
+}
