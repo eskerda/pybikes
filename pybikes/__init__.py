@@ -27,13 +27,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 
+import json
+
 from base import *
 from bixi import *
 from bcycle import *
 
 __all__ = base.__all__ + bixi.__all__ + bcycle.__all__
 
-__systems__ = sorted([cName 
-    for cName in __all__ 
-        if  issubclass(eval(cName), BikeShareSystem) and
-            eval(cName).tag is not None ])
+def getBikeShareSystem(tag, data_file):
+    f = open(data_file)
+    data = json.loads(f.read())
+    meta_data = filter(lambda system: system.get('tag') == tag, data.get('instances'))[0]
+    return eval(data.get('class'))(** meta_data)
