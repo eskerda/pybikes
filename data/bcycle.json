@@ -1,5 +1,6 @@
 {
     "system": "bcycle",
+    "class": "BCycleSystem",
     "instances": [
         {
             "tag": "boulder",

@@ -1,5 +1,6 @@
 {
     "system": "bixi",
+    "class": "BixiSystem",
     "instances": [
         {
             "tag": "montreal",
