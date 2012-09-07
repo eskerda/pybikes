@@ -41,7 +41,7 @@ class BixiSystem(BikeShareSystem):
 
     def update(self):
 
-        xml_data = self.scrapper.request(self.feed_url).read()
+        xml_data = self._scrapper.request(self.feed_url).read()
         dom = minidom.parseString(xml_data)
         markers = dom.getElementsByTagName('station')
         stations = []
