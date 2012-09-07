@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from datetime import datetime
 import json
+import hashlib
 
 from utils import PyBikesScrapper
 
@@ -26,17 +27,15 @@ __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
 __license__ = "AGPL"
 
-__all__ = ['BikeShareStationEncoder', 'BikeShareStation', 'BikeShareSystem' ]
+__all__ = ['GeneralPurposeEncoder', 'BikeShareStation', 'BikeShareSystem' ]
 
-
-class BikeShareStationEncoder(json.JSONEncoder):
+class GeneralPurposeEncoder(json.JSONEncoder):
 
     def default(self, obj):
-
         if isinstance(obj, datetime):
             return obj.isoformat()
         else:
-            return obj.__dict__
+            return {k: v for k, v in obj.__dict__.iteritems() if not k.startswith('_')}
 
 class BikeShareStation(object):
     """A base class to name a bike sharing Station. It can be:
@@ -67,9 +66,20 @@ class BikeShareStation(object):
             set of default options
         """
         if 'cls' not in args:   # Set defaults here
-            args['cls'] = BikeShareStationEncoder
+            args['cls'] = GeneralPurposeEncoder
 
         return json.dumps(self, **args)
+    
+    def get_hash(self):
+        """ Return a unique hash representing this station, usually with
+            latitude and longitude, since it's the only globally ready and
+            reliable information about an station that defines the 
+            difference between one and another
+        """
+        str_rep = "%d,%d" % (int(self.latitude * 1E6), int(self.longitude * 1E6))
+        h = hashlib.md5()
+        h.update(str_rep)
+        return h.hexdigest()
 
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
@@ -99,7 +109,7 @@ class BikeShareSystem(object):
 
     def __init__(self):
         self.stations = []
-        self.scrapper = PyBikesScrapper()
+        self._scrapper = PyBikesScrapper()
 
     def __str__(self):
 
@@ -119,4 +129,12 @@ Company: {company}
                 company = self.meta.get('company'),
                 uname = self.tag
             )
+    def to_json(self, **args):
+        """ Dump a json string using the BikeShareSystemEncoder with a
+            set of default options
+        """
+        if 'cls' not in args:   # Set defaults here
+            args['cls'] = GeneralPurposeEncoder
+
+        return json.dumps(self, **args)
 
