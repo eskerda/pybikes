@@ -2,12 +2,12 @@
 import smartbike
 from smartbike import SmartBikeCCStation
 
-PREFIX = "bysykler"
+PREFIX = "bysykkel"
 URL = "http://smartbikeportal.clearchannel.no"
 
 def get_all(prefix = ""):
-  return smartbike.get_all(BysyklerStation, prefix)
+  return smartbike.get_all(BysykkelStation, prefix)
 
-class BysyklerStation(SmartBikeCCStation):
+class BysykkelStation(SmartBikeCCStation):
   prefix = PREFIX
   url = URL
