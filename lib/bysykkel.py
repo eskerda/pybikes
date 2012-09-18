@@ -6,8 +6,8 @@ PREFIX = "bysykkel"
 URL = "http://smartbikeportal.clearchannel.no"
 
 def get_all(prefix = ""):
-  return smartbike.get_all(BysykkelStation, prefix)
+  return smartbike.get_all(BysyklerStation, prefix)
 
-class BysykkelStation(SmartBikeCCStation):
+class BysyklerStation(SmartBikeCCStation):
   prefix = PREFIX
   url = URL
