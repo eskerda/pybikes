@@ -14,17 +14,6 @@
             }
         }
         ,{
-            "tag": "chicago",
-            "system": "chicago",
-            "meta": {
-                "name": "Chicago Bikes",
-                "city": "Chicago, IL",
-                "country": "USA",
-                "latitude": 41.8781136,
-                "longitude": -87.6297981
-            }
-        }
-        ,{
             "tag": "broward",
             "system": "broward",
             "meta": {
