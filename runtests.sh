@@ -1,2 +1,2 @@
 export PYTHONPATH=$PYTHONPATH:.
-./tests/unittest_pybikes.py $@
+pyvenv/bin/python tests/unittest_pybikes.py $@

@@ -29,14 +29,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import json
 
-from base import *
-from bixi import *
-from bcycle import *
+from .base import *
+from .bixi import *
+from .bcycle import *
 
 __all__ = base.__all__ + bixi.__all__ + bcycle.__all__
 
 def getBikeShareSystem(tag, data_file):
     f = open(data_file)
     data = json.loads(f.read())
-    meta_data = filter(lambda system: system.get('tag') == tag, data.get('instances'))[0]
+    meta_data = list(filter(lambda system: system['tag'] == tag, data['instances']))[0]
     return eval(data.get('class'))(** meta_data)

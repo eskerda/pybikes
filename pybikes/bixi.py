@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from xml.dom import minidom
 
-from base import BikeShareSystem, BikeShareStation
-import utils
+from .base import BikeShareSystem, BikeShareStation
+from . import utils
 
 __all__ = ['BixiSystem', 'BixiStation']
 
@@ -74,8 +74,8 @@ class BixiStation(BikeShareStation):
         </station>
         """
 
-        terminalName = unicode(utils.getTextTag(xml_data, 'terminalName'))
-        name = unicode(utils.getTextTag(xml_data, 'name'))
+        terminalName = str(utils.getTextTag(xml_data, 'terminalName'))
+        name = str(utils.getTextTag(xml_data, 'name'))
         self.name = "%s - %s" % (terminalName, name)
 
         self.latitude = float(utils.getTextTag(xml_data, 'lat'))

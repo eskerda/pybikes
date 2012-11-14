@@ -20,7 +20,7 @@ from datetime import datetime
 import json
 import hashlib
 
-from utils import PyBikesScrapper
+from .utils import PyBikesScrapper
 
 __author__ = "eskerda (eskerda@gmail.com)"
 __version__ = "2.0"
@@ -35,7 +35,7 @@ class GeneralPurposeEncoder(json.JSONEncoder):
         if isinstance(obj, datetime):
             return obj.isoformat()
         else:
-            return {k: v for k, v in obj.__dict__.iteritems() if not k.startswith('_')}
+            return {k: v for k, v in obj.__dict__.items() if not k.startswith('_')}
 
 class BikeShareStation(object):
     """A base class to name a bike sharing Station. It can be:
@@ -54,6 +54,14 @@ class BikeShareStation(object):
         self.bikes = None
         self.free = None
         self.timestamp = timestamp     # Store timestamp in UTC!
+        self.extra = {}
+    def __str__(self):
+        return """--- {0} ---
+bikes: {1}
+free: {2}
+latlng: {3},{4}
+extra: {5}""".format(self.name, self.bikes, self.free, self.latitude, 
+    self.longitude,self.extra)
 
     def update(self):
         """ Base update method for BikeShareStation, any subclass can

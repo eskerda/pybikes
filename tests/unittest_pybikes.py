@@ -1,4 +1,3 @@
-#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 """
 Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
@@ -36,14 +35,15 @@ class TestSystems(unittest.TestCase):
     def _test_file(self, file, cls):
         f = open(file)
         data = json.loads(f.read())
+        f.close()
         for system in data.get('instances'):
             sys = cls(** system)
-            print sys
+            print(sys)
             self._test_update(sys)
 
     def _test_update(self, instance):
             instance.update()
-            self.assertTrue(len(instance.stations) > 0)
+            self.assertTrue(len(instance.stations)>0)
 
 class TestBikeShareSystemInstance(unittest.TestCase):
     

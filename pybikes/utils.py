@@ -18,8 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import re
-import urllib2
-import htmlentitydefs
+import urllib.request, urllib.error, urllib.parse
+import html.entities
 
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
@@ -47,7 +47,7 @@ class PyBikesScrapper(object):
 
     def __init__(self):
         
-        self.proxy_handler = urllib2.BaseHandler
+        self.proxy_handler = urllib.request.BaseHandler
         self.opener = None
 
     def setUserAgent(self, user_agent):
@@ -57,9 +57,9 @@ class PyBikesScrapper(object):
     def request(self, url):
         
         if self.opener is None:
-            self.opener = urllib2.build_opener(self.proxy_handler)
+            self.opener = urllib.request.build_opener(self.proxy_handler)
 
-        req = urllib2.Request(url, headers = self.headers)
+        req = urllib.request.Request(url, headers = self.headers)
         response = self.opener.open(req)
         headers = response.info()
         if 'set-cookie' in headers:
@@ -76,4 +76,4 @@ class PyBikesScrapper(object):
 
         self.proxy_handler = proxy_handler
         if self.opener is not None:
-            self.opener = urllib2.build_opener(proxy_handler)
+            self.opener = urllib.request.build_opener(proxy_handler)

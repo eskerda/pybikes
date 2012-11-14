@@ -19,15 +19,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import re
 
-from BeautifulSoup import BeautifulSoup
-
-from base import BikeShareSystem, BikeShareStation
-import utils
+from pyquery import PyQuery as pq
+from .base import BikeShareSystem, BikeShareStation
+from . import utils
 
 __all__ = ['BCycleSystem', 'BCycleStation']
 
-LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
-DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
+LAT_LNG_RGX = b"var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
+DATA_RGX = b"var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
 
 class BCycleError(Exception):
     def __init__(self, msg):
@@ -71,7 +70,7 @@ class BCycleSystem(BikeShareSystem):
             station = BCycleStation(index)
             station.latitude = float(geopoints[index][0])
             station.longitude = float(geopoints[index][1])
-            station.from_html(fuzzle)
+            station.from_html(fuzzle.decode('utf-8'))
 
             self.stations.append(station)
 
@@ -88,16 +87,24 @@ class BCycleStation(BikeShareStation):
                     1200 S Lakeshore Drive<br />
                     Chicago, IL 60605
                 </div>
-                <div class='avail'>Bikes available: <strong>0</strong><br />Docks available: <strong>21</strong></div><br/>
+                <div class='avail'>
+                    Bikes available: <strong>0</strong><br />
+                    Docks available: <strong>21</strong>
+                </div>
+                <br/>
                 ", icon, back);
             Now, do something about it
         """
 
-        soup = BeautifulSoup(fuzzle)
-        self.name = str(soup.contents[1].contents[0].contents[0])
-        self.bikes = int(soup.contents[2].contents[1].contents[0])
-        self.free = int(soup.contents[2].contents[4].contents[0])
+        d = pq(fuzzle)('div')
+        location = d.find('.location').html().split('<br/>')
+        availability = d.find('.avail strong')
 
-        self.extra = {'address' : "%s - %s" % (
-                        str(soup.contents[1].contents[2]),
-                        str(soup.contents[1].contents[4]))}
+        self.name = pq(location[0]).html()
+        self.bikes = int(availability.eq(0).text())
+        self.free = int(availability.eq(1).text())
+        
+        self.extra = {
+            'address' : '{0} - {1}'.format(location[1], location[2])
+        }
+        return self
