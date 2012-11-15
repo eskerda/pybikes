@@ -22,12 +22,12 @@ class PyBikesScrapper(object):
 
         self.headers['User-Agent'] = user_agent
 
-    def request(self, url):
+    def request(self, url, data = None):
         
         if self.opener is None:
             self.opener = urllib.request.build_opener(self.proxy_handler)
 
-        req = urllib.request.Request(url, headers = self.headers)
+        req = urllib.request.Request(url, headers = self.headers, data = data)
         response = self.opener.open(req)
         headers = response.info()
         if 'set-cookie' in headers:
