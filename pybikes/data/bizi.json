@@ -1,18 +1,19 @@
 {
     "system": "bizi",
-    "class": "SmartBiziSystem",
+    "class": "Bizi",
     "instances": [
         {
             "tag": "ecobici",
             "root_url": "https://www.ecobici.df.gob.mx",
             "list_url": "/localizaciones/localizaciones_body.php",
             "station_url": "/CallWebService/StationBussinesStatus.php",
+            "v": 1,
             "meta": {
-                "name": "Ecobici",
-                "city": "Mexico",
-                "country": "SHIT",
-                "latitude": 40.0149856,
-                "longitude": -105.2705455
+                "name": "EcoBici",
+                "city": "México, D.F.",
+                "country": "MEX",
+                "latitude": 19.4326077,
+                "longitude": -99.13320799999997
             }
         },
         {
