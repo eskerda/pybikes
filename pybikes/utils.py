@@ -2,27 +2,10 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import re
 import urllib.request, urllib.error, urllib.parse
-import html.entities
 
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
-  
-
-def getText(nodelist):
-    rc = []
-    for node in nodelist:
-        if node.nodeType == node.TEXT_NODE:
-            rc.append(node.data)
-    r = ''.join(rc)
-    if r == '':
-        return None
-    else:
-        return r
-
-def getTextTag(element, tag, index = 0):
-    return getText(element.getElementsByTagName(tag)[index].childNodes)
 
 class PyBikesScrapper(object):
     
