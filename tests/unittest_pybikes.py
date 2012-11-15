@@ -17,6 +17,9 @@ class TestSystems(unittest.TestCase):
     def test_bcycle(self):
         self._test_systems('bcycle')
 
+    def test_bizi(self):
+        self._test_systems('bizi')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         for instance in data['instances']:
@@ -25,6 +28,9 @@ class TestSystems(unittest.TestCase):
     def _test_system(self, system, tag):
         sys = pybikes.getBikeShareSystem(system, tag)
         self._test_update(sys)
+        if not sys.sync:
+            for i in range(5):
+                print(sys.stations[i].update(sys))
 
     def _test_update(self, instance):
             instance.update()

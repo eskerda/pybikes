@@ -1,0 +1,31 @@
+{
+    "system": "bizi",
+    "class": "SmartBiziSystem",
+    "instances": [
+        {
+            "tag": "ecobici",
+            "root_url": "https://www.ecobici.df.gob.mx",
+            "list_url": "/localizaciones/localizaciones_body.php",
+            "station_url": "/CallWebService/StationBussinesStatus.php",
+            "meta": {
+                "name": "Ecobici",
+                "city": "Mexico",
+                "country": "SHIT",
+                "latitude": 40.0149856,
+                "longitude": -105.2705455
+            }
+        },
+        {
+            "tag": "bizi",
+            "root_url": "https://www.bizizaragoza.com",
+            "list_url": "/localizaciones/station_map.php",
+            "meta": {
+                "name": "BiZi",
+                "city": "Zaragoza",
+                "country": "SPA",
+                "latitude": 40.0149856,
+                "longitude": -105.2705455
+            }
+        }
+    ]
+}

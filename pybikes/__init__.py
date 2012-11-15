@@ -22,8 +22,12 @@ from pkg_resources import resource_string
 from .base import *
 from .bixi import *
 from .bcycle import *
+from .smartbike import *
 
-__all__ = base.__all__ + bixi.__all__ + bcycle.__all__
+__all__ = base.__all__ +\
+          bixi.__all__ +\
+          bcycle.__all__ +\
+          smartbike.__all__
 
 class BikeShareSystemNotFound(Exception):
     pass
