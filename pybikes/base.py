@@ -123,23 +123,8 @@ class BikeShareSystem(object):
         self.meta = dict(basemeta, **meta)
 
     def __str__(self):
-
-        base = """--- {name} ---
-Uname: {uname}
-City: {city}
-Country: {country}
-LatLng: {latitude} / {longitude}
-Company: {company}
-"""
-        return base.format(
-                name = self.meta.get('name'),
-                city = self.meta.get('city'),
-                country = self.meta.get('country'),
-                latitude = self.meta.get('latitude'),
-                longitude = self.meta.get('longitude'),
-                company = self.meta.get('company'),
-                uname = self.tag
-            )
+        return "tag: %s\nmeta: %s" % (self.tag, str(self.meta))
+        
     def to_json(self, **args):
         """ Dump a json string using the BikeShareSystemEncoder with a
             set of default options
