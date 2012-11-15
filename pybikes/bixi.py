@@ -30,15 +30,14 @@ class BixiSystem(BikeShareSystem):
     feed_url = "{root_url}bikeStations.xml"
     sync = True
 
-    meta = dict(BikeShareSystem.meta, **{ 'system': 'Bixi',
-                                          'company': 'PBSC' })
+    meta = { 
+        'system': 'Bixi',
+        'company': 'PBSC' 
+    }
 
     def __init__(self, tag, root_url, meta):
-        super( BixiSystem, self).__init__()
-        self.tag = tag
+        super( BixiSystem, self).__init__(tag, meta)
         self.feed_url = BixiSystem.feed_url.format(root_url = root_url)
-        self.meta = dict(BixiSystem.meta,
-            **meta)
 
     def update(self):
 

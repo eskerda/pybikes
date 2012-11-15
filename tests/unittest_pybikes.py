@@ -63,28 +63,34 @@ class TestBikeShareSystemInstance(unittest.TestCase):
             'name' : 'Bar',
             'uname' : 'bar',
             'city' : 'Barland',
-            'company' : 'BarCompany',
             'population' : 100000
         }
 
         class FooSystem(BikeShareSystem):
-            tag = 'foo'
-            meta = dict(BikeShareSystem.meta, **metaFoo)
+            pass
 
         class BarSystem(BikeShareSystem):
-            tag = 'bar'
-            meta = dict(BikeShareSystem.meta, **metaBar)
+            # Tests inheritance in meta-data:
+            # - System has own meta-data
+            # - Instance has also, meta-data
+            # -> Hence, the result should have:
+            #     1) Mandatory metadata of BikeShareSystem
+            #     2) Base metadata of the system (BarSystem)
+            #     3) Metadata passed on instantiation (metaBar)
+            meta = {
+                'company' : 'BarCompany'
+            }
 
         self.battery = []
         self.battery.append({
                         'tag': 'foo',
                         'meta': metaFoo,
-                        'instance': FooSystem()
+                        'instance': FooSystem('foo', metaFoo)
                     })
         self.battery.append({
                         'tag': 'bar',
-                        'meta': metaBar,
-                        'instance': BarSystem()
+                        'meta': dict(metaBar,**BarSystem.meta),
+                        'instance': BarSystem('bar',metaBar)
                     })
 
     def test_instantiation(self):

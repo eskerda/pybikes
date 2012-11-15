@@ -115,9 +115,12 @@ class BikeShareSystem(object):
 
     sync = True
 
-    def __init__(self):
+    def __init__(self, tag, meta):
         self.stations = []
         self._scrapper = PyBikesScrapper()
+        self.tag = tag
+        basemeta = dict(BikeShareSystem.meta, **self.meta)
+        self.meta = dict(basemeta, **meta)
 
     def __str__(self):
 

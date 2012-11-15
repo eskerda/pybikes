@@ -42,21 +42,19 @@ class BCycleSystem(BikeShareSystem):
     feed_url = "http://{system}.bcycle.com"
     sync = True
 
-    meta = dict(BikeShareSystem.meta, 
-      **{ 'system': 'B-cycle',
-          'company': [ 'Trek Bicycle Corporation'
+    meta = { 
+        'system': 'B-cycle',
+        'company': [ 'Trek Bicycle Corporation'
                      ,'Humana'
                      ,'Crispin Porter + Bogusky' ]
-        })
+    }
 
     def __init__(self, tag, meta, system = None, feed_url = None):
-        super( BCycleSystem, self).__init__()
-        self.tag = tag
+        super( BCycleSystem, self).__init__(tag, meta)
         if feed_url is not None:
             self.feed_url = feed_url
         else:
             self.feed_url = BCycleSystem.feed_url.format(system =  system)
-        self.meta = dict(BCycleSystem.meta, **meta)
 
     def update(self):
 
