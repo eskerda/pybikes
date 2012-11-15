@@ -29,14 +29,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import json
 
+from pkg_resources import resource_string
+
 from .base import *
 from .bixi import *
 from .bcycle import *
 
 __all__ = base.__all__ + bixi.__all__ + bcycle.__all__
 
-def getBikeShareSystem(tag, data_file):
-    f = open(data_file)
-    data = json.loads(f.read())
-    meta_data = list(filter(lambda system: system['tag'] == tag, data['instances']))[0]
-    return eval(data.get('class'))(** meta_data)
+class BikeShareSystemNotFound(Exception):
+    pass
+
+def getDataFile(system):
+    try:
+        return json.loads(
+            resource_string(__name__, "data/%s.json" % system).decode('utf-8')
+        )
+    except FileNotFoundError:
+        raise FileNotFoundError('File data/%s.json not found' % system)
+
+def getBikeShareSystem(system, tag):
+    data = getDataFile(system)
+    meta_data = [sys for sys in data['instances'] if sys['tag'] == tag]
+    
+    if len(meta_data) == 0:
+        raise BikeShareSystemNotFound(
+            'System %s not found in data/%s.json' % (tag, system))
+    
+    return eval(data.get('class'))(** list(meta_data)[0])

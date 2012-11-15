@@ -18,28 +18,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import unittest
+from pkg_resources import resource_string
 import json
 
 import pybikes
-
 from pybikes import *
 
 class TestSystems(unittest.TestCase):
 
     def test_bixi(self):
-        self._test_file('data/bixi.json', BixiSystem)
+        self._test_systems('bixi')
 
     def test_bcycle(self):
-        self._test_file('data/bcycle.json', BCycleSystem)
+        self._test_systems('bcycle')
 
-    def _test_file(self, file, cls):
-        f = open(file)
-        data = json.loads(f.read())
-        f.close()
-        for system in data.get('instances'):
-            sys = cls(** system)
-            print(sys)
-            self._test_update(sys)
+    def _test_systems(self, system):
+        data = pybikes.getDataFile(system)
+        for instance in data['instances']:
+            self._test_system(system, instance['tag'])
+
+    def _test_system(self, system, tag):
+        sys = pybikes.getBikeShareSystem(system, tag)
+        self._test_update(sys)
 
     def _test_update(self, instance):
             instance.update()
