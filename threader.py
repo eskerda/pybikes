@@ -16,6 +16,7 @@ import velib
 import velo
 import veloh
 import villo
+import vlille
 import bicing
 import cristolib
 import cyclic

@@ -23,3 +23,4 @@ $DIRECTORY/threader.py system cergy all 1 $NOT_UPDATE &
 $DIRECTORY/threader.py system velam all 1 $NOT_UPDATE &
 $DIRECTORY/threader.py system velov all 1 $NOT_UPDATE &
 $DIRECTORY/threader.py system bicikelj all 1 $NOT_UPDATE &
+$DIRECTORY/threader.py system vlille all 1 $NOT_UPDATE &
