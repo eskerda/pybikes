@@ -76,8 +76,10 @@ class BiziStation(BikeShareStation):
                 'addressnew': self.extra['token']
             }).encode('utf-8')).read().decode('ISO-8859-1')
         dom = pq(raw)
-        self.name = dom('div').eq(1).text().replace('<br>','').strip()
         availability = dom('div').eq(2).text().split(':')
+
+        self.name = dom('div').eq(1).text().replace('<br>','').strip()
         self.bikes = int(availability[1].lstrip())
         self.free = int(availability[2].lstrip())
+        
         return self
