@@ -2,7 +2,6 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-from xml.dom import minidom
 from pyquery import PyQuery as pq
 
 from .base import BikeShareSystem, BikeShareStation
