@@ -7,9 +7,14 @@ from setuptools import setup, find_packages
 setup(
     name = "PyBikes",
     version = "0.2dev",
-    packages = "pybikes",
-    install_requires = ['pyquery'],
+    author = "Lluis Esquerda",
+    author_email = "eskerda@gmail.com",
+    packages = ["pybikes", "pybikes.test"],
     package_data = {
         'pybikes': ['data/*.json'],
-    }
+    },
+    license = "LICENSE.txt",
+    description = "A python library for scrapping bike sharing data",
+    long_description = open('README.txt').read(),
+    install_requires = ['pyquery'],
 )
