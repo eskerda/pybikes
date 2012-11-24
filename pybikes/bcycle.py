@@ -43,7 +43,7 @@ class BCycleSystem(BikeShareSystem):
 
     def update(self):
 
-        html_data = self._scrapper.request(self.feed_url).text
+        html_data = self._scrapper.request(self.feed_url)
 
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)

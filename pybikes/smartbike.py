@@ -44,7 +44,7 @@ class Bizi(BaseSystem):
     def update(self):
         raw = self._scrapper.request(
             "{0}{1}".format(self.root_url, self.list_url)
-        ).text
+        )
         geopoints = re.findall(LAT_LNG_RGX, raw)
         if (self.v == 1):
             ids_addrs = re.findall(ID_ADD_RGX_V, raw)
@@ -74,7 +74,7 @@ class BiziStation(BikeShareStation):
                     'idStation': self.extra['uid'],
                     'addressnew': self.extra['token']    
                 }
-        ).text
+        )
         dom = pq(raw)
         availability = dom('div').eq(2).text().split(':')
         name = dom('div').eq(1).text().replace('<br>','').strip()

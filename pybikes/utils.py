@@ -17,6 +17,8 @@ class PyBikesScrapper(object):
 
     proxy_enabled = False
 
+    last_request = None
+
     def __init__(self):
 
         self.session = requests.session( headers = self.headers )
@@ -28,7 +30,7 @@ class PyBikesScrapper(object):
 
     def request(self, url, method = 'GET', params = None, data = None):
 
-        return self.session.request(
+        response = self.session.request(
             method = method,
             url = url,
             params = params,
@@ -37,6 +39,8 @@ class PyBikesScrapper(object):
             headers = self.headers,
             verify = False
         )
+        self.last_request = response
+        return response.text
 
     def clearCookie(self):
         
