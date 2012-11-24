@@ -4,16 +4,15 @@
 
 import re
 from pyquery import PyQuery as pq
-import urllib.parse
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 __all__ = ['SmartBike','Bizi','BiziStation']
 
-LAT_LNG_RGX = b'point \= new GLatLng\((.*?)\,(.*?)\)'
-ID_ADD_RGX = b'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
-ID_ADD_RGX_V = b'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
+LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
+ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
+ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
 
 
 class BaseSystem(BikeShareSystem):
@@ -45,7 +44,7 @@ class Bizi(BaseSystem):
     def update(self):
         raw = self._scrapper.request(
             "{0}{1}".format(self.root_url, self.list_url)
-        ).read()
+        ).text
         geopoints = re.findall(LAT_LNG_RGX, raw)
         if (self.v == 1):
             ids_addrs = re.findall(ID_ADD_RGX_V, raw)
@@ -69,16 +68,17 @@ class Bizi(BaseSystem):
 class BiziStation(BikeShareStation):
     def update(self, parent):
         super(BiziStation, self).update()
-        raw = parent._scrapper.request(
-            "{0}{1}".format(parent.root_url, parent.station_url),
-            urllib.parse.urlencode({
-                'idStation': self.extra['uid'],
-                'addressnew': self.extra['token']
-            }).encode('utf-8')).read().decode('ISO-8859-1')
+        raw = parent._scrapper.request( method="POST",
+                url = "{0}{1}".format(parent.root_url, parent.station_url),
+                data = {
+                    'idStation': self.extra['uid'],
+                    'addressnew': self.extra['token']    
+                }
+        ).text
         dom = pq(raw)
         availability = dom('div').eq(2).text().split(':')
-
-        self.name = dom('div').eq(1).text().replace('<br>','').strip()
+        name = dom('div').eq(1).text().replace('<br>','').strip()
+        self.name = name.encode('utf-8')
         self.bikes = int(availability[1].lstrip())
         self.free = int(availability[2].lstrip())
         

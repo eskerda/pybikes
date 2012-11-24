@@ -25,8 +25,8 @@ class BixiSystem(BikeShareSystem):
 
     def update(self):
 
-        xml_data = self._scrapper.request(self.feed_url).read()
-        dom = pq(xml_data, parser = 'xml')
+        xml_data = self._scrapper.request(self.feed_url).text
+        dom = pq(xml_data.encode('utf-8'), parser = 'xml')
         markers = dom('station')
         stations = []
         

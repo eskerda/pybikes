@@ -10,8 +10,8 @@ from . import utils
 
 __all__ = ['BCycleSystem', 'BCycleStation']
 
-LAT_LNG_RGX = b"var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
-DATA_RGX = b"var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
+LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
+DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
 
 class BCycleError(Exception):
     def __init__(self, msg):
@@ -43,7 +43,7 @@ class BCycleSystem(BikeShareSystem):
 
     def update(self):
 
-        html_data = self._scrapper.request(self.feed_url).read()
+        html_data = self._scrapper.request(self.feed_url).text
 
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)
@@ -53,7 +53,7 @@ class BCycleSystem(BikeShareSystem):
             station = BCycleStation(index)
             station.latitude = float(geopoints[index][0])
             station.longitude = float(geopoints[index][1])
-            station.from_html(fuzzle.decode('utf-8'))
+            station.from_html(fuzzle)
 
             self.stations.append(station)
 
