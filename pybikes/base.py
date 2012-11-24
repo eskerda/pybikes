@@ -72,7 +72,7 @@ extra: {5}""".format(self.name, self.bikes, self.free, self.latitude,
         """
         str_rep = "%d,%d" % (int(self.latitude * 1E6), int(self.longitude * 1E6))
         h = hashlib.md5()
-        h.update(str_rep)
+        h.update(str_rep.encode('utf-8'))
         return h.hexdigest()
 
 class BikeShareSystem(object):

@@ -36,6 +36,46 @@ class TestSystems(unittest.TestCase):
             instance.update()
             self.assertTrue(len(instance.stations)>0)
 
+class TestBikeShareStationInstance(unittest.TestCase):
+
+    def setUp(self):
+        self.battery = []
+
+        stationFoo = BikeShareStation(0)
+        stationFoo.name = 'foo'
+        stationFoo.latitude = 40.0149856
+        stationFoo.longitude = -105.2705455
+        stationFoo.bikes = 10
+        stationFoo.free = 20
+        stationFoo.extra = {
+            'foo': 'fuzz'
+        }
+
+        stationBar = BikeShareStation(1)
+        stationBar.name = 'foo'
+        stationBar.latitude = 19.4326077
+        stationBar.longitude = -99.13320799999997
+        stationBar.bikes = 10
+        stationBar.free = 20
+        stationBar.extra = {
+            'bar': 'baz'
+        }
+
+        self.battery.append({
+            'instance': stationFoo,
+            'hash': 'e1aea428a04db6a77c4a1a091edcfcb6'
+        })
+        self.battery.append({
+            'instance': stationBar,
+            'hash': '065d7bb95e6c9079190334ee0d320c72'
+        })
+    def testHash(self):
+        for unit in self.battery:
+            self.assertEqual(
+                unit['instance'].get_hash(),
+                unit['hash']
+            )
+
 class TestBikeShareSystemInstance(unittest.TestCase):
     
     def setUp(self):
