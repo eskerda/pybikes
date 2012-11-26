@@ -16,8 +16,10 @@ stations = bicing.get_stations() <- Returns Array[BicingStation]
 """
 
 import json
+import glob
+import os
 
-from pkg_resources import resource_string
+from pkg_resources import resource_string, resource_listdir
 
 from .base import *
 from .bixi import *
@@ -32,10 +34,15 @@ __all__ = base.__all__ +\
 class BikeShareSystemNotFound(Exception):
     pass
 
+
+def getDataFiles():
+    return resource_listdir(__name__, 'data')
+
 def getDataFile(system):
+    file_info = os.path.splitext(system)
     try:
         return json.loads(
-            resource_string(__name__, "data/%s.json" % system).decode('utf-8')
+            resource_string(__name__, "data/%s.json" % file_info[0]).decode('utf-8')
         )
     except FileNotFoundError:
         raise FileNotFoundError('File data/%s.json not found' % system)
