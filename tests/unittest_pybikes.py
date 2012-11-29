@@ -30,7 +30,7 @@ class TestSystems(unittest.TestCase):
         self._test_update(sys)
         if not sys.sync:
             for i in range(5):
-                print(sys.stations[i].update(sys))
+                print(sys.stations[i].update())
 
     def _test_update(self, instance):
             instance.update()

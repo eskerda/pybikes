@@ -6,8 +6,6 @@ from datetime import datetime
 import json
 import hashlib
 
-from .utils import PyBikesScrapper
-
 __author__ = "eskerda (eskerda@gmail.com)"
 __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
@@ -103,7 +101,6 @@ class BikeShareSystem(object):
 
     def __init__(self, tag, meta):
         self.stations = []
-        self._scrapper = PyBikesScrapper()
         self.tag = tag
         basemeta = dict(BikeShareSystem.meta, **self.meta)
         self.meta = dict(basemeta, **meta)

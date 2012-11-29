@@ -13,6 +13,8 @@ __all__ = ['BCycleSystem', 'BCycleStation']
 LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
 DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
 
+scrapper = utils.PyBikesScrapper()
+
 class BCycleError(Exception):
     def __init__(self, msg):
             self.msg = msg
@@ -43,7 +45,7 @@ class BCycleSystem(BikeShareSystem):
 
     def update(self):
 
-        html_data = self._scrapper.request(self.feed_url)
+        html_data = scrapper.request(self.feed_url)
 
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)

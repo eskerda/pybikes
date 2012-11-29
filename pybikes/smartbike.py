@@ -14,6 +14,8 @@ LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
 ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
 
+scrapper = utils.PyBikesScrapper()
+
 
 class BaseSystem(BikeShareSystem):
     meta = {
@@ -42,7 +44,7 @@ class Bizi(BaseSystem):
         self.v = v
 
     def update(self):
-        raw = self._scrapper.request(
+        raw = scrapper.request(
             "{0}{1}".format(self.root_url, self.list_url)
         )
         geopoints = re.findall(LAT_LNG_RGX, raw)
@@ -61,15 +63,16 @@ class Bizi(BaseSystem):
                 'uid': uid,
                 'token': ids_addrs[index][1]
             }
+            station.parent = self
             stations.append(station)
         
         self.stations = stations
 
 class BiziStation(BikeShareStation):
-    def update(self, parent):
+    def update(self):
         super(BiziStation, self).update()
-        raw = parent._scrapper.request( method="POST",
-                url = "{0}{1}".format(parent.root_url, parent.station_url),
+        raw = scrapper.request( method="POST",
+                url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),
                 data = {
                     'idStation': self.extra['uid'],
                     'addressnew': self.extra['token']    
@@ -82,4 +85,4 @@ class BiziStation(BikeShareStation):
         self.bikes = int(availability[1].lstrip())
         self.free = int(availability[2].lstrip())
         
-        return self
+        return True
