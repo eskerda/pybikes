@@ -6,7 +6,7 @@ import urllib,urllib2
 
 RE_INFO="RefreshMap\((.*?)\)"
 
-def get_all(spec):
+def get_all(spec, start_range = 0):
     usock = urllib2.urlopen(spec.main_url)
     data = usock.read()
     usock.close()
@@ -18,7 +18,7 @@ def get_all(spec):
     stations = []
 
     for idx in range(len(info[0])):
-        station = spec(idx)
+        station = spec(idx+start_range)
         station.fromData(info[5][idx],info[7][idx],int(float(info[3][idx])*1E6),int(float(info[4][idx])*1E6),int(info[6][idx].count("4")),int(info[6][idx].count("0")))
         stations.append(station)
     return stations
