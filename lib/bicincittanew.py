@@ -20,7 +20,13 @@ def get_all(spec, start_range = 0):
 
     for idx in range(len(info[0])):
         station = spec(idx+start_range)
-        station.fromData(info[5][idx],info[7][idx],int(float(info[3][idx])*1E6),int(float(info[4][idx])*1E6),int(info[6][idx].count("4")),int(info[6][idx].count("0")))
+        name = re.sub('\:*$','',info[5][idx])
+        description = info[7][idx]
+        lat = int(float(info[3][idx])*1E6)
+        lng = int(float(info[4][idx])*1E6)
+        bikes = info[6][idx].count('4')
+        free = info[6][idx].count('0')
+        station.fromData(name, description, lat, lng, bikes, free)
         stations.append(station)
     return stations
 
