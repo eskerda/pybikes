@@ -10,6 +10,7 @@ def get_all(spec, start_range = 0):
     usock = urllib2.urlopen(spec.main_url)
     data = usock.read()
     usock.close()
+    data = unicode(data.decode('iso8859-15'))
 	
     raw = re.findall(RE_INFO, data)
     info = raw[1].split('\',\'')
