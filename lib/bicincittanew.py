@@ -39,7 +39,3 @@ class BicincittaNewStation(Station):
   def update(self):
     return self
 
-  def to_json(self):
-    text =  '{"id":"%s", "name":"%s", "lat":"%s", "lng":"%s", "timestamp":"%s", "bikes":%s, "free":%s, "description":"%s"}' % \
-    (self.idx, self.name, self.lat, self.lng, self.timestamp, self.bikes, self.free, self.description)
-    return unicode(text.decode('iso-8859-15'))
