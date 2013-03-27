@@ -12,8 +12,7 @@ def get_all(spec, start_range = 0):
     usock.close()
 	
     raw = re.findall(RE_INFO, data)
-    raw[1] = raw[1].replace('\\\'', '´')
-    info = re.findall("\'(.*?)\'",raw[1])
+    info = raw[1].split('\',\'')
     for idx,inf in enumerate(info):
       info[idx] = inf.split('|')
     stations = []
