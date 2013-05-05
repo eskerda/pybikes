@@ -9,7 +9,7 @@ from datetime import datetime
 PREFIX = "ecobici"
 URL = "https://www.ecobici.df.gob.mx"
 LIST_URL = "/localizaciones/localizaciones_body.php"
-STATION_URL = "/callwebservice/StationBussinesStatus.php"
+STATION_URL = "/CallWebService/StationBussinesStatus.php"
 
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\"\+\"\&s\_id\_idioma'
