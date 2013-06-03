@@ -39,6 +39,9 @@ class PyBikesScrapper(object):
             headers = self.headers,
             verify = False
         )
+        if 'set-cookie' in response.headers:
+            self.headers['Cookie'] = response.headers['set-cookie']
+            
         self.last_request = response
         return response.text
 
