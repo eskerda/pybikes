@@ -21,7 +21,7 @@ class PyBikesScrapper(object):
 
     def __init__(self):
 
-        self.session = requests.session( headers = self.headers )
+        self.session = requests.session()
 
 
     def setUserAgent(self, user_agent):
