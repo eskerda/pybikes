@@ -1,0 +1,30 @@
+{
+    "system": "cyclocity",
+    "class": "Cyclocity",
+    "instances": [
+        {
+            "tag": "velib",
+            "root_url": "http://www.velib.paris.fr/",
+            "city": "paris",
+            "meta": {
+                "name": "Vélib'",
+                "city": "Paris",
+                "country": "FRA",
+                "latitude": 48.856612,
+                "longitude": 2.352233
+            }
+        },
+        {
+            "tag": "valenbisi",
+            "root_url": "http://www.valenbisi.com/",
+            "city": "valence",
+            "meta": {
+                "name": "Valenbisi",
+                "city": "Valencia",
+                "country": "SPA",
+                "latitude": 39.4699075,
+                "longitude": -0.3762881
+            }
+        }
+    ]
+}
