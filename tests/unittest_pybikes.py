@@ -6,8 +6,11 @@ import unittest
 from pkg_resources import resource_string
 import json
 
+import sys
+
 import pybikes
 from pybikes import *
+from pybikes import utils
 
 class TestSystems(unittest.TestCase):
 
@@ -20,21 +23,68 @@ class TestSystems(unittest.TestCase):
     def test_bizi(self):
         self._test_systems('bizi')
 
+    def test_cyclocity(self):
+        self._test_systems('cyclocity')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         for instance in data['instances']:
             self._test_system(system, instance['tag'])
 
     def _test_system(self, system, tag):
-        sys = pybikes.getBikeShareSystem(system, tag)
-        self._test_update(sys)
-        if not sys.sync:
-            for i in range(5):
-                print(sys.stations[i].update())
+        """ Tests okayness of a system:
+            - Test if system can be updated
+            - Tests okayness of 5 stations on the system
+        """
+        p_sys = pybikes.getBikeShareSystem(system, tag)
+        self._test_update(p_sys)
+        station_string = ""
+        for i in range(5):
+            station_string += unichr(ord(u'▚') + i)
+            sys.stdout.flush()
+            sys.stdout.write('\r[%s] testing %d' % (station_string, i+1))
+            sys.stdout.flush()
+            self._test_station_ok(p_sys, p_sys.stations[i])
+        sys.stdout.flush()
+        sys.stdout.write('\r↑ stations look ok ↑                          \n\n')
+        sys.stdout.flush()
+
+    def _test_station_ok(self, instance, station):
+        """ Tests okayness of a station:
+            - coming from an async system
+                - Station can be updated
+            - Station has its base parameters
+        """
+        if not instance.sync:
+            station.update()
+            self._test_allows_parameter(station)
+
+        self.assertIsNotNone(station.bikes)
+        self.assertIsNotNone(station.free)
+        self.assertIsNotNone(station.latitude)
+        self.assertIsNotNone(station.longitude)
+        self.assertIsNotNone(station.name)
 
     def _test_update(self, instance):
-            instance.update()
-            self.assertTrue(len(instance.stations)>0)
+        """ Tests if this system can be updated
+            we assume that having more than 0 stations
+            means being updateable. Also, test if its update function
+            allows a PyBikesScraper parameter
+        """
+        instance.update()
+        print "%s has %d stations" % (
+            instance.meta['name'], len(instance.stations)
+        )
+        self.assertTrue(len(instance.stations)>0)
+        self._test_allows_parameter(instance)
+
+    def _test_allows_parameter(self, instance):
+        """ Tests if this instance, be it a system or a station, allows a
+            PyBikesScraper parameter for its update method
+        """
+        scraper = utils.PyBikesScraper()
+        instance.update(scraper)
+        self.assertIsNotNone(scraper.last_request)
 
 class TestBikeShareStationInstance(unittest.TestCase):
 
