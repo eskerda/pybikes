@@ -12,7 +12,6 @@ from . import utils
 
 __all__ = ['Cyclocity','CyclocityStation']
 
-scrapper = utils.PyBikesScrapper()
 html_parser = HTMLParser.HTMLParser()
 
 class Cyclocity(BikeShareSystem):
@@ -33,9 +32,9 @@ class Cyclocity(BikeShareSystem):
         self.root_url = root_url
         self.station_url = self.station_url % (city, '%d')
 
-    def update(self):
+    def update(self, scraper = utils.PyBikesScraper()):
         url = "{0}{1}".format(self.root_url, self.list_url)
-        xml_data = scrapper.request(url)
+        xml_data = scraper.request(url)
         dom = pq(xml_data.encode('utf-8'), parser = 'xml')
         markers = dom('marker')
         stations = []
@@ -78,10 +77,10 @@ class CyclocityStation(BikeShareStation):
 
         return self
 
-    def update(self):
+    def update(self, scraper = utils.PyBikesScraper()):
         super(CyclocityStation, self).update()
         station_url = self.parent.station_url % self.extra['uid']
-        status_xml = scrapper.request(self.parent.root_url + station_url)
+        status_xml = scraper.request(self.parent.root_url + station_url)
         status = pq(status_xml.encode('utf-8'), parser = 'xml')
         
         self.bikes = int(status('available').text())

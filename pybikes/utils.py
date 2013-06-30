@@ -7,7 +7,7 @@ import requests
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
 
-class PyBikesScrapper(object):
+class PyBikesScraper(object):
     
     headers = {
         'User-Agent': 'PyBikes'

@@ -14,9 +14,6 @@ LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
 ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
 
-scrapper = utils.PyBikesScrapper()
-
-
 class BaseSystem(BikeShareSystem):
     meta = {
         'system': 'SmartBike',
@@ -43,8 +40,8 @@ class Bizi(BaseSystem):
 
         self.v = v
 
-    def update(self):
-        raw = scrapper.request(
+    def update(self, scraper = utils.PyBikesScraper()):
+        raw = scraper.request(
             "{0}{1}".format(self.root_url, self.list_url)
         )
         geopoints = re.findall(LAT_LNG_RGX, raw)
@@ -69,9 +66,9 @@ class Bizi(BaseSystem):
         self.stations = stations
 
 class BiziStation(BikeShareStation):
-    def update(self):
+    def update(self, scraper = utils.PyBikesScraper()):
         super(BiziStation, self).update()
-        raw = scrapper.request( method="POST",
+        raw = scraper.request( method="POST",
                 url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),
                 data = {
                     'idStation': self.extra['uid'],

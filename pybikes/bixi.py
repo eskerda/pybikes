@@ -9,8 +9,6 @@ from . import utils
 
 __all__ = ['BixiSystem', 'BixiStation']
 
-scrapper = utils.PyBikesScrapper()
-
 class BixiSystem(BikeShareSystem):
 
     feed_url = "{root_url}bikeStations.xml"
@@ -25,9 +23,9 @@ class BixiSystem(BikeShareSystem):
         super( BixiSystem, self).__init__(tag, meta)
         self.feed_url = BixiSystem.feed_url.format(root_url = root_url)
 
-    def update(self):
+    def update(self, scraper = utils.PyBikesScraper()):
 
-        xml_data = scrapper.request(self.feed_url)
+        xml_data = scraper.request(self.feed_url)
         dom = pq(xml_data.encode('utf-8'), parser = 'xml')
         markers = dom('station')
         stations = []
