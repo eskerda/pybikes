@@ -61,7 +61,7 @@ class CyclocityStation(BikeShareStation):
         longitude = float(xml.attrib['lng'])
 
         if (name == ""):
-            name = "%d - %s" % (number, address)
+            name = "%d - %s" % (uid, address)
 
         self.name = html_parser.unescape(name)
         self.latitude = latitude
