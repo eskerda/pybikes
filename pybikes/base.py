@@ -47,7 +47,7 @@ latlng: {3},{4}
 extra: {5}""".format(self.name, self.bikes, self.free, self.latitude, 
     self.longitude,self.extra)
 
-    def update(self):
+    def update(self, scraper = None):
         """ Base update method for BikeShareStation, any subclass can
             override this method, and should/could call it from inside
         """
