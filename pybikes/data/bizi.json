@@ -15,18 +15,6 @@
                 "latitude": 19.4326077,
                 "longitude": -99.13320799999997
             }
-        },
-        {
-            "tag": "bizi",
-            "root_url": "https://www.bizizaragoza.com",
-            "list_url": "/localizaciones/station_map.php",
-            "meta": {
-                "name": "BiZi",
-                "city": "Zaragoza",
-                "country": "SPA",
-                "latitude": 40.0149856,
-                "longitude": -105.2705455
-            }
         }
     ]
 }
