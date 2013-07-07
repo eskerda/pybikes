@@ -9,6 +9,7 @@ from pyquery import PyQuery as pq
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
+from . import hacks
 
 __all__ = ['Cyclocity','CyclocityStation']
 
@@ -31,6 +32,12 @@ class Cyclocity(BikeShareSystem):
         self.city = city
         self.root_url = root_url
         self.station_url = self.station_url % (city, '%d')
+        self.hacks = []
+        
+        if tag in hacks.hack_table:
+            for hack in hacks.hack_table[self.tag]:
+                h = eval('hacks.%s' % hack)()
+                self.hacks.append(h)
 
     def update(self, scraper = utils.PyBikesScraper()):
         url = "{0}{1}".format(self.root_url, self.list_url)
@@ -38,6 +45,9 @@ class Cyclocity(BikeShareSystem):
         dom = pq(xml_data.encode('utf-8'), parser = 'xml')
         markers = dom('marker')
         stations = []
+        if hasattr(self, 'hacks'):
+            for hack in self.hacks:
+                markers = hack.markers(markers)
 
         for index, marker in enumerate(markers):
             station = CyclocityStation(index)
