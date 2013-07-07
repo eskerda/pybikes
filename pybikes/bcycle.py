@@ -41,7 +41,10 @@ class BCycleSystem(BikeShareSystem):
         else:
             self.feed_url = BCycleSystem.feed_url.format(system =  system)
 
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
 
         html_data = scraper.request(self.feed_url)
 

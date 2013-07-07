@@ -23,7 +23,10 @@ class BixiSystem(BikeShareSystem):
         super( BixiSystem, self).__init__(tag, meta)
         self.feed_url = BixiSystem.feed_url.format(root_url = root_url)
 
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
 
         xml_data = scraper.request(self.feed_url)
         dom = pq(xml_data.encode('utf-8'), parser = 'xml')

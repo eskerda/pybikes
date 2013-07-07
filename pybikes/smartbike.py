@@ -40,7 +40,11 @@ class Bizi(BaseSystem):
 
         self.v = v
 
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
         raw = scraper.request(
             "{0}{1}".format(self.root_url, self.list_url)
         )
@@ -66,7 +70,12 @@ class Bizi(BaseSystem):
         self.stations = stations
 
 class BiziStation(BikeShareStation):
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+
         super(BiziStation, self).update()
         raw = scraper.request( method="POST",
                 url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),

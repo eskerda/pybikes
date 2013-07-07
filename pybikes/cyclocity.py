@@ -39,7 +39,11 @@ class Cyclocity(BikeShareSystem):
                 h = eval('hacks.%s' % hack)()
                 self.hacks.append(h)
 
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
         url = "{0}{1}".format(self.root_url, self.list_url)
         xml_data = scraper.request(url)
         dom = pq(xml_data.encode('utf-8'), parser = 'xml')
@@ -87,7 +91,11 @@ class CyclocityStation(BikeShareStation):
 
         return self
 
-    def update(self, scraper = utils.PyBikesScraper()):
+    def update(self, scraper = None):
+
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
         super(CyclocityStation, self).update()
         station_url = self.parent.station_url % self.extra['uid']
         status_xml = scraper.request(self.parent.root_url + station_url)
