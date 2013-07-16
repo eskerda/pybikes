@@ -58,6 +58,8 @@ class TestSystems(unittest.TestCase):
         if not instance.sync:
             station.update()
             self._test_allows_parameter(station)
+        else:
+            self._test_dumb_allows_parameter(station)
 
         self.assertIsNotNone(station.bikes)
         self.assertIsNotNone(station.free)
@@ -85,6 +87,22 @@ class TestSystems(unittest.TestCase):
         scraper = utils.PyBikesScraper()
         instance.update(scraper)
         self.assertIsNotNone(scraper.last_request)
+
+    def _test_dumb_allows_parameter(self, instance):
+        """ Dumber version of the allows parameter test, in this case, we
+            just want to check that calling a synchronous system station
+            update with an scraper does not fail (more clearly, that the
+            parameter is defined in the base class, hence we can always
+            pass the scraper by)
+        """
+        raised = False
+        try:
+            scraper = utils.PyBikesScraper()
+            instance.update(scraper)
+        except Exception:
+            raised = True
+        self.assertFalse(raised, 'Base class does not allow an scraper parameter')
+
 
 class TestBikeShareStationInstance(unittest.TestCase):
 
