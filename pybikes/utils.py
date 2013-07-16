@@ -3,9 +3,15 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import requests
+import urllib, urllib2
+from urlparse import urlparse
 
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
+
+def url_scheme(url):
+    parsed_url = urlparse(url)
+    return parsed_url.scheme
 
 class PyBikesScraper(object):
     
@@ -29,6 +35,17 @@ class PyBikesScraper(object):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method = 'GET', params = None, data = None):
+
+        if self.proxy_enabled and url_scheme(url) == 'https':
+            proxy = urllib2.ProxyHandler(self.proxies)
+            opener = urllib2.build_opener(proxy)
+            response = opener.open(url)
+            data = response.read()
+            if "charset" in response.headers['content-type']:
+                encoding = response.headers['content-type'].split('charset=')[-1]
+                data = unicode(data, encoding)
+            self.last_request = response
+            return data
 
         response = self.session.request(
             method = method,
