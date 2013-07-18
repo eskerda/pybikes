@@ -39,7 +39,11 @@ class TestSystems(unittest.TestCase):
         p_sys = pybikes.getBikeShareSystem(system, tag)
         self._test_update(p_sys)
         station_string = ""
-        for i in range(5):
+        if len(p_sys.stations) < 5:
+            t_range = len(p_sys.stations)
+        else:
+            t_range = 5
+        for i in range(t_range):
             station_string += unichr(ord(u'▚') + i)
             sys.stdout.flush()
             sys.stdout.write('\r[%s] testing %d' % (station_string, i+1))
