@@ -26,12 +26,14 @@ from .bixi import *
 from .bcycle import *
 from .smartbike import *
 from .cyclocity import *
+from .bicincitta import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
           bcycle.__all__ +\
           smartbike.__all__+\
-          cyclocity.__all__
+          cyclocity.__all__+\
+          bicincitta.__all__
 
 class BikeShareSystemNotFound(Exception):
     pass
