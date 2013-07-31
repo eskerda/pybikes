@@ -120,23 +120,18 @@ def extract_system( data ):
         return None
 
     tag = urlparse(data['url']).netloc.split('.')[0]
-    latitude = None
-    longitude = None
-    blat = system.stations[0].latitude
-    blng = system.stations[0].longitude
+    lat = system.stations[0].latitude
+    lng = system.stations[0].longitude
     city = ''
     country = ''
     if args.geocode:
         if args.verbose:
             print "---> Geocoding %s" % data['name']
         try:
-            city, country, latitude, longitude = google_reverse_geocode(blat, blng)
+            city, country, lat, lng = google_reverse_geocode(lat, lng)
         except Exception:
             print "No geocoding results for %s" % data['name']
         time.sleep(1)
-    if latitude is None and longitude is None:
-        latitude = blat
-        longitude = blng
 
     instance = {
         'tag': tag,
@@ -145,8 +140,8 @@ def extract_system( data ):
             'name': data['name'],
             'city': city,
             'country': country,
-            'latitude': latitude,
-            'longitude': longitude
+            'latitude': lat,
+            'longitude': lng
         }
     }
 
