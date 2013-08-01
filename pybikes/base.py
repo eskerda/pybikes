@@ -40,12 +40,13 @@ class BikeShareStation(object):
         self.timestamp = timestamp     # Store timestamp in UTC!
         self.extra = {}
     def __str__(self):
-        return """--- {0} ---
-bikes: {1}
-free: {2}
-latlng: {3},{4}
-extra: {5}""".format(self.name, self.bikes, self.free, self.latitude, 
-    self.longitude,self.extra)
+        return "--- {0} ---\n"\
+               "bikes: {1}\n"\
+               "free: {2}\n"\
+               "latlng: {3},{4}\n"\
+               "extra: {5}"\
+               .format(repr(self.name), self.bikes, self.free, self.latitude, \
+                       self.longitude,self.extra)
 
     def update(self, scraper = None):
         """ Base update method for BikeShareStation, any subclass can
