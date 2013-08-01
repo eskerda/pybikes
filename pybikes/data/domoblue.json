@@ -1,0 +1,237 @@
+{
+    "instances": [
+        {
+            "meta": {
+                "latitude": "42.392049", 
+                "city": "A R\u00daa", 
+                "name": "Onroll A R\u00daa", 
+                "longitude": "-7.114634", 
+                "country": "ES"
+            }, 
+            "tag": "onroll-a-rua", 
+            "system_id": 64
+        }, 
+        {
+            "meta": {
+                "latitude": 37.020001, 
+                "city": "Antequera", 
+                "name": "Onroll Antequera", 
+                "longitude": -4.5593676, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-antequera", 
+            "system_id": 29
+        }, 
+        {
+            "meta": {
+                "latitude": 41.67384, 
+                "city": "Aranda de Duero", 
+                "name": "Onroll Aranda de Duero", 
+                "longitude": -3.689644, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-aranda-de-duero", 
+            "system_id": 68
+        }, 
+        {
+            "meta": {
+                "latitude": 40.03219, 
+                "city": "Aranjuez", 
+                "name": "Onroll Aranjuez", 
+                "longitude": -3.602671, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-aranjuez", 
+            "system_id": 48
+        }, 
+        {
+            "meta": {
+                "latitude": 37.997946, 
+                "city": "Baeza", 
+                "name": "Onroll Baeza", 
+                "longitude": -3.469322, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-baeza", 
+            "system_id": 25
+        }, 
+        {
+            "meta": {
+                "latitude": 38.2658762, 
+                "city": "Elche", 
+                "name": "Onroll Elche", 
+                "longitude": -0.6834777, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-elche", 
+            "system_id": 57
+        }, 
+        {
+            "meta": {
+                "latitude": 42.6611505, 
+                "city": "Lal\u00edn", 
+                "name": "Onroll Lal\u00edn", 
+                "longitude": -8.1110256, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-lalin", 
+            "system_id": 62
+        }, 
+        {
+            "meta": {
+                "latitude": "28.124302", 
+                "city": "Las Palmas", 
+                "name": "Onroll Las Palmas", 
+                "longitude": "-15.425994", 
+                "country": "ES"
+            }, 
+            "tag": "onroll-las-palmas", 
+            "system_id": 69
+        }, 
+        {
+            "meta": {
+                "latitude": 38.38477779999999, 
+                "city": "Novelda", 
+                "name": "Onroll Novelda", 
+                "longitude": -0.7679043, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-novelda", 
+            "system_id": 50
+        }, 
+        {
+            "meta": {
+                "latitude": "42.413993", 
+                "city": "O Barco", 
+                "name": "Onroll O Barco", 
+                "longitude": "-6.982913", 
+                "country": "ES"
+            }, 
+            "tag": "onroll-o-barco", 
+            "system_id": 67
+        }, 
+        {
+            "meta": {
+                "latitude": 39.428084, 
+                "city": "Paiporta", 
+                "name": "Onroll Paiporta", 
+                "longitude": -0.4180450000000001, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-paiporta", 
+            "system_id": 47
+        }, 
+        {
+            "meta": {
+                "latitude": 42.011121, 
+                "city": "Palencia", 
+                "name": "Onroll Palencia", 
+                "longitude": -4.532032, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-palencia", 
+            "system_id": 7
+        }, 
+        {
+            "meta": {
+                "latitude": 37.43868500000001, 
+                "city": "Priego de C\u00f3rdoba", 
+                "name": "Onroll Priego de C\u00f3rdoba", 
+                "longitude": -4.194618, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-priego-de-cordoba", 
+            "system_id": 27
+        }, 
+        {
+            "meta": {
+                "latitude": 37.5622979, 
+                "city": "Puerto Lumbreras", 
+                "name": "Onroll Puerto Lumbreras", 
+                "longitude": -1.808677, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-puerto-lumbreras", 
+            "system_id": 60
+        }, 
+        {
+            "meta": {
+                "latitude": 40.9701039, 
+                "city": "Salamanca", 
+                "name": "Onroll Salamanca", 
+                "longitude": -5.663539699999999, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-salamanca", 
+            "system_id": 65
+        }, 
+        {
+            "meta": {
+                "latitude": "37.783704", 
+                "city": "San Javier", 
+                "name": "Onroll San Javier", 
+                "longitude": "-0.808097", 
+                "country": "ES"
+            }, 
+            "tag": "onroll-san-javier", 
+            "system_id": 38
+        }, 
+        {
+            "meta": {
+                "latitude": 37.8354703, 
+                "city": "San Pedro del Pinatar", 
+                "name": "Onroll San Pedro del Pinatar", 
+                "longitude": -0.7913131, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-san-pedro", 
+            "system_id": 20
+        }, 
+        {
+            "meta": {
+                "latitude": 40.9435626, 
+                "city": "Segovia", 
+                "name": "Onroll Segovia", 
+                "longitude": -4.113002199999999, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-segovia", 
+            "system_id": 5
+        }, 
+        {
+            "meta": {
+                "latitude": 39.962884, 
+                "city": "Talavera de la Reina", 
+                "name": "Onroll Talavera de la Reina", 
+                "longitude": -4.830453599999999, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-talavera", 
+            "system_id": 4
+        }, 
+        {
+            "meta": {
+                "latitude": 38.0114236, 
+                "city": "\u00dabeda", 
+                "name": "Onroll \u00dabeda", 
+                "longitude": -3.3712457, 
+                "country": "ES"
+            }, 
+            "tag": "onroll-ubeda", 
+            "system_id": 24
+        }, 
+        {
+            "meta": {
+                "latitude": "42.642358", 
+                "city": "Villaquilambre", 
+                "name": "Onroll Villaquilambre", 
+                "longitude": "-5.535311", 
+                "country": "ES"
+            }, 
+            "tag": "onroll-villaquilambre", 
+            "system_id": 6
+        }
+    ], 
+    "system": "domoblue", 
+    "class": "Domoblue"
+}
