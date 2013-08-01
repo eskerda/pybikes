@@ -13,6 +13,21 @@ def url_scheme(url):
     parsed_url = urlparse(url)
     return parsed_url.scheme
 
+def sp_capwords(word):
+    blacklist = [
+        u'el', u'la', u'los', u'las', \
+        u'un', u'una', u'unos', u'unas', \
+        u'lo', u'al', u'del', \
+        u'a', u'ante', u'bajo', u'cabe', u'con', u'contra', u'de', u'desde', \
+        u'en', u'entre', u'hacia', u'hasta', u'mediante', u'para', u'por', \
+        u'según', u'sin' \
+    ]
+    word = word.lower()
+    cap_lambda = lambda (index, w): \
+                    w.capitalize() if index == 0 or w not in blacklist \
+                                   else w
+    return " ".join(map(cap_lambda, enumerate(word.split())))
+
 class PyBikesScraper(object):
     
     headers = {
