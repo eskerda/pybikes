@@ -1,28 +1,163 @@
 {
-    "system": "bixi",
-    "class": "BixiSystem",
     "instances": [
         {
-            "tag": "montreal",
-            "root_url": "https://montreal.bixi.com/data/",
+            "tag": "montreal", 
             "meta": {
-                "name": "Bixi",
-                "city": "Montreal",
-                "country": "CAN",
-                "latitude": 45.5086699,
-                "longitude": -73.5539925
-            }
-        }
-        ,{
-            "tag": "cabi",
-            "root_url": "http://capitalbikeshare.com/data/stations/",
+                "latitude": 45.5086699, 
+                "city": "Montreal, QC", 
+                "name": "Bixi", 
+                "longitude": -73.55399249999999, 
+                "country": "CA"
+            }, 
+            "feed_url": "https://montreal.bixi.com/data/bikeStations.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "capital-bikeshare", 
             "meta": {
-                "name": "Capital BikeShare",
-                "city": "Washington, DC - Arlington, VA",
-                "country": "USA",
-                "latitude": 38.8951118,
-                "longitude": -77.0363658
-            }
+                "city": "Washington, DC", 
+                "name": "Capital BikeShare", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -77.03701629999999, 
+                "latitude": 38.8967584
+            }, 
+            "feed_url": "http://capitalbikeshare.com/data/stations/bikeStations.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "barclays-cycle-hire", 
+            "meta": {
+                "city": "London", 
+                "name": "Barclays Cycle Hire", 
+                "country": "UK", 
+                "company": [
+                    "PBSC", 
+                    "Serco Group plc"
+                ], 
+                "longitude": -0.1198244, 
+                "latitude": 51.51121389999999
+            }, 
+            "feed_url": "http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "bike-chattanooga", 
+            "meta": {
+                "city": "Chattanooga, TN", 
+                "name": "Bike Chattanooga", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -85.3096801, 
+                "latitude": 35.0456297
+            }, 
+            "feed_url": "http://www.bikechattanooga.com/stations/json", 
+            "format": "json"
+        }, 
+        {
+            "tag": "nice-ride", 
+            "meta": {
+                "city": "Minneapolis, MN", 
+                "name": "Nice Ride", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -93.26666999999999, 
+                "latitude": 44.983334
+            }, 
+            "feed_url": "http://secure.niceridemn.org/data2/bikeStations.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "capital-bixi", 
+            "meta": {
+                "city": "Ottawa, ON", 
+                "name": "Capital BIXI", 
+                "country": "CA", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -75.69719309999999, 
+                "latitude": 45.4215296
+            }, 
+            "feed_url": "https://capital.bixi.com/data/bikeStations.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "bixi-toronto", 
+            "meta": {
+                "city": "Toronto, ON", 
+                "name": "BIXI Toronto", 
+                "country": "CA", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -79.3831843, 
+                "latitude": 43.653226
+            }, 
+            "feed_url": "https://toronto.bixi.com/data/bikeStations.xml", 
+            "format": "xml"
+        }, 
+        {
+            "tag": "melbourne-bike-share", 
+            "meta": {
+                "city": "Melbourne", 
+                "name": "Melbourne Bike Share", 
+                "country": "AU", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": 144.96328, 
+                "latitude": -37.814107
+            }, 
+            "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data", 
+            "format": "json_from_xml"
+        }, 
+        {
+            "tag": "citi-bike-nyc", 
+            "meta": {
+                "city": "New York, NY", 
+                "name": "Citi Bike", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc", 
+                    "NYC Bike Share"
+                ], 
+                "longitude": -74.00597309999999, 
+                "latitude": 40.7143528
+            }, 
+            "feed_url": "https://citibikenyc.com/stations/json", 
+            "format": "json"
+        }, 
+        {
+            "tag": "divvy", 
+            "meta": {
+                "city": "Chicago, IL", 
+                "name": "Divvy", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -87.6297982, 
+                "latitude": 41.8781136
+            }, 
+            "feed_url": "https://divvybikes.com/stations/json", 
+            "format": "json"
         }
-    ]
+    ], 
+    "system": "bixi", 
+    "class": "BixiSystem"
 }
