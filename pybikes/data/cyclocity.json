@@ -1,318 +1,281 @@
 {
-    "system": "cyclocity",
-    "class": "Cyclocity",
     "instances": [
         {
-            "city": "amiens", 
-            "root_url": "https://abo-amiens.cyclocity.fr", 
-            "tag": "velam", 
-            "meta": {
-                "latitude": 49.894067, 
-                "city": "Amiens", 
-                "name": "Vélam", 
-                "longitude": 2.295753, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "besancon", 
-            "root_url": "https://abo-besancon.cyclocity.fr", 
-            "tag": "velocite", 
-            "meta": {
-                "latitude": 47.237829, 
-                "city": "Besan\u00e7on", 
-                "name": "V\u00e9loCit\u00e9", 
-                "longitude": 6.024053900000013, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "brisbane", 
-            "root_url": "https://abo-brisbane.cyclocity.fr", 
-            "tag": "citycycle", 
-            "meta": {
-                "latitude": -27.4709331, 
-                "city": "Brisbane", 
-                "name": "CityCycle", 
-                "longitude": 153.0235024, 
-                "country": "AU"
-            }
-        }, 
-        {
-            "city": "bruxelles", 
-            "root_url": "https://abo-bruxelles.cyclocity.fr", 
-            "tag": "villo", 
-            "meta": {
-                "latitude": 50.8503396, 
-                "city": "Bruxelles", 
-                "name": "Villo!", 
-                "longitude": 4.3517103, 
-                "country": "BE"
-            }
-        }, 
-        {
-            "city": "cergy", 
-            "root_url": "https://abo-cergy.cyclocity.fr", 
-            "tag": "velo2", 
-            "meta": {
-                "latitude": 49.0391497, 
-                "city": "Cergy", 
-                "name": "Velo2", 
-                "longitude": 2.0750508, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "creteil", 
-            "root_url": "https://abo-creteil.cyclocity.fr", 
-            "tag": "cristolib", 
-            "meta": {
-                "latitude": 48.790367, 
-                "city": "Cr\u00e9teil", 
-                "name": "Cristolib", 
-                "longitude": 2.455572, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "dublin", 
-            "root_url": "https://abo-dublin.cyclocity.fr", 
-            "tag": "dublinbikes", 
-            "meta": {
-                "latitude": 53.3498053, 
-                "city": "Dublin", 
-                "name": "dublinbikes", 
-                "longitude": -6.2603097, 
-                "country": "IE"
-            }
-        }, 
-        {
-            "city": "goteborg", 
-            "root_url": "https://abo-goteborg.cyclocity.fr", 
-            "tag": "goeteborg", 
-            "meta": {
-                "latitude": 0.0, 
-                "city": "G\u00f6teborg", 
-                "name": "Styr & Ställ", 
-                "longitude": 0.0, 
-                "country": "SE"
-            }
-        }, 
-        {
-            "city": "kazan", 
-            "root_url": "https://abo-kazan.cyclocity.fr", 
-            "tag": "velik", 
-            "meta": {
-                "latitude": 55.7949414, 
-                "city": "\u041a\u0430\u0437\u0430\u043d\u044c", 
-                "name": "Veli'k", 
-                "longitude": 49.1050445, 
-                "country": "RU"
-            }
-        }, 
-        {
-            "city": "lillestrom", 
-            "root_url": "https://abo-lillestrom.cyclocity.fr", 
-            "tag": "bysykkel", 
-            "meta": {
-                "latitude": 59.9559696, 
-                "city": "Lillestr\u00f8m", 
-                "name": "Bysykkel", 
-                "longitude": 11.0503785, 
-                "country": "NO"
-            }
-        }, 
-        {
-            "city": "ljubljana", 
-            "root_url": "https://abo-ljubljana.cyclocity.fr", 
-            "tag": "bicikelj", 
-            "meta": {
-                "latitude": 46.05645089999999, 
-                "city": "Ljubljana", 
-                "name": "Bicikelj ", 
-                "longitude": 14.5080702, 
-                "country": "SI"
-            }
-        }, 
-        {
-            "city": "luxembourg", 
-            "root_url": "https://abo-luxembourg.cyclocity.fr", 
-            "tag": "veloh", 
-            "meta": {
-                "latitude": 49.815273, 
-                "city": "Nommern", 
-                "name": "Veloh", 
-                "longitude": 6.129582999999999, 
-                "country": "LU"
-            }
-        }, 
-        {
-            "city": "lyon", 
-            "root_url": "https://abo-lyon.cyclocity.fr", 
-            "tag": "velov", 
-            "meta": {
-                "latitude": 45.764043, 
-                "city": "Lyon", 
-                "name": "V\u00e9lo'V", 
-                "longitude": 4.835659, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "marseille", 
-            "root_url": "https://abo-marseille.cyclocity.fr", 
-            "tag": "le-velo", 
-            "meta": {
-                "latitude": 43.296482, 
-                "city": "Marseille", 
-                "name": "Le v\u00e9lo", 
-                "longitude": 5.36978, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "mulhouse", 
-            "root_url": "https://abo-mulhouse.cyclocity.fr", 
-            "tag": "velocite", 
-            "meta": {
-                "latitude": 47.750839, 
-                "city": "Mulhouse", 
-                "name": "V\u00e9loCit\u00e9", 
-                "longitude": 7.335888, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "namur", 
-            "root_url": "https://abo-namur.cyclocity.fr", 
-            "tag": "li-bia-velo", 
-            "meta": {
-                "latitude": 50.465328, 
-                "city": "Namur", 
-                "name": "Li bia velo", 
-                "longitude": 4.867665, 
-                "country": "BE"
-            }
-        }, 
-        {
-            "city": "nancy", 
-            "root_url": "https://abo-nancy.cyclocity.fr", 
-            "tag": "velostanlib", 
-            "meta": {
-                "latitude": 48.692054, 
-                "city": "Nancy", 
-                "name": "v\u00e9lOstan'lib", 
-                "longitude": 6.184417, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "nantes", 
-            "root_url": "https://abo-nantes.cyclocity.fr", 
-            "tag": "bicloo", 
-            "meta": {
-                "latitude": 47.218371, 
-                "city": "Nantes", 
-                "name": "Bicloo", 
-                "longitude": -1.553621, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "paris", 
-            "root_url": "https://abo-paris.cyclocity.fr", 
-            "tag": "velib", 
-            "meta": {
-                "latitude": 48.856614, 
-                "city": "Paris", 
-                "name": "Vélib'", 
-                "longitude": 2.3522219, 
-                "country": "FR"
-            }
-        }, 
-        {
-            "city": "rouen", 
-            "root_url": "https://abo-rouen.cyclocity.fr", 
             "tag": "cyclic", 
             "meta": {
                 "latitude": 49.44323199999999, 
-                "city": "Rouen", 
+                "country": "FR", 
                 "name": "cy'clic", 
                 "longitude": 1.099971, 
-                "country": "FR"
-            }
+                "city": "Rouen"
+            }, 
+            "contract": "Rouen"
         }, 
         {
-            "city": "santander", 
-            "root_url": "https://abo-santander.cyclocity.fr", 
-            "tag": "tusbic", 
+            "tag": "velib", 
             "meta": {
-                "latitude": 43.46230569999999, 
-                "city": "Santander", 
-                "name": "Tusbic", 
-                "longitude": -3.8099803, 
-                "country": "ES"
-            }
+                "latitude": 48.856614, 
+                "country": "FR", 
+                "name": "Velib", 
+                "longitude": 2.3522219, 
+                "city": "Paris"
+            }, 
+            "contract": "Paris"
         }, 
         {
-            "city": "seville", 
-            "root_url": "https://abo-seville.cyclocity.fr", 
-            "tag": "sevici", 
-            "meta": {
-                "latitude": 37.3880961, 
-                "city": "Sevilla", 
-                "name": "Sevici", 
-                "longitude": -5.9823299, 
-                "country": "ES"
-            }
-        },
-        {
-            "city": "toulouse", 
-            "root_url": "https://abo-toulouse.cyclocity.fr", 
             "tag": "velo", 
             "meta": {
                 "latitude": 43.604652, 
-                "city": "Toulouse", 
+                "country": "FR", 
                 "name": "V\u00e9l\u00f4", 
                 "longitude": 1.444209, 
-                "country": "FR"
-            }
+                "city": "Toulouse"
+            }, 
+            "contract": "Toulouse"
         }, 
         {
-            "city": "toyama", 
-            "root_url": "https://abo-toyama.cyclocity.fr", 
-            "tag": "toyama", 
+            "tag": "veloh", 
             "meta": {
-                "latitude": 36.6959518, 
-                "city": "\u5bcc\u5c71\u5e02", 
-                "name": "Cyclocity", 
-                "longitude": 137.2136768, 
-                "country": "JP"
-            }
+                "latitude": 49.6301025, 
+                "country": "LU", 
+                "name": "Veloh", 
+                "longitude": 6.1520185, 
+                "city": "Luxembourg"
+            }, 
+            "contract": "Luxembourg"
         }, 
         {
-            "city": "valence", 
-            "root_url": "https://abo-valence.cyclocity.fr", 
             "tag": "valenbisi", 
             "meta": {
                 "latitude": 39.4699075, 
-                "city": "Valencia", 
+                "country": "ES", 
                 "name": "Valenbisi", 
                 "longitude": -0.3762881, 
-                "country": "ES"
-            }
+                "city": "Valencia"
+            }, 
+            "contract": "Valence"
         }, 
         {
-            "city": "vilnius", 
-            "root_url": "https://abo-vilnius.cyclocity.fr", 
-            "tag": "vilnius", 
+            "tag": "stockholm-cyclocity", 
+            "meta": {
+                "latitude": 59.32893000000001, 
+                "country": "SE", 
+                "name": "Cyclocity", 
+                "longitude": 18.06491, 
+                "city": "Stockholm"
+            }, 
+            "contract": "Stockholm"
+        }, 
+        {
+            "tag": "goeteborg", 
+            "meta": {
+                "latitude": 57.70887, 
+                "country": "SE", 
+                "name": "G\u00f6teborg", 
+                "longitude": 11.97456, 
+                "city": "G\u00f6teborg"
+            }, 
+            "contract": "Goteborg"
+        }, 
+        {
+            "tag": "tusbic", 
+            "meta": {
+                "latitude": 43.46230569999999, 
+                "country": "ES", 
+                "name": "Tusbic", 
+                "longitude": -3.8099803, 
+                "city": "Santander"
+            }, 
+            "contract": "Santander"
+        }, 
+        {
+            "tag": "velam", 
+            "meta": {
+                "latitude": 49.894067, 
+                "country": "FR", 
+                "name": "Velam", 
+                "longitude": 2.295753, 
+                "city": "Amiens"
+            }, 
+            "contract": "Amiens"
+        }, 
+        {
+            "tag": "bysykkel-lillestrom", 
+            "meta": {
+                "latitude": 59.9559696, 
+                "country": "NO", 
+                "name": "Bysykkel", 
+                "longitude": 11.0503785, 
+                "city": "Lillestr\u00f8m"
+            }, 
+            "contract": "Lillestrom"
+        }, 
+        {
+            "tag": "velocite", 
+            "meta": {
+                "latitude": 47.750839, 
+                "country": "FR", 
+                "name": "V\u00e9loCit\u00e9", 
+                "longitude": 7.335888, 
+                "city": "Mulhouse"
+            }, 
+            "contract": "Mulhouse"
+        }, 
+        {
+            "tag": "velov", 
+            "meta": {
+                "latitude": 45.764043, 
+                "country": "FR", 
+                "name": "V\u00e9lo'V", 
+                "longitude": 4.835659, 
+                "city": "Lyon"
+            }, 
+            "contract": "Lyon"
+        }, 
+        {
+            "tag": "bicikelj", 
+            "meta": {
+                "latitude": 46.05645089999999, 
+                "country": "SI", 
+                "name": "Bicikelj ", 
+                "longitude": 14.5080702, 
+                "city": "Ljubljana"
+            }, 
+            "contract": "Ljubljana"
+        }, 
+        {
+            "tag": "sevici", 
+            "meta": {
+                "latitude": 37.3880961, 
+                "country": "ES", 
+                "name": "SEVICI", 
+                "longitude": -5.9823299, 
+                "city": "Sevilla"
+            }, 
+            "contract": "Seville"
+        }, 
+        {
+            "tag": "li-bia-velo", 
+            "meta": {
+                "latitude": 50.465328, 
+                "country": "BE", 
+                "name": "Li bia velo", 
+                "longitude": 4.867665, 
+                "city": "Namur"
+            }, 
+            "contract": "Namur"
+        }, 
+        {
+            "tag": "velostanlib", 
+            "meta": {
+                "latitude": 48.692054, 
+                "country": "FR", 
+                "name": "v\u00e9lOstan'lib", 
+                "longitude": 6.184417, 
+                "city": "Nancy"
+            }, 
+            "contract": "Nancy"
+        }, 
+        {
+            "tag": "cristolib", 
+            "meta": {
+                "latitude": 48.790367, 
+                "country": "FR", 
+                "name": "Cristolib", 
+                "longitude": 2.455572, 
+                "city": "Cr\u00e9teil"
+            }, 
+            "contract": "Creteil"
+        }, 
+        {
+            "tag": "villo", 
+            "meta": {
+                "latitude": 50.8503396, 
+                "country": "BE", 
+                "name": "villo", 
+                "longitude": 4.3517103, 
+                "city": "Bruxelles"
+            }, 
+            "contract": "Bruxelles-Capitale"
+        }, 
+        {
+            "tag": "velo2", 
+            "meta": {
+                "latitude": 49.03561699999999, 
+                "country": "FR", 
+                "name": "Velo2", 
+                "longitude": 2.060325, 
+                "city": "Cergy"
+            }, 
+            "contract": "Cergy-Pontoise"
+        }, 
+        {
+            "tag": "vilnius-cyclocity", 
             "meta": {
                 "latitude": 54.6871555, 
-                "city": "Vilnius", 
+                "country": "LT", 
                 "name": "Cyclocity", 
                 "longitude": 25.2796514, 
-                "country": "LT"
-            }
+                "city": "Vilnius"
+            }, 
+            "contract": "Vilnius"
+        }, 
+        {
+            "tag": "toyama-cyclocity", 
+            "meta": {
+                "latitude": 36.6959518, 
+                "country": "JP", 
+                "name": "cyclocity", 
+                "longitude": 137.2136768, 
+                "city": "\u5bcc\u5c71\u5e02"
+            }, 
+            "contract": "Toyama"
+        }, 
+        {
+            "tag": "velik", 
+            "meta": {
+                "latitude": 55.7949414, 
+                "country": "RU", 
+                "name": "Veli'k", 
+                "longitude": 49.1050445, 
+                "city": "\u041a\u0430\u0437\u0430\u043d\u044c"
+            }, 
+            "contract": "Kazan"
+        }, 
+        {
+            "tag": "le-velo", 
+            "meta": {
+                "latitude": 43.296482, 
+                "country": "FR", 
+                "name": "Le v\u00e9lo", 
+                "longitude": 5.36978, 
+                "city": "Marseille"
+            }, 
+            "contract": "Marseille"
+        }, 
+        {
+            "tag": "bicloo", 
+            "meta": {
+                "latitude": 47.218371, 
+                "country": "FR", 
+                "name": "Bicloo", 
+                "longitude": -1.553621, 
+                "city": "Nantes"
+            }, 
+            "contract": "Nantes"
+        }, 
+        {
+            "tag": "velocite", 
+            "meta": {
+                "latitude": 47.237829, 
+                "country": "FR", 
+                "name": "V\u00e9loCit\u00e9", 
+                "longitude": 6.024053899999999, 
+                "city": "Besan\u00e7on"
+            }, 
+            "contract": "Besancon"
         }
-    ]
+    ], 
+    "system": "cyclocity", 
+    "class": "Cyclocity"
 }
