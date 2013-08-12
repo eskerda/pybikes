@@ -94,12 +94,12 @@ class CyclocityStation(BikeShareStation):
 
         self.url = station_url.format(station_id = jcd_data['number'])
 
-    def update(self, scraper = None):
+    def update(self, scraper = None, net_update = False):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
         super(CyclocityStation, self).update()
-        status = json.loads(scraper.request(self.url))
-
-        self.__init__(self.id, status, self.url)
+        if net_update:
+            status = json.loads(scraper.request(self.url))
+            self.__init__(self.id, status, self.url)
         return self
