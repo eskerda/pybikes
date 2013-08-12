@@ -3,109 +3,103 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-import HTMLParser
+import json
 
 from pyquery import PyQuery as pq
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
-from . import hacks
 
 __all__ = ['Cyclocity','CyclocityStation']
 
-html_parser = HTMLParser.HTMLParser()
+api_root = "https://api.jcdecaux.com/vls/v1/"
+
+endpoints = {
+    'contracts': 'contracts?apiKey={api_key}',
+    'stations' : 'stations?apiKey={api_key}&contract={contract}',
+    'station'  : 'stations/{station_id}?contract={contract}&apiKey={api_key}'
+}
 
 class Cyclocity(BikeShareSystem):
 
-    list_url = '/service/carto'
-    station_url = '/service/stationdetails/%s/%s'
+    sync = True
 
-    sync = False
+    authed = True
 
     meta = {
         'system': 'Cyclocity',
-        'company': 'JCDecaux'
+        'company': 'JCDecaux',
+        'license': {
+            'name': 'Open Licence',
+            'url': 'https://developer.jcdecaux.com/#/opendata/licence'
+        },
+        'source': 'https://developer.jcdecaux.com'
     }
 
-    def __init__(self, tag, root_url, city, meta):
+    def __init__(self, tag, meta, contract, key):
         super( Cyclocity, self).__init__(tag, meta)
-        self.city = city
-        self.root_url = root_url
-        self.station_url = self.station_url % (city, '%d')
-        self.hacks = []
-        
-        if tag in hacks.hack_table:
-            for hack in hacks.hack_table[self.tag]:
-                h = eval('hacks.%s' % hack)()
-                self.hacks.append(h)
+        self.contract = contract
+        self.api_key = key
+        self.stations_url = api_root + endpoints['stations'].format(
+            api_key  = self.api_key,
+            contract = contract
+        )
 
     def update(self, scraper = None):
-
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        url = "{0}{1}".format(self.root_url, self.list_url)
-        xml_data = scraper.request(url)
-        dom = pq(xml_data.encode('utf-8'), parser = 'xml')
-        markers = dom('marker')
+        data = json.loads(scraper.request(self.stations_url))
         stations = []
-        if hasattr(self, 'hacks'):
-            for hack in self.hacks:
-                markers = hack.markers(markers)
-
-        for index, marker in enumerate(markers):
-            station = CyclocityStation(index)
-            station.from_xml(marker)
-            station.parent = self
+        for index, info in enumerate(data):
+            station_url = api_root + endpoints['station'].format(
+                api_key    = self.api_key,
+                contract   = self.contract,
+                station_id = "{station_id}"
+            )
+            station = CyclocityStation(index, info, station_url)
             stations.append(station)
-
         self.stations = stations
+
+    @staticmethod
+    def get_contracts(api_key, scraper = None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+        url = api_root + endpoints['contracts'].format(
+            api_key = api_key
+        )
+        return json.loads(scraper.request(url))
+
 
 class CyclocityStation(BikeShareStation):
 
-    def from_xml(self, xml):
+    def __init__(self, id, jcd_data, station_url):
+        super(CyclocityStation, self).__init__(id)
 
-        uid = int(xml.attrib['number'])
-        name = xml.attrib['name'].replace('\n','')
-        address = xml.attrib['address']
-        full_address = xml.attrib['fullAddress']
-        is_open = xml.attrib['open']
-        bonus = xml.attrib['bonus']
-        latitude = float(xml.attrib['lat'])
-        longitude = float(xml.attrib['lng'])
-
-        if (name == ""):
-            name = "%d - %s" % (uid, address)
-
-        self.name = html_parser.unescape(name)
-        self.latitude = latitude
-        self.longitude = longitude
+        self.name      = jcd_data['name']
+        self.latitude  = jcd_data['position']['lat']
+        self.longitude = jcd_data['position']['lng']
+        self.bikes     = jcd_data['available_bikes']
+        self.free      = jcd_data['available_bike_stands']
 
         self.extra = {
-            'uid': uid,
-            'address': html_parser.unescape(address),
-            'full_address': html_parser.unescape(full_address),
-            'is_open': is_open,
-            'bonus': bonus
+            'uid': jcd_data['number'],
+            'address': jcd_data['address'],
+            'status': jcd_data['status'],
+            'banking': jcd_data['banking'],
+            'bonus': jcd_data['bonus'],
+            'last_update': jcd_data['last_update'],
+            'slots': jcd_data['bike_stands']
         }
 
-        return self
+        self.url = station_url.format(station_id = jcd_data['number'])
 
     def update(self, scraper = None):
-
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
         super(CyclocityStation, self).update()
-        station_url = self.parent.station_url % self.extra['uid']
-        status_xml = scraper.request(self.parent.root_url + station_url)
-        status = pq(status_xml.encode('utf-8'), parser = 'xml')
-        
-        self.bikes = int(status('available').text())
-        self.free = int(status('free').text())
-        self.extra['total'] = int(status('total').text())
-        self.extra['ticket'] = status('ticket').text()
-        self.extra['updated'] = status('updated').text()
-        self.extra['connected'] = status('connected').text()
+        status = json.loads(scraper.request(self.url))
 
+        self.__init__(self.id, status, self.url)
         return self
