@@ -3,7 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import os
-import sys
+import sys, traceback
 import time
 import json
 import argparse
@@ -27,7 +27,7 @@ parser.add_argument('input', metavar = "input",
                     help="Input file")
 
 parser.add_argument('-o', metavar = "output", dest = "output", 
-                    type = argparse.FileType('w'), default = sys.stdout, 
+                    default = sys.stdout, 
                     help="Output file")
 
 parser.add_argument('-v', action="store_true", dest = 'verbose', 
@@ -51,6 +51,12 @@ parser.add_argument('-f', action="store_true", dest = 'overwrite',
 parser.add_argument('-i', action="store_true", dest = 'interactive', 
                     default = False, help="Interactive prompt to select between results")
 
+parser.add_argument('-c', action="store_true", dest = 'continuous', 
+                    default = False, help="Continuous write output file")
+
+parser.add_argument('-s', action="store_true", dest = 'skip', 
+                    default = False, help="Skip complete instances")
+
 args = parser.parse_args()
 
 scraper = pybikes.utils.PyBikesScraper()
@@ -70,6 +76,8 @@ language = 'en'
 
 metas = ['city', 'country']
 
+data = {}
+
 def clearline(length):
     clearline = "\r" + "".join([" " for i in range(length)])
     sys.stderr.flush()
@@ -88,38 +96,52 @@ def print_status(i, total, status):
         sys.stderr.write('\n')
     return len(output)
 
-def geocode(instance, systemCls, language):
-    if args.verbose:
-        sys.stderr.write("--- Geocoding %s ---- \n" % instance['tag'])
-    bikesys = systemCls(** instance)
-
-    latitude, longitude = [0.0, 0.0]
-    if 'latitude' in instance['meta'] and 'longitude' in instance['meta']:
-        latitude  = instance['meta']['latitude']
-        longitude = instance['meta']['longitude']
+def geocode(instance, systemCls, language, address = None):
+    if address is not None:
+        query = address
     else:
         if args.verbose:
-            sys.stderr.write("Updating system to get an initial lat/lng\n")
-        bikesys.update(scraper)
-        latitude  = bikesys.stations[0].latitude
-        longitude = bikesys.stations[0].longitude
-    if args.verbose:
-        sys.stderr.write(" >>> %s, %s <<< \n" % (str(latitude), str(longitude)))
-        sys.stderr.write("--- Javascript code for debugging output ---\n")
-        sys.stderr.write("var geocoder = new google.maps.Geocoder()\n")
-        sys.stderr.write("latlng = new google.maps.LatLng(%s,%s)\n" % (str(latitude), str(longitude)))
-        sys.stderr.write("geocoder.geocode({latLng:latlng}, function(res){console.log(res)})\n")
-    info = geocoder.get((latitude, longitude), language = language)
+            sys.stderr.write("--- Geocoding %s ---- \n" % instance['tag'])
+        bikesys = systemCls(** instance)
+
+        latitude, longitude = [0.0, 0.0]
+        if 'latitude' in instance['meta'] and 'longitude' in instance['meta']:
+            latitude  = instance['meta']['latitude']
+            longitude = instance['meta']['longitude']
+        else:
+            if args.verbose:
+                sys.stderr.write("Updating system to get an initial lat/lng\n")
+            bikesys.update(scraper)
+            target = int(len(bikesys.stations) / 2)
+            latitude  = bikesys.stations[target].latitude
+            longitude = bikesys.stations[target].longitude
+        if args.verbose:
+            sys.stderr.write(" >>> %s, %s <<< \n" % (str(latitude), str(longitude)))
+            sys.stderr.write("--- Javascript code for debugging output ---\n")
+            sys.stderr.write("var geocoder = new google.maps.Geocoder()\n")
+            sys.stderr.write("latlng = new google.maps.LatLng(%s,%s)\n" % (str(latitude), str(longitude)))
+            sys.stderr.write("geocoder.geocode({latLng:latlng}, function(res){console.log(res)})\n")
+        query = (latitude, longitude)
+    try:        
+        info = geocoder.get(query, language = language)
+    except Exception as e:
+        print e
+        address = raw_input('Type an address: ')
+        return geocode(instance, systemCls, language, address)
     if args.interactive:
         for index, address in enumerate(info):
             sys.stderr.write("%d: %s\n" % (index, address.formatted_address))
         sys.stderr.write("%d: Change language\n" % len(info))
+        sys.stderr.write("%d: Manual address lookup\n" % int(len(info)+1))
         sys.stderr.write('\n')
         try:
             res = int(raw_input('Select option (number): '))
             if res == len(info):
                 language = raw_input('New language? ')
                 return geocode(instance, systemCls, language)
+            elif res == len(info)+1:
+                address = raw_input('Type an address: ')
+                return geocode(instance, systemCls, language, address)
             elif res < len(info):
                 address = info[res]
                 metainfo = instance['meta']
@@ -153,7 +175,24 @@ def geocode(instance, systemCls, language):
     if args.verbose:
         sys.stderr.write("\n")
 
+def is_complete(instance):
+    fields = ['city','country','latitude','longitude','name']
+    complete = True
+    for field in fields:
+        complete = field in instance['meta']
+        if not complete:
+            return False
+    return complete
+
+def write_output(data, way):
+    way = open(way, 'w')
+    corrected_data = json.dumps(data, sort_keys = False, indent = 4)
+    way.write(corrected_data)
+    way.write('\n')
+    way.close()
+
 def main():
+    global data
     if args.proxy is not None:
         proxies['http'] = args.proxy
         scraper.enableProxy()
@@ -169,6 +208,7 @@ def main():
         exit(0)
 
     data = json.loads(args.input.read())
+    args.input.close()
     instances = data['instances']
     system = data['system']
     systemCls = eval('pybikes.' + data['class'])
@@ -186,6 +226,12 @@ def main():
                         "Testing %s" % repr(instance['meta']['name']))
         if 'name' not in instance['meta'] or instance['meta']['name'] == "":
             raise Exception("name not set in instance %s" % str(instance))
+        if args.skip and is_complete(instance):
+            if args.verbose:
+                sys.stderr.write("%s Looks complete, passing by\n" % 
+                    repr(instance['meta']['name'])
+                )
+            continue
         if args.slugify:
             tag = slugify(instance['meta']['name'])
             r   = None
@@ -203,10 +249,22 @@ def main():
             geocode(instance, systemCls, language)
             time.sleep(1)
 
-    corrected_data = json.dumps(data, sort_keys = False, indent = 4)
-    args.output.write(corrected_data)
-    args.output.write('\n')
-    args.output.close()
+    write_output(data, args.output)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print e
+        if args.continuous:
+            if args.verbose:
+                sys.stderr.write("Writing file bc exception\n")
+                traceback.print_exc(file=sys.stderr)
+            write_output(data, args.output)
+    except KeyboardInterrupt as e:
+        print "KEYBOARD INTERRUPT"
+        if args.continuous:
+            if args.verbose:
+                sys.stderr.write("Writing file bc exception\n")
+            write_output(data, args.output)
+
