@@ -100,6 +100,8 @@ class BikeShareSystem(object):
 
     sync = True
 
+    authed = False
+
     def __init__(self, tag, meta):
         self.stations = []
         self.tag = tag

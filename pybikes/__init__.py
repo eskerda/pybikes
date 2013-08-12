@@ -53,12 +53,18 @@ def getDataFile(system):
     except FileNotFoundError:
         raise FileNotFoundError('File data/%s.json not found' % system)
 
-def getBikeShareSystem(system, tag):
+def getBikeShareSystem(system, tag, key = None):
     data = getDataFile(system)
     meta_data = [sys for sys in data['instances'] if sys['tag'] == tag]
     
     if len(meta_data) == 0:
         raise BikeShareSystemNotFound(
             'System %s not found in data/%s.json' % (tag, system))
-    
-    return eval(data.get('class'))(** list(meta_data)[0])
+    meta_data = meta_data[0]
+    system_class = eval(data.get('class'))
+    if system_class.authed:
+        if key is None:
+            raise Exception('System %s needs a key' % system)
+        else:
+            meta_data['key'] = key
+    return system_class(** meta_data)

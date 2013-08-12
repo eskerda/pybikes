@@ -11,6 +11,7 @@ import sys
 import pybikes
 from pybikes import *
 from pybikes import utils
+import test_keys
 
 class TestSystems(unittest.TestCase):
 
@@ -28,15 +29,20 @@ class TestSystems(unittest.TestCase):
 
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
+        sys_class = eval(data['class'])
+        if sys_class.authed:
+            key = eval('test_keys.%s' % system)
+        else:
+            key = None
         for instance in data['instances']:
-            self._test_system(system, instance['tag'])
+            self._test_system(system, instance['tag'], key)
 
-    def _test_system(self, system, tag):
+    def _test_system(self, system, tag, key = None):
         """ Tests okayness of a system:
             - Test if system can be updated
             - Tests okayness of 5 stations on the system
         """
-        p_sys = pybikes.getBikeShareSystem(system, tag)
+        p_sys = pybikes.getBikeShareSystem(system, tag, key)
         self._test_update(p_sys)
         station_string = ""
         if len(p_sys.stations) < 5:
