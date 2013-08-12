@@ -14,10 +14,10 @@
         {
             "tag": "broward", 
             "meta": {
-                "latitude": 26.190096, 
+                "latitude": 26.1223084,
                 "city": "Broward, FL", 
                 "name": "Broward B-cycle", 
-                "longitude": -80.36586499999999, 
+                "longitude": -80.1433786, 
                 "country": "US"
             }, 
             "feed_url": "http://broward.bcycle.com"
