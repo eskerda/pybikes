@@ -57,8 +57,11 @@ class Cyclocity(BikeShareSystem):
                 contract   = self.contract,
                 station_id = "{station_id}"
             )
-            station = CyclocityStation(index, info, station_url)
-            stations.append(station)
+            try:
+                station = CyclocityStation(index, info, station_url)
+                stations.append(station)
+            except Exception:
+                continue
         self.stations = stations
 
     @staticmethod
@@ -93,6 +96,9 @@ class CyclocityStation(BikeShareStation):
         }
 
         self.url = station_url.format(station_id = jcd_data['number'])
+
+        if self.latitude is None or self.longitude is None:
+            raise Exception('An station needs a lat/lng to be defined!')
 
     def update(self, scraper = None, net_update = False):
         if scraper is None:
