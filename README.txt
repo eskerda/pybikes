@@ -17,8 +17,8 @@ Usual usage(:):
 
     >>> import pybikes
     
-    # Capital BikeShare instantiation data is on bixi.json file under 'cabi'
-    >>> capital_bikeshare = pybikes.getBikeShareSystem('bixi','cabi')
+    # Capital BikeShare instantiation data is in bixi.json file
+    >>> capital_bikeshare = pybikes.getBikeShareSystem('bixi','capital-bikeshare')
 
     # The instance contains all possible metadata regarding this system
     >>> print(capital_bikeshare.meta)
