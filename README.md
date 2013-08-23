@@ -5,8 +5,12 @@ PyBikes provides a set of tools to scrape bike sharing data from different
 websites and APIs, thus providing a coherent and generalized set of classes
 and methods to access this sort of information.
 
-This library is distributed and intended mainly for statistics and data
+The library is distributed and intended mainly for statistics and data
 sharing projects. More importantly, it powers the [CityBikes] [1] project.
+
+This experimental branch is being used on the [development server] [2], and
+when completion of bike network support is on par with the ones on the master
+branch, it will be used on production.
 
 The library is composed of a set of classes (under pybikes), and a pack of
 data files that provide instances for all different systems.
@@ -80,5 +84,6 @@ https proxy falls back to urllib2.
     >>> capital_bikeshare.update(scraper)
 
 [1]: http://www.citybik.es              "CityBikes"
-[2]: http://docs.python-requests.org    "Requests"
+[2]: http://staging.citybik.es          "Development Server"
+[3]: http://docs.python-requests.org    "Requests"
 
