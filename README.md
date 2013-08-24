@@ -6,14 +6,18 @@ websites and APIs, thus providing a coherent and generalized set of classes
 and methods to access this sort of information.
 
 The library is distributed and intended mainly for statistics and data
-sharing projects. More importantly, it powers the [CityBikes] [1] project.
+sharing projects. More importantly, it powers the [CityBikes] [1] project, and
+is composed of a set of classes and a pack of data files that provide instances
+for all different systems.
 
 This experimental branch is being used on the [development server] [2], and
 when completion of bike network support is on par with the ones on the master
 branch, it will be used on production.
 
-The library is composed of a set of classes (under pybikes), and a pack of
-data files that provide instances for all different systems.
+While the new structure of this library greatly improves usage, clarity and
+maintenance compared to the one on the master branch, this is still a work in
+progress. Therefore, syntax and implementation might change until we reach both
+completion and satisfaction.
 
 Usage
 ------
