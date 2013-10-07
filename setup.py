@@ -15,6 +15,7 @@ setup(
     },
     license = "LICENSE.txt",
     description = "A python library for scrapping bike sharing data",
-    long_description = open('README.txt').read(),
+    long_description = open('README.md').read(),
     install_requires = ['pyquery','requests'],
 )
+
