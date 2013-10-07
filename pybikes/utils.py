@@ -2,6 +2,7 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+import re
 import requests
 import urllib, urllib2
 from urlparse import urlparse
@@ -27,6 +28,14 @@ def sp_capwords(word):
                     w.capitalize() if index == 0 or w not in blacklist \
                                    else w
     return " ".join(map(cap_lambda, enumerate(word.split())))
+
+def clean_string(dirty):
+    # Way generic strip_tags. This is unsafe in some cases, but gets the job
+    # done for most inputs
+    dirty = re.sub(r'<[^>]*?>', '', dirty)
+    # Decode any escaped sequences
+    dirty = dirty.encode('utf-8').decode('unicode_escape')
+    return dirty
 
 class PyBikesScraper(object):
     

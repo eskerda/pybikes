@@ -72,20 +72,39 @@ class Bicincitta(BaseSystem):
     _RE_INFO="RefreshMap\((.*?)\)"
     _endpoint = "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID={id}"
 
-    def __init__(self, tag, meta, system_id):
+    def __init__(self, tag, meta, ** instance):
         super(Bicincitta, self).__init__(tag, meta)
-        self.system_id = system_id
-        self.url = Bicincitta._endpoint.format(id = system_id)
+
+        if 'endpoint' in instance:
+            endpoint = instance['endpoint']
+        else:
+            endpoint = Bicincitta._endpoint
+
+        if 'system_id' in instance:
+            self.system_id = system_id
+            self.url = [endpoint.format(id = system_id)]
+        elif 'comunes' in instance:
+            self.url = map(
+                lambda comune: endpoint.format(id = comune['id']),
+                instance['comunes']
+            )
+        else:
+            self.url = [endpoint]
+
 
     def update(self, scraper = None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
+        self.stations = []
+        for url in self.url:
+            self.stations += Bicincitta._getStations(url, scraper)
 
-        data = scraper.request(self.url)
+    @staticmethod
+    def _getStations(url, scraper):
+        data = scraper.request(url)
         raw  = re.findall(Bicincitta._RE_INFO, data)
-        info = re.findall("\'(.*?)\'", raw[1])
+        info = raw[1].split('\',\'')
         info = map(lambda chunk: chunk.split('|'), info)
-
         stations = []
         for index in range(len(info[0])):
             name        = info[5][index]
@@ -97,7 +116,7 @@ class Bicincitta(BaseSystem):
             station     = BicincittaStation(index, name, description, \
                             latitude, longitude, bikes, free)
             stations.append(station)
-        self.stations = stations
+        return stations
 
 class BicincittaStation(BikeShareStation):
     def __init__(self, id, name, description, lat, lng, bikes, free):
@@ -106,7 +125,7 @@ class BicincittaStation(BikeShareStation):
         if name[-1] == ":":
             name = name[:-1]
 
-        self.name        = name
+        self.name        = utils.clean_string(name)
         self.latitude    = lat
         self.longitude   = lng
         self.bikes       = bikes
@@ -114,4 +133,5 @@ class BicincittaStation(BikeShareStation):
         self.extra       = { }
 
         if description is not None and description != u'':
-            self.extra['description'] = description
+            self.extra['description'] = utils.clean_string(description)
+
