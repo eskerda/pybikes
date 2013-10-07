@@ -1,0 +1,54 @@
+{
+    "instances": [
+        {
+            "meta": {
+                "latitude": 45.4064349, 
+                "city": "Padova", 
+                "name": "GoodBike", 
+                "longitude": 11.8767611, 
+                "country": "IT"
+            }, 
+            "endpoint": "http://www.goodbikepadova.it/frmLeStazioni.aspx", 
+            "tag": "goodbike"
+        }, 
+        {
+            "comunes": [
+                {
+                    "id": 22, 
+                    "name": "Torino"
+                }, 
+                {
+                    "id": 61, 
+                    "name": "Grugilasco"
+                }, 
+                {
+                    "id": 62, 
+                    "name": "Collegno"
+                }, 
+                {
+                    "id": 63, 
+                    "name": "Venaria Reale"
+                }, 
+                {
+                    "id": 64, 
+                    "name": "Alpignano"
+                }, 
+                {
+                    "id": 65, 
+                    "name": "Druento"
+                }
+            ], 
+            "meta": {
+                "latitude": 45.07098200000001, 
+                "city": "Torino", 
+                "name": "[TO]BIKE", 
+                "longitude": 7.685676, 
+                "country": "IT"
+            }, 
+            "endpoint": "http://www.tobike.it/frmLeStazioni.aspx?ID={id}", 
+            "tag": "to-bike"
+        }
+    ], 
+    "system": "bicincitta", 
+    "class": "Bicincitta"
+}
