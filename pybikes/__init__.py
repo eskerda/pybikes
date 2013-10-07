@@ -50,8 +50,8 @@ def getDataFile(system):
         return json.loads(
             resource_string(__name__, "data/%s.json" % file_info[0]).decode('utf-8')
         )
-    except FileNotFoundError:
-        raise FileNotFoundError('File data/%s.json not found' % system)
+    except NameError:
+        raise NameError('File data/%s.json not found' % system)
 
 def getBikeShareSystem(system, tag, key = None):
     data = getDataFile(system)
