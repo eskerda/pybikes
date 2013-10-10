@@ -1,0 +1,287 @@
+{
+    "instances": [
+        {
+            "tag": "alba",
+            "system_id": 15,
+            "meta": {
+                "name": "Alba",
+                "city": "Alba", 
+                "country": "IT",
+                "latitude": 44.716667, 
+                "longitude": 8.083333
+            }
+        }
+        ,{
+            "tag": "andria",
+            "system_id": 48,
+            "meta": {
+                "name": "Andria",
+                "city": "Andria", 
+                "country": "IT",
+                "latitude": 41.231667,  
+                "longitude": 16.308333
+            }
+        }
+        ,{
+            "tag": "bariinbici",
+            "system_id": 9,
+            "meta": {
+                "name": "Bari in Bici",
+                "city": "Bari", 
+                "country": "IT",
+                "latitude": 41.125278, 
+                "longitude": 16.866667
+            }
+        }
+        ,{
+            "tag": "bassanodelgrappa",
+            "system_id": 45,
+            "meta": {
+                "name": "Bassano del Grappa",
+                "city": "Bassano del Grappa", 
+                "country": "IT",
+                "latitude": 45.768611, 
+                "longitude": 11.736667
+            }
+        } 
+        ,{
+            "tag": "bra",
+            "system_id": 14,
+            "meta": {
+                "name": "Bra",
+                "city": "Bra", 
+                "country": "IT",
+                "latitude": 44.694224, 
+                "longitude": 7.854795
+            }
+        }
+        ,{
+            "tag": "cagliari",
+            "system_id": 65,
+            "meta": {
+                "name": "Cagliari",
+                "city": "Cagliari", 
+                "country": "IT",
+                "latitude": 39.220817,
+                "longitude": 9.121399
+            }
+        }
+        ,{
+            "tag": "biciamo",
+            "system_id": 65,
+            "meta": {
+                "name": "BICIamo",
+                "city": "Cantu'", 
+                "country": "IT",
+                "latitude": 45.73626,
+                "longitude": 9.12569
+            }
+        }
+        ,{
+            "tag": "casalmaggiore",
+            "system_id": 40,
+            "meta": {
+                "name": "Casalmaggiore",
+                "city": "Casalmaggiore", 
+                "country": "IT",
+                "latitude": 44.983499,
+                "longitude": 10.419245
+            }
+        }
+        ,{
+            "tag": "chivasso",
+            "system_id": 11,
+            "meta": {
+                "name": "Chivasso",
+                "city": "Chivasso", 
+                "country": "IT",
+                "latitude": 45.189765,
+                "longitude": 7.888935
+            }
+        }
+        ,{
+            "tag": "ossola",
+            "system_id": 11,
+            "meta": {
+                "name": "Comunita' Montana Valli dell'Ossola",
+                "city": "Santa Maria Maggiore - Malesco - Villette", 
+                "country": "IT",
+                "latitude": 46.127196,
+                "longitude": 8.499169
+            }
+        }
+        ,{
+            "tag": "jesinbici",
+            "system_id": 58,
+            "meta": {
+                "name": "JesinBici",
+                "city": "Jesi", 
+                "country": "IT",
+                "latitude": 43.522601,
+                "longitude": 13.244448
+            }
+        }
+        ,{
+            "tag": "lecce",
+            "system_id": 46,
+            "meta": {
+                "name": "Lecce",
+                "city": "Lecce", 
+                "country": "IT",
+                "latitude": 40.348703,
+                "longitude": 18.173103
+            }
+        }
+        ,{
+            "tag": "mantova",
+            "system_id": 53,
+            "meta": {
+                "name": "Mantova",
+                "city": "Mantova", 
+                "country": "IT",
+                "latitude": 45.15983,
+                "longitude": 10.793467
+            }
+        }
+               ,{
+            "tag": "mobike",
+            "system_id": 33,
+            "meta": {
+                "name": "Mobike",
+                "city": "Genova", 
+                "country": "ITA",
+                "latitude": 44.403128,
+                "longitude": 8.932915
+            }
+        }
+        ,{
+            "tag": "noviligure",
+            "system_id": 22,
+            "meta": {
+                "name": "Novi Ligure",
+                "city": "Novi Ligure", 
+                "country": "IT"
+            }
+        }
+        
+        ,{
+            "tag": "oderzo",
+            "system_id": 49,
+            "meta": {
+                "name": "Oderzo",
+                "city": "Oderzo", 
+                "country": "IT"
+            }
+        },
+        {
+            "tag": "nbici",
+            "system_id": 1000,
+            "meta": {
+                "name": "nbici",
+                "city": "Pamplona", 
+                "country": "ES"
+            }
+        }
+        ,{
+            "tag": "pistoiainbici",
+            "system_id": 4,
+            "meta": {
+                "name": "PistoiainBici",
+                "city": "Pistoia", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "pontedera",
+            "system_id": 64,
+            "meta": {
+                "name": "Pontedera",
+                "city": "Pontedera", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "treviso",
+            "system_id": 67,
+            "meta": {
+                "name": "Treviso",
+                "city": "Treviso", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "prato",
+            "system_id": 12,
+            "meta": {
+                "name": "Prato",
+                "city": "Prato", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "sandonadipiave",
+            "system_id": 50,
+            "meta": {
+                "name": "San Donà di Piave",
+                "city": "San Donà di Piave", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "savona",
+            "system_id": 43,
+            "meta": {
+                "name": "Savona",
+                "city": "Savona", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "settimotorinese",
+            "system_id": 6,
+            "meta": {
+                "name": "Settimo Torinese",
+                "city": "Settimo Torinese", 
+                "country": "IT"
+            }
+        }
+       ,{
+            "tag": "gobike",
+            "system_id": 44,
+            "meta": {
+                "name": "GoBike",
+                "city": "Siracusa", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "sondrio",
+            "system_id": 63,
+            "meta": {
+                "name": "Sondrio",
+                "city": "Sondrio", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "vercelli",
+            "system_id": 56,
+            "meta": {
+                "name": "Vercelli",
+                "city": "Vercelli", 
+                "country": "IT"
+            }
+        }
+        ,{
+            "tag": "villorba",
+            "system_id": 66,
+            "meta": {
+                "name": "Villorba",
+                "city": "Villorba", 
+                "country": "IT"
+            }
+        }
+    ],
+    "system": "bicincittaold",
+    "class": "BicincittaOld"
+}
