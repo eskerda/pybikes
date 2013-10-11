@@ -309,6 +309,17 @@
                 "country": "IT"
             }
         }
+        ,{
+            "tag": "roma-n-bike", 
+            "system_id": 18, 
+            "meta": {
+                "latitude": 41.8929163, 
+                "city": "Roma", 
+                "name": "Roma'n'Bike", 
+                "longitude": 12.4825199, 
+                "country": "IT"
+            }
+        }
     ],
     "system": "bicincittaold",
     "class": "BicincittaOld"
