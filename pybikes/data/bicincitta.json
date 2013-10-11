@@ -375,6 +375,17 @@
             "tag": "speziainbici"
         },
         {
+            "meta": {
+                "latitude": 45.4408474, 
+                "city": "Venezia", 
+                "name": "Venezia", 
+                "longitude": 12.3155151, 
+                "country": "IT"
+            }, 
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=93", 
+            "tag": "venezia"
+        }, 
+        {
             "comunes": [
                 {
                     "id": 22, 
