@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "meta": {
+                "latitude": 48.2081743, 
+                "city": "Wien", 
+                "name": "Citybike Wien", 
+                "longitude": 16.3738189, 
+                "country": "AT"
+            }, 
+            "tag": "citybike-wien", 
+            "endpoint": "http://dynamisch.citybikewien.at/citybike_xml.php"
+        }
+    ], 
+    "system": "gewista_citybike", 
+    "class": "GewistaCityBike"
+}
