@@ -181,10 +181,10 @@
             "tag": "nbici",
             "system_id": 1000,
             "meta": {
-                "latitude": 42.6953909, 
+                "latitude": 42.8116631, 
                 "name": "nbici",
                 "city": "Pamplona", 
-                "longitude": -1.6760691, 
+                "longitude": -1.6482653, 
                 "country": "ES"
             }
         }
