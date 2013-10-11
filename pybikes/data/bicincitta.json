@@ -189,8 +189,10 @@
         }, 
         {
             "meta": {
+                "latitude": 41.833502, 
                 "city": "Ischitella – Peschici – Rodi Garganico – Vico del Gargano", 
                 "name": "Parkinbici", 
+                "longitude": 16.037292, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=105", 
@@ -198,8 +200,10 @@
         }, 
         {
             "meta": {
+                "latitude": 44.801485, 
                 "city": "Parma", 
                 "name": "Parma", 
+                "longitude": 10.3279036, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=58", 
@@ -207,8 +211,10 @@
         },
         {
             "meta": {
+                "latitude": 45.1847248, 
                 "city": "Pavia", 
                 "name": "Pavia in bici", 
+                "longitude": 9.1582069, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=45", 
@@ -216,8 +222,10 @@
         },
        {
             "meta": {
+                "latitude": 43.1107168, 
                 "city": "Perugia", 
                 "name": "Bici Perugia", 
+                "longitude": 12.3908279, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=122", 
@@ -225,8 +233,10 @@
         },
         {
             "meta": {
+                "latitude": 45.0473754, 
                 "city": "Piacenza", 
                 "name": "Piacenza", 
+                "longitude": 9.6865813, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=148", 
@@ -234,8 +244,10 @@
         },
         {
             "meta": {
+                "latitude": 44.8850256, 
                 "city": "Pinerolo", 
                 "name": "Pinerolo", 
+                "longitude": 7.3499953, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=71", 
@@ -243,8 +255,10 @@
         },
         {
             "meta": {
+                "latitude": 44.6989932, 
                 "city": "Reggio Emilia", 
                 "name": "Reggio Emilia", 
+                "longitude": 10.6296859, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=155", 
@@ -252,8 +266,10 @@
         },
         {
             "meta": {
+                "latitude": 44.0570817, 
                 "city": "Rimini", 
                 "name": "Rimini", 
+                "longitude": 12.5646003, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=149", 
@@ -261,8 +277,10 @@
         },
         {
             "meta": {
+                "latitude": 44.6445404, 
                 "city": "Saluzzo", 
                 "name": "Saluzzo", 
+                "longitude": 7.492735499999999, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=51", 
@@ -270,8 +288,10 @@
         },
         {
             "meta": {
+                "latitude": 45.7170517, 
                 "city": "Schio", 
                 "name": "BiciSchio", 
+                "longitude": 11.3597702, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=91", 
@@ -279,8 +299,10 @@
         },
         {
             "meta": {
+                "latitude": 44.6470327, 
                 "city": "Savigliano", 
                 "name": "Savigliano", 
+                "longitude": 7.662463499999999, 
                 "country": "IT"
             }, 
             "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=52", 
@@ -288,8 +310,10 @@
         },
         {
             "meta": {
+                "latitude": 42.5636168, 
                 "city": "Terni", 
                 "name": "Terni", 
+                "longitude": 12.6426604, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=134", 
@@ -297,8 +321,10 @@
         },
         {
             "meta": {
+                "latitude": 46.216168, 
                 "city": "Tirano", 
                 "name": "Tirano in Bici", 
+                "longitude": 10.1696056, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=141", 
@@ -306,8 +332,10 @@
         },
         {
             "meta": {
+                "latitude": 46.0710668, 
                 "city": "Udine", 
                 "name": "Udine", 
+                "longitude": 13.2345794, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=126", 
@@ -315,8 +343,10 @@
         },
         {
             "meta": {
+                "latitude": 38.7031179, 
                 "city": "Ustica", 
                 "name": "Ustica", 
+                "longitude": 13.1682675, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=138", 
@@ -324,8 +354,10 @@
         },
         {
             "meta": {
+                "latitude": 45.8080597, 
                 "city": "Como", 
                 "name": "BICI&CO", 
+                "longitude": 9.0851765, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=157", 
@@ -333,8 +365,10 @@
         },
         {
             "meta": {
+                "latitude": 44.1024504, 
                 "city": "La Spezia", 
                 "name": "Speziainbici", 
+                "longitude": 9.824082599999999, 
                 "country": "IT"
             }, 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=137", 

@@ -158,8 +158,10 @@
             "tag": "noviligure",
             "system_id": 22,
             "meta": {
+                "latitude": 44.7620048, 
                 "name": "Novi Ligure",
                 "city": "Novi Ligure", 
+                "longitude": 8.7858956, 
                 "country": "IT"
             }
         }
@@ -168,8 +170,10 @@
             "tag": "oderzo",
             "system_id": 49,
             "meta": {
+                "latitude": 45.77976460000001, 
                 "name": "Oderzo",
                 "city": "Oderzo", 
+                "longitude": 12.4973111, 
                 "country": "IT"
             }
         },
@@ -177,8 +181,10 @@
             "tag": "nbici",
             "system_id": 1000,
             "meta": {
+                "latitude": 42.6953909, 
                 "name": "nbici",
                 "city": "Pamplona", 
+                "longitude": -1.6760691, 
                 "country": "ES"
             }
         }
@@ -186,8 +192,10 @@
             "tag": "pistoiainbici",
             "system_id": 4,
             "meta": {
+                "latitude": 43.9303475, 
                 "name": "PistoiainBici",
                 "city": "Pistoia", 
+                "longitude": 10.9078587, 
                 "country": "IT"
             }
         }
@@ -195,8 +203,10 @@
             "tag": "pontedera",
             "system_id": 64,
             "meta": {
+                "latitude": 43.6625156, 
                 "name": "Pontedera",
                 "city": "Pontedera", 
+                "longitude": 10.6363586, 
                 "country": "IT"
             }
         }
@@ -204,8 +214,10 @@
             "tag": "treviso",
             "system_id": 67,
             "meta": {
+                "latitude": 45.6669011, 
                 "name": "Treviso",
                 "city": "Treviso", 
+                "longitude": 12.243039, 
                 "country": "IT"
             }
         }
@@ -213,8 +225,10 @@
             "tag": "prato",
             "system_id": 12,
             "meta": {
+                "latitude": 43.8777049, 
                 "name": "Prato",
                 "city": "Prato", 
+                "longitude": 11.102228, 
                 "country": "IT"
             }
         }
@@ -222,8 +236,10 @@
             "tag": "sandonadipiave",
             "system_id": 50,
             "meta": {
+                "latitude": 45.633185, 
                 "name": "San Donà di Piave",
                 "city": "San Donà di Piave", 
+                "longitude": 12.5654299, 
                 "country": "IT"
             }
         }
@@ -231,8 +247,10 @@
             "tag": "savona",
             "system_id": 43,
             "meta": {
+                "latitude": 44.2975603, 
                 "name": "Savona",
                 "city": "Savona", 
+                "longitude": 8.4645, 
                 "country": "IT"
             }
         }
@@ -240,8 +258,10 @@
             "tag": "settimotorinese",
             "system_id": 6,
             "meta": {
+                "latitude": 45.139586, 
                 "name": "Settimo Torinese",
                 "city": "Settimo Torinese", 
+                "longitude": 7.770978400000001, 
                 "country": "IT"
             }
         }
@@ -249,8 +269,10 @@
             "tag": "gobike",
             "system_id": 44,
             "meta": {
+                "latitude": 37.0754739, 
                 "name": "GoBike",
                 "city": "Siracusa", 
+                "longitude": 15.2865861, 
                 "country": "IT"
             }
         }
@@ -258,8 +280,10 @@
             "tag": "sondrio",
             "system_id": 63,
             "meta": {
+                "latitude": 46.1698583, 
                 "name": "Sondrio",
                 "city": "Sondrio", 
+                "longitude": 9.8787674, 
                 "country": "IT"
             }
         }
@@ -267,8 +291,10 @@
             "tag": "vercelli",
             "system_id": 56,
             "meta": {
+                "latitude": 45.32022720000001, 
                 "name": "Vercelli",
                 "city": "Vercelli", 
+                "longitude": 8.418573499999999, 
                 "country": "IT"
             }
         }
@@ -276,8 +302,10 @@
             "tag": "villorba",
             "system_id": 66,
             "meta": {
+                "latitude": 45.7411227, 
                 "name": "Villorba",
                 "city": "Villorba", 
+                "longitude": 12.2343848, 
                 "country": "IT"
             }
         }
