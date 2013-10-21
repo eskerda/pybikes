@@ -29,13 +29,25 @@ class TestSystems(unittest.TestCase):
 
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
-        sys_class = eval(data['class'])
-        if sys_class.authed:
-            key = eval('test_keys.%s' % system)
+        if isinstance(data['class'], unicode):
+            sys_class = eval(data['class'])
+            if sys_class.authed:
+                key = eval('test_keys.%s' % system)
+            else:
+                key = None
+            for instance in data['instances']:
+                self._test_system(system, instance['tag'], key)
+        elif isinstance(data['class'], dict):
+            for cls in data['class']:
+                sys_class = eval(cls)
+                if sys_class.authed:
+                    key = eval('test_keys.%s' % system)
+                else:
+                    key = None
+                for instance in data['class'][cls]['instances']:
+                    self._test_system(system, instance['tag'], key)
         else:
-            key = None
-        for instance in data['instances']:
-            self._test_system(system, instance['tag'], key)
+            raise Exception('Malformed data file')
 
     def _test_system(self, system, tag, key = None):
         """ Tests okayness of a system:

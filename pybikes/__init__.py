@@ -57,8 +57,16 @@ def getDataFile(system):
 
 def getBikeShareSystem(system, tag, key = None):
     data = getDataFile(system)
+    if isinstance(data.get('class'), unicode):
+        return getUniclassBikeShareSystem(system, tag, key)
+    elif isinstance(data.get('class'), dict):
+        return getMulticlassBikeShareSystem(system, tag, key)
+    else:
+        raise Exception('Malformed system %s' % system)
+
+def getUniclassBikeShareSystem(system, tag, key = None):
+    data = getDataFile(system)
     meta_data = [sys for sys in data['instances'] if sys['tag'] == tag]
-    
     if len(meta_data) == 0:
         raise BikeShareSystemNotFound(
             'System %s not found in data/%s.json' % (tag, system))
@@ -67,6 +75,21 @@ def getBikeShareSystem(system, tag, key = None):
     if system_class.authed:
         if key is None:
             raise Exception('System %s needs a key' % system)
-        else:
-            meta_data['key'] = key
+        meta_data['key'] = key
     return system_class(** meta_data)
+
+def getMulticlassBikeShareSystem(system, tag, key):
+    data = getDataFile(system)
+    clss = [cls for cls in data['class']]
+    for cls in clss:
+        for inst in data['class'][cls]['instances']:
+            if tag == inst['tag']:
+                syscls = eval(cls)
+                if syscls.authed:
+                    if key is None:
+                        raise Exception('System %s needs a key' % system)
+                    inst['key'] = key
+                return syscls(** inst)
+
+    raise BikeShareSystemNotFound(
+        'System %s not found in data/%s.json' % (tag, system))
