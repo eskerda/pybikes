@@ -24,6 +24,9 @@ class TestSystems(unittest.TestCase):
     def test_cyclocity(self):
         self._test_systems('cyclocity')
 
+    def test_gewista(self):
+        self._test_systems('gewista')
+
     def test_smartbike(self):
         self._test_systems('smartbike')
 
