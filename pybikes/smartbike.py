@@ -66,7 +66,7 @@ class Bizi(BaseSystem):
             }
             station.parent = self
             stations.append(station)
-        
+
         self.stations = stations
 
 class BiziStation(BikeShareStation):
@@ -81,7 +81,7 @@ class BiziStation(BikeShareStation):
                 url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),
                 data = {
                     'idStation': self.extra['uid'],
-                    'addressnew': self.extra['token']    
+                    'addressnew': self.extra['token']
                 }
         )
         dom = pq(raw)
@@ -90,5 +90,5 @@ class BiziStation(BikeShareStation):
         self.name = name.encode('utf-8')
         self.bikes = int(availability[1].lstrip())
         self.free = int(availability[2].lstrip())
-        
+
         return True
