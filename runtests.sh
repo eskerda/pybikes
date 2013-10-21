@@ -1,2 +1,3 @@
 export PYTHONPATH=$PYTHONPATH:.
-virtualenv2/bin/python tests/unittest_pybikes.py $@
+python2 setup.py install
+python2 tests/unittest_pybikes.py $@
