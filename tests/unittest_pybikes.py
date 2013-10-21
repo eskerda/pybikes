@@ -21,11 +21,11 @@ class TestSystems(unittest.TestCase):
     def test_bcycle(self):
         self._test_systems('bcycle')
 
-    def test_bizi(self):
-        self._test_systems('bizi')
-
     def test_cyclocity(self):
         self._test_systems('cyclocity')
+
+    def test_smartbike(self):
+        self._test_systems('smartbike')
 
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)

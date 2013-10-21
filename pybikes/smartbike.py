@@ -8,7 +8,7 @@ from pyquery import PyQuery as pq
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = ['SmartBike','Bizi','BiziStation']
+__all__ = ['SmartBike','SmartClunky','SmartClunkyStation']
 
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
@@ -22,23 +22,20 @@ class BaseSystem(BikeShareSystem):
 
 class SmartBike(BaseSystem):
     pass
-    
-class Bizi(BaseSystem):
+
+class SmartClunky(BaseSystem):
     sync = False
     list_url = "/localizaciones/localizaciones.php"
     station_url = "/CallWebService/StationBussinesStatus.php"
 
-    def __init__(self, tag, meta, root_url, 
-                 list_url = None, station_url = None, v = 2):
-        super(Bizi, self).__init__(tag, meta)
+    def __init__(self, tag, meta, root_url, ** extra):
+        super(SmartClunky, self).__init__(tag, meta)
         self.root_url = root_url
-        if list_url is not None:
-            self.list_url = list_url
+        if 'list_url' in extra:
+            self.list_url = extra['list_url']
 
-        if station_url is not None:
-            self.station_url = station_url
-
-        self.v = v
+        if 'station_url' in extra:
+            self.station_url = extra['station_url']
 
     def update(self, scraper = None):
 
@@ -49,14 +46,11 @@ class Bizi(BaseSystem):
             "{0}{1}".format(self.root_url, self.list_url)
         )
         geopoints = re.findall(LAT_LNG_RGX, raw)
-        if (self.v == 1):
-            ids_addrs = re.findall(ID_ADD_RGX_V, raw)
-        else:
-            ids_addrs = re.findall(ID_ADD_RGX, raw)
+        ids_addrs = re.findall(ID_ADD_RGX_V, raw)
         stations = []
 
         for index, geopoint in enumerate(geopoints):
-            station = BiziStation(index)
+            station = SmartClunkyStation(index)
             station.latitude = float(geopoint[0])
             station.longitude = float(geopoint[1])
             uid = int(ids_addrs[index][0])
@@ -69,14 +63,14 @@ class Bizi(BaseSystem):
 
         self.stations = stations
 
-class BiziStation(BikeShareStation):
+class SmartClunkyStation(BikeShareStation):
     def update(self, scraper = None):
 
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
 
-        super(BiziStation, self).update()
+        super(SmartClunkyStation, self).update()
         raw = scraper.request( method="POST",
                 url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),
                 data = {
@@ -92,3 +86,4 @@ class BiziStation(BikeShareStation):
         self.free = int(availability[2].lstrip())
 
         return True
+

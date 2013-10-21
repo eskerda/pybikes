@@ -1,0 +1,22 @@
+{
+    "system": "smartbike",
+    "class": {
+        "SmartClunky": {
+            "instances": [
+                {
+                    "tag": "ecobici",
+                    "root_url": "https://www.ecobici.df.gob.mx",
+                    "list_url": "/localizaciones/localizaciones_body.php",
+                    "station_url": "/CallWebService/StationBussinesStatus.php",
+                    "meta": {
+                        "name": "EcoBici",
+                        "city": "México, D.F.",
+                        "country": "MEX",
+                        "latitude": 19.4326077,
+                        "longitude": -99.13320799999997
+                    }
+                }
+            ]
+        }
+    }
+}
