@@ -9,7 +9,7 @@ import json
 import argparse
 from urlparse import urlparse
 from collections import namedtuple
-
+import traceback
 from googlegeocoder import GoogleGeocoder
 from slugify import slugify
 import pybikes
@@ -191,29 +191,8 @@ def write_output(data, way):
     way.write('\n')
     way.close()
 
-def main():
-    global data
-    if args.proxy is not None:
-        proxies['http'] = args.proxy
-        scraper.enableProxy()
-
-    if args.httpsproxy is not None:
-        proxies['https'] = args.httpsproxy
-        scraper.enableProxy()
-
-    scraper.setProxies(proxies)
-
-    if not args.slugify and not args.geocode:
-        sys.stderr.write("Nothing to do, stopping\n")
-        exit(0)
-
-    data = json.loads(args.input.read())
-    args.input.close()
-    instances = data['instances']
-    system = data['system']
-    systemCls = eval('pybikes.' + data['class'])
-
-    sys.stderr.write('Found %d instances for %s\n' % (len(instances), system))
+def handle_System(cls, instances):
+    systemCls = eval('pybikes.%s' % cls)
     lastlen = 0
 
     if args.interactive and args.geocode:
@@ -249,13 +228,49 @@ def main():
             geocode(instance, systemCls, language)
             time.sleep(1)
 
+
+def main():
+    global data
+    if args.proxy is not None:
+        proxies['http'] = args.proxy
+        scraper.enableProxy()
+
+    if args.httpsproxy is not None:
+        proxies['https'] = args.httpsproxy
+        scraper.enableProxy()
+
+    scraper.setProxies(proxies)
+
+    if not args.slugify and not args.geocode:
+        sys.stderr.write("Nothing to do, stopping\n")
+        exit(0)
+
+    data = json.loads(args.input.read())
+    args.input.close()
+    if isinstance(data['class'], unicode):
+        #UniSystem
+        instances = data['instances']
+        system = data['system']
+        sys.stderr.write('Found %d instances for %s\n' % (len(instances), system))
+        handle_System(data['class'], instances)
+    elif isinstance(data['class'], dict):
+        #MuliSystem
+        for cls in data['class']:
+            instances = data['class'][cls]['instances']
+            system = data['system']
+            sys.stderr.write('Found %d instances for %s\n' % (len(instances), system))
+            handle_System(cls, instances)
+    else:
+        raise Exception('Malformed data file')
+
+
     write_output(data, args.output)
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print e
+        traceback.print_exc()
         if args.continuous:
             if args.verbose:
                 sys.stderr.write("Writing file bc exception\n")
