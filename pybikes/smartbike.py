@@ -3,16 +3,24 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 from pyquery import PyQuery as pq
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = ['SmartBike','SmartClunky','SmartClunkyStation']
+__all__ = ['SmartBike', 'SmartBikeStation', \
+           'SmartClunky', 'SmartClunkyStation'\
+          ]
 
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
 ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
+
+parse_methods = {
+    'xml': 'get_xml_stations',
+    'json': 'get_json_stations'
+}
 
 class BaseSystem(BikeShareSystem):
     meta = {
@@ -21,7 +29,47 @@ class BaseSystem(BikeShareSystem):
     }
 
 class SmartBike(BaseSystem):
-    pass
+    sync = True
+
+    def __init__(self, tag, meta, feed_url, format = "json"):
+        super(SmartBike, self).__init__(tag, meta)
+        self.feed_url = feed_url
+        if format not in parse_methods:
+            raise Exception('Unsupported method %s' % format)
+        self.method = parse_methods[format]
+
+    def update(self, scraper = None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+        raw_req = scraper.request(self.feed_url)
+        self.stations = eval(self.method)(self, raw_req)
+
+def get_xml_stations(self, raw):
+    raise Exception("Not implemented")
+
+def get_json_stations(self, raw):
+    # Double encoded json FTWTF..
+    data = json.loads(json.loads(raw)[1]['data'])
+    stations = map(SmartBikeStation, data)
+    return stations
+
+class SmartBikeStation(BikeShareStation):
+    def __init__(self, info):
+        super(SmartBikeStation, self).__init__(0)
+        self.name      = info['StationName']
+        self.bikes     = int(info['StationAvailableBikes'])
+        self.free      = int(info['StationFreeSlot'])
+        self.latitude  = float(info['AddressGmapsLatitude'])
+        self.longitude = float(info['AddressGmapsLongitude'])
+        self.extra = {
+            'uid': info['StationID'],
+            'status': info['StationStatusCode'],
+            'districtCode': info['DisctrictCode'],
+            'NearbyStationList': map(
+                int, info['NearbyStationList'].split(',')
+            )
+        }
 
 class SmartClunky(BaseSystem):
     sync = False
