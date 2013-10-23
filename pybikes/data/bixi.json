@@ -156,6 +156,22 @@
             }, 
             "feed_url": "https://divvybikes.com/stations/json", 
             "format": "json"
+        }, 
+        {
+            "tag": "bay-area-bike-share", 
+            "meta": {
+                "city": "San Francisco Bay Area, CA", 
+                "name": "Bay Area Bike Share", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -122.25, 
+                "latitude": 37.7141454
+            }, 
+            "feed_url": "http://bayareabikeshare.com/stations/json", 
+            "format": "json"
         }
     ], 
     "system": "bixi", 
