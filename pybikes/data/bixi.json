@@ -172,6 +172,22 @@
             }, 
             "feed_url": "http://bayareabikeshare.com/stations/json", 
             "format": "json"
+        }, 
+        {
+            "tag": "hubway", 
+            "meta": {
+                "city": "Boston, MA", 
+                "name": "Hubway", 
+                "country": "US", 
+                "company": [
+                    "PBSC", 
+                    "Alta Bicycle Share, Inc"
+                ], 
+                "longitude": -71.0597732, 
+                "latitude": 42.3584308
+            }, 
+            "feed_url": "http://www.thehubway.com/data/stations/bikeStations.xml", 
+            "format": "xml"
         }
     ], 
     "system": "bixi", 
