@@ -29,6 +29,7 @@ from .cyclocity import *
 from .bicincitta import *
 from .domoblue import *
 from .gewista_citybike import *
+from .decobike import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -37,7 +38,8 @@ __all__ = base.__all__ +\
           cyclocity.__all__+\
           bicincitta.__all__+\
           domoblue.__all__+\
-          gewista_citybike.__all__
+          gewista_citybike.__all__+\
+          decobike.__all__
 
 class BikeShareSystemNotFound(Exception):
     pass

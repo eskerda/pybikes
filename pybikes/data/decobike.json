@@ -1,0 +1,28 @@
+{
+    "instances": [
+        {
+            "endpoint": "http://www.decobike.com", 
+            "tag": "decobike-miami-beach", 
+            "meta": {
+                "latitude": 25.790654, 
+                "city": "Miami Beach, FL", 
+                "name": "DecoBike Miami Beach", 
+                "longitude": -80.1300455, 
+                "country": "US"
+            }
+        }, 
+        {
+            "endpoint": "http://www.decobikelbny.com", 
+            "tag": "decobike-long-beach", 
+            "meta": {
+                "latitude": 40.5884373, 
+                "city": "Long Beach, NY", 
+                "name": "DecoBike Long Beach", 
+                "longitude": -73.65790799999999, 
+                "country": "US"
+            }
+        }
+    ], 
+    "system": "decobike", 
+    "class": "DecoBike"
+}
