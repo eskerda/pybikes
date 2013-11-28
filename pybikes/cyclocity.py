@@ -4,13 +4,13 @@
 
 import re
 import json
+import HTMLParser
 
 from pyquery import PyQuery as pq
-
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = ['Cyclocity','CyclocityStation']
+__all__ = ['Cyclocity','CyclocityStation','CyclocityWeb','CyclocityWebStation']
 
 api_root = "https://api.jcdecaux.com/vls/v1/"
 
@@ -19,6 +19,8 @@ endpoints = {
     'stations' : 'stations?apiKey={api_key}&contract={contract}',
     'station'  : 'stations/{station_id}?contract={contract}&apiKey={api_key}'
 }
+
+html_parser = HTMLParser.HTMLParser()
 
 class Cyclocity(BikeShareSystem):
 
@@ -109,3 +111,70 @@ class CyclocityStation(BikeShareStation):
             status = json.loads(scraper.request(self.url))
             self.__init__(self.id, status, self.url)
         return self
+
+class CyclocityWeb(BikeShareSystem):
+    sync = False
+
+    meta = {
+        'system': 'Cyclocity',
+        'company': 'JCDecaux'
+    }
+
+    _list_url = '/service/carto'
+    _station_url = '/service/stationdetails/{city}/{id}'
+
+    def __init__(self, tag, meta, endpoint, city):
+        super(CyclocityWeb, self).__init__(tag, meta)
+        self.endpoint    = endpoint
+        self.city        = city
+        self.list_url    = endpoint + CyclocityWeb._list_url
+        self.station_url = endpoint + CyclocityWeb._station_url
+
+    def update(self, scraper = None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+        xml_markers = scraper.request(self.list_url)
+        dom = pq(xml_markers.encode('utf-8'), parser = 'xml')
+        markers = dom('marker')
+        stations = []
+        for index, marker in enumerate(markers):
+            station = CyclocityWebStation(index)
+            station.from_xml(marker)
+            station.url = self.station_url.format(
+                city = self.city, id = station.extra['uid']
+            )
+            stations.append(station)
+        self.stations = stations
+
+class CyclocityWebStation(BikeShareStation):
+    def from_xml(self, marker):
+        self.name = marker.get('name').title()
+        self.latitude  = float(marker.get('lat'))
+        self.longitude = float(marker.get('lng'))
+
+        self.extra = {
+            'uid': int(marker.get('number')),
+            'address': html_parser.unescape(
+                marker.get('fullAddress').rstrip()
+            ),
+            'open': int(marker.get('open')) == 1,
+            'bonus': int(marker.get('bonus')) == 1
+        }
+
+    def update(self, scraper = None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+        super(CyclocityWebStation, self).update()
+
+        status_xml = scraper.request(self.url)
+        status = pq(status_xml.encode('utf-8'), parser = 'xml')
+
+        self.bikes = int(status('available').text())
+        self.free  = int(status('free').text())
+        self.extra['open'] = int(status('open').text()) == 1
+        self.extra['last_update'] = status('updated').text()
+        self.extra['connected'] = status('connected').text()
+        self.extra['slots'] = int(status('total').text())
+        self.extra['ticket'] = int(status('ticket').text()) == 1
+
