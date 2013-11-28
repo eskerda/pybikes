@@ -26,18 +26,6 @@
                     }, 
                     "tag": "citycycle", 
                     "endpoint": "http://www.citycycle.com.au"
-                }, 
-                {
-                    "city": "besancon", 
-                    "meta": {
-                        "latitude": 47.237829, 
-                        "city": "Besan\u00e7on", 
-                        "name": "V\u00e9locit\u00e9", 
-                        "longitude": 6.024053899999999, 
-                        "country": "FR"
-                    }, 
-                    "tag": "velocite", 
-                    "endpoint": "http://www.velocite.besancon.fr"
                 }
             ]
         }, 
@@ -154,7 +142,7 @@
                     "contract": "Lillestrom"
                 }, 
                 {
-                    "tag": "velocite", 
+                    "tag": "velocite-mulhouse", 
                     "meta": {
                         "latitude": 47.750839, 
                         "country": "FR", 
@@ -308,7 +296,7 @@
                     "contract": "Nantes"
                 }, 
                 {
-                    "tag": "velocite", 
+                    "tag": "velocite-besancon", 
                     "meta": {
                         "latitude": 47.237829, 
                         "country": "FR", 
