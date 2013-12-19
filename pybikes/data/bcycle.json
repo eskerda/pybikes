@@ -9,7 +9,7 @@
                 "longitude": -105.2705456, 
                 "country": "US"
             }, 
-            "feed_url": "http://boulder.bcycle.com"
+            "program": 54
         }, 
         {
             "tag": "broward", 
@@ -20,7 +20,7 @@
                 "longitude": -80.1433786, 
                 "country": "US"
             }, 
-            "feed_url": "http://broward.bcycle.com"
+            "program": 53
         }, 
         {
             "tag": "charlotte", 
@@ -31,7 +31,7 @@
                 "longitude": -80.8431267, 
                 "country": "US"
             }, 
-            "feed_url": "http://charlotte.bcycle.com"
+            "program": 61
         }, 
         {
             "tag": "denver", 
@@ -42,7 +42,7 @@
                 "longitude": -104.9847179, 
                 "country": "US"
             }, 
-            "feed_url": "http://denver.bcycle.com"
+            "program": 36
         }, 
         {
             "tag": "desmoines", 
@@ -53,7 +53,7 @@
                 "longitude": -93.6091064, 
                 "country": "US"
             }, 
-            "feed_url": "http://desmoines.bcycle.com"
+            "program": 45
         }, 
         {
             "tag": "fortworth", 
@@ -64,7 +64,7 @@
                 "longitude": -97.3208496, 
                 "country": "US"
             }, 
-            "feed_url": "http://fortworth.bcycle.com"
+            "program": 67
         }, 
         {
             "tag": "greenbikeslc", 
@@ -75,7 +75,7 @@
                 "longitude": -111.8910474, 
                 "country": "US"
             }, 
-            "feed_url": "http://greenbikeslc.org"
+            "program": 66
         }, 
         {
             "tag": "greenville", 
@@ -86,7 +86,7 @@
                 "longitude": -82.3940104, 
                 "country": "US"
             }, 
-            "feed_url": "http://greenville.bcycle.com"
+            "program": 65
         }, 
         {
             "tag": "hawaii", 
@@ -97,7 +97,7 @@
                 "longitude": -157.73944440000002, 
                 "country": "US"
             }, 
-            "feed_url": "http://hawaii.bcycle.com"
+            "program": 49
         }, 
         {
             "tag": "houston", 
@@ -108,7 +108,7 @@
                 "longitude": -95.36938959999999, 
                 "country": "US"
             }, 
-            "feed_url": "http://houston.bcycle.com"
+            "program": 59
         }, 
         {
             "tag": "kansascity", 
@@ -119,7 +119,7 @@
                 "longitude": -94.5785667, 
                 "country": "US"
             }, 
-            "feed_url": "http://kansascity.bcycle.com"
+            "program": 62
         }, 
         {
             "tag": "madison", 
@@ -129,8 +129,8 @@
                 "name": "Madison B-cycle", 
                 "longitude": -89.4012302, 
                 "country": "US"
-            }, 
-            "feed_url": "http://madison.bcycle.com"
+            },
+            "program": 55
         }, 
         {
             "tag": "nashville", 
@@ -141,7 +141,7 @@
                 "longitude": -86.7833333, 
                 "country": "US"
             }, 
-            "feed_url": "http://nashville.bcycle.com"
+            "program": 64
         }, 
         {
             "tag": "omaha", 
@@ -152,7 +152,7 @@
                 "longitude": -95.99798829999999, 
                 "country": "US"
             }, 
-            "feed_url": "http://omaha.bcycle.com"
+            "program": 56
         }, 
         {
             "tag": "sanantonio", 
@@ -163,7 +163,7 @@
                 "longitude": -98.49362819999999, 
                 "country": "US"
             }, 
-            "feed_url": "http://sanantonio.bcycle.com"
+            "program": 48
         }, 
         {
             "tag": "spartanburg", 
@@ -174,7 +174,7 @@
                 "longitude": -81.9320482, 
                 "country": "US"
             }, 
-            "feed_url": "http://spartanburg.bcycle.com"
+            "program": 57
         }
     ], 
     "system": "bcycle", 

@@ -2,16 +2,19 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import re
+import json
 
-from pyquery import PyQuery as pq
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 __all__ = ['BCycleSystem', 'BCycleStation']
 
-LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
-DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back\)"
+api_root = "https://publicapi.bcycle.com/api/1.0/"
+
+endpoints = {
+    'programs': 'ListPrograms',
+    'stations': 'ListProgramKiosks/{program}'
+}
 
 class BCycleError(Exception):
     def __init__(self, msg):
@@ -24,8 +27,9 @@ class BCycleError(Exception):
 
 class BCycleSystem(BikeShareSystem):
 
-    feed_url = "http://{system}.bcycle.com"
     sync = True
+
+    authed = True
 
     meta = { 
         'system': 'B-cycle',
@@ -34,66 +38,48 @@ class BCycleSystem(BikeShareSystem):
                      ,'Crispin Porter + Bogusky' ]
     }
 
-    def __init__(self, tag, meta, system = None, feed_url = None):
+    def __init__(self, tag, meta, program, key):
         super( BCycleSystem, self).__init__(tag, meta)
-        if feed_url is not None:
-            self.feed_url = feed_url
-        else:
-            self.feed_url = BCycleSystem.feed_url.format(system =  system)
+        self.program = program
+        self.api_key = key
+        self.stations_url = api_root + endpoints['stations'].format(
+            program = program
+        )
 
     def update(self, scraper = None):
-
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        html_data = scraper.request(self.feed_url)
-
-        geopoints = re.findall(LAT_LNG_RGX, html_data)
-        puzzle = re.findall(DATA_RGX, html_data)
+        scraper.headers['ApiKey'] = self.api_key
+        data = json.loads(scraper.request(self.stations_url))
         stations = []
-
-        for index, fuzzle in enumerate(puzzle):
-            
-            station = BCycleStation(index)
-            station.latitude = float(geopoints[index][0])
-            station.longitude = float(geopoints[index][1])
-            station.from_html(fuzzle)
-
-            stations.append(station)
-
+        for index, info in enumerate(data):
+            try:
+                station = BCycleStation(index)
+                station.from_json(info)
+                stations.append(station)
+            except Exception:
+                continue
         self.stations = stations
-
 
 class BCycleStation(BikeShareStation):
 
-    def from_html(self, fuzzle):
-        """ Take a good look at this fuzzle:
-            var point = new google.maps.LatLng(41.86727, -87.61527);
-            var marker = new createMarker(
-                point,                       .--- Fuzzle
-                "<div class='location'>      '    
-                    <strong>Museum Campus</strong><br />
-                    1200 S Lakeshore Drive<br />
-                    Chicago, IL 60605
-                </div>
-                <div class='avail'>
-                    Bikes available: <strong>0</strong><br />
-                    Docks available: <strong>21</strong>
-                </div>
-                <br/>
-                ", icon, back);
-            Now, do something about it
-        """
+    def from_json(self, data):
+	if data['Status'] == 'ComingSoon':
+		raise Exception('Station is coming soon')
 
-        d = pq(fuzzle)('div')
-        location = d.find('.location').html().split('<br/>')
-        availability = d.find('.avail strong')
+        self.name      = "%s - %s" % (data['Id'], data['Name'])
+        self.longitude = float(data['Location']['Latitude'])
+        self.latitude  = float(data['Location']['Longitude'])
+        self.bikes     = int(data['BikesAvailable'])
+        self.free      = int(data['DocksAvailable'])
 
-        self.name = pq(location[0]).html()
-        self.bikes = int(availability.eq(0).text())
-        self.free = int(availability.eq(1).text())
-        
         self.extra = {
-            'address' : '{0} - {1}'.format(location[1], location[2])
+            'status': data['Status'],
+            'street': data['Address']['Street'],
+            'city': data['Address']['City'],
+            'zipCode': data['Address']['ZipCode'],
         }
+
         return self
+
