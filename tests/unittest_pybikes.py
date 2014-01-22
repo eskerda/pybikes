@@ -33,6 +33,9 @@ class TestSystems(unittest.TestCase):
     def test_decobike(self):
         self._test_systems('decobike')
 
+    def test_keolis(self):
+        self._test_systems('keolis')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):

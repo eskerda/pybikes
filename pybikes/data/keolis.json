@@ -1,0 +1,20 @@
+{
+    "system": "keolis", 
+    "class": {
+        "Keolis_v2": {
+            "instances": [
+                {
+                    "tag": "vlille", 
+                    "meta": {
+                        "latitude": 50.62925, 
+                        "city": "Lille", 
+                        "name": "V'lille", 
+                        "longitude": 3.057256, 
+                        "country": "FR"
+                    }, 
+                    "feed_url": "http://www.vlille.fr"
+                }
+            ]
+        }
+    }
+}
