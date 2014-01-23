@@ -1,7 +1,7 @@
 {
     "instances": [
         {
-            "tag": "montreal", 
+            "tag": "bixi-montreal", 
             "meta": {
                 "latitude": 45.5086699, 
                 "city": "Montreal, QC", 
