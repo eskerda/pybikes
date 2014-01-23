@@ -123,7 +123,7 @@ def extract_systems():
             continue
         sys = Domoblue('foo', {}, int(marker.get('codigoCliente')))
         sys.update()
-        online = test_system_health(sys)
+        online = True #test_system_health(sys)
         if args.verbose:  
             print "--- %s --- " % repr(marker.get('nombre'))
             print " Total stations: %d" % len(sys.stations)
