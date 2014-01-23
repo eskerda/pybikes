@@ -45,6 +45,9 @@ parser.add_argument('--slugify', action="store_true", dest = 'slugify',
 parser.add_argument('--geocode', action="store_true", dest = 'geocode', 
                     default = False, help="Correct geodata using Google GeoCoder")
 
+parser.add_argument('--correct_name', action="store_true", dest = "geoname",
+                    default = False, help="Correct just the name using geodata")
+
 parser.add_argument('-f', action="store_true", dest = 'overwrite', 
                     default = False, help="Overwrite already set variables")
 
@@ -164,6 +167,9 @@ def geocode(instance, systemCls, language, address = None):
                         metainfo[meta] += address.address_components[r].short_name
                         if (i < len(res)-1):
                             metainfo[meta] += ', '
+                if args.geoname:
+                    lat = latitude
+                    lng = longitude
                 metainfo['latitude'] = lat
                 metainfo['longitude'] = lng
                 instance['meta'] = metainfo
