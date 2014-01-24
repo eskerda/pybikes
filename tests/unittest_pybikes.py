@@ -42,6 +42,9 @@ class TestSystems(unittest.TestCase):
     def test_emovity(self):
         self._test_systems('emovity')
 
+    def test_bicipalma(self):
+        self._test_systems('bicipalma')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):

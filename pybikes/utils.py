@@ -22,6 +22,8 @@ def sp_capwords(word):
         u'a', u'ante', u'bajo', u'cabe', u'con', u'contra', u'de', u'desde', \
         u'en', u'entre', u'hacia', u'hasta', u'mediante', u'para', u'por', \
         u'según', u'sin' \
+        # Catala | Valencia | Mallorqui
+        u'ses', u'sa', u'ses'
     ]
     word = word.lower()
     cap_lambda = lambda (index, w): \

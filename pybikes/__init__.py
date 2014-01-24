@@ -32,6 +32,7 @@ from .gewista_citybike import *
 from .decobike import *
 from .keolis import *
 from .emovity import *
+from .bicipalma import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -43,7 +44,8 @@ __all__ = base.__all__ +\
           gewista_citybike.__all__+\
           decobike.__all__+\
           keolis.__all__+\
-          emovity.__all__
+          emovity.__all__+\
+          bicipalma.__all__
 
 class BikeShareSystemNotFound(Exception):
     pass
