@@ -39,6 +39,9 @@ class TestSystems(unittest.TestCase):
     def test_domoblue(self):
         self._test_systems('domoblue')
 
+    def test_emovity(self):
+        self._test_systems('emovity')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
