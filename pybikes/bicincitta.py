@@ -69,7 +69,7 @@ class BicincittaOld(BaseSystem):
 
 class Bicincitta(BaseSystem):
     sync = True
-    _RE_INFO="RefreshMap\((.*?)\)"
+    _RE_INFO="RefreshMap\((.*?)\)\;"
     _endpoint = "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID={id}"
 
     def __init__(self, tag, meta, ** instance):
@@ -103,9 +103,10 @@ class Bicincitta(BaseSystem):
     def _getStations(url, scraper):
         data = scraper.request(url)
         raw  = re.findall(Bicincitta._RE_INFO, data)
-        info = raw[1].split('\',\'')
+        info = raw[0].split('\',\'')
         info = map(lambda chunk: chunk.split('|'), info)
         stations = []
+
         for index in range(len(info[0])):
             name        = info[5][index]
             description = info[7][index]
