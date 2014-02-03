@@ -45,6 +45,12 @@ class TestSystems(unittest.TestCase):
     def test_bicipalma(self):
         self._test_systems('bicipalma')
 
+    def test_bicincitta(self):
+        self._test_systems('bicincitta')
+
+    def test_bicincittaold(self):
+        self._test_systems('bicincittaold')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
