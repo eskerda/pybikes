@@ -27,7 +27,7 @@ class BCycleSystem(BikeShareSystem):
     feed_url = "http://{system}.bcycle.com"
     sync = True
 
-    meta = { 
+    meta = {
         'system': 'B-cycle',
         'company': [ 'Trek Bicycle Corporation'
                      ,'Humana'
@@ -53,7 +53,7 @@ class BCycleSystem(BikeShareSystem):
         stations = []
 
         for index, fuzzle in enumerate(puzzle):
-            
+
             station = BCycleStation(index)
             station.latitude = float(geopoints[index][0])
             station.longitude = float(geopoints[index][1])
@@ -71,7 +71,7 @@ class BCycleStation(BikeShareStation):
             var point = new google.maps.LatLng(41.86727, -87.61527);
             var marker = new createMarker(
                 point,                       .--- Fuzzle
-                "<div class='location'>      '    
+                "<div class='location'>      '
                     <strong>Museum Campus</strong><br />
                     1200 S Lakeshore Drive<br />
                     Chicago, IL 60605
@@ -92,8 +92,9 @@ class BCycleStation(BikeShareStation):
         self.name = pq(location[0]).html()
         self.bikes = int(availability.eq(0).text())
         self.free = int(availability.eq(1).text())
-        
+
         self.extra = {
             'address' : '{0} - {1}'.format(location[1], location[2])
         }
         return self
+
