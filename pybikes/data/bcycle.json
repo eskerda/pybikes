@@ -175,6 +175,17 @@
                 "country": "US"
             }, 
             "feed_url": "http://spartanburg.bcycle.com"
+        }, 
+        {
+            "tag": "austin", 
+            "meta": {
+                "latitude": 30.267153, 
+                "city": "Austin, TX", 
+                "name": "B-cycle", 
+                "longitude": -97.7430608, 
+                "country": "US"
+            }, 
+            "feed_url": "https://austin.bcycle.com/station-locations/"
         }
     ], 
     "system": "bcycle", 
