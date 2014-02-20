@@ -24,7 +24,7 @@ Status:
     <table> {...}
         <td class="titulo">Fo Bar baz - EN LINIA</td> ◁───────────┬ :)
         {...}                                                     │
-        <td width="100" class="lat2" nowrap>{...}</td>           │
+        <td width="100" class="lat2" nowrap>{...}</td>            │
         <td width="100" class="lat2" nowrap>ESTADO - (2/10)</td> ◁┘
         <td width="65" align="center" class="ico" nowrap bgcolor="#F0F0F0">
             <img src="no.jpg">
