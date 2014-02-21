@@ -19,7 +19,8 @@ ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
 
 parse_methods = {
     'xml': 'get_xml_stations',
-    'json': 'get_json_stations'
+    'json': 'get_json_stations',
+    'json_v2': 'get_json_v2_stations'
 }
 
 class BaseSystem(BikeShareSystem):
@@ -54,22 +55,49 @@ def get_json_stations(self, raw):
     stations = map(SmartBikeStation, data)
     return stations
 
+def get_json_v2_stations(self, raw):
+    data = json.loads(raw)
+    stations = map(SmartBikeStation, data)
+    return stations
+
 class SmartBikeStation(BikeShareStation):
     def __init__(self, info):
         super(SmartBikeStation, self).__init__(0)
-        self.name      = info['StationName']
-        self.bikes     = int(info['StationAvailableBikes'])
-        self.free      = int(info['StationFreeSlot'])
-        self.latitude  = float(info['AddressGmapsLatitude'])
-        self.longitude = float(info['AddressGmapsLongitude'])
-        self.extra = {
-            'uid': info['StationID'],
-            'status': info['StationStatusCode'],
-            'districtCode': info['DisctrictCode'],
-            'NearbyStationList': map(
-                int, info['NearbyStationList'].split(',')
-            )
-        }
+        try:
+            self.name      = info['StationName']
+            self.bikes     = int(info['StationAvailableBikes'])
+            self.free      = int(info['StationFreeSlot'])
+            self.latitude  = float(info['AddressGmapsLatitude'])
+            self.longitude = float(info['AddressGmapsLongitude'])
+            self.extra = {
+                'uid': info['StationID'],
+                'status': info['StationStatusCode'],
+                'districtCode': info['DisctrictCode'],
+                'NearbyStationList': map(
+                    int, info['NearbyStationList'].split(',')
+                )
+            }
+        except KeyError:
+            # Either something has changed, or it's the other type of feed
+            # Same data, different keys.
+            self.name = info['name']
+            self.bikes = int(info['bikes'])
+            self.free = int(info['slots'])
+            self.latitude = float(info['lat'])
+            self.longitude = float(info['lon'])
+            self.extra = {
+                'uid': info['id'],
+                'status': info['status'],
+                'districtCode': info['district'],
+                'address': info['address']
+            }
+            if info['nearbyStations'] is not None:
+                self.extra['NearbyStationList'] = map(
+                    int, info['nearbyStations'].split(',')
+                )
+            if info['zip'] is not None:
+                self.extra['zip'] = info['zip']
+
 
 class SmartClunky(BaseSystem):
     sync = False
