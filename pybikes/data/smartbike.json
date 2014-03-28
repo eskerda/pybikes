@@ -1,8 +1,20 @@
 {
     "system": "smartbike", 
     "class": {
-        "SmartClunky": {
-            "instances": []
+        "SmartShitty": {
+            "instances": [
+                {
+                    "tag": "bikemi", 
+                    "meta": {
+                        "latitude": 45.4654542, 
+                        "city": "Milano", 
+                        "name": "BikeMi", 
+                        "longitude": 9.186516, 
+                        "country": "IT"
+                    }, 
+                    "feed_url": "https://www.bikemi.com/en/stations-map.aspx"
+                }
+            ]
         }, 
         "SmartBike": {
             "instances": [
@@ -39,10 +51,9 @@
                         "longitude": -99.133208, 
                         "country": "MX"
                     }, 
-                    "feed_url": "https://www.ecobici.df.gob.mx/availability_map/getJsonObject",
+                    "feed_url": "https://www.ecobici.df.gob.mx/availability_map/getJsonObject", 
                     "format": "json_v2"
                 }
-
             ]
         }
     }

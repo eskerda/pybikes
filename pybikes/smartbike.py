@@ -5,13 +5,14 @@
 import re
 import json
 from pyquery import PyQuery as pq
+from lxml import html
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = ['SmartBike', 'SmartBikeStation', \
-           'SmartClunky', 'SmartClunkyStation'\
-          ]
+__all__ = [ 'SmartBike', 'SmartBikeStation',
+            'SmartClunky', 'SmartClunkyStation',
+            'SmartShitty', 'SmartShittyStation' ]
 
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
@@ -148,7 +149,10 @@ class SmartClunkyStation(BikeShareStation):
 
         super(SmartClunkyStation, self).update()
         raw = scraper.request( method="POST",
-                url = "{0}{1}".format(self.parent.root_url, self.parent.station_url),
+                url = "{0}{1}".format(
+                    self.parent.root_url,
+                    self.parent.station_url
+                ),
                 data = {
                     'idStation': self.extra['uid'],
                     'addressnew': self.extra['token']
@@ -162,4 +166,79 @@ class SmartClunkyStation(BikeShareStation):
         self.free = int(availability[2].lstrip())
 
         return True
+
+class SmartShitty(BaseSystem):
+    """
+    BikeMI decided to implement yet another way of displaying the map...
+    So, I guess what we will do here is using a regular expression to get the
+    info inside the $create function, and then load that as a JSON. Who the
+    fuck pay this guys money, seriously?
+
+    <script type="text/javascript">
+    //<![CDATA[
+    Sys.Application.add_init(function() {
+        $create(Artem.Google.MarkersBehavior, {
+            "markerOptions":[
+                {
+                    "clickable":true,
+                    "icon":{
+                        ...
+                    },
+                    "optimized":true,
+                    "position":{
+                        "lat":45.464683238625966,
+                        "lng":9.18879747390747
+                    },
+                    "raiseOnDrag":true,
+                    "title":"01 - Duomo",    _____ Thank you...
+                    "visible":true,         /
+                    "info":"<div style=\"width: 240px; height: 100px;\">
+                                <span style=\"font-weight: bold;\">
+                                    01 - Duomo
+                                </span>
+                                <br/>
+                                <ul>
+                                    <li>Available bicycles: 17</li>
+                                    <li>Available slots: 7</li>
+                                </ul>
+                            </div>
+                }, ...
+            ],
+            "name": "fuckeduplongstring"
+        }, null, null, $get("station-map"));
+    })
+    """
+    sync = True
+
+    _RE_MARKERS = 'Google\.MarkersBehavior\,\ (?P<data>.*?)\,\ null'
+
+    def __init__(self, tag, meta, feed_url):
+        super(SmartShitty, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper = None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+        page = scraper.request(self.feed_url)
+        markers = json.loads(
+            re.search(SmartShitty._RE_MARKERS, page).group('data')
+        )['markerOptions']
+        self.stations = map(SmartShittyStation, markers)
+
+class SmartShittyStation(BikeShareStation):
+    def __init__(self, marker):
+        super(SmartShittyStation, self).__init__(0) #TODO: remove idx in base
+
+        avail_soup   = html.fromstring(marker['info'])
+        availability = map(
+            lambda x: int(x.split(':')[1]),
+            avail_soup.xpath("//div/ul/li/text()")
+        )
+
+        self.name      = marker['title']
+        self.latitude  = marker['position']['lat']
+        self.longitude = marker['position']['lng']
+        self.bikes     = availability[0]
+        self.free      = availability[1]
 
