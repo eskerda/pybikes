@@ -421,6 +421,17 @@
             }, 
             "endpoint": "http://www.tobike.it/frmLeStazioni.aspx?ID={id}", 
             "tag": "to-bike"
+        }, 
+        {
+            "meta": {
+                "latitude": 43.7228386, 
+                "city": "Pisa", 
+                "name": "Ciclopi", 
+                "longitude": 10.4016888, 
+                "country": "IT"
+            }, 
+            "tag": "ciclopi", 
+            "endpoint": "http://www.ciclopi.eu/frmLeStazioni.aspx"
         }
     ], 
     "system": "bicincitta", 
