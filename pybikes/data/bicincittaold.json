@@ -56,17 +56,6 @@
             }
         }
         ,{
-            "tag": "cagliari",
-            "system_id": 65,
-            "meta": {
-                "name": "Cagliari",
-                "city": "Cagliari", 
-                "country": "IT",
-                "latitude": 39.220817,
-                "longitude": 9.121399
-            }
-        }
-        ,{
             "tag": "biciamo",
             "system_id": 65,
             "meta": {

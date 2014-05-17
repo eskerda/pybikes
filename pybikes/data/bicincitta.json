@@ -432,6 +432,17 @@
             }, 
             "tag": "ciclopi", 
             "endpoint": "http://www.ciclopi.eu/frmLeStazioni.aspx"
+        }, 
+        {
+            "meta": {
+                "latitude": 39.220817, 
+                "city": "Cagliari", 
+                "name": "Cagliari", 
+                "longitude": 9.121399, 
+                "country": "IT"
+            }, 
+            "tag": "cagliari", 
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=177"
         }
     ], 
     "system": "bicincitta", 
