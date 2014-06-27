@@ -15,6 +15,22 @@
                     "feed_url": "http://www.vlille.fr"
                 }
             ]
+        }, 
+        "Keolis": {
+            "instances": [
+                {
+                    "tag": "idecycle", 
+                    "meta": {
+                        "latitude": 43.2951, 
+                        "country": "FR", 
+                        "name": "IDECycle", 
+                        "longitude": -0.370797, 
+                        "city": "Pau",
+                        "company": ["Keolis", "STAP"]
+                    }, 
+                    "feed_url": "http://www.idecycle.com/stations/plan"
+                }
+            ]
         }
     }
 }
