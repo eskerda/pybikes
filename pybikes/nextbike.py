@@ -61,7 +61,8 @@ class NextbikeStation(BikeShareStation):
 
         # Bike racks may or may not be there
         if 'bike_racks' in place_tree.attrib:
-            self.free = place_tree.attrib['bike_racks']
+            self.free = int(place_tree.attrib['bike_racks']) - self.bikes
+            self.extra['slots'] = place_tree.attrib['bike_racks']
         else:
             self.free = -1
             self.extra['slots_approximate'] = True
