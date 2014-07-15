@@ -34,6 +34,7 @@ from .keolis import *
 from .emovity import *
 from .bicipalma import *
 from .bicicard import *
+from .nextbike import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -47,7 +48,8 @@ __all__ = base.__all__ +\
           keolis.__all__+\
           emovity.__all__+\
           bicipalma.__all__+\
-          bicicard.__all__
+          bicicard.__all__+\
+          nextbike.__all__
 
 class BikeShareSystemNotFound(Exception):
     pass

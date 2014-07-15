@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "domain": "mb", 
+            "tag": "bubi", 
+            "meta": {
+                "latitude": 47.497912, 
+                "city": "Budapest", 
+                "name": "MOL Bubi", 
+                "longitude": 19.040235, 
+                "country": "HU"
+            }, 
+            "city_uid": 228
+        }
+    ], 
+    "system": "nextbike", 
+    "class": "Nextbike"
+}
