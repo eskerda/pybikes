@@ -53,14 +53,14 @@ class Cyclocity(BikeShareSystem):
 
         data = json.loads(scraper.request(self.stations_url))
         stations = []
-        for index, info in enumerate(data):
+        for info in data:
             station_url = api_root + endpoints['station'].format(
                 api_key    = self.api_key,
                 contract   = self.contract,
                 station_id = "{station_id}"
             )
             try:
-                station = CyclocityStation(index, info, station_url)
+                station = CyclocityStation(info, station_url)
                 stations.append(station)
             except Exception:
                 continue
@@ -78,8 +78,8 @@ class Cyclocity(BikeShareSystem):
 
 class CyclocityStation(BikeShareStation):
 
-    def __init__(self, id, jcd_data, station_url):
-        super(CyclocityStation, self).__init__(id)
+    def __init__(self, jcd_data, station_url):
+        super(CyclocityStation, self).__init__()
 
         self.name      = jcd_data['name']
         self.latitude  = jcd_data['position']['lat']
@@ -109,7 +109,7 @@ class CyclocityStation(BikeShareStation):
         super(CyclocityStation, self).update()
         if net_update:
             status = json.loads(scraper.request(self.url))
-            self.__init__(self.id, status, self.url)
+            self.__init__(status, self.url)
         return self
 
 class CyclocityWeb(BikeShareSystem):
@@ -138,8 +138,8 @@ class CyclocityWeb(BikeShareSystem):
         dom = pq(xml_markers.encode('utf-8'), parser = 'xml')
         markers = dom('marker')
         stations = []
-        for index, marker in enumerate(markers):
-            station = CyclocityWebStation(index)
+        for marker in markers:
+            station = CyclocityWebStation()
             station.from_xml(marker)
             station.url = self.station_url.format(
                 city = self.city, id = station.extra['uid']
