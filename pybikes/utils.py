@@ -40,21 +40,13 @@ def clean_string(dirty):
     return dirty
 
 class PyBikesScraper(object):
-    
-    headers = {
-        'User-Agent': 'PyBikes'
-    }
-
-    proxies = {}
-
     proxy_enabled = False
-
     last_request = None
 
     def __init__(self):
-
+        self.headers = { 'User-Agent': 'PyBikes' }
+        self.proxies = {}
         self.session = requests.session()
-
 
     def setUserAgent(self, user_agent):
 
