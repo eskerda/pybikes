@@ -24,11 +24,10 @@ class BikeShareStation(object):
             - JCDecauxStation, ClearChannelStation
     """
 
-    def __init__(self, id, timestamp = None):
+    def __init__(self, id = 0, timestamp = None):
         if timestamp is None:
             timestamp = datetime.utcnow()
 
-        self.id = id
         self.name = None
         self.latitude = None
         self.longitude = None
