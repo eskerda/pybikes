@@ -52,23 +52,14 @@ class BCycleSystem(BikeShareSystem):
 
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)
-        stations = []
-
-        for index, fuzzle in enumerate(puzzle):
-
-            station = BCycleStation(index)
-            station.latitude = float(geopoints[index][0])
-            station.longitude = float(geopoints[index][1])
-            station.from_html(fuzzle)
-
-            stations.append(station)
-
-        self.stations = stations
+        self.stations = [
+            BCycleStation(latlng, fuzzle)
+                for latlng, fuzzle in zip(geopoints, puzzle)
+        ]
 
 
 class BCycleStation(BikeShareStation):
-
-    def from_html(self, fuzzle):
+    def __init__(self, latlng, fuzzle):
         """ Take a good look at this fuzzle:
             var point = new google.maps.LatLng(41.86727, -87.61527);
             var marker = new createMarker(
@@ -86,7 +77,9 @@ class BCycleStation(BikeShareStation):
                 ", icon, back);
             Now, do something about it
         """
-
+        super(BCycleStation, self).__init__()
+        self.latitude = float(latlng[0])
+        self.longitude = float(latlng[1])
         d = pq(fuzzle)('div')
         location = d.find('.location').html().split('<br/>')
         availability = d.find('.avail strong')
@@ -98,5 +91,4 @@ class BCycleStation(BikeShareStation):
         self.extra = {
             'address' : '{0} - {1}'.format(location[1], location[2])
         }
-        return self
 
