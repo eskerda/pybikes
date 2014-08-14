@@ -8,7 +8,7 @@ import codecs
 from pyquery import PyQuery as pq
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from . import utils, exceptions
 
 __all__ = ['BixiSystem', 'BixiStation']
 
@@ -22,9 +22,9 @@ class BixiSystem(BikeShareSystem):
 
     sync = True
 
-    meta = { 
+    meta = {
         'system': 'Bixi',
-        'company': 'PBSC' 
+        'company': 'PBSC'
     }
 
     def __init__(self, tag, feed_url, meta, format):
@@ -37,7 +37,8 @@ class BixiSystem(BikeShareSystem):
             scraper = utils.PyBikesScraper()
 
         if self.method not in parse_methods:
-            raise Exception('Extractor for method %s is not implemented' % self.method )
+            raise Exception(
+                'Extractor for method %s is not implemented' % self.method )
 
         self.stations = eval(parse_methods[self.method])(self, scraper)
 
@@ -45,41 +46,30 @@ def get_xml_stations(self, scraper):
     xml_data = scraper.request(self.feed_url)
     dom = pq(xml_data.encode('utf-8'), parser = 'xml')
     markers = dom('station')
-    stations = []
-    
-    for index, marker in enumerate(markers):
-        station = BixiStation(index)
-        station.from_xml(marker)
-        stations.append(station)
-    return stations
+    return map(BixiStation.from_xml, markers)
 
 def get_json_stations(self, scraper):
     data = json.loads(scraper.request(self.feed_url))
     stations = []
-    index = 0
     for marker in data['stationBeanList']:
         try:
-          station = BixiStation(index)
-          station.from_json(marker)
-          index = index + 1
-          stations.append(station)
-        except Exception as e:
-          print e
+            station = BixiStation.from_json(marker)
+        except exceptions.StationPlannedException:
+            continue
+        stations.append(station)
     return stations
 
 def get_json_xml_stations(self, scraper):
     raw = scraper.request(self.feed_url).decode('unicode-escape')
     data = json.loads(raw)
-    stations = []
-    for index, marker in enumerate(data):
-        station = BixiStation(index)
-        station.from_json_xml(marker)
-        stations.append(station)
-    return stations
+    return map(BixiStation.from_json_xml, data)
 
 class BixiStation(BikeShareStation):
+    def __init__(self):
+        super(BixiStation, self).__init__()
 
-    def from_xml(self, xml_data):
+    @staticmethod
+    def from_xml(xml_data):
         """ xml marker object as in
         <station>
             <id>1</id>
@@ -96,17 +86,18 @@ class BixiStation(BikeShareStation):
             <nbEmptyDocks>17</nbEmptyDocks>
         </station>
         """
+        station = BixiStation()
         xml_data = pq(xml_data, parser='xml')
-        
+
         terminalName = xml_data('terminalName').text()
         name = xml_data('name').text()
-        self.name = "%s - %s" % (terminalName, name)
-        self.latitude = float(xml_data('lat').text())
-        self.longitude = float(xml_data('long').text())
-        self.bikes = int(xml_data('nbBikes').text())
-        self.free = int(xml_data('nbEmptyDocks').text())
+        station.name = "%s - %s" % (terminalName, name)
+        station.latitude = float(xml_data('lat').text())
+        station.longitude = float(xml_data('long').text())
+        station.bikes = int(xml_data('nbBikes').text())
+        station.free = int(xml_data('nbEmptyDocks').text())
 
-        self.extra = {
+        station.extra = {
             'uid': int(xml_data('id').text()),
             'name': name,
             'terminalName' : terminalName,
@@ -117,9 +108,10 @@ class BixiStation(BikeShareStation):
             'removalDate': xml_data('removalDate').text(),
             'latestUpdateTime': xml_data('latestUpdateTime').text()
         }
-        return self
+        return station
 
-    def from_json(self, data):
+    @staticmethod
+    def from_json(data):
         '''
           {
             "id":2026,
@@ -142,17 +134,17 @@ class BixiStation(BikeShareStation):
             "landMark":""
           }
         '''
-
+        station = BixiStation()
         if data['statusValue'] == 'Planned' or data['testStation']:
-            raise Exception('Station is only Planned or is a Test one')
+            raise exceptions.StationPlannedException()
 
-        self.name      = "%s - %s" % (data['id'], data['stationName'])
-        self.longitude = float(data['longitude'])
-        self.latitude  = float(data['latitude'])
-        self.bikes     = int(data['availableBikes'])
-        self.free      = int(data['availableDocks'])
+        station.name      = "%s - %s" % (data['id'], data['stationName'])
+        station.longitude = float(data['longitude'])
+        station.latitude  = float(data['latitude'])
+        station.bikes     = int(data['availableBikes'])
+        station.free      = int(data['availableDocks'])
 
-        self.extra = {
+        station.extra = {
             'uid': int(data['id']),
             'statusValue': data['statusValue'],
             'statusKey': data['statusKey'],
@@ -168,8 +160,10 @@ class BixiStation(BikeShareStation):
             'totalDocks': data['totalDocks']
         }
 
-        return self
-    def from_json_xml(self, data):
+        return station
+
+    @staticmethod
+    def from_json_xml(data):
         """ json marker object translated from xml
         { 
             "id": "2", 
@@ -189,14 +183,16 @@ class BixiStation(BikeShareStation):
             "latestUpdateTime": "1375592453128" 
         }
         """
-        
-        self.name = "%s - %s" % (data['terminalName'], data['name'])
-        self.latitude = float(data['lat'])
-        self.longitude = float(data['long'])
-        self.bikes = int(data['nbBikes'])
-        self.free = int(data['nbEmptyDocks'])
 
-        self.extra = {
+        station = BixiStation()
+
+        station.name = "%s - %s" % (data['terminalName'], data['name'])
+        station.latitude = float(data['lat'])
+        station.longitude = float(data['long'])
+        station.bikes = int(data['nbBikes'])
+        station.free = int(data['nbEmptyDocks'])
+
+        station.extra = {
             'uid': int(data['id']),
             'name': data['name'],
             'terminalName': data['terminalName'],
@@ -209,4 +205,5 @@ class BixiStation(BikeShareStation):
             'public': utils.str2bool(data['public']),
             'latestUpdateTime': data['latestUpdateTime']
         }
-        return self
+        return station
+

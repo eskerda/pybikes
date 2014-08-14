@@ -26,6 +26,7 @@ import os
 from pkg_resources import resource_string, resource_listdir
 
 from .base import *
+from .exceptions import *
 from .bixi import *
 from .bcycle import *
 from .smartbike import *
@@ -54,10 +55,6 @@ __all__ = base.__all__ +\
           bicipalma.__all__+\
           bicicard.__all__+\
           nextbike.__all__
-
-class BikeShareSystemNotFound(Exception):
-    pass
-
 
 def getDataFiles():
     return resource_listdir(__name__, 'data')
@@ -107,5 +104,5 @@ def getMulticlassBikeShareSystem(system, tag, key):
                     inst['key'] = key
                 return syscls(** inst)
 
-    raise BikeShareSystemNotFound(
+    raise exceptions.BikeShareSystemNotFound(
         'System %s not found in data/%s.json' % (tag, system))
