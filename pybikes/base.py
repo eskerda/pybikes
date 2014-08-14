@@ -30,7 +30,6 @@ class BikeShareStation(object):
     """
 
     def __init__(self, id, timestamp = datetime.utcnow() ):
-
         self.id = id
         self.name = None
         self.latitude = None
@@ -39,6 +38,7 @@ class BikeShareStation(object):
         self.free = None
         self.timestamp = timestamp     # Store timestamp in UTC!
         self.extra = {}
+
     def __str__(self):
         return "--- {0} ---\n"\
                "bikes: {1}\n"\
@@ -62,7 +62,7 @@ class BikeShareStation(object):
             args['cls'] = GeneralPurposeEncoder
 
         return json.dumps(self, **args)
-    
+
     def get_hash(self):
         """ Return a unique hash representing this station, usually with
             latitude and longitude, since it's the only globally ready and
@@ -110,7 +110,7 @@ class BikeShareSystem(object):
 
     def __str__(self):
         return "tag: %s\nmeta: %s" % (self.tag, str(self.meta))
-        
+
     def to_json(self, **args):
         """ Dump a json string using the BikeShareSystemEncoder with a
             set of default options
