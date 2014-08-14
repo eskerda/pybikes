@@ -3,9 +3,10 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-import requests
 import urllib, urllib2
 from urlparse import urlparse
+
+import requests
 
 def str2bool(v):
   return v.lower() in ["yes", "true", "t", "1"]
@@ -49,7 +50,6 @@ class PyBikesScraper(object):
         self.session = requests.session()
 
     def setUserAgent(self, user_agent):
-
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method = 'GET', params = None, data = None):
@@ -76,12 +76,11 @@ class PyBikesScraper(object):
         )
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
-            
+
         self.last_request = response
         return response.text
 
     def clearCookie(self):
-        
         if 'Cookie' in self.headers:
             del self.headers['Cookie']
 
@@ -99,3 +98,4 @@ class PyBikesScraper(object):
 
     def disableProxy(self):
         self.proxy_enabled = False
+
