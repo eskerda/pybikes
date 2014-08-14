@@ -98,7 +98,6 @@ class Bicicard(BikeShareSystem):
 
         placemarks = location_dom.xpath("//kml:Placemark",
                                         namespaces = _kml_ns)
-        index = 0
         stations = []
         for placemark in placemarks:
             name = placemark.findtext('kml:name', namespaces = _kml_ns)
@@ -122,7 +121,7 @@ class Bicicard(BikeShareSystem):
             bikes = int(m.group('bikes'))
             slots = int(m.group('slots'))
 
-            station = BikeShareStation(index)
+            station = BikeShareStation()
             station.name       = name
             station.latitude   = coor[1]
             station.longitude  = coor[0]
@@ -131,7 +130,6 @@ class Bicicard(BikeShareSystem):
             station.extra      = { 'slots': slots }
 
             stations.append(station)
-            index = index + 1
 
         self.stations = stations
 
