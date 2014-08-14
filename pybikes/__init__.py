@@ -14,6 +14,10 @@ print "%s: %s" % ("Bicing City is", bicing.meta.city)
 stations = bicing.get_stations() <- Returns Array[BicingStation]
 
 """
+__author__ = "eskerda (eskerda@gmail.com)"
+__version__ = "2.0"
+__copyright__ = "Copyright (c) 2010-2012 eskerda"
+__license__ = "AGPL"
 
 import json
 import glob

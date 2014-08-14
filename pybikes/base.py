@@ -6,11 +6,6 @@ from datetime import datetime
 import json
 import hashlib
 
-__author__ = "eskerda (eskerda@gmail.com)"
-__version__ = "2.0"
-__copyright__ = "Copyright (c) 2010-2012 eskerda"
-__license__ = "AGPL"
-
 __all__ = ['GeneralPurposeEncoder', 'BikeShareStation', 'BikeShareSystem' ]
 
 class GeneralPurposeEncoder(json.JSONEncoder):
