@@ -11,7 +11,7 @@ import sys
 import pybikes
 from pybikes import *
 from pybikes import utils
-import test_keys
+import keys
 
 class TestSystems(unittest.TestCase):
 
@@ -62,7 +62,7 @@ class TestSystems(unittest.TestCase):
         if isinstance(data['class'], unicode):
             sys_class = eval(data['class'])
             if sys_class.authed:
-                key = eval('test_keys.%s' % system)
+                key = eval('keys.%s' % system)
             else:
                 key = None
             for instance in data['instances']:
@@ -71,7 +71,7 @@ class TestSystems(unittest.TestCase):
             for cls in data['class']:
                 sys_class = eval(cls)
                 if sys_class.authed:
-                    key = eval('test_keys.%s' % system)
+                    key = eval('keys.%s' % system)
                 else:
                     key = None
                 for instance in data['class'][cls]['instances']:
