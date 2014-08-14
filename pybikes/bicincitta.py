@@ -53,19 +53,14 @@ class BicincittaOld(BaseSystem):
         vec_lng   = BicincittaOld._clean_raw(raw_lng[0]);
         vec_name  = BicincittaOld._clean_raw(raw_name[0]);
         vec_avail = BicincittaOld._clean_raw(raw_avail[0]);
-        
-        stations = []
 
-        for index, name in enumerate(vec_name):
-            latitude    = float(vec_lat[index])
-            longitude   = float(vec_lng[index])
-            description = None
-            bikes       = int(vec_avail[index].count('4'))
-            free        = int(vec_avail[index].count('0'))
-            station     = BicincittaStation(index, name, description, \
-                            latitude, longitude, bikes, free)
-            stations.append(station)
-        self.stations = stations
+        self.stations = [
+            BicincittaStation (
+                name, None, lat, lng, avail.count('4'), avail.count('0')
+            ) for name, lat, lng, avail in zip(
+                vec_name, vec_lat, vec_lng, vec_avail
+            )
+        ]
 
 class Bicincitta(BaseSystem):
     sync = True
@@ -97,31 +92,22 @@ class Bicincitta(BaseSystem):
             scraper = utils.PyBikesScraper()
         self.stations = []
         for url in self.url:
-            self.stations += Bicincitta._getStations(url, scraper)
+            self.stations += Bicincitta._getComuneStations(url, scraper)
 
     @staticmethod
-    def _getStations(url, scraper):
+    def _getComuneStations(url, scraper):
         data = scraper.request(url)
         raw  = re.findall(Bicincitta._RE_INFO, data)
         info = raw[0].split('\',\'')
         info = map(lambda chunk: chunk.split('|'), info)
-        stations = []
-
-        for index in range(len(info[0])):
-            name        = info[5][index]
-            description = info[7][index]
-            latitude    = float(info[3][index])
-            longitude   = float(info[4][index])
-            bikes       = int(info[6][index].count('4'))
-            free        = int(info[6][index].count('0'))
-            station     = BicincittaStation(index, name, description, \
-                            latitude, longitude, bikes, free)
-            stations.append(station)
-        return stations
+        # Yes, this is a joke
+        return [ BicincittaStation(name, desc, float(lat), float(lng),
+                 stat.count('4'), stat.count('0')) for name, desc, lat, lng,
+                 stat in zip(info[5], info[7], info[3], info[4], info[6]) ]
 
 class BicincittaStation(BikeShareStation):
-    def __init__(self, id, name, description, lat, lng, bikes, free):
-        super(BicincittaStation, self).__init__(id)
+    def __init__(self, name, description, lat, lng, bikes, free):
+        super(BicincittaStation, self).__init__()
 
         if name[-1] == ":":
             name = name[:-1]
