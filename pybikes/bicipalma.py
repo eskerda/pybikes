@@ -42,7 +42,7 @@ class BiciPalma(BikeShareSystem):
         markers = json.loads(fuzzle)
 
         stations = []
-        for index, marker in enumerate(markers):
+        for marker in markers:
             # id = marker['id']
             # Seems that this id is just incremental, and not related to the
             # system at all.. discrating until further notiche?
@@ -56,7 +56,7 @@ class BiciPalma(BikeShareSystem):
             for i in range(1,6):
                 ints.append(int([a for a in stats[i].itertext()][1].strip()))
 
-            station = BikeShareStation(index)
+            station = BikeShareStation()
             station.latitude = float(marker['realLat'])
             station.longitude = float(marker['realLon'])
             station.name = utils.sp_capwords(re.sub('\ *-\ *',' - ',name).title())
