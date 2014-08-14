@@ -46,6 +46,10 @@ class Cyclocity(BikeShareSystem):
             api_key  = self.api_key,
             contract = contract
         )
+        self.station_url = api_root + endpoints['station'].format(
+            api_key = self.api_key,
+            contract = contract,
+            station_id = '{station_id}' )
 
     def update(self, scraper = None):
         if scraper is None:
@@ -54,25 +58,18 @@ class Cyclocity(BikeShareSystem):
         data = json.loads(scraper.request(self.stations_url))
         stations = []
         for info in data:
-            station_url = api_root + endpoints['station'].format(
-                api_key    = self.api_key,
-                contract   = self.contract,
-                station_id = "{station_id}"
-            )
             try:
-                station = CyclocityStation(info, station_url)
-                stations.append(station)
+                station = CyclocityStation(info, self.station_url)
             except Exception:
                 continue
+            stations.append(station)
         self.stations = stations
 
     @staticmethod
     def get_contracts(api_key, scraper = None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-        url = api_root + endpoints['contracts'].format(
-            api_key = api_key
-        )
+        url = api_root + endpoints['contracts'].format(api_key = api_key)
         return json.loads(scraper.request(url))
 
 
@@ -139,8 +136,7 @@ class CyclocityWeb(BikeShareSystem):
         markers = dom('marker')
         stations = []
         for marker in markers:
-            station = CyclocityWebStation()
-            station.from_xml(marker)
+            station = CyclocityWebStation.from_xml(marker)
             station.url = self.station_url.format(
                 city = self.city, id = station.extra['uid']
             )
@@ -148,12 +144,14 @@ class CyclocityWeb(BikeShareSystem):
         self.stations = stations
 
 class CyclocityWebStation(BikeShareStation):
-    def from_xml(self, marker):
-        self.name = marker.get('name').title()
-        self.latitude  = float(marker.get('lat'))
-        self.longitude = float(marker.get('lng'))
+    @staticmethod
+    def from_xml(marker):
+        station = CyclocityWebStation()
+        station.name = marker.get('name').title()
+        station.latitude  = float(marker.get('lat'))
+        station.longitude = float(marker.get('lng'))
 
-        self.extra = {
+        station.extra = {
             'uid': int(marker.get('number')),
             'address': html_parser.unescape(
                 marker.get('fullAddress').rstrip()
@@ -161,6 +159,7 @@ class CyclocityWebStation(BikeShareStation):
             'open': int(marker.get('open')) == 1,
             'bonus': int(marker.get('bonus')) == 1
         }
+        return station
 
     def update(self, scraper = None):
         if scraper is None:
