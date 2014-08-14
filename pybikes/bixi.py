@@ -5,7 +5,7 @@
 import json
 import codecs
 
-from pyquery import PyQuery as pq
+from lxml import etree
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils, exceptions
@@ -44,8 +44,8 @@ class BixiSystem(BikeShareSystem):
 
 def get_xml_stations(self, scraper):
     xml_data = scraper.request(self.feed_url)
-    dom = pq(xml_data.encode('utf-8'), parser = 'xml')
-    markers = dom('station')
+    dom = etree.fromstring(xml_data.encode('utf-8'))
+    markers = dom.xpath('/stations/station')
     return map(BixiStation.from_xml, markers)
 
 def get_json_stations(self, scraper):
@@ -87,27 +87,30 @@ class BixiStation(BikeShareStation):
         </station>
         """
         station = BixiStation()
-        xml_data = pq(xml_data, parser='xml')
+        terminalName = xml_data.findtext('terminalName')
+        name = xml_data.findtext('name')
+        latestUpdateTime = xml_data.findtext('latestUpdateTime')
 
-        terminalName = xml_data('terminalName').text()
-        name = xml_data('name').text()
         station.name = "%s - %s" % (terminalName, name)
-        station.latitude = float(xml_data('lat').text())
-        station.longitude = float(xml_data('long').text())
-        station.bikes = int(xml_data('nbBikes').text())
-        station.free = int(xml_data('nbEmptyDocks').text())
+        station.latitude = float(xml_data.findtext('lat'))
+        station.longitude = float(xml_data.findtext('long'))
+        station.bikes = int(xml_data.findtext('nbBikes'))
+        station.free = int(xml_data.findtext('nbEmptyDocks'))
 
         station.extra = {
-            'uid': int(xml_data('id').text()),
+            'uid': int(xml_data.findtext('id')),
             'name': name,
             'terminalName' : terminalName,
-            'locked': utils.str2bool(xml_data('locked').text()),
-            'installed': utils.str2bool(xml_data('installed').text()),
-            'temporary': utils.str2bool(xml_data('temporary').text()),
-            'installDate': xml_data('installDate').text(),
-            'removalDate': xml_data('removalDate').text(),
-            'latestUpdateTime': xml_data('latestUpdateTime').text()
+            'locked': utils.str2bool(xml_data.findtext('locked')),
+            'installed': utils.str2bool(xml_data.findtext('installed')),
+            'temporary': utils.str2bool(xml_data.findtext('temporary')),
+            'installDate': xml_data.findtext('installDate'),
+            'removalDate': xml_data.findtext('removalDate')
         }
+
+        if latestUpdateTime is not None and latestUpdateTime != '0':
+            station.extra['latestUpdateTime'] = latestUpdateTime
+
         return station
 
     @staticmethod
