@@ -6,7 +6,8 @@ import re
 import json
 import HTMLParser
 
-from pyquery import PyQuery as pq
+from lxml import etree
+
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
@@ -102,8 +103,8 @@ class CyclocityStation(BikeShareStation):
     def update(self, scraper = None, net_update = False):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-
         super(CyclocityStation, self).update()
+
         if net_update:
             status = json.loads(scraper.request(self.url))
             self.__init__(status, self.url)
@@ -132,8 +133,8 @@ class CyclocityWeb(BikeShareSystem):
             scraper = utils.PyBikesScraper()
 
         xml_markers = scraper.request(self.list_url)
-        dom = pq(xml_markers.encode('utf-8'), parser = 'xml')
-        markers = dom('marker')
+        dom = etree.fromstring(xml_markers.encode('utf-7'))
+        markers = dom.xpath('/carto/markers/marker')
         stations = []
         for marker in markers:
             station = CyclocityWebStation.from_xml(marker)
@@ -167,13 +168,13 @@ class CyclocityWebStation(BikeShareStation):
         super(CyclocityWebStation, self).update()
 
         status_xml = scraper.request(self.url)
-        status = pq(status_xml.encode('utf-8'), parser = 'xml')
+        status = etree.fromstring(status_xml.encode('utf-8'))
 
-        self.bikes = int(status('available').text())
-        self.free  = int(status('free').text())
-        self.extra['open'] = int(status('open').text()) == 1
-        self.extra['last_update'] = status('updated').text()
-        self.extra['connected'] = status('connected').text()
-        self.extra['slots'] = int(status('total').text())
-        self.extra['ticket'] = int(status('ticket').text()) == 1
+        self.bikes = int(status.findtext('available'))
+        self.free  = int(status.findtext('free'))
+        self.extra['open'] = int(status.findtext('open')) == 1
+        self.extra['last_update'] = status.findtext('updated')
+        self.extra['connected'] = status.findtext('connected')
+        self.extra['slots'] = int(status.findtext('total'))
+        self.extra['ticket'] = int(status.findtext('ticket')) == 1
 
