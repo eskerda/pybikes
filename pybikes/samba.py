@@ -60,9 +60,10 @@ class SambaStation(BikeShareStation):
                 }
 
     def get_status(self, onlineStatus, operationStatus):
+        # This is based on a function defined in the scrapped ASP page
         if operationStatus == 'EI' or operationStatus == 'EM':
             return 'maintenance/implementation'
         elif onlineStatus == 'A' and operationStatus == 'EO':
-            return 'online'
+            return 'open'
         else:
-            return 'offline'
+            return 'closed'
