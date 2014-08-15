@@ -55,7 +55,14 @@ class SambaStation(BikeShareStation):
         self.free = int(data[8]) - self.bikes
         self.extra = {
                 'address': data[9],
-                'status': data[5] + data[6],    # remember to fix this
+                'status': self.get_status(data[5], data[6]),
                 'uid': data[4]
                 }
 
+    def get_status(self, onlineStatus, operationStatus):
+        if operationStatus == 'EI' or operationStatus == 'EM':
+            return 'maintenance/implementation'
+        elif onlineStatus == 'A' and operationStatus == 'EO':
+            return 'online'
+        else:
+            return 'offline'
