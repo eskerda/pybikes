@@ -1,0 +1,28 @@
+{
+    "class" : "Samba",
+    "system" : "samba",
+    "instances" : [
+        {
+            "tag" : "bikesampa",
+            "meta" : {
+                "name" : "BikeSampa",
+                "city" : "São Paulo",
+                "country" : "BR",
+                "latitude" : -23.5500,
+                "longitude" : -46.6333
+            },
+            "url" : "http://www.movesamba.com.br/bikesampa/mapaestacao.asp"
+        },
+        {
+            "tag" : "bikerio",
+            "meta" : {
+                "name" : "BikeRio",
+                "city" : "Rio de Janeiro",
+                "country" : "BR",
+                "latitude" : -22.904315,
+                "longitude" : -43.184776
+            },
+            "url" : "http://ww2.mobilicidade.com.br/sambarjpt/mapaestacao.asp"
+        }
+    ]
+}
