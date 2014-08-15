@@ -44,15 +44,15 @@ class SambaStation(BikeShareStation):
     def __init__(self, data):
         '''
         data is a list of strings, in the following order:
-            [latitude, longitude, icon (path to image file), name, stationId, onlineStatus,
-                operationStatus, freeSlots, available bikes, addres]
+            [latitude, longitude, icon (path to image file, which we ignore), name, stationId, onlineStatus,
+                operationStatus, availabeBikes, bike capacity, address]
         '''
         super(SambaStation, self).__init__(0)
         self.name = data[3]
-        self.latitude = float(str(data[0]))
+        self.latitude = float(data[0])
         self.longitude = float(data[1])
-        self.bikes = int(data[8])
-        self.free = int(data[7])
+        self.bikes = int(data[7])
+        self.free = int(data[8]) - self.bikes
         self.extra = {
                 'address': data[9],
                 'status': data[5] + data[6],    # remember to fix this
