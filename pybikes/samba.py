@@ -58,7 +58,8 @@ class SambaStation(BikeShareStation):
         self.extra = {
             'address': data[9],
             'status': self.get_status(data[5], data[6]),
-            'uid': data[4]
+            'uid': data[4],
+            'slots': int(data[8])
         }
 
     def get_status(self, onlineStatus, operationStatus):
