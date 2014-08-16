@@ -43,13 +43,13 @@ class NextbikeStation(BikeShareStation):
         # Some names are '1231-foo' and other are 'bar'
         num_name = place_tree.attrib['name'].split('-')
         if len(num_name) > 1:
-            self.extra['uid'] = num_name[0]
+            self.extra['uid'] = int(num_name[0])
             self.name = num_name[1]
             if num_name[0] != place_tree.attrib['uid']:
-                self.extra['internal_uid'] = place_tree.attrib['uid']
+                self.extra['internal_uid'] = int(place_tree.attrib['uid'])
         else:
             self.name = num_name[0]
-            self.extra['uid'] = place_tree.attrib['uid']
+            self.extra['uid'] = int(place_tree.attrib['uid'])
 
         # Gotta be careful here, some nextbike services just count up to 5,
         # displaying 5+
@@ -69,5 +69,5 @@ class NextbikeStation(BikeShareStation):
         self.latitude = float(place_tree.attrib['lat'])
         self.longitude = float(place_tree.attrib['lng'])
         if 'bike_numbers' in place_tree.attrib:
-            self.extra['bike_uids'] = place_tree.attrib['bike_numbers'].split(',')
+            self.extra['bike_uids'] = map(int, place_tree.attrib['bike_numbers'].split(','))
 
