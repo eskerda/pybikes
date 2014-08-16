@@ -113,10 +113,10 @@ class BicincittaStation(BikeShareStation):
             name = name[:-1]
 
         self.name        = utils.clean_string(name)
-        self.latitude    = lat
-        self.longitude   = lng
-        self.bikes       = bikes
-        self.free        = free
+        self.latitude    = float(lat)
+        self.longitude   = float(lng)
+        self.bikes       = int(bikes)
+        self.free        = int(free)
         self.extra       = { }
 
         if description is not None and description != u'':
