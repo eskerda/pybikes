@@ -192,7 +192,8 @@ def is_complete(instance):
 
 def write_output(data, way):
     way = open(way, 'w')
-    corrected_data = json.dumps(data, sort_keys = False, indent = 4)
+    corrected_data = json.dumps(data, sort_keys = False, indent = 4,
+                                separators = (',',':') )
     way.write(corrected_data)
     way.write('\n')
     way.close()
