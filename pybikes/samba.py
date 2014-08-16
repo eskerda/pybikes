@@ -9,18 +9,15 @@ import re
 
 __all__ = ['Samba', 'SambaStation']
 
-#STATIONS_RGX = 'exibirEstacaMapa\((.*?)\)'
 STATIONS_RGX = 'exibirEstacaMapa\((.*?)\)'
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
 
 class Samba(BikeShareSystem):
     sync = True
     meta = {
-            'system': 'Samba',
-            'company': ['Mobilicidade Tecnologia LTD',
-                'Grupo Serttel LTDA'
-                ]
-            }
+        'system': 'Samba',
+        'company': ['Mobilicidade Tecnologia LTD', 'Grupo Serttel LTDA']
+    }
 
     def __init__(self, tag, meta, url):
         super(Samba, self).__init__(tag, meta)
@@ -39,8 +36,8 @@ class Samba(BikeShareSystem):
 
         self.stations = []
 
-        # The regex will also match for a function defined in the html. This function is in the
-        #  position of the array, and thus the [:-1] in the for loop
+        # The regex will also match for a function defined in the html. This
+        # function is in the position of the array, and thus the [:-1]
         for station in stations[:-1]:
             self.stations.append(SambaStation(station.split(',')))
 
@@ -48,8 +45,9 @@ class SambaStation(BikeShareStation):
     def __init__(self, data):
         '''
         data is a list of strings, in the following order:
-            [latitude, longitude, icon (path to image file, which we ignore), name, stationId, onlineStatus,
-                operationStatus, availabeBikes, bike capacity, address]
+            [latitude, longitude, icon (path to image file, which we ignore),
+             name, stationId, onlineStatus, operationStatus, availabeBikes,
+             bike capacity, address]
         '''
         super(SambaStation, self).__init__(0)
         self.name = data[3]
@@ -58,10 +56,10 @@ class SambaStation(BikeShareStation):
         self.bikes = int(data[7])
         self.free = int(data[8]) - self.bikes
         self.extra = {
-                'address': data[9],
-                'status': self.get_status(data[5], data[6]),
-                'uid': data[4]
-                }
+            'address': data[9],
+            'status': self.get_status(data[5], data[6]),
+            'uid': data[4]
+        }
 
     def get_status(self, onlineStatus, operationStatus):
         # This is based on a function defined in the scrapped ASP page
