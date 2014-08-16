@@ -1,0 +1,117 @@
+{
+    "class" : "Samba",
+    "system" : "samba",
+    "instances" : [
+    {
+        "tag" : "bikesampa",
+        "meta" : {
+            "name" : "BikeSampa",
+            "city" : "São Paulo",
+            "country" : "BR",
+            "latitude" : -23.5500,
+            "longitude" : -46.6333
+        },
+        "url" : "http://www.movesamba.com.br/bikesampa/mapaestacao.asp"
+    },
+    {
+        "tag" : "bikerio",
+        "meta" : {
+            "name" : "BikeRio",
+            "city" : "Rio de Janeiro",
+            "country" : "BR",
+            "latitude" : -22.904315,
+            "longitude" : -43.184776
+        },
+        "url" : "http://ww2.mobilicidade.com.br/sambarjpt/mapaestacao.asp"
+    },
+        {
+            "tag" : "bikebh",
+            "meta" : {
+                "name" : "BikeBH",
+                "city" : "Belo Horizonte",
+                "country" : "BR",
+                "latitude" : -19.920793,
+                "longitude" : -43.922165
+            },
+            "url" : "http://www.movesamba.com.br/bikebh/mapaestacao.asp"
+        },
+        {
+            "tag" : "bikesantos",
+            "meta" : {
+                "name" : "BikeSantos",
+                "city" : "Santos",
+                "country" : "BR",
+                "latitude" : -23.954052,
+                "longitude" : -46.333345
+            },
+            "url" : "http://www.movesamba.com.br/bikesantos/mapaestacao.asp"
+        },
+            {
+                "tag" : "bikesorocaba",
+                "meta" : {
+                    "name" : "BikeSorocaba",
+                    "city" : "Sorocaba",
+                    "country" : "BR",
+                    "latitude" : -23.501719,
+                    "longitude" : -47.450790
+                },
+                "url" : "http://ww2.mobilicidade.com.br/sorocaba/mapaestacao.asp"
+            },
+            {
+                "tag" : "bikepetrolina",
+                "meta" : {
+                    "name" : "BikePetrolina",
+                    "city" : "Petrolina",
+                    "country" : "BR",
+                    "latitude" : -9.389049,
+                    "longitude" : -40.502751
+
+                },
+                "url" : "http://ww2.mobilicidade.com.br/petrobike/mapaestacao.asp"
+            },
+                {
+                    "tag" : "bikerecife",
+                    "meta" : {
+                        "name" : "BikeRecife",
+                        "city" : "Recife",
+                        "country" : "BR",
+                        "latitude" : -8.047129,
+                        "longitude" : -34.873437
+                    },
+                    "url" : "http://ww2.mobilicidade.com.br/bikepe/mapaestacao.asp"
+                },
+                {
+                    "tag" : "bikesalvador",
+                    "meta" : {
+                        "name" : "BikeSalvador",
+                        "city" : "Salvador",
+                        "country" : "BR",
+                        "latitude" : -12.973959,
+                        "longitude" : -38.508171
+                    },
+                    "url" : "http://ww2.mobilicidade.com.br/bikesalvador/mapaestacao.asp"
+                },
+                    {
+                        "tag" : "bikebrasilia",
+                        "meta" : {
+                            "name" : "BikeBrasilia",
+                            "city" : "Brasília",
+                            "country" : "BR",
+                            "latitude" : -15.795115,
+                            "longitude" : -47.887424
+                        },
+                        "url" : "http://ww2.mobilicidade.com.br/bikebrasilia/mapaestacao.asp"
+                    },
+                    {
+                        "tag" : "bikepoa",
+                        "meta" : {
+                            "name" : "BikePOA",
+                            "city" : "Porto Alegre",
+                            "country" : "BR",
+                            "latitude" : -30.033079,
+                            "longitude" : -51.236540
+                        },
+                        "url" : "http://www.movesamba.com.br/bikepoa/mapaestacao.asp"
+                    }
+    ]
+}

@@ -40,6 +40,7 @@ from .emovity import *
 from .bicipalma import *
 from .bicicard import *
 from .nextbike import *
+from .samba import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -54,7 +55,8 @@ __all__ = base.__all__ +\
           emovity.__all__+\
           bicipalma.__all__+\
           bicicard.__all__+\
-          nextbike.__all__
+          nextbike.__all__+\
+          samba.__all__
 
 def getDataFiles():
     return resource_listdir(__name__, 'data')
