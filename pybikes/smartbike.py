@@ -71,7 +71,7 @@ class SmartBikeStation(BikeShareStation):
             self.latitude  = float(info['AddressGmapsLatitude'])
             self.longitude = float(info['AddressGmapsLongitude'])
             self.extra = {
-                'uid': info['StationID'],
+                'uid': int(info['StationID']),
                 'status': info['StationStatusCode'],
                 'districtCode': info['DisctrictCode'],
                 'NearbyStationList': map(
@@ -87,7 +87,7 @@ class SmartBikeStation(BikeShareStation):
             self.latitude = float(info['lat'])
             self.longitude = float(info['lon'])
             self.extra = {
-                'uid': info['id'],
+                'uid': int(info['id']),
                 'status': info['status'],
                 'districtCode': info['district'],
                 'address': info['address']
