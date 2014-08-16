@@ -63,7 +63,7 @@ class BiciPalma(BikeShareSystem):
             station.bikes = ints[1]
             station.free = ints[4]
             station.extra = {
-                'uid': uid,
+                'uid': int(uid),
                 'enabled': marker['enabled'],
                 'used_slots': ints[2],
                 'faulty_slots': ints[3]
