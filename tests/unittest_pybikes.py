@@ -60,6 +60,9 @@ class TestSystems(unittest.TestCase):
     def test_samba(self):
         self._test_systems('samba')
 
+    def test_ciclosampa(self):
+        self._test_systems('ciclosampa')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
