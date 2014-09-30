@@ -9,7 +9,7 @@ import re
 
 __all__ = ['Samba', 'SambaStation']
 
-STATIONS_RGX = 'exibirEstacaMapa\((.*?)\)'
+STATIONS_RGX = 'exibirEstacaMapa\((.*?)\);'
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
 
 class Samba(BikeShareSystem):
