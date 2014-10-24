@@ -87,15 +87,20 @@ class KeolisStation(BikeShareStation):
 
         # Will not use
         # address  = fuzzle.xpath('//div[@class="gmap-adresse"]/text()')[0]
-
         self.latitude  = float(data[0])
         self.longitude = float(data[1])
         self.name      = num_name[1]
-        self.bikes     = int(bikes_places_upd[0])
-        self.free      = int(bikes_places_upd[1])
         self.extra     = {
             'uid': int(num_name[0])
         }
+        if len(bikes_places_upd) > 1:
+            self.bikes     = int(bikes_places_upd[0])
+            self.free      = int(bikes_places_upd[1])
+            self.extra['status'] = 'online'
+        else:
+            self.bikes = 0
+            self.free = 0
+            self.extra['status'] = 'offline'
 
 
 class Keolis_v2(BikeShareSystem):

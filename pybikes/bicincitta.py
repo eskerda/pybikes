@@ -3,6 +3,7 @@
 # Distributed under the LGPL license, see LICENSE.txt
 
 import re
+import HTMLParser
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -43,6 +44,7 @@ class BicincittaOld(BaseSystem):
         scraper.setUserAgent(BicincittaOld._useragent)
 
         data = scraper.request(self.url)
+        data = HTMLParser.HTMLParser().unescape(data)
 
         raw_lat   = re.findall(BicincittaOld._RE_INFO_LAT_CORD,data);
         raw_lng   = re.findall(BicincittaOld._RE_INFO_LNG_CORD,data);
