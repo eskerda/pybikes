@@ -9,8 +9,7 @@ import re
 
 __all__ = ['CicloSampa', 'CicloSampaStation']
 
-STATIONS_RGX = 'exibirEstacaMapa\((.*?)\)'
-STATIONS_RGX = 'setEstacao\((.*?)\)'
+STATIONS_RGX = 'setEstacao\((.*?)\);'
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
 
 class CicloSampa(BikeShareSystem):
@@ -29,7 +28,6 @@ class CicloSampa(BikeShareSystem):
             scraper = utils.PyBikesScraper()
         scraper.setUserAgent(USERAGENT)
 
-        #html_data = open('/tmp/estacoes.php', 'r')
         html_data = scraper.request(self.feed_url)
         # clean the data up
         html_data = ''.join(html_data).replace('"', '')
@@ -40,7 +38,6 @@ class CicloSampa(BikeShareSystem):
 
         for station in stations:
             self.stations.append(CicloSampaStation(station.split(',')))
-            print self.stations[-1]
 
 class CicloSampaStation(BikeShareStation):
     def __init__(self, data):
