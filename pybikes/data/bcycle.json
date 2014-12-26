@@ -186,6 +186,17 @@
                 "country": "US"
             }, 
             "feed_url": "https://austin.bcycle.com/station-locations/"
+        },
+        {
+            "tag": "bikesantiago", 
+            "meta": {
+                "latitude": -33.457,
+                "city": "Santiago, Chile", 
+                "name": "Bike Santiago", 
+                "longitude": -70.648, 
+                "country": "CL"
+            }, 
+            "feed_url": "https://bikesantiago.bcycle.com/"
         }
     ], 
     "system": "bcycle", 
