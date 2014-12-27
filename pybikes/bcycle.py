@@ -4,7 +4,7 @@
 
 import re
 
-from pyquery import PyQuery as pq
+from lxml import html
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
@@ -78,17 +78,15 @@ class BCycleStation(BikeShareStation):
             Now, do something about it
         """
         super(BCycleStation, self).__init__()
+        dom = html.fromstring(fuzzle)
+        name, = dom.xpath("//div[@class='location']/strong/text()")
+        address = dom.xpath("//div[@class='location']/text()")
+        bikes, free = dom.xpath("//div[@class='avail']/strong/text()")
+        self.name = name
         self.latitude = float(latlng[0])
         self.longitude = float(latlng[1])
-        d = pq(fuzzle)('div')
-        location = d.find('.location').html().split('<br/>')
-        availability = d.find('.avail strong')
-
-        self.name = pq(location[0]).html()
-        self.bikes = int(availability.eq(0).text())
-        self.free = int(availability.eq(1).text())
-
+        self.bikes = int(bikes)
+        self.free = int(free)
         self.extra = {
-            'address' : '{0} - {1}'.format(location[1], location[2])
+            'address': ", ".join(address)
         }
-
