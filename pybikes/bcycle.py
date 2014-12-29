@@ -89,6 +89,6 @@ class BCycleStation(BikeShareStation):
         self.free = int(availability.eq(1).text())
 
         self.extra = {
-            'address' : '{0} - {1}'.format(location[1], location[2])
+            'address' : u'{0} - {1}'.format(location[1], location[2])
         }
 
