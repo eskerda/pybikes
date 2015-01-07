@@ -53,6 +53,18 @@
                     }, 
                     "feed_url": "https://www.ecobici.df.gob.mx/availability_map/getJsonObject", 
                     "format": "json_v2"
+                },
+                {
+                    "tag": "velo-antwerpen",
+                    "meta": {
+                        "latitude": 51.216667,
+                        "city": "Antwerpen",
+                        "name": "Velo Antwerpen",
+                        "longitude": 4.4,
+                        "country": "BE"
+                    },
+                    "feed_url": "https://www.velo-antwerpen.be/availability_map/getJsonObject",
+                    "format": "json_v2"
                 }
             ]
         }
