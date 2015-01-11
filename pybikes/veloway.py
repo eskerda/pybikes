@@ -53,14 +53,15 @@ class VelowayStation(BikeShareStation):
     """
     def __init__(self, info):
         super(VelowayStation, self).__init__()
-        self.name = urllib.unquote_plus(info['name'].replace('%c2', ''))
+        self.name = urllib.unquote_plus(info['name']
+                .decode('latin-1')
+                .encode('utf-8'))
         self.bikes = int(info['ab'])
         self.free = int(info['ap'])
         self.latitude = float(info['lat'])
         self.longitude = float(info['lng'])
         self.extra = {
             'uid': int(info['id']),
-            'address': fix_name(info['wcom']),
             'slots': int(info['tc']),
             'slots_available': int(info['ac']),
         }
@@ -70,48 +71,12 @@ class VelowayStation(BikeShareStation):
         else:
             self.extra['status'] = 'CLOSED'
 
+        if info['wcom'] is not None and info['wcom'] != '':
+            self.extra['address'] = urllib.unquote_plus(info['wcom']
+                    .decode('latin-1')
+                    .encode('utf-8'))
+
         if self.latitude is None or self.longitude is None:
             raise Exception('A station needs a lat/lng to be defined!')
         if self.latitude == 0 and self.longitude == 0:
             raise Exception('A station can\'t be located in Atlantic Ocean!')
-
-def fix_name(title):
-    """ WTF... From http://www.velobleu.org/cartoV2/js/libVeloway.js
-        while (html.indexOf("+") != -1) {
-                html = html.replace("+", " ");
-                }
-        while (html.indexOf("n%c2%b0") != -1) {
-                html = html.replace("n%c2%b0", "n°");
-                }
-        while (html.indexOf("%c3%a9") != -1) {
-                html = html.replace("%c3%a9", "é");
-                }
-        while (html.indexOf("%c3%b4") != -1) {
-                html = html.replace("%c3%b4", "ô");
-                }
-        while (html.indexOf("%c3%a7") != -1) {
-                html = html.replace("%c3%a7", "ç");
-                }
-        while (html.indexOf("%3a") != -1) {
-                html = html.replace("%3a", ":");
-                }
-        return html;
-    """
-    dic = {
-        '+': u' ',
-        '%c2%b0': u'°',
-        '%c3%a0': u'à',
-        '%c3%a7': u'ç',
-        '%c3%a8': u'è',
-        '%c3%a9': u'é',
-        '%c3%b4': u'ô',
-        '%e2%80%99': u'\'',
-        '%27': u'\'',
-        '%2f': u'/',
-        '%3a': u':'
-    }
-
-    for i, j in dic.iteritems():
-        title = title.replace(i, j)
-
-    return title
