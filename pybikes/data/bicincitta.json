@@ -443,6 +443,314 @@
             }, 
             "tag": "cagliari", 
             "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=177"
+        },
+        {
+            "meta": {
+                "latitude": 45.8183902,
+                "city": "Varese",
+                "name": "Gimme Bike",
+                "longitude": 8.823913,
+                "country": "IT"
+            },
+            "tag": "gimme-bike",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=50"
+        },
+        {
+            "meta": {
+                "latitude": 46.06304765446406,
+                "city": "Sellero",
+                "name": "Sellero",
+                "longitude": 10.353434085845947,
+                "country": "IT"
+            },
+            "tag": "sellero",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=85"
+        },
+        {
+            "meta": {
+                "latitude": 39.9273518,
+                "city": "Ugento",
+                "name": "Ugento",
+                "longitude": 18.1582962,
+                "country": "IT"
+            },
+            "tag": "ugento",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=103"
+        },
+        {
+            "meta": {
+                "latitude": 46.3042146,
+                "city": "Prata Camportaccio",
+                "name": "Prata Camportaccio",
+                "longitude": 9.3964914,
+                "country": "IT"
+            },
+            "tag": "prata-camportaccio",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=108"
+        },
+        {
+            "meta": {
+                "latitude": 42.0937524,
+                "city": "Civitavecchia",
+                "name": "Civitavecchia",
+                "longitude": 11.7922462,
+                "country": "IT"
+            },
+            "tag": "civitavecchia",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=127"
+        },
+        {
+            "meta": {
+                "latitude": 38.149812517944284,
+                "city": "Barcellona Pozzo di Gotto",
+                "name": "LonganoinBici",
+                "longitude": 15.212116241455078,
+                "country": "IT"
+            },
+            "tag": "longanoinbici",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=140"
+        },
+        {
+            "meta": {
+                "latitude": 45.5309616,
+                "city": "Cassano d'Adda",
+                "name": "Cassano d'Adda",
+                "longitude": 9.5155813,
+                "country": "IT"
+            },
+            "tag": "cassano-d-adda",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=143"
+        },
+        {
+            "meta": {
+                "latitude": 46.188197,
+                "city": "Bianzone",
+                "name": "Bianzone in Bici",
+                "longitude": 10.109354,
+                "country": "IT"
+            },
+            "tag": "bianzone-in-bici",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=147"
+        },
+        {
+            "meta": {
+                "latitude": 42.40262397383167,
+                "city": "Rieti",
+                "name": "Rietinbici",
+                "longitude": 12.86099910736084,
+                "country": "IT"
+            },
+            "tag": "rietinbici",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=158"
+        },
+        {
+            "meta": {
+                "latitude": 40.35040350928062,
+                "city": "Lecce",
+                "name": "lecce",
+                "longitude": 18.177824020385742,
+                "country": "IT"
+            },
+            "tag": "lecce",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=159"
+        },
+        {
+            "meta": {
+                "latitude": 45.15047821582959,
+                "city": "Castellucchio",
+                "name": "Castellucchio",
+                "longitude": 10.651202201843262,
+                "country": "IT"
+            },
+            "tag": "castellucchio",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=161"
+        },
+        {
+            "meta": {
+                "latitude": 36.889437754839854,
+                "city": "Noto",
+                "name": "NotoinBici",
+                "longitude": 15.074658393859863,
+                "country": "IT"
+            },
+            "tag": "notoinbici",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=162"
+        },
+        {
+            "meta": {
+                "latitude": 37.56342572664775,
+                "city": "Enna",
+                "name": "Enna",
+                "longitude": 14.27973747253418,
+                "country": "IT"
+            },
+            "tag": "enna",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=163"
+        },
+        {
+            "meta": {
+                "latitude": 45.94790101663391,
+                "city": "Pordenone",
+                "name": "Pordenone",
+                "longitude": 12.674491020251475,
+                "country": "IT"
+            },
+            "tag": "pordenone",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=164"
+        },
+        {
+            "meta": {
+                "latitude": 39.167222,
+                "city": "Carbonia",
+                "name": "Carbonia",
+                "longitude": 8.522222,
+                "country": "IT"
+            },
+            "tag": "carbonia",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=173"
+        },
+        {
+            "meta": {
+                "latitude": 44.40430089372731,
+                "city": "Genova",
+                "name": "MoBike",
+                "longitude": 8.92908986230462,
+                "country": "IT"
+            },
+            "tag": "mobike",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=175"
+        },
+        {
+            "meta": {
+                "latitude": 45.134914104864116,
+                "city": "Cremona",
+                "name": "Scegli in Bici",
+                "longitude": 10.0222648619018,
+                "country": "IT"
+            },
+            "tag": "scegli-in-bici",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=178"
+        },
+        {
+            "meta": {
+                "latitude": 46.06643205823519,
+                "city": "Trento",
+                "name": "e.motion",
+                "longitude": 11.122145390351879,
+                "country": "IT"
+            },
+            "tag": "e-motion-trento",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=187"
+        },
+        {
+            "meta": {
+                "latitude": 46.06050419001399,
+                "city": "Pergine Valsugana",
+                "name": "e.motion",
+                "longitude": 11.239041694195503,
+                "country": "IT"
+            },
+            "tag": "e-motion-pergine-valsugana",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=188"
+        },
+        {
+            "meta": {
+                "latitude": 45.88710661061543,
+                "city": "Rovereto",
+                "name": "e.motion",
+                "longitude": 11.042242751867644,
+                "country": "IT"
+            },
+            "tag": "e-motion-rovereto",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=189"
+        },
+        {
+            "meta": {
+                "latitude": 45.1249548189115,
+                "city": "Provincia di Lodi",
+                "name": "We LOve bike",
+                "longitude": 9.651688106933548,
+                "country": "IT"
+            },
+            "tag": "we-love-bike",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=190"
+        },
+        {
+            "meta": {
+                "latitude": 40.94519109440738,
+                "city": "Monopoli",
+                "name": "Monopoli BIKE",
+                "longitude": 17.311687995336918,
+                "country": "IT"
+            },
+            "tag": "monopoli-bike",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=191"
+        },
+        {
+            "meta": {
+                "latitude": 41.224346932834,
+                "city": "Andria",
+                "name": "Andria in Bici",
+                "longitude": 16.296983922753956,
+                "country": "IT"
+            },
+            "tag": "andria",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=192"
+        },
+        {
+            "meta": {
+                "latitude": 39.25043149806156,
+                "city": "Quartucciu",
+                "name": "BicinQuartucciu",
+                "longitude": 9.179296426489255,
+                "country": "IT"
+            },
+            "tag": "bicinquartucciu",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=193"
+        },
+        {
+            "meta": {
+                "latitude": 40.9240543,
+                "city": "Olbia",
+                "name": "Olbia Bike",
+                "longitude": 9.4994397,
+                "country": "IT"
+            },
+            "tag": "olbia-bike",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=194"
+        },
+        {
+            "meta": {
+                "latitude": 44.29516444397244,
+                "city": "Savona",
+                "name": "Savona",
+                "longitude": 8.463126708984431,
+                "country": "IT"
+            },
+            "tag": "savona",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=195"
+        },
+        {
+            "meta": {
+                "latitude": 40.637580319936106,
+                "city": "Brindisi",
+                "name": "BrindisiByBike",
+                "longitude": 17.940774547082572,
+                "country": "IT"
+            },
+            "tag": "brindisi",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=197"
+        },
+        {
+            "meta": {
+                "latitude": 45.70938576720161,
+                "city": "Tradate",
+                "name": "Tradate",
+                "longitude": 8.915993391601548,
+                "country": "IT"
+            },
+            "tag": "tradate",
+            "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=198"
         }
     ], 
     "system": "bicincitta", 
