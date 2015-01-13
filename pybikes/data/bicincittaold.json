@@ -12,17 +12,6 @@
             }
         }
         ,{
-            "tag": "andria",
-            "system_id": 48,
-            "meta": {
-                "name": "Andria",
-                "city": "Andria", 
-                "country": "IT",
-                "latitude": 41.231667,  
-                "longitude": 16.308333
-            }
-        }
-        ,{
             "tag": "bariinbici",
             "system_id": 9,
             "meta": {
@@ -111,17 +100,6 @@
             }
         }
         ,{
-            "tag": "lecce",
-            "system_id": 46,
-            "meta": {
-                "name": "Lecce",
-                "city": "Lecce", 
-                "country": "IT",
-                "latitude": 40.348703,
-                "longitude": 18.173103
-            }
-        }
-        ,{
             "tag": "mantova",
             "system_id": 53,
             "meta": {
@@ -130,17 +108,6 @@
                 "country": "IT",
                 "latitude": 45.15983,
                 "longitude": 10.793467
-            }
-        }
-               ,{
-            "tag": "mobike",
-            "system_id": 33,
-            "meta": {
-                "name": "Mobike",
-                "city": "Genova", 
-                "country": "IT",
-                "latitude": 44.403128,
-                "longitude": 8.932915
             }
         }
         ,{
@@ -229,17 +196,6 @@
                 "name": "San Donà di Piave",
                 "city": "San Donà di Piave", 
                 "longitude": 12.5654299, 
-                "country": "IT"
-            }
-        }
-        ,{
-            "tag": "savona",
-            "system_id": 43,
-            "meta": {
-                "latitude": 44.2975603, 
-                "name": "Savona",
-                "city": "Savona", 
-                "longitude": 8.4645, 
                 "country": "IT"
             }
         }
