@@ -71,7 +71,7 @@ class VelowayStation(BikeShareStation):
         else:
             self.extra['status'] = 'CLOSED'
 
-        if info['wcom'] is not None and info['wcom'] != '':
+        if info['wcom']:
             self.extra['address'] = urllib.unquote_plus(info['wcom']
                     .decode('latin-1')
                     .encode('utf-8'))
