@@ -63,6 +63,9 @@ class TestSystems(unittest.TestCase):
     def test_ciclosampa(self):
         self._test_systems('ciclosampa')
 
+    def test_veloway(self):
+        self._test_systems('veloway')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
@@ -203,7 +206,7 @@ class TestBikeShareStationInstance(unittest.TestCase):
             )
 
 class TestBikeShareSystemInstance(unittest.TestCase):
-    
+
     def setUp(self):
 
         metaFoo = {
@@ -254,7 +257,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
         # make sure instantiation parameters are correctly stored
 
         for unit in self.battery:
-            
+
             self.assertEqual(unit.get('tag'), unit.get('instance').tag)
 
             # Check that all metainfo set on instantiation
@@ -262,7 +265,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
             for meta in unit.get('meta'):
                 self.assertIn(meta,unit.get('instance').meta)
                 self.assertEqual(
-                        unit.get('meta').get(meta), 
+                        unit.get('meta').get(meta),
                         unit.get('instance').meta.get(meta)
                     )
 
@@ -272,7 +275,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
                 if meta not in unit.get('meta'):
                     self.assertIn(meta, unit.get('instance').meta)
                     self.assertEqual(
-                        None, 
+                        None,
                         unit.get('instance').meta.get(meta)
                     )
 
