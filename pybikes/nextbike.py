@@ -33,23 +33,32 @@ class Nextbike(BikeShareSystem):
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8'))
         places = domain_xml.xpath(CITY_QUERY.format(uid = self.uid))
-        self.stations = map(NextbikeStation, places)
+        self.stations = filter(None, map(NextbikeStation, places))
 
 class NextbikeStation(BikeShareStation):
+    def __new__(cls, place_tree):
+        # TODO: For now we are not going to track bikes roaming around
+        if 'bike' in place_tree.attrib:
+            if place_tree.attrib['bikes'] == "1":
+                if place_tree.attrib['bike'] == "1":
+                    return
+        return super(NextbikeStation, cls).__new__(cls, place_tree)
+
     def __init__(self, place_tree):
         super(NextbikeStation, self).__init__(0)
         self.extra = {}
 
         # Some names are '1231-foo' and other are 'bar'
-        num_name = place_tree.attrib['name'].split('-')
-        if len(num_name) > 1:
-            self.extra['uid'] = int(num_name[0])
-            self.name = num_name[1]
-            if num_name[0] != place_tree.attrib['uid']:
+        # and some might be '1211-foo-bar-baz   -yeah- kill - me
+        num_name_re = r'(?P<id>\d*)\s*\-?\s*(?P<name>\D+)'
+        match = re.search(num_name_re, place_tree.attrib['name'])
+        if match.group('id'):
+            self.extra['uid'] = int(match.group('id'))
+            if match.group('id') != place_tree.attrib['uid']:
                 self.extra['internal_uid'] = int(place_tree.attrib['uid'])
         else:
-            self.name = num_name[0]
             self.extra['uid'] = int(place_tree.attrib['uid'])
+        self.name = match.group('name').strip()
 
         # Gotta be careful here, some nextbike services just count up to 5,
         # displaying 5+
