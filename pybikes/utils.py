@@ -44,10 +44,11 @@ class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
 
-    def __init__(self):
+    def __init__(self, cachedict = None):
         self.headers = { 'User-Agent': 'PyBikes' }
         self.proxies = {}
         self.session = requests.session()
+        self.cachedict = cachedict
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
@@ -82,6 +83,8 @@ class PyBikesScraper(object):
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
         self.last_request = response
+        if self.cachedict is not None:
+            self.cachedict[url] = data
         return data
 
     def clearCookie(self):
