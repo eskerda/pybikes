@@ -52,33 +52,37 @@ class PyBikesScraper(object):
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
 
-    def request(self, url, method = 'GET', params = None, data = None):
-
-        if self.proxy_enabled and url_scheme(url) == 'https':
+    def __proxy_https_req__(self, url):
             proxy = urllib2.ProxyHandler(self.proxies)
             opener = urllib2.build_opener(proxy)
             response = opener.open(url)
             data = response.read()
             if "charset" in response.headers['content-type']:
-                encoding = response.headers['content-type'].split('charset=')[-1]
+                encoding = response.headers['content-type']\
+                    .split('charset=')[-1]
                 data = unicode(data, encoding)
-            self.last_request = response
-            return data
+            return (response, data)
 
-        response = self.session.request(
-            method = method,
-            url = url,
-            params = params,
-            data = data,
-            proxies = self.getProxies(),
-            headers = self.headers,
-            verify = False
-        )
+    def request(self, url, method = 'GET', params = None, data = None):
+        if self.cachedict and url in self.cachedict:
+            return self.cachedict[url]
+        if self.proxy_enabled and url_scheme(url) == 'https':
+            response, data = self.__proxy_https_req__(url)
+        else:
+            response = self.session.request(
+                method = method,
+                url = url,
+                params = params,
+                data = data,
+                proxies = self.getProxies(),
+                headers = self.headers,
+                verify = False
+            )
+            data = response.text
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
-
         self.last_request = response
-        return response.text
+        return data
 
     def clearCookie(self):
         if 'Cookie' in self.headers:
