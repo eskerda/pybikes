@@ -121,6 +121,8 @@ class BicincittaStation(BikeShareStation):
         self.free        = int(free)
         self.extra       = { }
 
-        if description is not None and description != u'':
-            self.extra['description'] = utils.clean_string(description)
+        if description:
+            self.extra['description'] = utils \
+                    .clean_string(description) \
+                    .rstrip(' :')
 
