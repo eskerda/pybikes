@@ -3,16 +3,18 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-
 from lxml import etree
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
+from .contrib.tstcache import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
 BASE_URL = 'https://nextbike.net/maps/nextbike-live.xml?domains={domain}'
 CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
+
+cache = TSTCache(delta=60)
 
 class Nextbike(BikeShareSystem):
     sync = True
@@ -29,7 +31,7 @@ class Nextbike(BikeShareSystem):
 
     def update(self, scraper = None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = utils.PyBikesScraper(cache)
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8'))
         places = domain_xml.xpath(CITY_QUERY.format(uid = self.uid))
