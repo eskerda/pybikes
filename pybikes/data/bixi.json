@@ -77,22 +77,6 @@
             "format": "xml"
         }, 
         {
-            "tag": "capital-bixi", 
-            "meta": {
-                "city": "Ottawa, ON", 
-                "name": "Capital BIXI", 
-                "country": "CA", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -75.69719309999999, 
-                "latitude": 45.4215296
-            }, 
-            "feed_url": "https://capital.bixi.com/data/bikeStations.xml", 
-            "format": "xml"
-        }, 
-        {
             "tag": "bixi-toronto", 
             "meta": {
                 "city": "Toronto, ON", 
