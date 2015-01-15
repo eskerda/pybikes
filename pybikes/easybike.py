@@ -39,7 +39,7 @@ class EasyBike(BikeShareSystem):
 class EasyBikeStation(BikeShareStation):
     def __init__(self, info):
         super(EasyBikeStation, self).__init__()
-        self.name = info['name']
+        self.name = info['name'].encode('utf8')
         self.bikes = int(info['BikesAvailable'])
         self.free = int(info['DocksAvailable'])
         self.latitude = float(info['lat'])
