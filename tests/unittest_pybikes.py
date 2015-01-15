@@ -66,6 +66,9 @@ class TestSystems(unittest.TestCase):
     def test_veloway(self):
         self._test_systems('veloway')
 
+    def test_easybike(self):
+        self._test_systems('easybike')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
