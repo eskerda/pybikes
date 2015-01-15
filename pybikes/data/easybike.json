@@ -5,7 +5,7 @@
             "meta": {
                 "latitude": 41.35,
                 "city": "Didymoteicho",
-                "name": "Didymoteicho",
+                "name": "easyBike",
                 "longitude": 26.5,
                 "country": "GR"
             },
@@ -16,7 +16,7 @@
             "meta": {
                 "latitude": 39.6639818,
                 "city": "Ioannina",
-                "name": "Ioannina",
+                "name": "easyBike",
                 "longitude": 20.8522784,
                 "country": "GR"
             },
@@ -27,7 +27,7 @@
             "meta": {
                 "latitude": 39.3634604,
                 "city": "Karditsa",
-                "name": "Karditsa",
+                "name": "easyBike",
                 "longitude": 21.9211192,
                 "country": "GR"
             },
@@ -38,7 +38,7 @@
             "meta": {
                 "latitude": 40.9369068,
                 "city": "Kavala",
-                "name": "Kavala",
+                "name": "easyBike",
                 "longitude": 24.4122164,
                 "country": "GR"
             },
@@ -49,7 +49,7 @@
             "meta": {
                 "latitude": 37.9490926,
                 "city": "Drapetsona",
-                "name": "Drapetsona",
+                "name": "easyBike",
                 "longitude": 23.6282598,
                 "country": "GR"
             },
@@ -60,7 +60,7 @@
             "meta": {
                 "latitude": 41.117833,
                 "city": "Komotini",
-                "name": "Komotini",
+                "name": "easyBike",
                 "longitude": 25.4041307,
                 "country": "GR"
             },
@@ -71,7 +71,7 @@
             "meta": {
                 "latitude": 38.3925957,
                 "city": "Nafpaktos",
-                "name": "Nafpaktos",
+                "name": "easyBike",
                 "longitude": 21.8287638,
                 "country": "GR"
             },
@@ -82,7 +82,7 @@
             "meta": {
                 "latitude": 35.1739302,
                 "city": "Nicosia",
-                "name": "Nicosia",
+                "name": "easyBike",
                 "longitude": 33.364726,
                 "country": "CY"
             },
@@ -93,7 +93,7 @@
             "meta": {
                 "latitude": 41.4097472,
                 "city": "Mani",
-                "name": "Mani",
+                "name": "easyBike",
                 "longitude": 26.4024952,
                 "country": "GR"
             },
@@ -104,7 +104,7 @@
             "meta": {
                 "latitude": 35.338735,
                 "city": "Irakleio",
-                "name": "Irakleio",
+                "name": "easyBike",
                 "longitude": 25.144213,
                 "country": "GR"
             },
