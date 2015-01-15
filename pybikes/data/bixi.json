@@ -188,6 +188,38 @@
             }, 
             "feed_url": "http://www.thehubway.com/data/stations/bikeStations.xml", 
             "format": "xml"
+        },
+        {
+            "tag": "we-cycle",
+            "meta": {
+                "city": "Aspen, CO",
+                "name": "WE-cycle",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ],
+                "longitude": -106.837002,
+                "latitude": 39.194951
+            },
+            "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
+            "format": "json"
+        },
+        {
+            "tag": "cogo",
+            "meta": {
+                "city": "Columbus, OH",
+                "name": "CoGo",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ],
+                "longitude": -82.983333,
+                "latitude": 39.983333
+            },
+            "feed_url": "http://www.cogobikeshare.com/stations/json",
+            "format": "json"
         }
     ], 
     "system": "bixi", 
