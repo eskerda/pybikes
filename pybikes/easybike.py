@@ -6,7 +6,7 @@ import json
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
-from .contrib.tstcache import TSTCache
+from contrib import TSTCache
 
 __all__ = ['EasyBike', 'EasyBikeStation']
 
