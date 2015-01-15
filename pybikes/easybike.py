@@ -18,7 +18,7 @@ class EasyBike(BikeShareSystem):
 
     meta = {
         'system': 'EasyBike',
-        'company': 'Brainbox Technology'
+        'company': ['Brainbox Technology', 'Smoove SAS']
     }
 
     FEED_URL = 'http://api.easybike.gr/cities.php'
