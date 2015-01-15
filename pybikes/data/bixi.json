@@ -80,7 +80,7 @@
             "tag": "bixi-toronto", 
             "meta": {
                 "city": "Toronto, ON", 
-                "name": "BIXI Toronto", 
+                "name": "Bike Share Toronto",
                 "country": "CA", 
                 "company": [
                     "PBSC", 
@@ -89,8 +89,8 @@
                 "longitude": -79.3831843, 
                 "latitude": 43.653226
             }, 
-            "feed_url": "https://toronto.bixi.com/data/bikeStations.xml", 
-            "format": "xml"
+            "feed_url": "http://bikesharetoronto.com/stations/json",
+            "format": "json"
         }, 
         {
             "tag": "melbourne-bike-share", 
