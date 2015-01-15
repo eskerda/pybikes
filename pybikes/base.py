@@ -99,6 +99,8 @@ class BikeShareSystem(object):
 
     authed = False
 
+    unifeed = False
+
     def __init__(self, tag, meta):
         self.stations = []
         self.tag = tag

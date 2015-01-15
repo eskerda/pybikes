@@ -15,6 +15,7 @@ cache = TSTCache(delta=60)
 
 class EasyBike(BikeShareSystem):
     sync = True
+    unifeed = True
 
     meta = {
         'system': 'EasyBike',

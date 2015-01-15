@@ -18,6 +18,7 @@ cache = TSTCache(delta=60)
 
 class Nextbike(BikeShareSystem):
     sync = True
+    unifeed = True
 
     meta = {
         'system': 'Nextbike',
