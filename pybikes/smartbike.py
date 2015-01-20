@@ -78,6 +78,7 @@ class SmartBikeStation(BikeShareStation):
                     int, info['NearbyStationList'].split(',')
                 )
             }
+
         except KeyError:
             # Either something has changed, or it's the other type of feed
             # Same data, different keys.
@@ -89,16 +90,26 @@ class SmartBikeStation(BikeShareStation):
             self.extra = {
                 'uid': int(info['id']),
                 'status': info['status'],
-                'districtCode': info['district'],
                 'address': info['address']
             }
-            if info['nearbyStations'] is not None:
+
+            if 'district' in info:
+                self.extra['districtCode'] = info['district']
+            elif 'districtCode' in info:
+                self.extra['districtCode'] = info['districtCode']
+
+            if info['nearbyStations'] is not None and\
+                    info['nearbyStations'] != "0":
                 self.extra['NearbyStationList'] = map(
                     int, info['nearbyStations'].split(',')
                 )
+
             if info['zip'] is not None:
                 self.extra['zip'] = info['zip']
 
+            if 'stationType' in info and \
+                    info['stationType'] == 'ELECTRIC_BIKE':
+                self.extra['ebikes'] = True
 
 class SmartClunky(BaseSystem):
     sync = False
