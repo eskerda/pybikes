@@ -79,9 +79,15 @@ class BCycleStation(BikeShareStation):
         """
         super(BCycleStation, self).__init__()
         dom = html.fromstring(fuzzle)
-        name, = dom.xpath("//div[@class='location']/strong/text()")
-        address = dom.xpath("//div[@class='location']/text()")
-        bikes, free = dom.xpath("//div[@class='avail']/strong/text()")
+        try:
+            name, = dom.xpath("//div[@class='location']/strong/text()")
+            address = dom.xpath("//div[@class='location']/text()")
+            bikes, free = dom.xpath("//div[@class='avail']/strong/text()")
+        except ValueError:
+            name, = dom.xpath("//div[@class='markerTitle']/h3/text()")
+            address = dom.xpath("//div[@class='markerAddress']/text()")
+            bikes, free = dom.xpath("//div[@class='markerAvail']//h3/text()")
+
         self.name = name
         self.latitude = float(latlng[0])
         self.longitude = float(latlng[1])

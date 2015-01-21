@@ -197,8 +197,63 @@
                 "country": "CL"
             }, 
             "feed_url": "https://bikesantiago.bcycle.com/station-locations-new/"
+        },
+        {
+            "tag": "indiana-pacers-bikeshare",
+            "meta": {
+                "latitude": 39.791,
+                "city": "Indianapolis, IN",
+                "name": "Indiana Pacers Bikeshare",
+                "longitude": -86.148,
+                "country": "US"
+            },
+            "feed_url": "https://www.pacersbikeshare.org/header-nav/station-map"
+        },
+        {
+            "tag": "bublr-bikes",
+            "meta": {
+                "latitude": 43.05,
+                "city": "Milwaukee, WI",
+                "name": "Bublr Bikes",
+                "longitude": -87.95,
+                "country": "US"
+            },
+            "feed_url": "https://bublrbikes.bcycle.com/station-locations"
+        },
+        {
+            "tag": "columbia-county",
+            "meta": {
+                "latitude": 33.5375,
+                "city": "Evans, GA",
+                "name": "Columbia County B-cycle",
+                "longitude": -82.127778,
+                "country": "US"
+            },
+            "feed_url": "https://columbiacounty.bcycle.com/station-locations"
+        },
+        {
+            "tag": "catbike",
+            "meta": {
+                "latitude": 32.016667,
+                "city": "Savannah, GA",
+                "name": "CAT Bike",
+                "longitude": -81.116667,
+                "country": "US"
+            },
+            "feed_url": "https://catbike.bcycle.com/station-locations"
+        },
+        {
+            "tag": "rapid-city",
+            "meta": {
+                "latitude": 44.076,
+                "city": "Rapid City, SD",
+                "name": "Rapid City B-cycle",
+                "longitude": -103.228,
+                "country": "US"
+            },
+            "feed_url": "https://rapidcity.bcycle.com/station-map"
         }
-    ], 
+    ],
     "system": "bcycle", 
     "class": "BCycleSystem"
 }
