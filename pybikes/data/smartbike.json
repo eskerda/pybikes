@@ -39,8 +39,8 @@
                         "longitude": 2.1734035, 
                         "country": "ES"
                     }, 
-                    "feed_url": "https://www.bicing.cat/ca/formmap/getJsonObject", 
-                    "format": "json"
+                    "feed_url": "https://www.bicing.cat/availability_map/getJsonObject",
+                    "format": "json_v2"
                 }, 
                 {
                     "tag": "ecobici", 
