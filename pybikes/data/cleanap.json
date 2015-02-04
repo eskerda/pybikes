@@ -1,0 +1,17 @@
+{
+    "instances":[
+        {
+            "url":"http://www.movinap.it/_CI/api_v1/station/getAllStationsInfo",
+            "tag":"bike-sharing-napoli",
+            "meta":{
+                "latitude":40.8517746,
+                "country":"IT",
+                "name":"Bike Sharing Napoli",
+                "longitude":14.2681244,
+                "city":"Napoli"
+            }
+        }
+    ],
+    "class":"Cleanap",
+    "system":"cleanap"
+}
