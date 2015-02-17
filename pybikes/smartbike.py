@@ -104,7 +104,7 @@ class SmartBikeStation(BikeShareStation):
                     int, info['nearbyStations'].split(',')
                 )
 
-            if info['zip'] is not None:
+            if 'zip' in info and info['zip']:
                 self.extra['zip'] = info['zip']
 
             if 'stationType' in info and \
