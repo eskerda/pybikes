@@ -98,8 +98,7 @@ class SmartBikeStation(BikeShareStation):
             elif 'districtCode' in info:
                 self.extra['districtCode'] = info['districtCode']
 
-            if info['nearbyStations'] is not None and\
-                    info['nearbyStations'] != "0":
+            if info['nearbyStations'] and info['nearbyStations'] != "0":
                 self.extra['NearbyStationList'] = map(
                     int, info['nearbyStations'].split(',')
                 )
