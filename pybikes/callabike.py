@@ -11,8 +11,7 @@ from .contrib import TSTCache
 
 __all__ = ['Callabike', 'CallabikeStation']
 
-BASE_URL = 'https://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
-CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
+BASE_URL = 'http://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
 
 cache = TSTCache(delta=60)
 
