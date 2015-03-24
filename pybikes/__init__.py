@@ -45,6 +45,7 @@ from .ciclosampa import *
 from .veloway import *
 from .easybike import *
 from .cleanap import *
+from .callabike import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -64,7 +65,9 @@ __all__ = base.__all__ +\
           ciclosampa.__all__+\
           veloway.__all__+\
           easybike.__all__+\
-          cleanap.__all__
+          cleanap.__all__+\
+          callabike.__all__
+
 
 def getDataFiles():
     return resource_listdir(__name__, 'data')
