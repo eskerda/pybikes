@@ -3,17 +3,14 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-import urllib
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
-from .contrib import TSTCache
 
 __all__ = ['Callabike', 'CallabikeStation']
 
 BASE_URL = 'http://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
 
-cache = TSTCache(delta=60)
 
 class Callabike(BikeShareSystem):
     sync = True
@@ -28,20 +25,20 @@ class Callabike(BikeShareSystem):
         super(Callabike, self).__init__(tag, meta)
         self.url = BASE_URL.format(city_id = city_id)
 
-    def update(self, scraper = None):        
+    def update(self, scraper = None):
         if scraper is None:
-            scraper = utils.PyBikesScraper(cache)
+            scraper = utils.PyBikesScraper()
 
         markers = json.loads(scraper.request(self.url))
         self.stations = [CallabikeStation(a) for a in markers['marker'] if a['hal2option']['standort_id']!=""]
-        
+
 
 class CallabikeStation(BikeShareStation):
     def __init__(self, info):
         super(CallabikeStation, self).__init__()
         self.latitude = float(info['lat'])
         self.longitude = float(info['lng'])
-        
+
         hal2 = info['hal2option']
         tooltip = hal2['tooltip']
         tooltip = tooltip.replace("&nbsp;", " ")
