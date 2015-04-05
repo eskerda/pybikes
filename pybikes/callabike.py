@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, David Kreitschmann <david@kreitschmann.de>
 # Distributed under the AGPL license, see LICENSE.txt
-
+import re
 import json
 
 from .base import BikeShareSystem, BikeShareStation
@@ -42,8 +42,11 @@ class CallabikeStation(BikeShareStation):
         hal2 = info['hal2option']
         tooltip = hal2['tooltip']
         tooltip = tooltip.replace("&nbsp;", " ")
+        tooltip = re.sub(r"^'|'$", "", tooltip)
+        tooltip = tooltip.strip()
         tooltip = tooltip.encode("utf-8")
-        self.name = tooltip
         bikes = hal2['bikelist']
         bikes = [a for a in bikes if a['canBeRented']]
+
+        self.name = tooltip
         self.bikes = len(bikes)
