@@ -72,6 +72,9 @@ class TestSystems(unittest.TestCase):
     def test_cleanap(self):
         self._test_systems('cleanap')
 
+    def test_callabike(self):
+        self._test_systems('callabike')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):
@@ -128,11 +131,18 @@ class TestSystems(unittest.TestCase):
         else:
             self._test_dumb_allows_parameter(station)
 
+        # Required fields
         self.assertIsNotNone(station.bikes)
-        self.assertIsNotNone(station.free)
         self.assertIsNotNone(station.latitude)
         self.assertIsNotNone(station.longitude)
         self.assertIsNotNone(station.name)
+
+        # Type checking
+        self.assertIsInstance(station.bikes, int)
+        self.assertIsInstance(station.latitude, float)
+        self.assertIsInstance(station.longitude, float)
+        if station.free:
+            self.assertIsInstance(station.free, int)
 
     def _test_update(self, instance):
         """ Tests if this system can be updated
