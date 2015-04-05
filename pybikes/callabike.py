@@ -23,14 +23,17 @@ class Callabike(BikeShareSystem):
 
     def __init__(self, tag, meta, city_id):
         super(Callabike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(city_id = city_id)
+        self.url = BASE_URL.format(city_id=city_id)
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
         markers = json.loads(scraper.request(self.url))
-        self.stations = [CallabikeStation(a) for a in markers['marker'] if a['hal2option']['standort_id']!=""]
+        self.stations = [
+            CallabikeStation(a) for a in markers['marker']
+            if a['hal2option']['standort_id']
+        ]
 
 
 class CallabikeStation(BikeShareStation):
