@@ -210,6 +210,7 @@ class SmartShitty(BaseSystem):
                                 <br/>
                                 <ul>
                                     <li>Available bicycles: 17</li>
+                                    <li>Available electrical bicycles: 0</li>
                                     <li>Available slots: 7</li>
                                 </ul>
                             </div>
@@ -250,5 +251,9 @@ class SmartShittyStation(BikeShareStation):
         self.name = marker['title']
         self.latitude = marker['position']['lat']
         self.longitude = marker['position']['lng']
-        self.bikes = availability[0]
-        self.free = availability[1]
+        self.bikes = availability[0] + availability[2]
+        self.free = availability[2]
+        self.extra = {}
+        if availability[2] > 0:
+            self.extra['has_ebikes'] = True
+            self.extra['ebikes'] = availability[2]
