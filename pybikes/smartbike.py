@@ -247,13 +247,12 @@ class SmartShittyStation(BikeShareStation):
             lambda x: int(x.split(':')[1]),
             avail_soup.xpath("//div/ul/li/text()")
         )
-
         self.name = marker['title']
         self.latitude = marker['position']['lat']
         self.longitude = marker['position']['lng']
-        self.bikes = availability[0] + availability[2]
+        self.bikes = availability[0] + availability[1]
         self.free = availability[2]
         self.extra = {}
-        if availability[2] > 0:
+        if availability[1] > 0:
             self.extra['has_ebikes'] = True
             self.extra['ebikes'] = availability[2]
