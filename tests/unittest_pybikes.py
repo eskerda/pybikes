@@ -75,6 +75,9 @@ class TestSystems(unittest.TestCase):
     def test_callabike(self):
         self._test_systems('callabike')
 
+    def test_bikeu(self):
+        self._test_systems('bikeu')
+
     def _test_systems(self, system):
         data = pybikes.getDataFile(system)
         if isinstance(data['class'], unicode):

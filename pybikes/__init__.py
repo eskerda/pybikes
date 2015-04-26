@@ -46,6 +46,7 @@ from .veloway import *
 from .easybike import *
 from .cleanap import *
 from .callabike import *
+from .bikeu import *
 
 __all__ = base.__all__ +\
           bixi.__all__ +\
@@ -66,7 +67,8 @@ __all__ = base.__all__ +\
           veloway.__all__+\
           easybike.__all__+\
           cleanap.__all__+\
-          callabike.__all__
+          callabike.__all__+\
+          bikeu.__all__
 
 
 def getDataFiles():
