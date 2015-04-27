@@ -11,6 +11,114 @@
                 "country": "HU"
             }, 
             "city_uid": 228
+        },
+        {
+            "domain": "pl",
+            "tag": "wrm",
+            "meta": {
+                "name": "WRM nextbike Poland",
+                "latitude": 52.2413,
+                "longitude": 18.479,
+                "country": "PL",
+                "city": "Wrocław"
+            },
+            "city_uid": 148
+        },
+        {
+            "domain": "bb",
+            "tag": "bbb",
+            "meta": {
+                "name": "Bemowo Bike Poland",
+                "latitude": 52.2606,
+                "longitude": 20.929,
+                "country": "PL",
+                "city": "Warszawa / Bemowo"
+            },
+            "city_uid": 197
+        },
+        {
+            "domain": "pb",
+            "tag": "prm",
+            "meta": {
+                "name": "PRM Poland",
+                "latitude": 52.4116,
+                "longitude": 16.9258,
+                "country": "PL",
+                "city": "Poznań"
+            },
+            "city_uid": 192
+        },
+        {
+            "domain": "ob",
+            "tag": "obp",
+            "meta": {
+                "name": "Opole Bike Poland",
+                "latitude": 50.6645,
+                "longitude": 17.9276,
+                "country": "PL",
+                "city": "Opole"
+            },
+            "city_uid": 202
+        },
+        {
+            "domain": "vp",
+            "tag": "veturilo",
+            "meta": {
+                "name": "VETURILO Poland",
+                "latitude": 52.2345,
+                "longitude": 21.0024,
+                "country": "PL",
+                "city": "Warszawa / Veturilo"
+            },
+            "city_uid": 210
+        },
+        {
+            "domain": "tp",
+            "tag": "rtp",
+            "meta": {
+                "name": "Rower Trójmiejski Poland",
+                "latitude": 54.4349,
+                "longitude": 18.6026,
+                "country": "PL",
+                "city": "Trójmiasto"
+            },
+            "city_uid": 227
+        },
+        {
+            "domain": "kp",
+            "tag": "kmk",
+            "meta": {
+                "name": "KMK Bike Kraków Poland",
+                "latitude": 50.0395,
+                "longitude": 19.9374,
+                "country": "PL",
+                "city": "Kraków"
+            },
+            "city_uid": 232
+        },
+        {
+            "domain": "bp",
+            "tag": "biker",
+            "meta": {
+                "name": "BIKER Białystok Poland",
+                "latitude": 53.1299,
+                "longitude": 23.1564,
+                "country": "PL",
+                "city": "Białystok"
+            },
+            "city_uid": 245
+        },
+        {
+            "domain": "op",
+            "tag": "krm",
+            "meta": {
+                "name": "KRM Konstanciński Poland",
+                "latitude": "52.0879",
+                "longitude": "21.1075",
+                "country": "PL",
+                "city": "Konstancin"
+            },
+            "city_uid": 247
         }
     ], 
     "system": "nextbike", 
