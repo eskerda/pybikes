@@ -26,7 +26,7 @@
         },
         {
             "domain": "pl",
-            "tag": "wrm",
+            "tag": "wroclawski-rower-miejski",
             "meta": {
                 "name": "Wrocławski Rower Miejski",
                 "latitude": 52.2413,
@@ -38,7 +38,7 @@
         },
         {
             "domain": "bb",
-            "tag": "bbb",
+            "tag": "bemowo-bike",
             "meta": {
                 "name": "Bemowo Bike",
                 "latitude": 52.2606,
@@ -50,7 +50,7 @@
         },
         {
             "domain": "pb",
-            "tag": "prm",
+            "tag": "poznanski-rower-miejski",
             "meta": {
                 "name": "Poznański Rower Miejski",
                 "latitude": 52.4116,
@@ -62,7 +62,7 @@
         },
         {
             "domain": "ob",
-            "tag": "obp",
+            "tag": "opole-bike",
             "meta": {
                 "name": "Opole Bike",
                 "latitude": 50.6645,
@@ -86,7 +86,7 @@
         },
         {
             "domain": "tp",
-            "tag": "rtp",
+            "tag": "rower-trojmiejski",
             "meta": {
                 "name": "Rower Trójmiejski",
                 "latitude": 54.4349,
@@ -98,7 +98,7 @@
         },
         {
             "domain": "kp",
-            "tag": "kmk",
+            "tag": "kmk-bike",
             "meta": {
                 "name": "KMK Bike",
                 "latitude": 50.0395,
@@ -110,7 +110,7 @@
         },
         {
             "domain": "bp",
-            "tag": "biker",
+            "tag": "biker-bialystok",
             "meta": {
                 "name": "BiKeR Białystok",
                 "latitude": 53.1299,
@@ -122,7 +122,7 @@
         },
         {
             "domain": "op",
-            "tag": "krm",
+            "tag": "konstancinski-rower-miejski",
             "meta": {
                 "name": "Konstanciński Rower Miejski",
                 "latitude": "52.0879",
@@ -134,7 +134,7 @@
         },
         {
             "domain": "kw",
-            "tag": "cbb",
+            "tag": "city-by-bike",
             "meta": {
                 "name": "City By Bike",
                 "latitude": "50.2534",
