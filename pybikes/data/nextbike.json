@@ -11,6 +11,18 @@
                 "country": "HU"
             }, 
             "city_uid": 228
+        },
+        {
+            "domain": "kg",
+            "tag": "koeln",
+            "meta": {
+                "latitude": 50.9364,
+                "city": "Köln",
+                "name": "KVB Rad Germany",
+                "longitude": 6.96053,
+                "country": "DE"
+            },
+            "city_uid": 14
         }
     ], 
     "system": "nextbike", 
