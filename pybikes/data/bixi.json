@@ -158,6 +158,22 @@
             "format": "json"
         }, 
         {
+          "tag": "pronto-cycle-share", 
+          "meta": {
+            "city": "Seattle, WA", 
+            "name": "Pronto Cycle Share", 
+            "country": "US", 
+            "company": [
+              "Pronto!", 
+              "Alta Bicycle Share, Inc"
+            ], 
+            "longitude": -122.332071, 
+            "latitude": 47.606209
+          }, 
+          "feed_url": "https://secure.prontocycleshare.com/data/stations.json", 
+          "format": "json"
+        }, 
+        {
             "tag": "hubway", 
             "meta": {
                 "city": "Boston, MA", 
