@@ -10,12 +10,12 @@ import argparse
 from collections import namedtuple
 import re
 
-from pyquery import PyQuery as pq
+from lxml import etree
 
 from googlegeocoder import GoogleGeocoder
 from slugify import slugify
 from pybikes.utils import PyBikesScraper
-from pybikes import Domoblue
+from pybikes.domoblue import Domoblue
 
 MAIN = 'http://clientes.domoblue.es/onroll/'
 TOKEN_URL = 'generaMapa.php?cliente={service}&ancho=500&alto=700'
@@ -116,9 +116,9 @@ def google_reverse_geocode(lat, lng):
 
 def extract_systems():
     xml_data = get_xml('todos')
-    xml_dom = pq(xml_data, parser = 'xml')
+    xml_dom = etree.fromstring(xml_data)
     systems = []
-    for marker in xml_dom('marker'):
+    for marker in xml_dom.xpath('//marker'):
         if marker.get('tipo') == 'pendiente':
             continue
         sys = Domoblue('foo', {}, int(marker.get('codigoCliente')))

@@ -17,7 +17,6 @@ setup(
     description = "A python library for scrapping bike sharing data",
     long_description = open('README.md').read(),
     install_requires = [
-        'pyquery==1.2.4',
         'requests==2.0.0',
         'lxml==3.2.3'
     ],
