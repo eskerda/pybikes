@@ -6,8 +6,8 @@ import re
 from lxml import etree
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils
-from .contrib import TSTCache
+from pybikes.utils import PyBikesScraper
+from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
@@ -15,6 +15,7 @@ BASE_URL = 'https://nextbike.net/maps/nextbike-live.xml?domains={domain}'
 CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
 
 cache = TSTCache(delta=60)
+
 
 class Nextbike(BikeShareSystem):
     sync = True
@@ -27,16 +28,17 @@ class Nextbike(BikeShareSystem):
 
     def __init__(self, tag, meta, domain, city_uid):
         super(Nextbike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(domain = domain)
+        self.url = BASE_URL.format(domain=domain)
         self.uid = city_uid
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
-            scraper = utils.PyBikesScraper(cache)
+            scraper = PyBikesScraper(cache)
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8'))
-        places = domain_xml.xpath(CITY_QUERY.format(uid = self.uid))
+        places = domain_xml.xpath(CITY_QUERY.format(uid=self.uid))
         self.stations = filter(None, map(NextbikeStation, places))
+
 
 class NextbikeStation(BikeShareStation):
     def __new__(cls, place_tree):
@@ -55,13 +57,21 @@ class NextbikeStation(BikeShareStation):
         # and some might be '1211-foo-bar-baz   -yeah- kill - me
         num_name_re = r'(?P<id>\d*)\s*\-?\s*(?P<name>\D+)'
         match = re.search(num_name_re, place_tree.attrib['name'])
-        if match.group('id'):
-            self.extra['uid'] = int(match.group('id'))
-            if match.group('id') != place_tree.attrib['uid']:
-                self.extra['internal_uid'] = int(place_tree.attrib['uid'])
+        if match:
+            if match.group('id'):
+                self.extra['uid'] = int(match.group('id'))
+                if match.group('id') != place_tree.attrib['uid']:
+                    self.extra['internal_uid'] = int(place_tree.attrib['uid'])
+            else:
+                self.extra['uid'] = int(place_tree.attrib['uid'])
+            self.name = match.group('name').strip()
         else:
-            self.extra['uid'] = int(place_tree.attrib['uid'])
-        self.name = match.group('name').strip()
+            self.name = place_tree.attrib['name']
+            if 'number' in place_tree.attrib:
+                self.extra['uid'] = place_tree.attrib['number']
+                self.extra['internal_uid'] = place_tree.attrib['uid']
+            else:
+                self.extra['uid'] = place_tree.attrib['uid']
 
         # Gotta be careful here, some nextbike services just count up to 5,
         # displaying 5+
@@ -81,5 +91,7 @@ class NextbikeStation(BikeShareStation):
         self.latitude = float(place_tree.attrib['lat'])
         self.longitude = float(place_tree.attrib['lng'])
         if 'bike_numbers' in place_tree.attrib:
-            self.extra['bike_uids'] = map(int, place_tree.attrib['bike_numbers'].split(','))
-
+            self.extra['bike_uids'] = map(
+                int,
+                place_tree.attrib['bike_numbers'].split(',')
+            )
