@@ -11,8 +11,6 @@ from . import utils
 
 __all__ = ['Emovity']
 
-RE_INFO = "var html\d+ =\'(.*)\'"
-RE_LATLNG = 'var pBikes\d+= new GLatLng\((.*)\,(.*)\)'
 
 class Emovity(BikeShareSystem):
     sync = True
@@ -25,26 +23,27 @@ class Emovity(BikeShareSystem):
         super(Emovity, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
         fuzzle = scraper.request(self.feed_url)
-        latlngs = re.findall(RE_LATLNG, fuzzle)
-        infos = re.findall(RE_INFO, fuzzle)
+        data = zip(
+            re.findall(r"addMarker\(\d+,(\d+.\d+),(\d+.\d+)", fuzzle),
+            re.findall(r"html\[\d+\]='(.*?)';", fuzzle)
+        )
         stations = []
-
-        for i in range(0, len(latlngs)):
-            tree = html.fromstring(infos[i])
-
-            station = BikeShareStation(i)
-            station.latitude = float(latlngs[i][0])
-            station.longitude = float(latlngs[i][1])
-            station.name = tree[1].text
-            station.bikes = int(re.findall(".*: (\d+)", tree[2].text)[0])
-            station.free  = int(re.findall(".*: (\d+)", tree[3].text)[0])
+        for latlng, html_fuzzle in data:
+            dom = html.fromstring(html_fuzzle)
+            text = dom.xpath('//div/text()')
+            station = BikeShareStation()
+            station.latitude = float(latlng[0])
+            station.longitude = float(latlng[1])
+            station.name = text[1]
+            station.bikes = int(re.search(r'\d+', text[2]).group())
+            station.free = int(re.search(r'\d+', text[3]).group())
             station.extra = {
-                'uid': re.findall("(\d+)\-.*", tree[0].text)[0]
+                'uid': re.search(r'^\d+', text[0]).group()
             }
             stations.append(station)
         self.stations = stations
