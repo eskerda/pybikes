@@ -102,7 +102,7 @@ def get(tag, key=None):
 
 
 # These are here for retrocompatibility purposes
-def getBikeShareSystem(tag, system, key=None):
+def getBikeShareSystem(system, tag, key=None):
     return get(tag, key)
 
 
