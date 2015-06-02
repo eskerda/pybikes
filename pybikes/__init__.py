@@ -24,9 +24,12 @@ import json
 from itertools import imap
 from pkg_resources import resource_string, resource_listdir
 
+from pybikes.exceptions import BikeShareSystemNotFound
+
 # Top class shortcuts
 from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes.exceptions import BikeShareSystemNotFound
+from pybikes import utils
+from pybikes import contrib
 
 def get_data(schema):
     name = re.sub(r'\.json$', '', schema)
