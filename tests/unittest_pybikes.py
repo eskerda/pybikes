@@ -1,111 +1,31 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+import re
+import json
+from pkg_resources import resource_string
 
 import unittest
-from pkg_resources import resource_string
-import json
 
 import sys
 
 import pybikes
-from pybikes import *
-from pybikes import utils
 import keys
 
 class TestSystems(unittest.TestCase):
+    def _test_systems(self, schema):
+        key = getattr(keys, schema, None)
+        print('\nTesting %s' % schema)
+        print('=============================')
+        for cname, instance in pybikes.get_instances(schema):
+            self._test_system(instance['tag'], key)
 
-    def test_bixi(self):
-        self._test_systems('bixi')
-
-    def test_bcycle(self):
-        self._test_systems('bcycle')
-
-    def test_cyclocity(self):
-        self._test_systems('cyclocity')
-
-    def test_gewista(self):
-        self._test_systems('gewista')
-
-    def test_smartbike(self):
-        self._test_systems('smartbike')
-
-    def test_decobike(self):
-        self._test_systems('decobike')
-
-    def test_keolis(self):
-        self._test_systems('keolis')
-
-    def test_domoblue(self):
-        self._test_systems('domoblue')
-
-    def test_emovity(self):
-        self._test_systems('emovity')
-
-    def test_bicipalma(self):
-        self._test_systems('bicipalma')
-
-    def test_bicincitta(self):
-        self._test_systems('bicincitta')
-
-    def test_bicincittaold(self):
-        self._test_systems('bicincittaold')
-
-    def test_bicicard(self):
-        self._test_systems('bicicard')
-
-    def test_nextbike(self):
-        self._test_systems('nextbike')
-
-    def test_samba(self):
-        self._test_systems('samba')
-
-    def test_ciclosampa(self):
-        self._test_systems('ciclosampa')
-
-    def test_veloway(self):
-        self._test_systems('veloway')
-
-    def test_easybike(self):
-        self._test_systems('easybike')
-
-    def test_cleanap(self):
-        self._test_systems('cleanap')
-
-    def test_callabike(self):
-        self._test_systems('callabike')
-
-    def test_bikeu(self):
-        self._test_systems('bikeu')
-
-    def _test_systems(self, system):
-        data = pybikes.getDataFile(system)
-        if isinstance(data['class'], unicode):
-            sys_class = eval(data['class'])
-            if sys_class.authed:
-                key = eval('keys.%s' % system)
-            else:
-                key = None
-            for instance in data['instances']:
-                self._test_system(system, instance['tag'], key)
-        elif isinstance(data['class'], dict):
-            for cls in data['class']:
-                sys_class = eval(cls)
-                if sys_class.authed:
-                    key = eval('keys.%s' % system)
-                else:
-                    key = None
-                for instance in data['class'][cls]['instances']:
-                    self._test_system(system, instance['tag'], key)
-        else:
-            raise Exception('Malformed data file')
-
-    def _test_system(self, system, tag, key = None):
+    def _test_system(self, tag, key=None):
         """ Tests okayness of a system:
             - Test if system can be updated
             - Tests okayness of 5 stations on the system
         """
-        p_sys = pybikes.getBikeShareSystem(system, tag, key)
+        p_sys = pybikes.get(tag, key)
         self._test_update(p_sys)
         station_string = ""
         if len(p_sys.stations) < 5:
@@ -154,17 +74,17 @@ class TestSystems(unittest.TestCase):
             allows a PyBikesScraper parameter
         """
         instance.update()
-        print "%s has %d stations" % (
+        print("%s has %d stations" % (
             instance.meta['name'], len(instance.stations)
-        )
-        self.assertTrue(len(instance.stations)>0)
+        ))
+        self.assertTrue(len(instance.stations) > 0)
         self._test_allows_parameter(instance)
 
     def _test_allows_parameter(self, instance):
         """ Tests if this instance, be it a system or a station, allows a
             PyBikesScraper parameter for its update method
         """
-        scraper = utils.PyBikesScraper()
+        scraper = pybikes.utils.PyBikesScraper()
         instance.update(scraper)
         self.assertIsNotNone(scraper.last_request)
 
@@ -177,7 +97,7 @@ class TestSystems(unittest.TestCase):
         """
         raised = False
         try:
-            scraper = utils.PyBikesScraper()
+            scraper = pybikes.utils.PyBikesScraper()
             instance.update(scraper)
         except Exception:
             raised = True
@@ -189,7 +109,7 @@ class TestBikeShareStationInstance(unittest.TestCase):
     def setUp(self):
         self.battery = []
 
-        stationFoo = BikeShareStation(0)
+        stationFoo = pybikes.BikeShareStation(0)
         stationFoo.name = 'foo'
         stationFoo.latitude = 40.0149856
         stationFoo.longitude = -105.2705455
@@ -199,7 +119,7 @@ class TestBikeShareStationInstance(unittest.TestCase):
             'foo': 'fuzz'
         }
 
-        stationBar = BikeShareStation(1)
+        stationBar = pybikes.BikeShareStation(1)
         stationBar.name = 'foo'
         stationBar.latitude = 19.4326077
         stationBar.longitude = -99.13320799999997
@@ -245,10 +165,10 @@ class TestBikeShareSystemInstance(unittest.TestCase):
             'population' : 100000
         }
 
-        class FooSystem(BikeShareSystem):
+        class FooSystem(pybikes.BikeShareSystem):
             pass
 
-        class BarSystem(BikeShareSystem):
+        class BarSystem(pybikes.BikeShareSystem):
             # Tests inheritance in meta-data:
             # - System has own meta-data
             # - Instance has also, meta-data
@@ -290,13 +210,25 @@ class TestBikeShareSystemInstance(unittest.TestCase):
 
             # Check that all metainfo not set on instantiation
             # appears on the instance as None
-            for meta in BikeShareSystem.meta:
+            for meta in pybikes.BikeShareSystem.meta:
                 if meta not in unit.get('meta'):
                     self.assertIn(meta, unit.get('instance').meta)
                     self.assertEqual(
                         None,
                         unit.get('instance').meta.get(meta)
                     )
+
+
+def create_test_schema_method(schema):
+    def test_schema(self):
+        self._test_systems(schema)
+    return test_schema
+
+schemas = map(lambda name: re.sub(r'\.json$', '', name), pybikes.get_all_data())
+for schema in schemas:
+    test_schema = create_test_schema_method(schema)
+    test_schema.__name__ = 'test_%s' % schema
+    setattr(TestSystems, test_schema.__name__, test_schema)
 
 if __name__ == '__main__':
     unittest.main()
