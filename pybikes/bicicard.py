@@ -56,17 +56,17 @@ information one day will be public / maybe we can ask them to make a dump).
 """
 
 import re
+from pkg_resources import resource_string
 
-from lxml import etree
-from lxml import html
+from lxml import etree, html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
 __all__ = ['Bicicard']
 
 _kml_ns = {
-    'kml': 'http://earth.google.com/kml/2.2'
+    'kml': 'http://www.opengis.net/kml/2.2'
 }
 
 _xpath_q = "//td[@class='titulo']/text()[contains(.,'%s')]/ancestor::table[1]"\
@@ -81,19 +81,18 @@ class Bicicard(BikeShareSystem):
         'company': 'ITCL'
     }
 
-    def __init__(self, tag, location_url, status_url, meta):
+    def __init__(self, tag, kml_file, status_url, meta):
         super(Bicicard, self).__init__(tag, meta)
-        self.location_url = location_url
-        self.status_url   = status_url
+        self.kml_file = resource_string('pybikes', kml_file)
+        self.status_url = status_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = PyBikesScraper()
 
-        location_kml  = scraper.request(self.location_url).encode('utf-8')
         status_fuzzle = scraper.request(self.status_url)
 
-        location_dom  = etree.fromstring(location_kml)
+        location_dom  = etree.fromstring(self.kml_file)
         status_dom    = html.fromstring(status_fuzzle)
 
         placemarks = location_dom.xpath("//kml:Placemark",
