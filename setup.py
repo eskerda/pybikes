@@ -18,6 +18,7 @@ setup(
     long_description = open('README.md').read(),
     install_requires = [
         'requests==2.0.0',
-        'lxml==3.2.3'
+        'lxml==3.2.3',
+        'cssselect==0.9.1'
     ],
 )
