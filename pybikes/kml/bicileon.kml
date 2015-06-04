@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Mapa Estaciones BiciLeon para CityBikes</name>
+		<description><![CDATA[Éste es un mapa de colaboración para el soporte de BiciLeon en CityBikes.<br>  <br>  Para cada una de las estaciones en http://bicileon.com/estado/EstadoActual.asp<br>  Añadir o posicionar correctamente un punto, nombrarlo con el nombre común (el que aparecera en CityBikes)<br>  Y poner, en la descripción el nombre exacto contenido dentro de la web, por ejemplo:<br>  <br>  Si en la web de BiciLeon pone<br>    Villaquilambre - Centro Civico Navatejera - EN LÍNEA<br>  Poner<br>    En el titulo: Nombre que creais es descriptivo de la estacion<br>    En la Descripción: Villaquilambre - Centro Civico Navatejera (exactamente)<br>    <br>  Ésto es para facilitar la busqueda automatizada de los datos.<br>  <br>  Muchas gracias y adelante!!]]></description>
+		<Folder>
+			<name>Capa sin nombre</name>
+			<Placemark>
+				<name>Mariano Andrés</name>
+				<description><![CDATA[Av Mariano Andrés]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.5718000000000005,42.609577,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Oficinas Ayto de León</name>
+				<description><![CDATA[Junta de Castilla y León]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.573933,42.597443,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Albeitar</name>
+				<description><![CDATA[C/Covadonga,Albeitar]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.574393,42.593143,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>CC Crucero</name>
+				<description><![CDATA[CC Crucero]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.586221,42.600327,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Espacio León</name>
+				<description><![CDATA[CC Espacio León]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.595008,42.611622,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Escuela de Idiomas ULE</name>
+				<description><![CDATA[Escuela de Idiomas]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.571308,42.592583,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Espacio Vias</name>
+				<description><![CDATA[Espacio Vias]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.57561,42.602764,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Estación de Autobuses</name>
+				<description><![CDATA[Estación de Autobuses]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.579039,42.593777,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Junta de Castilla y León</name>
+				<description><![CDATA[Junta de Castilla y León]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.582675,42.603638,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Legión 7ª</name>
+				<description><![CDATA[Legión 7ª]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.570937,42.601608,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>LEON PLAZA. MUSAC</name>
+				<description><![CDATA[Leon Plaza]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.58246,42.605545,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Parque de Papalaguinda</name>
+				<description><![CDATA[Parque de Papalaguinda]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.578083,42.595745,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Parque de la Chantría</name>
+				<description><![CDATA[Parque La Chantría]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.569768,42.589123,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Plaza San Marcelo</name>
+				<description><![CDATA[Plaza San Marcelo]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.579681,42.603264,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Polígono X</name>
+				<description><![CDATA[Poligono X]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.560648,42.592033,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Renfe</name>
+				<description><![CDATA[Renfe]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.582388,42.596363,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>San Juan de Sahagún</name>
+				<description><![CDATA[San Juan de Sahagún]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.567016,42.606201,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>San Pedro</name>
+				<description><![CDATA[San Pedro]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.565938,42.600609,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Universidad Industriales</name>
+				<description><![CDATA[Universidad Industriales]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.56119,42.613152,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Universidad, Cafetería Central</name>
+				<description><![CDATA[Universidad, Cafetería Central]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.558867,42.61211,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Navatejera Polideportivo</name>
+				<description><![CDATA[Villaquilambre - Polideportivo Navatejera]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.564468,42.625179,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Villaquilambre - Ayuntamiento</name>
+				<description><![CDATA[Villaquilambre - Ayuntamiento]]></description>
+				<styleUrl>#icon-22</styleUrl>
+				<ExtendedData>
+				</ExtendedData>
+				<Point>
+					<coordinates>-5.557537,42.638821,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-22-normal'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>0.0</scale>
+			</LabelStyle>
+		</Style>
+		<Style id='icon-22-highlight'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+				</Icon>
+				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
+				</hotSpot>
+			</IconStyle>
+			<LabelStyle>
+				<scale>1.1</scale>
+			</LabelStyle>
+		</Style>
+		<StyleMap id='icon-22'>
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#icon-22-normal</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#icon-22-highlight</styleUrl>
+			</Pair>
+		</StyleMap>
+	</Document>
+</kml>

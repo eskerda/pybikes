@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "girocleta", 
+            "meta": {
+                "latitude": 41.9794005, 
+                "city": "Girona", 
+                "name": "Girocleta", 
+                "longitude": 2.8214264, 
+                "country": "ES"
+            }, 
+            "feed_url": "http://www.girocleta.cat/ESTACIONS.aspx"
+        }
+    ], 
+    "system": "emovity", 
+    "class": "Emovity"
+}

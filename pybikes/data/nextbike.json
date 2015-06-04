@@ -1,0 +1,150 @@
+{
+    "instances": [
+        {
+            "domain": "mb", 
+            "tag": "bubi", 
+            "meta": {
+                "latitude": 47.497912, 
+                "city": "Budapest", 
+                "name": "MOL Bubi", 
+                "longitude": 19.040235, 
+                "country": "HU"
+            }, 
+            "city_uid": 228
+        },
+        {
+            "domain": "kg",
+            "tag": "kvb-rad",
+            "meta": {
+                "latitude": 50.9364,
+                "city": "Köln",
+                "name": "KVB Rad",
+                "longitude": 6.96053,
+                "country": "DE"
+            },
+            "city_uid": 14
+        },
+        {
+            "domain": "pl",
+            "tag": "wroclawski-rower-miejski",
+            "meta": {
+                "name": "Wrocławski Rower Miejski",
+                "latitude": 51.1097,
+                "longitude": 17.0485,
+                "country": "PL",
+                "city": "Wrocław"
+            },
+            "city_uid": 148
+        },
+        {
+            "domain": "bb",
+            "tag": "bemowo-bike",
+            "meta": {
+                "name": "Bemowo Bike",
+                "latitude": 52.2606,
+                "longitude": 20.929,
+                "country": "PL",
+                "city": "Warszawa"
+            },
+            "city_uid": 197
+        },
+        {
+            "domain": "pb",
+            "tag": "poznanski-rower-miejski",
+            "meta": {
+                "name": "Poznański Rower Miejski",
+                "latitude": 52.4116,
+                "longitude": 16.9258,
+                "country": "PL",
+                "city": "Poznań"
+            },
+            "city_uid": 192
+        },
+        {
+            "domain": "ob",
+            "tag": "opole-bike",
+            "meta": {
+                "name": "Opole Bike",
+                "latitude": 50.6645,
+                "longitude": 17.9276,
+                "country": "PL",
+                "city": "Opole"
+            },
+            "city_uid": 202
+        },
+        {
+            "domain": "vp",
+            "tag": "veturilo",
+            "meta": {
+                "name": "VETURILO",
+                "latitude": 52.2345,
+                "longitude": 21.0024,
+                "country": "PL",
+                "city": "Warszawa"
+            },
+            "city_uid": 210
+        },
+        {
+            "domain": "tp",
+            "tag": "rower-trojmiejski",
+            "meta": {
+                "name": "Rower Trójmiejski",
+                "latitude": 54.4349,
+                "longitude": 18.6026,
+                "country": "PL",
+                "city": "Trójmiasto"
+            },
+            "city_uid": 227
+        },
+        {
+            "domain": "kp",
+            "tag": "kmk-bike",
+            "meta": {
+                "name": "KMK Bike",
+                "latitude": 50.0395,
+                "longitude": 19.9374,
+                "country": "PL",
+                "city": "Kraków"
+            },
+            "city_uid": 232
+        },
+        {
+            "domain": "bp",
+            "tag": "biker-bialystok",
+            "meta": {
+                "name": "BiKeR Białystok",
+                "latitude": 53.1299,
+                "longitude": 23.1564,
+                "country": "PL",
+                "city": "Białystok"
+            },
+            "city_uid": 245
+        },
+        {
+            "domain": "op",
+            "tag": "konstancinski-rower-miejski",
+            "meta": {
+                "name": "Konstanciński Rower Miejski",
+                "latitude": "52.0879",
+                "longitude": "21.1075",
+                "country": "PL",
+                "city": "Konstancin"
+            },
+            "city_uid": 247
+        },
+        {
+            "domain": "kw",
+            "tag": "city-by-bike",
+            "meta": {
+                "name": "City By Bike",
+                "latitude": "50.2534",
+                "longitude": "19.0266",
+                "country": "PL",
+                "city": "Katowice"
+            },
+            "city_uid": 282
+        }
+    ],
+    "system": "nextbike", 
+    "class": "Nextbike"
+}

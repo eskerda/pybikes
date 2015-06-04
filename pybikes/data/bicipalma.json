@@ -1,0 +1,16 @@
+{
+    "instances": [
+        {
+            "tag": "bicipalma", 
+            "meta": {
+                "latitude": 39.57119, 
+                "city": "Palma", 
+                "name": "Bicipalma", 
+                "longitude": 2.646634, 
+                "country": "ES"
+            }
+        }
+    ], 
+    "system": "bicipalma", 
+    "class": "BiciPalma"
+}

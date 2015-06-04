@@ -1,0 +1,28 @@
+{
+    "instances": [
+        {
+            "tag": "bbbike",
+            "url": "https://www.bbbike.eu/LocationsMap.aspx",
+            "meta": {
+                "latitude": 49.8225,
+                "city": "Bielsko-Biała",
+                "name": "BBBike",
+                "longitude": 19.044444,
+                "country": "PL"
+            }
+        },
+        {
+            "tag": "bikes-srm",
+            "url": "https://www.bikes-srm.pl/LocationsMap.aspx",
+            "meta": {
+                "latitude": 53.438056,
+                "city": "Szczecin",
+                "name": "Szczeciński rower miejski",
+                "longitude": 14.542222,
+                "country": "PL"
+            }
+        }
+    ],
+    "system": "bikeu",
+    "class": "Bikeu"
+}

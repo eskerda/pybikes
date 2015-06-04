@@ -1,0 +1,312 @@
+{
+    "system": "cyclocity", 
+    "class": {
+        "CyclocityWeb": {
+            "instances": [
+                {
+                    "city": "dublin", 
+                    "meta": {
+                        "latitude": 53.3498053, 
+                        "city": "Dublin", 
+                        "name": "dublinbikes", 
+                        "longitude": -6.2603097, 
+                        "country": "IE"
+                    }, 
+                    "tag": "dublinbikes", 
+                    "endpoint": "http://www.dublinbikes.ie"
+                }, 
+                {
+                    "city": "brisbane", 
+                    "meta": {
+                        "latitude": -27.4710107, 
+                        "city": "Brisbane", 
+                        "name": "CityCycle", 
+                        "longitude": 153.0234489, 
+                        "country": "AU"
+                    }, 
+                    "tag": "citycycle", 
+                    "endpoint": "http://www.citycycle.com.au"
+                }
+            ]
+        }, 
+        "Cyclocity": {
+            "instances": [
+                {
+                    "tag": "cyclic", 
+                    "meta": {
+                        "latitude": 49.44323199999999, 
+                        "country": "FR", 
+                        "name": "cy'clic", 
+                        "longitude": 1.099971, 
+                        "city": "Rouen"
+                    }, 
+                    "contract": "Rouen"
+                }, 
+                {
+                    "tag": "velib", 
+                    "meta": {
+                        "latitude": 48.856614, 
+                        "country": "FR", 
+                        "name": "Velib", 
+                        "longitude": 2.3522219, 
+                        "city": "Paris"
+                    }, 
+                    "contract": "Paris"
+                }, 
+                {
+                    "tag": "velo", 
+                    "meta": {
+                        "latitude": 43.604652, 
+                        "country": "FR", 
+                        "name": "V\u00e9l\u00f4", 
+                        "longitude": 1.444209, 
+                        "city": "Toulouse"
+                    }, 
+                    "contract": "Toulouse"
+                }, 
+                {
+                    "tag": "veloh", 
+                    "meta": {
+                        "latitude": 49.6301025, 
+                        "country": "LU", 
+                        "name": "Veloh", 
+                        "longitude": 6.1520185, 
+                        "city": "Luxembourg"
+                    }, 
+                    "contract": "Luxembourg"
+                }, 
+                {
+                    "tag": "valenbisi", 
+                    "meta": {
+                        "latitude": 39.4699075, 
+                        "country": "ES", 
+                        "name": "Valenbisi", 
+                        "longitude": -0.3762881, 
+                        "city": "Valencia"
+                    }, 
+                    "contract": "Valence"
+                }, 
+                {
+                    "tag": "stockholm-cyclocity", 
+                    "meta": {
+                        "latitude": 59.32893000000001, 
+                        "country": "SE", 
+                        "name": "Cyclocity", 
+                        "longitude": 18.06491, 
+                        "city": "Stockholm"
+                    }, 
+                    "contract": "Stockholm"
+                }, 
+                {
+                    "tag": "goeteborg", 
+                    "meta": {
+                        "latitude": 57.70887, 
+                        "country": "SE", 
+                        "name": "G\u00f6teborg", 
+                        "longitude": 11.97456, 
+                        "city": "G\u00f6teborg"
+                    }, 
+                    "contract": "Goteborg"
+                }, 
+                {
+                    "tag": "tusbic", 
+                    "meta": {
+                        "latitude": 43.46230569999999, 
+                        "country": "ES", 
+                        "name": "Tusbic", 
+                        "longitude": -3.8099803, 
+                        "city": "Santander"
+                    }, 
+                    "contract": "Santander"
+                }, 
+                {
+                    "tag": "velam", 
+                    "meta": {
+                        "latitude": 49.894067, 
+                        "country": "FR", 
+                        "name": "Velam", 
+                        "longitude": 2.295753, 
+                        "city": "Amiens"
+                    }, 
+                    "contract": "Amiens"
+                }, 
+                {
+                    "tag": "bysykkel-lillestrom", 
+                    "meta": {
+                        "latitude": 59.9559696, 
+                        "country": "NO", 
+                        "name": "Bysykkel", 
+                        "longitude": 11.0503785, 
+                        "city": "Lillestr\u00f8m"
+                    }, 
+                    "contract": "Lillestrom"
+                }, 
+                {
+                    "tag": "velocite-mulhouse", 
+                    "meta": {
+                        "latitude": 47.750839, 
+                        "country": "FR", 
+                        "name": "V\u00e9loCit\u00e9", 
+                        "longitude": 7.335888, 
+                        "city": "Mulhouse"
+                    }, 
+                    "contract": "Mulhouse"
+                }, 
+                {
+                    "tag": "velov", 
+                    "meta": {
+                        "latitude": 45.764043, 
+                        "country": "FR", 
+                        "name": "V\u00e9lo'V", 
+                        "longitude": 4.835659, 
+                        "city": "Lyon"
+                    }, 
+                    "contract": "Lyon"
+                }, 
+                {
+                    "tag": "bicikelj", 
+                    "meta": {
+                        "latitude": 46.05645089999999, 
+                        "country": "SI", 
+                        "name": "Bicikelj", 
+                        "longitude": 14.5080702, 
+                        "city": "Ljubljana"
+                    }, 
+                    "contract": "Ljubljana"
+                }, 
+                {
+                    "tag": "sevici", 
+                    "meta": {
+                        "latitude": 37.3880961, 
+                        "country": "ES", 
+                        "name": "Sevici", 
+                        "longitude": -5.9823299, 
+                        "city": "Sevilla"
+                    }, 
+                    "contract": "Seville"
+                }, 
+                {
+                    "tag": "li-bia-velo", 
+                    "meta": {
+                        "latitude": 50.465328, 
+                        "country": "BE", 
+                        "name": "Li bia velo", 
+                        "longitude": 4.867665, 
+                        "city": "Namur"
+                    }, 
+                    "contract": "Namur"
+                }, 
+                {
+                    "tag": "velostanlib", 
+                    "meta": {
+                        "latitude": 48.692054, 
+                        "country": "FR", 
+                        "name": "v\u00e9lOstan'lib", 
+                        "longitude": 6.184417, 
+                        "city": "Nancy"
+                    }, 
+                    "contract": "Nancy"
+                }, 
+                {
+                    "tag": "cristolib", 
+                    "meta": {
+                        "latitude": 48.790367, 
+                        "country": "FR", 
+                        "name": "Cristolib", 
+                        "longitude": 2.455572, 
+                        "city": "Cr\u00e9teil"
+                    }, 
+                    "contract": "Creteil"
+                }, 
+                {
+                    "tag": "villo", 
+                    "meta": {
+                        "latitude": 50.8503396, 
+                        "country": "BE", 
+                        "name": "villo", 
+                        "longitude": 4.3517103, 
+                        "city": "Bruxelles"
+                    }, 
+                    "contract": "Bruxelles-Capitale"
+                }, 
+                {
+                    "tag": "velo2", 
+                    "meta": {
+                        "latitude": 49.03561699999999, 
+                        "country": "FR", 
+                        "name": "Velo2", 
+                        "longitude": 2.060325, 
+                        "city": "Cergy"
+                    }, 
+                    "contract": "Cergy-Pontoise"
+                }, 
+                {
+                    "tag": "vilnius-cyclocity", 
+                    "meta": {
+                        "latitude": 54.6871555, 
+                        "country": "LT", 
+                        "name": "Cyclocity", 
+                        "longitude": 25.2796514, 
+                        "city": "Vilnius"
+                    }, 
+                    "contract": "Vilnius"
+                }, 
+                {
+                    "tag": "toyama-cyclocity", 
+                    "meta": {
+                        "latitude": 36.6959518, 
+                        "country": "JP", 
+                        "name": "cyclocity", 
+                        "longitude": 137.2136768, 
+                        "city": "\u5bcc\u5c71\u5e02"
+                    }, 
+                    "contract": "Toyama"
+                }, 
+                {
+                    "tag": "velik", 
+                    "meta": {
+                        "latitude": 55.7949414, 
+                        "country": "RU", 
+                        "name": "Veli'k", 
+                        "longitude": 49.1050445, 
+                        "city": "\u041a\u0430\u0437\u0430\u043d\u044c"
+                    }, 
+                    "contract": "Kazan"
+                }, 
+                {
+                    "tag": "le-velo", 
+                    "meta": {
+                        "latitude": 43.296482, 
+                        "country": "FR", 
+                        "name": "Le v\u00e9lo", 
+                        "longitude": 5.36978, 
+                        "city": "Marseille"
+                    }, 
+                    "contract": "Marseille"
+                }, 
+                {
+                    "tag": "bicloo", 
+                    "meta": {
+                        "latitude": 47.218371, 
+                        "country": "FR", 
+                        "name": "Bicloo", 
+                        "longitude": -1.553621, 
+                        "city": "Nantes"
+                    }, 
+                    "contract": "Nantes"
+                }, 
+                {
+                    "tag": "velocite-besancon", 
+                    "meta": {
+                        "latitude": 47.237829, 
+                        "country": "FR", 
+                        "name": "V\u00e9loCit\u00e9", 
+                        "longitude": 6.024053899999999, 
+                        "city": "Besan\u00e7on"
+                    }, 
+                    "contract": "Besancon"
+                }
+            ]
+        }
+    }
+}
