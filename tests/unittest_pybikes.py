@@ -219,6 +219,48 @@ class TestBikeShareSystemInstance(unittest.TestCase):
                     )
 
 
+class TestDataFiles(unittest.TestCase):
+    def setUp(self):
+        self.tags = {}
+
+    def test_instances(self):
+        schemas = pybikes.get_all_data()
+        for schema in schemas:
+            instances = pybikes.get_instances(schema)
+            for _, instance in instances:
+                self._test_instance_unique(instance, schema)
+                self._test_instance_fields(instance, schema)
+
+    def _test_instance_unique(self, instance, schema):
+        if instance['tag'] in self.tags:
+            msg = (
+                'Tag {} in {} from {} is not unique. '.format(
+                    instance['tag'],
+                    instance,
+                    schema
+                ),
+                '\n Already being used by ',
+                '{} in {}'.format(
+                    self.tags[instance['tag']]['instance'],
+                    self.tags[instance['tag']]['schema']
+                )
+            )
+            self.fail(msg)
+        self.tags[instance['tag']] = {
+            'instance': instance,
+            'schema': schema
+        }
+
+    def _test_instance_fields(self, instance, schema):
+        self.longMessage = True
+        msg = '{} contains errors. File: {}'.format(instance, schema)
+        meta = instance['meta']
+        self.assertIn('latitude', meta, msg=msg)
+        self.assertIn('longitude', meta, msg=msg)
+        self.assertIsInstance(meta['latitude'], float, msg=msg)
+        self.assertIsInstance(meta['longitude'], float, msg=msg)
+
+
 def create_test_schema_method(schema):
     def test_schema(self):
         self._test_systems(schema)
