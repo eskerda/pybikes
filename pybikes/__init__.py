@@ -58,16 +58,21 @@ def _multiclass_extractor(data):
             yield (k, i)
 
 
-def get_instances(schema):
-    data = get_data(schema)
-    if isinstance(data['class'], basestring):
-        extractor = _uniclass_extractor
-    elif isinstance(data['class'], dict):
-        extractor = _multiclass_extractor
+def get_instances(schema=None):
+    if not schema:
+        schemas = get_schemas()
     else:
-        raise Exception('Malformed data file {}'.format(schema))
-    for cname, instance in extractor(data):
-        yield (cname, instance)
+        schemas = [schema]
+    for schema in schemas:
+        data = get_data(schema)
+        if isinstance(data['class'], basestring):
+            extractor = _uniclass_extractor
+        elif isinstance(data['class'], dict):
+            extractor = _multiclass_extractor
+        else:
+            raise Exception('Malformed data file {}'.format(schema))
+        for cname, instance in extractor(data):
+            yield (cname, instance)
 
 
 def get_system_cls(schema, cname):
