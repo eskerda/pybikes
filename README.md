@@ -1,7 +1,8 @@
-PyBikes
+pybikes
 =========
+![pybikes](http://citybik.es/files/pybikes.png)
 
-PyBikes provides a set of tools to scrape bike sharing data from different
+pybikes provides a set of tools to scrape bike sharing data from different
 websites and APIs, thus providing a coherent and generalized set of classes
 and methods to access this sort of information.
 
