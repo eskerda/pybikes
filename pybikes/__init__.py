@@ -41,6 +41,12 @@ def get_all_data():
     return resource_listdir(__name__, 'data')
 
 
+def get_schemas():
+    return map(
+        lambda name: re.sub(r'\.json$', '', name),
+        get_all_data()
+    )
+
 def _uniclass_extractor(data):
     for i in data['instances']:
         yield (data['class'], i)
