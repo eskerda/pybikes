@@ -1,201 +1,201 @@
 {
     "instances": [
         {
-            "tag": "boulder", 
+            "tag": "boulder",
             "meta": {
-                "latitude": 40.0149856, 
-                "city": "Boulder, CO", 
-                "name": "Boulder B-cycle", 
-                "longitude": -105.2705456, 
+                "latitude": 40.0149856,
+                "city": "Boulder, CO",
+                "name": "Boulder B-cycle",
+                "longitude": -105.2705456,
                 "country": "US"
-            }, 
-            "feed_url": "http://boulder.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://boulder.bcycle.com/map"
+        },
         {
-            "tag": "broward", 
+            "tag": "broward",
             "meta": {
                 "latitude": 26.1223084,
-                "city": "Broward, FL", 
-                "name": "Broward B-cycle", 
-                "longitude": -80.1433786, 
+                "city": "Broward, FL",
+                "name": "Broward B-cycle",
+                "longitude": -80.1433786,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://broward.bcycle.com"
-        }, 
+        },
         {
-            "tag": "charlotte", 
+            "tag": "charlotte",
             "meta": {
-                "latitude": 35.2270869, 
-                "city": "Charlotte, NC", 
-                "name": "Charlotte B-cycle", 
-                "longitude": -80.8431267, 
+                "latitude": 35.2270869,
+                "city": "Charlotte, NC",
+                "name": "Charlotte B-cycle",
+                "longitude": -80.8431267,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://charlotte.bcycle.com"
-        }, 
+        },
         {
-            "tag": "denver", 
+            "tag": "denver",
             "meta": {
-                "latitude": 39.737567, 
-                "city": "Denver, CO", 
-                "name": "Denver B-cycle", 
-                "longitude": -104.9847179, 
+                "latitude": 39.737567,
+                "city": "Denver, CO",
+                "name": "Denver B-cycle",
+                "longitude": -104.9847179,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://denver.bcycle.com"
-        }, 
+        },
         {
-            "tag": "desmoines", 
+            "tag": "desmoines",
             "meta": {
-                "latitude": 41.6005448, 
-                "city": "Des Moines, IA", 
-                "name": "Des Moines B-cycle", 
-                "longitude": -93.6091064, 
+                "latitude": 41.6005448,
+                "city": "Des Moines, IA",
+                "name": "Des Moines B-cycle",
+                "longitude": -93.6091064,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://desmoines.bcycle.com"
-        }, 
+        },
         {
-            "tag": "fortworth", 
+            "tag": "fortworth",
             "meta": {
-                "latitude": 32.725409, 
-                "city": "Fort Worth, TX", 
-                "name": "Fort Worth B-cycle", 
-                "longitude": -97.3208496, 
+                "latitude": 32.725409,
+                "city": "Fort Worth, TX",
+                "name": "Fort Worth B-cycle",
+                "longitude": -97.3208496,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://fortworth.bcycle.com"
-        }, 
+        },
         {
-            "tag": "greenbikeslc", 
+            "tag": "greenbikeslc",
             "meta": {
-                "latitude": 40.7607793, 
-                "city": "Salt Lake City, UT", 
-                "name": "SLC Bike Share", 
-                "longitude": -111.8910474, 
+                "latitude": 40.7607793,
+                "city": "Salt Lake City, UT",
+                "name": "SLC Bike Share",
+                "longitude": -111.8910474,
                 "country": "US"
-            }, 
-            "feed_url": "http://greenbikeslc.org"
-        }, 
+            },
+            "feed_url": "http://greenbikeslc.org/station-map"
+        },
         {
-            "tag": "greenville", 
+            "tag": "greenville",
             "meta": {
-                "latitude": 34.85261759999999, 
-                "city": "Greenville, SC", 
-                "name": "Greenville B-cycle", 
-                "longitude": -82.3940104, 
+                "latitude": 34.85261759999999,
+                "city": "Greenville, SC",
+                "name": "Greenville B-cycle",
+                "longitude": -82.3940104,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://greenville.bcycle.com"
-        }, 
+        },
         {
-            "tag": "hawaii", 
+            "tag": "hawaii",
             "meta": {
-                "latitude": 21.4022222, 
-                "city": "Kailua, HI", 
-                "name": "Hawaii B-cycle", 
-                "longitude": -157.73944440000002, 
+                "latitude": 21.4022222,
+                "city": "Kailua, HI",
+                "name": "Hawaii B-cycle",
+                "longitude": -157.73944440000002,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://hawaii.bcycle.com"
-        }, 
+        },
         {
-            "tag": "houston", 
+            "tag": "houston",
             "meta": {
-                "latitude": 29.7601927, 
-                "city": "Houston, TX", 
-                "name": "Houston B-cycle", 
-                "longitude": -95.36938959999999, 
+                "latitude": 29.7601927,
+                "city": "Houston, TX",
+                "name": "Houston B-cycle",
+                "longitude": -95.36938959999999,
                 "country": "US"
-            }, 
-            "feed_url": "http://houston.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://houston.bcycle.com/station-map"
+        },
         {
-            "tag": "kansascity", 
+            "tag": "kansascity",
             "meta": {
-                "latitude": 39.0997265, 
-                "city": "Kansas City, MO", 
-                "name": "Kansas City B-cycle", 
-                "longitude": -94.5785667, 
+                "latitude": 39.0997265,
+                "city": "Kansas City, MO",
+                "name": "Kansas City B-cycle",
+                "longitude": -94.5785667,
                 "country": "US"
-            }, 
-            "feed_url": "http://kansascity.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://kansascity.bcycle.com/station-map"
+        },
         {
-            "tag": "madison", 
+            "tag": "madison",
             "meta": {
-                "latitude": 43.0730517, 
-                "city": "Madison, WI", 
-                "name": "Madison B-cycle", 
-                "longitude": -89.4012302, 
+                "latitude": 43.0730517,
+                "city": "Madison, WI",
+                "name": "Madison B-cycle",
+                "longitude": -89.4012302,
                 "country": "US"
-            }, 
-            "feed_url": "http://madison.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://madison.bcycle.com/station-map"
+        },
         {
-            "tag": "nashville", 
+            "tag": "nashville",
             "meta": {
-                "latitude": 36.1666667, 
-                "city": "Nashville, TN", 
-                "name": "Nashville B-cycle", 
-                "longitude": -86.7833333, 
+                "latitude": 36.1666667,
+                "city": "Nashville, TN",
+                "name": "Nashville B-cycle",
+                "longitude": -86.7833333,
                 "country": "US"
-            }, 
-            "feed_url": "http://nashville.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://nashville.bcycle.com/map"
+        },
         {
-            "tag": "omaha", 
+            "tag": "omaha",
             "meta": {
-                "latitude": 41.2523634, 
-                "city": "Omaha, NE", 
-                "name": "Omaha B-cycle", 
-                "longitude": -95.99798829999999, 
+                "latitude": 41.2523634,
+                "city": "Omaha, NE",
+                "name": "Omaha B-cycle",
+                "longitude": -95.99798829999999,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://omaha.bcycle.com"
-        }, 
+        },
         {
-            "tag": "sanantonio", 
+            "tag": "sanantonio",
             "meta": {
-                "latitude": 29.4241219, 
-                "city": "San Antonio, TX", 
-                "name": "San Antonio B-cycle", 
-                "longitude": -98.49362819999999, 
+                "latitude": 29.4241219,
+                "city": "San Antonio, TX",
+                "name": "San Antonio B-cycle",
+                "longitude": -98.49362819999999,
                 "country": "US"
-            }, 
-            "feed_url": "http://sanantonio.bcycle.com"
-        }, 
+            },
+            "feed_url": "http://sanantonio.bcycle.com/station-map"
+        },
         {
-            "tag": "spartanburg", 
+            "tag": "spartanburg",
             "meta": {
-                "latitude": 34.9495672, 
-                "city": "Spartanburg, SC", 
-                "name": "Spartanburg B-cycle", 
-                "longitude": -81.9320482, 
+                "latitude": 34.9495672,
+                "city": "Spartanburg, SC",
+                "name": "Spartanburg B-cycle",
+                "longitude": -81.9320482,
                 "country": "US"
-            }, 
+            },
             "feed_url": "http://spartanburg.bcycle.com"
-        }, 
+        },
         {
-            "tag": "austin", 
+            "tag": "austin",
             "meta": {
-                "latitude": 30.267153, 
-                "city": "Austin, TX", 
-                "name": "B-cycle", 
-                "longitude": -97.7430608, 
+                "latitude": 30.267153,
+                "city": "Austin, TX",
+                "name": "B-cycle",
+                "longitude": -97.7430608,
                 "country": "US"
-            }, 
+            },
             "feed_url": "https://austin.bcycle.com/station-locations/"
         },
         {
-            "tag": "santiago", 
+            "tag": "santiago",
             "meta": {
                 "latitude": -33.457,
-                "city": "Santiago", 
-                "name": "Bike Santiago", 
-                "longitude": -70.648, 
+                "city": "Santiago",
+                "name": "Bike Santiago",
+                "longitude": -70.648,
                 "country": "CL"
-            }, 
+            },
             "feed_url": "https://bikesantiago.bcycle.com/station-locations-new/"
         },
         {
@@ -254,6 +254,6 @@
             "feed_url": "https://rapidcity.bcycle.com/station-map"
         }
     ],
-    "system": "bcycle", 
+    "system": "bcycle",
     "class": "BCycleSystem"
 }

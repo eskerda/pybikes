@@ -6,6 +6,7 @@ import re
 
 from lxml import html
 from .base import BikeShareSystem, BikeShareStation
+from pybikes.exceptions import InvalidStationException
 from . import utils
 
 __all__ = ['BCycleSystem', 'BCycleStation']
@@ -13,14 +14,6 @@ __all__ = ['BCycleSystem', 'BCycleStation']
 LAT_LNG_RGX = "var\ point\ =\ new\ google.maps.LatLng\(([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\,\ ([+-]?\\d*\\.\\d+)(?![-+0-9\\.])\)"
 DATA_RGX = "var\ marker\ =\ new\ createMarker\(point\,(.*?)\,\ icon\,\ back"
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
-
-class BCycleError(Exception):
-    def __init__(self, msg):
-            self.msg = msg
-
-    def __repr__(self):
-            return self.msg
-    __str__ = __repr__
 
 
 class BCycleSystem(BikeShareSystem):
@@ -37,6 +30,8 @@ class BCycleSystem(BikeShareSystem):
 
     def __init__(self, tag, meta, system = None, feed_url = None):
         super( BCycleSystem, self).__init__(tag, meta)
+        self.stations = []
+
         if feed_url is not None:
             self.feed_url = feed_url
         else:
@@ -52,10 +47,12 @@ class BCycleSystem(BikeShareSystem):
 
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)
-        self.stations = [
-            BCycleStation(latlng, fuzzle)
-                for latlng, fuzzle in zip(geopoints, puzzle)
-        ]
+
+        for latlng, fuzzle in zip(geopoints, puzzle):
+            try:
+                self.stations.append(BCycleStation(latlng, fuzzle))
+            except InvalidStationException:
+                pass
 
 
 class BCycleStation(BikeShareStation):
@@ -84,9 +81,14 @@ class BCycleStation(BikeShareStation):
             address = dom.xpath("//div[@class='location']/text()")
             bikes, free = dom.xpath("//div[@class='avail']/strong/text()")
         except ValueError:
-            name, = dom.xpath("//div[@class='markerTitle']/h3/text()")
-            address = dom.xpath("//div[@class='markerAddress']/text()")
-            bikes, free = dom.xpath("//div[@class='markerAvail']//h3/text()")
+            try:
+                name, = dom.xpath("//div[@class='markerTitle']/h3/text()")
+                address = dom.xpath("//div[@class='markerAddress']/text()")
+                availability = dom.xpath("//div[@class='markerAvail']//h3/text()")
+                bikes = availability[0]
+                free = availability[1]
+            except (ValueError, IndexError):
+                raise InvalidStationException
 
         self.name = name
         self.latitude = float(latlng[0])
