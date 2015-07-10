@@ -89,17 +89,6 @@
             "feed_url": "http://greenville.bcycle.com"
         },
         {
-            "tag": "hawaii",
-            "meta": {
-                "latitude": 21.4022222,
-                "city": "Kailua, HI",
-                "name": "Hawaii B-cycle",
-                "longitude": -157.73944440000002,
-                "country": "US"
-            },
-            "feed_url": "http://hawaii.bcycle.com"
-        },
-        {
             "tag": "houston",
             "meta": {
                 "latitude": 29.7601927,
