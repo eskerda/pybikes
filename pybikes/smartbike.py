@@ -193,4 +193,4 @@ class SmartShittyStation(BikeShareStation):
         self.extra = {}
         if availability[1] > 0:
             self.extra['has_ebikes'] = True
-            self.extra['ebikes'] = availability[2]
+            self.extra['ebikes'] = availability[1]
