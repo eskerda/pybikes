@@ -1,16 +1,16 @@
 {
     "instances": [
         {
-            "tag": "ecobici-ba", 
+            "tag": "ecobici-buenos-aires", 
             "meta": {
                 "latitude": -34.630665, 
                 "city": "Buenos Aires", 
-                "name": "ecobici-ba", 
+                "name": "Ecobici", 
                 "longitude": -58.411560,
                 "country": "AR"
             }
         }
     ], 
-    "system": "ecobici_ba", 
+    "system": "BA Ecobici", 
     "class": "EcobiciBA"
 }
