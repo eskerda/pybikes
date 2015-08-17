@@ -16,8 +16,12 @@ class EcobiciBA(BikeShareSystem):
     sync = True
 
     meta = {
-        'system': 'ecobici_ba',
-        'company': 'Buenos Aires Ciudad'
+        'system': 'BA Ecobici',
+        'company': 'Buenos Aires Ciudad',
+        'license': {
+            'name': 'Terms of Service',
+            'url': 'http://data.buenosaires.gob.ar/tyc'
+            }
     }
 
     def __init__(self, tag, meta):
