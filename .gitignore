@@ -1,6 +1,7 @@
 *.py[cod]
 build/
 dist/
+venv/
 *.egg-info/
 
 keys.py
