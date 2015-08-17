@@ -33,18 +33,24 @@ class EcobiciBA(BikeShareSystem):
             scraper = PyBikesScraper()
         data = scraper.request(self.feed_url)
         tree = etree.XML(data.encode('utf-8'))
-        stations_XML = tree[0][0][0][0][0]
+
+        namespaces = {
+            'Bicicletas': 'http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx'
+        }
+
+        stations_XML = tree.xpath('//Bicicletas:Estacion', namespaces=namespaces)
+
         stations = []
         for station_XML in stations_XML:
             station           = BikeShareStation()
-            uid               = station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}EstacionId').text
-            address           = station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}Lugar').text + ' ' + station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}Numero').text
+            uid               = station_XML.find('Bicicletas:EstacionId', namespaces=namespaces).text
+            address           = station_XML.find('Bicicletas:Lugar', namespaces=namespaces).text + ' ' + station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}Numero').text
 
-            station.name      = station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}EstacionNombre').text
-            station.latitude  = station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}Latitud').text
-            station.longitude = station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}Longitud').text
-            station.bikes     = int(station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}AnclajesTotales').text)
-            station.free      = int(station_XML.find('{http://bicis.buenosaires.gob.ar/ServiceBicycle.asmx}BicicletaDisponibles').text)
+            station.name      = station_XML.find('Bicicletas:EstacionNombre', namespaces=namespaces).text
+            station.latitude  = station_XML.find('Bicicletas:Latitud', namespaces=namespaces).text
+            station.longitude = station_XML.find('Bicicletas:Longitud', namespaces=namespaces).text
+            station.bikes     = int(station_XML.find('Bicicletas:AnclajesTotales', namespaces=namespaces).text)
+            station.free      = int(station_XML.find('Bicicletas:BicicletaDisponibles', namespaces=namespaces).text)
 
             station.extra = {
                 'uid': uid,
