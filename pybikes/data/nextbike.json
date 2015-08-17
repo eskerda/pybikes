@@ -1,6 +1,18 @@
 {
     "instances": [
         {
+          "domain": "bu",
+          "tag": "belfast-bikes",
+          "meta": {
+              "latitude": 54.59488,
+              "city": "Belfast",
+              "name": "Belfast Bikes",
+              "longitude": -5.9266323,
+              "country": "UK"
+          },
+          "city_uid": 238
+        },
+        {
             "domain": "mb", 
             "tag": "bubi", 
             "meta": {
