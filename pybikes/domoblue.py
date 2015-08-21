@@ -3,9 +3,8 @@
 # Distributed under the LGPL license, see LICENSE.txt
 
 import re
-import string
 
-from pyquery import PyQuery as pq
+from lxml import etree
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -24,19 +23,22 @@ STATUS_CODES = {
     17: 'No Service'
 }
 
+
 def get_token(client_id, scraper):
     if 'Referer' in scraper.headers:
         del(scraper.headers['Referer'])
-    url = MAIN + TOKEN_URL.format(service = client_id)
+    url = MAIN + TOKEN_URL.format(service=client_id)
     data = scraper.request(url)
     token = re.findall(TOKEN_RE, data)
     scraper.headers['Referer'] = url
     return token[0]
 
+
 def get_xml(client_id, scraper):
     token = get_token(client_id, scraper)
-    url = MAIN + XML_URL.format(token = token, service = client_id)
+    url = MAIN + XML_URL.format(token=token, service=client_id)
     return scraper.request(url)
+
 
 class Domoblue(BikeShareSystem):
     sync = True
@@ -57,9 +59,9 @@ class Domoblue(BikeShareSystem):
 
         xml_data = get_xml(self.system_id, scraper)
         xml_data = xml_data.encode('raw_unicode_escape').decode('utf-8')
-        xml_dom = pq(xml_data, parser = 'xml')
+        xml_dom = etree.fromstring(xml_data)
         stations = []
-        for index, marker in enumerate(xml_dom('marker')):
+        for index, marker in enumerate(xml_dom.xpath('//marker')):
             station = BikeShareStation(index)
             station.name        = marker.get('nombre')
             station.bikes       = int(marker.get('bicicletas'))

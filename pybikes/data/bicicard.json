@@ -9,8 +9,8 @@
                 "name": "Bicileon", 
                 "longitude": -5.5670959, 
                 "country": "ES"
-            }, 
-            "location_url": "https://maps.google.com/maps/ms?ie=UTF8&authuser=0&msa=0&output=kml&msid=217954070276990723173.0004b7f93dd828947e1ff"
+            },
+            "kml_file": "kml/bicileon.kml"
         }
     ], 
     "system": "bicicard", 

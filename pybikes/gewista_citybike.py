@@ -2,12 +2,13 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-from pyquery import PyQuery as pq
+from lxml import etree
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
 __all__ = ['GewistaCityBike']
+
 
 class GewistaCityBike(BikeShareSystem):
 
@@ -22,21 +23,17 @@ class GewistaCityBike(BikeShareSystem):
         super(GewistaCityBike, self).__init__(tag, meta)
         self.endpoint = endpoint
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = PyBikesScraper()
         data = scraper.request(self.endpoint)
-        dom  = pq(data.encode('utf-8'), parser = 'xml')
-        markers = dom('station')
-        stations = []
-        for index, marker in enumerate(markers):
-            station = GewistaStation(index)
-            station.from_xml(marker)
-            stations.append(station)
-        self.stations = stations
+        tree = etree.fromstring(data.encode('utf-8'))
+        markers = tree.xpath('//station')
+        self.stations = map(GewistaStation, markers)
+
 
 class GewistaStation(BikeShareStation):
-    def from_xml(self, xml_data):
+    def __init__(self, data):
         """
         <station>
             <id>2001</id>
@@ -51,19 +48,16 @@ class GewistaStation(BikeShareStation):
             <longitude>16.371582</longitude>
         </station>
         """
-        xml_data = pq(xml_data, parser='xml')
-
-        self.name      = xml_data('name').text()
-        self.latitude  = float(xml_data('latitude').text())
-        self.longitude = float(xml_data('longitude').text())
-        self.bikes     = int(xml_data('free_bikes').text())
-        self.free      = int(xml_data('free_boxes').text())
-
+        super(GewistaStation, self).__init__()
+        self.name = data.find('name').text
+        self.latitude = float(data.find('latitude').text)
+        self.longitude = float(data.find('longitude').text)
+        self.bikes = int(data.find('free_bikes').text)
+        self.free = int(data.find('free_boxes').text)
         self.extra = {
-            'uid': int(xml_data('id').text()),
-            'internal_id': int(xml_data('internal_id').text()),
-            'status': xml_data('status').text(),
-            'description': xml_data('description').text(),
-            'slots': int(xml_data('boxes').text())
+            'uid': data.find('id').text,
+            'internal_id': data.find('internal_id').text,
+            'status': data.find('status').text,
+            'description': data.find('description').text,
+            'slots': data.find('boxes').text,
         }
-

@@ -2,17 +2,15 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import json
-import codecs
+from lxml import etree
 
-from pyquery import PyQuery as pq
-
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
 __all__ = ['DecoBike']
 
 FEED = "{endpoint}/playmoves.xml"
+
 
 class DecoBike(BikeShareSystem):
     sync = True
@@ -24,16 +22,16 @@ class DecoBike(BikeShareSystem):
 
     def __init__(self, tag, meta, endpoint):
         super(DecoBike, self).__init__(tag, meta)
-        self.feed_url = FEED.format(endpoint = endpoint)
+        self.feed_url = FEED.format(endpoint=endpoint)
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = PyBikesScraper()
         raw = scraper.request(self.feed_url)
-        dom = pq(raw, parser = 'xml')
+        tree = etree.fromstring(raw)
         stations = []
-        for location in dom('location'):
-            station = BikeShareStation(0)
+        for location in tree.xpath('//location'):
+            station = BikeShareStation()
             uid     = location.find('Id').text
             address = location.find('Address').text
 
@@ -51,4 +49,3 @@ class DecoBike(BikeShareSystem):
             stations.append(station)
 
         self.stations = stations
-

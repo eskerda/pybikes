@@ -19,105 +19,110 @@ __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
 __license__ = "AGPL"
 
+import re
 import json
-import glob
-import os
-
+from itertools import imap
 from pkg_resources import resource_string, resource_listdir
 
-from .base import *
-from .exceptions import *
-from .bixi import *
-from .bcycle import *
-from .smartbike import *
-from .cyclocity import *
-from .bicincitta import *
-from .domoblue import *
-from .gewista_citybike import *
-from .decobike import *
-from .keolis import *
-from .emovity import *
-from .bicipalma import *
-from .bicicard import *
-from .nextbike import *
-from .samba import *
-from .ciclosampa import *
-from .veloway import *
-from .easybike import *
-from .cleanap import *
-from .callabike import *
-from .bikeu import *
+from pybikes.exceptions import BikeShareSystemNotFound
 
-__all__ = base.__all__ +\
-          bixi.__all__ +\
-          bcycle.__all__ +\
-          smartbike.__all__+\
-          cyclocity.__all__+\
-          bicincitta.__all__+\
-          domoblue.__all__+\
-          gewista_citybike.__all__+\
-          decobike.__all__+\
-          keolis.__all__+\
-          emovity.__all__+\
-          bicipalma.__all__+\
-          bicicard.__all__+\
-          nextbike.__all__+\
-          samba.__all__+\
-          ciclosampa.__all__+\
-          veloway.__all__+\
-          easybike.__all__+\
-          cleanap.__all__+\
-          callabike.__all__+\
-          bikeu.__all__
+# Top class shortcuts
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes import utils
+from pybikes import contrib
+
+def get_data(schema):
+    name = re.sub(r'\.json$', '', schema)
+    data = resource_string(__name__, 'data/{}.json'.format(name))
+    return json.loads(data)
+
+
+def get_all_data():
+    return resource_listdir(__name__, 'data')
+
+
+def get_schemas():
+    return map(
+        lambda name: re.sub(r'\.json$', '', name),
+        get_all_data()
+    )
+
+def _uniclass_extractor(data):
+    for i in data['instances']:
+        yield (data['class'], i)
+
+
+def _multiclass_extractor(data):
+    for k, v in data['class'].iteritems():
+        for i in data['class'][k]['instances']:
+            yield (k, i)
+
+
+def get_instances(schema=None):
+    if not schema:
+        schemas = get_schemas()
+    else:
+        schemas = [schema]
+    for schema in schemas:
+        data = get_data(schema)
+        if isinstance(data['class'], basestring):
+            extractor = _uniclass_extractor
+        elif isinstance(data['class'], dict):
+            extractor = _multiclass_extractor
+        else:
+            raise Exception('Malformed data file {}'.format(schema))
+        for cname, instance in extractor(data):
+            yield (cname, instance)
+
+
+def get_system_cls(schema, cname):
+    module = __import__('%s.%s' % (__name__, schema))
+    sysm = getattr(module, schema)
+    syscls = getattr(sysm, cname)
+    return syscls
+
+
+def get_instance(schema, tag):
+    cname, instance = next(
+        ((c, i) for (c, i) in get_instances(schema) if i['tag'] == tag),
+        (None, None)
+    )
+    if not instance:
+        msg = 'System %s not found in schema %s' % (tag, schema)
+        raise BikeShareSystemNotFound(msg)
+    syscls = get_system_cls(schema, cname)
+    return (syscls, instance)
+
+
+def find_system(tag):
+    datas = imap(get_data, get_all_data())
+    for data in datas:
+        schema = data['system']
+        try:
+            syscls, instance = get_instance(schema, tag)
+        except BikeShareSystemNotFound:
+            continue
+        return (syscls, instance)
+    raise BikeShareSystemNotFound('System %s not found' % tag)
+
+
+def get(tag, key=None):
+    syscls, system = find_system(tag)
+    if syscls.authed and not key:
+        raise Exception('System %s needs a key to work' % syscls.__name__)
+    if syscls.authed:
+        system['key'] = key
+    return syscls(**system)
+
+
+# These are here for retrocompatibility purposes
+def getBikeShareSystem(system, tag, key=None):
+    return get(tag, key)
+
+
+def getDataFile(schema):
+    return get_data(schema)
 
 
 def getDataFiles():
-    return resource_listdir(__name__, 'data')
-
-def getDataFile(system):
-    file_info = os.path.splitext(system)
-    try:
-        return json.loads(
-            resource_string(__name__, "data/%s.json" % file_info[0]).decode('utf-8')
-        )
-    except NameError:
-        raise NameError('File data/%s.json not found' % system)
-
-def getBikeShareSystem(system, tag, key = None):
-    data = getDataFile(system)
-    if isinstance(data.get('class'), unicode):
-        return getUniclassBikeShareSystem(system, tag, key)
-    elif isinstance(data.get('class'), dict):
-        return getMulticlassBikeShareSystem(system, tag, key)
-    else:
-        raise Exception('Malformed system %s' % system)
-
-def getUniclassBikeShareSystem(system, tag, key = None):
-    data = getDataFile(system)
-    meta_data = [sys for sys in data['instances'] if sys['tag'] == tag]
-    if len(meta_data) == 0:
-        raise BikeShareSystemNotFound(
-            'System %s not found in data/%s.json' % (tag, system))
-    meta_data = meta_data[0]
-    system_class = eval(data.get('class'))
-    if system_class.authed:
-        if key is None:
-            raise Exception('System %s needs a key' % system)
-        meta_data['key'] = key
-    return system_class(** meta_data)
-
-def getMulticlassBikeShareSystem(system, tag, key):
-    data = getDataFile(system)
-    clss = [cls for cls in data['class']]
-    for cls in clss:
-        for inst in data['class'][cls]['instances']:
-            if tag == inst['tag']:
-                syscls = eval(cls)
-                if syscls.authed:
-                    if key is None:
-                        raise Exception('System %s needs a key' % system)
-                    inst['key'] = key
-                return syscls(** inst)
-
-    raise exceptions.BikeShareSystemNotFound(
-        'System %s not found in data/%s.json' % (tag, system))
+    return get_all_data()
