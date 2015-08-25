@@ -33,8 +33,10 @@ class Encicla(BikeShareSystem):
         data = json.loads(scraper.request(self.feed_url))
         for station in data['stations']:
             for item in station['items']:
-                station = EnciclaStation(item)
-                stations.append(station)
+                # discard 'Centro de Operaciones' (Operation Center) from the set of stations
+                if not bool(int(item['cdo'])):
+                    station = EnciclaStation(item)
+                    stations.append(station)
         self.stations = stations
 
 class EnciclaStation(BikeShareStation):
@@ -77,8 +79,5 @@ class EnciclaStation(BikeShareStation):
             'description': item['description'],
             'type': item['type'],
             'picture': item['picture'],
-            'bikes_state': item['bikes_state'],
-            'places_state': item['places_state'],
-            'closed': int(item['closed']),
-            'cdo': int(item['cdo'])
+            'closed': bool(item['closed'])
         }
