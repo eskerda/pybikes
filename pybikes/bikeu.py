@@ -9,7 +9,7 @@ from . import utils
 
 __all__ = ['Bikeu', 'BikeuStation']
 
-REGEX = "var mapDataLocations = (\[.*\]);"
+REGEX = "var stationsData = (\[.*\]);"
 
 class Bikeu(BikeShareSystem):
 
@@ -38,6 +38,6 @@ class BikeuStation(BikeShareStation):
         self.latitude = float(info['Latitude'])
         self.longitude = float(info['Longitude'])
 
-        self.name = info['LocalTitle']
-        self.bikes = info['AvailableBikesCount']
-        self.free = info['FreeLocksCount']
+        self.name = info['Name']
+        self.bikes = int(info['TotalAvailableBikes'])
+        self.free = int(info['TotalLocks']) - self.bikes
