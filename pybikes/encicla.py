@@ -69,7 +69,6 @@ class EnciclaStation(BikeShareStation):
             self.free = 0
         else:
             self.free  = int(places)
-        # 'bikes_state' may also be a label as 'warning' as well, do not try to cast it to int
         # 'capacity' is often incorrect, even smaller than the number of bikes
         # therefore it was not included on the 'slots' field
         self.extra = {
