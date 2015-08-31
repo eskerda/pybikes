@@ -4,8 +4,6 @@
 
 import json
 
-from lxml import etree
-
 from .base import BikeShareSystem, BikeShareStation
 from . import utils, exceptions
 
@@ -34,9 +32,10 @@ class Encicla(BikeShareSystem):
         for station in data['stations']:
             for item in station['items']:
                 # discard 'Centro de Operaciones' (Operation Center) from the set of stations
-                if not bool(int(item['cdo'])):
-                    station = EnciclaStation(item)
-                    stations.append(station)
+                if int(item['cdo']) != 0:
+                    continue
+                station = EnciclaStation(item)
+                stations.append(station)
         self.stations = stations
 
 class EnciclaStation(BikeShareStation):
@@ -71,9 +70,8 @@ class EnciclaStation(BikeShareStation):
         else:
             self.free  = int(places)
         # 'bikes_state' may also be a label as 'warning' as well, do not try to cast it to int
-        # 'capacity' field may present a number which is smaller than the number of 'bikes',
-        # it is not straightforward to know what it actually means. Consequently, it was not
-        # included in the extras on the 'slots' field.
+        # 'capacity' is often incorrect, even smaller than the number of bikes
+        # therefore it was not included on the 'slots' field
         self.extra = {
             'address': item['address'],
             'description': item['description'],
