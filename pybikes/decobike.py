@@ -9,9 +9,6 @@ from pybikes.utils import PyBikesScraper
 
 __all__ = ['DecoBike']
 
-FEED = "{endpoint}/playmoves.xml"
-
-
 class DecoBike(BikeShareSystem):
     sync = True
 
@@ -20,9 +17,9 @@ class DecoBike(BikeShareSystem):
         'company': 'DecoBike LLC'
     }
 
-    def __init__(self, tag, meta, endpoint):
+    def __init__(self, tag, meta, feed_url):
         super(DecoBike, self).__init__(tag, meta)
-        self.feed_url = FEED.format(endpoint=endpoint)
+        self.feed_url = feed_url
 
     def update(self, scraper=None):
         if scraper is None:
