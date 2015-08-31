@@ -17,7 +17,7 @@
                 {
                     "meta": {
                         "latitude": 44.335084,
-                        "city": "Santa Margherita Ligure - Portofino - Camogli",
+                        "city": "Santa MargherIT Ligure - Portofino - Camogli",
                         "name": "Portofino Park and Bike",
                         "longitude": 9.211264,
                         "country": "IT"
@@ -808,7 +808,7 @@
                     "system_id": 65,
                     "meta": {
                         "name": "BICIamo",
-                        "city": "Cantù",
+                        "city": "Cantu'",
                         "country": "IT",
                         "latitude": 45.73626,
                         "longitude": 9.12569
@@ -840,7 +840,7 @@
                     "tag": "ossola",
                     "system_id": 11,
                     "meta": {
-                        "name": "Comunità Montana Valli dell'Ossola",
+                        "name": "Comunita' Montana Valli dell'Ossola",
                         "city": "Santa Maria Maggiore - Malesco - Villette",
                         "country": "IT",
                         "latitude": 46.127196,
