@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "encicla",
+            "meta": {
+                "latitude": 6.254942,
+                "longitude": -75.567982,
+                "city": "Medellin",
+                "name": "EnCicla",
+                "country": "CO"
+            },
+            "feed_url": "http://encicla.gov.co/status"
+        }
+    ],
+    "system": "encicla",
+    "class": "Encicla"
+}
