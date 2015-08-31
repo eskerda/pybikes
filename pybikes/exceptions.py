@@ -3,3 +3,6 @@ class StationPlannedException(Exception):
 
 class BikeShareSystemNotFound(Exception):
     pass
+
+class InvalidStation(Exception):
+    pass
