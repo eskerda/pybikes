@@ -9,15 +9,26 @@ from . import utils
 import re
 import ast
 
-__all__ = ['Samba', 'SambaNew', 'SambaStation']
+__all__ = ['Samba', 'SambaNew']
 
-USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
+USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"  # NOQA
+
 
 class BaseSystem(BikeShareSystem):
     meta = {
         'system': 'Samba',
         'company': ['Mobilicidade Tecnologia LTD', 'Grupo Serttel LTDA']
     }
+
+    def get_status(self, onlineStatus, operationStatus):
+        # This is based on a function defined in the scrapped ASP page
+        if operationStatus == 'EI' or operationStatus == 'EM':
+            return 'maintenance/implementation'
+        elif onlineStatus == 'A' and operationStatus == 'EO':
+            return 'open'
+        else:
+            return 'closed'
+
 
 class Samba(BaseSystem):
     sync = True
@@ -27,37 +38,38 @@ class Samba(BaseSystem):
         super(Samba, self).__init__(tag, meta)
         self.feed_url = url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
         scraper.setUserAgent(USERAGENT)
 
         html_data = scraper.request(self.feed_url)
         # clean the data up
-        html_data = ''.join(html_data).replace('\n', '').replace('\r', '').replace('"', '')
+        html_data = re.sub(r'[\n|\r|\"]', '', html_data)
 
-        stations = re.findall(Samba._STATIONS_RGX, html_data)
-
-        self.stations = []
-
+        station_data = re.findall(Samba._STATIONS_RGX, html_data)
+        stations = []
         # The regex will also match for a function defined in the html. This
         # function is in the position of the array, and thus the [:-1]
-        for station in stations[:-1]:
-            data = station.split(',')
-            name = data[3]
-            latitude = float(data[0])
-            longitude = float(data[1])
-            bikes = int(data[7])
-            free = int(data[8]) - int(data[7])
+        for data in station_data[:-1]:
+            data = data.split(',')
+            station = BikeShareStation()
+            station.name = data[3]
+            station.latitude = float(data[0])
+            station.longitude = float(data[1])
+            station.bikes = int(data[7])
+            station.free = int(data[8]) - int(data[7])
             online_status = data[5]
             operation_status = data[6]
-            extra = {
+            station.extra = {
                 'address': data[9],
                 'uid': int(data[4]),
-                'slots': int(data[8])
+                'slots': int(data[8]),
+                'status': self.get_status(online_status, operation_status)
             }
-            self.stations.append(SambaStation(name, latitude, longitude, bikes, free,
-                                              online_status, operation_status, extra))
+            stations.append(station)
+        self.stations = stations
+
 
 class SambaNew(BaseSystem):
     sync = True
@@ -67,7 +79,7 @@ class SambaNew(BaseSystem):
         super(SambaNew, self).__init__(tag, meta)
         self.feed_url = url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
         scraper.setUserAgent(USERAGENT)
@@ -80,42 +92,24 @@ class SambaNew(BaseSystem):
         Different from the original Samba class, th new one deals
         receives stations' information in the following format:
         [(0) name, (1) latitude, (2) longitude, (3) address,
-        (4) address main line, (5) onlineStatus, (6) operationStatus, 
-        (7) available bikes (variable not being used in their code) 
+        (4) address main line, (5) onlineStatus, (6) operationStatus,
+        (7) available bikes (variable not being used in their code)
         (8) available bikes, (9) available bike stands,
         (10) internal station status, (11) path to image file, (12) stationId]
         '''
         self.stations = []
-        for station in stations:
-            name = station[0]
-            latitude = station[1]
-            longitude = station[2]
-            bikes = station[8]
-            free = station[9]
-            online_status = station[5]
-            operation_status = station[6]
-            extra = {
-                'address': station[4],
-                'description': station[3]
+        for data in stations:
+            station = BikeShareStation()
+            station.name = data[0]
+            station.latitude = float(data[1])
+            station.longitude = float(data[2])
+            station.bikes = int(data[8])
+            station.free = int(data[9])
+            online_status = data[5]
+            operation_status = data[6]
+            station.extra = {
+                'address': data[4],
+                'description': data[3],
+                'status': self.get_status(online_status, operation_status)
             }
-            self.stations.append(SambaStation(name, latitude, longitude, bikes, free,
-                                              online_status, operation_status, extra))
-
-class SambaStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, online_status, operation_status, extra = {}):
-        self.name = name
-        self.latitude = latitude
-        self.longitude = longitude
-        self.bikes = bikes
-        self.free = free
-        self.extra = extra
-        self.extra['status'] = self.get_status(online_status, operation_status)
-
-    def get_status(self, onlineStatus, operationStatus):
-        # This is based on a function defined in the scrapped ASP page
-        if operationStatus == 'EI' or operationStatus == 'EM':
-            return 'maintenance/implementation'
-        elif onlineStatus == 'A' and operationStatus == 'EO':
-            return 'open'
-        else:
-            return 'closed'
+            self.stations.append(station)
