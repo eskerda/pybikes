@@ -63,7 +63,7 @@ class BikeShareStation(object):
     def get_hash(self):
         """ Return a unique hash representing this station, usually with
             latitude and longitude, since it's the only globally ready and
-            reliable information about an station that defines the 
+            reliable information about an station that defines the
             difference between one and another
         """
         str_rep = "%d,%d" % (int(self.latitude * 1E6), int(self.longitude * 1E6))
@@ -106,6 +106,8 @@ class BikeShareSystem(object):
         self.tag = tag
         basemeta = dict(BikeShareSystem.meta, **self.meta)
         self.meta = dict(basemeta, **meta)
+        if not self.meta['name'] and self.meta['system']:
+            self.meta['name'] = self.meta['system']
 
     def __str__(self):
         return "tag: %s\nmeta: %s" % (self.tag, str(self.meta))
