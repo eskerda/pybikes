@@ -101,6 +101,24 @@ class BCycleStation(BikeShareStation):
 
             address = dom.xpath("//div[@class='markerAddress']/text()")
             availability = dom.xpath("//div[@class='markerAvail']//h3/text()")
+            """ Special events marker has no availability information, discard it
+                var marker = new createMarker(
+                    point, 
+                    "<div class='markerTitle'>
+                        <h3>Special Events 2015</h3>
+                    </div>
+                    <div class='markerPublicText'>
+                        <h5></h5>
+                    </div>
+                    <div class='markerAddress'>
+                        Anywhere <br />Milwaukee, WI 53212
+                    </div>
+                    <div class='markerEvent'>
+                        1/1/2015 - 12/31/2015
+                    </div>", 
+                    icon, back, false);"""
+            if not availability:
+                raise BCyclePurgatoryException
             bikes = availability[0]
             free = availability[1]
 
