@@ -9,21 +9,29 @@ from . import utils, exceptions
 
 __all__ = ['Cyclopolis', 'CyclopolisStation']
 
-LAT_LNG_RGX = r'latLng:\[(.*?)\]'
+LNG_LAT_RGX = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
 DATA_RGX = r'data\:.*?<span.*?>(.*?)</span>'
 
-# In some systems, e.g., maroussi, nafplio, stations come as:
-# { 
-#   latLng: [37.5639397319061000, 22.8093402871746000],
-#   data: "<div style='line-height:1.35;overflow:hidden;white-space:nowrap;'>
-#          <span style='color:#333333'><b>ETHNOSINELFSIS SQUARE<br/>available bikes: n/a</b><br/>capacity: 32<br/>free:n/a<br/>offline</span></div>",
-#   options: {
-#     icon: "http://nafplio.cyclopolis.gr//images/markers/red-03.png"
-#   }
-# }
-# In other systems, e.g., aigialeia, 'data' is shorter as:
-# data:"<span style='color:#333333'><b>ΨΗΛΑ ΑΛΩΝΙΑ</b><br/>χωρητικοτητα: 16<br/>ελεύθερες θεσεις:n/a<br/>offline</span>"
-# I.e., the span tag contains the info data
+"""
+In some systems, e.g., maroussi, nafplio, stations come as:
+{ 
+  latLng: [37.5639397319061000, 22.8093402871746000],
+  data: "<div style='line-height:1.35;overflow:hidden;white-space:nowrap;'>
+             <span style='color:#333333'>
+                <b>ETHNOSINELFSIS SQUARE<br/>available bikes: n/a</b>
+                <br/>capacity: 32<br/>free:n/a<br/>offline
+             </span>
+         </div>",
+  options: {
+    icon: "http://nafplio.cyclopolis.gr//images/markers/red-03.png"
+  }
+}
+In other systems, e.g., aigialeia, it is shorter, there is no 'div' tag:
+    data:"<span style='color:#333333'>
+            <b>ΨΗΛΑ ΑΛΩΝΙΑ</b>
+            <br/>χωρητικοτητα: 16<br/>ελεύθερες θεσεις:n/a<br/>offline
+        </span>"
+"""
 
 class Cyclopolis(BikeShareSystem):
 
@@ -50,8 +58,8 @@ class Cyclopolis(BikeShareSystem):
             re.findall(DATA_RGX, html, re.DOTALL)
         )
         for lat_lng, info in data:
-            raw_lat_lng = lat_lng.split(',')
-            latitude, longitude = float(raw_lat_lng[0]), float(raw_lat_lng[1])
+            latitude = float(lat_lng[0])
+            longitude = float(lat_lng[1])
             fields = info.replace('<b>','').replace('</b>','').split('<br/>')
             extra = {}
             if len(fields) == 4: # there is not slots information available
@@ -60,8 +68,9 @@ class Cyclopolis(BikeShareSystem):
                 name, raw_bikes, raw_slots, raw_free, status = fields
                 slots = int(raw_slots.split(':')[-1])
                 extra['slots'] = slots
+            # In some circumstances, e.g., station is offline,
+            # the number of 'bikes' and/or 'free' is 'n/a'
             try:
-                # In some circumstances, e.g., station is offline, the number of 'bikes' and/or 'free' is 'n/a'
                 bikes = int(raw_bikes.split(':')[-1])
             except ValueError:
                 bikes = 0
@@ -71,7 +80,8 @@ class Cyclopolis(BikeShareSystem):
                 free = 0
             if status == 'offline':
                 extra['closed'] = True
-            station = CyclopolisStation(name, latitude, longitude, bikes, free, extra)
+            station = CyclopolisStation(name, latitude, longitude,
+                                        bikes, free, extra)
             stations.append(station)
         self.stations = stations
 
@@ -80,8 +90,8 @@ class CyclopolisStation(BikeShareStation):
         super(CyclopolisStation, self).__init__()
 
         self.name      = name
-        self.longitude = latitude
-        self.latitude  = longitude
+        self.latitude  = latitude
+        self.longitude = longitude
         self.bikes     = bikes
         self.free      = free
         self.extra     = extra
