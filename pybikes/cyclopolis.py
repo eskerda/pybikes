@@ -9,7 +9,7 @@ from . import utils, exceptions
 
 __all__ = ['Cyclopolis', 'CyclopolisStation']
 
-LNG_LAT_RGX = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
+LAT_LNG_RGX = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
 DATA_RGX = r'data\:.*?<span.*?>(.*?)</span>'
 
 """
