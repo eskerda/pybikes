@@ -4,23 +4,12 @@
             "meta":{
                 "latitude":25.790654,
                 "city":"Miami Beach, FL",
-                "name":"DecoBike Miami Beach",
+                "name":"Citi Bike Miami",
                 "longitude":-80.1300455,
                 "country":"US"
             },
-            "endpoint":"http://www.decobike.com",
+            "feed_url":"http://www.citibikemiami.com/downtown-miami-locations.xml",
             "tag":"decobike-miami-beach"
-        },
-        {
-            "meta":{
-                "latitude":40.5884373,
-                "city":"Long Beach, NY",
-                "name":"DecoBike Long Beach",
-                "longitude":-73.65790799999999,
-                "country":"US"
-            },
-            "endpoint":"http://www.decobikelbny.com",
-            "tag":"decobike-long-beach"
         },
         {
             "meta":{
@@ -30,7 +19,7 @@
                 "longitude":-117.1610838,
                 "country":"US"
             },
-            "endpoint":"http://www.decobike.com/sandiego/",
+            "feed_url":"http://www.decobike.com/sandiego/playmoves.xml",
             "tag":"decobike-san-diego"
         }
     ],

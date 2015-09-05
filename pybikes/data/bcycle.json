@@ -196,7 +196,7 @@
                 "longitude": -86.148,
                 "country": "US"
             },
-            "feed_url": "https://www.pacersbikeshare.org/header-nav/station-map"
+            "feed_url": "https://www.pacersbikeshare.org/station-map"
         },
         {
             "tag": "bublr-bikes",
