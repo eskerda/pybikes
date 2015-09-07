@@ -66,7 +66,7 @@ class BikeShareStation(object):
             reliable information about an station that defines the
             difference between one and another
         """
-        str_rep = "%d,%d" % (int(self.latitude * 1E6), int(self.longitude * 1E6))
+        str_rep = "%s,%d,%d" % (self.name, int(self.latitude * 1E6), int(self.longitude * 1E6))
         h = hashlib.md5()
         h.update(str_rep.encode('utf-8'))
         return h.hexdigest()
