@@ -62,8 +62,8 @@ class BikeShareStation(object):
 
     def get_hash(self):
         """ Return a unique hash representing this station, usually with
-            latitude and longitude, since it's the only globally ready and
-            reliable information about an station that defines the
+            name, latitude and longitude, since it's the only globally ready
+            and reliable information about an station that defines the
             difference between one and another
         """
         str_rep = "%s,%d,%d" % (self.name, int(self.latitude * 1E6), int(self.longitude * 1E6))
