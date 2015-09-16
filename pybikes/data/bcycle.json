@@ -218,7 +218,7 @@
                 "longitude": -82.127778,
                 "country": "US"
             },
-            "feed_url": "https://columbiacounty.bcycle.com/station-locations"
+            "feed_url": "https://columbiacounty.bcycle.com/station-map"
         },
         {
             "tag": "catbike",
@@ -229,7 +229,7 @@
                 "longitude": -81.116667,
                 "country": "US"
             },
-            "feed_url": "https://catbike.bcycle.com/station-locations"
+            "feed_url": "https://catbike.bcycle.com/station-map"
         },
         {
             "tag": "rapid-city",
