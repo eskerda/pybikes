@@ -20,7 +20,7 @@
                 "longitude": -80.1433786,
                 "country": "US"
             },
-            "feed_url": "http://broward.bcycle.com"
+            "feed_url": "http://broward.bcycle.com/station-map"
         },
         {
             "tag": "charlotte",
@@ -31,7 +31,7 @@
                 "longitude": -80.8431267,
                 "country": "US"
             },
-            "feed_url": "http://charlotte.bcycle.com"
+            "feed_url": "http://charlotte.bcycle.com/station-map"
         },
         {
             "tag": "denver",
@@ -53,7 +53,7 @@
                 "longitude": -93.6091064,
                 "country": "US"
             },
-            "feed_url": "http://desmoines.bcycle.com"
+            "feed_url": "http://desmoines.bcycle.com/station-map"
         },
         {
             "tag": "fortworth",
@@ -64,7 +64,7 @@
                 "longitude": -97.3208496,
                 "country": "US"
             },
-            "feed_url": "http://fortworth.bcycle.com"
+            "feed_url": "http://fortworth.bcycle.com/station-map"
         },
         {
             "tag": "greenbikeslc",
@@ -86,7 +86,7 @@
                 "longitude": -82.3940104,
                 "country": "US"
             },
-            "feed_url": "http://greenville.bcycle.com"
+            "feed_url": "http://greenville.bcycle.com/station-map"
         },
         {
             "tag": "houston",
@@ -163,7 +163,7 @@
                 "longitude": -81.9320482,
                 "country": "US"
             },
-            "feed_url": "http://spartanburg.bcycle.com"
+            "feed_url": "http://spartanburg.bcycle.com/station-map"
         },
         {
             "tag": "austin",
@@ -174,7 +174,7 @@
                 "longitude": -97.7430608,
                 "country": "US"
             },
-            "feed_url": "https://austin.bcycle.com/station-locations/"
+            "feed_url": "https://austin.bcycle.com/stations/station-locations"
         },
         {
             "tag": "santiago",
