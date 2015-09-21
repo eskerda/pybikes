@@ -137,11 +137,11 @@
             "meta": {
                 "latitude": 41.2523634,
                 "city": "Omaha, NE",
-                "name": "Omaha B-cycle",
+                "name": "Heartland B-cycle",
                 "longitude": -95.99798829999999,
                 "country": "US"
             },
-            "feed_url": "http://omaha.bcycle.com"
+            "feed_url": "https://heartland.bcycle.com/station-map"
         },
         {
             "tag": "sanantonio",
