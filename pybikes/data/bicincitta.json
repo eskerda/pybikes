@@ -5,6 +5,16 @@
             "instances": [
                 {
                     "meta": {
+                        "latitude": 43.3186,
+                        "city": "Siena",
+                        "longitude": 11.3306,
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-siena",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=202"
+                },
+                {
+                    "meta": {
                         "latitude": 44.272554,
                         "city": "Sestri Levante - Lavagna",
                         "name": "Tigullionbike",
