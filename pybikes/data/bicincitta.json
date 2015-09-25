@@ -15,6 +15,106 @@
                 },
                 {
                     "meta": {
+                        "latitude": 45.72295637032245,
+                        "longitude": 9.649230073016383,
+                        "city": "Parco dei Colli di Bergamo",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-parco-dei-colli-di-bergamo",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=203"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.15866370764634,
+                        "longitude": 10.783718973016335,
+                        "city": "Mantova",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-mantova",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=204"
+                },
+                {
+                    "meta": {
+                        "latitude": 39.28956306007679,
+                        "longitude": 9.006601555294765,
+                        "city": "Assemini",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-assemini",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=205"
+                },
+                {
+                    "meta": {
+                        "latitude": 39.92664489852196,
+                        "longitude": 9.654953570777934,
+                        "city": "Tortolì",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-tortoli",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=206"
+                },
+                {
+                    "meta": {
+                        "latitude": 41.209620965538036,
+                        "longitude": 13.584335125656139,
+                        "city": "Gaeta",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-gaeta",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=207"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.23963753440171,
+                        "longitude": 9.136150475640875,
+                        "city": "Borgarello",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-borgarello",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=208"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.186748819167434,
+                        "longitude": 9.778087948479424,
+                        "city": "Pizzighettone e Formigara",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-pizzighettone-formigara",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=209"
+                },
+                {
+                    "meta": {
+                        "latitude": 43.88362791665083,
+                        "longitude": 10.764385656591799,
+                        "city": "Montecatini Terme",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-montecatini-terme",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=210"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.07731805550891,
+                        "longitude": 10.097172450401331,
+                        "city": "Carrara",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-carrara",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=211"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.83745947067494,
+                        "longitude": 9.073591857810925,
+                        "city": "Cernobbio",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-cernobbio",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=212"
+                },
+                {
+                    "meta": {
                         "latitude": 44.272554,
                         "city": "Sestri Levante - Lavagna",
                         "name": "Tigullionbike",
