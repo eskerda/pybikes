@@ -1,0 +1,116 @@
+{
+    "instances": [
+        {
+            "tag": "cyclopolis-maroussi",
+            "meta": {
+                "latitude": 38.0568722388,
+                "longitude": 23.8083299536,
+                "city": "Maroussi",
+                "country": "GR"
+            },
+            "feed_url": "http://maroussi.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-nafplio",
+            "meta": {
+                "latitude": 37.5639397319,
+                "longitude": 22.8093402872,
+                "city": "Maroussi",
+                "country": "GR"
+            },
+            "feed_url": "http://nafplio.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-aigialeia",
+            "meta": {
+                "latitude": 38.2511101325,
+                "longitude": 22.0821570196,
+                "city": "Maroussi",
+                "country": "GR"
+            },
+            "feed_url": "http://aigialeia.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-marathon",
+            "meta": {
+                "latitude": 38.0855680022,
+                "longitude": 23.9776389963,
+                "city": "Marathon",
+                "country": "GR"
+            },
+            "feed_url": "http://marathon.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-neasmyrni",
+            "meta": {
+                "latitude": 37.9381,
+                "longitude": 23.7126,
+                "city": "Νea Smyrni",
+                "country": "GR"
+            },
+            "feed_url": "http://neasmyrni.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-moschatotavros",
+            "meta": {
+                "latitude": 37.9538991434,
+                "longitude": 23.6824746661,
+                "city": "Μoschato-Tavros",
+                "country": "GR"
+            },
+            "feed_url": "http://moschatotavros.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-arxaiaolympia",
+            "meta": {
+                "latitude": 37.6419700934,
+                "longitude": 21.6247265179,
+                "city": "Αrxaia Olympia",
+                "country": "GR"
+            },
+            "feed_url": "http://arxaiaolympia.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-kiato",
+            "meta": {
+                "latitude": 38.0132674508,
+                "longitude": 22.7493819902,
+                "city": "Kιato",
+                "country": "GR"
+            },
+            "feed_url": "http://kiato.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-rhodes",
+            "meta": {
+                "latitude": 36.4509118,
+                "longitude": 28.2246966,
+                "city": "Rhodes",
+                "country": "GR"
+            },
+            "feed_url": "http://rhodes.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-florina",
+            "meta": {
+                "latitude": 40.8016111,
+                "longitude": 21.4245222,
+                "city": "Florina",
+                "country": "GR"
+            },
+            "feed_url": "http://florina.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-limnos",
+            "meta": {
+                "latitude": 39.8747861,
+                "longitude": 25.0586722,
+                "city": "Limnos",
+                "country": "GR"
+            },
+            "feed_url": "http://limnos.cyclopolis.gr/index.php/en/stations"
+        }
+    ],
+    "system": "cyclopolis",
+    "class": "Cyclopolis"
+}
