@@ -21,6 +21,17 @@
                 "longitude": 14.542222,
                 "country": "PL"
             }
+        },
+        {
+            "tag": "bikeu-bra",
+            "url": "https://www.bra.org.pl",
+            "meta": {
+                "latitude": 53.12193,
+                "city": "Bydgoszcz",
+                "name": "Bydgoski rower aglomeracyjny",
+                "longitude": 18.00038,
+                "country": "PL"
+            }
         }
     ],
     "system": "bikeu",
