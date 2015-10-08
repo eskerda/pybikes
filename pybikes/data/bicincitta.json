@@ -192,6 +192,28 @@
                 },
                 {
                     "meta": {
+                        "name": "Chivasso",
+                        "city": "Chivasso",
+                        "country": "IT",
+                        "latitude": 45.189765,
+                        "longitude": 7.888935
+                    },
+                    "tag": "chivasso",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=201"
+                },
+                {
+                    "meta": {
+                        "name": "Comunità Montana Valli dell'Ossola",
+                        "city": "Santa Maria Maggiore - Malesco - Villette",
+                        "country": "IT",
+                        "latitude": 46.127196,
+                        "longitude": 8.499169
+                    },
+                    "tag": "ossola",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=152"
+                },
+                {
+                    "meta": {
                         "latitude": 45.610555,
                         "city": "Busto Arsizio",
                         "name": "Bici in Busto",
@@ -933,28 +955,6 @@
                         "country": "IT",
                         "latitude": 44.983499,
                         "longitude": 10.419245
-                    }
-                },
-                {
-                    "tag": "chivasso",
-                    "system_id": 11,
-                    "meta": {
-                        "name": "Chivasso",
-                        "city": "Chivasso",
-                        "country": "IT",
-                        "latitude": 45.189765,
-                        "longitude": 7.888935
-                    }
-                },
-                {
-                    "tag": "ossola",
-                    "system_id": 17,
-                    "meta": {
-                        "name": "Comunità Montana Valli dell'Ossola",
-                        "city": "Santa Maria Maggiore - Malesco - Villette",
-                        "country": "IT",
-                        "latitude": 46.127196,
-                        "longitude": 8.499169
                     }
                 },
                 {
