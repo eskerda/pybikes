@@ -170,6 +170,17 @@
                 },
                 {
                     "meta": {
+                        "name": "Alba",
+                        "city": "Alba",
+                        "country": "IT",
+                        "latitude": 44.716667,
+                        "longitude": 8.083333
+                    },
+                    "tag": "alba",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=139"
+                },
+                {
+                    "meta": {
                         "latitude": 45.5775,
                         "city": "Biella",
                         "name": "Biella",
@@ -869,17 +880,6 @@
         },
         "BicincittaOld": {
             "instances": [
-                {
-                    "tag": "alba",
-                    "system_id": 15,
-                    "meta": {
-                        "name": "Alba",
-                        "city": "Alba",
-                        "country": "IT",
-                        "latitude": 44.716667,
-                        "longitude": 8.083333
-                    }
-                },
                 {
                     "tag": "bariinbici",
                     "system_id": 9,
