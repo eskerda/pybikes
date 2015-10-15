@@ -969,17 +969,6 @@
                     }
                 },
                 {
-                    "tag": "mantova",
-                    "system_id": 53,
-                    "meta": {
-                        "name": "Mantova",
-                        "city": "Mantova",
-                        "country": "IT",
-                        "latitude": 45.15983,
-                        "longitude": 10.793467
-                    }
-                },
-                {
                     "tag": "noviligure",
                     "system_id": 22,
                     "meta": {
