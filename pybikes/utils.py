@@ -70,6 +70,8 @@ class PyBikesScraper(object):
         if self.proxy_enabled and url_scheme(url) == 'https':
             response, data = self.__proxy_https_req__(url)
         else:
+            # Timeout slightly larger than a multiple of 3, which
+            # is the default TCP packet retransmission window
             response = self.session.request(
                 method = method,
                 url = url,
@@ -77,7 +79,8 @@ class PyBikesScraper(object):
                 data = data,
                 proxies = self.getProxies(),
                 headers = self.headers,
-                verify = False
+                verify = False,
+                timeout = 17
             )
             data = response.text
         if 'set-cookie' in response.headers:
