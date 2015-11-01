@@ -25,7 +25,7 @@ class BikeShareStation(object):
     """
 
     def __init__(self, name = None, latitude = None, longitude = None,
-                       bikes = None, free = None, extra = {}):
+                       bikes = None, free = None, extra = None):
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
