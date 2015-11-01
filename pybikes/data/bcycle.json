@@ -1,6 +1,50 @@
 {
     "instances": [
         {
+        "tag": "greatrides",
+        "meta": {
+            "latitude": 46.89248,
+            "longitude": -96.80095,
+            "city": "Fargo, ND",
+            "name": "Great Rides B-cycle",
+            "country": "US"
+            },
+            "feed_url": "http://greatrides.bcycle.com/station-map"
+        },
+        {
+            "tag": "battlecreek",
+            "meta": {
+                "latitude": 42.32423,
+                "longitude": -85.18833,
+                "city": "Battle Creek, MI",
+                "name": "Battle Creek B-cycle",
+                "country": "US"
+            },
+            "feed_url": "https://battlecreek.bcycle.com/station-map"
+        },
+        {
+            "tag": "linkdayton",
+            "meta": {
+                "latitude": 39.74173,
+                "longitude": -84.18219,
+                "city": "Dayton, OH",
+                "name": "Link Dayton B-cycle",
+                "country": "US"
+            },
+            "feed_url": "https://linkdayton.org/station-map"
+        },
+        {
+            "tag": "indego",
+            "meta": {
+                "latitude": 39.96984,
+                "longitude": -75.1418,
+                "city": "Philadelphia, PA",
+                "name": "Indego B-cycle",
+                "country": "US"
+            },
+            "feed_url": "http://www.rideindego.com/stations/"
+        },
+        {
             "tag": "boulder",
             "meta": {
                 "latitude": 40.0149856,
