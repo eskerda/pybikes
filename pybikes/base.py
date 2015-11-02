@@ -26,15 +26,13 @@ class BikeShareStation(object):
 
     def __init__(self, name = None, latitude = None, longitude = None,
                        bikes = None, free = None, extra = None):
-        if extra is None:
-            extra = {}
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.bikes = bikes
         self.free = free
         self.timestamp = datetime.utcnow()     # Store timestamp in UTC!
-        self.extra = extra
+        self.extra = extra or {}
 
     def __str__(self):
         return "--- {0} ---\n"\
