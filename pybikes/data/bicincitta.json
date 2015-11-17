@@ -262,7 +262,7 @@
                         "city": "Bath",
                         "name": "Bike in Bath",
                         "longitude": -2.362404,
-                        "country": "GB"
+                        "country": "GB-ENG"
                     },
                     "tag": "bike-in-bath",
                     "endpoint": "http://www.bikeinbath.com/frmLeStazioni.aspx"
