@@ -686,7 +686,7 @@
                 "latitude": 51.382,
                 "city": "Bath",
                 "longitude": -2.36275,
-                "country": "GB"
+                "country": "GB-ENG"
             },
             "city_uid": "236"
         },
@@ -697,7 +697,7 @@
                 "latitude": 55.8589,
                 "city": "Glasgow",
                 "longitude": -4.25549,
-                "country": "GB"
+                "country": "GB-SCT"
             },
             "city_uid": "237"
         },
