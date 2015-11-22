@@ -324,6 +324,17 @@
                 },
                 {
                     "meta": {
+                        "latitude": 45.5398382,
+                        "city": "Brescia",
+                        "name": "BiciMia",
+                        "longitude": 10.2229562,
+                        "country": "IT"
+                    },
+                    "endpoint": "https://bicimia.bresciamobilita.it/frmLeStazioni.aspx",
+                    "tag": "bicimia"
+                },
+                {
+                    "meta": {
                         "latitude": 41.833502,
                         "city": "Ischitella – Peschici – Rodi Garganico – Vico del Gargano",
                         "name": "Parkinbici",
