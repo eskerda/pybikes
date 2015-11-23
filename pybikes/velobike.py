@@ -2,9 +2,8 @@
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from . import utils
 
-__all__ = ['Velobike', 'VelobikeStation']
 
 class Velobike(BikeShareSystem):
 
@@ -19,7 +18,7 @@ class Velobike(BikeShareSystem):
         super(Velobike, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
@@ -37,7 +36,7 @@ class Velobike(BikeShareSystem):
         #     "desc":"",
         #     "total_slots":8,
         #     "free_slots":7,
-        #     "address":"\u041d\u0430 \u043f\u0435\u0440\u0435\u0441\u0435\u0447\u0435\u043d\u0438\u0438 \u0443\u043b. \u0410\u043a\u043c\u0435\u0448\u0435\u0442\u044c, \u0443\u043b.\u041a\u0443\u043d\u0430\u0435\u0432\u0430.",
+        #     "address":"\u041d\u0430 ...",
         #     "avl_bikes":1,
         #     "is_deleted":0,
         #     "is_sales":0,
@@ -47,26 +46,16 @@ class Velobike(BikeShareSystem):
             if item['is_sales'] == 1:
                 continue
             name = item['name']
-            latitude = item['lat']
-            longitude = item['lng']
-            bikes = item['avl_bikes']
-            free = item['free_slots']
+            latitude = float(item['lat'])
+            longitude = float(item['lng'])
+            bikes = int(item['avl_bikes'])
+            free = int(item['free_slots'])
             extra = {
-                'slots' : item['total_slots'],
-                'address' : item['address'],
+                'uid': item['id'],
+                'slots': int(item['total_slots']),
+                'address': item['address'],
             }
-            station = VelobikeStation(name, latitude, longitude,
-                                    bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
         self.stations = stations
-
-class VelobikeStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(VelobikeStation, self).__init__()
-
-        self.name       = name
-        self.latitude   = float(latitude)
-        self.longitude  = float(longitude)
-        self.bikes      = int(bikes)
-        self.free       = int(free)
-        self.extra      = extra
