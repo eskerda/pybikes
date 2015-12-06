@@ -5,7 +5,7 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 
-class velobike_ru(BikeShareSystem):
+class VelobikeRU(BikeShareSystem):
 
     sync = True
 
@@ -15,7 +15,7 @@ class velobike_ru(BikeShareSystem):
     }
 
     def __init__(self, tag, feed_url, meta):
-        super(velobike_ru, self).__init__(tag, meta)
+        super(VelobikeRU, self).__init__(tag, meta)
         self.feed_url = feed_url
 
     def update(self, scraper=None):
@@ -37,7 +37,7 @@ class velobike_ru(BikeShareSystem):
         # },
         # "TotalPlaces": 12
         #}
-        for item in data['data']:
+        for item in data['Items']:
             name = item['Address']
             latitude = float(item['Position']['Lat'])
             longitude = float(item['Position']['Lon'])
