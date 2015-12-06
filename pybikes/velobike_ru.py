@@ -5,17 +5,17 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 
-class VelobikeMSK(BikeShareSystem):
+class velobike_ru(BikeShareSystem):
 
     sync = True
 
     meta = {
-        'system': 'Velobike',
-        'company': 'Velobike.ru'
+        'system': 'Velobike RU',
+        'company': 'ЗАО «СитиБайк»'
     }
 
     def __init__(self, tag, feed_url, meta):
-        super(VelobikeMSK, self).__init__(tag, meta)
+        super(velobike_ru, self).__init__(tag, meta)
         self.feed_url = feed_url
 
     def update(self, scraper=None):
