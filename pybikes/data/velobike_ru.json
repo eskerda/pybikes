@@ -12,6 +12,6 @@
             "feed_url": "http://apivelobike.velobike.ru/ride/parkings"
         }
     ],
-    "system": "velobike",
-    "class": "velobike-ru"
+    "system": "velobike_ru",
+    "class": "VelobikeRU"
 }
