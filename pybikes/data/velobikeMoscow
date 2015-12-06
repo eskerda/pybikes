@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "velobike",
+            "meta": {
+                "city": "Moscow",
+                "name": "Velobike",
+                "country": "RU",
+                "longitude": 55.75,
+                "latitude": 37.616667
+            },
+            "feed_url": "http://apivelobike.velobike.ru/ride/parkings"
+        }
+    ],
+    "system": "velobike",
+    "class": "VelobikeMSK"
+}
