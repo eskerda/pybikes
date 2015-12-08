@@ -2,73 +2,67 @@
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from . import utils
 
-__all__ = ['Punpunbikeshare', 'PunpunbikeshareStation']
 
 class Punpunbikeshare(BikeShareSystem):
 
     sync = True
 
     meta = {
-        'system': 'Punpunbikeshare',
-        'company': 'Pun Pun Bangkok Bicycle Share'
+        'system': 'Smart Bike',
+        'company': 'BTS Group Holdings',
     }
 
     def __init__(self, tag, feed_url, meta):
         super(Punpunbikeshare, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        stations = []
-
         data = json.loads(scraper.request(self.feed_url))
-        # Each station is
+
+        # Each station is like follows
+        # If there's no bikeId in bikeDocks object, it means dock is free
+        # Status seem mostly ignored by website, so let's not make assumptions
+        # on that.
         # {
         #     "stationId":"01",
-        #     "stationName":"",
+        #     "stationName":"foo bar",
         #     "location":"Chamchuri Square",
         #     "lat":"13.73345498316396",
         #     "lng":"100.52908658981323",
         #     "status":"1",
         #     "bikeDockCount":"8",
-        #     "bikeDocks":[{"dockId":"9","bikeId":"0000A24C20C4","status":"1"},{"dockId":"10","bikeId":"0000E2CF1FC4","status":"1"},
-        #                  {"dockId":"11","bikeId":"000052B71FC4","status":"1"},{"dockId":"12","bikeId":"","status":"1"}]
+        #     "bikeDocks":[
+        #         {"dockId":"9","bikeId":"0000A24C20C4","status":"1"},
+        #         {"dockId":"10","bikeId":"0000E2CF1FC4","status":"1"},
+        #         {"dockId":"11","bikeId":"000052B71FC4","status":"1"},
+        #         {"dockId":"12","bikeId":"","status":"1"}
+        #         ...
+        #     ]
         # }
+
+        stations = []
 
         for item in data['stations']:
             name = item['stationName']
-            latitude = item['lat']
-            longitude = item['lng']
-
-            bikes_counter = 0
-            free_docks_counter = 0
-            for bikeDocks in item['bikeDocks']:
-                if bikeDocks['bikeId'] == "":
-                    free_docks_counter += 1
-                else:
-                    bikes_counter += 1
-            bikes = bikes_counter
-            free = free_docks_counter
+            latitude = float(item['lat'])
+            longitude = float(item['lng'])
+            total_slots = int(item['bikeDockCount'])
+            bike_uids = [b['bikeId'] for b in item['bikeDocks'] if b['bikeId']]
+            bikes = len(bike_uids)
+            free = total_slots - bikes
             extra = {
-                    'slots' : item['bikeDockCount'],
-                    'address' : item['location']
+                'slots': total_slots,
+                'address': item['location'],
+                'uid': item['stationId'],
+                'bike_uids': bike_uids,
             }
-            station = PunpunbikeshareStation(name, latitude, longitude,
-                                             bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
-            self.stations = stations
 
-class PunpunbikeshareStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(PunpunbikeshareStation, self).__init__()
-
-        self.name       = name
-        self.latitude   = float(latitude)
-        self.longitude  = float(longitude)
-        self.bikes      = int(bikes)
-        self.free       = int(free)
-        self.extra      = extra
+        self.stations = stations
