@@ -74,7 +74,7 @@ class KeolisStation(BikeShareStation):
             </div>
         </div>
         """
-        super(KeolisStation, self).__init__(0)
+        super(KeolisStation, self).__init__()
         fuzzle = lxml.html.fromstring(
             data[2].encode('utf8').decode('string-escape')
         )
@@ -129,13 +129,13 @@ class Keolis_v2(BikeShareSystem):
 
         stations = []
         for index, marker in enumerate(xml_list.iter('marker')):
-            station = KeolisStation_v2(index, marker, self.station_url)
+            station = KeolisStation_v2(marker, self.station_url)
             stations.append(station)
         self.stations = stations
 
 class KeolisStation_v2(BikeShareStation):
-    def __init__(self, index, marker, station_url):
-        super(KeolisStation_v2, self).__init__(index)
+    def __init__(self, marker, station_url):
+        super(KeolisStation_v2, self).__init__()
 
         self.name      = marker.get('name')
         self.latitude  = float(marker.get('lat'))

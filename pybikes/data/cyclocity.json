@@ -4,18 +4,6 @@
         "CyclocityWeb": {
             "instances": [
                 {
-                    "city": "dublin", 
-                    "meta": {
-                        "latitude": 53.3498053, 
-                        "city": "Dublin", 
-                        "name": "dublinbikes", 
-                        "longitude": -6.2603097, 
-                        "country": "IE"
-                    }, 
-                    "tag": "dublinbikes", 
-                    "endpoint": "http://www.dublinbikes.ie"
-                }, 
-                {
                     "city": "brisbane", 
                     "meta": {
                         "latitude": -27.4710107, 
@@ -305,6 +293,17 @@
                         "city": "Besan\u00e7on"
                     }, 
                     "contract": "Besancon"
+                },
+                {
+                    "meta": {
+                        "latitude": 53.3498053,
+                        "city": "Dublin",
+                        "name": "dublinbikes",
+                        "longitude": -6.2603097,
+                        "country": "IE"
+                    },
+                    "tag": "dublinbikes",
+                    "contract": "Dublin"
                 }
             ]
         }

@@ -9,7 +9,7 @@ from . import utils
 
 __all__ = ['Callabike', 'CallabikeStation']
 
-BASE_URL = 'http://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
+BASE_URL = 'https://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
 
 
 class Callabike(BikeShareSystem):

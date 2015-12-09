@@ -50,7 +50,7 @@ class NextbikeStation(BikeShareStation):
         return super(NextbikeStation, cls).__new__(cls, place_tree)
 
     def __init__(self, place_tree):
-        super(NextbikeStation, self).__init__(0)
+        super(NextbikeStation, self).__init__()
         self.extra = {}
 
         # Some names are '1231-foo' and other are 'bar'

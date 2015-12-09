@@ -5,6 +5,116 @@
             "instances": [
                 {
                     "meta": {
+                        "latitude": 43.3186,
+                        "city": "Siena",
+                        "longitude": 11.3306,
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-siena",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=202"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.72295637032245,
+                        "longitude": 9.649230073016383,
+                        "city": "Parco dei Colli di Bergamo",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-parco-dei-colli-di-bergamo",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=203"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.15866370764634,
+                        "longitude": 10.783718973016335,
+                        "city": "Mantova",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-mantova",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=204"
+                },
+                {
+                    "meta": {
+                        "latitude": 39.28956306007679,
+                        "longitude": 9.006601555294765,
+                        "city": "Assemini",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-assemini",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=205"
+                },
+                {
+                    "meta": {
+                        "latitude": 39.92664489852196,
+                        "longitude": 9.654953570777934,
+                        "city": "Tortolì",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-tortoli",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=206"
+                },
+                {
+                    "meta": {
+                        "latitude": 41.209620965538036,
+                        "longitude": 13.584335125656139,
+                        "city": "Gaeta",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-gaeta",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=207"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.23963753440171,
+                        "longitude": 9.136150475640875,
+                        "city": "Borgarello",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-borgarello",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=208"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.186748819167434,
+                        "longitude": 9.778087948479424,
+                        "city": "Pizzighettone e Formigara",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-pizzighettone-formigara",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=209"
+                },
+                {
+                    "meta": {
+                        "latitude": 43.88362791665083,
+                        "longitude": 10.764385656591799,
+                        "city": "Montecatini Terme",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-montecatini-terme",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=210"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.07731805550891,
+                        "longitude": 10.097172450401331,
+                        "city": "Carrara",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-carrara",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=211"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.83745947067494,
+                        "longitude": 9.073591857810925,
+                        "city": "Cernobbio",
+                        "country": "IT"
+                    },
+                    "tag": "bicincitta-cernobbio",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=212"
+                },
+                {
+                    "meta": {
                         "latitude": 44.272554,
                         "city": "Sestri Levante - Lavagna",
                         "name": "Tigullionbike",
@@ -60,6 +170,17 @@
                 },
                 {
                     "meta": {
+                        "name": "Alba",
+                        "city": "Alba",
+                        "country": "IT",
+                        "latitude": 44.716667,
+                        "longitude": 8.083333
+                    },
+                    "tag": "alba",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=139"
+                },
+                {
+                    "meta": {
                         "latitude": 45.5775,
                         "city": "Biella",
                         "name": "Biella",
@@ -68,6 +189,28 @@
                     },
                     "tag": "biella",
                     "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=112"
+                },
+                {
+                    "meta": {
+                        "name": "Chivasso",
+                        "city": "Chivasso",
+                        "country": "IT",
+                        "latitude": 45.189765,
+                        "longitude": 7.888935
+                    },
+                    "tag": "chivasso",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=201"
+                },
+                {
+                    "meta": {
+                        "name": "Comunità Montana Valli dell'Ossola",
+                        "city": "Santa Maria Maggiore - Malesco - Villette",
+                        "country": "IT",
+                        "latitude": 46.127196,
+                        "longitude": 8.499169
+                    },
+                    "tag": "ossola",
+                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=152"
                 },
                 {
                     "meta": {
@@ -101,17 +244,6 @@
                     },
                     "tag": "cuneo",
                     "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=39"
-                },
-                {
-                    "meta": {
-                        "latitude": 44.550723,
-                        "city": "Fossano",
-                        "name": "Fossano",
-                        "longitude": 7.7215,
-                        "country": "IT"
-                    },
-                    "tag": "fossano",
-                    "endpoint": "http://www.bicincittabip.com/frmLeStazioni.aspx?ID=107"
                 },
                 {
                     "meta": {
@@ -189,6 +321,17 @@
                     },
                     "endpoint": "http://www.goodbikepadova.it/frmLeStazioni.aspx",
                     "tag": "goodbike"
+                },
+                {
+                    "meta": {
+                        "latitude": 45.5398382,
+                        "city": "Brescia",
+                        "name": "BiciMia",
+                        "longitude": 10.2229562,
+                        "country": "IT"
+                    },
+                    "endpoint": "https://bicimia.bresciamobilita.it/frmLeStazioni.aspx",
+                    "tag": "bicimia"
                 },
                 {
                     "meta": {
@@ -760,17 +903,6 @@
         "BicincittaOld": {
             "instances": [
                 {
-                    "tag": "alba",
-                    "system_id": 15,
-                    "meta": {
-                        "name": "Alba",
-                        "city": "Alba",
-                        "country": "IT",
-                        "latitude": 44.716667,
-                        "longitude": 8.083333
-                    }
-                },
-                {
                     "tag": "bariinbici",
                     "system_id": 9,
                     "meta": {
@@ -826,28 +958,6 @@
                     }
                 },
                 {
-                    "tag": "chivasso",
-                    "system_id": 11,
-                    "meta": {
-                        "name": "Chivasso",
-                        "city": "Chivasso",
-                        "country": "IT",
-                        "latitude": 45.189765,
-                        "longitude": 7.888935
-                    }
-                },
-                {
-                    "tag": "ossola",
-                    "system_id": 11,
-                    "meta": {
-                        "name": "Comunità Montana Valli dell'Ossola",
-                        "city": "Santa Maria Maggiore - Malesco - Villette",
-                        "country": "IT",
-                        "latitude": 46.127196,
-                        "longitude": 8.499169
-                    }
-                },
-                {
                     "tag": "jesinbici",
                     "system_id": 58,
                     "meta": {
@@ -856,17 +966,6 @@
                         "country": "IT",
                         "latitude": 43.522601,
                         "longitude": 13.244448
-                    }
-                },
-                {
-                    "tag": "mantova",
-                    "system_id": 53,
-                    "meta": {
-                        "name": "Mantova",
-                        "city": "Mantova",
-                        "country": "IT",
-                        "latitude": 45.15983,
-                        "longitude": 10.793467
                     }
                 },
                 {

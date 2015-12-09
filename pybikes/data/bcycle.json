@@ -1,6 +1,50 @@
 {
     "instances": [
         {
+        "tag": "greatrides",
+        "meta": {
+            "latitude": 46.89248,
+            "longitude": -96.80095,
+            "city": "Fargo, ND",
+            "name": "Great Rides B-cycle",
+            "country": "US"
+            },
+            "feed_url": "http://greatrides.bcycle.com/station-map"
+        },
+        {
+            "tag": "battlecreek",
+            "meta": {
+                "latitude": 42.32423,
+                "longitude": -85.18833,
+                "city": "Battle Creek, MI",
+                "name": "Battle Creek B-cycle",
+                "country": "US"
+            },
+            "feed_url": "https://battlecreek.bcycle.com/station-map"
+        },
+        {
+            "tag": "linkdayton",
+            "meta": {
+                "latitude": 39.74173,
+                "longitude": -84.18219,
+                "city": "Dayton, OH",
+                "name": "Link Dayton B-cycle",
+                "country": "US"
+            },
+            "feed_url": "https://linkdayton.org/station-map"
+        },
+        {
+            "tag": "indego",
+            "meta": {
+                "latitude": 39.96984,
+                "longitude": -75.1418,
+                "city": "Philadelphia, PA",
+                "name": "Indego B-cycle",
+                "country": "US"
+            },
+            "feed_url": "http://www.rideindego.com/stations/"
+        },
+        {
             "tag": "boulder",
             "meta": {
                 "latitude": 40.0149856,
@@ -20,7 +64,7 @@
                 "longitude": -80.1433786,
                 "country": "US"
             },
-            "feed_url": "http://broward.bcycle.com"
+            "feed_url": "http://broward.bcycle.com/station-map"
         },
         {
             "tag": "charlotte",
@@ -31,7 +75,7 @@
                 "longitude": -80.8431267,
                 "country": "US"
             },
-            "feed_url": "http://charlotte.bcycle.com"
+            "feed_url": "http://charlotte.bcycle.com/station-map"
         },
         {
             "tag": "denver",
@@ -53,7 +97,7 @@
                 "longitude": -93.6091064,
                 "country": "US"
             },
-            "feed_url": "http://desmoines.bcycle.com"
+            "feed_url": "http://desmoines.bcycle.com/station-map"
         },
         {
             "tag": "fortworth",
@@ -64,7 +108,7 @@
                 "longitude": -97.3208496,
                 "country": "US"
             },
-            "feed_url": "http://fortworth.bcycle.com"
+            "feed_url": "http://fortworth.bcycle.com/station-map"
         },
         {
             "tag": "greenbikeslc",
@@ -86,7 +130,7 @@
                 "longitude": -82.3940104,
                 "country": "US"
             },
-            "feed_url": "http://greenville.bcycle.com"
+            "feed_url": "http://greenville.bcycle.com/station-map"
         },
         {
             "tag": "houston",
@@ -137,11 +181,11 @@
             "meta": {
                 "latitude": 41.2523634,
                 "city": "Omaha, NE",
-                "name": "Omaha B-cycle",
+                "name": "Heartland B-cycle",
                 "longitude": -95.99798829999999,
                 "country": "US"
             },
-            "feed_url": "http://omaha.bcycle.com"
+            "feed_url": "https://heartland.bcycle.com/station-map"
         },
         {
             "tag": "sanantonio",
@@ -163,7 +207,7 @@
                 "longitude": -81.9320482,
                 "country": "US"
             },
-            "feed_url": "http://spartanburg.bcycle.com"
+            "feed_url": "http://spartanburg.bcycle.com/station-map"
         },
         {
             "tag": "austin",
@@ -174,7 +218,7 @@
                 "longitude": -97.7430608,
                 "country": "US"
             },
-            "feed_url": "https://austin.bcycle.com/station-locations/"
+            "feed_url": "https://austin.bcycle.com/stations/station-locations"
         },
         {
             "tag": "santiago",
@@ -218,7 +262,7 @@
                 "longitude": -82.127778,
                 "country": "US"
             },
-            "feed_url": "https://columbiacounty.bcycle.com/station-locations"
+            "feed_url": "https://columbiacounty.bcycle.com/station-map"
         },
         {
             "tag": "catbike",
@@ -229,7 +273,7 @@
                 "longitude": -81.116667,
                 "country": "US"
             },
-            "feed_url": "https://catbike.bcycle.com/station-locations"
+            "feed_url": "https://catbike.bcycle.com/station-map"
         },
         {
             "tag": "rapid-city",
@@ -241,6 +285,17 @@
                 "country": "US"
             },
             "feed_url": "https://rapidcity.bcycle.com/station-map"
+        },
+        {
+            "tag": "elpaso",
+            "meta": {
+                "latitude": 31.76148,
+                "city": "El Paso, TX",
+                "name": "El Paso B-cycle",
+                "longitude": -106.48507,
+                "country": "US"
+            },
+            "feed_url": "https://elpaso.bcycle.com/station-map"
         }
     ],
     "system": "bcycle",
