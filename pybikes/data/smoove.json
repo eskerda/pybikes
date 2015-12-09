@@ -1,0 +1,72 @@
+{
+    "instances": [
+        {
+            "tag": "c-velo",
+            "meta": {
+                "latitude": 45.770958,
+                "longitude": 3.073871,
+                "city": "Clermont-Ferrand",
+                "name": "C-Velo",
+                "country": "FR"
+            },
+            "feed_url": "http://www.c-velo.fr/sag_vls_stations.html"
+        },
+        {
+            "tag": "velivert",
+            "meta": {
+                "latitude": 45.396667,
+                "longitude": 4.290833,
+                "city": "Saint-Étienne",
+                "name": "Velivert",
+                "country": "FR"
+            },
+            "feed_url": "http://www.velivert.fr/sag_vls_stations.html"
+        },
+        {
+            "tag": "velopop",
+            "meta": {
+                "latitude": 43.943689,
+                "longitude": 4.805833,
+                "city": "Avignon",
+                "name": "Velopop",
+                "country": "FR"
+            },
+            "feed_url": "http://www.velopop.fr/stations.html"
+        },
+        {
+            "tag": "reflex-velo",
+            "meta": {
+                "latitude": 46.819904,
+                "longitude": 4.837021,
+                "city": "Chalon-sur-Saône",
+                "name": "Réflex du Grand Chalon",
+                "country": "FR"
+            },
+            "feed_url": "http://www.reflex-grandchalon.fr/sag_vls_stations.html"
+        },
+        {
+            "tag": "velo-libelo",
+            "meta": {
+                "latitude": 44.922726,
+                "longitude": 4.905634,
+                "city": "Valence",
+                "name": "Libélo",
+                "country": "FR"
+            },
+            "feed_url": "http://www.velo-libelo.fr/sag_stations_vls.html"
+        },
+        {
+            "tag": "velo-batumi",
+            "meta": {
+                "latitude": 41.660906,
+                "longitude": 41.678835,
+                "city": "Batumi",
+                "name": "Georgia",
+                "country": "GE"
+            },
+            "feed_url": "http://cli-velo-batumi.gir.fr/sag_map.html"
+        }
+    ],
+    "system": "smoove",
+    "class": "Smoove"
+}
