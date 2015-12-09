@@ -4,14 +4,16 @@ import json
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-
 class Velobike(BikeShareSystem):
 
     sync = True
 
     meta = {
         'system': 'Velobike',
-        'company': 'Velobike.kz, LLP'
+        'company': ['Agency for Physical Culture and Sports of \
+                    the Republic of Kazakhstan', 
+                    'Sovereign Wealth Fund "Samruk-Kazyna" JSC',
+                    'Akimat of Astana', 'Smoove']
     }
 
     def __init__(self, tag, feed_url, meta):
