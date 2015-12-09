@@ -46,7 +46,7 @@ class CicloSampaStation(BikeShareStation):
             [latitude, longitude, stationId, name, address, availableBikes,
              bike capacity]
         '''
-        super(CicloSampaStation, self).__init__(0)
+        super(CicloSampaStation, self).__init__()
         self.name = data[3]
         self.latitude = float(data[0])
         self.longitude = float(data[1])

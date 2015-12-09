@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "pronto-cycle-share", 
+            "meta": {
+                "city": "Seattle, WA", 
+                "name": "Pronto Cycle Share", 
+                "country": "US",
+                "longitude": -122.332071, 
+                "latitude": 47.606209
+            },
+            "feed_url": "https://secure.prontocycleshare.com/data/stations.json"
+        }
+    ],
+    "system": "pronto",
+    "class": "Pronto"
+}

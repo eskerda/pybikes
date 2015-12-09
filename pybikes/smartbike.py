@@ -69,7 +69,7 @@ def get_json_v2_stations(self, raw):
 
 class SmartBikeStation(BikeShareStation):
     def __init__(self, info):
-        super(SmartBikeStation, self).__init__(0)
+        super(SmartBikeStation, self).__init__()
         try:
             self.name = info['StationName']
             self.bikes = int(info['StationAvailableBikes'])
