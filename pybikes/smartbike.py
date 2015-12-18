@@ -118,49 +118,29 @@ class SmartBikeStation(BikeShareStation):
 
 class SmartShitty(BaseSystem):
     """
-    BikeMI decided to implement yet another way of displaying the map...
-    So, I guess what we will do here is using a regular expression to get the
-    info inside the $create function, and then load that as a JSON. Who the
-    fuck pay this guys money, seriously?
+    BikeMI decided (again) to implement yet another way of displaying the map...
+    This time the data come in a less messy way in comparison to the previous version,
+    but the HTML comes unescaped (escaped bellow for better understanding).
+    Who the fuck pay this guys money, seriously?
 
-    <script type="text/javascript">
-    //<![CDATA[
-    Sys.Application.add_init(function() {
-        $create(Artem.Google.MarkersBehavior, {
-            "markerOptions":[
-                {
-                    "clickable":true,
-                    "icon":{
-                        ...
-                    },
-                    "optimized":true,
-                    "position":{
-                        "lat":45.464683238625966,
-                        "lng":9.18879747390747
-                    },
-                    "raiseOnDrag":true,
-                    "title":"01 - Duomo",    _____ Thank you...
-                    "visible":true,         /
-                    "info":"<div style=\"width: 240px; height: 100px;\">
-                                <span style=\"font-weight: bold;\">
-                                    01 - Duomo
-                                </span>
-                                <br/>
-                                <ul>
-                                    <li>Available bicycles: 17</li>
-                                    <li>Available electrical bicycles: 0</li>
-                                    <li>Available slots: 7</li>
-                                </ul>
-                            </div>
-                }, ...
-            ],
-            "name": "fuckeduplongstring"
-        }, null, null, $get("station-map"));
-    })
+    GoogleMap.addMarker(
+        '/media/assets/images/station_map/more_than_five_bikes_flag.png',
+        45.464683238626,
+        9.18879747390747,
+        'Duomo',
+        '<div style="width: 240px; height: 120px;">
+            <span style="font-weight: bold;">178 - V Alpini</span>
+            <br>
+            <ul>
+                <li>Available bicycles: 9</li>
+                <li>Available electrical bicycles: 0</li>
+                <li>Available slots: 20</li>
+                </ul>
+        </div>');
     """
     sync = True
 
-    _RE_MARKERS = 'Google\.MarkersBehavior\,\ (?P<data>.*?)\,\ null'
+    RGX_MARKERS = r'GoogleMap\.addMarker\(.*?,\s*(\d+.\d+)\s*,\s*(\d+.\d+),\s*(.*?),(.*?)\)\;'
 
     def __init__(self, tag, meta, feed_url):
         super(SmartShitty, self).__init__(tag, meta)
@@ -171,26 +151,21 @@ class SmartShitty(BaseSystem):
             scraper = utils.PyBikesScraper()
 
         page = scraper.request(self.feed_url)
-        markers = json.loads(
-            re.search(SmartShitty._RE_MARKERS, page).group('data')
-        )['markerOptions']
-        self.stations = map(SmartShittyStation, markers)
-
-
-class SmartShittyStation(BikeShareStation):
-    def __init__(self, marker):
-        super(SmartShittyStation, self).__init__()
-        avail_soup = html.fromstring(marker['info'])
-        availability = map(
-            lambda x: int(x.split(':')[1]),
-            avail_soup.xpath("//div/ul/li/text()")
-        )
-        self.name = marker['title']
-        self.latitude = marker['position']['lat']
-        self.longitude = marker['position']['lng']
-        self.bikes = availability[0] + availability[1]
-        self.free = availability[2]
-        self.extra = {}
-        if availability[1] > 0:
-            self.extra['has_ebikes'] = True
-            self.extra['ebikes'] = availability[1]
+        stations_data = re.findall(RGX_MARKERS, page)
+        stations = []
+        for station_data in stations_data:
+            latitude, longitude, name, mess = station_data
+            html_mess = html.fromstring(mess.decode('unicode_escape'))
+            availability = map(
+                lambda x: int(x.split(':')[1]),
+                html_mess.xpath("//div/ul/li/text()")
+            )
+            available_std_bikes, available_electrical_bikes, free = availability
+            bikes = available_std_bikes + available_electrical_bikes
+            extra = {}
+            if available_electrical_bikes > 0:
+                extra['has_ebikes'] = True
+                extra['ebikes'] = available_electrical_bikes
+            station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
+            stations.append(station)
+        self.stations = stations
