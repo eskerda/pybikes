@@ -140,7 +140,7 @@ class SmartShitty(BaseSystem):
     """
     sync = True
 
-    RGX_MARKERS = r'GoogleMap\.addMarker\(.*?,\s*(\d+.\d+)\s*,\s*(\d+.\d+),\s*(.*?),(.*?)\)\;'
+    RGX_MARKERS = r'GoogleMap\.addMarker\(.*?,\s*(\d+.\d+)\s*,\s*(\d+.\d+),\s*\'(.*?)\',(.*?)\)\;'
 
     def __init__(self, tag, meta, feed_url):
         super(SmartShitty, self).__init__(tag, meta)
@@ -151,7 +151,7 @@ class SmartShitty(BaseSystem):
             scraper = utils.PyBikesScraper()
 
         page = scraper.request(self.feed_url)
-        stations_data = re.findall(RGX_MARKERS, page)
+        stations_data = re.findall(SmartShitty.RGX_MARKERS, page.encode('utf-8'))
         stations = []
         for station_data in stations_data:
             latitude, longitude, name, mess = station_data
@@ -166,6 +166,6 @@ class SmartShitty(BaseSystem):
             if available_electrical_bikes > 0:
                 extra['has_ebikes'] = True
                 extra['ebikes'] = available_electrical_bikes
-            station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
+            station = BikeShareStation(name, float(latitude), float(longitude), bikes, free, extra)
             stations.append(station)
         self.stations = stations
