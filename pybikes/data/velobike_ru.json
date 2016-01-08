@@ -6,8 +6,8 @@
                 "city": "Moscow",
                 "name": "Velobike",
                 "country": "RU",
-                "longitude": 55.75,
-                "latitude": 37.616667
+                "longitude": 37.616667,
+                "latitude": 55.75
             },
             "feed_url": "http://apivelobike.velobike.ru/ride/parkings"
         }
