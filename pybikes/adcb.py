@@ -2,11 +2,10 @@
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from . import utils
 
-__all__ = ['Adbcbikeshare', 'AdbcStation']
 
-class Adbcbikeshare(BikeShareSystem):
+class AdcbBikeshare(BikeShareSystem):
 
     sync = True
 
@@ -16,10 +15,10 @@ class Adbcbikeshare(BikeShareSystem):
     }
 
     def __init__(self, tag, feed_url, meta):
-        super(Adbcbikeshare, self).__init__(tag, meta)
+        super(AdcbBikeshare, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
@@ -52,7 +51,7 @@ class Adbcbikeshare(BikeShareSystem):
             bikes = int(item['ba'])
             free = int(item['da'])
             extra = {
-                'status' : 'online' if item['st'] == 1 else 'offline',
+                'status': 'online' if item['st'] == 1 else 'offline',
                 'has_bike_keys': item['bk'] and item['bl'],
                 'uid': str(item['id'])
             }

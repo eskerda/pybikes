@@ -1,10 +1,10 @@
 {
     "instances": [
         {
-            "tag": "adbc-bikeshare",
+            "tag": "adcb-bikeshare",
             "meta": {
                 "city": "Abu Dhabi",
-                "name": "ADBC Bikeshare",
+                "name": "ADCB Bikeshare",
                 "country": "AE",
                 "longitude": 54.39,
                 "latitude": 24.450278
@@ -12,6 +12,6 @@
             "feed_url": "https://secure.bikeshare.ae/data/stations.json"
         }
     ],
-    "system": "adbc",
-    "class": "Adbcbikeshare"
+    "system": "adcb",
+    "class": "AdcbBikeshare"
 }
