@@ -2,9 +2,8 @@
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from . import utils
 
-__all__ = ['Clujbike', 'ClujbikeStation']
 
 class Clujbike(BikeShareSystem):
 
@@ -19,7 +18,7 @@ class Clujbike(BikeShareSystem):
         super(Clujbike, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
@@ -45,7 +44,9 @@ class Clujbike(BikeShareSystem):
             'Id' : '0',
         }
 
-        data = json.loads(scraper.request(self.feed_url, 'POST', post_data, None))
+        data = json.loads(
+            scraper.request(self.feed_url, 'POST', post_data, None)
+        )
         # Each station is
         # {
         #     "StationName":"Biblioteca Centrala",
@@ -65,21 +66,23 @@ class Clujbike(BikeShareSystem):
         #     "Id":85,
         # }
         for item in data['Data']:
-            if float(item['Latitude']) == 0.0 or float(item['Longitude']) == 0.0:
-                continue
             name = item['StationName']
             latitude = float(item['Latitude'])
             longitude = float(item['Longitude'])
+
+            if float(latitude) == 0.0 or float(longitude) == 0.0:
+                continue
+
             bikes = int(item['OcuppiedSpots'])
             free = int(item['EmptySpots'])
+            status = 'offline' if item['StatusType'] == 'Offline' else 'online'
             extra = {
-                'slots' : item['MaximumNumberOfBikes'],
-                'address' : item['Address'],
-                'status': 'offline' if item['StatusType'] == 'Offline' else 'online'
+                'slots': item['MaximumNumberOfBikes'],
+                'address': item['Address'],
+                'status': status
             }
             station = BikeShareStation(name, latitude, longitude,
                                        bikes, free, extra)
             stations.append(station)
 
         self.stations = stations
-
