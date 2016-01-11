@@ -65,31 +65,21 @@ class Clujbike(BikeShareSystem):
         #     "Id":85,
         # }
         for item in data['Data']:
-            if item['StatusType'] == 'Offline':
+            if float(item['Latitude']) == 0.0 or float(item['Longitude']) == 0.0:
                 continue
             name = item['StationName']
-            latitude = item['Latitude']
-            longitude = item['Longitude']
-            bikes = item['OcuppiedSpots']
-            free = item['EmptySpots']
+            latitude = float(item['Latitude'])
+            longitude = float(item['Longitude'])
+            bikes = int(item['OcuppiedSpots'])
+            free = int(item['EmptySpots'])
             extra = {
                 'slots' : item['MaximumNumberOfBikes'],
                 'address' : item['Address'],
-                'statustype' : item['StatusType']
+                'status': 'offline' if item['StatusType'] == 'Offline' else 'online'
             }
-            station = ClujbikeStation(name, latitude, longitude,
-                                      bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude,
+                                       bikes, free, extra)
             stations.append(station)
 
         self.stations = stations
 
-class ClujbikeStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(ClujbikeStation, self).__init__()
-
-        self.name       = name
-        self.latitude   = float(latitude)
-        self.longitude  = float(longitude)
-        self.bikes      = int(bikes)
-        self.free       = int(free)
-        self.extra      = extra
