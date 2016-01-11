@@ -47,26 +47,17 @@ class Adbcbikeshare(BikeShareSystem):
         # }
         for item in data['stations']:
             name = item['n']
-            latitude = item['la']
-            longitude = item['lo']
-            bikes = item['ba']
-            free = item['da']
+            latitude = float(item['la'])
+            longitude = float(item['lo'])
+            bikes = int(item['ba'])
+            free = int(item['da'])
             extra = {
-                'slots' : int(item['ba']) + int(item['da'])
+                'status' : 'online' if item['st'] == 1 else 'offline',
+                'has_bike_keys': item['bk'] and item['bl'],
+                'uid': str(item['id'])
             }
-            station = AdbcbikeshareStation(name, latitude, longitude,
-                                           bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude,
+                                       bikes, free, extra)
             stations.append(station)
 
         self.stations = stations
-
-class AdbcbikeshareStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(AdbcbikeshareStation, self).__init__()
-
-        self.name       = name
-        self.latitude   = float(latitude)
-        self.longitude  = float(longitude)
-        self.bikes      = int(bikes)
-        self.free       = int(free)
-        self.extra      = extra
