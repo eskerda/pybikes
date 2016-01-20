@@ -64,22 +64,35 @@ class PyBikesScraper(object):
                 data = unicode(data, encoding)
             return (response, data)
 
-    def request(self, url, method = 'GET', params = None, data = None):
+    def request(self, url, method='GET', params=None, data=None, raw=False,
+                default_encoding='UTF-8'):
         if self.cachedict and url in self.cachedict:
             return self.cachedict[url]
         if self.proxy_enabled and url_scheme(url) == 'https':
             response, data = self.__proxy_https_req__(url)
         else:
             response = self.session.request(
-                method = method,
-                url = url,
-                params = params,
-                data = data,
-                proxies = self.getProxies(),
-                headers = self.headers,
-                verify = False
+                method=method,
+                url=url,
+                params=params,
+                data=data,
+                proxies=self.getProxies(),
+                headers=self.headers,
+                verify=False
             )
+
             data = response.text
+
+            # Somehow requests defaults to ISO-8859-1 (when no encoding
+            # specified). Put it back to UTF-8 by default
+            if 'charset' not in response.headers:
+                if 'Content-Type' in response.headers:
+                    if 'text' in response.headers['Content-Type']:
+                        response.encoding = default_encoding
+                        data = response.text
+            if raw:
+                data = response.content
+
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
         self.last_request = response
