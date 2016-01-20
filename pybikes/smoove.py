@@ -41,7 +41,7 @@ class Smoove(BikeShareSystem):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        html = scraper.request(self.feed_url)
+        html = scraper.request(self.feed_url, default_encoding='ISO-8859-1')
         stations_data = re.findall(DATA_RGX, html)
         stations = []
         # discards the last element of stations_data

@@ -43,7 +43,8 @@ class Samba(BaseSystem):
             scraper = utils.PyBikesScraper()
         scraper.setUserAgent(USERAGENT)
 
-        html_data = scraper.request(self.feed_url)
+        html_data = scraper.request(self.feed_url,
+                                    default_encoding='ISO-8859-1')
         # clean the data up
         html_data = re.sub(r'[\n|\r|\"]', '', html_data)
 

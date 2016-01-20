@@ -29,8 +29,6 @@ class CicloSampa(BikeShareSystem):
         scraper.setUserAgent(USERAGENT)
 
         html_data = scraper.request(self.feed_url)
-        html_data = html_data.encode('latin-1').decode('utf8', 'replace')
-        stations = re.findall(STATIONS_RGX, html_data)
         stations = re.findall(STATIONS_RGX, html_data)
 
         self.stations = []
