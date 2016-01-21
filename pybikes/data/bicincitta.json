@@ -335,6 +335,17 @@
                 },
                 {
                     "meta": {
+                        "latitude": 44.8350382,
+                        "city": "Ferrara",
+                        "name": "MiMuovoFe",
+                        "longitude": 11.6240562,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=142",
+                    "tag": "mimuovofe"
+                },
+                {
+                    "meta": {
                         "latitude": 41.833502,
                         "city": "Ischitella – Peschici – Rodi Garganico – Vico del Gargano",
                         "name": "Parkinbici",
