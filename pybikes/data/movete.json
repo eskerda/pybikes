@@ -1,0 +1,16 @@
+{
+    "instances":[
+        {
+            "tag":"movete",
+            "meta":{
+                "latitude":-34.9011127,
+                "city":"Montevideo",
+                "name":"Movete",
+                "longitude":-56.164531399,
+                "country":"UY"
+            }
+        }
+    ],
+    "system":"movete",
+    "class":"Movete"
+}
