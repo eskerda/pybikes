@@ -17,7 +17,7 @@ setup(
     description = "A python library for scrapping bike sharing data",
     long_description = open('README.md').read(),
     install_requires = [
-        'requests==2.0.0',
+        'requests==2.6.0',
         'lxml==3.2.3',
         'cssselect==0.9.1'
     ],

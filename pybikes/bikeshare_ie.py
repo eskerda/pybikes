@@ -8,53 +8,45 @@ import json
 from .base import BikeShareSystem, BikeShareStation
 from . import utils, exceptions
 
-__all__ = ['CocaCola', 'CocaColaStation']
+__all__ = ['BikeshareIE', 'BikeshareIEStation']
 
 FEED_URL = "https://www.bikeshare.ie/"
 STATIONS_RGX = "var\ mapsfromcache\ =\ (.*?);"
 
-class CocaCola(BikeShareSystem):
+class BikeshareIE(BikeShareSystem):
 
     sync = True
 
     meta = {
-        'system': 'CocaCola',
+        'system': 'BikeshareIE',
         'company': 'The National Transport Authority'
     }
 
-    def __init__(self, tag, meta):
-        super(CocaCola, self).__init__(tag, meta)
+    def __init__(self, tag, meta, system_id):
+        super(BikeshareIE, self).__init__(tag, meta)
 
     def update(self, scraper = None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
             
         stations = []
+
+        print self.system_id
         
         html = scraper.request(FEED_URL)
         stations_html = re.findall(STATIONS_RGX, html)
         data = json.loads(stations_html[0])
 
-        for item in data[self.tag]:
+        for item in data[self.system_id]:
             name = item['name']
-            latitude = item['latitude']
-            longitude = item['longitude']
-            bikes = item['bikesAvailable']
-            free = item['docksAvailable']
+            latitude = float(item['latitude'])
+            longitude = float(item['longitude'])
+            bikes = int(item['bikesAvailable'])
+            free = int(item['docksAvailable'])
             extra = {
                 'uid': item['stationId']
+                'slots': int(item['docksCount'])
             }
-            station = CocaColaStation(name, latitude, longitude, bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
             stations.append(station)
         self.stations = stations
-
-class CocaColaStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(CocaColaStation, self).__init__()
-
-        self.name      = name
-        self.latitude  = latitude
-        self.longitude = longitude
-        self.bikes     = bikes
-        self.free      = free
-        self.extra     = extra

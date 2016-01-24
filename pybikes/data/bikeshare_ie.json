@@ -2,6 +2,7 @@
     "instances": [
         {
             "tag": "cork",
+            "system_id": "cork",
             "meta": {
                 "latitude": 51.893604,
                 "longitude": -8.494174,
@@ -11,6 +12,7 @@
         },
         {
             "tag": "limerick",
+            "system_id": "limerick",
             "meta": {
                 "latitude": 52.668746,
                 "longitude": -8.627809,
@@ -20,6 +22,7 @@
         },
         {
             "tag": "galway",
+            "system_id": "galway",
             "meta": {
                 "latitude": 53.2783491544,
                 "longitude": -9.05069143207,
