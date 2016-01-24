@@ -11,7 +11,7 @@ class Velobike(BikeShareSystem):
 
     meta = {
         'system': 'Velobike',
-        'company': 'Velobike.kz, LLP'
+        'company': ['Velobike.kz, LLP', 'Smoove']
     }
 
     def __init__(self, tag, feed_url, meta):

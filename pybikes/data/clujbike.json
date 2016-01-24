@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "clujbike",
+            "meta": {
+                "city": "Cluj-Napoca",
+                "name": "Cluj Bike",
+                "country": "RO",
+                "longitude": 23.5975,
+                "latitude": 46.775
+            },
+            "feed_url": "http://portal.clujbike.eu/Station/Read"
+        }
+    ],
+    "system": "clujbike",
+    "class": "Clujbike"
+}

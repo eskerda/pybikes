@@ -2,15 +2,15 @@
 # Copyright (C) 2014, iomartin <iomartin@iomartin.net>
 # Distributed under the LGPL license, see LICENSE.txt
 
+import re
+
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-import re
 
-__all__ = ['CicloSampa', 'CicloSampaStation']
+STATIONS_RGX = ur'setEstacao\((.*?)\);'
+USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"  # NOQA
 
-STATIONS_RGX = 'setEstacao\((.*?)\);'
-USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
 
 class CicloSampa(BikeShareSystem):
     sync = True
@@ -23,21 +23,20 @@ class CicloSampa(BikeShareSystem):
         super(CicloSampa, self).__init__(tag, meta)
         self.feed_url = url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
         scraper.setUserAgent(USERAGENT)
 
         html_data = scraper.request(self.feed_url)
-        # clean the data up
-        html_data = ''.join(html_data).replace('"', '')
-
         stations = re.findall(STATIONS_RGX, html_data)
 
         self.stations = []
 
         for station in stations:
-            self.stations.append(CicloSampaStation(station.split(',')))
+            station = station.replace('"', '').split(',')
+            self.stations.append(CicloSampaStation(station))
+
 
 class CicloSampaStation(BikeShareStation):
     def __init__(self, data):

@@ -118,7 +118,7 @@
         "SambaNew": {
             "instances": [
                 {
-                    "url":"https://ww2.mobilicidade.com.br/bicicletar/mapaestacao.aspx",
+                    "url":"http://www.bicicletar.com.br/mapaestacao.aspx",
                     "tag":"bicicletar",
                     "meta":{
                         "latitude":-3.7321944,
@@ -129,7 +129,7 @@
                     }
                 },
                 {
-                    "url":"https://ww2.mobilicidade.com.br/cajubike/mapaestacao.aspx",
+                    "url":"http://www.cajubike.com/mapaestacao.aspx",
                     "tag":"cajubike",
                     "meta":{
                         "latitude":-10.987263,

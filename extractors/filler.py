@@ -198,8 +198,8 @@ def write_output(data, way):
     way.write('\n')
     way.close()
 
-def handle_System(cls, instances):
-    systemCls = eval('pybikes.%s' % cls)
+def handle_System(schema, cls, instances):
+    systemCls = pybikes.get_system_cls(schema, cls)
     lastlen = 0
 
     if args.interactive and args.geocode:
@@ -259,14 +259,14 @@ def main():
         instances = data['instances']
         system = data['system']
         sys.stderr.write('Found %d instances for %s\n' % (len(instances), system))
-        handle_System(data['class'], instances)
+        handle_System(system, data['class'], instances)
     elif isinstance(data['class'], dict):
         #MuliSystem
         for cls in data['class']:
             instances = data['class'][cls]['instances']
             system = data['system']
             sys.stderr.write('Found %d instances for %s\n' % (len(instances), system))
-            handle_System(cls, instances)
+            handle_System(system, cls, instances)
     else:
         raise Exception('Malformed data file')
 

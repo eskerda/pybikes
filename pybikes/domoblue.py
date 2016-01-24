@@ -58,7 +58,7 @@ class Domoblue(BikeShareSystem):
         scraper.setUserAgent(USER_AGENT)
 
         xml_data = get_xml(self.system_id, scraper)
-        xml_data = xml_data.encode('raw_unicode_escape').decode('utf-8')
+        xml_data = xml_data
         xml_dom = etree.fromstring(xml_data)
         stations = []
         for index, marker in enumerate(xml_dom.xpath('//marker')):
