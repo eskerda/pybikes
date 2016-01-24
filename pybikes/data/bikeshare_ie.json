@@ -31,6 +31,6 @@
             }
         }
     ],
-    "system": "cocacola",
-    "class": "CocaCola"
+    "system": "bikeshare_ie",
+    "class": "BikeshareIE"
 }

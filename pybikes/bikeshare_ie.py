@@ -24,6 +24,7 @@ class BikeshareIE(BikeShareSystem):
 
     def __init__(self, tag, meta, system_id):
         super(BikeshareIE, self).__init__(tag, meta)
+        self.system_id = system_id
 
     def update(self, scraper = None):
         if scraper is None:
@@ -31,8 +32,6 @@ class BikeshareIE(BikeShareSystem):
             
         stations = []
 
-        print self.system_id
-        
         html = scraper.request(FEED_URL)
         stations_html = re.findall(STATIONS_RGX, html)
         data = json.loads(stations_html[0])
