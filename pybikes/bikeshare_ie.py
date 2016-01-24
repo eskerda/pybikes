@@ -44,7 +44,7 @@ class BikeshareIE(BikeShareSystem):
             bikes = int(item['bikesAvailable'])
             free = int(item['docksAvailable'])
             extra = {
-                'uid': item['stationId']
+                'uid': item['stationId'],
                 'slots': int(item['docksCount'])
             }
             station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
