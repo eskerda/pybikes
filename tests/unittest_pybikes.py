@@ -26,6 +26,7 @@ class TestSystems(unittest.TestCase):
             - Tests okayness of 5 stations on the system
         """
         p_sys = pybikes.get(tag, key)
+        print('Testing %s' % p_sys.meta['name'])
         self._test_update(p_sys)
         station_string = ""
         if len(p_sys.stations) < 5:
