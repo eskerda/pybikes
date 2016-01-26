@@ -7,18 +7,16 @@ from . import utils
 
 class LaBici(BikeShareSystem):
 
-    sync = True
-
     meta = {
         'system': 'Labici',
-        'company': 'labici.net',
-        'country': 'Spain'
+        'company': 'Labici Bicicletas Públicas SL',
     }
-    base_url = 'http://labici.net/api-labici.php?module=parking&method=get-locations&city={city_code}'
 
-    def __init__(self, tag, meta):
+    base_url = 'http://labici.net/api-labici.php?module=parking&method=get-locations&city={city_code}'  # NOQA
+
+    def __init__(self, tag, meta, city_code):
         super(LaBici, self).__init__(tag, meta)
-        self.feed_url =   self.base_url.format(city_code=meta['city_code'])
+        self.feed_url = self.base_url.format(city_code=city_code)
 
     def update(self, scraper=None):
         if scraper is None:
@@ -26,19 +24,16 @@ class LaBici(BikeShareSystem):
 
         stations = []
 
-        data = json.loads(scraper.request(self.feed_url)
-        )
-
+        data = json.loads(scraper.request(self.feed_url))
         for item in data['data']:
             name = item['descripcion']
             latitude = float(item['latitude'])
             longitude = float(item['longitude'])
-            bikes = int(item['num_puestos'])
+            bikes = int(item['xocupados'])
             free = int(item['libres'])
-            status = 'offline' if item['xactivo'] == '0' else 'online'
             extra = {
-                'used_slots': item['ocupados'],
-                'status': status
+                'slots': item['num_puestos'],
+                'uid': item['id_aparcamiento'],
             }
             station = BikeShareStation(name, latitude, longitude,
                                        bikes, free, extra)
