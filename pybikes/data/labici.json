@@ -1,0 +1,73 @@
+{
+    "instances": [
+        {
+            "tag": "labici_altea",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Altea",
+                "latitude": 38.5989,
+                "longitude": -0.0515,
+                "city_code": "AL"
+            }
+        },
+        {
+            "tag": "labici_benidorm",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Benidorm",
+                "latitude": 38.5463,
+                "longitude": -0.1617,
+                "city_code": "BE"
+            }
+        },
+        {
+            "tag": "labici_gandia",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Gandia",
+                "latitude": 38.9667,
+                "longitude": -0.1833,
+                "city_code": "GA"
+            }
+        },
+        {
+            "tag": "labici_getafe",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Getafe",
+                "latitude": 40.3057,
+                "longitude": -3.7329,
+                "city_code": "GE"
+            }
+        },
+        {
+            "tag": "labici_murcia",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Murcia",
+                "latitude": 37.9984,
+                "longitude": -1.1555,
+                "city_code": "MU"
+            }
+        },
+        {
+            "tag": "labici_ponferrada",
+            "meta": {
+                "name": "LaBici.net",
+                "country": "ES",
+                "city": "Ponferrada",
+                "latitude": 42.5466,
+                "longitude": -6.5962,
+                "city_code": "PO"
+            }
+        }
+    ],
+    "company": "labici.net",
+    "system": "labici",
+    "class": "LaBici"
+}
