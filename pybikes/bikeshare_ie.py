@@ -18,7 +18,7 @@ class BikeshareIE(BikeShareSystem):
     sync = True
 
     meta = {
-        'system': 'BikeshareIE',
+        'system': 'Coca-Cola Zero® Bikes',
         'company': 'The National Transport Authority'
     }
 
