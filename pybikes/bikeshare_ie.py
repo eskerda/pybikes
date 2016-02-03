@@ -6,12 +6,11 @@ import re
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
-
-__all__ = ['BikeshareIE', 'BikeshareIEStation']
+from . import utils
 
 FEED_URL = "https://www.bikeshare.ie/"
 STATIONS_RGX = "var\ mapsfromcache\ =\ (.*?);"
+
 
 class BikeshareIE(BikeShareSystem):
 
@@ -26,10 +25,10 @@ class BikeshareIE(BikeShareSystem):
         super(BikeshareIE, self).__init__(tag, meta)
         self.system_id = system_id
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-            
+
         stations = []
 
         html = scraper.request(FEED_URL)
@@ -46,6 +45,7 @@ class BikeshareIE(BikeShareSystem):
                 'uid': item['stationId'],
                 'slots': int(item['docksCount'])
             }
-            station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
         self.stations = stations
