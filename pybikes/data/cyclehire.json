@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "cyclehire",
+            "meta": {
+                "latitude": 51.51135,
+                "longitude": -0.591562,
+                "city": "Slough",
+                "name": "Cycle Hire",
+                "country": "UK"
+            },
+            "feed_url": "https://www.cycleslough.com/hire/location/"
+        }
+    ],
+    "system": "encicla",
+    "class": "Encicla"
+}
