@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
+# Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+
+import re
+import lxml
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -15,8 +18,9 @@ class CycleHire(BikeShareSystem):
 
     meta = {'system': 'Cycle Hire', 'company': 'Groundwork, ITS'}
 
-    def __init__(self, tag, meta):
+    def __init__(self, tag, meta, feed_url):
         super(CycleHire, self).__init__(tag, meta)
+        self.feed_url = feed_url
 
     def update(self, scraper=None):
         if scraper is None:
@@ -47,6 +51,6 @@ class CycleHire(BikeShareSystem):
             free = int(re.search(r'\d+', raw_free).group())
 
             station = BikeShareStation(name, latitude, longitude, bikes, free,
-                                       extra)
+                                       {})
             stations.append(station)
         self.stations = stations

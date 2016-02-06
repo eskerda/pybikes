@@ -12,6 +12,6 @@
             "feed_url": "https://www.cycleslough.com/hire/location/"
         }
     ],
-    "system": "encicla",
-    "class": "Encicla"
+    "system": "cyclehire",
+    "class": "CycleHire"
 }
