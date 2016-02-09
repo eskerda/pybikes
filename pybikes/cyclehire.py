@@ -3,7 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-import lxml
+import lxml.html
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -34,8 +34,8 @@ class CycleHire(BikeShareSystem):
         #					 <p>Number of bikes available: 11</p>
         #					 <p>Number of free docking points: 21</p>'], ...
 
-        html = scraper.request(self.feed_url)
-        data = re.findall(DATA_RGX, html)[0]
+        page = scraper.request(self.feed_url)
+        data = re.findall(DATA_RGX, page)[0]
         raw_stations = re.findall(STATIONS_RGX, data)
         for raw_station in raw_stations:
             fields = raw_station.split(',')
