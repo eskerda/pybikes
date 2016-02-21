@@ -11,7 +11,7 @@ setup(
     author_email="eskerda@gmail.com",
     packages=["pybikes"],
     package_data={
-        'pybikes': ['data/*.json', 'kml/*.kml'],
+        'pybikes': ['data/*.json', 'kml/*.kml', 'kml/*.kml.gz'],
     },
     license="LICENSE.txt",
     description="A python library for scrapping bike sharing data",
@@ -19,6 +19,7 @@ setup(
     install_requires=[
         'requests>=2.6.0',
         'lxml',
-        'cssselect>=0.9'
+        'cssselect>=0.9',
+        'shapely>=1.5.13',
     ],
 )
