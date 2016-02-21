@@ -1,0 +1,56 @@
+{
+    "instances": [
+        {
+            "tag": "youbike-new-taipei",
+            "meta": {
+                "city": "新北市 New Taipei",
+                "country": "TW",
+                "latitude": 25.0169826,
+                "longitude": 121.4627868
+            },
+            "kml_name": "New Taipei City"
+        },
+        {
+            "tag": "youbike-taipei",
+            "meta": {
+                "city": "台北市 Taipei City",
+                "country": "TW",
+                "latitude":25.0329636,
+                "longitude":121.5654268
+            },
+            "kml_name": "Taipei"
+        },
+        {
+            "tag": "youbike-taoyuan",
+            "meta": {
+                "city": "桃園市 Taoyuan City",
+                "country": "TW",
+                "latitude":24.9936281,
+                "longitude":121.3009798
+            },
+            "kml_name": "Taoyuan"
+        },
+        {
+            "tag": "youbike-taichung",
+            "meta": {
+                "city": "臺中市 Taichung City",
+                "country": "TW",
+                "latitude":24.1477358,
+                "longitude":120.6736482
+            },
+            "kml_name": "Taichung"
+        },
+        {
+            "tag": "youbike-changhua",
+            "meta": {
+                "city": "彰化 Changhua County",
+                "country": "TW",
+                "latitude":24.0517963,
+                "longitude":120.5161352
+            },
+            "kml_name": "Changhua"
+        }
+    ],
+    "system": "youbike",
+    "class": "YouBike"
+}
