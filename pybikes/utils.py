@@ -60,6 +60,7 @@ class PyBikesScraper(object):
             data=data,
             proxies=self.getProxies(),
             headers=self.headers,
+            verify=False
         )
 
         data = response.text
