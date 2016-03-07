@@ -258,17 +258,6 @@
                 },
                 {
                     "meta": {
-                        "latitude": 51.381531,
-                        "city": "Bath",
-                        "name": "Bike in Bath",
-                        "longitude": -2.362404,
-                        "country": "GB"
-                    },
-                    "tag": "bike-in-bath",
-                    "endpoint": "http://www.bikeinbath.com/frmLeStazioni.aspx"
-                },
-                {
-                    "meta": {
                         "latitude": 45.853554,
                         "city": "Lecco",
                         "name": "Lecco",
