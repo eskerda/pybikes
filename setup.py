@@ -21,5 +21,6 @@ setup(
         'lxml',
         'cssselect>=0.9',
         'shapely>=1.5.13',
+        'demjson',
     ],
 )

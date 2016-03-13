@@ -1,0 +1,22 @@
+{
+    "instances": [
+        {
+            "tag": "cycle-hire-slough",
+            "meta": {
+                "latitude": 51.51135,
+                "longitude": -0.591562,
+                "city": "Slough",
+                "name": "Cycle Hire",
+                "country": "UK",
+                "company": [
+                    "Groundwork",
+                    "Slough Borough Council",
+                    "ITS"
+                ]
+            },
+            "feed_url": "https://www.cycleslough.com/hire/location/"
+        }
+    ],
+    "system": "cyclehire",
+    "class": "CycleHire"
+}
