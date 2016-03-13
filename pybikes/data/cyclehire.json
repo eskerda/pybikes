@@ -7,7 +7,12 @@
                 "longitude": -0.591562,
                 "city": "Slough",
                 "name": "Cycle Hire",
-                "country": "UK"
+                "country": "UK",
+                "company": [
+                    "Groundwork",
+                    "Slough Borough Council",
+                    "ITS"
+                ]
             },
             "feed_url": "https://www.cycleslough.com/hire/location/"
         }

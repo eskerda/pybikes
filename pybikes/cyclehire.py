@@ -3,20 +3,23 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-import lxml.html
+import demjson
+from lxml import html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
-
-DATA_RGX = r'var sites = \[(.*?)\]\;'
-STATIONS_RGX = r'\[(.*?)\]'
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes import utils
 
 
 class CycleHire(BikeShareSystem):
 
     sync = True
 
-    meta = {'system': 'Cycle Hire', 'company': 'Groundwork, ITS'}
+    meta = {
+        'system': 'Cycle Hire',
+        'company': [
+            'ITS',
+        ]
+    }
 
     def __init__(self, tag, meta, feed_url):
         super(CycleHire, self).__init__(tag, meta)
@@ -28,29 +31,32 @@ class CycleHire(BikeShareSystem):
 
         stations = []
 
-        # var sites = [['<p><strong>001-Slough Train Station</strong></p>',
-        #				 51.511350,-0.591562, ,
-        #				 '<p><strong>001-Slough Train Station</strong></p>
-        #					 <p>Number of bikes available: 11</p>
-        #					 <p>Number of free docking points: 21</p>'], ...
+        """ Looks like:
+        var sites = [['<p><strong>001-Slough Train Station</strong></p>',
+            51.511350,-0.591562, ,
+            '<p><strong>001-Slough Train Station</strong></p>
+            <p>Number of bikes available: 17</p>
+            <p>Number of free docking points: 15</p>'], ...];
+        """
+        DATA_RGX = r'var sites = (\[.+?\]);'
 
         page = scraper.request(self.feed_url)
-        data = re.findall(DATA_RGX, page)[0]
-        raw_stations = re.findall(STATIONS_RGX, data)
-        for raw_station in raw_stations:
-            fields = raw_station.split(',')
-
-            latitude = float(fields[1])
-            longitude = float(fields[2])
-
-            raw_status = fields[4]
-            tree = lxml.html.fromstring(raw_status)
-            name = tree.xpath('//p/strong/text()')[0]
-            _, raw_bikes, raw_free = tree.xpath('//p/text()')
-            bikes = int(re.search(r'\d+', raw_bikes).group())
-            free = int(re.search(r'\d+', raw_free).group())
-
+        data = re.search(DATA_RGX, page).group(1)
+        _stations = demjson.decode(data)
+        for _station in _stations:
+            latitude = float(_station[1])
+            longitude = float(_station[2])
+            tree = html.fromstring(_station[4])
+            name, bikes, free = tree.xpath('//p//text()')
+            bikes = int(re.search(r'\d+', bikes).group())
+            free = int(re.search(r'\d+', free).group())
+            # Matches (<number>)<symbol?><space?>name
+            uuid = re.search(r'(\d+)[\W]?\s*\w+', name)
+            uuid = uuid.group(1)
+            extra = {
+                'uuid': uuid
+            }
             station = BikeShareStation(name, latitude, longitude, bikes, free,
-                                       {})
+                                       extra)
             stations.append(station)
         self.stations = stations
