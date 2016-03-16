@@ -116,11 +116,13 @@ class BicincittaStation(BikeShareStation):
             name = name[:-1]
 
         # There's a bug that sometimes will give lat / lngs on 1E6
+        # http://www.tobike.it/frmLeStazioni.aspx?ID=22
+        # search for (7676168)
         lat = float(lat)
         lng = float(lng)
-        if lat > 85.0:
+        if lat > 85.0 or lat < -85.0:
             lat = lat / 1E6
-        if lng > 180.0:
+        if lng > 180.0 or lng < -180.0:
             lng = lng / 1E6
 
         self.name        = utils.clean_string(name)
