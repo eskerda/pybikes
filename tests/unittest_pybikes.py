@@ -23,7 +23,7 @@ class TestSystems(unittest.TestCase):
             - Tests okayness of 5 stations on the system
         """
         p_sys = pybikes.get(tag, key)
-        print(u'Testing %s, %s' % (p_sys.meta['name'], p_sys.meta.get('city')))
+        print(u'Testing {!r}, {!r}'.format(p_sys.meta['name'], p_sys.meta.get('city')))
         self._test_update(p_sys)
         station_string = ""
         if len(p_sys.stations) < 5:
@@ -263,11 +263,22 @@ def create_test_schema_method(schema):
         self._test_systems(schema)
     return test_schema
 
+
+def create_test_system_method(schema, tag):
+    def test_system(self):
+        key = getattr(keys, schema, None)
+        self._test_system(tag, key)
+    return test_system
+
 schemas = map(lambda name: re.sub(r'\.json$', '', name), pybikes.get_all_data())
 for schema in schemas:
     test_schema = create_test_schema_method(schema)
     test_schema.__name__ = 'test_%s' % schema
     setattr(TestSystems, test_schema.__name__, test_schema)
+    for clsname, instance in pybikes.get_instances(schema):
+        test_system = create_test_system_method(schema, instance['tag'])
+        test_system.__name__ = 'test_%s' % str(instance['tag'])
+        setattr(TestSystems, test_system.__name__, test_system)
 
 if __name__ == '__main__':
     unittest.main()
