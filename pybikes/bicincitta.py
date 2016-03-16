@@ -114,9 +114,17 @@ class BicincittaStation(BikeShareStation):
         if name[-1] == ":":
             name = name[:-1]
 
+        # There's a bug that sometimes will give lat / lngs on 1E6
+        lat = float(lat)
+        lng = float(lng)
+        if lat > 85.0:
+            lat = lat / 1E6
+        if lng > 180.0:
+            lng = lng / 1E6
+
         self.name        = utils.clean_string(name)
-        self.latitude    = float(lat)
-        self.longitude   = float(lng)
+        self.latitude    = lat
+        self.longitude   = lng
         self.bikes       = int(bikes)
         self.free        = int(free)
         self.extra       = { }
