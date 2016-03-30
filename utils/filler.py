@@ -2,6 +2,9 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+""" This is a really ugly and nasty script to ease filling up instance files
+without cities, latitudes and longitudes. Does more than it needs to """
+
 import os
 import sys, traceback
 import time
@@ -22,42 +25,42 @@ description = 'Given a PyBikes instance file, fills undeclared values'
 
 parser = argparse.ArgumentParser(description = description)
 
-parser.add_argument('input', metavar = "input", 
+parser.add_argument('input', metavar = "input",
                     type = argparse.FileType('r'), default = sys.stdin,
                     help="Input file")
 
-parser.add_argument('-o', metavar = "output", dest = "output", 
-                    default = sys.stdout, 
+parser.add_argument('-o', metavar = "output", dest = "output",
+                    default = sys.stdout,
                     help="Output file")
 
-parser.add_argument('-v', action="store_true", dest = 'verbose', 
+parser.add_argument('-v', action="store_true", dest = 'verbose',
                     default = False, help="Verbose output for debugging (no progress)")
 
-parser.add_argument('--proxy', metavar = "host:proxy", dest = 'proxy', 
+parser.add_argument('--proxy', metavar = "host:proxy", dest = 'proxy',
                     default = None, help="Use host:port as a proxy for site calls")
 
-parser.add_argument('--httpsproxy', metavar = "host:proxy", dest = 'httpsproxy', 
+parser.add_argument('--httpsproxy', metavar = "host:proxy", dest = 'httpsproxy',
                     default = None, help="Use host:port as an HTTPS proxy for site calls")
 
-parser.add_argument('--slugify', action="store_true", dest = 'slugify', 
+parser.add_argument('--slugify', action="store_true", dest = 'slugify',
                     default = False, help="Correct slugs, using the name as input")
 
-parser.add_argument('--geocode', action="store_true", dest = 'geocode', 
+parser.add_argument('--geocode', action="store_true", dest = 'geocode',
                     default = False, help="Correct geodata using Google GeoCoder")
 
 parser.add_argument('--correct_name', action="store_true", dest = "geoname",
                     default = False, help="Correct just the name using geodata")
 
-parser.add_argument('-f', action="store_true", dest = 'overwrite', 
+parser.add_argument('-f', action="store_true", dest = 'overwrite',
                     default = False, help="Overwrite already set variables")
 
-parser.add_argument('-i', action="store_true", dest = 'interactive', 
+parser.add_argument('-i', action="store_true", dest = 'interactive',
                     default = False, help="Interactive prompt to select between results")
 
-parser.add_argument('-c', action="store_true", dest = 'continuous', 
+parser.add_argument('-c', action="store_true", dest = 'continuous',
                     default = False, help="Continuous write output file")
 
-parser.add_argument('-s', action="store_true", dest = 'skip', 
+parser.add_argument('-s', action="store_true", dest = 'skip',
                     default = False, help="Skip complete instances")
 
 args = parser.parse_args()
@@ -125,7 +128,7 @@ def geocode(instance, systemCls, language, address = None):
             sys.stderr.write("latlng = new google.maps.LatLng(%s,%s)\n" % (str(latitude), str(longitude)))
             sys.stderr.write("geocoder.geocode({latLng:latlng}, function(res){console.log(res)})\n")
         query = (latitude, longitude)
-    try:        
+    try:
         info = geocoder.get(query, language = language)
     except Exception as e:
         print e
@@ -214,7 +217,7 @@ def handle_System(schema, cls, instances):
             raise Exception("name not set in instance %s" % str(instance))
         if args.skip and is_complete(instance):
             if args.verbose:
-                sys.stderr.write("%s Looks complete, passing by\n" % 
+                sys.stderr.write("%s Looks complete, passing by\n" %
                     repr(instance['meta']['name'])
                 )
             continue
