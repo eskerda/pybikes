@@ -1,4 +1,0 @@
-In this folder there are a set of scripts that generate valid
-PyBikes instance files by reading complete featured APIs and
-mashing it up with geocoded data. The idea is to ease how we
-generate these data files, with less manual and tedious steps
