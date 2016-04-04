@@ -175,7 +175,7 @@ class SmartShitty(BaseSystem):
                 bikes += stats['std'][0]
                 free = stats['std'][1]
 
-            if stats['ebikes']:
+            if stats['ebikes'] and stats['ebikes'][0] > 0:
                 bikes += stats['ebikes'][0]
                 extra['ebikes'] = stats['ebikes'][0]
                 extra['has_ebikes'] = True
