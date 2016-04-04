@@ -151,21 +151,41 @@ class SmartShitty(BaseSystem):
             scraper = utils.PyBikesScraper()
 
         page = scraper.request(self.feed_url)
-        stations_data = re.findall(SmartShitty.RGX_MARKERS, page.encode('utf-8'))
+        stations_data = re.findall(SmartShitty.RGX_MARKERS,
+                                   page.encode('utf-8'))
         stations = []
+        stats_query = """
+            //td[span[text() = "%s"]]/
+                following-sibling::td/text()
+        """
+
+        stats_rules = {
+            'std': 'Bicycles',
+            'ebikes': 'Electric bicycles',
+            # Kids bikes seem to not be implemented
+            # 'kids_bikes': 'Bicycles for kids'
+        }
+
         for station_data in stations_data:
             latitude, longitude, name, mess = station_data
             html_mess = html.fromstring(mess.decode('unicode_escape'))
-            availability = map(
-                lambda x: int(x.split(':')[1]),
-                html_mess.xpath("//div/ul/li/text()")
-            )
-            available_std_bikes, available_electrical_bikes, free = availability
-            bikes = available_std_bikes + available_electrical_bikes
+            stats = {}
+            bikes = 0
             extra = {}
-            if available_electrical_bikes > 0:
+
+            for k, rule in stats_rules.iteritems():
+                stats[k] = map(int, html_mess.xpath(stats_query % rule))
+
+            if stats['std']:
+                bikes += stats['std'][0]
+                free = stats['std'][1]
+
+            if stats['ebikes']:
+                bikes += stats['ebikes'][0]
+                extra['ebikes'] = stats['ebikes'][0]
                 extra['has_ebikes'] = True
-                extra['ebikes'] = available_electrical_bikes
-            station = BikeShareStation(name, float(latitude), float(longitude), bikes, free, extra)
+
+            station = BikeShareStation(name, float(latitude), float(longitude),
+                                       bikes, free, extra)
             stations.append(station)
         self.stations = stations
