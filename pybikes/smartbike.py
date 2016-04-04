@@ -9,11 +9,6 @@ from lxml import html
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = [
-    'SmartBike', 'SmartBikeStation',
-    'SmartShitty', 'SmartShittyStation'
-]
-
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
 ID_ADD_RGX_V = 'idStation\=\"\+(.*)\+\"\&addressnew\=(.*)\+\"\&s\_id\_idioma'
