@@ -1118,15 +1118,15 @@
             "city_uid": "88"
         },
         {
-            "domain": "mb", 
-            "tag": "bubi", 
+            "domain": "mb",
+            "tag": "bubi",
             "meta": {
-                "latitude": 47.497912, 
-                "city": "Budapest", 
-                "name": "MOL Bubi", 
-                "longitude": 19.040235, 
+                "latitude": 47.497912,
+                "city": "Budapest",
+                "name": "MOL Bubi",
+                "longitude": 19.040235,
                 "country": "HU"
-            }, 
+            },
             "city_uid": 228
         },
         {
@@ -1260,8 +1260,20 @@
                 "city": "Katowice"
             },
             "city_uid": 282
+        },
+        {
+            "domain": "hg",
+            "tag": "heraeus-hanau",
+            "meta": {
+                "name": "Heraeus Hanau",
+                "latitude": 50.133333,
+                "longitude": 8.916667,
+                "city": "Hanau",
+                "country": "DE"
+            },
+            "city_uid": 301
         }
     ],
-    "system": "nextbike", 
+    "system": "nextbike",
     "class": "Nextbike"
 }
