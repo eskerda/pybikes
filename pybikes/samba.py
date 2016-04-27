@@ -158,8 +158,8 @@ class SambaArgentina(BaseSystem):
             longitude = float(item[2])
             bikes = int(item[7])
             free = int(item[8])
-            online_status = item[5]
-            operation_status = item[6]
+            online_status = item[4]
+            operation_status = item[5]
             extra = {
                 'uid': item[11],
                 'status': self.get_status(online_status, operation_status)
