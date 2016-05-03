@@ -1,72 +1,97 @@
 {
-    "instances": [
-        {
-            "tag": "c-velo",
-            "meta": {
-                "latitude": 45.770958,
-                "longitude": 3.073871,
-                "city": "Clermont-Ferrand",
-                "name": "C.Vélo",
-                "country": "FR"
-            },
-            "feed_url": "http://www.c-velo.fr/sag_vls_stations.html"
+    "system":"smoove",
+    "class":{
+        "SmooveAPI":{
+            "instances":[
+                {
+                    "tag":"citybikefinland-hsk",
+                    "meta":{
+                        "city":"Helsinki",
+                        "name":"CityBikeFinland",
+                        "country":"FI",
+                        "company":[
+                            "Helsinki City Transport",
+                            "Helsinki Regional Transport Authority",
+                            "CityBikeFinland",
+                            "Smoove SAS",
+                            "Moventia"
+                        ],
+                        "longitude":24.938379,
+                        "latitude":60.16985569999999
+                    },
+                    "feed_url":"https://helsinki-fi-smoove.klervi.net/api-public/stations"
+                }
+            ]
         },
-        {
-            "tag": "velivert",
-            "meta": {
-                "latitude": 45.396667,
-                "longitude": 4.290833,
-                "city": "Saint-Étienne",
-                "name": "VéliVert",
-                "country": "FR"
-            },
-            "feed_url": "http://www.velivert.fr/sag_vls_stations.html"
-        },
-        {
-            "tag": "velopop",
-            "meta": {
-                "latitude": 43.943689,
-                "longitude": 4.805833,
-                "city": "Avignon",
-                "name": "Vélopop",
-                "country": "FR"
-            },
-            "feed_url": "http://www.velopop.fr/stations.html"
-        },
-        {
-            "tag": "reflex-grandchalon",
-            "meta": {
-                "latitude": 46.819904,
-                "longitude": 4.837021,
-                "city": "Chalon-sur-Saône",
-                "name": "Réflex",
-                "country": "FR"
-            },
-            "feed_url": "http://www.reflex-grandchalon.fr/sag_vls_stations.html"
-        },
-        {
-            "tag": "libelo",
-            "meta": {
-                "latitude": 44.922726,
-                "longitude": 4.905634,
-                "city": "Valence",
-                "name": "Libélo",
-                "country": "FR"
-            },
-            "feed_url": "http://www.velo-libelo.fr/sag_stations_vls.html"
-        },
-        {
-            "tag": "batumvelo",
-            "meta": {
-                "latitude": 41.660906,
-                "longitude": 41.678835,
-                "city": "Batumi",
-                "name": "Batumvelo",
-                "country": "GE"
-            },
-            "feed_url": "http://cli-velo-batumi.gir.fr/sag_map.html"
+        "Smoove":{
+            "instances":[
+                {
+                    "tag":"c-velo",
+                    "meta":{
+                        "latitude":45.770958,
+                        "city":"Clermont-Ferrand",
+                        "name":"C.V\u00e9lo",
+                        "longitude":3.073871,
+                        "country":"FR"
+                    },
+                    "feed_url":"http://www.c-velo.fr/sag_vls_stations.html"
+                },
+                {
+                    "tag":"velivert",
+                    "meta":{
+                        "latitude":45.396667,
+                        "city":"Saint-\u00c9tienne",
+                        "name":"V\u00e9liVert",
+                        "longitude":4.290833,
+                        "country":"FR"
+                    },
+                    "feed_url":"http://www.velivert.fr/sag_vls_stations.html"
+                },
+                {
+                    "tag":"velopop",
+                    "meta":{
+                        "latitude":43.943689,
+                        "city":"Avignon",
+                        "name":"V\u00e9lopop",
+                        "longitude":4.805833,
+                        "country":"FR"
+                    },
+                    "feed_url":"http://www.velopop.fr/stations.html"
+                },
+                {
+                    "tag":"reflex-grandchalon",
+                    "meta":{
+                        "latitude":46.819904,
+                        "city":"Chalon-sur-Sa\u00f4ne",
+                        "name":"R\u00e9flex",
+                        "longitude":4.837021,
+                        "country":"FR"
+                    },
+                    "feed_url":"http://www.reflex-grandchalon.fr/sag_vls_stations.html"
+                },
+                {
+                    "tag":"libelo",
+                    "meta":{
+                        "latitude":44.922726,
+                        "city":"Valence",
+                        "name":"Lib\u00e9lo",
+                        "longitude":4.905634,
+                        "country":"FR"
+                    },
+                    "feed_url":"http://www.velo-libelo.fr/sag_stations_vls.html"
+                },
+                {
+                    "tag":"batumvelo",
+                    "meta":{
+                        "latitude":41.660906,
+                        "city":"Batumi",
+                        "name":"Batumvelo",
+                        "longitude":41.678835,
+                        "country":"GE"
+                    },
+                    "feed_url":"http://cli-velo-batumi.gir.fr/sag_map.html"
+                }
+            ]
         }
-    ],
-    "system": "smoove",
-    "class": "Smoove"
+    }
 }
