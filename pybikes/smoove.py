@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+# Copyright (C) 2016, Lluis Esquerda <eskerda@gmail.com>
 # Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -54,3 +56,29 @@ class Smoove(BikeShareSystem):
                                        int(bikes), int(free), extra)
             stations.append(station)
         self.stations = stations
+
+
+class SmooveAPI(Smoove):
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        data = json.loads(scraper.request(self.feed_url))
+
+        for s in data['result']:
+            lat, lng = map(float, s['coordinates'].split(','))
+            name = s['name']
+            bikes = int(s['avl_bikes'])
+            free = int(s['free_slots'])
+            total = int(s['total_slots'])
+            status = 'online' if s['operative'] else 'offline'
+            extra = {
+                'slots': total,
+                'status': status,
+            }
+            idx = next(iter(re.findall(r'^(\w+\d+)\s+', name)), None)
+            if idx:
+                extra['uid'] = idx
+
+            station = BikeShareStation(name, lat, lng, bikes, free, extra)
+            self.stations.append(station)
