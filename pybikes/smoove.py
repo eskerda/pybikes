@@ -75,6 +75,7 @@ class SmooveAPI(Smoove):
             extra = {
                 'slots': total,
                 'status': status,
+                'bank_card': s['style'] == 'CB',
             }
             idx = next(iter(re.findall(r'^(\w+\d+)\s+', name)), None)
             if idx:
