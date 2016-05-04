@@ -2,27 +2,7 @@
     "system":"smoove",
     "class":{
         "SmooveAPI":{
-            "instances":[
-                {
-                    "tag":"citybikes-helsinki",
-                    "meta":{
-                        "city":"Helsinki",
-                        "name":"City bikes",
-                        "country":"FI",
-                        "company":[
-                            "Helsinki City Transport",
-                            "Helsinki Regional Transport",
-                            "CityBikeFinland",
-                            "Smoove SAS",
-                            "Moventia",
-                            "Alepa"
-                        ],
-                        "longitude":24.938379,
-                        "latitude":60.16985569999999
-                    },
-                    "feed_url":"https://helsinki-fi-smoove.klervi.net/api-public/stations"
-                }
-            ]
+            "instances":[]
         },
         "Smoove":{
             "instances":[
