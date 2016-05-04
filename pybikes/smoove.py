@@ -59,12 +59,13 @@ class Smoove(BikeShareSystem):
 
 
 class SmooveAPI(Smoove):
-
+    # Example feed:
+    # https://helsinki-fi-smoove.klervi.net/api-public/stations
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
 
         data = json.loads(scraper.request(self.feed_url))
-
+        stations = []
         for s in data['result']:
             lat, lng = map(float, s['coordinates'].split(','))
             name = s['name']
@@ -82,4 +83,6 @@ class SmooveAPI(Smoove):
                 extra['uid'] = idx
 
             station = BikeShareStation(name, lat, lng, bikes, free, extra)
-            self.stations.append(station)
+            stations.append(station)
+
+        self.stations = stations

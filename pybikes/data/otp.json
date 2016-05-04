@@ -1,0 +1,25 @@
+{
+    "system":"otp",
+    "class": "OTP",
+    "instances":[
+        {
+            "tag":"citybikes-helsinki",
+            "meta":{
+                "city":"Helsinki",
+                "name":"City bikes",
+                "country":"FI",
+                "company":[
+                    "Helsinki City Transport",
+                    "Helsinki Regional Transport",
+                    "CityBikeFinland",
+                    "Smoove SAS",
+                    "Moventia",
+                    "Alepa"
+                ],
+                "longitude":24.938379,
+                "latitude":60.16985569999999
+            },
+            "feed_url":"https://dev.hsl.fi/matka.hsl.fi/otp/routers/hsl/bike_rental"
+        }
+    ]
+}
