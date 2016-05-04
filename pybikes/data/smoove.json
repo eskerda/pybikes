@@ -4,7 +4,7 @@
         "SmooveAPI":{
             "instances":[
                 {
-                    "tag":"citybikefinland-hsk",
+                    "tag":"citybikes-helsinki",
                     "meta":{
                         "city":"Helsinki",
                         "name":"City bikes",
