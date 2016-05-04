@@ -7,14 +7,15 @@
                     "tag":"citybikefinland-hsk",
                     "meta":{
                         "city":"Helsinki",
-                        "name":"CityBikeFinland",
+                        "name":"City bikes",
                         "country":"FI",
                         "company":[
                             "Helsinki City Transport",
-                            "Helsinki Regional Transport Authority",
+                            "Helsinki Regional Transport",
                             "CityBikeFinland",
                             "Smoove SAS",
-                            "Moventia"
+                            "Moventia",
+                            "Alepa"
                         ],
                         "longitude":24.938379,
                         "latitude":60.16985569999999
