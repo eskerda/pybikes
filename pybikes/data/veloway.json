@@ -1,50 +1,57 @@
 {
-    "instances": [
-        {
-            "tag": "velobleu",
-            "meta": {
-                "latitude": 43.695949,
-                "city": "Nice",
-                "name": "Vélo Bleu",
-                "longitude": 7.271413,
-                "country": "FR"
-            },
-            "feed_url": "http://www.velobleu.org/cartoV2/libProxyCarto.asp"
+    "system": "veloway",
+    "class": {
+        "Veloway": {
+            "instances": [
+                {
+                    "tag": "velobleu",
+                    "meta": {
+                        "latitude": 43.695949,
+                        "city": "Nice",
+                        "name": "Vélo Bleu",
+                        "longitude": 7.271413,
+                        "country": "FR"
+                    },
+                    "feed_url": "http://www.velobleu.org/cartoV2/libProxyCarto.asp"
+                },
+                {
+                    "tag": "velocea",
+                    "meta": {
+                        "latitude": 47.6559,
+                        "city": "Vannes",
+                        "name": "Vélocéa",
+                        "longitude": -2.7603,
+                        "country": "FR"
+                    },
+                    "feed_url": "http://www.velocea.fr/cartoV2/libProxyCarto.asp"
+                },
+                {
+                    "tag": "vel-in",
+                    "meta": {
+                        "latitude": 50.95,
+                        "city": "Calais",
+                        "name": "Vél'in",
+                        "longitude": 1.85,
+                        "country": "FR"
+                    },
+                    "feed_url": "http://www.vel-in.fr/cartoV2/libProxyCarto.asp"
+                }
+            ]
         },
-        {
-            "tag": "dkvelo",
-            "meta": {
-                "latitude": 51.0383,
-                "city": "Dunkerque",
-                "name": "DK'Vélo",
-                "longitude": 2.3775,
-                "country": "FR"
-            },
-            "feed_url": "http://www.dkbus.com/cartoV3/libProxyCarto.asp"
-        },
-        {
-            "tag": "velocea",
-            "meta": {
-                "latitude": 47.6559,
-                "city": "Vannes",
-                "name": "Vélocéa",
-                "longitude": -2.7603,
-                "country": "FR"
-            },
-            "feed_url": "http://www.velocea.fr/cartoV2/libProxyCarto.asp"
-        },
-        {
-            "tag": "vel-in",
-            "meta": {
-                "latitude": 50.95,
-                "city": "Calais",
-                "name": "Vél'in",
-                "longitude": 1.85,
-                "country": "FR"
-            },
-            "feed_url": "http://www.vel-in.fr/cartoV2/libProxyCarto.asp"
+        "VelowayDrupal": {
+            "instances": [
+                {
+                    "tag": "dkvelo",
+                    "meta": {
+                        "latitude": 51.0383,
+                        "city": "Dunkerque",
+                        "name": "DK'Vélo",
+                        "longitude": 2.3775,
+                        "country": "FR"
+                    },
+                    "feed_url": "http://www.dk-velo.fr"
+                }
+            ]
         }
-    ], 
-    "system": "veloway", 
-    "class": "Veloway"
+    }
 }
