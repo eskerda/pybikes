@@ -38,6 +38,7 @@ def clean_string(dirty):
 class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
+    ssl_verification = True
 
     def __init__(self, cachedict=None):
         self.headers = {'User-Agent': 'PyBikes'}
@@ -52,7 +53,6 @@ class PyBikesScraper(object):
                 default_encoding='UTF-8'):
         if self.cachedict and url in self.cachedict:
             return self.cachedict[url]
-
         response = self.session.request(
             method=method,
             url=url,
@@ -60,7 +60,9 @@ class PyBikesScraper(object):
             data=data,
             proxies=self.getProxies(),
             headers=self.headers,
-            verify=False
+            # some endpoints might fail verification, so it's up to the spider
+            # to disable it
+            verify=self.ssl_verification,
         )
 
         data = response.text
