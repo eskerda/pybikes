@@ -1,5 +1,5 @@
 pybikes
-=========
+=======
 ![pybikes](http://citybik.es/files/pybikes.png)
 
 pybikes provides a set of tools to scrape bike sharing data from different
@@ -11,8 +11,21 @@ sharing projects. More importantly, it powers the [CityBikes] [1] project, and
 is composed of a set of classes and a pack of data files that provide instances
 for all different systems.
 
+Installation
+------------
+
+Install directly from GitHub:
+```bash
+pip install git+https://github.com/eskerda/pybikes.git
+```
+
+Or after downloading/cloning the source:
+```bash
+python setup.py install
+```
+
 Usage
-------
+-----
 ```python
 >>> import pybikes
 
