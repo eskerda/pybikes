@@ -89,7 +89,7 @@ class VelowayDrupal(Veloway):
 
     # Station 01 - Gare SNCF (Vélos libres : 9 Places libres
     station_rgx = (ur'Station\s+(?P<id>\d+)\s*-\s*'
-                   ur'(?P<name>.+)\s*'
+                   ur'(?P<name>.+)\s+'
                    ur'\(Vélos\s+libres\s*:\s*(?P<bikes>\d+)\s+'
                    ur'Places\s+libres\s*:\s*(?P<free>\d+)\)')
 
