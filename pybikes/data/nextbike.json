@@ -1272,6 +1272,18 @@
                 "country": "DE"
             },
             "city_uid": 301
+        },
+        {
+            "domain": "lp",
+            "tag": "lodzki-rower-publiczny",
+            "meta": {
+                "name": "Łódzki Rower Publiczny",
+                "latitude": 51.7677,
+                "longitude": 19.4597,
+                "city": "Łódź",
+                "country": "PL"
+            },
+            "city_uid": 330
         }
     ],
     "system": "nextbike",
