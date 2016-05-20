@@ -234,8 +234,8 @@ class TestDataFiles(unittest.TestCase):
         for schema in schemas:
             instances = pybikes.get_instances(schema)
             for _class, instance in instances:
-                self._test_instance_unique(instance, schema, _class)
                 self._test_instance_fields(instance, schema, _class)
+                self._test_instance_unique(instance, schema, _class)
 
     def _test_instance_unique(self, instance, schema, _class):
         if instance['tag'] in self.tags:
@@ -262,17 +262,21 @@ class TestDataFiles(unittest.TestCase):
         # Some fields may be defined as class attributes and then passed into
         # instance meta, so we need to instantiate it
         # We do not really need keys here
+        msg = 'File: %r' % schema
+        self.assertIn('tag', _instance, msg=msg)
+        self.assertIn('meta', _instance, msg=msg)
+
         instance = pybikes.get(_instance['tag'], key='foobar')
         meta = instance.meta
         msg = 'instance {!r}. File: {}'.format(
             meta, schema
         )
         # Test bare minimum definitions of networks
+
         for field in ['latitude', 'longitude']:
             self.assertIn(field, meta, msg=('Missing %r on ' % field) + msg)
             self.assertIsInstance(meta[field], float,
                                   msg=('Error in %r on ' % field) + msg)
-
         for field in ['city', 'country', 'name']:
             self.assertIn(field, meta, msg=('Missing %r on ' % field) + msg)
             self.assertIsInstance(meta[field], basestring,
@@ -297,8 +301,8 @@ for schema in schemas:
     test_schema.__name__ = 'test_%s' % schema
     setattr(TestSystems, test_schema.__name__, test_schema)
     for clsname, instance in pybikes.get_instances(schema):
-        test_system = create_test_system_method(schema, instance['tag'])
-        test_system.__name__ = 'test_%s' % str(instance['tag'])
+        test_system = create_test_system_method(schema, instance.get('tag'))
+        test_system.__name__ = 'test_%s' % str(instance.get('tag'))
         setattr(TestSystems, test_system.__name__, test_system)
 
 if __name__ == '__main__':
