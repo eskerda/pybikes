@@ -1,4 +1,4 @@
-pybikes
+pybikes ![build](https://api.travis-ci.org/eskerda/pybikes.svg?branch=master)
 =======
 ![pybikes](http://citybik.es/files/pybikes.png)
 
