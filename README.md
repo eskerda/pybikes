@@ -23,7 +23,6 @@ Or after downloading/cloning the source:
 ```bash
 python setup.py install
 ```
-
 Usage
 -----
 ```python
