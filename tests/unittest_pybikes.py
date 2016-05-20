@@ -6,7 +6,16 @@ import unittest
 import sys
 
 import pybikes
-import keys
+try:
+    import keys
+except ImportError:
+    print("Keys for testing not found, going to use invalid keys")
+
+    class DumbObject(object):
+        def __getattr__(self, name):
+            return 'invalid key'
+
+    keys = DumbObject()
 
 
 class TestSystems(unittest.TestCase):
@@ -224,11 +233,11 @@ class TestDataFiles(unittest.TestCase):
         schemas = pybikes.get_all_data()
         for schema in schemas:
             instances = pybikes.get_instances(schema)
-            for _, instance in instances:
-                self._test_instance_unique(instance, schema)
-                self._test_instance_fields(instance, schema)
+            for _class, instance in instances:
+                self._test_instance_unique(instance, schema, _class)
+                self._test_instance_fields(instance, schema, _class)
 
-    def _test_instance_unique(self, instance, schema):
+    def _test_instance_unique(self, instance, schema, _class):
         if instance['tag'] in self.tags:
             msg = (
                 'Tag {} in {} from {} is not unique. '.format(
@@ -248,10 +257,11 @@ class TestDataFiles(unittest.TestCase):
             'schema': schema
         }
 
-    def _test_instance_fields(self, _instance, schema):
+    def _test_instance_fields(self, _instance, schema, _class):
         self.longMessage = True
         # Some fields may be defined as class attributes and then passed into
         # instance meta, so we need to instantiate it
+        # We do not really need keys here
         instance = pybikes.get(_instance['tag'], key='foobar')
         meta = instance.meta
         msg = 'instance {!r}. File: {}'.format(
