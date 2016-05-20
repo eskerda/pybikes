@@ -252,10 +252,13 @@ class TestDataFiles(unittest.TestCase):
         self.longMessage = True
         msg = '{} contains errors. File: {}'.format(instance, schema)
         meta = instance['meta']
+        # Test bare minimum definitions of networks
         self.assertIn('latitude', meta, msg=msg)
         self.assertIn('longitude', meta, msg=msg)
         self.assertIsInstance(meta['latitude'], float, msg=msg)
         self.assertIsInstance(meta['longitude'], float, msg=msg)
+        self.assertIn('city', meta, msg=msg)
+        self.assertIn('country', meta, msg=msg)
 
 
 def create_test_schema_method(schema):
