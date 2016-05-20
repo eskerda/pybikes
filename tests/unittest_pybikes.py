@@ -248,17 +248,25 @@ class TestDataFiles(unittest.TestCase):
             'schema': schema
         }
 
-    def _test_instance_fields(self, instance, schema):
+    def _test_instance_fields(self, _instance, schema):
         self.longMessage = True
-        msg = '{} contains errors. File: {}'.format(instance, schema)
-        meta = instance['meta']
+        # Some fields may be defined as class attributes and then passed into
+        # instance meta, so we need to instantiate it
+        instance = pybikes.get(_instance['tag'], key='foobar')
+        meta = instance.meta
+        msg = 'instance {!r}. File: {}'.format(
+            meta, schema
+        )
         # Test bare minimum definitions of networks
-        self.assertIn('latitude', meta, msg=msg)
-        self.assertIn('longitude', meta, msg=msg)
-        self.assertIsInstance(meta['latitude'], float, msg=msg)
-        self.assertIsInstance(meta['longitude'], float, msg=msg)
-        self.assertIn('city', meta, msg=msg)
-        self.assertIn('country', meta, msg=msg)
+        for field in ['latitude', 'longitude']:
+            self.assertIn(field, meta, msg=('Missing %r on ' % field) + msg)
+            self.assertIsInstance(meta[field], float,
+                                  msg=('Error in %r on ' % field) + msg)
+
+        for field in ['city', 'country', 'name']:
+            self.assertIn(field, meta, msg=('Missing %r on ' % field) + msg)
+            self.assertIsInstance(meta[field], basestring,
+                                  msg=('Error in %r on ' % field) + msg)
 
 
 def create_test_schema_method(schema):
