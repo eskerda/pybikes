@@ -763,11 +763,8 @@
             "domain": "ln",
             "tag": "lrm-lublin-poland-lublin",
             "meta": {
-                "latitude": 51.2597,
                 "city": "Lublin",
-                "name": "LRM",
-                "longitude": 22.5658,
-                "country": "PL"
+                "name": "LRM"
             },
             "city_uid": "251"
         },
