@@ -9,7 +9,7 @@ from . import utils
 
 __all__ = ['Bikeu', 'BikeuStation']
 
-REGEX = "var stationsData = (\[.*\]);"
+REGEX = "setConfig\('StationsData',(\[.*\])\);"
 
 class Bikeu(BikeShareSystem):
 
