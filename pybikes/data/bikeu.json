@@ -2,7 +2,7 @@
     "instances": [
         {
             "tag": "bbbike",
-            "url": "https://www.bbbike.eu/LocationsMap.aspx",
+            "url": "https://bbbike.eu/mapa-stacji.html",
             "meta": {
                 "latitude": 49.8225,
                 "city": "Bielsko-Biała",
@@ -13,7 +13,7 @@
         },
         {
             "tag": "bikes-srm",
-            "url": "https://www.bikes-srm.pl",
+            "url": "https://bikes-srm.pl/mapa-stacji.html",
             "meta": {
                 "latitude": 53.438056,
                 "city": "Szczecin",
@@ -24,7 +24,7 @@
         },
         {
             "tag": "bikeu-bra",
-            "url": "https://www.bra.org.pl",
+            "url": "https://www.bra.org.pl/mapa-stacji.html",
             "meta": {
                 "latitude": 53.12193,
                 "city": "Bydgoszcz",
