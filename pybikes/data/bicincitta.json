@@ -936,17 +936,6 @@
                     }
                 },
                 {
-                    "tag": "biciamo",
-                    "system_id": 65,
-                    "meta": {
-                        "name": "BICIamo",
-                        "city": "Cantù",
-                        "country": "IT",
-                        "latitude": 45.73626,
-                        "longitude": 9.12569
-                    }
-                },
-                {
                     "tag": "casalmaggiore",
                     "system_id": 40,
                     "meta": {
