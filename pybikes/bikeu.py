@@ -59,3 +59,10 @@ class BikeuStation(BikeShareStation):
         self.name = info['Name']
         self.bikes = int(info['TotalAvailableBikes'])
         self.free = int(info['TotalLocks']) - self.bikes
+        # Assumedly there's bike info too
+        bike_info = info['Stations']['TKStation'][0]['AvailableBikes']
+        bikes = bike_info.get('TKBike', [])
+        self.extra = {
+            'uid': info['id'],
+            'bike_uids': map(lambda b: b['BikeIdentifier'], bikes),
+        }
