@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "mvgrad",
+            "meta": {
+                "city": "München",
+                "name": "MVG Rad",
+                "country": "DE",
+                "longitude": 11.575555,
+                "latitude": 48.137222
+            },
+            "city_uid": 268
+        }
+    ],
+    "system": "mvgrad",
+    "class": "Mvgrad"
+}
