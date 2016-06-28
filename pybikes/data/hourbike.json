@@ -1,0 +1,50 @@
+{
+    "instances": [
+        {
+            "tag": "readybike",
+            "feed_url": "https://www.readybike.co.uk/map-of-stations.html",
+            "meta": {
+                "latitude": 51.434332,
+                "longitude": -0.96866,
+                "city": "Reading",
+                "name": "Readybike",
+                "country": "GB"
+            }
+        },
+        {
+            "tag": "citybike-liverpool",
+            "feed_url": "https://www.citybikeliverpool.co.uk/map-of-stations.html",
+            "meta": {
+                "latitude": 53.358322,
+                "longitude": -2.864017,
+                "city": "Liverpool",
+                "name": "Citybike Liverpool",
+                "country": "GB"
+            }
+        },
+        {
+            "tag": "hirebike",
+            "feed_url": "https://www.hirebikelincoln.co.uk/map-of-stations.html",
+            "meta": {
+                "latitude": 53.2145628869,
+                "longitude": -0.603208756027,
+                "city": "Lincoln",
+                "name": "Hirebike",
+                "country": "GB"
+            }
+        },
+        {
+            "tag": "sheffieldbycycle",
+            "feed_url": "https://www.sheffieldbicycle.co.uk/map-of-stations.html",
+            "meta": {
+                "latitude": 53.2145628869,
+                "longitude": -0.603208756027,
+                "city": "Sheffield",
+                "name": "Sheffield By Cycle",
+                "country": "GB"
+            }
+        }
+    ],
+    "system": "hourbike",
+    "class": "Hourbike"
+}
