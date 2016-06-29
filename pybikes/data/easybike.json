@@ -3,13 +3,35 @@
         {
             "tag": "easybike-didymoteicho",
             "meta": {
-                "latitude": 41.35,
+                "latitude": 41.3502539849,
                 "city": "Didymoteicho",
                 "name": "EasyBike",
-                "longitude": 26.5,
+                "longitude": 26.4972960949,
                 "country": "GR"
             },
-            "city_uid": "Didymoteicho"
+            "city_uid": "didymoteicho"
+        },
+        {
+            "tag": "easybike-glyfada",
+            "meta": {
+                "latitude": 37.8715809825,
+                "city": "Glyfada",
+                "name": "EasyBike",
+                "longitude": 23.7355544376,
+                "country": "GR"
+            },
+            "city_uid": "glyfada"
+        },
+        {
+            "tag": "easybike-igoumenitsa",
+            "meta": {
+                "latitude": 39.5005770633,
+                "city": "Igoumenitsa",
+                "name": "EasyBike",
+                "longitude": 20.2635206985,
+                "country": "GR"
+            },
+            "city_uid": "igoumenitsa"
         },
         {
             "tag": "easybike-ioannina",
@@ -20,7 +42,7 @@
                 "longitude": 20.8522784,
                 "country": "GR"
             },
-            "city_uid": "Ioannina"
+            "city_uid": "ioannina"
         },
         {
             "tag": "easybike-karditsa",
@@ -31,7 +53,7 @@
                 "longitude": 21.9211192,
                 "country": "GR"
             },
-            "city_uid": "Karditsas"
+            "city_uid": "karditsa"
         },
         {
             "tag": "easybike-kavala",
@@ -42,7 +64,7 @@
                 "longitude": 24.4122164,
                 "country": "GR"
             },
-            "city_uid": "Kavala"
+            "city_uid": "kavala_new"
         },
         {
             "tag": "easybike-drapetsona",
@@ -53,7 +75,18 @@
                 "longitude": 23.6282598,
                 "country": "GR"
             },
-            "city_uid": "Drapetsona"
+            "city_uid": "keratsini-drapetsona"
+        },
+        {
+            "tag": "easybike-kinouria",
+            "meta": {
+                "latitude": 37.1476704305,
+                "city": "Kinouria",
+                "name": "EasyBike",
+                "longitude": 22.8933729935,
+                "country": "GR"
+            },
+            "city_uid": "kinouria"
         },
         {
             "tag": "easybike-komotini",
@@ -64,18 +97,51 @@
                 "longitude": 25.4041307,
                 "country": "GR"
             },
-            "city_uid": "Komotinis"
+            "city_uid": "komotini"
         },
         {
             "tag": "easybike-nafpaktos",
             "meta": {
-                "latitude": 38.3925957,
+                "latitude": 38.3904882173,
                 "city": "Nafpaktos",
                 "name": "EasyBike",
-                "longitude": 21.8287638,
+                "longitude": 21.8241262436,
                 "country": "GR"
             },
-            "city_uid": "Nafpaktos"
+            "city_uid": "nafpaktos"
+        },
+        {
+            "tag": "easybike-patra",
+            "meta": {
+                "latitude": 38.2410966371,
+                "city": "Patra",
+                "name": "EasyBike",
+                "longitude": 21.7259683418,
+                "country": "GR"
+            },
+            "city_uid": "patra"
+        },
+        {
+            "tag": "easybike-rethymno",
+            "meta": {
+                "latitude": 35.3667571777,
+                "city": "Rethymno",
+                "name": "EasyBike",
+                "longitude": 24.4832845736,
+                "country": "GR"
+            },
+            "city_uid": "rethymno"
+        },
+        {
+            "tag": "easybike-samos",
+            "meta": {
+                "latitude": 37.754065919,
+                "city": "Samos",
+                "name": "EasyBike",
+                "longitude": 26.9787850189,
+                "country": "GR"
+            },
+            "city_uid": "samos"
         },
         {
             "tag": "easybike-nicosia",
