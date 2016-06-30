@@ -62,7 +62,10 @@ class BikeuStation(BikeShareStation):
         # Assumedly there's bike info too
         bike_info = info['Stations']['TKStation'][0]['AvailableBikes']
         bikes = bike_info.get('TKBike', [])
+        bike_uids = map(lambda b: b.get('BikeIdentifier'), bikes)
+        bike_uids = filter(None, bike_uids)
         self.extra = {
             'uid': info['id'],
-            'bike_uids': map(lambda b: b['BikeIdentifier'], bikes),
         }
+        if bike_uids:
+            self.extra['bike_uids'] = bike_uids
