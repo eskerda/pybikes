@@ -89,18 +89,19 @@ class SmartBikeStation(BikeShareStation):
             self.longitude = float(info['lon'])
             self.extra = {
                 'uid': int(info['id']),
-                'status': info['status'],
-                'address': info['address']
+                'status': info['status']
             }
-
+            if 'address' in info:
+                self.extra['address'] = info['address']
             if 'district' in info:
                 self.extra['districtCode'] = info['district']
             elif 'districtCode' in info:
                 self.extra['districtCode'] = info['districtCode']
 
-            if info['nearbyStations'] and info['nearbyStations'] != "0":
+            nearby_stations = info.get('nearbyStations')
+            if nearby_stations and nearby_stations != "0":
                 self.extra['NearbyStationList'] = map(
-                    int, info['nearbyStations'].split(',')
+                    int, nearby_stations.split(',')
                 )
 
             if 'zip' in info and info['zip']:

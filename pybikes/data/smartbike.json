@@ -65,6 +65,18 @@
                     },
                     "feed_url": "https://www.velo-antwerpen.be/availability_map/getJsonObject",
                     "format": "json_v2"
+                },
+                {
+                    "tag": "malmobybike",
+                    "meta": {
+                        "latitude": 55.6050,
+                        "city": "Malm\u00f6",
+                        "name": "Malm\u00f6 by bike",
+                        "longitude": 13.0038,
+                        "country": "SE"
+                    },
+                    "feed_url": "https://www.malmobybike.se/availability_map/getJsonObject",
+                    "format": "json_v2"
                 }
             ]
         }
