@@ -35,7 +35,10 @@ class EasyBike(BikeShareSystem):
         networks = json.loads(scraper.request(EasyBike.FEED_URL))
         network = next((n for n in networks if n['city'] == self.uid), None)
         assert network, "%s city not found in easybike feed" % self.uid
-        self.stations = map(EasyBikeStation, network['stations'])
+        # Some networks with no stations report it as ""
+        stations = network.get('stations') or []
+        self.stations = map(EasyBikeStation, stations)
+
 
 class EasyBikeStation(BikeShareStation):
     def __init__(self, info):
