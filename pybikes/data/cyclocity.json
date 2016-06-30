@@ -97,6 +97,17 @@
                     "contract": "Goteborg"
                 }, 
                 {
+                    "tag": "lundahoj",
+                    "meta": {
+                        "latitude": 55.7046601,
+                        "country": "SE",
+                        "name": "Lundahoj",
+                        "longitude": 13.1910073,
+                        "city": "Lund"
+                    },
+                    "contract": "Lund"
+                },
+                {
                     "tag": "tusbic", 
                     "meta": {
                         "latitude": 43.46230569999999, 
