@@ -166,7 +166,7 @@
             "city_uid": "138"
         },
         {
-            "domain": "de",
+            "domain": "mg",
             "tag": "nextbike-munchen",
             "meta": {
                 "latitude": 48.1392,
@@ -174,7 +174,8 @@
                 "longitude": 11.5791,
                 "country": "DE"
             },
-            "city_uid": "139"
+            "city_uid": "268",
+            "hostname": "mvgrad.nextbike.net"
         },
         {
             "domain": "lv",

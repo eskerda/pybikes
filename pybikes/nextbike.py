@@ -11,7 +11,7 @@ from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
-BASE_URL = 'https://nextbike.net/maps/nextbike-live.xml?domains={domain}'
+BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}'
 CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
 
 cache = TSTCache(delta=60)
@@ -26,9 +26,9 @@ class Nextbike(BikeShareSystem):
         'company': 'Nextbike GmbH'
     }
 
-    def __init__(self, tag, meta, domain, city_uid):
+    def __init__(self, tag, meta, domain, city_uid, hostname = 'nextbike.net'):
         super(Nextbike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(domain=domain)
+        self.url = BASE_URL.format(hostname=hostname, domain=domain)
         self.uid = city_uid
 
     def update(self, scraper=None):
