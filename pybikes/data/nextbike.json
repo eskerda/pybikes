@@ -187,7 +187,8 @@
                 "country": "DE"
             },
             "city_uid": "268",
-            "hostname": "mvgrad.nextbike.net"
+            "hostname": "mvgrad.nextbike.net",
+            "bbox": [[11.72288, 48.248222], [11.36078, 48.06159]]
         },
         {
             "domain": "lv",
