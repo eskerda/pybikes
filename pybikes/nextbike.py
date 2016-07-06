@@ -33,7 +33,7 @@ class Nextbike(BikeShareSystem):
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
         self.uid = city_uid
         self.bbox = None
-        if bbox is not None:
+        if bbox:
             self.bbox = box(bbox[0][0], bbox[0][1], bbox[1][0], bbox[1][1])
 
     def update(self, scraper=None):
@@ -50,7 +50,7 @@ class Nextbike(BikeShareSystem):
             if 'bike' in place.attrib:
                 if place.attrib['bikes'] == "1" and place.attrib['bike'] == "1":
                     continue
-            if self.bbox is not None:
+            if self.bbox:
                 lat = float(place.attrib['lat'])
                 lng = float(place.attrib['lng'])
                 coord = Point(lng, lat)
