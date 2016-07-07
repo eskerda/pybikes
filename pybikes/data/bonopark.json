@@ -1,0 +1,17 @@
+{
+    "instances":[
+        {
+            "url":"http://helena.bonopark.es:16080/app/app/functions/get_all_estaciones_inicio.php",
+            "tag":"bicimad",
+            "meta":{
+                "latitude":40.4168,
+                "country":"ES",
+                "name":"BiciMAD",
+                "longitude":-3.7038,
+                "city":"Madrid"
+            }
+        }
+    ],
+    "class":"Bonopark",
+    "system":"bonopark"
+}
