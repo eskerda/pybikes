@@ -5,13 +5,15 @@
 import re
 from lxml import etree
 
+from shapely.geometry import Point, box
+
 from .base import BikeShareSystem, BikeShareStation
 from pybikes.utils import PyBikesScraper
 from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
-BASE_URL = 'https://nextbike.net/maps/nextbike-live.xml?domains={domain}'
+BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}'
 CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
 
 cache = TSTCache(delta=60)
@@ -26,10 +28,13 @@ class Nextbike(BikeShareSystem):
         'company': 'Nextbike GmbH'
     }
 
-    def __init__(self, tag, meta, domain, city_uid):
+    def __init__(self, tag, meta, domain, city_uid, hostname = 'nextbike.net', bbox = None):
         super(Nextbike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(domain=domain)
+        self.url = BASE_URL.format(hostname=hostname, domain=domain)
         self.uid = city_uid
+        self.bbox = None
+        if bbox:
+            self.bbox = box(bbox[0][0], bbox[0][1], bbox[1][0], bbox[1][1])
 
     def update(self, scraper=None):
         if scraper is None:
@@ -37,18 +42,24 @@ class Nextbike(BikeShareSystem):
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8'))
         places = domain_xml.xpath(CITY_QUERY.format(uid=self.uid))
-        self.stations = filter(None, map(NextbikeStation, places))
+        self.stations = map(NextbikeStation, self.filter_stations(places))
+
+    def filter_stations(self, places):
+        for place in places:
+            # TODO: For now we are not going to track bikes roaming around
+            if 'bike' in place.attrib:
+                if place.attrib['bikes'] == "1" and place.attrib['bike'] == "1":
+                    continue
+            if self.bbox:
+                lat = float(place.attrib['lat'])
+                lng = float(place.attrib['lng'])
+                coord = Point(lng, lat)
+                if not self.bbox.contains(coord):
+                    continue
+            yield place
 
 
 class NextbikeStation(BikeShareStation):
-    def __new__(cls, place_tree):
-        # TODO: For now we are not going to track bikes roaming around
-        if 'bike' in place_tree.attrib:
-            if place_tree.attrib['bikes'] == "1":
-                if place_tree.attrib['bike'] == "1":
-                    return
-        return super(NextbikeStation, cls).__new__(cls, place_tree)
-
     def __init__(self, place_tree):
         super(NextbikeStation, self).__init__()
         self.extra = {}
