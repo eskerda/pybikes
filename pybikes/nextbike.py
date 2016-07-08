@@ -3,6 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 from lxml import etree
 
 from shapely.geometry import Point, box
@@ -13,7 +14,7 @@ from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
-BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}'
+BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}&get_biketypes=1'
 CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
 
 cache = TSTCache(delta=60)
@@ -85,10 +86,14 @@ class NextbikeStation(BikeShareStation):
                 self.extra['uid'] = place_tree.attrib['uid']
 
         # Gotta be careful here, some nextbike services just count up to 5,
-        # displaying 5+
+        # displaying 5+. Trying to use the available bike_types count instead.
         if place_tree.attrib['bikes'].endswith('+'):
-            self.bikes = int(place_tree.attrib['bikes'][:1])
-            self.extra['bikes_approximate'] = True
+            if 'bike_types' in place_tree.attrib:
+                bike_types = json.loads(place_tree.attrib['bike_types'])
+                self.bikes = sum(bike_types.values())
+            else:
+                self.bikes = int(place_tree.attrib['bikes'][:1])
+                self.extra['bikes_approximate'] = True
         else:
             self.bikes = int(place_tree.attrib['bikes'])
 
