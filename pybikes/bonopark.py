@@ -8,22 +8,28 @@ import hashlib
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__ = ['Bonopark', 'BonoparkStation']
-
 SECRET = 'APP_INICIO'
+ID_SECURITY = '{}{}'.format(hashlib.md5(SECRET * 2).hexdigest(),
+                            hashlib.md5(SECRET).hexdigest())
 BODY_DICT = {
     'dni': SECRET,
     'id_auth': SECRET,
-    'id_security': hashlib.md5(SECRET * 2).hexdigest() + hashlib.md5(SECRET).hexdigest()
+    'id_security': ID_SECURITY,
 }
 
 COLORS = ['green', 'red', 'yellow', 'gray']
+
 
 class Bonopark(BikeShareSystem):
     sync = True
     meta = {
         'system': 'Bonopark',
-        'company': 'Bonopark'
+        'company': 'Bonopark SL'
+    }
+
+    headers = {
+        'User-Agent': 'Apache-HttpClient/UNAVAILABLE (java 1.4)',
+        'Content-Type': 'application/json'
     }
 
     def __init__(self, tag, meta, url):
@@ -31,11 +37,13 @@ class Bonopark(BikeShareSystem):
         self.feed_url = url
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-        scraper.setUserAgent("Apache-HttpClient/UNAVAILABLE (java 1.4)")
-        scraper.headers['Content-Type'] = 'application/json'
-        data = json.loads(scraper.request(self.feed_url, 'POST', data=json.dumps(BODY_DICT)))
+        scraper = scraper or utils.PyBikesScraper()
+        scraper.headers.update(self.headers)
+
+        data = json.loads(
+            scraper.request(self.feed_url, 'POST', data=json.dumps(BODY_DICT))
+        )
+
         self.stations = map(BonoparkStation, data['estaciones'])
 
 
@@ -48,7 +56,7 @@ class BonoparkStation(BikeShareStation):
         self.bikes = int(data['bicis_enganchadas'])
         self.free = int(data['bases_libres'])
         self.extra = {
-            'station_id': data['numero_estacion'],
+            'number': data['numero_estacion'],
             'uid': int(data['idestacion']),
             'address': data['direccion'],
             'online': data['activo'] == "1" and data['no_disponible'] == "0",
