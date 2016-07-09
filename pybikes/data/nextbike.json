@@ -425,11 +425,12 @@
             "city_uid": "177"
         },
         {
-            "domain": "de",
+            "domain": "ag",
             "tag": "nextbike-augsburg",
             "meta": {
                 "latitude": 48.3647,
                 "city": "Augsburg",
+                "name": "SWA Rad",
                 "longitude": 10.8916,
                 "country": "DE"
             },
