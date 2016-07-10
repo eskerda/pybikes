@@ -343,18 +343,6 @@
         },
         {
             "domain": "la",
-            "tag": "nextbike-krems-ost",
-            "meta": {
-                "latitude": 48.4183,
-                "city": "Krems Ost",
-                "name": "LEIHRADL",
-                "longitude": 15.6909,
-                "country": "AT"
-            },
-            "city_uid": "164"
-        },
-        {
-            "domain": "la",
             "tag": "nextbike-unteres-traisental",
             "meta": {
                 "latitude": 48.3343,
