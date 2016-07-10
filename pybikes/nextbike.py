@@ -14,9 +14,10 @@ from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
-BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}&get_biketypes=1'
-CITY_QUERY = '/markers/country/city[@uid="{uid}"]/place'
+BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}&get_biketypes=1'  # NOQA
 
+# Since most networks share the same hostname, there's no need to keep hitting
+# the endpoint on the same urls. This caches the feed for 60s
 cache = TSTCache(delta=60)
 
 
@@ -29,7 +30,8 @@ class Nextbike(BikeShareSystem):
         'company': 'Nextbike GmbH'
     }
 
-    def __init__(self, tag, meta, domain, city_uid, hostname = 'nextbike.net', bbox = None):
+    def __init__(self, tag, meta, domain, city_uid, hostname='nextbike.net',
+                 bbox=None):
         super(Nextbike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
         self.uid = city_uid
@@ -41,16 +43,21 @@ class Nextbike(BikeShareSystem):
         if scraper is None:
             scraper = PyBikesScraper(cache)
         domain_xml = etree.fromstring(
-            scraper.request(self.url).encode('utf-8'))
-        places = domain_xml.xpath(CITY_QUERY.format(uid=self.uid))
+            scraper.request(self.url).encode('utf-8')
+        )
+        places = domain_xml.xpath(
+            '/markers/country/city[@uid="{uid}"]/place'.format(uid=self.uid)
+        )
         self.stations = map(NextbikeStation, self.filter_stations(places))
 
     def filter_stations(self, places):
         for place in places:
             # TODO: For now we are not going to track bikes roaming around
-            if 'bike' in place.attrib:
-                if place.attrib['bikes'] == "1" and place.attrib['bike'] == "1":
-                    continue
+            if place.attrib.get('bike', '') == '1':
+                continue
+            # Some networks include testing stations that are outside of the
+            # system. On these cases, a bounding box can be provided to filter
+            # them out.
             if self.bbox:
                 lat = float(place.attrib['lat'])
                 lng = float(place.attrib['lng'])
@@ -61,53 +68,36 @@ class Nextbike(BikeShareSystem):
 
 
 class NextbikeStation(BikeShareStation):
-    def __init__(self, place_tree):
+    def __init__(self, place):
         super(NextbikeStation, self).__init__()
+        self.name = place.attrib['name']
+        self.latitude = float(place.attrib['lat'])
+        self.longitude = float(place.attrib['lng'])
         self.extra = {}
 
-        # Some names are '1231-foo' and other are 'bar'
-        # and some might be '1211-foo-bar-baz   -yeah- kill - me
-        num_name_re = r'(?P<id>\d*)\s*\-?\s*(?P<name>\D+)'
-        match = re.search(num_name_re, place_tree.attrib['name'])
-        if match:
-            if match.group('id'):
-                self.extra['uid'] = int(match.group('id'))
-                if match.group('id') != place_tree.attrib['uid']:
-                    self.extra['internal_uid'] = int(place_tree.attrib['uid'])
-            else:
-                self.extra['uid'] = int(place_tree.attrib['uid'])
-            self.name = match.group('name').strip()
-        else:
-            self.name = place_tree.attrib['name']
-            if 'number' in place_tree.attrib:
-                self.extra['uid'] = place_tree.attrib['number']
-                self.extra['internal_uid'] = place_tree.attrib['uid']
-            else:
-                self.extra['uid'] = place_tree.attrib['uid']
+        self.extra['uid'] = place.attrib['uid']
+        if 'number' in place.attrib:
+            self.extra['number'] = place.attrib['number']
 
-        # Gotta be careful here, some nextbike services just count up to 5,
-        # displaying 5+. Trying to use the available bike_types count instead.
-        if place_tree.attrib['bikes'].endswith('+'):
-            if 'bike_types' in place_tree.attrib:
-                bike_types = json.loads(place_tree.attrib['bike_types'])
-                self.bikes = sum(bike_types.values())
-            else:
-                self.bikes = int(place_tree.attrib['bikes'][:1])
+        if 'bike_types' in place.attrib:
+            bike_types = json.loads(place.attrib['bike_types'])
+            self.bikes = sum(map(int, bike_types.values()))
+        else:
+            # Greater than 5 will appear as 5+ on that case, we set bikes
+            # approximate to true, to signal that the number is not exact. Note
+            # this is an infrequent corner case.
+            bikes = place.attrib['bikes']
+            if bikes.endswith('+'):
+                self.bikes = int(re.sub(r'\+$', '', bikes))
                 self.extra['bikes_approximate'] = True
-        else:
-            self.bikes = int(place_tree.attrib['bikes'])
+            else:
+                self.bikes = int(bikes)
 
-        # Bike racks may or may not be there
-        if 'bike_racks' in place_tree.attrib:
-            self.free = int(place_tree.attrib['bike_racks']) - self.bikes
-            self.extra['slots'] = place_tree.attrib['bike_racks']
+        if 'bike_racks' in place.attrib:
+            self.free = int(place.attrib['free_racks'])
+            self.extra['slots'] = int(place.attrib['bike_racks'])
         else:
-            self.free = -1
-            self.extra['slots_approximate'] = True
-        self.latitude = float(place_tree.attrib['lat'])
-        self.longitude = float(place_tree.attrib['lng'])
-        if 'bike_numbers' in place_tree.attrib:
-            self.extra['bike_uids'] = map(
-                int,
-                place_tree.attrib['bike_numbers'].split(',')
-            )
+            self.free = None
+
+        if 'bike_numbers' in place.attrib:
+            self.extra['bike_uids'] = place.attrib['bike_numbers'].split(',')
