@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, Ben Caller <bcaller@gmail.com>
-# Distributed under the AGPL license, see LICENSE.txt
+# Distributed under the LGPL license, see LICENSE.txt
 
 import json
 
@@ -11,19 +11,19 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 from contrib import TSTCache
 
-__all__ = ['GoBike', 'GoBikeStation']
+# The number of free slots is unavailable
+# However, you can lock the bike next to any full station
 
 PAGE_SIZE = 10
 STATION_LIST_PATH = '/umbraco/Surface/BookingSurface/GetStationsList'
 
-cache = TSTCache(delta=60)
 
 class GoBike(BikeShareSystem):
     sync = True
 
     meta = {
         'system': 'GoBike',
-        'company': 'GoBike'
+        'company': 'Gobike A/S'
     }
 
     def __init__(self, tag, meta, url, availability_path):
@@ -31,38 +31,39 @@ class GoBike(BikeShareSystem):
         self.url = url
         self.availability_path = availability_path
 
-    def _get_availability_request(self, page, number_of_stations):
-        url = self.url + self.availability_path
-        data = {
-            'lat': self.meta['latitude'],
-            'lng': self.meta['longitude']
-        }
-        if number_of_stations <= PAGE_SIZE:
-            return url, 'POST', data
-
-        data['page'] = page
-        # The query string is not really necessary, but is added to help with the caching
-        return '{}?p={}'.format(url, page), 'POST', data
-
     def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper(cache)
+        scraper = scraper or utils.PyBikesScraper()
 
-        station_list = json.loads(scraper.request(self.url + STATION_LIST_PATH))["List"]
-        stations_by_id = dict((str(s["UnifiedId"]), GoBikeStation(s)) for s in station_list)
+        # Request station names and locations from JSON file
+        stations = json.loads(scraper.request(self.url + STATION_LIST_PATH))["List"]
+        stations_by_id = {str(s["UnifiedId"]): GoBikeStation(s) for s in stations}
 
-        station_selector = CSSSelector('.span6 .station-basicinfo')
-        available_selector = CSSSelector('.station-availablebikes')
-        # Can only query 10 stations per request, perhaps we should do this async
-        for page in range(0, len(station_list)/PAGE_SIZE + (len(station_list) % PAGE_SIZE > 0)):
-            body = scraper.request(*self._get_availability_request(page, len(station_list)))
-            dom = html.fromstring(body)
-            for e in station_selector(dom):
-                uid = e.get('id').split('_')[1]
-                bikes = int(available_selector(e)[0].text)
-                stations_by_id[uid].set_available_bikes(bikes)
+        # Request number of bikes, at 10 stations per page
+        for page in self._get_all_pages(scraper, len(stations)):
+            for uid, bikes in self._parse_page(page):
+                stations_by_id[uid].bikes = bikes
 
         self.stations = stations_by_id.values()
+
+    def _get_all_pages(self, scraper, n_stations):
+        n_pages = n_stations/PAGE_SIZE + (n_stations % PAGE_SIZE > 0)
+        for p in range(0, n_pages):
+            data = {
+                'lat': self.meta['latitude'],
+                'lng': self.meta['longitude'],
+                'page': p
+            }
+            yield scraper.request(self.url + self.availability_path, 'POST', data=data)
+
+    @staticmethod
+    def _parse_page(body):
+        station_selector = CSSSelector('.span6 .station-basicinfo')
+        available_selector = CSSSelector('.station-availablebikes')
+        dom = html.fromstring(body)
+        for station in station_selector(dom):
+            uid = station.get('id').split('_')[1]
+            bikes = int(available_selector(station)[0].text)
+            yield uid, bikes
 
 
 class GoBikeStation(BikeShareStation):
@@ -74,29 +75,24 @@ class GoBikeStation(BikeShareStation):
         self.longitude = float(location['Longitude'])
         self.extra = {
             'uid': int(info['UnifiedId']),
-            'street': location['Street'],
-            'street_building_identifier': location['StreetBuildingIdentifier'],
-            'district': location['DistrictName'],
-            'city': location['City'],
-            'zip': location['ZipCode'],
             'status': int(info['Status']),
-            'address': None
+            'altitude': int(location['Altitude']),
+            'address': GoBikeStation._format_address(location)
         }
 
-        # Unnecessary nice address but I added it because DisplayName is backwards
-        if self.extra['street']:
-            self.extra['address'] = self.extra['street']
-            if self.extra['street_building_identifier']:
-                self.extra['address'] += ' ' + self.extra['street_building_identifier']  # Number comes after in DK
-            if self.extra['district']:
-                self.extra['address'] += ', ' + self.extra['district']
-            if self.extra['zip']:
-                self.extra['address'] += ', ' + self.extra['zip']
-                if self.extra['city']:
-                    self.extra['address'] += ' ' + self.extra['city']
-            elif self.extra['city']:
-                self.extra['address'] += ', ' + self.extra['city']
+    @staticmethod
+    def _format_address(location):
+        address_sections = [
+            ['Street', 'StreetBuildingIdentifier'],
+            ['DistrictName'],
+            ['ZipCode', 'City'],
+        ]
+        address = []
+        for section in address_sections:
+            components = filter(None, (location.get(k) for k in section))
+            part = ' '.join(components)
+            address.append(part)
+        address = filter(None, address)
+        address = ', '.join(address)
 
-    def set_available_bikes(self, n):
-        self.bikes = n
-        # self.free is unavailable, but with this system you can lock the bike next to a full station
+        return address
