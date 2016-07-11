@@ -29,7 +29,7 @@
             "format": "xml"
         }, 
         {
-            "tag": "barclays-cycle-hire", 
+            "tag": "santander-cycles", 
             "meta": {
                 "city": "London", 
                 "name": "Santander Cycles", 
