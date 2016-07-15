@@ -343,18 +343,6 @@
         },
         {
             "domain": "la",
-            "tag": "nextbike-krems-ost",
-            "meta": {
-                "latitude": 48.4183,
-                "city": "Krems Ost",
-                "name": "LEIHRADL",
-                "longitude": 15.6909,
-                "country": "AT"
-            },
-            "city_uid": "164"
-        },
-        {
-            "domain": "la",
             "tag": "nextbike-unteres-traisental",
             "meta": {
                 "latitude": 48.3343,
@@ -364,18 +352,6 @@
                 "country": "AT"
             },
             "city_uid": "165"
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-piestingtal",
-            "meta": {
-                "latitude": 47.8841,
-                "city": "Piestingtal",
-                "name": "LEIHRADL",
-                "longitude": 15.9467,
-                "country": "AT"
-            },
-            "city_uid": "168"
         },
         {
             "domain": "la",
@@ -683,18 +659,6 @@
             "city_uid": "23"
         },
         {
-            "domain": "me",
-            "tag": "bykystations-uae-al-sharjah",
-            "meta": {
-                "latitude": 25.2199,
-                "city": "Al Sharjah",
-                "name": "BYKYstations",
-                "longitude": 55.2255,
-                "country": "AE"
-            },
-            "city_uid": "233"
-        },
-        {
             "domain": "uk",
             "tag": "nextbike-bath",
             "meta": {
@@ -928,7 +892,7 @@
             "city_uid": "283"
         },
         {
-            "domain": "at",
+            "domain": "ta",
             "tag": "nextbike-serfaus",
             "meta": {
                 "latitude": 47.0387,
@@ -1111,17 +1075,6 @@
             "city_uid": "8"
         },
         {
-            "domain": "de",
-            "tag": "nextbike-hannover",
-            "meta": {
-                "latitude": 52.3721,
-                "city": "Hannover",
-                "longitude": 9.73569,
-                "country": "DE"
-            },
-            "city_uid": "87"
-        },
-        {
             "domain": "ch",
             "tag": "nextbike-sursee",
             "meta": {
@@ -1217,18 +1170,6 @@
             "city_uid": 210
         },
         {
-            "domain": "tp",
-            "tag": "rower-trojmiejski",
-            "meta": {
-                "name": "Rower Trójmiejski",
-                "latitude": 54.4349,
-                "longitude": 18.6026,
-                "country": "PL",
-                "city": "Trójmiasto"
-            },
-            "city_uid": 227
-        },
-        {
             "domain": "kp",
             "tag": "kmk-bike",
             "meta": {
@@ -1274,7 +1215,7 @@
                 "country": "PL",
                 "city": "Katowice"
             },
-            "city_uid": 282
+            "city_uid": 342
         },
         {
             "domain": "hg",
