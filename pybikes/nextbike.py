@@ -34,6 +34,7 @@ class Nextbike(BikeShareSystem):
                  bbox=None):
         super(Nextbike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
+        self.domain = domain
         self.uid = city_uid
         self.bbox = None
         if bbox:
@@ -47,6 +48,10 @@ class Nextbike(BikeShareSystem):
         )
         places = domain_xml.xpath(
             '/markers/country/city[@uid="{uid}"]/place'.format(uid=self.uid)
+        )
+        # We want to raise an error if a uid is invalid, right?
+        assert places, "Not found: uid {!r}, domain {!r}, url {}".format(
+            self.uid, self.domain, self.url
         )
         self.stations = map(NextbikeStation, self.filter_stations(places))
 
