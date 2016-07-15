@@ -355,18 +355,6 @@
         },
         {
             "domain": "la",
-            "tag": "nextbike-piestingtal",
-            "meta": {
-                "latitude": 47.8841,
-                "city": "Piestingtal",
-                "name": "LEIHRADL",
-                "longitude": 15.9467,
-                "country": "AT"
-            },
-            "city_uid": "168"
-        },
-        {
-            "domain": "la",
             "tag": "nextbike-marchfeld",
             "meta": {
                 "latitude": 48.2741,
@@ -669,18 +657,6 @@
                 "country": "AT"
             },
             "city_uid": "23"
-        },
-        {
-            "domain": "me",
-            "tag": "bykystations-uae-al-sharjah",
-            "meta": {
-                "latitude": 25.2199,
-                "city": "Al Sharjah",
-                "name": "BYKYstations",
-                "longitude": 55.2255,
-                "country": "AE"
-            },
-            "city_uid": "233"
         },
         {
             "domain": "uk",
@@ -1099,17 +1075,6 @@
             "city_uid": "8"
         },
         {
-            "domain": "de",
-            "tag": "nextbike-hannover",
-            "meta": {
-                "latitude": 52.3721,
-                "city": "Hannover",
-                "longitude": 9.73569,
-                "country": "DE"
-            },
-            "city_uid": "87"
-        },
-        {
             "domain": "ch",
             "tag": "nextbike-sursee",
             "meta": {
@@ -1203,18 +1168,6 @@
                 "city": "Warszawa"
             },
             "city_uid": 210
-        },
-        {
-            "domain": "tp",
-            "tag": "rower-trojmiejski",
-            "meta": {
-                "name": "Rower Trójmiejski",
-                "latitude": 54.4349,
-                "longitude": 18.6026,
-                "country": "PL",
-                "city": "Trójmiasto"
-            },
-            "city_uid": 227
         },
         {
             "domain": "kp",
