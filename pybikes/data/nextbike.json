@@ -857,6 +857,18 @@
             "city_uid": "267"
         },
         {
+            "domain": "uk",
+            "tag": "nextbike-uni-warwick",
+            "meta": {
+                "latitude": 52.3815,
+                "city": "Coventry",
+                "name": "UniCycles @ Warwick",
+                "longitude": -1.56159,
+                "country": "GB"
+            },
+            "city_uid": "272"
+        },
+        {
             "domain": "vn",
             "tag": "nextbike-speyer",
             "meta": {
