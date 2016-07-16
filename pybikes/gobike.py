@@ -3,13 +3,13 @@
 # Distributed under the LGPL license, see LICENSE.txt
 
 import json
+from urlparse import urljoin
 
 from lxml import html
 from lxml.cssselect import CSSSelector
 
-from .base import BikeShareSystem, BikeShareStation
 from . import utils
-from contrib import TSTCache
+from .base import BikeShareSystem, BikeShareStation
 
 # The number of free slots is unavailable
 # However, you can lock the bike next to any full station
@@ -26,17 +26,19 @@ class GoBike(BikeShareSystem):
         'company': 'Gobike A/S'
     }
 
-    def __init__(self, tag, meta, url, availability_path):
+    def __init__(self, tag, meta, hostname, availability_path):
         super(GoBike, self).__init__(tag, meta)
-        self.url = url
-        self.availability_path = availability_path
+        self.availability_url = urljoin(hostname, availability_path)
+        self.stations_url = urljoin(hostname, STATION_LIST_PATH)
 
     def update(self, scraper = None):
         scraper = scraper or utils.PyBikesScraper()
 
         # Request station names and locations from JSON file
-        stations = json.loads(scraper.request(self.url + STATION_LIST_PATH))["List"]
-        stations_by_id = {str(s["UnifiedId"]): GoBikeStation(s) for s in stations}
+        stations = json.loads(scraper.request(self.stations_url))["List"]
+        stations_by_id = {
+            str(s["UnifiedId"]): GoBikeStation(s) for s in stations
+        }
 
         # Request number of bikes, at 10 stations per page
         for page in self._get_all_pages(scraper, len(stations)):
@@ -53,7 +55,7 @@ class GoBike(BikeShareSystem):
                 'lng': self.meta['longitude'],
                 'page': p
             }
-            yield scraper.request(self.url + self.availability_path, 'POST', data=data)
+            yield scraper.request(self.availability_url, 'POST', data=data)
 
     @staticmethod
     def _parse_page(body):

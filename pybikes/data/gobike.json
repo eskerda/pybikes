@@ -9,7 +9,7 @@
                 "longitude":12.564984,
                 "city":"Copenhagen"
             },
-            "url":"https://bycyklen.dk",
+            "hostname":"https://bycyklen.dk",
             "availability_path": "/en/my-account/my-reservations/book-cykel-via-website/"
         },
         {
@@ -21,7 +21,7 @@
                 "longitude":5.733107,
                 "city":"Stavanger"
             },
-            "url":"http://bysykkelen.no",
+            "hostname":"http://bysykkelen.no",
             "availability_path": "/no/konto/booking/book-sykkel/"
         },
         {
@@ -33,7 +33,7 @@
                 "longitude":5.067,
                 "city":"Utrecht"
             },
-            "url":"http://nu-connectutrecht.nl",
+            "hostname":"http://nu-connectutrecht.nl",
             "availability_path": "/en/account/my-reservations/book-e-bike-via-website/"
         }
     ],
