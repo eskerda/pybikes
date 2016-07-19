@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "metro-bike-share",
+            "meta": {
+                "city": "Los Angeles",
+                "name": "Metro Bike Share",
+                "country": "US",
+                "longitude": -118.243611,
+                "latitude": 34.052222
+            },
+            "feed_url": "https://bikeshare.metro.net/stations/json/"
+        }
+    ],
+    "system": "metro_bike_share",
+    "class": "MetroBikeShare"
+}
