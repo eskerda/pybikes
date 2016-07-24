@@ -40,17 +40,6 @@
                     "feed_url":"http://www.velopop.fr/stations.html"
                 },
                 {
-                    "tag":"reflex-grandchalon",
-                    "meta":{
-                        "latitude":46.819904,
-                        "city":"Chalon-sur-Sa\u00f4ne",
-                        "name":"R\u00e9flex",
-                        "longitude":4.837021,
-                        "country":"FR"
-                    },
-                    "feed_url":"http://www.reflex-grandchalon.fr/sag_vls_stations.html"
-                },
-                {
                     "tag":"libelo",
                     "meta":{
                         "latitude":44.922726,
