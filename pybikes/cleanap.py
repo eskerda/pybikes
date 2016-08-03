@@ -30,6 +30,7 @@ class Cleanap(BikeShareSystem):
 
 class CleanapStation(BikeShareStation):
     def __init__(self, data):
+        super(CleanapStation, self).__init__()
         self.name = data['title']
         self.latitude = float(data['latitude'])
         self.longitude = float(data['longitude'])
