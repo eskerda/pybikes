@@ -89,14 +89,14 @@ class NextbikeStation(BikeShareStation):
         # this is rather frequent case for 'bike_types' and infrequent
         # corner case for 'bikes' attribute.
         if 'bike_types' in place.attrib:
-            bike_types = json.loads(place.attrib['bike_types'])
             self.bikes = 0
+            bike_types = json.loads(place.attrib['bike_types'])
             for value in bike_types.values():
-                if value.endswith('+'):
+                try:
+                    self.bikes += value
+                except TypeError:
                     self.bikes += int(re.sub(r'\+$', '', value))
                     self.extra['bikes_approximate'] = True
-                else:
-                    self.bikes += value
         else:
             bikes = place.attrib['bikes']
             if bikes.endswith('+'):
