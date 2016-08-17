@@ -84,13 +84,20 @@ class NextbikeStation(BikeShareStation):
         if 'number' in place.attrib:
             self.extra['number'] = place.attrib['number']
 
+        # Greater than 5 will appear as 5+ on that case, we set bikes
+        # approximate to true, to signal that the number is not exact. Note
+        # this is rather frequent case for 'bike_types' and infrequent
+        # corner case for 'bikes' attribute.
         if 'bike_types' in place.attrib:
             bike_types = json.loads(place.attrib['bike_types'])
-            self.bikes = sum(map(int, bike_types.values()))
+            self.bikes = 0
+            for value in bike_types.values():
+                if value.endswith('+'):
+                    self.bikes += int(re.sub(r'\+$', '', value))
+                    self.extra['bikes_approximate'] = True
+                else:
+                    self.bikes += value
         else:
-            # Greater than 5 will appear as 5+ on that case, we set bikes
-            # approximate to true, to signal that the number is not exact. Note
-            # this is an infrequent corner case.
             bikes = place.attrib['bikes']
             if bikes.endswith('+'):
                 self.bikes = int(re.sub(r'\+$', '', bikes))
