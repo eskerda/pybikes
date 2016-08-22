@@ -1,0 +1,46 @@
+{
+    "instances":[
+        {
+            "tag": "baksi-antalya",
+            "meta":{
+                "latitude": 36.862048,
+                "city": "Antalya",
+                "name":"Baksi",
+                "longitude": 30.638866,
+                "country": "TR"
+            }
+        },
+        {
+            "tag": "baksi-bisim",
+            "meta":{
+                "latitude": 38.4134047464,
+                "city": "Izmir",
+                "name": "Baksi",
+                "longitude": 27.0325753524,
+                "country":"TR"
+            }
+        },
+        {
+            "tag": "baksi-istanbul",
+            "meta":{
+                "latitude": 40.9696887925,
+                "city": "Istanbul",
+                "name": "Isbike",
+                "longitude": 29.0475373717,
+                "country": "TR"
+            }
+        },
+        {
+            "tag": "baksi-kobis",
+            "meta":{
+                "latitude": 40.7674733342,
+                "city": "Kocaeli",
+                "name": "Baksi",
+                "longitude": 29.9755885985,
+                "country": "TR"
+            }
+        }
+    ],
+    "system":"baksi",
+    "class":"Baksi"
+}
