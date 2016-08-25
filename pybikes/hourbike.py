@@ -10,7 +10,7 @@ from . import utils
 
 __all__ = ['Hourbike']
 
-RGX_MARKERS = r'Operator\.StationsData = (.*?)\;'
+RGX_MARKERS = r'setConfig\(\'StationsData\',(\[.*\])\);'
 
 class Hourbike(BikeShareSystem):
 
