@@ -30,7 +30,6 @@ class Baksi(BikeShareSystem):
     def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-        scraper.setUserAgent(USERAGENT)
 
         html_data=scraper.request(self.feed_url, raw=True)
 
