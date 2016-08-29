@@ -16,14 +16,8 @@ DOCKS_RGX="Park[&nbsp;]+([0-9]+)"
 BIKES_RGX="Bisiklet[&nbsp;]+([0-9]+)"
 LAT_LNG_RGX="([\s0-9.]+)\',\ \'([\s0-9.]+)"
 
-USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"
-
-cache = TSTCache(delta=60)
-
 class Baksi(BikeShareSystem):
-    #sync = ???
-    #unifeed = ???
-    #authend or authe...(dont remember) not needed
+
     meta = {
         'system': 'Baksi',
         'company': ['Baksi Bike Sharing System']
@@ -68,5 +62,15 @@ class BaksiStation(BikeShareStation):
         self.status=data[2]
         self.bikes=data[3]+data[4]
         self.free=data[4]
-        self.latitude=data[5]
-        self.longitude=data[6]
+        self.latitude=float(data[5])
+        self.longitude=float(data[6])
+
+#    def __str__(self):
+        #print unicode(self.name)
+        ##return "{0}\n".format(unicode(self.name))
+        ##print self.name.decode('utf-8')
+        ##print self.name.encode('iso-8859-9').decode('utf-8')
+        ##return u''.join(self.name).decode('iso-8859-9')
+        ##return '{0}\n'.format(self.name.decode('iso-8859-9'))
+        ##self.name=self.name.decode('utf-8')
+#        return self.name
