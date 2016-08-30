@@ -6,7 +6,6 @@ import re
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
-from contrib import TSTCache
 
 __all__ = ['Baksi', 'BaksiStation']
 
@@ -49,8 +48,7 @@ class Baksi(BikeShareSystem):
         bikes=[int(i) for i in bikes]
         latitude, longitude=zip(*geopoints)
 
-        for data in zip(station_id, name, status, docks, bikes, latitude, longitude):
-            self.stations.append(BaksiStation(data))
+        self.stations=map(BaksiStation, zip(station_id, name, status, docks, bikes, latitude, longitude))
 
 
 class BaksiStation(BikeShareStation):
@@ -63,13 +61,3 @@ class BaksiStation(BikeShareStation):
         self.free=data[4]
         self.latitude=float(data[5])
         self.longitude=float(data[6])
-
-#    def __str__(self):
-        #print unicode(self.name)
-        ##return "{0}\n".format(unicode(self.name))
-        ##print self.name.decode('utf-8')
-        ##print self.name.encode('iso-8859-9').decode('utf-8')
-        ##return u''.join(self.name).decode('iso-8859-9')
-        ##return '{0}\n'.format(self.name.decode('iso-8859-9'))
-        ##self.name=self.name.decode('utf-8')
-#        return self.name
