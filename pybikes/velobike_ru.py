@@ -46,7 +46,7 @@ class VelobikeRU(BikeShareSystem):
             extra = {
                 'uid': item['Id'],
                 'slots': int(item['TotalPlaces']),
-                'address': item['Address'],
+                'address': item['Address'].split("- ", 1)[1],
             }
             station = BikeShareStation(name, latitude, longitude, bikes, free,
                                        extra)
