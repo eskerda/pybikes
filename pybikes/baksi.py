@@ -30,7 +30,7 @@ class Baksi(BikeShareSystem):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        html_data=scraper.request(self.feed_url, raw=True)
+        html_data=scraper.request(self.feed_url, raw=True).decode('iso-8859-9')
 
         """Fetch data
         """
