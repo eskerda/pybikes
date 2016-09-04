@@ -2,7 +2,25 @@
     "system":"smoove",
     "class":{
         "SmooveAPI":{
-            "instances":[]
+            "instances":[
+                {
+                    "tag":"mobibikes",
+                    "meta":{
+                        "city":"Vancouver",
+                        "name":"Mobi",
+                        "country":"CA",
+                        "company":[
+                            "Vanncouver Bike Share Inc",
+                            "CycleHop LLC",
+                            "City of Vancouver",
+                            "Smoove SAS"
+                        ],
+                        "longitude":-123.1207,
+                        "latitude":49.2827
+                    },
+                    "feed_url":"https://vancouver-ca.smoove.pro/api-public/stations"
+                }
+            ]
         },
         "Smoove":{
             "instances":[
