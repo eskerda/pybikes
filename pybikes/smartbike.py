@@ -158,8 +158,7 @@ class SmartShitty(BaseSystem):
         stats_rules = {
             'std': 'Bicycles',
             'ebikes': 'Electric bicycles',
-            # Kids bikes seem to not be implemented
-            # 'kids_bikes': 'Bicycles for kids'
+            'kids_bikes': 'Bicycles for kids'
         }
 
         for station_data in stations_data:
@@ -180,6 +179,11 @@ class SmartShitty(BaseSystem):
                 bikes += stats['ebikes'][0]
                 extra['ebikes'] = stats['ebikes'][0]
                 extra['has_ebikes'] = True
+            
+            if stats['kids_bikes'] and stats['kids_bikes'][0] > 0:
+                bikes += stats['kids_bikes'][0]
+                extra['kids_bikes'] = stats['kids_bikes'][0]
+                extra['has_kids_bikes'] = True
 
             station = BikeShareStation(name, float(latitude), float(longitude),
                                        bikes, free, extra)
