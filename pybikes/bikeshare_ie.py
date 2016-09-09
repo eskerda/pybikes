@@ -18,7 +18,7 @@ class BikeshareIE(BikeShareSystem):
 
     meta = {
         'system': 'Coca-Cola Zero® Bikes',
-        'company': 'The National Transport Authority'
+        'company': ['The National Transport Authority']
     }
 
     def __init__(self, tag, meta, system_id):

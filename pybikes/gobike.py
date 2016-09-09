@@ -23,7 +23,7 @@ class GoBike(BikeShareSystem):
 
     meta = {
         'system': 'GoBike',
-        'company': 'Gobike A/S'
+        'company': ['Gobike A/S']
     }
 
     def __init__(self, tag, meta, hostname, availability_path):

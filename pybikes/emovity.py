@@ -16,7 +16,7 @@ class Emovity(BikeShareSystem):
     sync = True
     meta = {
         'system': 'Emovity',
-        'company': 'ICNITA S.L.'
+        'company': ['ICNITA S.L.']
     }
 
     def __init__(self, tag, feed_url, meta):

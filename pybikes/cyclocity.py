@@ -31,7 +31,7 @@ class Cyclocity(BikeShareSystem):
 
     meta = {
         'system': 'Cyclocity',
-        'company': 'JCDecaux',
+        'company': ['JCDecaux'],
         'license': {
             'name': 'Open Licence',
             'url': 'https://developer.jcdecaux.com/#/opendata/licence'
@@ -115,7 +115,7 @@ class CyclocityWeb(BikeShareSystem):
 
     meta = {
         'system': 'Cyclocity',
-        'company': 'JCDecaux'
+        'company': ['JCDecaux']
     }
 
     _list_url = '/service/carto'
@@ -177,4 +177,3 @@ class CyclocityWebStation(BikeShareStation):
         self.extra['connected'] = status.findtext('connected')
         self.extra['slots'] = int(status.findtext('total'))
         self.extra['ticket'] = int(status.findtext('ticket')) == 1
-

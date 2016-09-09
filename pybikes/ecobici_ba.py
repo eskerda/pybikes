@@ -18,7 +18,7 @@ class EcobiciBA(BikeShareSystem):
 
     meta = {
         'system': 'BA Ecobici',
-        'company': 'Buenos Aires Ciudad',
+        'company': ['Buenos Aires Ciudad'],
         'license': {
             'name': 'Terms of Service',
             'url': 'http://data.buenosaires.gob.ar/tyc'

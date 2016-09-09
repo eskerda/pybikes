@@ -24,7 +24,7 @@ class Bonopark(BikeShareSystem):
     sync = True
     meta = {
         'system': 'Bonopark',
-        'company': 'Bonopark SL'
+        'company': ['Bonopark SL']
     }
 
     headers = {

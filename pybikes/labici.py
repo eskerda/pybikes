@@ -9,7 +9,7 @@ class LaBici(BikeShareSystem):
 
     meta = {
         'system': 'Labici',
-        'company': 'Labici Bicicletas Públicas SL',
+        'company': ['Labici Bicicletas Públicas SL'],
     }
 
     base_url = 'http://labici.net/api-labici.php?module=parking&method=get-locations&city={city_code}'  # NOQA

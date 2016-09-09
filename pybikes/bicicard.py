@@ -78,7 +78,7 @@ class Bicicard(BikeShareSystem):
     sync = True
     meta = {
         'system': 'Bicicard',
-        'company': 'ITCL'
+        'company': ['ITCL']
     }
 
     def __init__(self, tag, kml_file, status_url, meta):
@@ -131,4 +131,3 @@ class Bicicard(BikeShareSystem):
             stations.append(station)
 
         self.stations = stations
-

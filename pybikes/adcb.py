@@ -11,7 +11,7 @@ class AdcbBikeshare(BikeShareSystem):
 
     meta = {
         'system': 'Adbcbikeshare',
-        'company': 'Cyacle Bicycle Rental LLC'
+        'company': ['Cyacle Bicycle Rental LLC']
     }
 
     def __init__(self, tag, feed_url, meta):

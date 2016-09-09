@@ -44,7 +44,7 @@ class Domoblue(BikeShareSystem):
     sync = True
     meta = {
         'system': 'Onroll',
-        'company': 'Domoblue'
+        'company': ['Domoblue']
     }
 
     def __init__(self, tag, meta, system_id):

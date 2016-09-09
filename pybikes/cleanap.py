@@ -14,7 +14,7 @@ class Cleanap(BikeShareSystem):
     sync = True
     meta = {
         'system': 'CallLock',
-        'company': 'CleaNap'
+        'company': ['CleaNap']
     }
 
     def __init__(self, tag, meta, url):

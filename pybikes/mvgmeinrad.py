@@ -12,7 +12,7 @@ class Mvgmeinrad(BikeShareSystem):
 
     meta = {
         'system': 'Mvgmeinrad',
-        'company': 'Mainzer Verkehrsgesellschaft mbH (MVG)'
+        'company': ['Mainzer Verkehrsgesellschaft mbH (MVG)']
     }
 
     def __init__(self, tag, feed_url, meta):

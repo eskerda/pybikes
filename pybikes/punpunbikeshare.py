@@ -11,7 +11,7 @@ class Punpunbikeshare(BikeShareSystem):
 
     meta = {
         'system': 'Smart Bike',
-        'company': 'BTS Group Holdings',
+        'company': ['BTS Group Holdings'],
     }
 
     def __init__(self, tag, feed_url, meta):

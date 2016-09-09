@@ -32,7 +32,7 @@ class Smoove(BikeShareSystem):
 
     meta = {
         'system': 'Smoove',
-        'company': 'Smoove'
+        'company': ['Smoove']
     }
 
     def __init__(self, tag, feed_url, meta):

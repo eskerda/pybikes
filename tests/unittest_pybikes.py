@@ -163,7 +163,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
             'country': 'FooEmpire',
             'latitude': 10.12312,
             'longitude': 1.12312,
-            'company': 'FooCompany'
+            'company': ['FooCompany']
         }
 
         metaBar = {
@@ -185,7 +185,7 @@ class TestBikeShareSystemInstance(unittest.TestCase):
             #     2) Base metadata of the system (BarSystem)
             #     3) Metadata passed on instantiation (metaBar)
             meta = {
-                'company': 'BarCompany'
+                'company': ['BarCompany']
             }
 
         self.battery = []

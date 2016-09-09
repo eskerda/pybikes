@@ -16,7 +16,7 @@ class GewistaCityBike(BikeShareSystem):
 
     meta = {
         'system': 'CityBike',
-        'company': 'Gewista Werbegesellschaft m.b.H'
+        'company': ['Gewista Werbegesellschaft m.b.H']
     }
 
     def __init__(self, tag, endpoint, meta):
