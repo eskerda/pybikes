@@ -14,7 +14,7 @@ from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
 
-BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}&get_biketypes=1'  # NOQA
+BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}'  # NOQA
 
 # Since most networks share the same hostname, there's no need to keep hitting
 # the endpoint on the same urls. This caches the feed for 60s
@@ -30,7 +30,7 @@ class Nextbike(BikeShareSystem):
         'company': 'Nextbike GmbH'
     }
 
-    def __init__(self, tag, meta, domain, city_uid, hostname='nextbike.net',
+    def __init__(self, tag, meta, domain, city_uid, hostname='api.nextbike.net',
                  bbox=None):
         super(Nextbike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
