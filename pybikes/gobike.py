@@ -5,7 +5,7 @@
 import json
 from urlparse import urljoin
 
-from lxml import html
+from lxml import html, etree
 from lxml.cssselect import CSSSelector
 
 from . import utils
@@ -31,7 +31,7 @@ class GoBike(BikeShareSystem):
         self.availability_url = urljoin(hostname, availability_path)
         self.stations_url = urljoin(hostname, STATION_LIST_PATH)
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
 
         # Request station names and locations from JSON file
@@ -98,3 +98,32 @@ class GoBikeStation(BikeShareStation):
         address = ', '.join(address)
 
         return address
+
+
+class GoBikeXML(BikeShareSystem):
+    meta = {
+        'system': 'GoBike',
+        'company': 'Gobike A/S'
+    }
+
+    def __init__(self, tag, meta, feed_url):
+        super(GoBikeXML, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+        xml_stations = scraper.request(self.feed_url).encode('utf8')
+        stations = etree.fromstring(xml_stations).xpath('//DockingStation')
+        self.stations = map(GoBikeXMLStation, stations)
+
+
+class GoBikeXMLStation(BikeShareStation):
+    def __init__(self, dom):
+        super(GoBikeXMLStation, self).__init__()
+        self.name = dom.findtext('DockingStationName')
+        self.latitude = float(dom.findtext('Latitude'))
+        self.longitude = float(dom.findtext('Longitude'))
+        self.bikes = int(dom.findtext('FreeBikes'))
+        self.free = int(dom.findtext('FreeDockingPoints'))
+        self.extra['uid'] = int(dom.findtext('DockingStationId'))
+        self.extra['slots'] = int(dom.findtext('DockingPoints'))
