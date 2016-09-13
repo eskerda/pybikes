@@ -54,13 +54,13 @@ class Baksi(BikeShareSystem):
 class BaksiStation(BikeShareStation):
     def __init__(self, data):
         super(BaksiStation, self).__init__()
-        self.station_id=data[0]
         self.name=data[1]
-        self.status=data[2]
         self.bikes=data[3]
         self.free=data[4]
         self.latitude=float(data[5])
         self.longitude=float(data[6])
         self.extra={
+                'uid': data[0]
+                'status': data[2]
                 'slots': int(data[3]+data[4]),
         }
