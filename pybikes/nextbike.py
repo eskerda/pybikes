@@ -104,10 +104,13 @@ class NextbikeStation(BikeShareStation):
                 self.extra['bikes_approximate'] = True
             else:
                 self.bikes = int(bikes)
-
         if 'bike_racks' in place.attrib:
-            self.free = int(place.attrib['free_racks'])
-            self.extra['slots'] = int(place.attrib['bike_racks'])
+            slots = int(place.attrib['bike_racks'])
+            self.extra['slots'] = slots
+            if 'free_racks' in place.attrib:
+                self.free = int(place.attrib['free_racks'])
+            else:
+                self.free = slots - self.bikes
         else:
             self.free = None
 
