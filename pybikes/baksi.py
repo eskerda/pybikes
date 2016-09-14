@@ -60,7 +60,7 @@ class BaksiStation(BikeShareStation):
         self.latitude=float(data[5])
         self.longitude=float(data[6])
         self.extra={
-                'uid': data[0]
-                'status': data[2]
+                'uid': data[0],
+                'status': data[2],
                 'slots': int(data[3]+data[4]),
         }
