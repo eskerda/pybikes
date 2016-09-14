@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import re
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -46,7 +47,7 @@ class VelobikeRU(BikeShareSystem):
             extra = {
                 'uid': item['Id'],
                 'slots': int(item['TotalPlaces']),
-                'address': item['Address'],
+                'address': re.sub(r'^\d+\s*-\s*', '', item['Address'])
             }
             station = BikeShareStation(name, latitude, longitude, bikes, free,
                                        extra)
