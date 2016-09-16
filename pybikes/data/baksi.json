@@ -9,7 +9,6 @@
                 "longitude": 30.638866,
                 "country": "TR"
             },
-            "city_uid": "antalya",
             "feed_url": "http://abone.antbis.com/harita.asp"
         },
         {
@@ -21,7 +20,6 @@
                 "longitude": 27.0325753524,
                 "country":"TR"
             },
-            "city_uid": "izmir",
             "feed_url": "http://abone.bisim.com.tr/harita.asp"
         },
         {
@@ -33,7 +31,6 @@
                 "longitude": 29.0475373717,
                 "country": "TR"
             },
-            "city_uid": "istanbul",
             "feed_url": "https://www.isbike.com.tr/abone/harita.asp"
         },
         {
@@ -45,7 +42,6 @@
                 "longitude": 29.9755885985,
                 "country": "TR"
             },
-            "city_uid": "kocaeli",
             "feed_url": "http://abone.kobis.com.tr/harita.asp"
         }
     ],

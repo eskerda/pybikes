@@ -22,7 +22,7 @@ class Baksi(BikeShareSystem):
         'company': ['Baksi Bike Sharing System']
     }
 
-    def __init__(self, tag, meta, city_uid, feed_url):
+    def __init__(self, tag, meta, feed_url):
         super(Baksi, self).__init__(tag, meta)
         self.feed_url=feed_url
 
