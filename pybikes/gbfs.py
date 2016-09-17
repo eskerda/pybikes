@@ -8,47 +8,49 @@ import operator
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
-__all__=['Gbfs', 'GbfsStation']
+__all__ = ['Gbfs', 'GbfsStation']
 
 class Gbfs(BikeShareSystem):
 
 
     def __init__(self, tag, meta, feed_url):
         # Add feed_url to meta in order to be exposed to the API
-        meta['gbfs_href']=feed_url
+        meta['gbfs_href'] = feed_url
 
         super(Gbfs, self).__init__(tag, meta)
-        self.feed_url=feed_url
+        self.feed_url = feed_url
 
-    def update(self, scraper=None):
+    def update(self, scraper = None):
         if scraper is None:
-            scraper=utils.PyBikesScraper()
+            scraper = utils.PyBikesScraper()
 
         # Make the request to gbfs.json and convert to json
-        html_data=json.loads(scraper.request(self.feed_url, raw=True))
+        html_data = json.loads(scraper.request(self.feed_url, raw = True))
 
         # Create a dict with name-url pairs for easier access
         # of urls (just in case)
-        feeds={}
+        feeds = {}
         for feed in html_data['data']['en']['feeds']:
-            feeds[feed['name']]=feed['url']
+            feeds[feed['name']] = feed['url']
 
-        #Station Information and Station Status data retrieval
-        station_information=json.loads(scraper.request(feeds['station_information']))\
-            ['data']['stations']
-        station_status=json.loads(scraper.request(feeds['station_status']))\
-            ['data']['stations']
+        # Station Information and Station Status data retrieval
+        station_information = json.loads(
+                scraper.request(feeds['station_information'])
+        )['data']['stations']
+        station_status = json.loads(
+                scraper.request(feeds['station_status'])
+        )['data']['stations']
 
         # Merge station_information and station_status into one dictionary for
         # every station after sorting both by 'station_id' in order to avoid
         # possible unmatches.
         # Nabsa spec doesn't mention anything about stations order at the moment.
         # Finally, pass the combined dictionary to GbfsStation as an argument.
-        sorting_key=operator.itemgetter('station_id')
-        station_information=sorted(station_information, key=sorting_key)
-        station_status=sorted(station_status, key=sorting_key)
+        sorting_key = operator.itemgetter('station_id')
+        station_information = sorted(station_information, key = sorting_key)
+        station_status = sorted(station_status, key = sorting_key)
 
-        self.stations=[]
+        self.stations = []
         for info, status in zip(station_information, station_status):
             info.update(status)
             self.stations.append(GbfsStation(info))
@@ -72,16 +74,17 @@ class GbfsStation(BikeShareStation):
 
         super(GbfsStation, self).__init__()
 
-        self.name=str(info['name'])
-        self.bikes=int(info['num_bikes_available'])
-        self.free=int(info['num_docks_available'])
-        self.latitude=float(info['lat'])
-        self.longitude=float(info['lon'])
-        self.extra={
+        self.name = str(info['name'])
+        self.bikes = int(info['num_bikes_available'])
+        self.free = int(info['num_docks_available'])
+        self.latitude = float(info['lat'])
+        self.longitude = float(info['lon'])
+        self.extra = {
                 # address is optional
                 'address': info.get('address'),
                 'uid': info['station_id'],
-                'status': 'Online' if all([info['is_renting'], info['is_installed']])\
-                    else 'Offline',
+                'status': 'Online' if all(
+                    [info['is_renting'], info['is_installed']]
+                ) else 'Offline',
                 'last_updated': int(info['last_reported'])
-                }
+        }
