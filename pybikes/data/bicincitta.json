@@ -335,6 +335,83 @@
                 },
                 {
                     "meta": {
+                        "latitude": 44.157801,
+                        "city": "Cesena",
+                        "name": "MiMuovoCe",
+                        "longitude": 12.239802,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=120",
+                    "tag": "mimuovoce"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.217290,
+                        "city": "Forlì",
+                        "name": "MiMuovoFo",
+                        "longitude": 12.050592,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=119",
+                    "tag": "mimuovofo"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.359887,
+                        "city": "Imola",
+                        "name": "MiMuovoIm",
+                        "longitude": 11.713002,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=196",
+                    "tag": "mimuovoim"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.648137,
+                        "city": "Modena",
+                        "name": "MiMuovoMo",
+                        "longitude": 10.925145,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=180",
+                    "tag": "mimuovomo"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.641301,
+                        "city": "San Giovanni in Persiceto",
+                        "name": "MiMuovoPe",
+                        "longitude": 11.189003,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=101",
+                    "tag": "mimuovope"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.469805,
+                        "city": "San Lazzaro di Avena",
+                        "name": "MiMuovoAv",
+                        "longitude": 11.420139,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=100",
+                    "tag": "mimuovoav"
+                },
+                {
+                    "meta": {
+                        "latitude": 44.598526,
+                        "city": "Scandiano",
+                        "name": "MiMuovoSc",
+                        "longitude": 10.691297,
+                        "country": "IT"
+                    },
+                    "endpoint": "http://www.mimuovoinbici.it/frmLeStazioni.aspx?ID=94",
+                    "tag": "mimuovosc"
+                },
+                {
+                    "meta": {
                         "latitude": 41.833502,
                         "city": "Ischitella – Peschici – Rodi Garganico – Vico del Gargano",
                         "name": "Parkinbici",
