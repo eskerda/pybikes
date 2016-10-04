@@ -15,7 +15,7 @@ class Encicla(BikeShareSystem):
 
     meta = {
         'system': 'Encicla',
-        'company': 'Sistema de Bicicletas Públicas del Valle de Aburrá'
+        'company': ['Sistema de Bicicletas Públicas del Valle de Aburrá']
     }
 
     def __init__(self, tag, feed_url, meta):
@@ -25,9 +25,9 @@ class Encicla(BikeShareSystem):
     def update(self, scraper = None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-            
+
         stations = []
-        
+
         data = json.loads(scraper.request(self.feed_url))
         for station in data['stations']:
             for item in station['items']:

@@ -14,7 +14,7 @@ from . import utils
 class BaseSystem(BikeShareSystem):
     meta = {
         'system': 'Veloway',
-        'company': 'Veolia'
+        'company': ['Veolia']
     }
 
 

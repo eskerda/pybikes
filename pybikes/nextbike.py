@@ -27,7 +27,7 @@ class Nextbike(BikeShareSystem):
 
     meta = {
         'system': 'Nextbike',
-        'company': 'Nextbike GmbH'
+        'company': ['Nextbike GmbH']
     }
 
     def __init__(self, tag, meta, domain, city_uid, hostname='nextbike.net',

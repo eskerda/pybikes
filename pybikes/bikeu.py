@@ -18,7 +18,7 @@ class Bikeu(BikeShareSystem):
 
     meta = {
         'system': 'Bike U',
-        'company': 'Bike U Sp. z o.o.'
+        'company': ['Bike U Sp. z o.o.']
     }
 
     def __init__(self, tag, meta, url):

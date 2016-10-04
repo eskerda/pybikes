@@ -22,7 +22,7 @@ class Keolis(BikeShareSystem):
 
     meta = {
         'system': 'Keolis',
-        'company': 'Keolis'
+        'company': ['Keolis']
     }
 
     _re_fuzzle = '\"latitude\"\:\ \"{0}\"\,\ '\
@@ -109,7 +109,7 @@ class Keolis_v2(BikeShareSystem):
 
     meta = {
         'system': 'Keolis',
-        'company': 'Keolis'
+        'company': ['Keolis']
     }
 
     _list_url = '/stations/xml-stations.aspx'
@@ -168,4 +168,3 @@ class KeolisStation_v2(BikeShareStation):
 
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
-

@@ -14,7 +14,7 @@ class DecoBike(BikeShareSystem):
 
     meta = {
         'system': 'DecoBike',
-        'company': 'DecoBike LLC'
+        'company': ['DecoBike LLC']
     }
 
     def __init__(self, tag, meta, feed_url):

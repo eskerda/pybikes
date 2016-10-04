@@ -47,7 +47,7 @@ Usage
     'city': 'Washington, DC - Arlington, VA',
     'longitude': -77.0363658,
     'system': 'Bixi',
-    'company': 'PBSC',
+    'company': ['PBSC'],
     'country': 'USA',
     'latitude': 38.8951118
 }

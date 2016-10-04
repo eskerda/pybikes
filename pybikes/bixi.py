@@ -24,7 +24,7 @@ class BixiSystem(BikeShareSystem):
 
     meta = {
         'system': 'Bixi',
-        'company': 'PBSC'
+        'company': ['PBSC']
     }
 
     def __init__(self, tag, feed_url, meta, format):
@@ -168,22 +168,22 @@ class BixiStation(BikeShareStation):
     @staticmethod
     def from_json_xml(data):
         """ json marker object translated from xml
-        { 
-            "id": "2", 
-            "name": "Docklands Drive - Docklands", 
-            "terminalName": "60000", 
-            "lastCommWithServer": "1375644471147", 
-            "lat": "-37.814022", 
-            "long": "144.939521", 
-            "installed": "true", 
-            "locked": "false", 
-            "installDate": "1313724600000", 
-            "removalDate": {  }, 
-            "temporary": "false", 
-            "public": "true", 
-            "nbBikes": "15", 
-            "nbEmptyDocks": "8", 
-            "latestUpdateTime": "1375592453128" 
+        {
+            "id": "2",
+            "name": "Docklands Drive - Docklands",
+            "terminalName": "60000",
+            "lastCommWithServer": "1375644471147",
+            "lat": "-37.814022",
+            "long": "144.939521",
+            "installed": "true",
+            "locked": "false",
+            "installDate": "1313724600000",
+            "removalDate": {  },
+            "temporary": "false",
+            "public": "true",
+            "nbBikes": "15",
+            "nbEmptyDocks": "8",
+            "latestUpdateTime": "1375592453128"
         }
         """
 
@@ -209,4 +209,3 @@ class BixiStation(BikeShareStation):
             'latestUpdateTime': data['latestUpdateTime']
         }
         return station
-

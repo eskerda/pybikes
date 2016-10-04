@@ -11,7 +11,7 @@ class Clujbike(BikeShareSystem):
 
     meta = {
         'system': 'Clujbike',
-        'company': 'Municipiul Cluj-Napoca'
+        'company': ['Municipiul Cluj-Napoca']
     }
 
     def __init__(self, tag, feed_url, meta):

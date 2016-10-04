@@ -13,7 +13,7 @@ __all__ = ['BicincittaOld', 'Bicincitta','BicincittaStation']
 class BaseSystem(BikeShareSystem):
     meta = {
         'system': 'Bicincittà',
-        'company': 'Comunicare S.r.l.'
+        'company': ['Comunicare S.r.l.']
     }
 
 class BicincittaOld(BaseSystem):
@@ -136,4 +136,3 @@ class BicincittaStation(BikeShareStation):
             self.extra['description'] = utils \
                     .clean_string(description) \
                     .rstrip(' :')
-

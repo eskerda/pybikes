@@ -23,7 +23,7 @@ parse_methods = {
 class BaseSystem(BikeShareSystem):
     meta = {
         'system': 'SmartBike',
-        'company': 'ClearChannel'
+        'company': ['ClearChannel']
     }
 
 

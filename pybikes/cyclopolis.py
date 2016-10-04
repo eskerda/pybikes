@@ -14,7 +14,7 @@ DATA_RGX = r'data\:.*?<span.*?>(.*?)</span>'
 
 """
 In some systems, e.g., maroussi, nafplio, stations come as:
-{ 
+{
   latLng: [37.5639397319061000, 22.8093402871746000],
   data: "<div style='line-height:1.35;overflow:hidden;white-space:nowrap;'>
              <span style='color:#333333'>
@@ -39,7 +39,7 @@ class Cyclopolis(BikeShareSystem):
 
     meta = {
         'system': 'Cyclopolis',
-        'company': 'Cyclopolis Systems'
+        'company': ['Cyclopolis Systems']
     }
 
     def __init__(self, tag, feed_url, meta):
@@ -49,9 +49,9 @@ class Cyclopolis(BikeShareSystem):
     def update(self, scraper = None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-            
+
         stations = []
-        
+
         html = scraper.request(self.feed_url)
         data = zip(
             re.findall(LAT_LNG_RGX, html, re.DOTALL),

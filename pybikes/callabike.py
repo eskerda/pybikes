@@ -18,7 +18,7 @@ class Callabike(BikeShareSystem):
 
     meta = {
         'system': 'Call-A-Bike',
-        'company': 'DB Rent GmbH'
+        'company': ['DB Rent GmbH']
     }
 
     def __init__(self, tag, meta, city_id):
