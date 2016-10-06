@@ -103,7 +103,7 @@ class GoBikeStation(BikeShareStation):
 class GoBikeXML(BikeShareSystem):
     meta = {
         'system': 'GoBike',
-        'company': 'Gobike A/S'
+        'company': ['Gobike A/S'],
     }
 
     def __init__(self, tag, meta, feed_url):
