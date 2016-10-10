@@ -31,8 +31,8 @@
                 "name": "Bike Share Toronto",
                 "country": "CA",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
             },
             "feed_url": "https://gbfs.bikesharetoronto.com/gbfs/gbfs.json"
@@ -77,7 +77,8 @@
                 "longitude": -97.74355,
                 "city": "Austin, TX",
                 "name": "Austin B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json"
         },
@@ -121,7 +122,8 @@
                 "longitude": -105.26385,
                 "city": "Boulder, CO",
                 "name": "Boulder B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json"
         },
@@ -143,7 +145,8 @@
                 "longitude": -80.14819,
                 "city": "Fort Lauderdale, FL",
                 "name": "Broward B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_broward/gbfs.json"
         },
@@ -154,7 +157,8 @@
                 "longitude": -87.89667,
                 "city": "Milkwaukee, WI",
                 "name": "Bublr Bikes",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_bublr/gbfs.json"
         },
@@ -178,9 +182,10 @@
                 "name": "Capital BikeShare",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
+
             },
             "feed_url": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
         },
@@ -191,7 +196,8 @@
                 "longitude": -80.83855,
                 "city": "Charlotte, NC",
                 "name": "Charlotte B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json"
         },
@@ -215,9 +221,9 @@
                 "name": "Citi Bike",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc",
-                    "NYC Bike Share"
+                    "NYC Bike Share, LLC",
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
             },
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
@@ -242,8 +248,8 @@
                 "name": "CoGo",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
             },
             "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
@@ -255,7 +261,8 @@
                 "longitude": -104.95253,
                 "city": "Denver, CO",
                 "name": "Denver B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_denver/gbfs.json"
         },
@@ -268,8 +275,8 @@
                 "name": "Divvy",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
             },
             "feed_url": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
@@ -281,7 +288,8 @@
                 "longitude": -106.48507,
                 "city": "El Paso, TX",
                 "name": "El Paso B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_elpaso/gbfs.json"
         },
@@ -292,7 +300,8 @@
                 "longitude": -97.32888,
                 "city": "Fort Worth, TX",
                 "name": "Fort Worth Bike Sharing",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_fortworth/gbfs.json"
         },
@@ -303,7 +312,8 @@
                 "longitude": -96.80095,
                 "city": "Fargo, ND",
                 "name": "Great Rides Bike Share",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_greatrides/gbfs.json"
         },
@@ -314,7 +324,8 @@
                 "longitude": -111.88736,
                 "city": "Salt Lake City",
                 "name": "GREENbike",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json"
         },
@@ -336,7 +347,8 @@
                 "longitude": -96.00853,
                 "city": "Omaha, NE",
                 "name": "Heartland B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_heartland/gbfs.json"
         },
@@ -347,7 +359,8 @@
                 "longitude": -95.36949,
                 "city": "Houston, TX",
                 "name": "Houston B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_houston/gbfs.json"
         },
@@ -360,8 +373,8 @@
                 "name": "Hubway",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions"
                 ]
             },
             "feed_url": "https://gbfs.thehubway.com/gbfs/gbfs.json"
@@ -373,7 +386,8 @@
                 "longitude": -75.16374,
                 "city": "Philadelphia, PA",
                 "name": "Indego",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_indego/gbfs.json"
         },
@@ -383,8 +397,9 @@
                 "latitude": 39.76593,
                 "longitude": -86.16216,
                 "city": "Indianapolis, IN",
-                "name": "Indy - Pacers Bikeshare",
-                "country": "US"
+                "name": "Indiana Pacers Bikeshare",
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
         },
@@ -406,7 +421,8 @@
                 "longitude": -94.5857,
                 "city": "Kansas City, MO",
                 "name": "Kansas City B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_kc/gbfs.json"
         },
@@ -417,7 +433,8 @@
                 "longitude": -84.21119,
                 "city": "Dayton, OH",
                 "name": "Link Dayton Bike Share",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json"
         },
@@ -428,7 +445,8 @@
                 "longitude": -89.38527,
                 "city": "Madison, WI",
                 "name": "Madison B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_madison/gbfs.json"
         },
@@ -463,9 +481,9 @@
                 "name": "Nice Ride",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Nice Ride Minnesota"
                 ]
+
             },
             "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
         },
@@ -476,7 +494,12 @@
                 "longitude": -122.332071,
                 "city": "Seattle, WA",
                 "name": "Pronto Cycle Share",
-                "country": "US"
+                "country": "US",
+                "company": [
+                    "Pronto!",
+                    "City of Seattle",
+                    "Motivate International, Inc."
+                ]
             },
             "feed_url": "https://gbfs.prontocycleshare.com/gbfs/gbfs.json"
         },
@@ -487,7 +510,8 @@
                 "longitude": -98.48236,
                 "city": "San Antonio, TX",
                 "name": "San Antonio B-cycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
         },
@@ -520,7 +544,8 @@
                 "longitude": -81.93345,
                 "city": "Spartanburg, SC",
                 "name": "Spartanburg BCycle",
-                "country": "US"
+                "country": "US",
+                "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json"
         },
