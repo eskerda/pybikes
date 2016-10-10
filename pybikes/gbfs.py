@@ -80,11 +80,11 @@ class GbfsStation(BikeShareStation):
         self.latitude = float(info['lat'])
         self.longitude = float(info['lon'])
         self.extra = {
-                # address is optional
-                'address': info.get('address'),
-                'uid': info['station_id'],
-                'status': 'Online' if all(
-                    [info['is_renting'], info['is_installed']]
-                ) else 'Offline',
-                'last_updated': int(info['last_reported'])
+            # address is optional
+            'address': info.get('address'),
+            'uid': info['station_id'],
+            'status': 'online' if all(
+                [info['is_renting'], info['is_installed']]
+            ) else 'offline',
+            'last_updated': int(info['last_reported'])
         }
