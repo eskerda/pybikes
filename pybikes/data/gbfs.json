@@ -23,13 +23,17 @@
             "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
         },
         {
-            "tag": "bike_share_toronto",
+            "tag": "bixi-toronto",
             "meta": {
-                "latitude": 43.639832,
-                "longitude": -79.395954,
+                "latitude": 43.653226,
+                "longitude": -79.3831843,
                 "city": "Toronto, ON",
                 "name": "Bike Share Toronto",
-                "country": "CA"
+                "country": "CA",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://gbfs.bikesharetoronto.com/gbfs/gbfs.json"
         },
@@ -166,13 +170,17 @@
             "feed_url": "https://buffalo.socialbicycles.com/opendata/gbfs.json"
         },
         {
-            "tag": "cabi",
+            "tag": "capital-bikeshare",
             "meta": {
-                "latitude": 11.111,
-                "longitude": 11.111,
+                "latitude": 38.8967584,
+                "longitude": -77.03701629999999,
                 "city": "Washington, DC",
-                "name": "Capital Bike Share",
-                "country": "US"
+                "name": "Capital BikeShare",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
         },
@@ -199,13 +207,18 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json"
         },
         {
-            "tag": "nyc",
+            "tag": "citi-bike-nyc",
             "meta": {
-                "latitude": -37.91238410208696,
-                "longitude": 145.1362281292677,
-                "city": "NYC, NY",
-                "name": "City Bike",
-                "country": "US"
+                "latitude": 40.7143528,
+                "longitude": -74.00597309999999,
+                "city": "New York, NY",
+                "name": "Citi Bike",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc",
+                    "NYC Bike Share"
+                ]
             },
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
         },
@@ -223,11 +236,15 @@
         {
             "tag": "cogo",
             "meta": {
-                "latitude": 11.111,
-                "longitude": 11.111,
+                "latitude": 39.983333,
+                "longitude": -82.983333,
                 "city": "Columbus, OH",
                 "name": "CoGo",
-                "country": "US"
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
         },
@@ -245,11 +262,15 @@
         {
             "tag": "divvy",
             "meta": {
-                "latitude": 11.111,
-                "longitude": 11.111,
+                "latitude": 41.8781136,
+                "longitude": -87.6297982,
                 "city": "Chicago, IL",
                 "name": "Divvy",
-                "country": "US"
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
         },
@@ -333,11 +354,15 @@
         {
             "tag": "hubway",
             "meta": {
-                "latitude": 42.340021,
-                "longitude": -71.100812,
+                "latitude": 42.3584308,
+                "longitude": -71.0597732,
                 "city": "Boston, MA",
                 "name": "Hubway",
-                "country": "US"
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://gbfs.thehubway.com/gbfs/gbfs.json"
         },
@@ -430,23 +455,27 @@
             "feed_url": "http://mrbikeshare.org/opendata/gbfs.json"
         },
         {
-            "tag": "niceridemn",
+            "tag": "nice-ride",
             "meta": {
-                "latitude": 44.984892,
-                "longitude": -93.256551,
-                "city": "Minneapolis - Saint Paul, MN",
-                "name": "Nice Ride Minnesota",
-                "country": "US"
+                "latitude": 44.983334,
+                "longitude": -93.26666999999999,
+                "city": "Minneapolis, MN",
+                "name": "Nice Ride",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
             },
             "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
         },
         {
-            "tag": "pronto",
+            "tag": "pronto-cycle-share",
             "meta": {
-                "latitude": 47.618418,
-                "longitude": -122.350964,
+                "latitude": 47.606209,
+                "longitude": -122.332071,
                 "city": "Seattle, WA",
-                "name": "Pronto",
+                "name": "Pronto Cycle Share",
                 "country": "US"
             },
             "feed_url": "https://gbfs.prontocycleshare.com/gbfs/gbfs.json"
@@ -467,7 +496,7 @@
             "meta": {
                 "latitude": 28.060548696070995,
                 "longitude": -82.4076198041439,
-                "city": "University of South Florida",
+                "city": "University of South Florida, FL",
                 "name": "Share-a-Bull Bikes",
                 "country": "US"
             },
@@ -511,7 +540,7 @@
             "meta": {
                 "latitude": 38.0357625021372,
                 "longitude": -78.5072994363201,
-                "city": "University of Virginia",
+                "city": "University of Virginia, VA",
                 "name": "Ubike",
                 "country": "US"
             },

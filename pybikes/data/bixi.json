@@ -13,22 +13,6 @@
             "format": "xml"
         }, 
         {
-            "tag": "capital-bikeshare", 
-            "meta": {
-                "city": "Washington, DC", 
-                "name": "Capital BikeShare", 
-                "country": "US", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -77.03701629999999, 
-                "latitude": 38.8967584
-            }, 
-            "feed_url": "http://capitalbikeshare.com/data/stations/bikeStations.xml", 
-            "format": "xml"
-        }, 
-        {
             "tag": "santander-cycles", 
             "meta": {
                 "city": "London", 
@@ -61,38 +45,6 @@
             "format": "json"
         }, 
         {
-            "tag": "nice-ride", 
-            "meta": {
-                "city": "Minneapolis, MN", 
-                "name": "Nice Ride", 
-                "country": "US", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -93.26666999999999, 
-                "latitude": 44.983334
-            }, 
-            "feed_url": "http://secure.niceridemn.org/data2/bikeStations.xml", 
-            "format": "xml"
-        }, 
-        {
-            "tag": "bixi-toronto", 
-            "meta": {
-                "city": "Toronto, ON", 
-                "name": "Bike Share Toronto",
-                "country": "CA", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -79.3831843, 
-                "latitude": 43.653226
-            }, 
-            "feed_url": "http://bikesharetoronto.com/stations/json",
-            "format": "json"
-        }, 
-        {
             "tag": "melbourne-bike-share", 
             "meta": {
                 "city": "Melbourne", 
@@ -107,39 +59,6 @@
             }, 
             "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data", 
             "format": "json_from_xml"
-        }, 
-        {
-            "tag": "citi-bike-nyc", 
-            "meta": {
-                "city": "New York, NY", 
-                "name": "Citi Bike", 
-                "country": "US", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc", 
-                    "NYC Bike Share"
-                ], 
-                "longitude": -74.00597309999999, 
-                "latitude": 40.7143528
-            }, 
-            "feed_url": "https://citibikenyc.com/stations/json", 
-            "format": "json"
-        }, 
-        {
-            "tag": "divvy", 
-            "meta": {
-                "city": "Chicago, IL", 
-                "name": "Divvy", 
-                "country": "US", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -87.6297982, 
-                "latitude": 41.8781136
-            }, 
-            "feed_url": "https://divvybikes.com/stations/json", 
-            "format": "json"
         }, 
         {
             "tag": "bay-area-bike-share", 
@@ -158,22 +77,6 @@
             "format": "json"
         }, 
         {
-            "tag": "hubway", 
-            "meta": {
-                "city": "Boston, MA", 
-                "name": "Hubway", 
-                "country": "US", 
-                "company": [
-                    "PBSC", 
-                    "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -71.0597732, 
-                "latitude": 42.3584308
-            }, 
-            "feed_url": "http://www.thehubway.com/data/stations/bikeStations.xml", 
-            "format": "xml"
-        },
-        {
             "tag": "we-cycle",
             "meta": {
                 "city": "Aspen, CO",
@@ -187,22 +90,6 @@
                 "latitude": 39.194951
             },
             "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
-            "format": "json"
-        },
-        {
-            "tag": "cogo",
-            "meta": {
-                "city": "Columbus, OH",
-                "name": "CoGo",
-                "country": "US",
-                "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
-                ],
-                "longitude": -82.983333,
-                "latitude": 39.983333
-            },
-            "feed_url": "http://www.cogobikeshare.com/stations/json",
             "format": "json"
         }
     ], 
