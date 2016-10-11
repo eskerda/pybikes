@@ -133,17 +133,6 @@
             "tag": "onroll-cieza"
         }, 
         {
-            "system_id": 3, 
-            "meta": {
-                "latitude": 38.982864, 
-                "city": "Ciudad Real", 
-                "name": "Onroll", 
-                "longitude": -3.927068, 
-                "country": "ES"
-            }, 
-            "tag": "onroll-ciudad-real"
-        }, 
-        {
             "system_id": 53, 
             "meta": {
                 "latitude": 38.964699, 
