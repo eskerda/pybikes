@@ -1219,18 +1219,6 @@
             "city_uid": 342
         },
         {
-            "domain": "hg",
-            "tag": "heraeus-hanau",
-            "meta": {
-                "name": "Heraeus Hanau",
-                "latitude": 50.133333,
-                "longitude": 8.916667,
-                "city": "Hanau",
-                "country": "DE"
-            },
-            "city_uid": 301
-        },
-        {
             "domain": "lp",
             "tag": "lodzki-rower-publiczny",
             "meta": {
