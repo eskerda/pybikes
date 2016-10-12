@@ -321,17 +321,6 @@
         },
         {
             "domain": "de",
-            "tag": "nextbike-bielefeld",
-            "meta": {
-                "latitude": 52.0257,
-                "city": "Bielefeld",
-                "longitude": 8.53286,
-                "country": "DE"
-            },
-            "city_uid": "16"
-        },
-        {
-            "domain": "de",
             "tag": "nextbike-gutersloh",
             "meta": {
                 "latitude": 51.9049,
@@ -1228,18 +1217,6 @@
                 "city": "Katowice"
             },
             "city_uid": 342
-        },
-        {
-            "domain": "hg",
-            "tag": "heraeus-hanau",
-            "meta": {
-                "name": "Heraeus Hanau",
-                "latitude": 50.133333,
-                "longitude": 8.916667,
-                "city": "Hanau",
-                "country": "DE"
-            },
-            "city_uid": 301
         },
         {
             "domain": "lp",
