@@ -321,17 +321,6 @@
         },
         {
             "domain": "de",
-            "tag": "nextbike-bielefeld",
-            "meta": {
-                "latitude": 52.0257,
-                "city": "Bielefeld",
-                "longitude": 8.53286,
-                "country": "DE"
-            },
-            "city_uid": "16"
-        },
-        {
-            "domain": "de",
             "tag": "nextbike-gutersloh",
             "meta": {
                 "latitude": 51.9049,
