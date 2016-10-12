@@ -1229,6 +1229,18 @@
                 "country": "PL"
             },
             "city_uid": 330
+        },
+        {
+            "domain": "sp",
+            "tag": "bikes-srm",
+            "meta": {
+                "latitude": 53.438056,
+                "city": "Szczecin",
+                "name": "Szczeciński rower miejski",
+                "longitude": 14.542222,
+                "country": "PL"
+            },
+            "city_uid": 346
         }
     ],
     "system": "nextbike",
