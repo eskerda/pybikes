@@ -9,7 +9,7 @@
                 "name": "EnCicla",
                 "country": "CO"
             },
-            "feed_url": "http://encicla.gov.co/status"
+            "feed_url": "http://www.encicla.gov.co/status/"
         }
     ],
     "system": "encicla",
