@@ -12,17 +12,6 @@
             }
         },
         {
-            "tag": "bikes-srm",
-            "url": "https://bikes-srm.pl/mapa-stacji.html",
-            "meta": {
-                "latitude": 53.438056,
-                "city": "Szczecin",
-                "name": "Szczeciński rower miejski",
-                "longitude": 14.542222,
-                "country": "PL"
-            }
-        },
-        {
             "tag": "bikeu-bra",
             "url": "https://www.bra.org.pl/mapa-stacji.html",
             "meta": {
