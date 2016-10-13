@@ -202,14 +202,14 @@
                 "latitude": 42.89373841865211,
                 "longitude": -78.8718044757843,
                 "city": "Buffalo, NY",
-                "name": "Buffalo Bike Share",
+                "name": "Reddy Bike Share",
                 "country": "US",
                 "company": [
                     "Shared Mobility Inc.",
                     "Social Bicycles Inc."
                 ]
             },
-            "feed_url": "https://buffalo.socialbicycles.com/opendata/gbfs.json"
+            "feed_url": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
         },
         {
             "tag": "capital-bikeshare",
