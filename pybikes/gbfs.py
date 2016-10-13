@@ -6,12 +6,12 @@ import json
 import operator
 
 from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from . import utils, exceptions
 
 __all__ = ['Gbfs', 'GbfsStation']
 
-class Gbfs(BikeShareSystem):
 
+class Gbfs(BikeShareSystem):
 
     def __init__(self, tag, meta, feed_url):
         # Add feed_url to meta in order to be exposed to the API
@@ -20,12 +20,12 @@ class Gbfs(BikeShareSystem):
         super(Gbfs, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
         # Make the request to gbfs.json and convert to json
-        html_data = json.loads(scraper.request(self.feed_url, raw = True))
+        html_data = json.loads(scraper.request(self.feed_url, raw=True))
 
         # Create a dict with name-url pairs for easier access
         # of urls (just in case)
@@ -35,25 +35,29 @@ class Gbfs(BikeShareSystem):
 
         # Station Information and Station Status data retrieval
         station_information = json.loads(
-                scraper.request(feeds['station_information'])
+            scraper.request(feeds['station_information'])
         )['data']['stations']
         station_status = json.loads(
-                scraper.request(feeds['station_status'])
+            scraper.request(feeds['station_status'])
         )['data']['stations']
 
         # Merge station_information and station_status into one dictionary for
         # every station after sorting both by 'station_id' in order to avoid
         # possible unmatches.
-        # Nabsa spec doesn't mention anything about stations order at the moment.
+        # Nabsa spec doesn't mention anything about stations order ATM.
         # Finally, pass the combined dictionary to GbfsStation as an argument.
         sorting_key = operator.itemgetter('station_id')
-        station_information = sorted(station_information, key = sorting_key)
-        station_status = sorted(station_status, key = sorting_key)
+        station_information = sorted(station_information, key=sorting_key)
+        station_status = sorted(station_status, key=sorting_key)
 
         self.stations = []
         for info, status in zip(station_information, station_status):
             info.update(status)
-            self.stations.append(GbfsStation(info))
+            try:
+                station = GbfsStation(status)
+            except exceptions.StationPlannedException:
+                continue
+            self.stations.append(station)
 
 
 class GbfsStation(BikeShareStation):
@@ -72,6 +76,9 @@ class GbfsStation(BikeShareStation):
         So let's extract the dataaa
         """
         super(GbfsStation, self).__init__()
+        if not info['is_installed']:
+            raise exceptions.StationPlannedException()
+
         self.name = unicode(info['name'])
         self.bikes = int(info['num_bikes_available'])
         self.free = int(info['num_docks_available'])
@@ -81,8 +88,7 @@ class GbfsStation(BikeShareStation):
             # address is optional
             'address': info.get('address'),
             'uid': info['station_id'],
-            'status': 'online' if all(
-                [info['is_renting'], info['is_installed']]
-            ) else 'offline',
+            'renting': info['is_renting'],
+            'returning': info['is_returning'],
             'last_updated': info['last_reported']
         }
