@@ -71,10 +71,8 @@ class GbfsStation(BikeShareStation):
 
         So let's extract the dataaa
         """
-
         super(GbfsStation, self).__init__()
-
-        self.name = str(info['name'])
+        self.name = unicode(info['name'])
         self.bikes = int(info['num_bikes_available'])
         self.free = int(info['num_docks_available'])
         self.latitude = float(info['lat'])
