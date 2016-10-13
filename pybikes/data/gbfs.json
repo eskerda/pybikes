@@ -607,7 +607,7 @@
                     "Social Bicycles Inc."
                 ]
             },
-            "feed_url": "https://sobilongbeach.com/opendata/gbfs.json"
+            "feed_url": "http://sobilongbeach.com/opendata/gbfs.json"
         },
         {
             "tag": "spartanburg",
@@ -648,7 +648,7 @@
                     "Social Bicycles Inc."
                 ]
             },
-            "feed_url": "https://ubike.virginia.edu/opendata/gbfs.json"
+            "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
         }
     ],
     "system": "gbfs",
