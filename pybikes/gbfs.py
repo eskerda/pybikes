@@ -71,20 +71,18 @@ class GbfsStation(BikeShareStation):
 
         So let's extract the dataaa
         """
-
         super(GbfsStation, self).__init__()
-
-        self.name = str(info['name'])
+        self.name = unicode(info['name'])
         self.bikes = int(info['num_bikes_available'])
         self.free = int(info['num_docks_available'])
         self.latitude = float(info['lat'])
         self.longitude = float(info['lon'])
         self.extra = {
-                # address is optional
-                'address': info.get('address'),
-                'uid': info['station_id'],
-                'status': 'Online' if all(
-                    [info['is_renting'], info['is_installed']]
-                ) else 'Offline',
-                'last_updated': int(info['last_reported'])
+            # address is optional
+            'address': info.get('address'),
+            'uid': info['station_id'],
+            'status': 'online' if all(
+                [info['is_renting'], info['is_installed']]
+            ) else 'offline',
+            'last_updated': info['last_reported']
         }
