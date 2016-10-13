@@ -84,5 +84,5 @@ class GbfsStation(BikeShareStation):
             'status': 'online' if all(
                 [info['is_renting'], info['is_installed']]
             ) else 'offline',
-            'last_updated': int(info['last_reported'])
+            'last_updated': info['last_reported']
         }
