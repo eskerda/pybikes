@@ -54,7 +54,7 @@ class Gbfs(BikeShareSystem):
         for info, status in zip(station_information, station_status):
             info.update(status)
             try:
-                station = GbfsStation(status)
+                station = GbfsStation(info)
             except exceptions.StationPlannedException:
                 continue
             self.stations.append(station)
