@@ -65,6 +65,17 @@
                 "city":"Ponferrada"
             },
             "city_code":"PO"
+        },
+        {
+            "tag":"vaibike",
+            "meta":{
+                "latitude":42.5999265,
+                "country":"ES",
+                "name":"VaiBike",
+                "longitude":-8.7885744,
+                "city":"Vilagarcía de Arousa"
+            },
+            "city_code":"VI"
         }
     ],
     "system":"labici",
