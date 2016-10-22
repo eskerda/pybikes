@@ -64,18 +64,7 @@
                 "longitude": 24.4122164,
                 "country": "GR"
             },
-            "city_uid": "kavala_new"
-        },
-        {
-            "tag": "easybike-drapetsona",
-            "meta": {
-                "latitude": 37.9490926,
-                "city": "Drapetsona",
-                "name": "EasyBike",
-                "longitude": 23.6282598,
-                "country": "GR"
-            },
-            "city_uid": "keratsini-drapetsona"
+            "city_uid": "kavala"
         },
         {
             "tag": "easybike-kinouria",
@@ -98,17 +87,6 @@
                 "country": "GR"
             },
             "city_uid": "komotini"
-        },
-        {
-            "tag": "easybike-nafpaktos",
-            "meta": {
-                "latitude": 38.3904882173,
-                "city": "Nafpaktos",
-                "name": "EasyBike",
-                "longitude": 21.8241262436,
-                "country": "GR"
-            },
-            "city_uid": "nafpaktos"
         },
         {
             "tag": "easybike-patra",
@@ -152,7 +130,7 @@
                 "longitude": 33.364726,
                 "country": "CY"
             },
-            "city_uid": "Nicosia"
+            "city_uid": "nicosia"
         },
         {
             "tag": "easybike-mani",
@@ -163,7 +141,7 @@
                 "longitude": 26.4024952,
                 "country": "GR"
             },
-            "city_uid": "mani"
+            "city_uid": "anatoliki_mani"
         },
         {
             "tag": "easybike-irakleio",
@@ -186,6 +164,17 @@
                 "country": "GR"
             },
             "city_uid": "thessbike"
+        },
+        {
+            "tag": "athensbikes",
+            "meta": {
+                "latitude": 37.9024405947,
+                "city": "Athens",
+                "name": "AthensBikes",
+                "longitude": 23.6864056396,
+                "country": "GR"
+            },
+            "city_uid": "athens"
         }
 
     ], 

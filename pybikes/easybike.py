@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, bparmentier <dev@brunoparmentier.be>
+# Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes import utils
 from contrib import TSTCache
 
-__all__ = ['EasyBike', 'EasyBikeStation']
+__all__ = ['EasyBike']
 
 
 cache = TSTCache(delta=60)
+
 
 class EasyBike(BikeShareSystem):
     sync = True
@@ -22,32 +24,32 @@ class EasyBike(BikeShareSystem):
         'company': ['Brainbox Technology', 'Smoove SAS']
     }
 
-    FEED_URL = 'http://api.easybike.gr/cities.php'
+    feed_url = 'http://reseller.easybike.gr/{city_uid}/api.php'
 
     def __init__(self, tag, meta, city_uid):
         super(EasyBike, self).__init__(tag, meta)
-        self.uid = city_uid
+        self.feed_url = EasyBike.feed_url.format(city_uid=city_uid)
 
-    def update(self, scraper = None):
+    def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper(cache)
 
-        networks = json.loads(scraper.request(EasyBike.FEED_URL))
-        network = next((n for n in networks if n['city'] == self.uid), None)
-        assert network, "%s city not found in easybike feed" % self.uid
-        # Some networks with no stations report it as ""
-        stations = network.get('stations') or []
-        self.stations = map(EasyBikeStation, stations)
+        stations = []
 
-
-class EasyBikeStation(BikeShareStation):
-    def __init__(self, info):
-        super(EasyBikeStation, self).__init__()
-        self.name = info['name'].encode('utf8')
-        self.bikes = int(info['BikesAvailable'])
-        self.free = int(info['DocksAvailable'])
-        self.latitude = float(info['lat'])
-        self.longitude = float(info['lng'])
-        self.extra = {
-            'slots': int(info['TotalDocks']),
-        }
+        data = json.loads(scraper.request(self.feed_url))
+        for station in data['stations']:
+            name = station['description']
+            longitude = float(station['lng'])
+            latitude = float(station['lat'])
+            # Skip some junk stations present in athens
+            if latitude == 51.43 and longitude == 5.48:
+                continue
+            bikes = int(station['free_bikes'])
+            free = int(station['free_spaces'])
+            extra = {
+                'slots': int(station['total_spaces'])
+            }
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
+            stations.append(station)
+        self.stations = stations
