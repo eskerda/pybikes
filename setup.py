@@ -20,6 +20,7 @@ setup(
         'requests>=2.6.0',
         'lxml',
         'cssselect>=0.9',
+        'suds',
         'shapely>=1.5.13',
         'demjson',
     ],
