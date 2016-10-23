@@ -1,0 +1,17 @@
+{
+    "instances":[
+        {
+            "tag": "bicicoruna",
+            "meta": {
+                "name": "bicicoruña",
+                "city": "A Coruña",
+                "latitude": 43.3619312,
+                "longitude": -8.4477033,
+                "country": "ES"
+            },
+            "url": "http://bicicoruna.es"
+        }
+    ],
+    "system":"nextgal",
+    "class":"Nextgal"
+}
