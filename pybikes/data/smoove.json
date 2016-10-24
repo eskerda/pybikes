@@ -55,7 +55,7 @@
                         "longitude":4.805833,
                         "country":"FR"
                     },
-                    "feed_url":"http://www.velopop.fr/stations.html"
+                    "feed_url":"http://cli-velo-avignon.gir.fr/stations_inc.html"
                 },
                 {
                     "tag":"libelo",
