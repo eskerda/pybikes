@@ -282,7 +282,7 @@
                     "Social Bicycles Inc."
                 ]
             },
-            "feed_url": "http://coastbikeshare.com/opendata/gbfs.json"
+            "feed_url": "https://coast.socialbicycles.com/opendata/gbfs.json"
         },
         {
             "tag": "cogo",
