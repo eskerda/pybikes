@@ -48,17 +48,6 @@
                     }
                 },
                 {
-                    "url":"http://ww2.mobilicidade.com.br/sorocaba/mapaestacao.asp",
-                    "tag":"bikesorocaba",
-                    "meta":{
-                        "latitude":-23.501719,
-                        "city":"Sorocaba",
-                        "name":"BikeSorocaba",
-                        "longitude":-47.45079,
-                        "country":"BR"
-                    }
-                },
-                {
                     "url":"http://ww2.mobilicidade.com.br/petrobike/mapaestacao.asp",
                     "tag":"bikepetrolina",
                     "meta":{
