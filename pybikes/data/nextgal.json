@@ -10,6 +10,17 @@
                 "country": "ES"
             },
             "url": "http://bicicoruna.es"
+        },
+        {
+            "tag": "bici-ferrol-terra",
+            "meta": {
+                "name": "BiciFerrolTerra",
+                "city": "Ferrol - Narón",
+                "latitude": 43.4896,
+                "longitude": 8.2193,
+                "country": "ES"
+            },
+            "url": "http://www.biciferrolterra.com"
         }
     ],
     "system":"nextgal",
