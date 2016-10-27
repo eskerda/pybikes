@@ -4,6 +4,8 @@
 
 import json
 
+import shapely.geometry as geometry
+
 from pybikes.base import BikeShareSystem, BikeShareStation
 from pybikes import utils
 
@@ -17,9 +19,15 @@ class CompartiBike(BikeShareSystem):
         'system': 'CompartiBike'
     }
 
-    def __init__(self, tag, meta, feed_url):
+    def __init__(self, tag, meta, feed_url, bounding_box=None):
         super(CompartiBike, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.bounding_box = None
+        if bounding_box:
+            self.bounding_box = geometry.box(bounding_box[0][0],
+                                             bounding_box[0][1],
+                                             bounding_box[1][0],
+                                             bounding_box[1][1])
 
     def update(self, scraper=None):
         if scraper is None:
@@ -64,16 +72,21 @@ class CompartiBike(BikeShareSystem):
             latitude = float(station['googleMapX'])
 
             # Skip "test" stations
-            if latitude == 1 and longitude == 1:
-                continue
+            if self.bounding_box:
+                point = geometry.Point(longitude, latitude)
+                if not self.bounding_box.contains(point):
+                    continue
 
             name = station['name']
-            bikes = int(station['available_slots_size'])
-            free = int(station['unavailable_slots_size'])
+            free = int(station['available_slots_size'])
+            bikes = int(station['unavailable_slots_size'])
 
             extra = {
                 'uid': int(station['id']),
-                'open': station['status'] == 'Ativa'
+                'open': station['status'] == 'Ativa',
+                'number': int(station['station_number']),
+                'bike_uids': [bike['id'] for bike in station['bikes']]
+
             }
 
             station = BikeShareStation(name, latitude, longitude, bikes, free,

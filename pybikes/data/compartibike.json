@@ -5,7 +5,7 @@
             "meta":{
                 "latitude":-23.501719,
                 "city":"Sorocaba",
-                "name":"IntegraBike Sorocaba",
+                "name":"Integrabike",
                 "longitude":-47.45079,
                 "country":"BR",
                 "company":[
@@ -43,6 +43,7 @@
                     "Governo de Ipaussu"
                 ]
             },
+            "bounding_box": [[-49.644241, -23.065455], [-49.617634, -23.035365]],
             "feed_url":"http://www.dukebike.compartibike.com.br/stations.json"
         }
        
