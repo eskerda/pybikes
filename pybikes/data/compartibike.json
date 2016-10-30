@@ -3,10 +3,10 @@
        {
             "tag":"integrabike",
             "meta":{
-                "latitude":-23.501719,
+                "latitude":-23.5015,
                 "city":"Sorocaba",
                 "name":"Integrabike",
-                "longitude":-47.45079,
+                "longitude":-47.4526,
                 "country":"BR",
                 "company":[
                     "Prefeiture de Sorocaba",
@@ -18,10 +18,10 @@
         {
             "tag":"rivibike",
             "meta":{
-                "latitude":-23.501719,
+                "latitude":-22.1124,
                 "city":"São Lourenço",
                 "name":"RiviBike",
-                "longitude":-47.45079,
+                "longitude":-45.0280,
                 "country":"BR",
                 "company":[
                     "Associação dos Amigos da Riviera de São Lourenço",
@@ -33,10 +33,10 @@
         {
             "tag":"dukebike",
             "meta":{
-                "latitude":-23.052386,
+                "latitude":-23.0553,
                 "city":"Ipaússu",
                 "name":"DukeBike",
-                "longitude":-49.630102,
+                "longitude":-49.6237,
                 "country":"BR",
                 "company":[
                     "Duke Energy Brasil",
@@ -46,7 +46,6 @@
             "bounding_box": [[-49.644241, -23.065455], [-49.617634, -23.035365]],
             "feed_url":"http://www.dukebike.compartibike.com.br/stations.json"
         }
-       
     ],
     "system":"compartibike",
     "class":"CompartiBike"
