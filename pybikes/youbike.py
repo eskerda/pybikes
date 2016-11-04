@@ -42,6 +42,7 @@ class YouBike(BikeShareSystem):
         """ % kml_name, namespaces=_kml_ns)
         # Rather ugly way to get the coordinates out of this kml, but its what
         # we have.
+        self.city_bounds = []
         for bound in city_bounds:
             coords = filter(None, bound.text.split('\n'))
             # We got the kml with lng / lat
