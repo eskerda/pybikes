@@ -7,6 +7,7 @@ if [ $TRAVIS_BUILD -eq 1 ]; then
     python tests/unittest_pybikes.py TestBikeShareStationInstance
     python tests/unittest_pybikes.py TestBikeShareSystemInstance
     python tests/unittest_pybikes.py TestDataFiles
+    python tests/unittest_pybikes.py TestUtils
 else
     pip install .
     python tests/unittest_pybikes.py $@

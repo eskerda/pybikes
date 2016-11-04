@@ -8,6 +8,8 @@ from itertools import imap
 import requests
 from shapely.geometry import Polygon, Point, box
 
+from pybikes.base import BikeShareStation
+
 
 def str2bool(v):
     return v.lower() in ["yes", "true", "t", "1"]
@@ -107,11 +109,17 @@ class PyBikesScraper(object):
         self.proxy_enabled = False
 
 
-def filter_bounds(stations, *point_bounds):
+def filter_bounds(things, key, *point_bounds):
+    def default_getter(thing):
+        if isinstance(thing, BikeShareStation):
+            return (thing.latitude, thing.longitude)
+        return (thing[0], thing[1])
+    key = key or default_getter
+
     bounds = []
     for pb in point_bounds:
         # Assume that a 2 length bound is a square NE/SW
-        if (len(pb) == 2):
+        if len(pb) == 2:
             bb = box(min(pb[0][0], pb[1][0]),
                      min(pb[0][1], pb[1][1]),
                      max(pb[0][0], pb[1][0]),
@@ -120,8 +128,8 @@ def filter_bounds(stations, *point_bounds):
             bb = Polygon(pb)
         bounds.append(bb)
 
-    for station in stations:
-        point = Point(station.latitude, station.longitude)
+    for thing in things:
+        point = Point(*key(thing))
         if not any(imap(lambda pol: pol.contains(point), bounds)):
             continue
-        yield station
+        yield thing
