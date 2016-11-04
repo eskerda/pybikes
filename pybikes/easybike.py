@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, bparmentier <dev@brunoparmentier.be>
+# Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
+# Copyright (C) 2016, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
-from contrib import TSTCache
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes import utils
 
-__all__ = ['EasyBike', 'EasyBikeStation']
-
-
-cache = TSTCache(delta=60)
 
 class EasyBike(BikeShareSystem):
     sync = True
@@ -22,32 +19,34 @@ class EasyBike(BikeShareSystem):
         'company': ['Brainbox Technology', 'Smoove SAS']
     }
 
-    FEED_URL = 'http://api.easybike.gr/cities.php'
+    feed_url = 'http://reseller.easybike.gr/{city_uid}/api.php'
 
-    def __init__(self, tag, meta, city_uid):
+    def __init__(self, tag, meta, city_uid, bbox=None):
         super(EasyBike, self).__init__(tag, meta)
-        self.uid = city_uid
+        self.feed_url = EasyBike.feed_url.format(city_uid=city_uid)
+        self.bbox = bbox
 
-    def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper(cache)
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
 
-        networks = json.loads(scraper.request(EasyBike.FEED_URL))
-        network = next((n for n in networks if n['city'] == self.uid), None)
-        assert network, "%s city not found in easybike feed" % self.uid
-        # Some networks with no stations report it as ""
-        stations = network.get('stations') or []
-        self.stations = map(EasyBikeStation, stations)
+        stations = []
 
+        data = json.loads(scraper.request(self.feed_url))
+        stations = self.get_stations(data)
+        if self.bbox:
+            stations = utils.filter_bounds(stations, self.bbox)
+        self.stations = list(stations)
 
-class EasyBikeStation(BikeShareStation):
-    def __init__(self, info):
-        super(EasyBikeStation, self).__init__()
-        self.name = info['name'].encode('utf8')
-        self.bikes = int(info['BikesAvailable'])
-        self.free = int(info['DocksAvailable'])
-        self.latitude = float(info['lat'])
-        self.longitude = float(info['lng'])
-        self.extra = {
-            'slots': int(info['TotalDocks']),
-        }
+    def get_stations(self, data):
+        for station in data['stations']:
+            name = station['description']
+            longitude = float(station['lng'])
+            latitude = float(station['lat'])
+            bikes = int(station['free_bikes'])
+            free = int(station['free_spaces'])
+            extra = {
+                'slots': int(station['total_spaces'])
+            }
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
+            yield station
