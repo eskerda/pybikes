@@ -51,7 +51,7 @@
                         "longitude": -99.133208, 
                         "country": "MX"
                     }, 
-                    "feed_url": "https://www.ecobici.df.gob.mx/availability_map/getJsonObject", 
+                    "feed_url": "https://www.ecobici.cdmx.gob.mx/availability_map/getJsonObject",
                     "format": "json_v2"
                 },
                 {
