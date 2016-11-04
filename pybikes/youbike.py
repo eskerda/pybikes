@@ -6,10 +6,9 @@ from pkg_resources import resource_string
 from itertools import imap
 
 from lxml import etree
-from shapely.geometry import Polygon, Point
 
 from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper
+from pybikes.utils import PyBikesScraper, filter_bounds
 from pybikes.contrib import TSTCache
 
 
@@ -41,30 +40,26 @@ class YouBike(BikeShareSystem):
         city_bounds = kml_tree.xpath("""
             //kml:Placemark[kml:name[text()="%s"]]//kml:coordinates
         """ % kml_name, namespaces=_kml_ns)
-        self.city_bounds = map(
-            lambda cb: Polygon(
-                map(
-                    lambda c: tuple(map(float, c.split(','))),
-                    filter(None, cb.text.split('\n'))
-                )
-            ), city_bounds
-        )
+        # Rather ugly way to get the coordinates out of this kml, but its what
+        # we have.
+        for bound in city_bounds:
+            coords = filter(None, bound.text.split('\n'))
+            # We got the kml with lng / lat
+            coords = map(lambda c: reversed(c.split(',')), coords)
+            coords = map(lambda ll: map(float, ll), coords)
+            self.city_bounds.append(coords)
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = PyBikesScraper(cache)
-        self.stations = map(YouBikeStation, self.get_data(scraper))
-
-    def get_data(self, scraper):
+        scraper = scraper or PyBikesScraper(cache)
         html = scraper.request(self.main_url)
         data_m = re.search(r'siteContent=\'({.+?})\';', html)
         data = json.loads(data_m.group(1))
-        for k, station in data.iteritems():
-            lat = float(station['lat'])
-            lng = float(station['lng'])
-            coord = Point(lng, lat)
-            if any(imap(lambda cb: cb.contains(coord), self.city_bounds)):
-                yield station
+        filtered_data = filter_bounds(
+            data.itervalues(),
+            lambda s: (float(s['lat']), float(s['lng'])),
+            * self.city_bounds
+        )
+        self.stations = map(YouBikeStation, filtered_data)
 
 
 class YouBikeStation(BikeShareStation):
