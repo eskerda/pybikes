@@ -6,10 +6,8 @@ import re
 import json
 from lxml import etree
 
-from shapely.geometry import Point, box
-
 from .base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper
+from pybikes.utils import PyBikesScraper, filter_bounds
 from pybikes.contrib import TSTCache
 
 __all__ = ['Nextbike', 'NextbikeStation']
@@ -36,9 +34,7 @@ class Nextbike(BikeShareSystem):
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
         self.domain = domain
         self.uid = city_uid
-        self.bbox = None
-        if bbox:
-            self.bbox = box(bbox[0][0], bbox[0][1], bbox[1][0], bbox[1][1])
+        self.bbox = bbox
 
     def update(self, scraper=None):
         if scraper is None:
@@ -53,23 +49,15 @@ class Nextbike(BikeShareSystem):
         assert places, "Not found: uid {!r}, domain {!r}, url {}".format(
             self.uid, self.domain, self.url
         )
-        self.stations = map(NextbikeStation, self.filter_stations(places))
+        if self.bbox:
+            def getter(place):
+                lat, lng = place.attrib['lat'], place.attrib['lng']
+                return (float(lat), float(lng))
+            places = filter_bounds(places, getter, self.bbox)
+        # For now ignore bikes roaming around
+        places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
 
-    def filter_stations(self, places):
-        for place in places:
-            # TODO: For now we are not going to track bikes roaming around
-            if place.attrib.get('bike', '') == '1':
-                continue
-            # Some networks include testing stations that are outside of the
-            # system. On these cases, a bounding box can be provided to filter
-            # them out.
-            if self.bbox:
-                lat = float(place.attrib['lat'])
-                lng = float(place.attrib['lng'])
-                coord = Point(lng, lat)
-                if not self.bbox.contains(coord):
-                    continue
-            yield place
+        self.stations = map(NextbikeStation, places)
 
 
 class NextbikeStation(BikeShareStation):
