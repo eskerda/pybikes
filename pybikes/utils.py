@@ -3,7 +3,10 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+from itertools import imap
+
 import requests
+from shapely.geometry import Polygon, Point, box
 
 
 def str2bool(v):
@@ -102,3 +105,23 @@ class PyBikesScraper(object):
 
     def disableProxy(self):
         self.proxy_enabled = False
+
+
+def filter_bounds(stations, *point_bounds):
+    bounds = []
+    for pb in point_bounds:
+        # Assume that a 2 length bound is a square NE/SW
+        if (len(pb) == 2):
+            bb = box(min(pb[0][0], pb[1][0]),
+                     min(pb[0][1], pb[1][1]),
+                     max(pb[0][0], pb[1][0]),
+                     max(pb[0][1], pb[1][1]))
+        else:
+            bb = Polygon(pb)
+        bounds.append(bb)
+
+    for station in stations:
+        point = Point(station.latitude, station.longitude)
+        if not any(imap(lambda pol: pol.contains(point), bounds)):
+            continue
+        yield station

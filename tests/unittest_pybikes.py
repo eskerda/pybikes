@@ -283,6 +283,44 @@ class TestDataFiles(unittest.TestCase):
                                   msg=('Error in %r on ' % field) + msg)
 
 
+class TestUtils(unittest.TestCase):
+    def test_filter_bounds(self):
+        """ Tests that filter_bounds utils function correctly filters stations
+        out of a given number of bounds. Function must accept multiple lists
+        of points to form polygons (4 for a box, oc)."""
+        in_bounds = [
+            # First bound
+            pybikes.BikeShareStation(latitude=1.1, longitude=1.1),
+            pybikes.BikeShareStation(latitude=2.2, longitude=2.2),
+            pybikes.BikeShareStation(latitude=3.3, longitude=3.3),
+            pybikes.BikeShareStation(latitude=4.4, longitude=4.4),
+
+            # Second bound
+            pybikes.BikeShareStation(latitude=21.0, longitude=21.0),
+            pybikes.BikeShareStation(latitude=22.0, longitude=22.0),
+            pybikes.BikeShareStation(latitude=23.0, longitude=23.0),
+            pybikes.BikeShareStation(latitude=24.0, longitude=24.0),
+        ]
+        off_bounds = [
+            pybikes.BikeShareStation(latitude=11.1, longitude=11.1),
+            pybikes.BikeShareStation(latitude=12.2, longitude=12.2),
+            pybikes.BikeShareStation(latitude=13.3, longitude=13.3),
+            pybikes.BikeShareStation(latitude=14.4, longitude=14.4),
+        ]
+        bounds = ([
+            [0.0, 0.0],
+            [5.0, 0.0],
+            [5.0, 5.0],
+            [0.0, 5.0]
+        ], [
+            # This bounding box is a set of two points, NE, SW
+            [20.0, 25.0],
+            [25.0, 20.0],
+        ])
+        result = pybikes.utils.filter_bounds(in_bounds + off_bounds, *bounds)
+        self.assertEqual(in_bounds, list(result))
+
+
 def create_test_schema_method(schema):
     def test_schema(self):
         self._test_systems(schema)

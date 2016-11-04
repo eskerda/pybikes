@@ -166,15 +166,19 @@
             "city_uid": "thessbike"
         },
         {
-            "tag": "athensbikes",
+            "tag": "athens-bikes",
             "meta": {
-                "latitude": 37.9024405947,
+                "latitude": 37.9838,
                 "city": "Athens",
                 "name": "AthensBikes",
-                "longitude": 23.6864056396,
+                "longitude": 23.7275,
                 "country": "GR"
             },
-            "city_uid": "athens"
+            "city_uid": "athens",
+            "bbox": [
+                [38.0328563, 23.7896925],
+                [37.9488181, 23.6869861]
+            ]
         }
 
     ], 
