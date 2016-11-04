@@ -43,7 +43,7 @@
                     "Governo de Ipaussu"
                 ]
             },
-            "bounding_box": [[-49.644241, -23.065455], [-49.617634, -23.035365]],
+            "bounding_box": [[-23.065455, -49.644241], [-23.035365, -49.617634]],
             "feed_url":"http://www.dukebike.compartibike.com.br/stations.json"
         }
     ],
