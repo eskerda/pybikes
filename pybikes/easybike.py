@@ -34,7 +34,7 @@ class EasyBike(BikeShareSystem):
         data = json.loads(scraper.request(self.feed_url))
         stations = self.get_stations(data)
         if self.bbox:
-            stations = utils.filter_bounds(stations, self.bbox)
+            stations = utils.filter_bounds(stations, None, self.bbox)
         self.stations = list(stations)
 
     def get_stations(self, data):
