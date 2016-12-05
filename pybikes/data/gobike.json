@@ -26,13 +26,9 @@
                     },
                     "hostname":"http://nu-connectutrecht.nl",
                     "availability_path": "/en/account/my-reservations/book-e-bike-via-website/"
-                }
-            ]
-        },
-        "GoBikeXML": {
-            "instances": [
-                {
-                    "tag":"bycyklen",
+                },
+                    {
+                        "tag":"bycyklen",
                     "meta":{
                         "latitude":55.673582,
                         "country":"DK",
@@ -40,9 +36,13 @@
                         "longitude":12.564984,
                         "city":"Copenhagen"
                     },
-                    "feed_url": "http://my.bycyklen.dk/da/reservations/dockingstationsinfoxml"
+                    "hostname": "https://bycyklen.dk",
+                    "availability_path": "/en/my-account/my-reservations/book-cykel-via-website/"
                 }
             ]
+        },
+        "GoBikeXML": {
+            "instances": []
         }
     }
 }
