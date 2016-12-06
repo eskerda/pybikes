@@ -649,6 +649,21 @@
                 ]
             },
             "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
+        },
+        {
+            "tag": "bay-area-bike-share",
+            "meta": {
+                "latitude": 37.7141454,
+                "longitude": -122.25,
+                "city": "San Francisco Bay Area, CA",
+                "name": "Bay Area Bike Share",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ]
+            },
+            "feed_url": "https://gbfs.bayareabikeshare.com/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
