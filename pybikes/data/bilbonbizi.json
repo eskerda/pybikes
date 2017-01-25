@@ -1,0 +1,17 @@
+{
+    "instances":[
+        {
+            "meta":{
+                "city": "Bilbao",
+                "name": "Bilbon Bizi",
+                "latitude": 43.2627707,
+                "longitude": -2.9371822,
+                "country": "ES"
+            },
+            "feed_url": "http://www.bilbao.eus/WebServicesBilbao/WSBilbao?s=ODPRESBICI&u=OPENDATA&p0=A&p1=A",
+            "tag": "bilbon-bizi"
+        }
+    ],
+    "class": "BilbonBizi",
+    "system": "bilbonbizi"
+}
