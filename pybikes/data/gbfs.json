@@ -664,6 +664,21 @@
                 ]
             },
             "feed_url": "https://gbfs.bayareabikeshare.com/gbfs/gbfs.json"
+        },
+        {
+            "tag": "relay-atlanta",
+            "meta": {
+                "latitude": 33.7627941119619,
+                "longitude": -84.38727110624313,
+                "city": "Atlanta, GA",
+                "name": "Relay Bike Share",
+                "country": "US",
+                "company": [
+                    "CycleHop, LLC",
+                    "Social Bicycles Inc"
+                ]
+            },
+            "feed_url": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
         }
     ],
     "system": "gbfs",
