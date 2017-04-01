@@ -177,20 +177,6 @@
             "city_uid": "139"
         },
         {
-            "domain": "mg",
-            "tag": "mvgrad",
-            "meta": {
-                "latitude": 48.1392,
-                "city": "München",
-                "name": "MVG Rad",
-                "longitude": 11.5791,
-                "country": "DE"
-            },
-            "city_uid": "268",
-            "hostname": "mvgrad.nextbike.net",
-            "bbox": [[48.248222, 11.72288], [48.06159, 11.36078]]
-        },
-        {
             "domain": "lv",
             "tag": "sixt-latvia-jurmala",
             "meta": {
