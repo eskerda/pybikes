@@ -1123,18 +1123,6 @@
             "city_uid": 148
         },
         {
-            "domain": "bb",
-            "tag": "bemowo-bike",
-            "meta": {
-                "name": "Bemowo Bike",
-                "latitude": 52.2606,
-                "longitude": 20.929,
-                "country": "PL",
-                "city": "Warszawa"
-            },
-            "city_uid": 197
-        },
-        {
             "domain": "pb",
             "tag": "poznanski-rower-miejski",
             "meta": {
@@ -1169,6 +1157,18 @@
                 "city": "Warszawa"
             },
             "city_uid": 210
+        },
+        {
+            "domain": "vp",
+            "tag": "stacje-sponsorskie-veturilo",
+            "meta": {
+                "name": "Stacje Sponsorskie Nextbike Veturilo",
+                "latitude": 52.2265,
+                "longitude": 21.0127,
+                "country": "PL",
+                "city": "Warszawa"
+            },
+            "city_uid": 372
         },
         {
             "domain": "kp",
