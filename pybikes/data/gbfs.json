@@ -554,22 +554,6 @@
             "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
         },
         {
-            "tag": "pronto-cycle-share",
-            "meta": {
-                "latitude": 47.606209,
-                "longitude": -122.332071,
-                "city": "Seattle, WA",
-                "name": "Pronto Cycle Share",
-                "country": "US",
-                "company": [
-                    "Pronto!",
-                    "City of Seattle",
-                    "Motivate International, Inc."
-                ]
-            },
-            "feed_url": "https://gbfs.prontocycleshare.com/gbfs/gbfs.json"
-        },
-        {
             "tag": "sanantonio",
             "meta": {
                 "latitude": 29.43701,
