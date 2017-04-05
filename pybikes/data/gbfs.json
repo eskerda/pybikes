@@ -29,21 +29,6 @@
             "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
         },
         {
-            "tag": "bixi-toronto",
-            "meta": {
-                "latitude": 43.653226,
-                "longitude": -79.3831843,
-                "city": "Toronto, ON",
-                "name": "Bike Share Toronto",
-                "country": "CA",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://gbfs.bikesharetoronto.com/gbfs/gbfs.json"
-        },
-        {
             "tag": "sobi-hamilton",
             "meta": {
                 "latitude": 43.25643601915583,
