@@ -41,7 +41,7 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://gbfs.bikesharetoronto.com/gbfs/gbfs.json"
+            "feed_url": "https://tor.publicbikesystem.net/ube/gbfs/v1/"
         },
         {
             "tag": "sobi-hamilton",
