@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+from ast import literal_eval
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -28,7 +29,7 @@ class Movete(BikeShareSystem):
 
         station_list = re.findall(r'\[\'.+?\'\]', station_list_m.group(1))
         for data in station_list:
-            data = eval(data)
+            data = literal_eval(data)
             if int(data[4]) == -1:
                 # Office marker
                 continue
