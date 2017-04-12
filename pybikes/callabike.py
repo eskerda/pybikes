@@ -3,6 +3,8 @@
 # Distributed under the AGPL license, see LICENSE.txt
 import re
 import json
+import itertools
+import time
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -16,8 +18,8 @@ class Callabike(BikeShareSystem):
     unifeed = True
 
     meta = {
-        'system': 'Call-A-Bike_new',
-        'company': ['DB Rent GmbH_new']
+        'system': 'Call-A-Bike',
+        'company': ['DB Rent GmbH']
     }
 
     def __init__(self, tag, meta):
@@ -38,20 +40,23 @@ class Callabike(BikeShareSystem):
                 'maxItems': 100,
                 'radius': 100000
             }],
-            'id': 1491984844993
+            'id': int(round(time.time() * 1000))
         }
 
         data = json.loads(
             scraper.request(feed_url, 'POST', data=json.dumps(BODY_DICT))
         )
 
-        self.stations = map(CallabikeStation, data['result']['data']['Locations'])
+        locations = data['result']['data']['Locations']
+        self.stations = map(CallabikeStation, locations, itertools.repeat(self.meta['name'], len(locations)))
 
 
 class CallabikeStation(BikeShareStation):
-    def __init__(self, data):
+    def __init__(self, data, name):
         super(CallabikeStation, self).__init__()
         self.name = data['objectName']
+        if self.name == "-":
+            self.name = name
         self.latitude = float(data['Position']['Latitude'])
         self.longitude = float(data['Position']['Longitude'])
         self.bikes = int(data['totalVehicles'])
