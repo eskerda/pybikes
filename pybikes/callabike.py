@@ -9,47 +9,56 @@ from . import utils
 
 __all__ = ['Callabike', 'CallabikeStation']
 
-BASE_URL = 'https://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
-
+feed_url = 'https://www.callabike-interaktiv.de/rpc'
 
 class Callabike(BikeShareSystem):
     sync = True
     unifeed = True
 
     meta = {
-        'system': 'Call-A-Bike',
-        'company': ['DB Rent GmbH']
+        'system': 'Call-A-Bike_new',
+        'company': ['DB Rent GmbH_new']
     }
 
-    def __init__(self, tag, meta, city_id):
+    def __init__(self, tag, meta):
         super(Callabike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(city_id=city_id)
 
     def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
 
-        markers = json.loads(scraper.request(self.url))
-        self.stations = [
-            CallabikeStation(a) for a in markers['marker']
-            if a['hal2option']['standort_id']
-        ]
+        LAT = self.meta['latitude'];
+        LON = self.meta['longitude'];
+
+        BODY_DICT = {
+            'method': "Map.listBikes",
+            'params': [{
+                'lat': LAT,
+                'long': LON,
+                'maxItems': 100,
+                'radius': 100000
+            }],
+            'id': 1491984844993
+        }
+
+        data = json.loads(
+            scraper.request(feed_url, 'POST', data=json.dumps(BODY_DICT))
+        )
+
+        self.stations = map(CallabikeStation, data['result']['data']['Locations'])
 
 
 class CallabikeStation(BikeShareStation):
-    def __init__(self, info):
+    def __init__(self, data):
         super(CallabikeStation, self).__init__()
-        self.latitude = float(info['lat'])
-        self.longitude = float(info['lng'])
-
-        hal2 = info['hal2option']
-        tooltip = hal2['tooltip']
-        tooltip = tooltip.replace("&nbsp;", " ")
-        tooltip = re.sub(r"^'|'$", "", tooltip)
-        tooltip = tooltip.strip()
-        tooltip = tooltip.encode("utf-8")
-        bikes = hal2['bikelist']
-        bikes = [a for a in bikes if a['canBeRented']]
-
-        self.name = tooltip
-        self.bikes = len(bikes)
+        self.name = data['objectName']
+        self.latitude = float(data['Position']['Latitude'])
+        self.longitude = float(data['Position']['Longitude'])
+        self.bikes = int(data['totalVehicles'])
+        self.free = data[u'FreeBikes'].__len__()
+        self.extra = {
+            'description': data['Description'],
+            'isPedelec': data['isPedelec'],
+            'isStation': data['isStation'],
+            'objectId': data['objectId']
+        }

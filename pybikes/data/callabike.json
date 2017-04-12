@@ -1,149 +1,486 @@
 {
     "instances": [
         {
-            "tag": "callabike-darmstadt",
+            "tag": "callabike-aschaffenburg",
             "meta": {
-                "latitude": 49.8707135,
-                "city": "Darmstadt",
-                "name": "Call-A-Bike Darmstadt",
-                "longitude": 8.6527299,
+                "latitude": 49.436467,
+                "city": "Aschaffenburg",
+                "name": "Call-A-Bike Aschaffenburg",
+                "longitude": 7.768645,
                 "country": "DE"
-            },
-            "city_id": 19
+            }
         },
         {
-            "tag": "konrad",
+            "tag": "callabike-baden-baden",
             "meta": {
-                "latitude": 51.3148861,
-                "city": "Kassel",
-                "name": "Konrad",
-                "longitude": 9.4606148,
+                "latitude": 48.790514,
+                "city": "Baden Baden",
+                "name": "Call-A-Bike Baden Baden",
+                "longitude": 8.191302,
                 "country": "DE"
-            },
-            "city_id": 34100
+            }
+        },
+        {
+            "tag": "callabike-bamberg",
+            "meta": {
+                "latitude": 49.900708,
+                "city": "Bamberg",
+                "name": "Call-A-Bike Bamberg",
+                "longitude": 10.898907,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-berlin",
             "meta": {
-                "latitude": 52.5075419,
+                "latitude": 52.519444,
                 "city": "Berlin",
                 "name": "Call-A-Bike Berlin",
-                "longitude": 13.4251364,
+                "longitude": 13.406667,
                 "country": "DE"
-            },
-            "city_id": 2
+            }
         },
         {
-            "tag": "callabike-frankfurt",
+            "tag": "callabike-bielefeld",
             "meta": {
-                "latitude": 50.121212,
-                "city": "Frankfurt am Main",
-                "name": "Call-A-Bike Frankfurt",
-                "longitude": 8.6365638,
+                "latitude": 52.029537,
+                "city": "Bielefeld",
+                "name": "Call-A-Bike Bielefeld",
+                "longitude": 8.532673,
                 "country": "DE"
-            },
-            "city_id": 13
+            }
+        },
+        {
+            "tag": "callabike-braunschweig",
+            "meta": {
+                "latitude": 52.252740,
+                "city": "Braunschweig",
+                "name": "Call-A-Bike Braunschweig",
+                "longitude": 10.539341,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-bonn",
+            "meta": {
+                "latitude": 50.733202,
+                "city": "Bonn",
+                "name": "Call-A-Bike Bonn",
+                "longitude": 7.096035,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-bremen",
+            "meta": {
+                "latitude": 53.083270,
+                "city": "Bremen",
+                "name": "Call-A-Bike Bremen",
+                "longitude": 8.813456,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-darmstadt",
+            "meta": {
+                "latitude": 49.866667,
+                "city": "Darmstadt",
+                "name": "Call-A-Bike Darmstadt",
+                "longitude": 8.65,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-dusseldorf",
+            "meta": {
+                "latitude": 51.220387,
+                "city": "Dusseldorf",
+                "name": "Call-A-Bike Dusseldorf",
+                "longitude": 6.793060,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-erlangen",
+            "meta": {
+                "latitude": 49.596545,
+                "city": "Erlangen",
+                "name": "Call-A-Bike Erlangen",
+                "longitude": 11.002099,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-frankfurt-airport",
             "meta": {
-                "latitude": 50.037933,
-                "city": "Frankfurt am Main Airport",
+                "latitude": 50.06111,
+                "city": "Frankfurt Airport",
                 "name": "Call-A-Bike Frankfurt Airport",
-                "longitude": 8.562152,
+                "longitude": 8.56419,
                 "country": "DE"
-            },
-            "city_id": 100002
+            }
         },
         {
-            "tag": "stadtrad",
+            "tag": "callabike-frankfurt",
             "meta": {
-                "latitude": 53.558572,
-                "city": "Hamburg",
-                "name": "StadtRAD Hamburg",
-                "longitude": 9.9278215,
+                "latitude": 50.110556,
+                "city": "Frankfurt",
+                "name": "Call-A-Bike Frankfurt",
+                "longitude": 8.682222,
                 "country": "DE"
-            },
-            "city_id": 75
+            }
+        },
+        {
+            "tag": "callabike-freiburg",
+            "meta": {
+                "latitude": 47.997820,
+                "city": "Freiburg",
+                "name": "Call-A-Bike Freiburg",
+                "longitude": 7.842070,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-fulda",
+            "meta": {
+                "latitude": 50.554746,
+                "city": "Fulda",
+                "name": "Call-A-Bike Fulda",
+                "longitude": 9.683706,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-gottingen",
+            "meta": {
+                "latitude": 51.536784,
+                "city": "Göttingen",
+                "name": "Call-A-Bike Göttingen",
+                "longitude": 9.926776,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-gutersloh",
+            "meta": {
+                "latitude": 51.907323,
+                "city": "Gütersloh",
+                "name": "Call-A-Bike Gütersloh",
+                "longitude": 8.384611,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-halle",
+            "meta": {
+                "latitude": 51.477571,
+                "city": "Halle",
+                "name": "Call-A-Bike Halle",
+                "longitude": 11.987404,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-hamburg",
+            "meta": {
+                "latitude": 53.550556,
+                "city": "Hamburg",
+                "name": "Call-A-Bike Hamburg",
+                "longitude": 9.993333,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-hanau",
+            "meta": {
+                "latitude": 50.121770,
+                "city": "Hanau",
+                "name": "Call-A-Bike Hanau",
+                "longitude": 8.929632,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-hannover",
+            "meta": {
+                "latitude": 52.376630,
+                "city": "Hannover",
+                "name": "Call-A-Bike Hannover",
+                "longitude": 9.741062,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-heidelberg",
+            "meta": {
+                "latitude": 49.404127,
+                "city": "Heidelberg",
+                "name": "Call-A-Bike Heidelberg",
+                "longitude": 8.675868,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-hennef",
+            "meta": {
+                "latitude": 50.773473,
+                "city": "Hennef",
+                "name": "Call-A-Bike Hennef",
+                "longitude": 7.285919,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-ingolstadt",
+            "meta": {
+                "latitude": 48.744555,
+                "city": "Ingolstadt",
+                "name": "Call-A-Bike Ingolstadt",
+                "longitude": 11.436732,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-kaiserslautern",
+            "meta": {
+                "latitude": 49.436467,
+                "city": "Kaiserslautern",
+                "name": "Call-A-Bike Kaiserslautern",
+                "longitude": 7.768645,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-karlsruhe",
+            "meta": {
+                "latitude": 48.994489,
+                "city": "Karlsruhe",
+                "name": "Call-A-Bike Karlsruhe",
+                "longitude": 8.401907,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-kassel",
+            "meta": {
+                "latitude": 51.319122,
+                "city": "Kassel",
+                "name": "Call-A-Bike Kassel",
+                "longitude": 9.489292,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-kiel",
+            "meta": {
+                "latitude": 54.315649,
+                "city": "Kiel",
+                "name": "Call-A-Bike Kiel",
+                "longitude": 10.132141,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-koln",
             "meta": {
-                "latitude": 50.9572449,
+                "latitude": 50.941357,
                 "city": "Köln",
                 "name": "Call-A-Bike Köln",
-                "longitude": 6.9673223,
+                "longitude": 6.958307,
                 "country": "DE"
-            },
-            "city_id": 33800
+            }
+        },
+        {
+            "tag": "callabike-lubeck",
+            "meta": {
+                "latitude": 53.867271,
+                "city": "Lübeck",
+                "name": "Call-A-Bike Lübeck",
+                "longitude": 10.670481,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-luneburg",
             "meta": {
-                "latitude": 53.2390538,
+                "latitude": 53.2525,
                 "city": "Lüneburg",
                 "name": "Call-A-Bike Lüneburg",
-                "longitude": 10.4226391,
+                "longitude": 10.414444,
                 "country": "DE"
-            },
-            "city_id": 165
+            }
+        },
+        {
+            "tag": "callabike-magdeburg",
+            "meta": {
+                "latitude": 52.130841,
+                "city": "Magdeburg",
+                "name": "Call-A-Bike Magdeburg",
+                "longitude": 11.626838,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-mainz",
+            "meta": {
+                "latitude": 50.001403,
+                "city": "Mainz",
+                "name": "Call-A-Bike Mainz",
+                "longitude": 8.258578,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-mannheim",
+            "meta": {
+                "latitude": 49.479904,
+                "city": "Mannheim",
+                "name": "Call-A-Bike Mannheim",
+                "longitude": 8.469901,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-marburg",
             "meta": {
-                "latitude": 50.7983011,
+                "latitude": 50.8075,
                 "city": "Marburg",
                 "name": "Call-A-Bike Marburg",
-                "longitude": 8.7428139,
+                "longitude": 8.772222,
                 "country": "DE"
-            },
-            "city_id": 2500
+            }
         },
         {
             "tag": "callabike-munchen",
             "meta": {
-                "latitude": 48.1549107,
+                "latitude": 48.137222,
                 "city": "München",
                 "name": "Call-A-Bike München",
-                "longitude": 11.5418357,
+                "longitude": 11.575556,
                 "country": "DE"
-            },
-            "city_id": 90
+            }
+        },
+        {
+            "tag": "callabike-oberhausen",
+            "meta": {
+                "latitude": 51.475135,
+                "city": "Oberhausen",
+                "name": "Call-A-Bike Oberhausen",
+                "longitude": 6.851727,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-offenbach",
+            "meta": {
+                "latitude": 50.099755,
+                "city": "Offenbach",
+                "name": "Call-A-Bike Offenbach",
+                "longitude": 8.760716,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-oldenburg",
+            "meta": {
+                "latitude": 53.143801,
+                "city": "Oldenburg",
+                "name": "Call-A-Bike Oldenburg",
+                "longitude": 8.222412,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-rostock",
+            "meta": {
+                "latitude": 54.078551,
+                "city": "Rostock",
+                "name": "Call-A-Bike Rostock",
+                "longitude": 12.131744,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-russelsheim",
             "meta": {
-                "latitude": 49.9820031,
+                "latitude": 49.988960,
                 "city": "Rüsselsheim",
                 "name": "Call-A-Bike Rüsselsheim",
-                "longitude": 8.4528392,
+                "longitude": 8.400740,
                 "country": "DE"
-            },
-            "city_id": 299
+            }
+        },
+        {
+            "tag": "callabike-saarbrucken",
+            "meta": {
+                "latitude": 49.240930,
+                "city": "Saarbrucken",
+                "name": "Call-A-Bike Saarbrucken",
+                "longitude": 6.991068,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-stuttgart",
             "meta": {
-                "latitude": 48.779209,
+                "latitude": 48.775556,
                 "city": "Stuttgart",
                 "name": "Call-A-Bike Stuttgart",
-                "longitude": 9.1772152,
+                "longitude": 9.182778,
                 "country": "DE"
-            },
-            "city_id": 33900
+            }
+        },
+        {
+            "tag": "callabike-troisdorf",
+            "meta": {
+                "latitude": 50.814368,
+                "city": "Troisdorf",
+                "name": "Call-A-Bike Troisdorf",
+                "longitude": 7.150826,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-weimar",
+            "meta": {
+                "latitude": 50.991402,
+                "city": "Weimar",
+                "name": "Call-A-Bike Weimar",
+                "longitude": 11.326439,
+                "country": "DE"
+            }
         },
         {
             "tag": "callabike-wiesbaden",
             "meta": {
-                "latitude": 50.0724825,
+                "latitude": 50.082083,
                 "city": "Wiesbaden",
                 "name": "Call-A-Bike Wiesbaden",
-                "longitude": 8.2483534,
+                "longitude": 8.241361,
                 "country": "DE"
-            },
-            "city_id": 24
+            }
+        },
+        {
+            "tag": "callabike-wurzburg",
+            "meta": {
+                "latitude": 49.801757,
+                "city": "Würzburg",
+                "name": "Call-A-Bike Würzburg",
+                "longitude": 9.935761,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-warnemunde",
+            "meta": {
+                "latitude": 54.177793,
+                "city": "Warnemünde",
+                "name": "Call-A-Bike Warnemünde",
+                "longitude": 12.090587,
+                "country": "DE"
+            }
         }
     ],
-    "system": "callabike",
-    "class": "Callabike"
+    "system": "callabike_new",
+    "class": "Callabike_new"
 }
