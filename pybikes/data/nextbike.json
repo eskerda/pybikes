@@ -1241,6 +1241,18 @@
                 "country": "PL"
             },
             "city_uid": 346
+        },
+        {
+            "domain": "rp",
+            "tag": "radomski-rower-miejski",
+            "meta": {
+                "name": "Radomski Rower Miejski",
+                "city": "Radom",
+                "latitude": 51.3994,
+                "longitude": 21.1655,
+                "country": "PL"
+            },
+            "city_uid": 400
         }
     ],
     "system": "nextbike",
