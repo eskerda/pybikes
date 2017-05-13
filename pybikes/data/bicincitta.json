@@ -897,6 +897,17 @@
                     },
                     "tag": "tradate",
                     "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=198"
+                },
+                {
+                    "tag": "jesinbici",
+                    "endpoint": "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID=236",
+                    "meta": {
+                        "name": "JesinBici",
+                        "city": "Jesi",
+                        "country": "IT",
+                        "latitude": 43.522601,
+                        "longitude": 13.244448
+                    }
                 }
             ]
         },
@@ -955,17 +966,6 @@
                         "country": "IT",
                         "latitude": 44.983499,
                         "longitude": 10.419245
-                    }
-                },
-                {
-                    "tag": "jesinbici",
-                    "system_id": 58,
-                    "meta": {
-                        "name": "JesinBici",
-                        "city": "Jesi",
-                        "country": "IT",
-                        "latitude": 43.522601,
-                        "longitude": 13.244448
                     }
                 },
                 {
