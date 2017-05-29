@@ -6,8 +6,8 @@
                 "city": "Tel Aviv-Yaffo",
                 "name": "Tel-O-Fun",
                 "country": "IL",
-                "longitude": 34.789776,
-                "latitude": 32.087053
+                "latitude": 32.087053,
+                "longitude": 34.789776
             },
             "feed_url": "http://zigit.co.il/includes/barcode/sandbox3/soap/telofunkmlen.asp?lang=en"
         }
