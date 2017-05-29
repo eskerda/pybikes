@@ -13,7 +13,7 @@ class TeloFun(BikeShareSystem):
 
     meta = {
         'system': 'telofun',
-        'company': ['Tel-O-Fun']
+        'company': ['FSM Ground Services Ltd.']
     }
 
     def __init__(self, tag, meta, feed_url):
