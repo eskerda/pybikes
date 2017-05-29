@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "telofun",
+            "meta": {
+                "city": "Tel Aviv-Yaffo",
+                "name": "Tel-O-Fun",
+                "country": "IL",
+                "longitude": 34.789776,
+                "latitude": 32.087053
+            },
+            "feed_url": "http://zigit.co.il/includes/barcode/sandbox3/soap/telofunkmlen.asp?lang=en"
+        }
+    ],
+    "system": "telofun",
+    "class": "TeloFun"
+}
