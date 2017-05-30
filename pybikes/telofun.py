@@ -37,18 +37,14 @@ class TeloFun(BikeShareSystem):
                    .nodeValue
             info = placemark.getElementsByTagName('description')[0] \
                    .childNodes[0].nodeValue
-            station_code, bikes, free = [
-                    int(line.strip().split(':')[-1].strip()) \
-                    for line in info.strip().split('<br/>') if len(line) > 0
-                    ]
+            station_uid, bikes, free = utils.re.findall(r'\w+\:\s*(\d+)', info)
             latitude, longitude = placemark.getElementsByTagName('Point')[0] \
                                   .childNodes[0].childNodes[0].nodeValue \
                                   .split(',')
             latitude = float(latitude)
             longitude = float(longitude)
             extra = {
-                'code': station_code,
-                'slots': bikes + free
+                'uid': station_uid,
             }
 
             station = BikeShareStation(name, latitude, longitude, bikes, free,
