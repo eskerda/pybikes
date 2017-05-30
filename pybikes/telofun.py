@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2017, aronsky <aronsky@gmail.com>
 
-from xml.dom import minidom
+from lxml import etree
 
 from pybikes.base import BikeShareSystem, BikeShareStation
 from pybikes import utils
@@ -27,20 +27,19 @@ class TeloFun(BikeShareSystem):
         stations = []
 
         data = scraper.request(self.feed_url)
-        dom = minidom.parseString(data.encode('utf-8', errors='ignore'))
+        dom = etree.fromstring(data.encode('utf-8'))
         stations = self.get_stations(dom)
         self.stations = list(stations)
 
     def get_stations(self, dom):
-        for placemark in dom.getElementsByTagName('Placemark'):
-            name = placemark.getElementsByTagName('name')[0].childNodes[0] \
-                   .nodeValue
-            info = placemark.getElementsByTagName('description')[0] \
-                   .childNodes[0].nodeValue
+        ns = {'kml': 'http://www.opengis.net/kml/2.2'}
+        for placemark in dom.xpath('//kml:Placemark', namespaces=ns):
+            name = placemark.findtext('kml:name', namespaces=ns)
+            info = placemark.findtext('kml:description', namespaces=ns)
             station_uid, bikes, free = utils.re.findall(r'\w+\:\s*(\d+)', info)
-            latitude, longitude = placemark.getElementsByTagName('Point')[0] \
-                                  .childNodes[0].childNodes[0].nodeValue \
-                                  .split(',')
+            latitude, longitude = placemark.findtext( \
+                                  'kml:Point/kml:coordinates', \
+                                    namespaces=ns).split(',')
             latitude = float(latitude)
             longitude = float(longitude)
             extra = {
