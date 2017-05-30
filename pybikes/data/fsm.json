@@ -12,6 +12,6 @@
             "feed_url": "http://zigit.co.il/includes/barcode/sandbox3/soap/telofunkmlen.asp?lang=en"
         }
     ],
-    "system": "telofun",
-    "class": "TeloFun"
+    "system": "fsm",
+    "class": "FSMSystem"
 }

@@ -7,17 +7,17 @@ from pybikes.base import BikeShareSystem, BikeShareStation
 from pybikes import utils
 
 
-class TeloFun(BikeShareSystem):
+class FSMSystem(BikeShareSystem):
     sync = True
     unifeed = True
 
     meta = {
-        'system': 'telofun',
+        'system': 'fsm',
         'company': ['FSM Ground Services Ltd.']
     }
 
     def __init__(self, tag, meta, feed_url):
-        super(TeloFun, self).__init__(tag, meta)
+        super(FSMSystem, self).__init__(tag, meta)
 
         self.feed_url = feed_url
 
