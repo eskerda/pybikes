@@ -9,7 +9,7 @@ from pybikes import utils
 
 class FSMSystem(BikeShareSystem):
     sync = True
-    unifeed = True
+    unifeed = False
 
     meta = {
         'system': 'fsm',
