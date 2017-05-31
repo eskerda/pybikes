@@ -36,10 +36,13 @@ class FSMSystem(BikeShareSystem):
         for placemark in dom.xpath('//kml:Placemark', namespaces=ns):
             name = placemark.findtext('kml:name', namespaces=ns)
             info = placemark.findtext('kml:description', namespaces=ns)
-            station_uid, bikes, free = utils.re.findall(r'\w+\:\s*(\d+)', info)
-            latitude, longitude = placemark.findtext( \
-                                  'kml:Point/kml:coordinates', \
-                                    namespaces=ns).split(',')
+            station_uid, bikes, free = map(int,
+                utils.re.findall(r'\w+\:\s*(\d+)', info)
+            )
+            latitude, longitude = placemark.findtext(
+                'kml:Point/kml:coordinates',
+                namespaces=ns
+            ).split(',')
             latitude = float(latitude)
             longitude = float(longitude)
             extra = {
