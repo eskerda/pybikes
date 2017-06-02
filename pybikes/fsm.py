@@ -40,7 +40,7 @@ class FSMSystem(BikeShareSystem):
             station_uid, bikes, free = map(int,
                 re.findall(r'\w+\:\s*(\d+)', info)
             )
-            latitude, longitude = placemark.findtext(
+            longitude, latitude = placemark.findtext(
                 'kml:Point/kml:coordinates',
                 namespaces=ns
             ).split(',')
