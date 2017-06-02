@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2017, aronsky <aronsky@gmail.com>
 
+import re
 from lxml import etree
 
 from pybikes.base import BikeShareSystem, BikeShareStation
@@ -37,7 +38,7 @@ class FSMSystem(BikeShareSystem):
             name = placemark.findtext('kml:name', namespaces=ns)
             info = placemark.findtext('kml:description', namespaces=ns)
             station_uid, bikes, free = map(int,
-                utils.re.findall(r'\w+\:\s*(\d+)', info)
+                re.findall(r'\w+\:\s*(\d+)', info)
             )
             latitude, longitude = placemark.findtext(
                 'kml:Point/kml:coordinates',
