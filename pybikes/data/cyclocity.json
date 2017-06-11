@@ -62,17 +62,6 @@
                     "contract": "Valence"
                 }, 
                 {
-                    "tag": "stockholm-cyclocity", 
-                    "meta": {
-                        "latitude": 59.32893000000001, 
-                        "country": "SE", 
-                        "name": "Cyclocity", 
-                        "longitude": 18.06491, 
-                        "city": "Stockholm"
-                    }, 
-                    "contract": "Stockholm"
-                }, 
-                {
                     "tag": "goeteborg", 
                     "meta": {
                         "latitude": 57.70887, 
