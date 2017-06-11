@@ -40,18 +40,18 @@ class Gbfs(BikeShareSystem):
         station_status = json.loads(
             scraper.request(feeds['station_status'])
         )['data']['stations']
-
-        # Merge station_information and station_status into one dictionary for
-        # every station after sorting both by 'station_id' in order to avoid
-        # possible unmatches.
-        # Nabsa spec doesn't mention anything about stations order ATM.
-        # Finally, pass the combined dictionary to GbfsStation as an argument.
-        sorting_key = operator.itemgetter('station_id')
-        station_information = sorted(station_information, key=sorting_key)
-        station_status = sorted(station_status, key=sorting_key)
-
+        # Aggregate status and information by uid
+        # Note there's no guarantee that station_status has the same
+        # station_ids as station_information.
+        station_information = {s['station_id']: s for s in station_information}
+        station_status = {s['station_id']: s for s in station_status}
+        # Any station not in station_information will be ignored
+        stations = [
+            (station_information[uid], station_status[uid])
+            for uid in station_information.keys()
+        ]
         self.stations = []
-        for info, status in zip(station_information, station_status):
+        for info, status in stations:
             info.update(status)
             try:
                 station = GbfsStation(info)
