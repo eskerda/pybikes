@@ -1,65 +1,65 @@
 {
     "instances": [
         {
-            "tag": "bixi-montreal", 
+            "tag": "bixi-montreal",
             "meta": {
-                "latitude": 45.5086699, 
-                "city": "Montreal, QC", 
-                "name": "Bixi", 
-                "longitude": -73.55399249999999, 
+                "latitude": 45.5086699,
+                "city": "Montreal, QC",
+                "name": "Bixi",
+                "longitude": -73.55399249999999,
                 "country": "CA"
-            }, 
-            "feed_url": "https://montreal.bixi.com/data/bikeStations.xml", 
+            },
+            "feed_url": "https://montreal.bixi.com/data/bikeStations.xml",
             "format": "xml"
-        }, 
+        },
         {
-            "tag": "santander-cycles", 
+            "tag": "santander-cycles",
             "meta": {
-                "city": "London", 
-                "name": "Santander Cycles", 
-                "country": "GB", 
+                "city": "London",
+                "name": "Santander Cycles",
+                "country": "GB",
                 "company": [
-                    "PBSC", 
+                    "PBSC",
                     "Serco Group plc"
-                ], 
-                "longitude": -0.1198244, 
+                ],
+                "longitude": -0.1198244,
                 "latitude": 51.51121389999999
-            }, 
-            "feed_url": "http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml", 
+            },
+            "feed_url": "http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml",
             "format": "xml"
-        }, 
+        },
         {
-            "tag": "bike-chattanooga", 
+            "tag": "bike-chattanooga",
             "meta": {
-                "city": "Chattanooga, TN", 
-                "name": "Bike Chattanooga", 
-                "country": "US", 
+                "city": "Chattanooga, TN",
+                "name": "Bike Chattanooga",
+                "country": "US",
                 "company": [
-                    "PBSC", 
+                    "PBSC",
                     "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": -85.3096801, 
+                ],
+                "longitude": -85.3096801,
                 "latitude": 35.0456297
-            }, 
-            "feed_url": "http://www.bikechattanooga.com/stations/json", 
+            },
+            "feed_url": "http://www.bikechattanooga.com/stations/json",
             "format": "json"
-        }, 
+        },
         {
-            "tag": "melbourne-bike-share", 
+            "tag": "melbourne-bike-share",
             "meta": {
-                "city": "Melbourne", 
-                "name": "Melbourne Bike Share", 
-                "country": "AU", 
+                "city": "Melbourne",
+                "name": "Melbourne Bike Share",
+                "country": "AU",
                 "company": [
-                    "PBSC", 
+                    "PBSC",
                     "Alta Bicycle Share, Inc"
-                ], 
-                "longitude": 144.96328, 
+                ],
+                "longitude": 144.96328,
                 "latitude": -37.814107
-            }, 
-            "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data", 
+            },
+            "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data",
             "format": "json_from_xml"
-        }, 
+        },
         {
             "tag": "we-cycle",
             "meta": {
@@ -75,8 +75,24 @@
             },
             "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
             "format": "json"
+        },
+        {
+            "tag": "wowcycle-reykjavik",
+            "meta": {
+                "city": "Reykjavík",
+                "name": "WOW Citybike",
+                "country": "IS",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ],
+                "longitude": -21.827774,
+                "latitude": 64.128288
+            },
+            "feed_url": "https://rey.publicbikesystem.net/ube/stations",
+            "format": "json"
         }
-    ], 
-    "system": "bixi", 
+    ],
+    "system": "bixi",
     "class": "BixiSystem"
 }
