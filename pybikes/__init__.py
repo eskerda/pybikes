@@ -2,18 +2,6 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-"""PyBikes
-PyBikes is a parsing library to extract bike sharing information from multiple
-sources. It contains multiple classes to handle this sort of information,
-and is not a class itself. The idea is to be able to call it like:
-
-from pybikes import BicingShareSystem, BicingStation
-
-bicing = new BicingShareSystem() <- Returns BicingShareSystem
-print "%s: %s" % ("Bicing City is", bicing.meta.city)
-stations = bicing.get_stations() <- Returns Array[BicingStation]
-
-"""
 __author__ = "eskerda (eskerda@gmail.com)"
 __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
