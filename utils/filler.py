@@ -185,7 +185,7 @@ def geocode(instance, systemCls, language, address = None):
         sys.stderr.write("\n")
 
 def is_complete(instance):
-    fields = ['city','country','latitude','longitude','name']
+    fields = ['city','country','latitude','longitude']
     complete = True
     for field in fields:
         complete = field in instance['meta']
@@ -212,9 +212,7 @@ def handle_System(schema, cls, instances):
         if not args.verbose:
             clearline(lastlen)
             lastlen = print_status(i+1, len(instances), \
-                        "Testing %s" % repr(instance['meta']['name']))
-        if 'name' not in instance['meta'] or instance['meta']['name'] == "":
-            raise Exception("name not set in instance %s" % str(instance))
+                        "Testing %s" % repr(instance['tag']))
         if args.skip and is_complete(instance):
             if args.verbose:
                 sys.stderr.write("%s Looks complete, passing by\n" %
