@@ -463,7 +463,14 @@
             "tag":"venezia"
         },
         {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=22",
+            "url": [
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=22",
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=61",
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=62",
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=63",
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=64",
+                "http://www.tobike.it/frmLeStazioni.aspx?ID=65"
+            ],
             "meta":{
                 "latitude":45.07098200000001,
                 "city":"Torino",
@@ -893,16 +900,6 @@
             "tag":"bicincitta-lausanne-campus-morges"
         },
         {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=62",
-            "meta":{
-                "latitude":45.0787054,
-                "city":"Collegno",
-                "longitude":7.566241,
-                "country":"IT"
-            },
-            "tag":"bicincitta-collegno"
-        },
-        {
             "url":"http://www.bicincitta.com/frmLeStazioniComune.aspx?ID=106",
             "meta":{
                 "latitude":40.7620174,
@@ -1185,16 +1182,6 @@
             "tag":"bicincitta-cisterna-di-latina"
         },
         {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=61",
-            "meta":{
-                "latitude":45.0563863,
-                "city":"Grugliasco",
-                "longitude":7.5943754,
-                "country":"IT"
-            },
-            "tag":"bicincitta-grugliasco"
-        },
-        {
             "url":"http://www.bicincitta.com/frmLeStazioniComune.aspx?ID=199",
             "meta":{
                 "latitude":40.1532801,
@@ -1213,16 +1200,6 @@
                 "country":"IT"
             },
             "tag":"bicincitta-selargius"
-        },
-        {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=65",
-            "meta":{
-                "latitude":45.1346452,
-                "city":"Druento",
-                "longitude":7.5765427,
-                "country":"IT"
-            },
-            "tag":"bicincitta-druento"
         },
         {
             "url":"http://velopass.tobike.it/frmLeStazioni.aspx?ID=116",
@@ -1263,16 +1240,6 @@
                 "country":"CH"
             },
             "tag":"bicincitta-la-cote"
-        },
-        {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=63",
-            "meta":{
-                "latitude":45.1437329,
-                "city":"Venaria reale",
-                "longitude":7.623289199999999,
-                "country":"IT"
-            },
-            "tag":"bicincitta-venaria-reale"
         },
         {
             "url":"http://velopass.tobike.it/frmLeStazioni.aspx?ID=60",
@@ -1353,16 +1320,6 @@
                 "country":"IT"
             },
             "tag":"bicincitta-san-giovanni-in-persiceto"
-        },
-        {
-            "url":"http://www.tobike.it/frmLeStazioni.aspx?ID=64",
-            "meta":{
-                "latitude":45.0991116,
-                "city":"Alpignano",
-                "longitude":7.516632899999999,
-                "country":"IT"
-            },
-            "tag":"bicincitta-alpignano"
         },
         {
             "url":"http://www.bicincitta.com/frmLeStazioniComune.aspx?ID=174",
