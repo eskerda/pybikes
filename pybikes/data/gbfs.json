@@ -1,670 +1,703 @@
 {
-    "instances": [
-        {
-            "tag": "curtin-bike-share",
-            "meta": {
-                "latitude": -32.0034172153127,
-                "longitude": 115.89431270956993,
-                "city": "Curtin University, Perth, WA",
-                "name": "Curtin Bike Share",
-                "country": "AU",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://curtinbikeshare.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "monash-bikeshare",
-            "meta": {
-                "latitude": -37.91238410208696,
-                "longitude": 145.1362281292677,
-                "city": "Melbourne, AU",
-                "name": "Monash BikeShare",
-                "country": "AU",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "bixi-toronto",
-            "meta": {
-                "latitude": 43.653226,
-                "longitude": -79.3831843,
-                "city": "Toronto, ON",
-                "name": "Bike Share Toronto",
-                "country": "CA",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://tor.publicbikesystem.net/ube/gbfs/v1/"
-        },
-        {
-            "tag": "sobi-hamilton",
-            "meta": {
-                "latitude": 43.25643601915583,
-                "longitude": -79.86929655075073,
-                "city": "Hamilton, ON",
-                "name": "SoBi",
-                "country": "CA",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "velogo",
-            "meta": {
-                "latitude": 45.4285325522342,
-                "longitude": -75.6970576741095,
-                "city": "Ottawa, ON",
-                "name": "VeloGO",
-                "country": "CA",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://velogo.ca/opendata/gbfs.json"
-        },
-        {
-            "tag": "arborbike",
-            "meta": {
-                "latitude": 42.27853,
-                "longitude": -83.74536,
-                "city": "Ann Arbor, MI",
-                "name": "ArborBike",
-                "country": "US",
-                "company": [
-                    "Clean Energy Coalition",
-                    "BCycle, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json"
-        },
-        {
-            "tag": "austin",
-            "meta": {
-                "latitude": 30.26408,
-                "longitude": -97.74355,
-                "city": "Austin, TX",
-                "name": "Austin B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json"
-        },
-        {
-            "tag": "biketown",
-            "meta": {
-                "latitude": 45.52175423291714,
-                "longitude": -122.68107935786247,
-                "city": "Portland, OR",
-                "name": "BIKETOWN",
-                "country": "US",
-                "company": [
-                    "Portland Bureau of Transportation (PBOT)",
-                    "Motivate International, Inc",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://biketownpdx.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "britebikes",
-            "meta": {
-                "latitude": 37.759444753878,
-                "longitude": -121.955134881881,
-                "city": "San Ramon, CA",
-                "name": "BRiteBikes",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://britebikes.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "boise-greenbike",
-            "meta": {
-                "latitude": 43.6153060610528,
-                "longitude": -116.201761349309,
-                "city": "Boise, ID",
-                "name": "Boise GreenBike",
-                "country": "US",
-                "company": [
-                    "ValleyRide",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://boise.greenbike.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "boulder",
-            "meta": {
-                "latitude": 40.00811,
-                "longitude": -105.26385,
-                "city": "Boulder, CO",
-                "name": "Boulder B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json"
-        },
-        {
-            "tag": "breeze-bike-share",
-            "meta": {
-                "latitude": 34.01780925008178,
-                "longitude": -118.4965717792511,
-                "city": "Santa Monica, CA",
-                "name": "Breeze Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://santamonicabikeshare.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "broward",
-            "meta": {
-                "latitude": 26.12026,
-                "longitude": -80.14819,
-                "city": "Fort Lauderdale, FL",
-                "name": "Broward B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_broward/gbfs.json"
-        },
-        {
-            "tag": "bublr-bikes",
-            "meta": {
-                "latitude": 43.0369,
-                "longitude": -87.89667,
-                "city": "Milwaukee, WI",
-                "name": "Bublr Bikes",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_bublr/gbfs.json"
-        },
-        {
-            "tag": "reddy-bike-share",
-            "meta": {
-                "latitude": 42.89373841865211,
-                "longitude": -78.8718044757843,
-                "city": "Buffalo, NY",
-                "name": "Reddy Bike Share",
-                "country": "US",
-                "company": [
-                    "Shared Mobility Inc.",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "capital-bikeshare",
-            "meta": {
-                "latitude": 38.8967584,
-                "longitude": -77.03701629999999,
-                "city": "Washington, DC",
-                "name": "Capital BikeShare",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-
-            },
-            "feed_url": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "charlotte",
-            "meta": {
-                "latitude": 35.22716,
-                "longitude": -80.83855,
-                "city": "Charlotte, NC",
-                "name": "Charlotte B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json"
-        },
-        {
-            "tag": "cincy-red-bike",
-            "meta": {
-                "latitude": 39.10138,
-                "longitude": -84.51217,
-                "city": "Cincinnati, OH",
-                "name": "Cincy Red Bike",
-                "country": "US",
-                "company": [
-                    "BCycle, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json"
-        },
-        {
-            "tag": "citi-bike-nyc",
-            "meta": {
-                "latitude": 40.7143528,
-                "longitude": -74.00597309999999,
-                "city": "New York, NY",
-                "name": "Citi Bike",
-                "country": "US",
-                "company": [
-                    "NYC Bike Share, LLC",
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "coast-bike-share",
-            "meta": {
-                "latitude": 27.9627193250593,
-                "longitude": -82.438056400783,
-                "city": "Tampa, FL",
-                "name": "Coast Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://coast.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "cogo",
-            "meta": {
-                "latitude": 39.983333,
-                "longitude": -82.983333,
-                "city": "Columbus, OH",
-                "name": "CoGo",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "denver",
-            "meta": {
-                "latitude": 39.72055,
-                "longitude": -104.95253,
-                "city": "Denver, CO",
-                "name": "Denver B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_denver/gbfs.json"
-        },
-        {
-            "tag": "divvy",
-            "meta": {
-                "latitude": 41.8781136,
-                "longitude": -87.6297982,
-                "city": "Chicago, IL",
-                "name": "Divvy",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "elpaso",
-            "meta": {
-                "latitude": 31.76148,
-                "longitude": -106.48507,
-                "city": "El Paso, TX",
-                "name": "El Paso B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_elpaso/gbfs.json"
-        },
-        {
-            "tag": "fortworth",
-            "meta": {
-                "latitude": 32.7516,
-                "longitude": -97.32888,
-                "city": "Fort Worth, TX",
-                "name": "Fort Worth Bike Sharing",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_fortworth/gbfs.json"
-        },
-        {
-            "tag": "greatrides",
-            "meta": {
-                "latitude": 46.89248,
-                "longitude": -96.80095,
-                "city": "Fargo, ND",
-                "name": "Great Rides Bike Share",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_greatrides/gbfs.json"
-        },
-        {
-            "tag": "greenbikeslc",
-            "meta": {
-                "latitude": 40.76745,
-                "longitude": -111.88736,
-                "city": "Salt Lake City",
-                "name": "GREENbike",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json"
-        },
-        {
-            "tag": "grid-bike-share",
-            "meta": {
-                "latitude": 33.4591031356657,
-                "longitude": -112.074010667085,
-                "city": "Phoenix, AZ",
-                "name": "Grid Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://grid.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "omaha",
-            "meta": {
-                "latitude": 41.25832,
-                "longitude": -96.00853,
-                "city": "Omaha, NE",
-                "name": "Heartland B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_heartland/gbfs.json"
-        },
-        {
-            "tag": "houston",
-            "meta": {
-                "latitude": 29.75983,
-                "longitude": -95.36949,
-                "city": "Houston, TX",
-                "name": "Houston B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_houston/gbfs.json"
-        },
-        {
-            "tag": "hubway",
-            "meta": {
-                "latitude": 42.3584308,
-                "longitude": -71.0597732,
-                "city": "Boston, MA",
-                "name": "Hubway",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://gbfs.thehubway.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "indego",
-            "meta": {
-                "latitude": 39.95378,
-                "longitude": -75.16374,
-                "city": "Philadelphia, PA",
-                "name": "Indego",
-                "country": "US",
-                "company": [
-                    "City of Philadelphia",
-                    "Bicycle Transit Systems",
-                    "BCycle, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_indego/gbfs.json"
-        },
-        {
-            "tag": "indiana-pacers-bikeshare",
-            "meta": {
-                "latitude": 39.76593,
-                "longitude": -86.16216,
-                "city": "Indianapolis, IN",
-                "name": "Indiana Pacers Bikeshare",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
-        },
-        {
-            "tag": "juice-bike-share",
-            "meta": {
-                "latitude": 28.536663311743688,
-                "longitude": -81.37922197580338,
-                "city": "Orlando, FL",
-                "name": "Juice",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://juicebikeshare.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "kansascity",
-            "meta": {
-                "latitude": 39.0999,
-                "longitude": -94.5857,
-                "city": "Kansas City, MO",
-                "name": "B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_kc/gbfs.json"
-        },
-        {
-            "tag": "linkdayton",
-            "meta": {
-                "latitude": 39.75626,
-                "longitude": -84.21119,
-                "city": "Dayton, OH",
-                "name": "Link",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json"
-        },
-        {
-            "tag": "madison",
-            "meta": {
-                "latitude": 43.07571,
-                "longitude": -89.38527,
-                "city": "Madison, WI",
-                "name": "B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_madison/gbfs.json"
-        },
-        {
-            "tag": "metro-bike-share",
-            "meta": {
-                "latitude": 34.04855,
-                "longitude": -118.25905,
-                "city": "Los Angeles, CA",
-                "name": "Metro Bike Share",
-                "country": "US",
-                "company": [
-                    "Los Angeles County Metropolitan Transportation Authority (Metro)",
-                    "Bicycle Transit Systems",
-                    "BCycle, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_lametro/gbfs.json"
-        },
-        {
-            "tag": "mountain-rides-bike-share",
-            "meta": {
-                "latitude": 43.5194695168239,
-                "longitude": -114.317415758737,
-                "city": "Ketchum / Sun Valley, ID",
-                "name": "Mountain Rides Bike Share",
-                "country": "US",
-                "company": [
-                    "Mountain Rides",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://mrbikeshare.org/opendata/gbfs.json"
-        },
-        {
-            "tag": "nice-ride",
-            "meta": {
-                "latitude": 44.983334,
-                "longitude": -93.26666999999999,
-                "city": "Minneapolis, MN",
-                "name": "Nice Ride",
-                "country": "US",
-                "company": [
-                    "Nice Ride Minnesota"
-                ]
-
-            },
-            "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
-        },
-        {
-            "tag": "sanantonio",
-            "meta": {
-                "latitude": 29.43701,
-                "longitude": -98.48236,
-                "city": "San Antonio, TX",
-                "name": "San Antonio B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
-        },
-        {
-            "tag": "share-a-bull-bikes",
-            "meta": {
-                "latitude": 28.060548696070995,
-                "longitude": -82.4076198041439,
-                "city": "University of South Florida, FL",
-                "name": "Share-a-Bull Bikes",
-                "country": "US",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://usf.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "sobi-long-beach",
-            "meta": {
-                "latitude": 40.5833058203002,
-                "longitude": -73.6482682794673,
-                "city": "Long Beach, NY",
-                "name": "SoBi",
-                "country": "US",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://sobilongbeach.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "spartanburg",
-            "meta": {
-                "latitude": 34.94867,
-                "longitude": -81.93345,
-                "city": "Spartanburg, SC",
-                "name": "Spartanburg BCycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json"
-        },
-        {
-            "tag": "topeka-metro-bikes",
-            "meta": {
-                "latitude": 39.0337646098385,
-                "longitude": -95.7027213202284,
-                "city": "Topeka, KS",
-                "name": "Topeka Metro Bikes",
-                "country": "US",
-                "company": [
-                    "Topeka Metropolitan Transit Authority",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://topekametrobikes.org/opendata/gbfs.json"
-        },
-        {
-            "tag": "ubike",
-            "meta": {
-                "latitude": 38.0357625021372,
-                "longitude": -78.5072994363201,
-                "city": "University of Virginia, VA",
-                "name": "UBike",
-                "country": "US",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
-        },
-        {
-            "tag": "bay-area-bike-share",
-            "meta": {
-                "latitude": 37.7141454,
-                "longitude": -122.25,
-                "city": "San Francisco Bay Area, CA",
-                "name": "Bay Area Bike Share",
-                "country": "US",
-                "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
-                ]
-            },
-            "feed_url": "https://gbfs.bayareabikeshare.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "relay-atlanta",
-            "meta": {
-                "latitude": 33.7627941119619,
-                "longitude": -84.38727110624313,
-                "city": "Atlanta, GA",
-                "name": "Relay Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc"
-                ]
-            },
-            "feed_url": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
-        }
-    ],
-    "system": "gbfs",
-    "class": "Gbfs"
+  "instances": [
+    {
+      "tag": "curtin-bike-share",
+      "meta": {
+        "latitude": -32.0034172153127,
+        "longitude": 115.89431270956993,
+        "city": "Curtin University, Perth, WA",
+        "name": "Curtin Bike Share",
+        "country": "AU",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://curtinbikeshare.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "monash-bikeshare",
+      "meta": {
+        "latitude": -37.91238410208696,
+        "longitude": 145.1362281292677,
+        "city": "Melbourne, AU",
+        "name": "Monash BikeShare",
+        "country": "AU",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "bixi-toronto",
+      "meta": {
+        "latitude": 43.653226,
+        "longitude": -79.3831843,
+        "city": "Toronto, ON",
+        "name": "Bike Share Toronto",
+        "country": "CA",
+        "company": [
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://tor.publicbikesystem.net/ube/gbfs/v1/"
+    },
+    {
+      "tag": "sobi-hamilton",
+      "meta": {
+        "latitude": 43.25643601915583,
+        "longitude": -79.86929655075073,
+        "city": "Hamilton, ON",
+        "name": "SoBi",
+        "country": "CA",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "velogo",
+      "meta": {
+        "latitude": 45.4285325522342,
+        "longitude": -75.6970576741095,
+        "city": "Ottawa, ON",
+        "name": "VeloGO",
+        "country": "CA",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://velogo.ca/opendata/gbfs.json"
+    },
+    {
+      "tag": "arborbike",
+      "meta": {
+        "latitude": 42.27853,
+        "longitude": -83.74536,
+        "city": "Ann Arbor, MI",
+        "name": "ArborBike",
+        "country": "US",
+        "company": [
+          "Clean Energy Coalition",
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json"
+    },
+    {
+      "tag": "austin",
+      "meta": {
+        "latitude": 30.26408,
+        "longitude": -97.74355,
+        "city": "Austin, TX",
+        "name": "Austin B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json"
+    },
+    {
+      "tag": "biketown",
+      "meta": {
+        "latitude": 45.52175423291714,
+        "longitude": -122.68107935786247,
+        "city": "Portland, OR",
+        "name": "BIKETOWN",
+        "country": "US",
+        "company": [
+          "Portland Bureau of Transportation (PBOT)",
+          "Motivate International, Inc",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://biketownpdx.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "britebikes",
+      "meta": {
+        "latitude": 37.759444753878,
+        "longitude": -121.955134881881,
+        "city": "San Ramon, CA",
+        "name": "BRiteBikes",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://britebikes.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "boise-greenbike",
+      "meta": {
+        "latitude": 43.6153060610528,
+        "longitude": -116.201761349309,
+        "city": "Boise, ID",
+        "name": "Boise GreenBike",
+        "country": "US",
+        "company": [
+          "ValleyRide",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://boise.greenbike.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "boulder",
+      "meta": {
+        "latitude": 40.00811,
+        "longitude": -105.26385,
+        "city": "Boulder, CO",
+        "name": "Boulder B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json"
+    },
+    {
+      "tag": "breeze-bike-share",
+      "meta": {
+        "latitude": 34.01780925008178,
+        "longitude": -118.4965717792511,
+        "city": "Santa Monica, CA",
+        "name": "Breeze Bike Share",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://santamonicabikeshare.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "broward",
+      "meta": {
+        "latitude": 26.12026,
+        "longitude": -80.14819,
+        "city": "Fort Lauderdale, FL",
+        "name": "Broward B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_broward/gbfs.json"
+    },
+    {
+      "tag": "bublr-bikes",
+      "meta": {
+        "latitude": 43.0369,
+        "longitude": -87.89667,
+        "city": "Milwaukee, WI",
+        "name": "Bublr Bikes",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_bublr/gbfs.json"
+    },
+    {
+      "tag": "reddy-bike-share",
+      "meta": {
+        "latitude": 42.89373841865211,
+        "longitude": -78.8718044757843,
+        "city": "Buffalo, NY",
+        "name": "Reddy Bike Share",
+        "country": "US",
+        "company": [
+          "Shared Mobility Inc.",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "capital-bikeshare",
+      "meta": {
+        "latitude": 38.8967584,
+        "longitude": -77.03701629999999,
+        "city": "Washington, DC",
+        "name": "Capital BikeShare",
+        "country": "US",
+        "company": [
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "charlotte",
+      "meta": {
+        "latitude": 35.22716,
+        "longitude": -80.83855,
+        "city": "Charlotte, NC",
+        "name": "Charlotte B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json"
+    },
+    {
+      "tag": "cincy-red-bike",
+      "meta": {
+        "latitude": 39.10138,
+        "longitude": -84.51217,
+        "city": "Cincinnati, OH",
+        "name": "Cincy Red Bike",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json"
+    },
+    {
+      "tag": "citi-bike-nyc",
+      "meta": {
+        "latitude": 40.7143528,
+        "longitude": -74.00597309999999,
+        "city": "New York, NY",
+        "name": "Citi Bike",
+        "country": "US",
+        "company": [
+          "NYC Bike Share, LLC",
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "coast-bike-share",
+      "meta": {
+        "latitude": 27.9627193250593,
+        "longitude": -82.438056400783,
+        "city": "Tampa, FL",
+        "name": "Coast Bike Share",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://coast.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "cogo",
+      "meta": {
+        "latitude": 39.983333,
+        "longitude": -82.983333,
+        "city": "Columbus, OH",
+        "name": "CoGo",
+        "country": "US",
+        "company": [
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "denver",
+      "meta": {
+        "latitude": 39.72055,
+        "longitude": -104.95253,
+        "city": "Denver, CO",
+        "name": "Denver B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_denver/gbfs.json"
+    },
+    {
+      "tag": "divvy",
+      "meta": {
+        "latitude": 41.8781136,
+        "longitude": -87.6297982,
+        "city": "Chicago, IL",
+        "name": "Divvy",
+        "country": "US",
+        "company": [
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "elpaso",
+      "meta": {
+        "latitude": 31.76148,
+        "longitude": -106.48507,
+        "city": "El Paso, TX",
+        "name": "El Paso B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_elpaso/gbfs.json"
+    },
+    {
+      "tag": "fortworth",
+      "meta": {
+        "latitude": 32.7516,
+        "longitude": -97.32888,
+        "city": "Fort Worth, TX",
+        "name": "Fort Worth Bike Sharing",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_fortworth/gbfs.json"
+    },
+    {
+      "tag": "greatrides",
+      "meta": {
+        "latitude": 46.89248,
+        "longitude": -96.80095,
+        "city": "Fargo, ND",
+        "name": "Great Rides Bike Share",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_greatrides/gbfs.json"
+    },
+    {
+      "tag": "greenbikeslc",
+      "meta": {
+        "latitude": 40.76745,
+        "longitude": -111.88736,
+        "city": "Salt Lake City",
+        "name": "GREENbike",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json"
+    },
+    {
+      "tag": "grid-bike-share",
+      "meta": {
+        "latitude": 33.4591031356657,
+        "longitude": -112.074010667085,
+        "city": "Phoenix, AZ",
+        "name": "Grid Bike Share",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://grid.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "omaha",
+      "meta": {
+        "latitude": 41.25832,
+        "longitude": -96.00853,
+        "city": "Omaha, NE",
+        "name": "Heartland B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_heartland/gbfs.json"
+    },
+    {
+      "tag": "houston",
+      "meta": {
+        "latitude": 29.75983,
+        "longitude": -95.36949,
+        "city": "Houston, TX",
+        "name": "Houston B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_houston/gbfs.json"
+    },
+    {
+      "tag": "hubway",
+      "meta": {
+        "latitude": 42.3584308,
+        "longitude": -71.0597732,
+        "city": "Boston, MA",
+        "name": "Hubway",
+        "country": "US",
+        "company": [
+          "Motivate International, Inc.",
+          "PBSC Urban Solutions"
+        ]
+      },
+      "feed_url": "https://gbfs.thehubway.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "indego",
+      "meta": {
+        "latitude": 39.95378,
+        "longitude": -75.16374,
+        "city": "Philadelphia, PA",
+        "name": "Indego",
+        "country": "US",
+        "company": [
+          "City of Philadelphia",
+          "Bicycle Transit Systems",
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_indego/gbfs.json"
+    },
+    {
+      "tag": "indiana-pacers-bikeshare",
+      "meta": {
+        "latitude": 39.76593,
+        "longitude": -86.16216,
+        "city": "Indianapolis, IN",
+        "name": "Indiana Pacers Bikeshare",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
+    },
+    {
+      "tag": "juice-bike-share",
+      "meta": {
+        "latitude": 28.536663311743688,
+        "longitude": -81.37922197580338,
+        "city": "Orlando, FL",
+        "name": "Juice",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://juicebikeshare.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "kansascity",
+      "meta": {
+        "latitude": 39.0999,
+        "longitude": -94.5857,
+        "city": "Kansas City, MO",
+        "name": "B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_kc/gbfs.json"
+    },
+    {
+      "tag": "linkdayton",
+      "meta": {
+        "latitude": 39.75626,
+        "longitude": -84.21119,
+        "city": "Dayton, OH",
+        "name": "Link",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json"
+    },
+    {
+      "tag": "madison",
+      "meta": {
+        "latitude": 43.07571,
+        "longitude": -89.38527,
+        "city": "Madison, WI",
+        "name": "B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_madison/gbfs.json"
+    },
+    {
+      "tag": "metro-bike-share",
+      "meta": {
+        "latitude": 34.04855,
+        "longitude": -118.25905,
+        "city": "Los Angeles, CA",
+        "name": "Metro Bike Share",
+        "country": "US",
+        "company": [
+          "Los Angeles County Metropolitan Transportation Authority (Metro)",
+          "Bicycle Transit Systems",
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_lametro/gbfs.json"
+    },
+    {
+      "tag": "mountain-rides-bike-share",
+      "meta": {
+        "latitude": 43.5194695168239,
+        "longitude": -114.317415758737,
+        "city": "Ketchum / Sun Valley, ID",
+        "name": "Mountain Rides Bike Share",
+        "country": "US",
+        "company": [
+          "Mountain Rides",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://mrbikeshare.org/opendata/gbfs.json"
+    },
+    {
+      "tag": "nice-ride",
+      "meta": {
+        "latitude": 44.983334,
+        "longitude": -93.26666999999999,
+        "city": "Minneapolis, MN",
+        "name": "Nice Ride",
+        "country": "US",
+        "company": [
+          "Nice Ride Minnesota"
+        ]
+      },
+      "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
+    },
+    {
+      "tag": "sanantonio",
+      "meta": {
+        "latitude": 29.43701,
+        "longitude": -98.48236,
+        "city": "San Antonio, TX",
+        "name": "San Antonio B-cycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
+    },
+    {
+      "tag": "share-a-bull-bikes",
+      "meta": {
+        "latitude": 28.060548696070995,
+        "longitude": -82.4076198041439,
+        "city": "University of South Florida, FL",
+        "name": "Share-a-Bull Bikes",
+        "country": "US",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "https://usf.socialbicycles.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "sobi-long-beach",
+      "meta": {
+        "latitude": 40.5833058203002,
+        "longitude": -73.6482682794673,
+        "city": "Long Beach, NY",
+        "name": "SoBi",
+        "country": "US",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://sobilongbeach.com/opendata/gbfs.json"
+    },
+    {
+      "tag": "spartanburg",
+      "meta": {
+        "latitude": 34.94867,
+        "longitude": -81.93345,
+        "city": "Spartanburg, SC",
+        "name": "Spartanburg BCycle",
+        "country": "US",
+        "company": [
+          "BCycle, LLC"
+        ]
+      },
+      "feed_url": "https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json"
+    },
+    {
+      "tag": "topeka-metro-bikes",
+      "meta": {
+        "latitude": 39.0337646098385,
+        "longitude": -95.7027213202284,
+        "city": "Topeka, KS",
+        "name": "Topeka Metro Bikes",
+        "country": "US",
+        "company": [
+          "Topeka Metropolitan Transit Authority",
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://topekametrobikes.org/opendata/gbfs.json"
+    },
+    {
+      "tag": "ubike",
+      "meta": {
+        "latitude": 38.0357625021372,
+        "longitude": -78.5072994363201,
+        "city": "University of Virginia, VA",
+        "name": "UBike",
+        "country": "US",
+        "company": [
+          "Social Bicycles Inc."
+        ]
+      },
+      "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
+    },
+    {
+      "tag": "ford-gobike",
+      "meta": {
+        "latitude": 37.7141454,
+        "longitude": -122.25,
+        "city": "San Francisco Bay Area, CA",
+        "name": "Ford GoBike",
+        "country": "US",
+        "company": [
+          "Motivate International, Inc."
+        ]
+      },
+      "feed_url": "https://gbfs.fordgobike.com/gbfs/gbfs.json"
+    },
+    {
+      "tag": "relay-atlanta",
+      "meta": {
+        "latitude": 33.7627941119619,
+        "longitude": -84.38727110624313,
+        "city": "Atlanta, GA",
+        "name": "Relay Bike Share",
+        "country": "US",
+        "company": [
+          "CycleHop, LLC",
+          "Social Bicycles Inc"
+        ]
+      },
+      "feed_url": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
+    }
+  ],
+  "system": "gbfs",
+  "class": "Gbfs"
 }
