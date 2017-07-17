@@ -73,11 +73,6 @@ class BySykkel(BikeShareSystem):
             station.latitude  = float(item['center']['latitude'])
 
             details_filtered = [obj for obj in details_data['stations'] if(obj['id'] == item['id'])]
-            #for stationdetails in details_data['stations']:
-            #    if(stationdetails['id'] == item['id']):
-
-
-            #print(details_filtered[0]['availability'])
 
             station.bikes = details_filtered[0]['availability']['locks'] + details_filtered[0]['availability']['bikes']
             station.free = details_filtered[0]['availability']['bikes']
