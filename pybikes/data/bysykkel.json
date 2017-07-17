@@ -1,0 +1,34 @@
+{
+  "instances":[
+    {
+      "tag":"oslo-bysykkel",
+      "meta":{
+        "latitude":59.913869,
+        "country":"NO",
+        "name":"Oslo bysykkel",
+        "longitude":10.752245,
+        "city":"Oslo",
+        "city_code":"OSL"
+      },
+      "feed_url":"https://oslobysykkel.no/api/v1/stations",
+      "feed_details_url":"https://oslobysykkel.no/api/v1/stations/availability",
+      "feed_token":"b14e14eec39cccdf0140e728db2012b9"
+    },
+    {
+      "tag":"bergen-bysykkel",
+      "meta":{
+        "latitude":60.391263,
+        "country":"NO",
+        "name":"Bergen bysykkel",
+        "longitude":5.322054,
+        "city":"Bergen",
+        "city_code":"BGO"
+      },
+      "feed_url":"https://bergenbysykkel.no/api/internal/stations",
+      "feed_details_url":"https://bergenbysykkel.no/api/internal/stations/availability",
+      "feed_token":"missing developer option :-/"
+    }
+  ],
+  "system":"bysykkel",
+  "class":"BySykkel"
+}
