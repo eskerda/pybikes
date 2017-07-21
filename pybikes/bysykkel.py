@@ -7,80 +7,67 @@ from . import utils
 
 class BySykkel(BikeShareSystem):
 
+    authed = True
+
     meta = {
         'system': 'BySykkel',
         'company': ['Urban Infrastructure Partner']
     }
 
-    def __init__(self, tag, meta, feed_url, feed_details_url, feed_token):
+    def __init__(self, tag, meta, feed_url, feed_details_url, key):
         super(BySykkel, self).__init__(tag, meta)
         self.feed_url = feed_url
         self.feed_details_url = feed_details_url
-        self.feed_token = feed_token
+        self.key = key
 
     def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-            scraper.setUserAgent("pybikes - github.com/eskerda/pybikes/tree/master/pybikes")
-            scraper.headers['Client-Identifier'] = self.feed_token
+            scraper.headers['Client-Identifier'] = self.key
 
-        stations = []
-        details = []
+        self.stations = []
+
 
         stations_data = json.loads(scraper.request(self.feed_url))
         details_data = json.loads(scraper.request(self.feed_details_url))
 
-        '''
-        stations_data
-            {
-                "stations": [{
-                    "id": 178,
-                    "title": "Colosseum Kino",
-                    "subtitle": "langs Fridtjof Nansens vei",
-                    "ready": true,
-                    "center": {
-                        "latitude": 59.929838,
-                        "longitude": 10.711223
-                    }
-                }, ...
-            }
-            
-            details_data
-            {
-                "stations": [{
-                    "id": 8,
-                    "availability": {
-                        "bikes": 13,
-                        "locks": 5
-                    }
-                }, ...
-                ],
-                    "updated_at": "2017-07-17T19:56:44+00:00",
-                    "refresh_rate": 10.0
-                }                
-            
-        '''
+        # Aggregate status and information by uid
+        stations_data = {s['id']: s for s in stations_data['stations']}
+        details_data = {s['id']: s for s in details_data['stations']}
+
+        # Join stationsdata in stations
+        stations = [
+            (stations_data[id], details_data[id])
+            for id in stations_data.keys()
+        ]
+
+        # append all data to info part of stations and create objects of this
+        for info, status in stations:
+            info.update(status)
+
+            station = BySykkelStation(info)
+
+            self.stations.append(station)
 
 
 
+class BySykkelStation(BikeShareStation):
+    def __init__(self, info):
 
-        for item in stations_data['stations']:
-            station = BikeShareStation()
+        super(BySykkelStation, self).__init__()
 
-            station.name = item['title']
+        self.name = info['title']
 
-            station.longitude = float(item['center']['longitude'])
-            station.latitude  = float(item['center']['latitude'])
+        self.longitude = float(info['center']['longitude'])
+        self.latitude  = float(info['center']['latitude'])
 
-            details_filtered = [obj for obj in details_data['stations'] if(obj['id'] == item['id'])]
+        #details_filtered = [obj for obj in details_data['stations'] if(obj['id'] == item['id'])]
 
-            station.bikes = details_filtered[0]['availability']['locks'] + details_filtered[0]['availability']['bikes']
-            station.free = details_filtered[0]['availability']['bikes']
-            station.extra = {
-                'slots':  details_filtered[0]['availability']['locks'],
-                'uid': item['id']
-            }
-
-            stations.append(station)
-
-        self.stations = stations
+        self.bikes = info['availability']['locks'] + info['availability']['bikes']
+        self.free = info['availability']['bikes']
+        self.extra = {
+            'slots':  info['availability']['locks'],
+            'uid': info['id'],
+            'placement': info['subtitle'],
+            'ready': info['ready']
+        }
