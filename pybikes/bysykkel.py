@@ -61,8 +61,6 @@ class BySykkelStation(BikeShareStation):
         self.longitude = float(info['center']['longitude'])
         self.latitude  = float(info['center']['latitude'])
 
-        #details_filtered = [obj for obj in details_data['stations'] if(obj['id'] == item['id'])]
-
         self.bikes = info['availability']['locks'] + info['availability']['bikes']
         self.free = info['availability']['bikes']
         self.extra = {
