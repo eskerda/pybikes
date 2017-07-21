@@ -1,3 +1,4 @@
+
 {
     "instances": [
         {
@@ -635,19 +636,18 @@
             "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
         },
         {
-            "tag": "bay-area-bike-share",
+            "tag": "ford-gobike",
             "meta": {
                 "latitude": 37.7141454,
                 "longitude": -122.25,
                 "city": "San Francisco Bay Area, CA",
-                "name": "Bay Area Bike Share",
+                "name": "Ford GoBike",
                 "country": "US",
                 "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
+                    "Motivate International, Inc."
                 ]
             },
-            "feed_url": "https://gbfs.bayareabikeshare.com/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.fordgobike.com/gbfs/gbfs.json"
         },
         {
             "tag": "relay-atlanta",
