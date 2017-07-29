@@ -29,22 +29,6 @@
             "format": "xml"
         },
         {
-            "tag": "bike-chattanooga",
-            "meta": {
-                "city": "Chattanooga, TN",
-                "name": "Bike Chattanooga",
-                "country": "US",
-                "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
-                ],
-                "longitude": -85.3096801,
-                "latitude": 35.0456297
-            },
-            "feed_url": "http://www.bikechattanooga.com/stations/json",
-            "format": "json"
-        },
-        {
             "tag": "melbourne-bike-share",
             "meta": {
                 "city": "Melbourne",
