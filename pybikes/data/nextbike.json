@@ -9,7 +9,155 @@
                 "longitude": 12.3625,
                 "country": "DE"
             },
-            "city_uid": "1"
+            "city_uid": 1
+        },
+        {
+            "domain": "sz",
+            "tag": "sz-bike-dresden",
+            "meta": {
+                "latitude": 51.0535,
+                "city": "Dresden",
+                "name": "sz-bike",
+                "longitude": 13.7387,
+                "country": "DE"
+            },
+            "city_uid": 2
+        },
+        {
+            "domain": "nb",
+            "tag": "norisbike-nurnberg",
+            "meta": {
+                "latitude": 49.4479,
+                "city": "Nürnberg",
+                "name": "NorisBike",
+                "longitude": 11.0814,
+                "country": "DE"
+            },
+            "city_uid": 6
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-frankfurt",
+            "meta": {
+                "latitude": 50.1072,
+                "city": "Frankfurt",
+                "longitude": 8.66375,
+                "country": "DE"
+            },
+            "city_uid": 8
+        },
+        {
+            "domain": "kg",
+            "tag": "kvb-rad-koln",
+            "meta": {
+                "latitude": 50.9429,
+                "city": "Köln",
+                "name": "KVB Rad",
+                "longitude": 6.95649,
+                "country": "DE"
+            },
+            "city_uid": 14
+        },
+        {
+            "domain": "fg",
+            "tag": "facherrad-karlsruhe",
+            "meta": {
+                "latitude": 49.0102,
+                "city": "Karlsruhe",
+                "name": "Fächerrad",
+                "longitude": 8.41827,
+                "country": "DE"
+            },
+            "city_uid": 21
+        },
+        {
+            "domain": "na",
+            "tag": "burgenland-neusiedler-see",
+            "meta": {
+                "latitude": 47.839,
+                "city": "Neusiedler See",
+                "name": "Burgenland",
+                "longitude": 16.761,
+                "country": "AT"
+            },
+            "city_uid": 23
+        },
+        {
+            "domain": "nz",
+            "tag": "nextbike-auckland",
+            "meta": {
+                "latitude": -36.8603,
+                "city": "Auckland",
+                "longitude": 174.763,
+                "country": "NZ"
+            },
+            "city_uid": 34
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-magdeburg",
+            "meta": {
+                "latitude": 52.1268,
+                "city": "Magdeburg",
+                "longitude": 11.6342,
+                "country": "DE"
+            },
+            "city_uid": 42
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-hamburg",
+            "meta": {
+                "latitude": 53.5506,
+                "city": "Hamburg",
+                "longitude": 9.99052,
+                "country": "DE"
+            },
+            "city_uid": 43
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-dusseldorf",
+            "meta": {
+                "latitude": 51.2243,
+                "city": "Düsseldorf",
+                "longitude": 6.77204,
+                "country": "DE"
+            },
+            "city_uid": 50
+        },
+        {
+            "domain": "la",
+            "tag": "niederosterreich-stpolten",
+            "meta": {
+                "latitude": 48.2058,
+                "city": "St.Pölten",
+                "longitude": 15.6232,
+                "country": "AT"
+            },
+            "city_uid": 57
+        },
+        {
+            "domain": "la",
+            "tag": "niederosterreich-modling",
+            "meta": {
+                "latitude": 48.1047,
+                "city": "Mödling",
+                "longitude": 16.3202,
+                "country": "AT"
+            },
+            "city_uid": 64
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-sursee",
+            "meta": {
+                "latitude": 47.1713,
+                "city": "Sursee",
+                "longitude": 8.10877,
+                "country": "CH"
+            },
+            "city_uid": 88
         },
         {
             "domain": "de",
@@ -20,7 +168,7 @@
                 "longitude": 9.05591,
                 "country": "DE"
             },
-            "city_uid": "101"
+            "city_uid": 101
         },
         {
             "domain": "ch",
@@ -31,11 +179,11 @@
                 "longitude": 8.30446,
                 "country": "CH"
             },
-            "city_uid": "126"
+            "city_uid": 126
         },
         {
             "domain": "lv",
-            "tag": "sixt-latvia-riga",
+            "tag": "sixt-riga",
             "meta": {
                 "latitude": 56.9453,
                 "city": "Rīga",
@@ -43,11 +191,11 @@
                 "longitude": 24.1033,
                 "country": "LV"
             },
-            "city_uid": "128"
+            "city_uid": 128
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-dortmund",
+            "tag": "metropolradruhr-dortmund",
             "meta": {
                 "latitude": 51.5141,
                 "city": "Dortmund",
@@ -55,11 +203,11 @@
                 "longitude": 7.46255,
                 "country": "DE"
             },
-            "city_uid": "129"
+            "city_uid": 129
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-bochum",
+            "tag": "metropolradruhr-bochum",
             "meta": {
                 "latitude": 51.4813,
                 "city": "Bochum",
@@ -67,11 +215,11 @@
                 "longitude": 7.2133,
                 "country": "DE"
             },
-            "city_uid": "130"
+            "city_uid": 130
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-bottrop",
+            "tag": "metropolradruhr-bottrop",
             "meta": {
                 "latitude": 51.5263,
                 "city": "Bottrop",
@@ -79,11 +227,11 @@
                 "longitude": 6.94611,
                 "country": "DE"
             },
-            "city_uid": "131"
+            "city_uid": 131
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-duisburg",
+            "tag": "metropolradruhr-duisburg",
             "meta": {
                 "latitude": 51.4487,
                 "city": "Duisburg",
@@ -91,11 +239,11 @@
                 "longitude": 6.77513,
                 "country": "DE"
             },
-            "city_uid": "132"
+            "city_uid": 132
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-essen",
+            "tag": "metropolradruhr-essen",
             "meta": {
                 "latitude": 51.4425,
                 "city": "Essen",
@@ -103,11 +251,11 @@
                 "longitude": 7.02301,
                 "country": "DE"
             },
-            "city_uid": "133"
+            "city_uid": 133
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-gelsenkirchen",
+            "tag": "metropolradruhr-gelsenkirchen",
             "meta": {
                 "latitude": 51.5404,
                 "city": "Gelsenkirchen",
@@ -115,11 +263,11 @@
                 "longitude": 7.07039,
                 "country": "DE"
             },
-            "city_uid": "134"
+            "city_uid": 134
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-hamm",
+            "tag": "metropolradruhr-hamm",
             "meta": {
                 "latitude": 51.6775,
                 "city": "Hamm",
@@ -127,11 +275,11 @@
                 "longitude": 7.84836,
                 "country": "DE"
             },
-            "city_uid": "135"
+            "city_uid": 135
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-herne",
+            "tag": "metropolradruhr-herne",
             "meta": {
                 "latitude": 51.5363,
                 "city": "Herne",
@@ -139,11 +287,11 @@
                 "longitude": 7.21493,
                 "country": "DE"
             },
-            "city_uid": "136"
+            "city_uid": 136
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-mulheim-a-d-r",
+            "tag": "metropolradruhr-mulheim-adr",
             "meta": {
                 "latitude": 51.4308,
                 "city": "Mülheim a.d.R.",
@@ -151,11 +299,11 @@
                 "longitude": 6.87401,
                 "country": "DE"
             },
-            "city_uid": "137"
+            "city_uid": 137
         },
         {
             "domain": "mr",
-            "tag": "metropolradruhr-germany-oberhausen",
+            "tag": "metropolradruhr-oberhausen",
             "meta": {
                 "latitude": 51.4936,
                 "city": "Oberhausen",
@@ -163,36 +311,22 @@
                 "longitude": 6.85169,
                 "country": "DE"
             },
-            "city_uid": "138"
+            "city_uid": 138
         },
         {
             "domain": "de",
             "tag": "nextbike-munchen",
             "meta": {
-                "latitude": 48.1392,
+                "latitude": 48.1358,
                 "city": "München",
-                "longitude": 11.5791,
+                "longitude": 11.5356,
                 "country": "DE"
             },
-            "city_uid": "139"
-        },
-        {
-            "domain": "mg",
-            "tag": "mvgrad",
-            "meta": {
-                "latitude": 48.1392,
-                "city": "München",
-                "name": "MVG Rad",
-                "longitude": 11.5791,
-                "country": "DE"
-            },
-            "city_uid": "268",
-            "hostname": "mvgrad.nextbike.net",
-            "bbox": [[48.248222, 11.72288], [48.06159, 11.36078]]
+            "city_uid": 139
         },
         {
             "domain": "lv",
-            "tag": "sixt-latvia-jurmala",
+            "tag": "sixt-jurmala",
             "meta": {
                 "latitude": 56.9732,
                 "city": "Jūrmala",
@@ -200,55 +334,51 @@
                 "longitude": 23.8225,
                 "country": "LV"
             },
-            "city_uid": "140"
+            "city_uid": 140
         },
         {
             "domain": "la",
-            "tag": "nextbike-wachau",
+            "tag": "niederosterreich-wachau",
             "meta": {
                 "latitude": 48.3188,
                 "city": "Wachau",
-                "name": "LEIHRADL",
                 "longitude": 15.4166,
                 "country": "AT"
             },
-            "city_uid": "142"
+            "city_uid": 142
         },
         {
             "domain": "la",
-            "tag": "nextbike-tulln",
+            "tag": "niederosterreich-tulln",
             "meta": {
                 "latitude": 48.3269,
                 "city": "Tulln",
-                "name": "LEIHRADL",
                 "longitude": 16.0569,
                 "country": "AT"
             },
-            "city_uid": "143"
+            "city_uid": 143
         },
         {
             "domain": "la",
-            "tag": "nextbike-triestingtal",
+            "tag": "niederosterreich-triestingtal",
             "meta": {
-                "latitude": 47.9835,
+                "latitude": 47.9421,
                 "city": "Triestingtal",
-                "name": "LEIHRADL",
-                "longitude": 16.0812,
+                "longitude": 16.1149,
                 "country": "AT"
             },
-            "city_uid": "144"
+            "city_uid": 144
         },
         {
             "domain": "la",
-            "tag": "nextbike-thermenregion",
+            "tag": "niederosterreich-thermenregion",
             "meta": {
                 "latitude": 47.9892,
                 "city": "Thermenregion",
-                "name": "LEIHRADL",
                 "longitude": 16.2646,
                 "country": "AT"
             },
-            "city_uid": "146"
+            "city_uid": 146
         },
         {
             "domain": "de",
@@ -259,31 +389,30 @@
                 "longitude": 9.43571,
                 "country": "DE"
             },
-            "city_uid": "147"
+            "city_uid": 147
+        },
+        {
+            "domain": "pl",
+            "tag": "wrm-wrocaw",
+            "meta": {
+                "latitude": 51.1097,
+                "city": "Wrocław",
+                "name": "Rower Miejski",
+                "longitude": 17.0485,
+                "country": "PL"
+            },
+            "city_uid": 148
         },
         {
             "domain": "la",
-            "tag": "nextbike-romerland",
+            "tag": "niederosterreich-romerland",
             "meta": {
                 "latitude": 48.0909,
                 "city": "Römerland",
-                "name": "LEIHRADL",
                 "longitude": 16.853,
                 "country": "AT"
             },
-            "city_uid": "149"
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-obb-bahnhofe",
-            "meta": {
-                "latitude": 48.0193,
-                "city": "ÖBB-Bahnhöfe",
-                "name": "LEIHRADL",
-                "longitude": 16.3092,
-                "country": "AT"
-            },
-            "city_uid": "150"
+            "city_uid": 149
         },
         {
             "domain": "de",
@@ -294,19 +423,18 @@
                 "longitude": 7.94243,
                 "country": "DE"
             },
-            "city_uid": "155"
+            "city_uid": 155
         },
         {
             "domain": "la",
-            "tag": "nextbike-wr-neustadt",
+            "tag": "niederosterreich-wrneustadt",
             "meta": {
-                "latitude": 47.8221,
+                "latitude": 47.8167,
                 "city": "Wr.Neustadt",
-                "name": "LEIHRADL",
-                "longitude": 16.2498,
+                "longitude": 16.2426,
                 "country": "AT"
             },
-            "city_uid": "156"
+            "city_uid": 156
         },
         {
             "domain": "de",
@@ -317,7 +445,7 @@
                 "longitude": 13.0676,
                 "country": "DE"
             },
-            "city_uid": "158"
+            "city_uid": 158
         },
         {
             "domain": "de",
@@ -328,47 +456,44 @@
                 "longitude": 8.39275,
                 "country": "DE"
             },
-            "city_uid": "160"
+            "city_uid": 160
         },
         {
             "domain": "la",
-            "tag": "nextbike-unteres-traisental",
+            "tag": "niederosterreich-unteres-traisental",
             "meta": {
-                "latitude": 48.3343,
+                "latitude": 48.1111,
                 "city": "Unteres Traisental",
-                "name": "LEIHRADL",
-                "longitude": 15.6878,
+                "longitude": 15.8176,
                 "country": "AT"
             },
-            "city_uid": "165"
+            "city_uid": 165
         },
         {
             "domain": "la",
-            "tag": "nextbike-marchfeld",
+            "tag": "niederosterreich-marchfeld",
             "meta": {
-                "latitude": 48.2741,
+                "latitude": 48.2407,
                 "city": "Marchfeld",
-                "name": "LEIHRADL",
-                "longitude": 16.7116,
+                "longitude": 16.9093,
                 "country": "AT"
             },
-            "city_uid": "170"
+            "city_uid": 170
         },
         {
             "domain": "la",
-            "tag": "nextbike-10vorwien",
+            "tag": "niederosterreich-10vorwien",
             "meta": {
-                "latitude": 48.3462,
-                "city": "Wien",
-                "name": "LEIHRADL",
-                "longitude": 16.2735,
+                "latitude": 48.3403,
+                "city": "10vorWien",
+                "longitude": 16.279,
                 "country": "AT"
             },
-            "city_uid": "174"
+            "city_uid": 174
         },
         {
             "domain": "ur",
-            "tag": "usedomrad-germany-usedom",
+            "tag": "usedomrad-usedom",
             "meta": {
                 "latitude": 53.9779,
                 "city": "Usedom",
@@ -376,7 +501,7 @@
                 "longitude": 13.9925,
                 "country": "DE"
             },
-            "city_uid": "176"
+            "city_uid": 176
         },
         {
             "domain": "de",
@@ -387,11 +512,11 @@
                 "longitude": 10.002,
                 "country": "DE"
             },
-            "city_uid": "177"
+            "city_uid": 177
         },
         {
             "domain": "ag",
-            "tag": "nextbike-augsburg",
+            "tag": "swa-rad-augsburg",
             "meta": {
                 "latitude": 48.3647,
                 "city": "Augsburg",
@@ -399,31 +524,29 @@
                 "longitude": 10.8916,
                 "country": "DE"
             },
-            "city_uid": "178"
+            "city_uid": 178
         },
         {
             "domain": "la",
-            "tag": "nextbike-traisen-golsental",
+            "tag": "niederosterreich-traisen-golsental",
             "meta": {
-                "latitude": 47.9504,
+                "latitude": 47.9439,
                 "city": "Traisen-Gölsental",
-                "name": "LEIHRADL",
-                "longitude": 15.6129,
+                "longitude": 15.639,
                 "country": "AT"
             },
-            "city_uid": "180"
+            "city_uid": 180
         },
         {
             "domain": "la",
-            "tag": "nextbike-oberes-ybbstal",
+            "tag": "niederosterreich-lunz-am-see",
             "meta": {
-                "latitude": 47.8205,
-                "city": "Oberes Ybbstal",
-                "name": "LEIHRADL",
-                "longitude": 15.0073,
+                "latitude": 47.8618,
+                "city": "Lunz am See",
+                "longitude": 15.0348,
                 "country": "AT"
             },
-            "city_uid": "181"
+            "city_uid": 181
         },
         {
             "domain": "nk",
@@ -434,31 +557,29 @@
                 "longitude": 32.4957,
                 "country": "TR"
             },
-            "city_uid": "183"
+            "city_uid": 183
         },
         {
             "domain": "la",
-            "tag": "nextbike-laa-an-der-thaya",
+            "tag": "niederosterreich-laa-an-der-thaya",
             "meta": {
                 "latitude": 48.7196,
                 "city": "Laa an der Thaya",
-                "name": "LEIHRADL",
                 "longitude": 16.3878,
                 "country": "AT"
             },
-            "city_uid": "184"
+            "city_uid": 184
         },
         {
             "domain": "la",
-            "tag": "nextbike-sudheide",
+            "tag": "niederosterreich-sudheide",
             "meta": {
                 "latitude": 48.1077,
                 "city": "Südheide",
-                "name": "LEIHRADL",
                 "longitude": 16.3937,
                 "country": "AT"
             },
-            "city_uid": "185"
+            "city_uid": 185
         },
         {
             "domain": "cy",
@@ -469,7 +590,19 @@
                 "longitude": 33.0464,
                 "country": "CY"
             },
-            "city_uid": "190"
+            "city_uid": 190
+        },
+        {
+            "domain": "pb",
+            "tag": "prm-poznan",
+            "meta": {
+                "latitude": 52.4077,
+                "city": "Poznań",
+                "name": "Rower Miejski",
+                "longitude": 16.9323,
+                "country": "PL"
+            },
+            "city_uid": 192
         },
         {
             "domain": "nz",
@@ -480,47 +613,46 @@
                 "longitude": 172.621,
                 "country": "NZ"
             },
-            "city_uid": "193"
+            "city_uid": 193
         },
         {
             "domain": "vn",
-            "tag": "nextbike-heidelberg",
+            "tag": "vrn-heidelberg",
             "meta": {
                 "latitude": 49.4113,
                 "city": "Heidelberg",
-                "name": "VRNnextbike",
+                "name": "VRN",
                 "longitude": 8.68933,
                 "country": "DE"
             },
-            "city_uid": "194"
+            "city_uid": 194
         },
         {
             "domain": "vn",
-            "tag": "nextbike-mannheim",
+            "tag": "vrn-mannheim",
             "meta": {
                 "latitude": 49.4621,
                 "city": "Mannheim",
-                "name": "VRNnextbike",
+                "name": "VRN",
                 "longitude": 8.49054,
                 "country": "DE"
             },
-            "city_uid": "195"
+            "city_uid": 195
         },
         {
             "domain": "la",
-            "tag": "nextbike-tullnerfeld-west",
+            "tag": "niederosterreich-tullnerfeld-west",
             "meta": {
                 "latitude": 48.2994,
                 "city": "Tullnerfeld West",
-                "name": "LEIHRADL",
                 "longitude": 15.9065,
                 "country": "AT"
             },
-            "city_uid": "196"
+            "city_uid": 196
         },
         {
             "domain": "si",
-            "tag": "stadtrad-innsbruck-innsbruck",
+            "tag": "stadtrad-innsbruck",
             "meta": {
                 "latitude": 47.2632,
                 "city": "Innsbruck",
@@ -528,66 +660,53 @@
                 "longitude": 11.3961,
                 "country": "AT"
             },
-            "city_uid": "199"
+            "city_uid": 199
         },
         {
-            "domain": "sz",
-            "tag": "sz-bike-germany-dresden",
+            "domain": "ob",
+            "tag": "opole-bike-opole",
             "meta": {
-                "latitude": 51.0535,
-                "city": "Dresden",
-                "name": "SZ-bike",
-                "longitude": 13.7387,
-                "country": "DE"
+                "latitude": 50.6633,
+                "city": "Opole",
+                "name": "Opole Bike",
+                "longitude": 17.9239,
+                "country": "PL"
             },
-            "city_uid": "2"
+            "city_uid": 202
         },
         {
-            "domain": "de",
-            "tag": "nextbike-berlin",
+            "domain": "vp",
+            "tag": "veturilo-warszawa",
             "meta": {
-                "latitude": 52.5087,
-                "city": "Berlin",
-                "longitude": 13.3563,
-                "country": "DE"
+                "latitude": 52.2265,
+                "city": "Warszawa",
+                "name": "Veturilo",
+                "longitude": 21.0127,
+                "country": "PL"
             },
-            "city_uid": "20"
-        },
-        {
-            "domain": "fg",
-            "tag": "facherrad-germany-karlsruhe",
-            "meta": {
-                "latitude": 49.0102,
-                "city": "Karlsruhe",
-                "name": "Fächerrad",
-                "longitude": 8.41827,
-                "country": "DE"
-            },
-            "city_uid": "21"
+            "city_uid": 210
         },
         {
             "domain": "la",
-            "tag": "nextbike-hollabrunn",
+            "tag": "niederosterreich-hollabrunn",
             "meta": {
                 "latitude": 48.562,
                 "city": "Hollabrunn",
-                "name": "LEIHRADL",
                 "longitude": 16.0785,
                 "country": "AT"
             },
-            "city_uid": "212"
+            "city_uid": 212
         },
         {
             "domain": "la",
-            "tag": "nextbike-wienerwald",
+            "tag": "niederosterreich-wienerwald",
             "meta": {
-                "latitude": 48.1917,
+                "latitude": 48.1926,
                 "city": "WienerWald",
-                "name": "LEIHRADL",
-                "longitude": 16.1197,
+                "longitude": 16.141,
                 "country": "AT"
             },
-            "city_uid": "213"
+            "city_uid": 213
         },
         {
             "domain": "bg",
@@ -598,7 +717,7 @@
                 "longitude": 27.8285,
                 "country": "BG"
             },
-            "city_uid": "215"
+            "city_uid": 215
         },
         {
             "domain": "me",
@@ -610,7 +729,7 @@
                 "longitude": 55.2722,
                 "country": "AE"
             },
-            "city_uid": "219"
+            "city_uid": 219
         },
         {
             "domain": "hr",
@@ -621,11 +740,11 @@
                 "longitude": 15.9643,
                 "country": "HR"
             },
-            "city_uid": "220"
+            "city_uid": 220
         },
         {
             "domain": "eg",
-            "tag": "ebikestation-stuttgart-germany-bietigheim-bissingen",
+            "tag": "ebikestation-stuttgart-bietigheim-bissingen",
             "meta": {
                 "latitude": 48.9495,
                 "city": "Bietigheim-Bissingen",
@@ -633,41 +752,29 @@
                 "longitude": 9.12518,
                 "country": "DE"
             },
-            "city_uid": "226"
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-neusiedlersee",
-            "meta": {
-                "latitude": 47.839,
-                "city": "NeusiedlerSee",
-                "name": "LEIHRADL",
-                "longitude": 16.761,
-                "country": "AT"
-            },
-            "city_uid": "23"
+            "city_uid": 226
         },
         {
             "domain": "uk",
-            "tag": "nextbike-bath",
+            "tag": "uk-bath",
             "meta": {
                 "latitude": 51.382,
                 "city": "Bath",
                 "longitude": -2.36275,
                 "country": "GB"
             },
-            "city_uid": "236"
+            "city_uid": 236
         },
         {
             "domain": "uk",
-            "tag": "nextbike-glasgow",
+            "tag": "uk-glasgow",
             "meta": {
                 "latitude": 55.8589,
                 "city": "Glasgow",
                 "longitude": -4.25549,
                 "country": "GB"
             },
-            "city_uid": "237"
+            "city_uid": 237
         },
         {
             "domain": "bu",
@@ -679,45 +786,57 @@
                 "longitude": -5.92918,
                 "country": "GB"
             },
-            "city_uid": "238"
-        },
-        {
-            "domain": "de",
-            "tag": "nextbike-friedrichshafen",
-            "meta": {
-                "latitude": 47.6519,
-                "city": "Friedrichshafen",
-                "longitude": 9.47837,
-                "country": "DE"
-            },
-            "city_uid": "24"
+            "city_uid": 238
         },
         {
             "domain": "uk",
-            "tag": "nextbike-stirling",
+            "tag": "uk-stirling",
             "meta": {
                 "latitude": 56.1165,
                 "city": "Stirling",
                 "longitude": -3.9369,
                 "country": "GB"
             },
-            "city_uid": "243"
+            "city_uid": 243
+        },
+        {
+            "domain": "bp",
+            "tag": "biker-bialystok",
+            "meta": {
+                "latitude": 53.1342,
+                "city": "Białystok",
+                "name": "Biker",
+                "longitude": 23.1485,
+                "country": "PL"
+            },
+            "city_uid": 245
+        },
+        {
+            "domain": "op",
+            "tag": "krm-konstancinski-konstancin-jeziorna",
+            "meta": {
+                "latitude": 52.0759,
+                "city": "Konstancin Jeziorna",
+                "name": "Rower Miejski",
+                "longitude": 21.1161,
+                "country": "PL"
+            },
+            "city_uid": 247
         },
         {
             "domain": "bc",
-            "tag": "bike-point-sibenik-sibenik",
+            "tag": "grad-sibenik",
             "meta": {
                 "latitude": 43.733,
                 "city": "Šibenik",
-                "name": "Bike Point",
                 "longitude": 15.8982,
                 "country": "HR"
             },
-            "city_uid": "248"
+            "city_uid": 248
         },
         {
             "domain": "tr",
-            "tag": "karbis-turkey-seferihisar",
+            "tag": "karbis-seferihisar",
             "meta": {
                 "latitude": 38.1962,
                 "city": "Seferihisar",
@@ -725,23 +844,23 @@
                 "longitude": 26.8386,
                 "country": "TR"
             },
-            "city_uid": "249"
+            "city_uid": 249
         },
         {
             "domain": "ln",
-            "tag": "lrm-lublin-poland-lublin",
+            "tag": "lrm-lublin",
             "meta": {
-                "latitude": 51.2597,
+                "latitude": 51.2469,
                 "city": "Lublin",
-                "name": "LRM",
-                "longitude": 22.5658,
+                "name": "Rower Miejski",
+                "longitude": 22.5697,
                 "country": "PL"
             },
-            "city_uid": "251"
+            "city_uid": 251
         },
         {
             "domain": "eg",
-            "tag": "ebikestation-stuttgart-germany-schwieberdingen",
+            "tag": "ebikestation-stuttgart-schwieberdingen",
             "meta": {
                 "latitude": 48.8723,
                 "city": "Schwieberdingen",
@@ -749,11 +868,11 @@
                 "longitude": 9.07419,
                 "country": "DE"
             },
-            "city_uid": "253"
+            "city_uid": 253
         },
         {
             "domain": "pp",
-            "tag": "healthy-ride-pittsburgh-pittsburgh",
+            "tag": "healthy-ride-pittsburgh",
             "meta": {
                 "latitude": 40.4459,
                 "city": "Pittsburgh",
@@ -761,19 +880,19 @@
                 "longitude": -79.9945,
                 "country": "US"
             },
-            "city_uid": "254"
+            "city_uid": 254
         },
         {
             "domain": "gp",
-            "tag": "grm-grodzisk-poland-grodzisk-mazowiecki",
+            "tag": "grm-grodzisk-grodzisk-mazowiecki",
             "meta": {
                 "latitude": 52.113,
                 "city": "Grodzisk Mazowiecki",
-                "name": "GRM",
+                "name": "Rower Miejski",
                 "longitude": 20.6265,
                 "country": "PL"
             },
-            "city_uid": "255"
+            "city_uid": 255
         },
         {
             "domain": "de",
@@ -784,7 +903,7 @@
                 "longitude": 9.90272,
                 "country": "DE"
             },
-            "city_uid": "256"
+            "city_uid": 256
         },
         {
             "domain": "nj",
@@ -796,46 +915,35 @@
                 "longitude": -74.0341,
                 "country": "US"
             },
-            "city_uid": "258"
-        },
-        {
-            "domain": "nz",
-            "tag": "nextbike-cambridge",
-            "meta": {
-                "latitude": -37.8914,
-                "city": "Cambridge",
-                "longitude": 175.472,
-                "country": "NZ"
-            },
-            "city_uid": "261"
+            "city_uid": 258
         },
         {
             "domain": "sa",
-            "tag": "ibike-saudi-arabia-king-abdullah-economic-city",
+            "tag": "ibike-king-abdullah-economic-city",
             "meta": {
-                "latitude": 22.3113,
+                "latitude": 22.4053,
                 "city": "King Abdullah Economic City",
                 "name": "iBike",
-                "longitude": 39.1031,
+                "longitude": 39.0815,
                 "country": "SA"
             },
-            "city_uid": "264"
+            "city_uid": 264
         },
         {
             "domain": "vn",
-            "tag": "nextbike-ludwigshafen",
+            "tag": "vrn-ludwigshafen",
             "meta": {
                 "latitude": 49.4741,
                 "city": "Ludwigshafen",
-                "name": "VRNnextbike",
+                "name": "VRN",
                 "longitude": 8.43287,
                 "country": "DE"
             },
-            "city_uid": "266"
+            "city_uid": 266
         },
         {
             "domain": "eg",
-            "tag": "ebikestation-stuttgart-germany-waiblingen",
+            "tag": "ebikestation-stuttgart-waiblingen",
             "meta": {
                 "latitude": 48.8333,
                 "city": "Waiblingen",
@@ -843,31 +951,52 @@
                 "longitude": 9.31667,
                 "country": "DE"
             },
-            "city_uid": "267"
+            "city_uid": 267
         },
         {
             "domain": "uk",
-            "tag": "nextbike-uni-warwick",
+            "tag": "uk-university-of-warwick",
             "meta": {
                 "latitude": 52.3815,
-                "city": "Coventry",
-                "name": "UniCycles @ Warwick",
+                "city": "University of Warwick",
                 "longitude": -1.56159,
                 "country": "GB"
             },
-            "city_uid": "272"
+            "city_uid": 272
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-kiew",
+            "meta": {
+                "latitude": 50.45,
+                "city": "Kiew",
+                "longitude": 30.5,
+                "country": "UA"
+            },
+            "city_uid": 276
         },
         {
             "domain": "vn",
-            "tag": "nextbike-speyer",
+            "tag": "vrn-speyer",
             "meta": {
                 "latitude": 49.3126,
                 "city": "Speyer",
-                "name": "VRNnextbike",
+                "name": "VRN",
                 "longitude": 8.45295,
                 "country": "DE"
             },
-            "city_uid": "278"
+            "city_uid": 278
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-lviv",
+            "meta": {
+                "latitude": 49.8402,
+                "city": "Lviv",
+                "longitude": 24.0182,
+                "country": "UA"
+            },
+            "city_uid": 280
         },
         {
             "domain": "de",
@@ -878,7 +1007,7 @@
                 "longitude": 9.93333,
                 "country": "DE"
             },
-            "city_uid": "281"
+            "city_uid": 281
         },
         {
             "domain": "wb",
@@ -886,26 +1015,26 @@
             "meta": {
                 "latitude": 26.7125,
                 "city": "West Palm Beach Florida",
-                "name": "Skybike",
+                "name": "Skybike West Palm Beach",
                 "longitude": -80.0821,
                 "country": "US"
             },
-            "city_uid": "283"
+            "city_uid": 283
         },
         {
             "domain": "ta",
-            "tag": "nextbike-serfaus",
+            "tag": "tirol-serfaus",
             "meta": {
                 "latitude": 47.0387,
                 "city": "Serfaus",
                 "longitude": 10.6048,
                 "country": "AT"
             },
-            "city_uid": "286"
+            "city_uid": 286
         },
         {
             "domain": "eg",
-            "tag": "ebikestation-stuttgart-germany-vaihingen-an-der-enz",
+            "tag": "ebikestation-stuttgart-vaihingen-an-der-enz",
             "meta": {
                 "latitude": 48.9334,
                 "city": "Vaihingen an der Enz",
@@ -913,11 +1042,11 @@
                 "longitude": 8.96121,
                 "country": "DE"
             },
-            "city_uid": "287"
+            "city_uid": 287
         },
         {
             "domain": "eg",
-            "tag": "ebikestation-stuttgart-germany-herrenberg",
+            "tag": "ebikestation-stuttgart-herrenberg",
             "meta": {
                 "latitude": 48.595,
                 "city": "Herrenberg",
@@ -925,334 +1054,668 @@
                 "longitude": 8.86716,
                 "country": "DE"
             },
-            "city_uid": "288"
+            "city_uid": 288
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-goppingen",
+            "meta": {
+                "latitude": 48.7054,
+                "city": "Göppingen",
+                "name": "ebikestation",
+                "longitude": 9.65125,
+                "country": "DE"
+            },
+            "city_uid": 289
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-ludwigsburg",
+            "meta": {
+                "latitude": 48.8941,
+                "city": "Ludwigsburg",
+                "name": "ebikestation",
+                "longitude": 9.19546,
+                "country": "DE"
+            },
+            "city_uid": 290
         },
         {
             "domain": "gs",
-            "tag": "nextbike-gospic",
+            "tag": "grad-gospic",
             "meta": {
                 "latitude": 44.5469,
                 "city": "Gospić",
                 "longitude": 15.375,
                 "country": "HR"
             },
-            "city_uid": "291"
+            "city_uid": 291
         },
         {
-            "domain": "rg",
-            "tag": "rower-gminny-poland-juchnowiec-koscielny",
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-holzgerlingen",
             "meta": {
-                "latitude": 53.0928,
-                "city": "Juchnowiec Kościelny",
-                "name": "ROWER GMINNY",
-                "longitude": 23.1204,
-                "country": "PL"
+                "latitude": 48.6388,
+                "city": "Holzgerlingen",
+                "name": "ebikestation",
+                "longitude": 9.0096,
+                "country": "DE"
             },
-            "city_uid": "300"
+            "city_uid": 292
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-filderstadt",
+            "meta": {
+                "latitude": 48.6588,
+                "city": "Filderstadt",
+                "name": "ebikestation",
+                "longitude": 9.22585,
+                "country": "DE"
+            },
+            "city_uid": 293
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-kirchheim-am-neckar",
+            "meta": {
+                "latitude": 49.04,
+                "city": "Kirchheim am Neckar",
+                "name": "ebikestation",
+                "longitude": 9.14441,
+                "country": "DE"
+            },
+            "city_uid": 294
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-schorndorf",
+            "meta": {
+                "latitude": 48.8015,
+                "city": "Schorndorf",
+                "name": "ebikestation",
+                "longitude": 9.52962,
+                "country": "DE"
+            },
+            "city_uid": 295
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-fellbach",
+            "meta": {
+                "latitude": 48.8166,
+                "city": "Fellbach",
+                "name": "ebikestation",
+                "longitude": 9.27967,
+                "country": "DE"
+            },
+            "city_uid": 296
+        },
+        {
+            "domain": "eg",
+            "tag": "ebikestation-stuttgart-remseck-am-neckar",
+            "meta": {
+                "latitude": 48.8767,
+                "city": "Remseck am Neckar",
+                "name": "ebikestation",
+                "longitude": 9.26179,
+                "country": "DE"
+            },
+            "city_uid": 299
+        },
+        {
+            "domain": "mt",
+            "tag": "nextbike-malta",
+            "meta": {
+                "latitude": 35.9402,
+                "city": "Malta",
+                "longitude": 14.3893,
+                "country": "MT"
+            },
+            "city_uid": 302
         },
         {
             "domain": "kc",
-            "tag": "nextbike-karlovac",
+            "tag": "grad-karlovac",
             "meta": {
                 "latitude": 45.4905,
                 "city": "Karlovac",
                 "longitude": 15.5503,
                 "country": "HR"
             },
-            "city_uid": "305"
+            "city_uid": 305
         },
         {
             "domain": "ks",
             "tag": "flashfleet-kent-state-university",
             "meta": {
-                "latitude": 41.1491,
+                "latitude": 41.1492,
                 "city": "Kent State University",
                 "name": "Flashfleet",
-                "longitude": -81.3415,
+                "longitude": -81.3363,
                 "country": "US"
             },
-            "city_uid": "306"
+            "city_uid": 306
         },
         {
-            "domain": "de",
-            "tag": "nextbike-offenbach-am-main",
+            "domain": "sb",
+            "tag": "grad-slavonski-brod",
             "meta": {
-                "latitude": 50.1093,
-                "city": "Offenbach am Main",
-                "longitude": 8.73825,
-                "country": "DE"
+                "latitude": 45.1656,
+                "city": "Slavonski Brod",
+                "longitude": 18.0183,
+                "country": "HR"
             },
-            "city_uid": "32"
+            "city_uid": 308
         },
         {
-            "domain": "nz",
-            "tag": "nextbike-auckland",
+            "domain": "ku",
+            "tag": "santander-cycles-mk-milton-keynes",
             "meta": {
-                "latitude": -36.8603,
-                "city": "Auckland",
-                "longitude": 174.763,
-                "country": "NZ"
+                "latitude": 52.0406,
+                "city": "Milton Keynes",
+                "name": "Santander Cycles MK",
+                "longitude": -0.759417,
+                "country": "GB"
             },
-            "city_uid": "34"
+            "city_uid": 320
         },
         {
-            "domain": "de",
-            "tag": "nextbike-magdeburg",
+            "domain": "me",
+            "tag": "bykystations-uae-al-ain",
             "meta": {
-                "latitude": 52.1268,
-                "city": "Magdeburg",
-                "longitude": 11.6342,
-                "country": "DE"
+                "latitude": 24.2989,
+                "city": "Al Ain",
+                "name": "BYKYstations",
+                "longitude": 54.6979,
+                "country": "AE"
             },
-            "city_uid": "42"
-        },
-        {
-            "domain": "de",
-            "tag": "nextbike-hamburg",
-            "meta": {
-                "latitude": 53.5506,
-                "city": "Hamburg",
-                "longitude": 9.99052,
-                "country": "DE"
-            },
-            "city_uid": "43"
-        },
-        {
-            "domain": "de",
-            "tag": "nextbike-dusseldorf",
-            "meta": {
-                "latitude": 51.2243,
-                "city": "Düsseldorf",
-                "longitude": 6.77204,
-                "country": "DE"
-            },
-            "city_uid": "50"
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-st-polten",
-            "meta": {
-                "latitude": 48.2058,
-                "city": "St.Pölten",
-                "name": "LEIHRADL",
-                "longitude": 15.6232,
-                "country": "AT"
-            },
-            "city_uid": "57"
-        },
-        {
-            "domain": "nb",
-            "tag": "norisbike-germany-nurnberg",
-            "meta": {
-                "latitude": 49.4479,
-                "city": "Nürnberg",
-                "name": "NorisBike",
-                "longitude": 11.0814,
-                "country": "DE"
-            },
-            "city_uid": "6"
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-modling",
-            "meta": {
-                "latitude": 48.1047,
-                "city": "Mödling",
-                "name": "LEIHRADL",
-                "longitude": 16.3202,
-                "country": "AT"
-            },
-            "city_uid": "64"
-        },
-        {
-            "domain": "de",
-            "tag": "nextbike-frankfurt",
-            "meta": {
-                "latitude": 50.1072,
-                "city": "Frankfurt",
-                "longitude": 8.66375,
-                "country": "DE"
-            },
-            "city_uid": "8"
+            "city_uid": 322
         },
         {
             "domain": "ch",
-            "tag": "nextbike-sursee",
+            "tag": "nextbike-hergiswil",
             "meta": {
-                "latitude": 47.1713,
-                "city": "Sursee",
-                "longitude": 8.10877,
+                "latitude": 46.9905,
+                "city": "Hergiswil",
+                "longitude": 8.30829,
                 "country": "CH"
             },
-            "city_uid": "88"
+            "city_uid": 323
         },
         {
-            "domain": "mb",
-            "tag": "bubi",
+            "domain": "ma",
+            "tag": "grad-makarska",
             "meta": {
-                "latitude": 47.497912,
-                "city": "Budapest",
-                "name": "MOL Bubi",
-                "longitude": 19.040235,
-                "country": "HU"
+                "latitude": 43.2992,
+                "city": "Makarska",
+                "longitude": 17.0184,
+                "country": "HR"
             },
-            "city_uid": 228
+            "city_uid": 324
         },
         {
-            "domain": "kg",
-            "tag": "kvb-rad",
+            "domain": "br",
+            "tag": "opcina-brinje",
             "meta": {
-                "latitude": 50.9364,
-                "city": "Köln",
-                "name": "KVB Rad",
-                "longitude": 6.96053,
-                "country": "DE"
+                "latitude": 44.9977,
+                "city": "Brinje",
+                "longitude": 15.1258,
+                "country": "HR"
             },
-            "city_uid": 14
+            "city_uid": 325
         },
         {
-            "domain": "pl",
-            "tag": "wroclawski-rower-miejski",
+            "domain": "zd",
+            "tag": "grad-zadar",
             "meta": {
-                "name": "Rower Miejski",
-                "latitude": 51.1097,
-                "longitude": 17.0485,
-                "country": "PL",
-                "city": "Wrocław"
+                "latitude": 44.1146,
+                "city": "Zadar",
+                "longitude": 15.2415,
+                "country": "HR"
             },
-            "city_uid": 148
-        },
-        {
-            "domain": "pb",
-            "tag": "poznanski-rower-miejski",
-            "meta": {
-                "name": "Rower Miejski",
-                "latitude": 52.4116,
-                "longitude": 16.9258,
-                "country": "PL",
-                "city": "Poznań"
-            },
-            "city_uid": 192
-        },
-        {
-            "domain": "ob",
-            "tag": "opole-bike",
-            "meta": {
-                "name": "Opole Bike",
-                "latitude": 50.6645,
-                "longitude": 17.9276,
-                "country": "PL",
-                "city": "Opole"
-            },
-            "city_uid": 202
-        },
-        {
-            "domain": "vp",
-            "tag": "veturilo",
-            "meta": {
-                "name": "VETURILO",
-                "latitude": 52.2345,
-                "longitude": 21.0024,
-                "country": "PL",
-                "city": "Warszawa"
-            },
-            "city_uid": 210
-        },
-        {
-            "domain": "vp",
-            "tag": "stacje-sponsorskie-veturilo",
-            "meta": {
-                "name": "Stacje Sponsorskie Nextbike Veturilo",
-                "latitude": 52.2265,
-                "longitude": 21.0127,
-                "country": "PL",
-                "city": "Warszawa"
-            },
-            "city_uid": 372
-        },
-        {
-            "domain": "kp",
-            "tag": "kmk-bike",
-            "meta": {
-                "name": "KMK Bike",
-                "latitude": 50.0395,
-                "longitude": 19.9374,
-                "country": "PL",
-                "city": "Kraków"
-            },
-            "city_uid": 232
-        },
-        {
-            "domain": "bp",
-            "tag": "biker-bialystok",
-            "meta": {
-                "name": "BiKeR",
-                "latitude": 53.1299,
-                "longitude": 23.1564,
-                "country": "PL",
-                "city": "Białystok"
-            },
-            "city_uid": 245
-        },
-        {
-            "domain": "op",
-            "tag": "konstancinski-rower-miejski",
-            "meta": {
-                "name": "Rower Miejski",
-                "latitude": 52.0879,
-                "longitude": 21.1075,
-                "country": "PL",
-                "city": "Konstancin"
-            },
-            "city_uid": 247
-        },
-        {
-            "domain": "kw",
-            "tag": "city-by-bike",
-            "meta": {
-                "name": "City By Bike",
-                "latitude": 50.2534,
-                "longitude": 19.0266,
-                "country": "PL",
-                "city": "Katowice"
-            },
-            "city_uid": 342
+            "city_uid": 327
         },
         {
             "domain": "lp",
-            "tag": "lodzki-rower-publiczny",
+            "tag": "odzki-rower-publiczny-lodz",
             "meta": {
+                "latitude": 51.7689,
+                "city": "Lódź",
                 "name": "Łódzki Rower Publiczny",
-                "city": "Łódź",
-                "latitude":51.7592485,
-                "longitude":19.4559833,
+                "longitude": 19.4554,
                 "country": "PL"
             },
             "city_uid": 330
         },
         {
-            "domain": "sp",
-            "tag": "bikes-srm",
+            "domain": "ln",
+            "tag": "lrm-swidnik",
             "meta": {
-                "latitude": 53.438056,
+                "latitude": 51.2194,
+                "city": "Świdnik",
+                "name": "Rower Miejski",
+                "longitude": 22.6988,
+                "country": "PL"
+            },
+            "city_uid": 331
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-bensheim",
+            "meta": {
+                "latitude": 49.6811,
+                "city": "Bensheim",
+                "name": "VRN",
+                "longitude": 8.62278,
+                "country": "DE"
+            },
+            "city_uid": 332
+        },
+        {
+            "domain": "ig",
+            "tag": "grad-ivanic-grad-ivanic-grad",
+            "meta": {
+                "latitude": 45.7225,
+                "city": "Ivanic Grad",
+                "longitude": 16.4434,
+                "country": "HR"
+            },
+            "city_uid": 337
+        },
+        {
+            "domain": "sw",
+            "tag": "miasto-rowerow-stalowa-wola",
+            "meta": {
+                "latitude": 50.57,
+                "city": "Stalowa Wola",
+                "name": "Miasto rowerów",
+                "longitude": 22.0626,
+                "country": "PL"
+            },
+            "city_uid": 339
+        },
+        {
+            "domain": "kw",
+            "tag": "bike-katowice",
+            "meta": {
+                "latitude": 50.2594,
+                "city": "Katowice",
+                "name": "City By Bike",
+                "longitude": 19.0215,
+                "country": "PL"
+            },
+            "city_uid": 342
+        },
+        {
+            "domain": "sp",
+            "tag": "bike_s-srm-szczecin",
+            "meta": {
+                "latitude": 53.4301,
                 "city": "Szczecin",
-                "name": "Szczeciński rower miejski",
-                "longitude": 14.542222,
+                "name": "Rower Miejski",
+                "longitude": 14.5498,
                 "country": "PL"
             },
             "city_uid": 346
         },
         {
-            "domain": "rp",
-            "tag": "radomski-rower-miejski",
+            "domain": "ot",
+            "tag": "bisikletli-ordu",
             "meta": {
-                "name": "Radomski Rower Miejski",
-                "city": "Radom",
+                "latitude": 40.9846,
+                "city": "Ordu",
+                "name": "Bisikletli",
+                "longitude": 37.8864,
+                "country": "TR"
+            },
+            "city_uid": 347
+        },
+        {
+            "domain": "ba",
+            "tag": "nextbike-sarajevo",
+            "meta": {
+                "latitude": 43.85,
+                "city": "Sarajevo",
+                "longitude": 18.39,
+                "country": "BA"
+            },
+            "city_uid": 350
+        },
+        {
+            "domain": "eu",
+            "tag": "co-bikes-exeter",
+            "meta": {
+                "latitude": 50.7272,
+                "city": "Exeter",
+                "name": "Co-bikes",
+                "longitude": -3.53605,
+                "country": "GB"
+            },
+            "city_uid": 354
+        },
+        {
+            "domain": "mw",
+            "tag": "rower-gminny-michaowice",
+            "meta": {
+                "latitude": 52.1686,
+                "city": "Michałowice",
+                "name": "Rower Gminny",
+                "longitude": 20.9957,
+                "country": "PL"
+            },
+            "city_uid": 359
+        },
+        {
+            "domain": "uk",
+            "tag": "uk-edinburgh",
+            "meta": {
+                "latitude": 55.9526,
+                "city": "Edinburgh",
+                "longitude": -3.18902,
+                "country": "GB"
+            },
+            "city_uid": 360
+        },
+        {
+            "domain": "nz",
+            "tag": "nextbike-auckland-waterfront",
+            "meta": {
+                "latitude": -36.841,
+                "city": "Auckland Waterfront",
+                "longitude": 174.763,
+                "country": "NZ"
+            },
+            "city_uid": 361
+        },
+        {
+            "domain": "bn",
+            "tag": "nextbike-berlin",
+            "meta": {
+                "latitude": 52.5087,
+                "city": "Berlin",
+                "longitude": 13.3563,
+                "country": "DE"
+            },
+            "city_uid": 362
+        },
+        {
+            "domain": "mp",
+            "tag": "system-legnicki-rower-miejski-slrm-legnica",
+            "meta": {
+                "latitude": 51.2059,
+                "city": "Legnica",
+                "name": "Rower Miejski",
+                "longitude": 16.1667,
+                "country": "PL"
+            },
+            "city_uid": 363
+        },
+        {
+            "domain": "aw",
+            "tag": "nextbike-aruba",
+            "meta": {
+                "latitude": 12.5137,
+                "city": "Aruba",
+                "longitude": -69.9757,
+                "country": "AW"
+            },
+            "city_uid": 366
+        },
+        {
+            "domain": "nw",
+            "tag": "world-hyderabad",
+            "meta": {
+                "latitude": 17.38,
+                "city": "Hyderabad",
+                "name": "World",
+                "longitude": 78.4725,
+                "country": "IN"
+            },
+            "city_uid": 367
+        },
+        {
+            "domain": "ee",
+            "tag": "sixt-jalgrattarent-tallinn",
+            "meta": {
+                "latitude": 59.4325,
+                "city": "Tallinn",
+                "name": "SIXT",
+                "longitude": 24.7295,
+                "country": "EE"
+            },
+            "city_uid": 368
+        },
+        {
+            "domain": "vp",
+            "tag": "veturilo-stacje-sponsorskie-nextbike-veturilo",
+            "meta": {
+                "latitude": 52.2265,
+                "city": "Warszawa",
+                "name": "Stacje Sponsorskie",
+                "longitude": 21.0127,
+                "country": "PL"
+            },
+            "city_uid": 372
+        },
+        {
+            "domain": "bl",
+            "tag": "bike4all-byblos",
+            "meta": {
+                "latitude": 34.1236,
+                "city": "Byblos",
+                "name": "bike4all",
+                "longitude": 35.6511,
+                "country": "LB"
+            },
+            "city_uid": 375
+        },
+        {
+            "domain": "bi",
+            "tag": "chartered-bike-bhopal",
+            "meta": {
+                "latitude": 23.2467,
+                "city": "Bhopal",
+                "name": "Chartered Bike",
+                "longitude": 77.411,
+                "country": "IN"
+            },
+            "city_uid": 376
+        },
+        {
+            "domain": "nw",
+            "tag": "world-rotterdam",
+            "meta": {
+                "latitude": 51.9224,
+                "city": "Rotterdam",
+                "name": "World",
+                "longitude": 4.47265,
+                "country": "IN"
+            },
+            "city_uid": 378
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-stans",
+            "meta": {
+                "latitude": 46.9593,
+                "city": "Stans",
+                "longitude": 8.36836,
+                "country": "CH"
+            },
+            "city_uid": 383
+        },
+        {
+            "domain": "ca",
+            "tag": "nextbike-victoria",
+            "meta": {
+                "latitude": 48.4298,
+                "city": "Victoria",
+                "longitude": -123.361,
+                "country": "CA"
+            },
+            "city_uid": 385
+        },
+        {
+            "domain": "nl",
+            "tag": "nederlands-maastricht",
+            "meta": {
+                "latitude": 50.8514,
+                "city": "Maastricht",
+                "longitude": 5.69129,
+                "country": "NL"
+            },
+            "city_uid": 387
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-stansstad",
+            "meta": {
+                "latitude": 46.9801,
+                "city": "Stansstad",
+                "longitude": 8.34098,
+                "country": "CH"
+            },
+            "city_uid": 388
+        },
+        {
+            "domain": "bk",
+            "tag": "byky-bikes-kuwait",
+            "meta": {
+                "latitude": 29.3632,
+                "city": "Kuwait",
+                "name": "BYKY Bikes",
+                "longitude": 47.487,
+                "country": "KW"
+            },
+            "city_uid": 390
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-horw",
+            "meta": {
+                "latitude": 47.0188,
+                "city": "Horw",
+                "longitude": 8.30828,
+                "country": "CH"
+            },
+            "city_uid": 391
+        },
+        {
+            "domain": "gm",
+            "tag": "gliwicki-rower-miejski-sgrm-gliwice",
+            "meta": {
+                "latitude": 50.2937,
+                "city": "Gliwice",
+                "name": "Rower Miejski",
+                "longitude": 18.6737,
+                "country": "PL"
+            },
+            "city_uid": 393
+        },
+        {
+            "domain": "pb",
+            "tag": "prm-stacje-sponsorskie-nextbike-prm",
+            "meta": {
+                "latitude": 52.4077,
+                "city": "Poznań",
+                "name": "Stacje Sponsorskie",
+                "longitude": 16.9323,
+                "country": "PL"
+            },
+            "city_uid": 394
+        },
+        {
+            "domain": "la",
+            "tag": "niederosterreich-gro-enzersdorf",
+            "meta": {
+                "latitude": 48.1986,
+                "city": "Groß Enzersdorf",
+                "longitude": 16.5496,
+                "country": "AT"
+            },
+            "city_uid": 395
+        },
+        {
+            "domain": "ka",
+            "tag": "nextbike-klagenfurt",
+            "meta": {
+                "latitude": 46.6335,
+                "city": "Klagenfurt",
+                "longitude": 14.3085,
+                "country": "AT"
+            },
+            "city_uid": 396
+        },
+        {
+            "domain": "rp",
+            "tag": "ski-rower-miejski-radom",
+            "meta": {
                 "latitude": 51.3994,
+                "city": "Radom",
+                "name": "Rower Miejski",
                 "longitude": 21.1655,
                 "country": "PL"
             },
             "city_uid": 400
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-moskau",
+            "meta": {
+                "latitude": 55.7514,
+                "city": "Moskau",
+                "longitude": 37.6206,
+                "country": "DE"
+            },
+            "city_uid": 406
+        },
+        {
+            "domain": "ap",
+            "tag": "system-rowerow-miejskich-w-pszczynie-pszczyna",
+            "meta": {
+                "latitude": 49.9757,
+                "city": "Pszczyna",
+                "name": "Rower Miejski",
+                "longitude": 18.9463,
+                "country": "PL"
+            },
+            "city_uid": 411
+        },
+        {
+            "domain": "zp",
+            "tag": "zgierski-rower-miejski-zgierz",
+            "meta": {
+                "latitude": 51.8602,
+                "city": "Zgierz",
+                "name": "Rower Miejski",
+                "longitude": 19.4118,
+                "country": "PL"
+            },
+            "city_uid": 412
+        },
+        {
+            "domain": "pt",
+            "tag": "tyski-rower-miejski-tychy",
+            "meta": {
+                "latitude": 50.1294,
+                "city": "Tychy",
+                "name": "Rower Miejski",
+                "longitude": 18.994,
+                "country": "PL"
+            },
+            "city_uid": 413
+        },
+        {
+            "domain": "la",
+            "tag": "niederosterreich-amstetten",
+            "meta": {
+                "latitude": 48.1218,
+                "city": "Amstetten",
+                "longitude": 14.8774,
+                "country": "AT"
+            },
+            "city_uid": 414
         }
     ],
     "system": "nextbike",
