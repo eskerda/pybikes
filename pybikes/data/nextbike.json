@@ -728,18 +728,6 @@
             "city_uid": "249"
         },
         {
-            "domain": "ln",
-            "tag": "lrm-lublin-poland-lublin",
-            "meta": {
-                "latitude": 51.2597,
-                "city": "Lublin",
-                "name": "LRM",
-                "longitude": 22.5658,
-                "country": "PL"
-            },
-            "city_uid": "251"
-        },
-        {
             "domain": "eg",
             "tag": "ebikestation-stuttgart-germany-schwieberdingen",
             "meta": {
@@ -762,18 +750,6 @@
                 "country": "US"
             },
             "city_uid": "254"
-        },
-        {
-            "domain": "gp",
-            "tag": "grm-grodzisk-poland-grodzisk-mazowiecki",
-            "meta": {
-                "latitude": 52.113,
-                "city": "Grodzisk Mazowiecki",
-                "name": "GRM",
-                "longitude": 20.6265,
-                "country": "PL"
-            },
-            "city_uid": "255"
         },
         {
             "domain": "de",
@@ -939,18 +915,6 @@
             "city_uid": "291"
         },
         {
-            "domain": "rg",
-            "tag": "rower-gminny-poland-juchnowiec-koscielny",
-            "meta": {
-                "latitude": 53.0928,
-                "city": "Juchnowiec Kościelny",
-                "name": "ROWER GMINNY",
-                "longitude": 23.1204,
-                "country": "PL"
-            },
-            "city_uid": "300"
-        },
-        {
             "domain": "kc",
             "tag": "nextbike-karlovac",
             "meta": {
@@ -1112,147 +1076,327 @@
         },
         {
             "domain": "pl",
-            "tag": "wroclawski-rower-miejski",
+            "tag": "wrm-wroclaw",
+            "city_uid": 148,
             "meta": {
-                "name": "Rower Miejski",
-                "latitude": 51.1097,
-                "longitude": 17.0485,
+                "name": "WRM",
+                "city": "Wrocław",
                 "country": "PL",
-                "city": "Wrocław"
-            },
-            "city_uid": 148
+                "latitude": 51.1097,
+                "longitude": 17.0485
+            }
         },
         {
             "domain": "pb",
-            "tag": "poznanski-rower-miejski",
+            "tag": "prm-poznan",
+            "city_uid": 192,
             "meta": {
-                "name": "Rower Miejski",
-                "latitude": 52.4116,
-                "longitude": 16.9258,
+                "name": "PRM",
+                "city": "Poznań",
                 "country": "PL",
-                "city": "Poznań"
-            },
-            "city_uid": 192
+                "latitude": 52.4077,
+                "longitude": 16.9323
+            }
         },
         {
             "domain": "ob",
-            "tag": "opole-bike",
+            "tag": "opole-bike-opole",
+            "city_uid": 202,
             "meta": {
                 "name": "Opole Bike",
-                "latitude": 50.6645,
-                "longitude": 17.9276,
+                "city": "Opole",
                 "country": "PL",
-                "city": "Opole"
-            },
-            "city_uid": 202
+                "latitude": 50.6633,
+                "longitude": 17.9239
+            }
         },
         {
             "domain": "vp",
-            "tag": "veturilo",
+            "tag": "veturilo-warszawa",
+            "city_uid": 210,
             "meta": {
                 "name": "VETURILO",
-                "latitude": 52.2345,
-                "longitude": 21.0024,
+                "city": "Warszawa",
                 "country": "PL",
-                "city": "Warszawa"
-            },
-            "city_uid": 210
-        },
-        {
-            "domain": "vp",
-            "tag": "stacje-sponsorskie-veturilo",
-            "meta": {
-                "name": "Stacje Sponsorskie Nextbike Veturilo",
                 "latitude": 52.2265,
-                "longitude": 21.0127,
-                "country": "PL",
-                "city": "Warszawa"
-            },
-            "city_uid": 372
-        },
-        {
-            "domain": "kp",
-            "tag": "kmk-bike",
-            "meta": {
-                "name": "KMK Bike",
-                "latitude": 50.0395,
-                "longitude": 19.9374,
-                "country": "PL",
-                "city": "Kraków"
-            },
-            "city_uid": 232
+                "longitude": 21.0127
+            }
         },
         {
             "domain": "bp",
-            "tag": "biker-bialystok",
+            "tag": "biker-bialystok-bialystok",
+            "city_uid": 245,
             "meta": {
-                "name": "BiKeR",
-                "latitude": 53.1299,
-                "longitude": 23.1564,
+                "name": "BIKER Białystok",
+                "city": "Białystok",
                 "country": "PL",
-                "city": "Białystok"
-            },
-            "city_uid": 245
+                "latitude": 53.1342,
+                "longitude": 23.1485
+            }
         },
         {
             "domain": "op",
-            "tag": "konstancinski-rower-miejski",
+            "tag": "krm-konstancinski-konstancin-jeziorna",
+            "city_uid": 247,
             "meta": {
-                "name": "Rower Miejski",
-                "latitude": 52.0879,
-                "longitude": 21.1075,
+                "name": "KRM Konstanciński",
+                "city": "Konstancin Jeziorna",
                 "country": "PL",
-                "city": "Konstancin"
-            },
-            "city_uid": 247
+                "latitude": 52.0759,
+                "longitude": 21.1161
+            }
         },
         {
-            "domain": "kw",
-            "tag": "city-by-bike",
+            "domain": "ln",
+            "tag": "lrm-lublin-lublin",
+            "city_uid": 251,
             "meta": {
-                "name": "City By Bike",
-                "latitude": 50.2534,
-                "longitude": 19.0266,
+                "name": "LRM Lublin",
+                "city": "Lublin",
                 "country": "PL",
-                "city": "Katowice"
-            },
-            "city_uid": 342
+                "latitude": 51.2469,
+                "longitude": 22.5697
+            }
+        },
+        {
+            "domain": "gp",
+            "tag": "grm-grodzisk-grodzisk-mazowiecki",
+            "city_uid": 255,
+            "meta": {
+                "name": "GRM Grodzisk",
+                "city": "Grodzisk Mazowiecki",
+                "country": "PL",
+                "latitude": 52.113,
+                "longitude": 20.6265
+            }
         },
         {
             "domain": "lp",
-            "tag": "lodzki-rower-publiczny",
+            "tag": "lodzki-rower-publiczny-lodz",
+            "city_uid": 330,
             "meta": {
                 "name": "Łódzki Rower Publiczny",
-                "city": "Łódź",
-                "latitude":51.7592485,
-                "longitude":19.4559833,
-                "country": "PL"
-            },
-            "city_uid": 330
+                "city": "Lódź",
+                "country": "PL",
+                "latitude": 51.7689,
+                "longitude": 19.4554
+            }
+        },
+        {
+            "domain": "ln",
+            "tag": "lrm-lublin-swidnik",
+            "city_uid": 331,
+            "meta": {
+                "name": "LRM Lublin",
+                "city": "Świdnik",
+                "country": "PL",
+                "latitude": 51.2194,
+                "longitude": 22.6988
+            }
+        },
+        {
+            "domain": "sw",
+            "tag": "stalowa-wola-miasto-rowerow-stalowa-wola",
+            "city_uid": 339,
+            "meta": {
+                "name": "Stalowa Wola miasto rowerów",
+                "city": "Stalowa Wola",
+                "country": "PL",
+                "latitude": 50.57,
+                "longitude": 22.0626
+            }
+        },
+        {
+            "domain": "kw",
+            "tag": "katowice-bike-katowice",
+            "city_uid": 342,
+            "meta": {
+                "name": "Katowice Bike",
+                "city": "Katowice",
+                "country": "PL",
+                "latitude": 50.2594,
+                "longitude": 19.0215
+            }
         },
         {
             "domain": "sp",
-            "tag": "bikes-srm",
+            "tag": "bike_s-srm-szczecin",
+            "city_uid": 346,
             "meta": {
-                "latitude": 53.438056,
+                "name": "Bike_S SRM",
                 "city": "Szczecin",
-                "name": "Szczeciński rower miejski",
-                "longitude": 14.542222,
-                "country": "PL"
-            },
-            "city_uid": 346
+                "country": "PL",
+                "latitude": 53.4301,
+                "longitude": 14.5498
+            }
+        },
+        {
+            "domain": "mw",
+            "tag": "rower-gminny-michalowice-michalowice",
+            "city_uid": 359,
+            "meta": {
+                "name": "Rower Gminny Michałowice",
+                "city": "Michałowice",
+                "country": "PL",
+                "latitude": 52.1686,
+                "longitude": 20.9957
+            }
+        },
+        {
+            "domain": "mp",
+            "tag": "system-legnicki-rower-miejski-slrm-legnica",
+            "city_uid": 363,
+            "meta": {
+                "name": "System Legnicki Rower Miejski (SLRM)",
+                "city": "Legnica",
+                "country": "PL",
+                "latitude": 51.2059,
+                "longitude": 16.1667
+            }
+        },
+        {
+            "domain": "vp",
+            "tag": "veturilo-stacje-sponsorskie-nextbike-veturilo",
+            "city_uid": 372,
+            "meta": {
+                "name": "Stacje Sponsorskie Nextbike Veturilo",
+                "city": "Warszawa",
+                "country": "PL",
+                "latitude": 52.2265,
+                "longitude": 21.0127
+            }
+        },
+        {
+            "domain": "gm",
+            "tag": "gliwicki-rower-miejski-sgrm-gliwice",
+            "city_uid": 393,
+            "meta": {
+                "name": "Gliwicki Rower Miejski (SGRM)",
+                "city": "Gliwice",
+                "country": "PL",
+                "latitude": 50.2937,
+                "longitude": 18.6737
+            }
+        },
+        {
+            "domain": "pb",
+            "tag": "prm-stacje-sponsorskie-nextbike-prm",
+            "city_uid": 394,
+            "meta": {
+                "name": "Stacje Sponsorskie Nextbike PRM",
+                "city": "Poznań",
+                "country": "PL",
+                "latitude": 52.4077,
+                "longitude": 16.9323
+            }
         },
         {
             "domain": "rp",
-            "tag": "radomski-rower-miejski",
+            "tag": "radomski-rower-miejski-radom",
+            "city_uid": 400,
             "meta": {
                 "name": "Radomski Rower Miejski",
                 "city": "Radom",
+                "country": "PL",
                 "latitude": 51.3994,
-                "longitude": 21.1655,
-                "country": "PL"
-            },
-            "city_uid": 400
+                "longitude": 21.1655
+            }
+        },
+        {
+            "domain": "rp",
+            "tag": "radomski-rower-miejski-stacje-sponsorskie-radom",
+            "city_uid": 401,
+            "meta": {
+                "name": "Stacje Sponsorskie Radom",
+                "city": "Radom",
+                "country": "PL",
+                "latitude": 51.3994,
+                "longitude": 21.1655
+            }
+        },
+        {
+            "domain": "ap",
+            "tag": "system-rowerow-miejskich-w-pszczynie-pszczyna",
+            "city_uid": 411,
+            "meta": {
+                "name": "System Rowerów Miejskich w Pszczynie",
+                "city": "Pszczyna",
+                "country": "PL",
+                "latitude": 49.9757,
+                "longitude": 18.9463
+            }
+        },
+        {
+            "domain": "zp",
+            "tag": "zgierski-rower-miejski-zgierz",
+            "city_uid": 412,
+            "meta": {
+                "name": "Zgierski Rower Miejski",
+                "city": "Zgierz",
+                "country": "PL",
+                "latitude": 51.8602,
+                "longitude": 19.4118
+            }
+        },
+        {
+            "domain": "pt",
+            "tag": "tyski-rower-miejski-tychy",
+            "city_uid": 413,
+            "meta": {
+                "name": "Tyski Rower Miejski",
+                "city": "Tychy",
+                "country": "PL",
+                "latitude": 50.1294,
+                "longitude": 18.994
+            }
+        },
+        {
+            "domain": "km",
+            "tag": "ok-bike-kedzierzyn-kozle",
+            "city_uid": 421,
+            "meta": {
+                "name": "OK Bike",
+                "city": "Kędzierzyn-Koźle",
+                "country": "PL",
+                "latitude": 50.3417,
+                "longitude": 18.2043
+            }
+        },
+        {
+            "domain": "kr",
+            "tag": "kolobrzeski-rower-miejski-kolobrzeg",
+            "city_uid": 422,
+            "meta": {
+                "name": "Kołobrzeski Rower Miejski",
+                "city": "Kołobrzeg",
+                "country": "PL",
+                "latitude": 54.1762,
+                "longitude": 15.5761
+            }
+        },
+        {
+            "domain": "sm",
+            "tag": "siedlecki-rower-miejski-siedlce",
+            "city_uid": 423,
+            "meta": {
+                "name": "Siedlecki Rower Miejski",
+                "city": "Siedlce",
+                "country": "PL",
+                "latitude": 52.1668,
+                "longitude": 22.2891
+            }
+        },
+        {
+            "domain": "pk",
+            "tag": "kaliski-rower-miejski-kalisz",
+            "city_uid": 431,
+            "meta": {
+                "name": "Kaliski Rower Miejski",
+                "city": "Kalisz",
+                "country": "PL",
+                "latitude": 51.7608,
+                "longitude": 18.0746
+            }
         }
     ],
     "system": "nextbike",
