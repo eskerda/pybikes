@@ -101,6 +101,21 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json"
         },
         {
+            "tag": "bike-chattanooga",
+            "meta": {
+                "longitude": -85.3096801,
+                "latitude": 35.0456297,
+                "city": "Chattanooga, TN",
+                "name": "Bike Chattanooga",
+                "country": "US",
+                "company": [
+                    "Motivate International, Inc",
+                    "PBSC"
+                ]
+            },
+            "feed_url": "https://gbfs.bikechattanooga.com/gbfs/gbfs.json"
+        },
+        {
             "tag": "biketown",
             "meta": {
                 "latitude": 45.52175423291714,
