@@ -23,7 +23,8 @@ class BySykkel(BikeShareSystem):
     def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-            scraper.headers['Client-Identifier'] = self.key
+
+        scraper.headers['Client-Identifier'] = self.key
 
         self.stations = []
 
