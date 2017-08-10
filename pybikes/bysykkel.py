@@ -61,11 +61,9 @@ class BySykkelStation(BikeShareStation):
         self.longitude = float(info['center']['longitude'])
         self.latitude  = float(info['center']['latitude'])
 
-        self.bikes = info['availability']['locks'] + info['availability']['bikes']
-        self.free = info['availability']['bikes']
+        self.bikes = info['availability']['bikes']
+        self.free = info['availability']['locks']
         self.extra = {
-            'slots':  info['availability']['locks'],
             'uid': info['id'],
             'placement': info['subtitle'],
-            'ready': info['ready']
         }
