@@ -5,7 +5,7 @@
             "meta":{
                 "latitude":59.913869,
                 "country":"NO",
-                "name":"Oslo bysykkel",
+                "name":"Bysykkel",
                 "longitude":10.752245,
                 "city":"Oslo",
                 "city_code":"OSL"
@@ -18,7 +18,7 @@
             "meta":{
                 "latitude":60.391263,
                 "country":"NO",
-                "name":"Bergen bysykkel",
+                "name":"Bysykkel",
                 "longitude":5.322054,
                 "city":"Bergen",
                 "city_code":"BGO"
@@ -31,7 +31,7 @@
             "meta":{
                 "latitude":59.894550,
                 "country":"NO",
-                "name":"Bærum bysykkel",
+                "name":"Bysykkel",
                 "longitude":10.546343,
                 "city":"Bærum",
                 "city_code":"BÆR"
