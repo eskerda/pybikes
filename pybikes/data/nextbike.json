@@ -1924,6 +1924,18 @@
                 "latitude": 51.7608,
                 "longitude": 18.0746
             }
+        },
+        {
+            "domain": "mb",
+            "tag": "bubi",
+            "city_uid": 228,
+            "meta": {
+                "latitude": 47.497912,
+                "longitude": 19.040235,
+                "city": "Budapest",
+                "name": "MOL Bubi",
+                "country": "HU"
+            }
         }
     ],
     "system": "nextbike",
