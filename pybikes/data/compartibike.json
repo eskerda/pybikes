@@ -13,7 +13,7 @@
                     "Urbes"
                 ]
             },
-            "feed_url":"https://integrabike.compartibike.com.br/stations.json"
+            "feed_url":"https://integrabike.tembici.com.br/stations.json"
         },
         {
             "tag":"rivibike",
@@ -28,7 +28,7 @@
                     "Sobloco"
                 ]
             },
-            "feed_url":"https://rivibike.compartibike.com.br/stations.json"
+            "feed_url":"https://rivibike.tembici.com.br/stations.json"
         },
         {
             "tag":"dukebike",
