@@ -25,6 +25,7 @@ class CompartiBike(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
+        scraper.ssl_verification = False
 
         stations = []
 
