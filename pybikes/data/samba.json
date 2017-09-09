@@ -4,7 +4,7 @@
         "Samba": {
             "instances":[
                 {
-                    "url":"http://www.movesamba.com.br/bikesampa/mapaestacao.asp",
+                    "url":"https://bikesampa.tembici.com.br/bikesampa/mapaestacao.asp",
                     "tag":"bikesampa",
                     "meta":{
                         "latitude":-23.55,
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "url":"http://ww2.mobilicidade.com.br/sambarjpt/mapaestacao.asp",
+                    "url":"https://bikerio.tembici.com.br/sambarjpt/mapaestacao.asp",
                     "tag":"bikerio",
                     "meta":{
                         "latitude":-22.904315,
@@ -70,7 +70,7 @@
                     }
                 },
                 {
-                    "url":"http://ww2.mobilicidade.com.br/bikesalvador/mapaestacao.asp",
+                    "url":"https://bikesalvador.tembici.com.br/bikesalvador/mapaestacao.asp",
                     "tag":"bikesalvador",
                     "meta":{
                         "latitude":-12.973959,
@@ -81,18 +81,7 @@
                     }
                 },
                 {
-                    "url":"http://ww2.mobilicidade.com.br/bikebrasilia/mapaestacao.asp",
-                    "tag":"bikebrasilia",
-                    "meta":{
-                        "latitude":-15.795115,
-                        "city":"Bras\u00edlia",
-                        "name":"BikeBrasilia",
-                        "longitude":-47.887424,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"http://www.movesamba.com.br/bikepoa/mapaestacao.asp",
+                    "url":"https://bikepoa.tembici.com.br/bikepoa/mapaestacao.asp",
                     "tag":"bikepoa",
                     "meta":{
                         "latitude":-30.033079,
@@ -106,6 +95,28 @@
         },
         "SambaNew": {
             "instances": [
+                {
+                    "url":"http://www.maisbikecompartilhada.com.br/mapaestacao.aspx",
+                    "tag":"bikebrasilia",
+                    "meta":{
+                        "latitude":-15.795115,
+                        "city":"Bras\u00edlia",
+                        "name":"BikeBrasilia",
+                        "longitude":-47.887424,
+                        "country":"BR"
+                    }
+                },
+                {
+                    "url":"http://www.debikegoiania.com/mapaestacao.aspx",
+                    "tag":"debikegoiania",
+                    "meta":{
+                        "latitude":-16.670492,
+                        "city":"Goiânia",
+                        "name":"GynDebike",
+                        "longitude":-49.259535,
+                        "country":"BR"
+                    }
+                },
                 {
                     "url":"http://www.bicicletar.com.br/mapaestacao.aspx",
                     "tag":"bicicletar",
@@ -125,6 +136,17 @@
                         "city":"Aracajú",
                         "name":"CajuBike",
                         "longitude":-37.051898,
+                        "country":"BR"
+                    }
+                },
+                {
+                    "url":"https://bikebelem.tembici.com.br/mapaestacao.aspx",
+                    "tag":"bikebelem",
+                    "meta":{
+                        "latitude":-1.4600794,
+                        "city":"Belém",
+                        "name":"Bike Belém",
+                        "longitude":-48.490865,
                         "country":"BR"
                     }
                 }
