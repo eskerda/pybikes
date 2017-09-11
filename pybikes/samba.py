@@ -2,6 +2,7 @@
 # Original work Copyright (C) 2014, iomartin <iomartin@iomartin.net>
 # Modified work Copyright (C) 2015 Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils

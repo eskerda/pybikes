@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+from builtins import map
 
 from lxml import etree
 
@@ -29,7 +31,7 @@ class GewistaCityBike(BikeShareSystem):
         data = scraper.request(self.endpoint)
         tree = etree.fromstring(data.encode('utf-8'))
         markers = tree.xpath('//station')
-        self.stations = map(GewistaStation, markers)
+        self.stations = list(map(GewistaStation, markers))
 
 
 class GewistaStation(BikeShareStation):

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from lxml import etree
 
@@ -66,7 +67,7 @@ class EcobiciBAStation(BikeShareStation):
         address = data.findtext('b:Lugar', namespaces=NS)
         number = data.findtext('b:Numero', namespaces=NS)
         if number != '0':
-            address = u'{} {}'.format(address, number)
+            address = '{} {}'.format(address, number)
         status = data.findtext('b:EstacionDisponible', namespaces=NS)
         self.extra = {
             'uid': data.findtext('b:EstacionId', namespaces=NS),

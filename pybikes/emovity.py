@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+from builtins import zip
 
 import re
 
@@ -28,10 +30,10 @@ class Emovity(BikeShareSystem):
             scraper = utils.PyBikesScraper()
 
         fuzzle = scraper.request(self.feed_url)
-        data = zip(
+        data = list(zip(
             re.findall(r"addMarker\(\d+,(\d+.\d+),(\d+.\d+)", fuzzle),
             re.findall(r"html\[\d+\]='(.*?)';", fuzzle)
-        )
+        ))
         stations = []
         for latlng, html_fuzzle in data:
             dom = html.fromstring(html_fuzzle)

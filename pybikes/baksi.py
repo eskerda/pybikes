@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import map
+from builtins import zip
 
 import re
 
@@ -40,14 +44,14 @@ class Baksi(BikeShareSystem):
         geopoints = re.findall(LAT_LNG_RGX, html_data, re.UNICODE)
 
         # Refine Output
-        station_id, name = zip(*id_name)
+        station_id, name = list(zip(*id_name))
         status = ["Active" if out == "Aktif" else "Inactive" for out in status]
         docks = [int(i) for i in docks]
         bikes = [int(i) for i in bikes]
-        latitude, longitude = zip(*geopoints)
+        latitude, longitude = list(zip(*geopoints))
 
-        self.stations = map(BaksiStation, zip(station_id, name, status, docks,
-            bikes, latitude, longitude))
+        self.stations = list(map(BaksiStation, list(zip(station_id, name, status, docks,
+            bikes, latitude, longitude))))
 
 
 class BaksiStation(BikeShareStation):

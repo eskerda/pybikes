@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 """ This is a really ugly and nasty script to ease filling up instance files
 without cities, latitudes and longitudes. Does more than it needs to """
+
+from builtins import range
+from builtins import input
+from future.standard_library import install_aliases
+install_aliases()
 
 import os
 import sys, traceback
 import time
 import json
 import argparse
-from urlparse import urlparse
+from urllib.parse import urlparse
 from collections import namedtuple
 import traceback
 from googlegeocoder import GoogleGeocoder
@@ -85,18 +91,18 @@ metas = ['city', 'country']
 data = {}
 
 def clearline(length):
-    clearline = "\r" + "".join([" " for i in range(length)])
+    clearline = "\r" + "".join([" " for i in list(range(length))])
     sys.stderr.flush()
     sys.stderr.write(clearline)
     sys.stderr.flush()
 
 def print_status(i, total, status):
-    progress = "".join(["#" for step in range(i)]) + \
-               "".join([" " for step in range(total-i)])
+    progress = "".join(["#" for step in list(range(i))]) + \
+               "".join([" " for step in list(range(total-i))])
     status_pattern = "\r{0}/{1}: [{2}] {3}"
     output = status_pattern.format(i, total, progress, status)
     sys.stderr.flush()
-    sys.stderr.write(unicode(output))
+    sys.stderr.write(str(output))
     sys.stderr.flush()
     if (i == total):
         sys.stderr.write('\n')
@@ -118,7 +124,7 @@ def geocode(instance, systemCls, language, address = None):
             if args.verbose:
                 sys.stderr.write("Updating system to get an initial lat/lng\n")
             bikesys.update(scraper)
-            target = int(len(bikesys.stations) / 2)
+            target = int(len(bikesys.stations) // 2)
             latitude  = bikesys.stations[target].latitude
             longitude = bikesys.stations[target].longitude
         if args.verbose:
@@ -131,8 +137,8 @@ def geocode(instance, systemCls, language, address = None):
     try:
         info = geocoder.get(query, language = language)
     except Exception as e:
-        print e
-        address = raw_input('Type an address: ')
+        print(e)
+        address = input('Type an address: ')
         return geocode(instance, systemCls, language, address)
     if args.interactive:
         for index, address in enumerate(info):
@@ -141,12 +147,12 @@ def geocode(instance, systemCls, language, address = None):
         sys.stderr.write("%d: Manual address lookup\n" % int(len(info)+1))
         sys.stderr.write('\n')
         try:
-            res = int(raw_input('Select option (number): '))
+            res = int(input('Select option (number): '))
             if res == len(info):
-                language = raw_input('New language? ')
+                language = input('New language? ')
                 return geocode(instance, systemCls, language)
             elif res == len(info)+1:
-                address = raw_input('Type an address: ')
+                address = input('Type an address: ')
                 return geocode(instance, systemCls, language, address)
             elif res < len(info):
                 address = info[res]
@@ -159,7 +165,7 @@ def geocode(instance, systemCls, language, address = None):
                 sys.stderr.write('Longitude: %s\n' % str(lng))
                 sys.stderr.write('\n')
                 for meta in metas:
-                    res = raw_input('Select the %s: ' % meta)
+                    res = input('Select the %s: ' % meta)
                     if ',' in res:
                         res = res.split(',')
                     else:
@@ -178,7 +184,7 @@ def geocode(instance, systemCls, language, address = None):
                 instance['meta'] = metainfo
                 return True
         except Exception as e:
-            print e
+            print(e)
             return geocode(instance, systemCls, language)
 
     if args.verbose:
@@ -206,7 +212,7 @@ def handle_System(schema, cls, instances):
     lastlen = 0
 
     if args.interactive and args.geocode:
-        language = raw_input('Desired geocoding language? ')
+        language = input('Desired geocoding language? ')
 
     for i, instance in enumerate(instances):
         if not args.verbose:
@@ -223,10 +229,10 @@ def handle_System(schema, cls, instances):
             tag = slugify(instance['meta']['name'])
             r   = None
             if args.interactive:
-                r = raw_input(prompts['slug'].format(old_tag = instance['tag'],
+                r = input(prompts['slug'].format(old_tag = instance['tag'],
                                                      new_tag = tag))
                 if r == 'set':
-                    tag = raw_input("Set new tag: ")
+                    tag = input("Set new tag: ")
                 elif r == 'n':
                     continue
             if r != 'n' or args.overwrite or 'tag' not in instance or 'tag' == '':
@@ -285,7 +291,7 @@ if __name__ == "__main__":
                 traceback.print_exc(file=sys.stderr)
             write_output(data, args.output)
     except KeyboardInterrupt as e:
-        print "KEYBOARD INTERRUPT"
+        print("KEYBOARD INTERRUPT")
         if args.continuous:
             if args.verbose:
                 sys.stderr.write("Writing file bc exception\n")

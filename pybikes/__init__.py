@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 __author__ = "eskerda (eskerda@gmail.com)"
 __version__ = "2.0"
 __copyright__ = "Copyright (c) 2010-2012 eskerda"
 __license__ = "AGPL"
 
+from past.builtins import basestring
+from future.utils import iteritems
+
 import re
 import json
-from itertools import imap
+from builtins import map
 from pkg_resources import resource_string, resource_listdir
 
 from pybikes.exceptions import BikeShareSystemNotFound
@@ -30,10 +34,10 @@ def get_all_data():
 
 
 def get_schemas():
-    return map(
+    return list(map(
         lambda name: re.sub(r'\.json$', '', name),
         get_all_data()
-    )
+    ))
 
 def _uniclass_extractor(data):
     for i in data['instances']:
@@ -41,7 +45,7 @@ def _uniclass_extractor(data):
 
 
 def _multiclass_extractor(data):
-    for k, v in data['class'].iteritems():
+    for k, v in iteritems(data['class']):
         for i in data['class'][k]['instances']:
             yield (k, i)
 
@@ -83,7 +87,7 @@ def get_instance(schema, tag):
 
 
 def find_system(tag):
-    datas = imap(get_data, get_all_data())
+    datas = map(get_data, get_all_data())
     for data in datas:
         schema = data['system']
         try:

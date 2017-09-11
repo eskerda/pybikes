@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 import json
 import operator
@@ -48,7 +49,7 @@ class Gbfs(BikeShareSystem):
         # Any station not in station_information will be ignored
         stations = [
             (station_information[uid], station_status[uid])
-            for uid in station_information.keys()
+            for uid in list(station_information)
         ]
         self.stations = []
         for info, status in stations:
@@ -65,13 +66,13 @@ class GbfsStation(BikeShareStation):
     def __init__(self, info):
         """
         Example info variable:
-        {u'is_installed': 1, u'post_code': u'null', u'capacity': 31,
-        u'name': u'Ft. York / Capreol Crt.', u'cross_street': u'null',
-        u'num_bikes_disabled': 0, u'last_reported': 1473969337,
-        u'lon': -79.395954, u'station_id': u'7000', u'is_renting': 1,
-        u'num_docks_available': 26, u'num_docks_disabled': 0,
-        u'address': u'Ft. York / Capreol Crt.', u'lat': 43.639832,
-        u'num_bikes_available': 5, u'is_returning': 1}
+        {'is_installed': 1, 'post_code': 'null', 'capacity': 31,
+        'name': 'Ft. York / Capreol Crt.', 'cross_street': 'null',
+        'num_bikes_disabled': 0, 'last_reported': 1473969337,
+        'lon': -79.395954, 'station_id': '7000', 'is_renting': 1,
+        'num_docks_available': 26, 'num_docks_disabled': 0,
+        'address': 'Ft. York / Capreol Crt.', 'lat': 43.639832,
+        'num_bikes_available': 5, 'is_returning': 1}
 
         So let's extract the dataaa
         """
@@ -79,7 +80,7 @@ class GbfsStation(BikeShareStation):
         if not info['is_installed']:
             raise exceptions.StationPlannedException()
 
-        self.name = unicode(info['name'])
+        self.name = str(info['name'])
         self.bikes = int(info['num_bikes_available'])
         self.free = int(info['num_docks_available'])
         self.latitude = float(info['lat'])

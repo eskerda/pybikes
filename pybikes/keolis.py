@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+from builtins import map
 
 import re
 import json
@@ -40,7 +42,7 @@ class Keolis(BikeShareSystem):
             scraper = utils.PyBikesScraper()
         raw_fuzzle = scraper.request(self.feed_url)
         data = re.findall(Keolis._re_fuzzle, raw_fuzzle)
-        self.stations = map(KeolisStation, data)
+        self.stations = list(map(KeolisStation, data))
 
 class KeolisStation(BikeShareStation):
     def __init__(self, data):

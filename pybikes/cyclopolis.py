@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+from builtins import zip
 
 import re
 
@@ -53,10 +55,10 @@ class Cyclopolis(BikeShareSystem):
         stations = []
 
         html = scraper.request(self.feed_url)
-        data = zip(
+        data = list(zip(
             re.findall(LAT_LNG_RGX, html, re.DOTALL),
             re.findall(DATA_RGX, html, re.DOTALL)
-        )
+        ))
         for lat_lng, info in data:
             latitude = float(lat_lng[0])
             longitude = float(lat_lng[1])

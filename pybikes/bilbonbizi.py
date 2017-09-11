@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2017, Alberto Varela <alberto@berriart.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import map
 
 from lxml import etree
 
@@ -33,7 +36,7 @@ class BilbonBizi(BikeShareSystem):
         tree = etree.fromstring(raw)
         stationList = tree.xpath('/RESPUESTA/LISTA/DETALLE')
 
-        self.stations = map(BilbonBiziStation, stationList)
+        self.stations = list(map(BilbonBiziStation, stationList))
 
 
 class BilbonBiziStation(BikeShareStation):

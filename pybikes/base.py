@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from future.utils import python_2_unicode_compatible
 
 from datetime import datetime
 import json
@@ -34,6 +37,7 @@ class BikeShareStation(object):
         self.timestamp = datetime.utcnow()     # Store timestamp in UTC!
         self.extra = extra or {}
 
+    @python_2_unicode_compatible
     def __str__(self):
         return "--- {0} ---\n"\
                "bikes: {1}\n"\
@@ -107,6 +111,7 @@ class BikeShareSystem(object):
         if not self.meta['name'] and self.meta['system']:
             self.meta['name'] = self.meta['system']
 
+    @python_2_unicode_compatible
     def __str__(self):
         return "tag: %s\nmeta: %s" % (self.tag, str(self.meta))
 

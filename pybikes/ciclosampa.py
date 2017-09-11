@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2014, iomartin <iomartin@iomartin.net>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 import re
 

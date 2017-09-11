@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import map
+from builtins import zip
 
 import re
-import HTMLParser
+from html.parser import HTMLParser
 
 from .base import BikeShareSystem, BikeShareStation
 from . import utils
@@ -38,7 +42,7 @@ class Bicincitta(BikeShareSystem):
         data = scraper.request(url)
         raw = re.findall(Bicincitta._RE_INFO, data)
         info = raw[0].split('\',\'')
-        info = map(lambda chunk: chunk.split('|'), info)
+        info = list(map(lambda chunk: chunk.split('|'), info))
         # Yes, this is a joke
         names = info[5]
         descs = info[7]
@@ -49,7 +53,7 @@ class Bicincitta(BikeShareSystem):
         return [BicincittaStation(name, desc, float(lat), float(lng),
                 bikes.count('4'), bikes.count('0'), stat)
                 for name, desc, lat, lng, bikes, stat in
-                zip(names, descs, lats, lngs, bikes, status)]
+                list(zip(names, descs, lats, lngs, bikes, status))]
 
 
 class BicincittaStation(BikeShareStation):

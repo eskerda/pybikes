@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, thesebas <thesebas@thesebas.net>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import map
+from builtins import filter
+from future.standard_library import install_aliases
+install_aliases()
+
 import re
 import json
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 from lxml import html
 
@@ -47,7 +54,7 @@ class Bikeu(BikeShareSystem):
             map_src = urljoin(self.url, map_src)
             map_body = scraper.request(map_src)
             markers = self.parse_map(map_body)
-        self.stations = map(BikeuStation, markers)
+        self.stations = list(map(BikeuStation, markers))
 
 
 class BikeuStation(BikeShareStation):
@@ -62,8 +69,8 @@ class BikeuStation(BikeShareStation):
         # Assumedly there's bike info too
         bike_info = info['Stations']['TKStation'][0]['AvailableBikes']
         bikes = bike_info.get('TKBike', [])
-        bike_uids = map(lambda b: b.get('BikeIdentifier'), bikes)
-        bike_uids = filter(None, bike_uids)
+        bike_uids = list(map(lambda b: b.get('BikeIdentifier'), bikes))
+        bike_uids = list(filter(None, bike_uids))
         self.extra = {
             'uid': info['id'],
         }

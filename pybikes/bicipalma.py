@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import range
 
 import json
 import re
@@ -53,7 +56,7 @@ class BiciPalma(BikeShareSystem):
             stat_fuzzle = html.fromstring(marker['paramsHtml'])
             stats = stat_fuzzle.cssselect('div#popParam')
             ints = []
-            for i in range(1,6):
+            for i in list(range(1,6)):
                 ints.append(int([a for a in stats[i].itertext()][1].strip()))
 
             station = BikeShareStation()

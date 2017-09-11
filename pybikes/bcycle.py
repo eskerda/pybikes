@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import zip
 
 import re
 
@@ -53,7 +56,7 @@ class BCycleSystem(BikeShareSystem):
         geopoints = re.findall(LAT_LNG_RGX, html_data)
         puzzle = re.findall(DATA_RGX, html_data)
 
-        for latlng, fuzzle in zip(geopoints, puzzle):
+        for latlng, fuzzle in list(zip(geopoints, puzzle)):
             try:
                 self.stations.append(BCycleStation(latlng, fuzzle))
             except (InvalidStation, BCyclePurgatoryException):

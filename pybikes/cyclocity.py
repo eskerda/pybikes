@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 import re
 import json
-import HTMLParser
+from html.parser import HTMLParser
 
 from lxml import etree
 
@@ -21,7 +22,7 @@ endpoints = {
     'station'  : 'stations/{station_id}?contract={contract}&apiKey={api_key}'
 }
 
-html_parser = HTMLParser.HTMLParser()
+html_parser = HTMLParser()
 
 class Cyclocity(BikeShareSystem):
 

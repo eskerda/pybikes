@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2016, Ben Caller <bcaller@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from builtins import map
 
 import json
 import hashlib
@@ -44,7 +47,7 @@ class Bonopark(BikeShareSystem):
             scraper.request(self.feed_url, 'POST', data=json.dumps(BODY_DICT))
         )
 
-        self.stations = map(BonoparkStation, data['estaciones'])
+        self.stations = list(map(BonoparkStation, data['estaciones']))
 
 
 class BonoparkStation(BikeShareStation):

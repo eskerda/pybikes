@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, Ben Caller <bcaller@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from future.utils import listvalues
+from builtins import range
+from builtins import map
+from builtins import filter
+from future.standard_library import install_aliases
+install_aliases()
 
 import json
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 from lxml import html, etree
 from lxml.cssselect import CSSSelector
@@ -45,11 +53,11 @@ class GoBike(BikeShareSystem):
             for uid, bikes in self._parse_page(page):
                 stations_by_id[uid].bikes = bikes
 
-        self.stations = stations_by_id.values()
+        self.stations = listvalues(stations_by_id)
 
     def _get_all_pages(self, scraper, n_stations):
         n_pages = n_stations/PAGE_SIZE + (n_stations % PAGE_SIZE > 0)
-        for p in range(0, n_pages):
+        for p in list(range(0, n_pages)):
             data = {
                 'lat': self.meta['latitude'],
                 'lng': self.meta['longitude'],
@@ -91,10 +99,10 @@ class GoBikeStation(BikeShareStation):
         ]
         address = []
         for section in address_sections:
-            components = filter(None, (location.get(k) for k in section))
+            components = list(filter(None, (location.get(k) for k in section)))
             part = ' '.join(components)
             address.append(part)
-        address = filter(None, address)
+        address = list(filter(None, address))
         address = ', '.join(address)
 
         return address
@@ -114,7 +122,7 @@ class GoBikeXML(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
         xml_stations = scraper.request(self.feed_url).encode('utf8')
         stations = etree.fromstring(xml_stations).xpath('//DockingStation')
-        self.stations = map(GoBikeXMLStation, stations)
+        self.stations = list(map(GoBikeXMLStation, stations))
 
 
 class GoBikeXMLStation(BikeShareStation):

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2017, aronsky <aronsky@gmail.com>
+from __future__ import unicode_literals
+from builtins import map
 
 import re
 from lxml import etree
@@ -37,9 +39,9 @@ class FSMSystem(BikeShareSystem):
         for placemark in dom.xpath('//kml:Placemark', namespaces=ns):
             name = placemark.findtext('kml:name', namespaces=ns)
             info = placemark.findtext('kml:description', namespaces=ns)
-            station_uid, bikes, free = map(int,
+            station_uid, bikes, free = list(map(int,
                 re.findall(r'\w+\:\s*(\d+)', info)
-            )
+            ))
             longitude, latitude = placemark.findtext(
                 'kml:Point/kml:coordinates',
                 namespaces=ns

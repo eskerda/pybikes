@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+from builtins import chr
+
+from builtins import range
+from builtins import map
+
 import re
 import unittest
 import sys
@@ -32,15 +38,15 @@ class TestSystems(unittest.TestCase):
             - Tests okayness of 5 stations on the system
         """
         p_sys = pybikes.get(tag, key)
-        print(u'Testing {!r}, {!r}'.format(p_sys.meta['name'], p_sys.meta.get('city')))
+        print('Testing {!r}, {!r}'.format(p_sys.meta['name'], p_sys.meta.get('city')))
         self._test_update(p_sys)
         station_string = ""
         if len(p_sys.stations) < 5:
             t_range = len(p_sys.stations)
         else:
             t_range = 5
-        for i in range(t_range):
-            station_string += unichr(ord(u'▚') + i)
+        for i in list(range(t_range)):
+            station_string += chr(ord(u'▚') + i)
             sys.stdout.flush()
             sys.stdout.write('\r[%s] testing %d' % (station_string, i+1))
             sys.stdout.flush()
@@ -374,7 +380,7 @@ def create_test_system_method(schema, tag):
         self._test_system(tag, key)
     return test_system
 
-schemas = map(lambda name: re.sub(r'\.json$', '', name), pybikes.get_all_data())
+schemas = list(map(lambda name: re.sub(r'\.json$', '', name), pybikes.get_all_data()))
 for schema in schemas:
     test_schema = create_test_schema_method(schema)
     test_schema.__name__ = 'test_%s' % schema

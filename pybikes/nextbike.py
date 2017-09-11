@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
+
+from future.utils import listvalues
+from builtins import map
+from builtins import filter
 
 import re
 import json
@@ -55,9 +60,9 @@ class Nextbike(BikeShareSystem):
                 return (float(lat), float(lng))
             places = filter_bounds(places, getter, self.bbox)
         # For now ignore bikes roaming around
-        places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
+        places = list(filter(lambda p: p.attrib.get('bike', '') != '1', places))
 
-        self.stations = map(NextbikeStation, places)
+        self.stations = list(map(NextbikeStation, places))
 
 
 class NextbikeStation(BikeShareStation):
@@ -79,7 +84,7 @@ class NextbikeStation(BikeShareStation):
         if 'bike_types' in place.attrib:
             self.bikes = 0
             bike_types = json.loads(place.attrib['bike_types'])
-            for value in bike_types.values():
+            for value in listvalues(bike_types):
                 try:
                     self.bikes += value
                 except TypeError:

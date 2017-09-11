@@ -2,6 +2,8 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+from io import open
+
 from setuptools import setup
 
 setup(
@@ -22,5 +24,6 @@ setup(
         'cssselect>=0.9',
         'shapely>=1.5.13',
         'demjson',
+        'future',
     ],
 )

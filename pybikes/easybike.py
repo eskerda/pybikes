@@ -3,6 +3,7 @@
 # Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Copyright (C) 2016, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 
 import json
 

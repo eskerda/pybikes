@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
+from __future__ import unicode_literals
 """bicicard.py
 
 The Bicicard system (Spain, ITCL), only provides information on the status
@@ -55,6 +56,8 @@ use this system, but if the community does it, that's ok (assumedly, this
 information one day will be public / maybe we can ask them to make a dump).
 """
 
+from builtins import map
+
 import re
 from pkg_resources import resource_string
 
@@ -102,11 +105,11 @@ class Bicicard(BikeShareSystem):
             name = placemark.findtext('kml:name', namespaces = _kml_ns)
             name_id = placemark.findtext('kml:description',
                                       namespaces = _kml_ns)
-            coor = map(
+            coor = list(map(
                 float, placemark.findtext('.//kml:coordinates',
                                           namespaces = _kml_ns).
                        split(',')[0:2]
-            )
+            ))
 
             # Find a status table with the name_id of this station, XPath
             # performance on this query is not really costly so far.

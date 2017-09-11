@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
-from urlparse import urljoin
+from builtins import map
+from future.standard_library import install_aliases
+install_aliases()
+
+from urllib.parse import urljoin
 
 from lxml import etree
 
@@ -45,7 +50,7 @@ class Nextgal(BikeShareSystem):
         tree = etree.XML(data.encode('utf-8'))
         stations_xml = tree.xpath('//ab:EstacionAdditionalInformationDto',
                                   namespaces=NS)
-        self.stations = map(NextgalStation, stations_xml)
+        self.stations = list(map(NextgalStation, stations_xml))
 
 
 class NextgalStation(BikeShareStation):

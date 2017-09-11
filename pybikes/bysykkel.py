@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 import json
 
 from .base import BikeShareSystem, BikeShareStation
@@ -39,7 +41,7 @@ class BySykkel(BikeShareSystem):
         # Join stationsdata in stations
         stations = [
             (stations_data[id], details_data[id])
-            for id in stations_data.keys()
+            for id in list(stations_data)
         ]
 
         # append all data to info part of stations and create objects of this
