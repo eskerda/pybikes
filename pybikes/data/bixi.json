@@ -41,7 +41,7 @@
                 "longitude": 144.96328,
                 "latitude": -37.814107
             },
-            "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data",
+            "feed_url": "https://secure.melbournebikeshare.com.au/stationmap/data",
             "format": "json_from_xml"
         },
         {
@@ -57,7 +57,7 @@
                 "longitude": -106.837002,
                 "latitude": 39.194951
             },
-            "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
+            "feed_url": "https://www.we-cycle.org/system-maps/?ACT=63",
             "format": "json"
         },
         {
