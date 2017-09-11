@@ -91,7 +91,7 @@ class BCycleStation(BikeShareStation):
             bikes, free = dom.xpath("//div[@class='avail']/strong/text()")
 
         except ValueError:
-            name, = dom.xpath("//div[@class='markerTitle']/h3/text()")
+            name, = dom.xpath("//div[@class='markerPublicText']/h5/text()")
 
             if name.lower() == 'purgatory':
                 raise BCyclePurgatoryException
