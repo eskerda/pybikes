@@ -152,7 +152,7 @@ class SmartShitty(BaseSystem):
 
         page = scraper.request(self.feed_url)
         stations_data = re.findall(SmartShitty.RGX_MARKERS,
-                                   page.encode('utf-8'))
+                                   page)
         stations = []
         stats_query = """
             //td[span[text() = "%s"]]/
@@ -167,9 +167,10 @@ class SmartShitty(BaseSystem):
 
         for station_data in stations_data:
             latitude, longitude, name, mess = station_data
-            html_mess = html.fromstring(mess.decode('unicode_escape'))
+            html_mess = html.fromstring(mess)
             stats = {}
             bikes = 0
+            free = 0
             extra = {}
 
             for k, rule in iteritems(stats_rules):
