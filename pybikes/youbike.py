@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from builtins import itervalues
+from six import itervalues
 from builtins import map
 from builtins import filter
 

@@ -25,5 +25,6 @@ setup(
         'shapely>=1.5.13',
         'demjson',
         'future',
+        'six',
     ],
 )
