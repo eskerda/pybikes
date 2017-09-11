@@ -2,6 +2,8 @@
 # Copyright (C) 2010-2016, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 from __future__ import unicode_literals
+from future.standard_library import install_aliases
+install_aliases()
 
 import re
 import json
@@ -57,8 +59,8 @@ class VelowayStation(BikeShareStation):
     """
     def __init__(self, info):
         super(VelowayStation, self).__init__()
-        self.name = urllib.unquote_plus(
-            info['name'].decode('latin-1').encode('utf-8')
+        self.name = urllib.parse.unquote_plus(
+            info['name']
         )
         self.bikes = int(info['ab'])
         self.free = int(info['ap'])
@@ -76,8 +78,8 @@ class VelowayStation(BikeShareStation):
             self.extra['status'] = 'CLOSED'
 
         if info['wcom']:
-            self.extra['address'] = urllib.unquote_plus(
-                info['wcom'].decode('latin-1').encode('utf-8')
+            self.extra['address'] = urllib.parse.unquote_plus(
+                info['wcom']
             )
 
         if self.latitude is None or self.longitude is None:
@@ -89,10 +91,10 @@ class VelowayStation(BikeShareStation):
 class VelowayDrupal(Veloway):
 
     # Station 01 - Gare SNCF (Vélos libres : 9 Places libres
-    station_rgx = (ur'Station\s+(?P<id>\d+)\s*-\s*'
-                   ur'(?P<name>.+)\s+'
-                   ur'\(Vélos\s+libres\s*:\s*(?P<bikes>\d+)\s+'
-                   ur'Places\s+libres\s*:\s*(?P<free>\d+)\)')
+    station_rgx = (r'Station\s+(?P<id>\d+)\s*-\s*'
+                   r'(?P<name>.+)\s+'
+                   r'\(Vélos\s+libres\s*:\s*(?P<bikes>\d+)\s+'
+                   r'Places\s+libres\s*:\s*(?P<free>\d+)\)')
 
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()

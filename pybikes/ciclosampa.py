@@ -9,7 +9,7 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 
-STATIONS_RGX = ur'setEstacao\((.*?)\);'
+STATIONS_RGX = r'setEstacao\((.*?)\);'
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"  # NOQA
 
 
