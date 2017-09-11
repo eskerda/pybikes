@@ -383,11 +383,11 @@ def create_test_system_method(schema, tag):
 schemas = list(map(lambda name: re.sub(r'\.json$', '', name), pybikes.get_all_data()))
 for schema in schemas:
     test_schema = create_test_schema_method(schema)
-    test_schema.__name__ = 'test_%s' % schema
+    test_schema.__name__ = str('test_%s' % schema)
     setattr(TestSystems, test_schema.__name__, test_schema)
     for clsname, instance in pybikes.get_instances(schema):
         test_system = create_test_system_method(schema, instance.get('tag'))
-        test_system.__name__ = 'test_%s' % str(instance.get('tag'))
+        test_system.__name__ = str('test_%s' % str(instance.get('tag')))
         setattr(TestSystems, test_system.__name__, test_system)
 
 if __name__ == '__main__':
