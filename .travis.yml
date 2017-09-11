@@ -3,7 +3,6 @@ cache: pip
 python:
     - "2.7"
     - "3.5"
-    - "3.6"
 install:
     # Disable gcc optimizations for greater install speed (lxml)
     - CFLAGS="-O0" pip install . --upgrade
