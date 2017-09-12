@@ -26,7 +26,7 @@ class Gbfs(BikeShareSystem):
             scraper = utils.PyBikesScraper()
 
         # Make the request to gbfs.json and convert to json
-        html_data = json.loads(scraper.request(self.feed_url, raw=True))
+        html_data = json.loads(scraper.request(self.feed_url, raw=True).decode('utf-8'))
 
         # Create a dict with name-url pairs for easier access
         # of urls (just in case)
