@@ -6,6 +6,7 @@ from builtins import chr
 
 from builtins import range
 from builtins import map
+from past.builtins import basestring
 
 import re
 import unittest
