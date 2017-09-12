@@ -25,7 +25,7 @@ from pybikes import contrib
 
 def get_data(schema):
     name = re.sub(r'\.json$', '', schema)
-    data = resource_string('pybikes', 'data/{}.json'.format(name))
+    data = resource_string('pybikes', 'data/{}.json'.format(name)).decode('utf-8')
     return json.loads(data)
 
 
