@@ -15,8 +15,8 @@ SECRET = b'APP_INICIO'
 ID_SECURITY = '{}{}'.format(hashlib.md5(SECRET * 2).hexdigest(),
                             hashlib.md5(SECRET).hexdigest())
 BODY_DICT = {
-    'dni': SECRET,
-    'id_auth': SECRET,
+    'dni': SECRET.decode("utf-8"),
+    'id_auth': SECRET.decode("utf-8"),
     'id_security': ID_SECURITY,
 }
 
