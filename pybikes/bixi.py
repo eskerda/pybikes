@@ -46,7 +46,7 @@ class BixiSystem(BikeShareSystem):
         self.stations = eval(parse_methods[self.method])(self, scraper)
 
 def get_xml_stations(self, scraper):
-    xml_data = scraper.request(self.feed_url)
+    xml_data = scraper.request(self.feed_url, raw = True)
     dom = etree.fromstring(xml_data)
     markers = dom.xpath('/stations/station')
     return list(map(BixiStation.from_xml, markers))
