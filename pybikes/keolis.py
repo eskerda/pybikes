@@ -78,7 +78,7 @@ class KeolisStation(BikeShareStation):
         """
         super(KeolisStation, self).__init__()
         fuzzle = lxml.html.fromstring(
-            data[2].encode('utf8').decode('string-escape')
+            data[2].encode('utf8').decode('unicode_escape')
         )
         num_name = re.findall(
             Keolis._re_num_name,
