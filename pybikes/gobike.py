@@ -56,7 +56,7 @@ class GoBike(BikeShareSystem):
         self.stations = listvalues(stations_by_id)
 
     def _get_all_pages(self, scraper, n_stations):
-        n_pages = n_stations/PAGE_SIZE + (n_stations % PAGE_SIZE > 0)
+        n_pages = n_stations // PAGE_SIZE + (n_stations % PAGE_SIZE > 0)
         for p in list(range(0, n_pages)):
             data = {
                 'lat': self.meta['latitude'],
