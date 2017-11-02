@@ -1,0 +1,17 @@
+{
+    "instances":[
+       {
+            "tag":"whitebikes",
+            "meta":{
+                "latitude":48.149424,
+                "city":"Bratislava",
+                "name":"WhiteBikes",
+                "longitude":17.113922,
+                "country":"SK"
+            },
+            "feed_url":"http://whitebikes.info/command.php?action=map:markers"
+        }
+    ],
+    "system":"open_source_bike_share",
+    "class":"OpenSourceBikeShare"
+}
