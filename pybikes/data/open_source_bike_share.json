@@ -12,6 +12,6 @@
             "feed_url":"http://whitebikes.info/command.php?action=map:markers"
         }
     ],
-    "system":"opensourcebikeshare",
+    "system":"open_source_bike_share",
     "class":"OpenSourceBikeShare"
 }
