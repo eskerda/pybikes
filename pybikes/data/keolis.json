@@ -1,34 +1,50 @@
 {
-    "system": "keolis", 
+    "system": "keolis",
     "class": {
         "Keolis_v2": {
             "instances": [
                 {
-                    "tag": "vlille", 
+                    "tag": "vlille",
                     "meta": {
-                        "latitude": 50.62925, 
-                        "city": "Lille", 
-                        "name": "V'lille", 
-                        "longitude": 3.057256, 
+                        "latitude": 50.62925,
+                        "city": "Lille",
+                        "name": "V'lille",
+                        "longitude": 3.057256,
                         "country": "FR"
-                    }, 
+                    },
                     "feed_url": "http://www.vlille.fr"
                 }
             ]
-        }, 
+        },
         "Keolis": {
             "instances": [
                 {
-                    "tag": "idecycle", 
+                    "tag": "idecycle",
                     "meta": {
-                        "latitude": 43.2951, 
-                        "country": "FR", 
-                        "name": "IDECycle", 
-                        "longitude": -0.370797, 
+                        "latitude": 43.2951,
+                        "country": "FR",
+                        "name": "IDECycle",
+                        "longitude": -0.370797,
                         "city": "Pau",
                         "company": ["Keolis", "STAP"]
-                    }, 
+                    },
                     "feed_url": "http://www.idecycle.com/stations/plan"
+                }
+            ]
+        },
+        "Keolis_v3": {
+            "instances": [
+                {
+                    "tag": "levelostar",
+                    "meta": {
+                        "latitude": 48.114167,
+                        "country": "FR",
+                        "name": "Le velo Star",
+                        "longitude": -1.680833,
+                        "city": "Rennes",
+                        "company": ["Keolis", "Rennes Metropole"]
+                    },
+                    "feed_url": "https://data.explore.star.fr/api/records/1.0/search/?dataset=vls-stations-etat-tr&facet=nom&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles&facet=nombrevelosdisponibles"
                 }
             ]
         }
