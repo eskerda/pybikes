@@ -168,3 +168,67 @@ class KeolisStation_v2(BikeShareStation):
 
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
+
+
+class Keolis_v3(BikeShareSystem):
+
+    sync = True
+
+    meta = {
+        'system': 'Keolis',
+        'company': ['Keolis']
+    }
+
+    def __init__(self, tag, feed_url, meta):
+        super(Keolis_v3, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+        stations = []
+
+        data = json.loads(scraper.request(self.feed_url))
+
+        # Each station is
+        # "records":
+        #   [
+        #       {
+        #           "datasetid": "vls-stations-etat-tr",
+        #           "recordid": "c81ea20d2ee3aa53d46f7bc45d731fd0de8d5d72",
+        #           "fields":
+        #           {
+        #               "etat": "En fonctionnement",
+        #               "lastupdate": "2017-11-02T12:53:04+00:00",
+        #               "nombrevelosdisponibles": 20,
+        #               "nombreemplacementsactuels": 30,
+        #               "nom": "R\u00e9publique",
+        #               "nombreemplacementsdisponibles": 10,
+        #               "idstation": 1,
+        #               "coordonnees": [48.1100259201, -1.6780371631]
+        #           },
+        #           "geometry":
+        #           {
+        #               "type": "Point",
+        #               "coordinates": [-1.6780371631, 48.1100259201]},
+        #               "record_timestamp": "2017-11-02T12:54:00+00:00"
+        #           }
+        #  ]
+
+        for item in data['records']:
+            name = item['fields']['nom']
+            latitude = float(item['fields']['coordonnees'][0])
+            longitude = float(item['fields']['coordonnees'][1])
+            bikes = int(item['fields']['nombrevelosdisponibles'])
+            free = int(item['fields']['nombreemplacementsdisponibles'])
+            extra = {
+                'slots': item['fields']['nombreemplacementsactuels'],
+                'status': item['fields']['etat'],
+                'uid': str(item['fields']['idstation'])
+            }
+            station = BikeShareStation(name, latitude, longitude,
+                                       bikes, free, extra)
+            stations.append(station)
+
+        self.stations = stations
