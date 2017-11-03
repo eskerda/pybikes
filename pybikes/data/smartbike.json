@@ -1,56 +1,56 @@
 {
-    "system": "smartbike", 
+    "system": "smartbike",
     "class": {
         "SmartShitty": {
             "instances": [
                 {
-                    "tag": "bikemi", 
+                    "tag": "bikemi",
                     "meta": {
-                        "latitude": 45.4654542, 
-                        "city": "Milano", 
-                        "name": "BikeMi", 
-                        "longitude": 9.186516, 
+                        "latitude": 45.4654542,
+                        "city": "Milano",
+                        "name": "BikeMi",
+                        "longitude": 9.186516,
                         "country": "IT"
-                    }, 
+                    },
                     "feed_url": "https://www.bikemi.com/en/stations-map.aspx"
                 }
             ]
-        }, 
+        },
         "SmartBike": {
             "instances": [
                 {
-                    "tag": "bizi", 
+                    "tag": "bizi",
                     "meta": {
-                        "latitude": 41.6487908, 
-                        "city": "Zaragoza", 
-                        "name": "Bizi", 
-                        "longitude": -0.8895811, 
+                        "latitude": 41.6487908,
+                        "city": "Zaragoza",
+                        "name": "Bizi",
+                        "longitude": -0.8895811,
                         "country": "ES"
-                    }, 
-                    "feed_url": "https://www.bizizaragoza.com/es/formmap/getJsonObject", 
+                    },
+                    "feed_url": "https://www.bizizaragoza.com/es/formmap/getJsonObject",
                     "format": "json"
-                }, 
+                },
                 {
-                    "tag": "bicing", 
+                    "tag": "bicing",
                     "meta": {
-                        "latitude": 41.3850639, 
-                        "city": "Barcelona", 
-                        "name": "Bicing", 
-                        "longitude": 2.1734035, 
+                        "latitude": 41.3850639,
+                        "city": "Barcelona",
+                        "name": "Bicing",
+                        "longitude": 2.1734035,
                         "country": "ES"
-                    }, 
+                    },
                     "feed_url": "https://www.bicing.cat/availability_map/getJsonObject",
                     "format": "json_v2"
-                }, 
+                },
                 {
-                    "tag": "ecobici", 
+                    "tag": "ecobici",
                     "meta": {
-                        "latitude": 19.4326077, 
-                        "city": "Cd de M\u00e9xico", 
-                        "name": "EcoBici", 
-                        "longitude": -99.133208, 
+                        "latitude": 19.4326077,
+                        "city": "Cd de M\u00e9xico",
+                        "name": "EcoBici",
+                        "longitude": -99.133208,
                         "country": "MX"
-                    }, 
+                    },
                     "feed_url": "https://www.ecobici.cdmx.gob.mx/availability_map/getJsonObject",
                     "format": "json_v2"
                 },
@@ -76,6 +76,18 @@
                         "country": "SE"
                     },
                     "feed_url": "https://www.malmobybike.se/availability_map/getJsonObject",
+                    "format": "json_v2"
+                },
+                {
+                    "tag": "bicilascondes",
+                    "meta": {
+                        "latitude": -33.401944,
+                        "city": "Las Condes",
+                        "name": "Bici las Condes",
+                        "longitude": -70.55,
+                        "country": "CL"
+                    },
+                    "feed_url": "https://www.bicilascondes.cl/availability_map/getJsonObject",
                     "format": "json_v2"
                 }
             ]
