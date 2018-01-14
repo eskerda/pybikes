@@ -85,7 +85,7 @@ these cases, the instance factory can take an extra API key parameter.
 
 ```python
 >>> key = "This is not an API key"
->>> velib = pybikes.get('velib', key)
+>>> dublinbikes = pybikes.get('dublinbikes', key)
 ```
 
 Note that pybikes works as an instance factory and, choicely, instances can be
