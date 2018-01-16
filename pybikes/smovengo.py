@@ -28,6 +28,16 @@ class Smovengo(BikeShareSystem):
 
         stations = []
         for station_data in stations_data:
+            try:
+                int(station_data["station"]["code"])
+            except ValueError:
+                # Skip any station whose "code" is not an int. Sometimes, some
+                # stations have weird code such as "Zzz delete me" and are
+                # obviously not real stations.
+                # Station code in Paris is always a number and two first digits
+                # represent the borough number.
+                continue
+
             name = station_data["station"]["name"]
             latitude = station_data["station"]["gps"]["latitude"]
             longitude = station_data["station"]["gps"]["longitude"]
@@ -47,7 +57,8 @@ class Smovengo(BikeShareSystem):
                 "bikes_overflow": station_data["nbBikeOverflow"],
                 "ebikes_overflow": station_data["nbEBikeOverflow"],
                 "has_ebikes": station_data["nbEbike"] > 0,
-                "ebikes": station_data["nbEbike"]
+                "ebikes": station_data["nbEbike"],
+                "online": station_data["station"]["state"].lower() == "operative"
             }
             station = BikeShareStation(name, float(latitude), float(longitude),
                                        int(bikes), int(free), extra)
