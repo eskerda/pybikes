@@ -76,7 +76,7 @@ class BikeShareSystem(object):
         - General (companies):
             - JCDecaux, ClearChannel
         At the same time, these classes can extend their base class,
-        for example, Velib extends JCDecaux extends BikeShareSystem.
+        for example, Velib extends Smovengo extends BikeShareSystem.
 
         This class might or not have METADATA assigned, usually intended
         for specific cases. This METADATA is dict / json formatted.
