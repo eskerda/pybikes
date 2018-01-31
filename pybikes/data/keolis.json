@@ -42,7 +42,8 @@
                         "name": "LE vélo Star",
                         "longitude": -1.680833,
                         "city": "Rennes",
-                        "company": ["Keolis", "Rennes Metropole"]
+                        "company": ["Keolis", "Rennes Metropole"],
+                        "source": "https://data.explore.star.fr/explore/dataset/vls-stations-etat-tr/"
                     },
                     "dataset": "vls-stations-etat-tr"
                 }

@@ -173,7 +173,6 @@ class KeolisSTAR(BikeShareSystem):
     meta = {
         'system': 'Keolis',
         'company': ['Keolis'],
-        'source': 'https://data.explore.star.fr/explore/dataset/{dataset}/'
     }
 
     # Rows: -1 gives us all the results without the need to paginate
