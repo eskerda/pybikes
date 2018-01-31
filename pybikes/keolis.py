@@ -12,8 +12,6 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 
-__all__ = ['Keolis', 'KeolisStation', 'Keolis_v2', 'KeolisStation_v2']
-
 xml_parser = etree.XMLParser(recover = True)
 _re_float = "([+-]?\\d*\\.\\d+)(?![-+0-9\\.])"
 
@@ -170,65 +168,40 @@ class KeolisStation_v2(BikeShareStation):
         self.extra['lastupd'] = xml_status.find('lastupd').text
 
 
-class Keolis_v3(BikeShareSystem):
-
-    sync = True
+class KeolisSTAR(BikeShareSystem):
 
     meta = {
         'system': 'Keolis',
-        'company': ['Keolis']
+        'company': ['Keolis'],
+        'source': 'https://data.explore.star.fr/explore/dataset/{dataset}/'
     }
 
-    def __init__(self, tag, feed_url, meta):
-        super(Keolis_v3, self).__init__(tag, meta)
-        self.feed_url = feed_url
+    # Rows: -1 gives us all the results without the need to paginate
+    BASE_URL = "https://data.explore.star.fr/api/records/1.0/search/?dataset={dataset}&rows=-1"     # NOQA
+
+    def __init__(self, tag, dataset, meta):
+        super(KeolisSTAR, self).__init__(tag, meta)
+        self.feed_url = KeolisSTAR.BASE_URL.format(dataset=dataset)
+        self.meta['source'] = self.meta['source'].format(dataset=dataset)
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
-        stations = []
-
+        scraper = scraper or utils.PyBikesScraper()
         data = json.loads(scraper.request(self.feed_url))
+        records = map(lambda r: r['fields'], data['records'])
+        self.stations = map(KeolisSTARStation, records)
 
-        # Each station is
-        # "records":
-        #   [
-        #       {
-        #           "datasetid": "vls-stations-etat-tr",
-        #           "recordid": "c81ea20d2ee3aa53d46f7bc45d731fd0de8d5d72",
-        #           "fields":
-        #           {
-        #               "etat": "En fonctionnement",
-        #               "lastupdate": "2017-11-02T12:53:04+00:00",
-        #               "nombrevelosdisponibles": 20,
-        #               "nombreemplacementsactuels": 30,
-        #               "nom": "R\u00e9publique",
-        #               "nombreemplacementsdisponibles": 10,
-        #               "idstation": 1,
-        #               "coordonnees": [48.1100259201, -1.6780371631]
-        #           },
-        #           "geometry":
-        #           {
-        #               "type": "Point",
-        #               "coordinates": [-1.6780371631, 48.1100259201]},
-        #               "record_timestamp": "2017-11-02T12:54:00+00:00"
-        #           }
-        #  ]
-
-        for item in data['records']:
-            name = item['fields']['nom']
-            latitude = float(item['fields']['coordonnees'][0])
-            longitude = float(item['fields']['coordonnees'][1])
-            bikes = int(item['fields']['nombrevelosdisponibles'])
-            free = int(item['fields']['nombreemplacementsdisponibles'])
-            extra = {
-                'slots': item['fields']['nombreemplacementsactuels'],
-                'status': item['fields']['etat'],
-                'uid': str(item['fields']['idstation'])
-            }
-            station = BikeShareStation(name, latitude, longitude,
-                                       bikes, free, extra)
-            stations.append(station)
-
-        self.stations = stations
+class KeolisSTARStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['nom']
+        latitude, longitude = map(float, fields['coordonnees'])
+        bikes = int(fields['nombrevelosdisponibles'])
+        free = int(fields['nombreemplacementsdisponibles'])
+        extra = {
+            'slots': fields['nombreemplacementsactuels'],
+            'status': fields['etat'],
+            'uid': str(fields['idstation']),
+            'last_update': fields['lastupdate'],
+            'online': fields['etat'] == 'En fonctionnement'
+        }
+        super(KeolisSTARStation, self).__init__(name, latitude, longitude,
+                                                bikes, free, extra)
