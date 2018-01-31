@@ -1,34 +1,50 @@
 {
-    "system": "keolis", 
+    "system": "keolis",
     "class": {
         "Keolis_v2": {
             "instances": [
                 {
-                    "tag": "vlille", 
+                    "tag": "vlille",
                     "meta": {
-                        "latitude": 50.62925, 
-                        "city": "Lille", 
-                        "name": "V'lille", 
-                        "longitude": 3.057256, 
+                        "latitude": 50.62925,
+                        "city": "Lille",
+                        "name": "V'lille",
+                        "longitude": 3.057256,
                         "country": "FR"
-                    }, 
+                    },
                     "feed_url": "http://www.vlille.fr"
                 }
             ]
-        }, 
+        },
         "Keolis": {
             "instances": [
                 {
-                    "tag": "idecycle", 
+                    "tag": "idecycle",
                     "meta": {
-                        "latitude": 43.2951, 
-                        "country": "FR", 
-                        "name": "IDECycle", 
-                        "longitude": -0.370797, 
+                        "latitude": 43.2951,
+                        "country": "FR",
+                        "name": "IDECycle",
+                        "longitude": -0.370797,
                         "city": "Pau",
                         "company": ["Keolis", "STAP"]
-                    }, 
+                    },
                     "feed_url": "http://www.idecycle.com/stations/plan"
+                }
+            ]
+        },
+        "KeolisSTAR": {
+            "instances": [
+                {
+                    "tag": "le-velo-star",
+                    "meta": {
+                        "latitude": 48.114167,
+                        "country": "FR",
+                        "name": "LE vélo Star",
+                        "longitude": -1.680833,
+                        "city": "Rennes",
+                        "company": ["Keolis", "Rennes Metropole"]
+                    },
+                    "dataset": "vls-stations-etat-tr"
                 }
             ]
         }

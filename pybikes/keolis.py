@@ -12,8 +12,6 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 
-__all__ = ['Keolis', 'KeolisStation', 'Keolis_v2', 'KeolisStation_v2']
-
 xml_parser = etree.XMLParser(recover = True)
 _re_float = "([+-]?\\d*\\.\\d+)(?![-+0-9\\.])"
 
@@ -168,3 +166,42 @@ class KeolisStation_v2(BikeShareStation):
 
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
+
+
+class KeolisSTAR(BikeShareSystem):
+
+    meta = {
+        'system': 'Keolis',
+        'company': ['Keolis'],
+        'source': 'https://data.explore.star.fr/explore/dataset/{dataset}/'
+    }
+
+    # Rows: -1 gives us all the results without the need to paginate
+    BASE_URL = "https://data.explore.star.fr/api/records/1.0/search/?dataset={dataset}&rows=-1"     # NOQA
+
+    def __init__(self, tag, dataset, meta):
+        super(KeolisSTAR, self).__init__(tag, meta)
+        self.feed_url = KeolisSTAR.BASE_URL.format(dataset=dataset)
+        self.meta['source'] = self.meta['source'].format(dataset=dataset)
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+        data = json.loads(scraper.request(self.feed_url))
+        records = map(lambda r: r['fields'], data['records'])
+        self.stations = map(KeolisSTARStation, records)
+
+class KeolisSTARStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['nom']
+        latitude, longitude = map(float, fields['coordonnees'])
+        bikes = int(fields['nombrevelosdisponibles'])
+        free = int(fields['nombreemplacementsdisponibles'])
+        extra = {
+            'slots': fields['nombreemplacementsactuels'],
+            'status': fields['etat'],
+            'uid': str(fields['idstation']),
+            'last_update': fields['lastupdate'],
+            'online': fields['etat'] == 'En fonctionnement'
+        }
+        super(KeolisSTARStation, self).__init__(name, latitude, longitude,
+                                                bikes, free, extra)
