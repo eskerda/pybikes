@@ -10,7 +10,18 @@
                 "country":"SK"
             },
             "feed_url":"http://whitebikes.info/command.php?action=map:markers"
-        }
+        },
+        {
+            "tag":"Cykl",
+            "meta":{
+                "latitude":51.974000,
+                "city":"Wageningen",
+                "name":"Cykl",
+                "longitude":5.667100,
+                "country":"NL"
+            },
+            "feed_url":"https://www.cykl.nl/command.php?action=map:markers"
+        }        
     ],
     "system":"open_source_bike_share",
     "class":"OpenSourceBikeShare"
