@@ -265,6 +265,7 @@ class TestDataFiles(unittest.TestCase):
         msg = 'File: %r' % schema
         self.assertIn('tag', _instance, msg=msg)
         self.assertIn('meta', _instance, msg=msg)
+        self.assertTrue(_instance['tag'].islower())
 
         instance = pybikes.get(_instance['tag'], key='foobar')
         meta = instance.meta
