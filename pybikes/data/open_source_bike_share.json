@@ -12,7 +12,7 @@
             "feed_url":"http://whitebikes.info/command.php?action=map:markers"
         },
         {
-            "tag":"Cykl",
+            "tag":"cykl",
             "meta":{
                 "latitude":51.974000,
                 "city":"Wageningen",
