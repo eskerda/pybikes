@@ -1,18 +1,6 @@
 {
     "instances": [
         {
-            "tag": "bixi-montreal",
-            "meta": {
-                "latitude": 45.5086699,
-                "city": "Montreal, QC",
-                "name": "Bixi",
-                "longitude": -73.55399249999999,
-                "country": "CA"
-            },
-            "feed_url": "https://montreal.bixi.com/data/bikeStations.xml",
-            "format": "xml"
-        },
-        {
             "tag": "santander-cycles",
             "meta": {
                 "city": "London",
