@@ -30,6 +30,22 @@
             "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
         },
         {
+            "tag": "bixi-montreal",
+            "meta": {
+                "latitude": 45.508693,
+                "longitude": -73.553928,
+                "city": "Montréal, QC",
+                "name": "Bixi",
+                "country": "CA",
+                "company": [
+                    "Motivate International, Inc.",
+                    "PBSC Urban Solutions",
+                    "BIXI Montréal"
+                ]
+            },
+            "feed_url": "https://api-core.bixi.com/gbfs/gbfs.json"
+        },
+        {
             "tag": "bixi-toronto",
             "meta": {
                 "latitude": 43.653226,
