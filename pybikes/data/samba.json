@@ -4,28 +4,6 @@
         "Samba": {
             "instances":[
                 {
-                    "url":"https://bikesampa.tembici.com.br/bikesampa/mapaestacao.asp",
-                    "tag":"bikesampa",
-                    "meta":{
-                        "latitude":-23.55,
-                        "city":"S\u00e3o Paulo",
-                        "name":"BikeSampa",
-                        "longitude":-46.6333,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"https://bikerio.tembici.com.br/sambarjpt/mapaestacao.asp",
-                    "tag":"bikerio",
-                    "meta":{
-                        "latitude":-22.904315,
-                        "city":"Rio de Janeiro",
-                        "name":"BikeRio",
-                        "longitude":-43.184776,
-                        "country":"BR"
-                    }
-                },
-                {
                     "url":"http://www.movesamba.com.br/bikebh/mapaestacao.asp",
                     "tag":"bikebh",
                     "meta":{
