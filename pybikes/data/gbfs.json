@@ -694,6 +694,21 @@
                 ]
             },
             "feed_url": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
+        },
+        {
+            "tag": "bikerecife",
+            "meta":{
+                "latitude":-8.047129,
+                "city":"Recife",
+                "name":"BikeRecife",
+                "longitude":-34.873437,
+                "country":"BR",
+                "company": [
+                    "Tembici",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://rec.publicbikesystem.net/ube/gbfs/v1/"
         }
     ],
     "system": "gbfs",

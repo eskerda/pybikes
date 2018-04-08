@@ -59,17 +59,6 @@
                     }
                 },
                 {
-                    "url":"http://ww2.mobilicidade.com.br/bikepe/mapaestacao.asp",
-                    "tag":"bikerecife",
-                    "meta":{
-                        "latitude":-8.047129,
-                        "city":"Recife",
-                        "name":"BikeRecife",
-                        "longitude":-34.873437,
-                        "country":"BR"
-                    }
-                },
-                {
                     "url":"https://bikesalvador.tembici.com.br/bikesalvador/mapaestacao.asp",
                     "tag":"bikesalvador",
                     "meta":{
