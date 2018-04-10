@@ -1936,6 +1936,17 @@
                 "name": "MOL Bubi",
                 "country": "HU"
             }
+        },
+        {
+            "domain": "uc",
+            "tag": "nextbike-cardiff",
+            "city_uid": 476,
+            "meta": {
+                "city": "Cardiff",
+                "country": "GB",
+                "latitude": 51.4822,
+                "longitude": -3.18089
+            }
         }
     ],
     "system": "nextbike",
