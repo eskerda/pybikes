@@ -35,28 +35,6 @@
                         "longitude":-40.502751,
                         "country":"BR"
                     }
-                },
-                {
-                    "url":"https://bikesalvador.tembici.com.br/bikesalvador/mapaestacao.asp",
-                    "tag":"bikesalvador",
-                    "meta":{
-                        "latitude":-12.973959,
-                        "city":"Salvador",
-                        "name":"BikeSalvador",
-                        "longitude":-38.508171,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"https://bikepoa.tembici.com.br/bikepoa/mapaestacao.asp",
-                    "tag":"bikepoa",
-                    "meta":{
-                        "latitude":-30.033079,
-                        "city":"Porto Alegre",
-                        "name":"BikePOA",
-                        "longitude":-51.23654,
-                        "country":"BR"
-                    }
                 }
             ]
         },
