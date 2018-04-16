@@ -739,6 +739,36 @@
                 ]
             },
             "feed_url": "https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/"
+        },
+        {
+            "tag":"bikesalvador",
+            "meta": {
+                "latitude":-12.973959,
+                "city":"Salvador",
+                "name":"BikeSalvador",
+                "longitude":-38.508171,
+                "country":"BR",
+                "company": [
+                    "Tembici",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://salvador.publicbikesystem.net/ube/gbfs/v1/"
+        },
+        {
+            "tag":"bikepoa",
+            "meta": {
+                "latitude":-30.033079,
+                "city":"Porto Alegre",
+                "name":"BikePOA",
+                "longitude":-51.23654,
+                "country":"BR",
+                "company": [
+                    "Tembici",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://poa.publicbikesystem.net/ube/gbfs/v1/"
         }
     ],
     "system": "gbfs",
