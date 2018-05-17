@@ -771,15 +771,15 @@
             "feed_url": "https://poa.publicbikesystem.net/ube/gbfs/v1/"
         },
         {
-            "tag":"mibici_guadalajara",
+            "tag":"mibici-guadalajara",
             "meta": {
                 "latitude":20.6737883,
                 "city":"Guadalajara",
-                "name":"Mibici Guadalajara",
+                "name":"MIBICI",
                 "longitude":-103.3704325,
                 "country":"MX",
                 "company": [
-                    "Mibici",
+                    "BKT bici publica S.A. de C.V.",
                     "PBSC Urban Solutions"
                 ]
             },
