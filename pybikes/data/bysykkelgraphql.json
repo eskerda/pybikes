@@ -1,0 +1,19 @@
+{
+    "instances":[
+        {
+            "tag":"trondheim-bysykkel",
+            "meta":{
+                "latitude":63.4307238,
+                "country":"NO",
+                "name":"Trondheim Bysykkel",
+                "longitude":10.3936781,
+                "city":"Trondheim",
+                "city_code":"TRD",
+                "systemId": "trondheim"
+            },
+            "feed_url":"https://core.urbansharing.com/public/api/v1/graphql"
+        }
+    ],
+    "system":"bysykkelgraphql",
+    "class":"BySykkelGraphql"
+}
