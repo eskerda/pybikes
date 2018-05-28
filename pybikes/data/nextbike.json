@@ -1938,6 +1938,17 @@
             }
         },
         {
+            "domain": "nd",
+            "tag": "nextbike-dordrecht",
+            "city_uid": 447,
+            "meta": {
+                "latitude": 51.817158,
+                "longitude": 4.648161,
+                "city": "Dordrecht",
+                "country": "NL"
+            }
+        },
+        {
             "domain": "uc",
             "tag": "nextbike-cardiff",
             "city_uid": 476,
