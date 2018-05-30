@@ -265,7 +265,12 @@ class TestDataFiles(unittest.TestCase):
         msg = 'File: %r' % schema
         self.assertIn('tag', _instance, msg=msg)
         self.assertIn('meta', _instance, msg=msg)
-        self.assertTrue(_instance['tag'].islower())
+        self.assertRegexpMatches(
+            _instance['tag'],
+            r'^[a-z0-9\-]+$',
+            msg="Instance tag should only contain lowercase alphanumeric "
+            "characters and hypens: %s in %s" % (_instance['tag'], schema)
+        )
 
         instance = pybikes.get(_instance['tag'], key='foobar')
         meta = instance.meta

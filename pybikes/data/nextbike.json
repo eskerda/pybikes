@@ -1380,7 +1380,7 @@
         },
         {
             "domain": "sp",
-            "tag": "bike_s-srm-szczecin",
+            "tag": "bike-s-srm-szczecin",
             "city_uid": 346,
             "meta": {
                 "name": "Bike_S SRM",
