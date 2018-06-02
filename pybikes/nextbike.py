@@ -54,8 +54,6 @@ class Nextbike(BikeShareSystem):
                 lat, lng = place.attrib['lat'], place.attrib['lng']
                 return (float(lat), float(lng))
             places = filter_bounds(places, getter, self.bbox)
-        # For now ignore bikes roaming around
-        places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
 
         self.stations = map(NextbikeStation, places)
 
