@@ -37,6 +37,17 @@
         },
         {
             "domain": "de",
+            "tag": "nextbike-wiesbaden",
+            "city_uid": 7,
+            "meta": {
+                "city": "Wiesbaden",
+                "country": "DE",
+                "latitude": 50.0709,
+                "longitude": 8.24322
+            }
+        },
+        {
+            "domain": "de",
             "tag": "nextbike-frankfurt",
             "city_uid": 8,
             "meta": {
@@ -1923,6 +1934,17 @@
                 "country": "PL",
                 "latitude": 51.7608,
                 "longitude": 18.0746
+            }
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-marburg",
+            "city_uid": 438,
+            "meta": {
+                "city": "Marburg",
+                "country": "DE",
+                "latitude": 50.8019,
+                "longitude": 8.76444
             }
         },
         {
