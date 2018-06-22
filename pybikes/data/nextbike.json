@@ -1663,8 +1663,8 @@
                 "name": "Gliwicki Rower Miejski (SGRM)",
                 "city": "Gliwice",
                 "country": "PL",
-                "latitude": 50.2937,
-                "longitude": 18.6737
+                "latitude": 50.2918,
+                "longitude": 18.669
             }
         },
         {
@@ -1769,8 +1769,8 @@
                 "name": "Tyski Rower Miejski",
                 "city": "Tychy",
                 "country": "PL",
-                "latitude": 50.1294,
-                "longitude": 18.994
+                "latitude": 50.1304,
+                "longitude": 18.9436
             }
         },
         {
@@ -1827,8 +1827,8 @@
                 "name": "OK Bike",
                 "city": "Kędzierzyn-Koźle",
                 "country": "PL",
-                "latitude": 50.3417,
-                "longitude": 18.2043
+                "latitude": 50.3421,
+                "longitude": 18.2049
             }
         },
         {
@@ -1938,6 +1938,30 @@
             }
         },
         {
+            "domain": "or",
+            "tag": "pruszkowski-rower-miejski-pruszkow",
+            "city_uid": 442,
+            "meta": {
+                "name": "Pruszkowski Rower Miejski",
+                "city": "Pruszków",
+                "country": "PL",
+                "latitude": 52.1637,
+                "longitude": 20.8018
+            }
+        },
+        {
+            "domain": "rm",
+            "tag": "rower-miejski-szamotuly-rms-szamotuly",
+            "city_uid": 446,
+            "meta": {
+                "name": "Rower Miejski Szamotuły",
+                "city": "Szamotuły",
+                "country": "PL",
+                "latitude": 52.6112,
+                "longitude": 16.5819
+            }
+        },
+        {
             "domain": "nd",
             "tag": "nextbike-dordrecht",
             "city_uid": 447,
@@ -1949,6 +1973,42 @@
             }
         },
         {
+            "domain": "jp",
+            "tag": "czestochowski-rower-miejski-czestochowa",
+            "city_uid": 450,
+            "meta": {
+                "name": "Częstochowski Rower Miejski",
+                "city": "Częstochowa",
+                "country": "PL",
+                "latitude": 50.812,
+                "longitude": 19.1375
+            }
+        },
+        {
+            "domain": "po",
+            "tag": "rower-miejski-w-ostrowie-wielkopolskim-ostrow-wielkopolski",
+            "city_uid": 452,
+            "meta": {
+                "name": "Rower Miejski w Ostrowie Wielkopolskim",
+                "city": "Ostrów Wielkopolski",
+                "country": "PL",
+                "latitude": 51.65,
+                "longitude": 17.8253
+            }
+        },
+        {
+            "domain": "pi",
+            "tag": "piaseczynski-rower-miejski-piaseczno",
+            "city_uid": 461,
+            "meta": {
+                "name": "Piaseczyński Rower Miejski",
+                "city": "Piaseczno",
+                "country": "PL",
+                "latitude": 52.0733,
+                "longitude": 21.0269
+            }
+        },
+        {
             "domain": "uc",
             "tag": "nextbike-cardiff",
             "city_uid": 476,
@@ -1957,6 +2017,76 @@
                 "country": "GB",
                 "latitude": 51.4822,
                 "longitude": -3.18089
+            }
+        },
+        {
+            "domain": "ps",
+            "tag": "koszalinski-rower-miejski-koszalin",
+            "city_uid": 496,
+            "meta": {
+                "name": "Koszaliński Rower Miejski",
+                "city": "Koszalin",
+                "country": "PL",
+                "latitude": 54.2026,
+                "longitude": 16.1678
+            }
+        },
+        {
+            "domain": "pr",
+            "tag": "sosnowiecki-rower-miejski-sosnowiec",
+            "city_uid": 497,
+            "meta": {
+                "name": "Sosnowiecki Rower Miejski",
+                "city": "Sosnowiec",
+                "country": "PL",
+                "latitude": 50.2823,
+                "longitude": 19.1269
+            }
+        },
+        {
+            "domain": "pz",
+            "tag": "zabrzanski-rower-miejski-zabrze",
+            "city_uid": 498,
+            "meta": {
+                "name": "Zabrzański Rower Miejski",
+                "city": "Zabrze",
+                "country": "PL",
+                "latitude": 77.3741,
+                "longitude": 204.917
+            }
+        },
+        {
+            "domain": "pu",
+            "tag": "pobiedziski-rower-miejski-pobiedziska",
+            "city_uid": 504,
+            "meta": {
+                "name": "Pobiedziski Rower Miejski",
+                "city": "Pobiedziska",
+                "country": "PL",
+                "latitude": 52.4765,
+                "longitude": 17.2866
+            }
+        },
+        {
+            "domain": "np",
+            "tag": "nextbike-jastrzebie-zdroj",
+            "city_uid": 509,
+            "meta": {
+                "city": "Jastrzębie-Zdrój",
+                "country": "PL",
+                "latitude": 49.9497,
+                "longitude": 18.599
+            }
+        },
+        {
+            "domain": "np",
+            "tag": "nextbike-swietochlowice",
+            "city_uid": 516,
+            "meta": {
+                "city": "Świętochłowice",
+                "country": "PL",
+                "latitude": 50.2956,
+                "longitude": 18.9165
             }
         }
     ],
