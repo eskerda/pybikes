@@ -288,6 +288,11 @@ class TestDataFiles(unittest.TestCase):
             self.assertIsInstance(meta[field], basestring,
                                   msg=('Error in %r on ' % field) + msg)
 
+        self.assertTrue(-90 <= meta['latitude'] <= 90,
+                        msg='Latitude outside -90, 90 range %s' % msg)
+        self.assertTrue(-180 <= meta['longitude'] <= 180,
+                        msg='Longitude outside -180, 180 range %s' % msg)
+
 
 class TestUtils(unittest.TestCase):
     def test_filter_bounds(self):
