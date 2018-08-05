@@ -76,7 +76,7 @@ class NextbikeStation(BikeShareStation):
         # approximate to true, to signal that the number is not exact. Note
         # this is rather frequent case for 'bike_types' and infrequent
         # corner case for 'bikes' attribute.
-        if 'bike_types' in place.attrib:
+        if place.get('bike_types'):
             self.bikes = 0
             bike_types = json.loads(place.attrib['bike_types'])
             for value in bike_types.values():
