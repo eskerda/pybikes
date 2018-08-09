@@ -1,7 +1,7 @@
 {
     "instances": [
         {
-            "domain": "de",
+            "domain": "le",
             "tag": "nextbike-leipzig",
             "city_uid": 1,
             "meta": {
@@ -47,10 +47,11 @@
             }
         },
         {
-            "domain": "de",
-            "tag": "nextbike-frankfurt",
+            "domain": "ff",
+            "tag": "visa-frankfurt",
             "city_uid": 8,
             "meta": {
+                "name": "VISA",
                 "city": "Frankfurt",
                 "country": "DE",
                 "latitude": 50.1072,
@@ -708,6 +709,17 @@
             }
         },
         {
+            "domain": "cy",
+            "tag": "nextbike-nicosia",
+            "city_uid": 206,
+            "meta": {
+                "city": "Nicosia",
+                "country": "CY",
+                "latitude": 35.1728,
+                "longitude": 33.3653
+            }
+        },
+        {
             "domain": "vp",
             "tag": "veturilo-warszawa",
             "city_uid": 210,
@@ -771,8 +783,8 @@
             "meta": {
                 "city": "Zagreb",
                 "country": "HR",
-                "latitude": 45.7988,
-                "longitude": 15.9643
+                "latitude": 45.7984,
+                "longitude": 15.9789
             }
         },
         {
@@ -794,12 +806,12 @@
             "meta": {
                 "city": "Bath",
                 "country": "GB",
-                "latitude": 51.1742,
-                "longitude": -2.50841
+                "latitude": 51.3793,
+                "longitude": -2.35279
             }
         },
         {
-            "domain": "uk",
+            "domain": "gg",
             "tag": "nextbike-glasgow",
             "city_uid": 237,
             "meta": {
@@ -840,8 +852,8 @@
                 "name": "BIKER Białystok",
                 "city": "Białystok",
                 "country": "PL",
-                "latitude": 53.1342,
-                "longitude": 23.1485
+                "latitude": 53.2655,
+                "longitude": 23.3343
             }
         },
         {
@@ -941,14 +953,26 @@
         },
         {
             "domain": "nj",
-            "tag": "hudsonbikeshare-hoboken",
+            "tag": "jerseybike-hoboken",
             "city_uid": 258,
             "meta": {
-                "name": "Hudsonbikeshare",
+                "name": "JerseyBike",
                 "city": "Hoboken",
                 "country": "US",
                 "latitude": 40.7447,
                 "longitude": -74.0341
+            }
+        },
+        {
+            "domain": "nj",
+            "tag": "jerseybike-weehawken",
+            "city_uid": 259,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "Weehawken",
+                "country": "US",
+                "latitude": 40.7683,
+                "longitude": -74.0216
             }
         },
         {
@@ -992,7 +1016,7 @@
             "tag": "nextbike-university-of-warwick",
             "city_uid": 272,
             "meta": {
-                "city": "University of Warwick",
+                "city": "Warwick",
                 "country": "GB",
                 "latitude": 52.3815,
                 "longitude": -1.56159
@@ -1216,7 +1240,7 @@
             "city_uid": 306,
             "meta": {
                 "name": "Flashfleet Kent State University",
-                "city": "Kent State University",
+                "city": "Kent State",
                 "country": "US",
                 "latitude": 41.1492,
                 "longitude": -81.3363
@@ -1232,6 +1256,17 @@
                 "country": "HR",
                 "latitude": 45.1656,
                 "longitude": 18.0183
+            }
+        },
+        {
+            "domain": "uk",
+            "tag": "nextbike-london",
+            "city_uid": 318,
+            "meta": {
+                "city": "London",
+                "country": "GB",
+                "latitude": 51.4862,
+                "longitude": -0.11966
             }
         },
         {
@@ -1315,6 +1350,17 @@
                 "country": "HR",
                 "latitude": 42.7626,
                 "longitude": 16.8719
+            }
+        },
+        {
+            "domain": "vu",
+            "tag": "grad-vukovar-vukovar",
+            "city_uid": 328,
+            "meta": {
+                "city": "Vukovar",
+                "country": "HR",
+                "latitude": 45.3575,
+                "longitude": 18.9895
             }
         },
         {
@@ -1444,8 +1490,8 @@
                 "name": "Rower Gminny Michałowice",
                 "city": "Michałowice",
                 "country": "PL",
-                "latitude": 52.1686,
-                "longitude": 20.9957
+                "latitude": 52.6964,
+                "longitude": 57.5395
             }
         },
         {
@@ -1575,6 +1621,18 @@
             }
         },
         {
+            "domain": "wk",
+            "tag": "wk-bike-bremen-bremen",
+            "city_uid": 379,
+            "meta": {
+                "name": "WK-Bike",
+                "city": "Bremen",
+                "country": "DE",
+                "latitude": 53.0781,
+                "longitude": 8.80132
+            }
+        },
+        {
             "domain": "vn",
             "tag": "vrn-worms",
             "city_uid": 382,
@@ -1610,10 +1668,9 @@
         },
         {
             "domain": "nl",
-            "tag": "nederland-maastricht",
+            "tag": "nextbike-maastricht",
             "city_uid": 387,
             "meta": {
-                "name": "Nederland",
                 "city": "Maastricht",
                 "country": "NL",
                 "latitude": 50.8514,
@@ -1749,6 +1806,30 @@
             }
         },
         {
+            "domain": "vi",
+            "tag": "smartbike-vijayawada-vijayawada",
+            "city_uid": 402,
+            "meta": {
+                "name": "Smartbike Vijayawada",
+                "city": "Vijayawada",
+                "country": "IN",
+                "latitude": 16.5109,
+                "longitude": 80.6313
+            }
+        },
+        {
+            "domain": "el",
+            "tag": "sitycleta-las-palmas-las-palmas-de-gran-canaria",
+            "city_uid": 408,
+            "meta": {
+                "name": "Sitycleta",
+                "city": "Las Palmas de Gran Canaria",
+                "country": "ES",
+                "latitude": 28.1236,
+                "longitude": -15.4366
+            }
+        },
+        {
             "domain": "ap",
             "tag": "system-rowerow-miejskich-w-pszczynie-pszczyna",
             "city_uid": 411,
@@ -1879,6 +1960,28 @@
             }
         },
         {
+            "domain": "cj",
+            "tag": "jastrebarsko-jastrebarsko",
+            "city_uid": 425,
+            "meta": {
+                "city": "Jastrebarsko",
+                "country": "HR",
+                "latitude": 45.6692,
+                "longitude": 15.6541
+            }
+        },
+        {
+            "domain": "gd",
+            "tag": "grad-drnis-drnis",
+            "city_uid": 426,
+            "meta": {
+                "city": "Drniš",
+                "country": "HR",
+                "latitude": 43.8425,
+                "longitude": 16.1197
+            }
+        },
+        {
             "domain": "ct",
             "tag": "nextbike-tuzla",
             "city_uid": 427,
@@ -1960,6 +2063,17 @@
             }
         },
         {
+            "domain": "de",
+            "tag": "nextbike-russelsheim-am-main",
+            "city_uid": 439,
+            "meta": {
+                "city": "Rüsselsheim am Main",
+                "country": "DE",
+                "latitude": 49.9881,
+                "longitude": 8.42142
+            }
+        },
+        {
             "domain": "or",
             "tag": "pruszkowski-rower-miejski-pruszkow",
             "city_uid": 442,
@@ -1988,10 +2102,22 @@
             "tag": "nextbike-dordrecht",
             "city_uid": 447,
             "meta": {
-                "latitude": 51.817158,
-                "longitude": 4.648161,
                 "city": "Dordrecht",
-                "country": "NL"
+                "country": "NL",
+                "latitude": 51.7833,
+                "longitude": 4.69391
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-heppenheim",
+            "city_uid": 448,
+            "meta": {
+                "name": "VRN",
+                "city": "Heppenheim",
+                "country": "DE",
+                "latitude": 49.6431,
+                "longitude": 8.63889
             }
         },
         {
@@ -2019,6 +2145,54 @@
             }
         },
         {
+            "domain": "nj",
+            "tag": "jerseybike-bayonne",
+            "city_uid": 455,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "Bayonne",
+                "country": "US",
+                "latitude": 40.6668,
+                "longitude": -74.1154
+            }
+        },
+        {
+            "domain": "nj",
+            "tag": "jerseybike-guttenberg",
+            "city_uid": 456,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "Guttenberg",
+                "country": "US",
+                "latitude": 40.792,
+                "longitude": -74.0035
+            }
+        },
+        {
+            "domain": "nj",
+            "tag": "jerseybike-west-new-york",
+            "city_uid": 458,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "West New York",
+                "country": "US",
+                "latitude": 40.7882,
+                "longitude": -74.0142
+            }
+        },
+        {
+            "domain": "du",
+            "tag": "dundee-navigogo-dundee",
+            "city_uid": 459,
+            "meta": {
+                "name": "Dundee-Navigogo",
+                "city": "Dundee",
+                "country": "GB",
+                "latitude": 56.4623,
+                "longitude": -2.97071
+            }
+        },
+        {
             "domain": "pi",
             "tag": "piaseczynski-rower-miejski-piaseczno",
             "city_uid": 461,
@@ -2031,14 +2205,197 @@
             }
         },
         {
+            "domain": "dk",
+            "tag": "nextbike-kassel",
+            "city_uid": 462,
+            "meta": {
+                "city": "Kassel",
+                "country": "DE",
+                "latitude": 51.3127,
+                "longitude": 9.47975
+            }
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-sarnen",
+            "city_uid": 463,
+            "meta": {
+                "city": "Sarnen",
+                "country": "CH",
+                "latitude": 46.8963,
+                "longitude": 8.24614
+            }
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-wolfenschiessen",
+            "city_uid": 464,
+            "meta": {
+                "city": "Wolfenschiessen",
+                "country": "CH",
+                "latitude": 46.9079,
+                "longitude": 8.39767
+            }
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-oberdorf",
+            "city_uid": 465,
+            "meta": {
+                "city": "Oberdorf",
+                "country": "CH",
+                "latitude": 46.9563,
+                "longitude": 8.3884
+            }
+        },
+        {
+            "domain": "nj",
+            "tag": "jerseybike-north-bergen",
+            "city_uid": 466,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "North Bergen",
+                "country": "US",
+                "latitude": 40.8045,
+                "longitude": -74.0135
+            }
+        },
+        {
+            "domain": "ng",
+            "tag": "nextbike-giessen",
+            "city_uid": 467,
+            "meta": {
+                "city": "Gießen",
+                "country": "DE",
+                "latitude": 50.5943,
+                "longitude": 8.68097
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-weinheim",
+            "city_uid": 469,
+            "meta": {
+                "name": "VRN",
+                "city": "Weinheim",
+                "country": "DE",
+                "latitude": 49.545,
+                "longitude": 8.66027
+            }
+        },
+        {
             "domain": "uc",
             "tag": "nextbike-cardiff",
             "city_uid": 476,
             "meta": {
                 "city": "Cardiff",
                 "country": "GB",
-                "latitude": 51.4822,
-                "longitude": -3.18089
+                "latitude": 51.4848,
+                "longitude": -3.19062
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-hockenheim",
+            "city_uid": 477,
+            "meta": {
+                "name": "VRN",
+                "city": "Hockenheim",
+                "country": "DE",
+                "latitude": 49.3227,
+                "longitude": 8.54258
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-schwetzingen",
+            "city_uid": 480,
+            "meta": {
+                "name": "VRN",
+                "city": "Schwetzingen",
+                "country": "DE",
+                "latitude": 49.3863,
+                "longitude": 8.5756
+            }
+        },
+        {
+            "domain": "ch",
+            "tag": "nextbike-ennetmoos",
+            "city_uid": 483,
+            "meta": {
+                "city": "Ennetmoos",
+                "country": "CH",
+                "latitude": 46.9573,
+                "longitude": 8.3377
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-eppelheim",
+            "city_uid": 484,
+            "meta": {
+                "name": "VRN",
+                "city": "Eppelheim",
+                "country": "DE",
+                "latitude": 49.4025,
+                "longitude": 8.6331
+            }
+        },
+        {
+            "domain": "su",
+            "tag": "nextbike-university-of-surrey",
+            "city_uid": 485,
+            "meta": {
+                "city": "Surrey",
+                "country": "GB",
+                "latitude": 51.2422,
+                "longitude": -0.590594
+            }
+        },
+        {
+            "domain": "uu",
+            "tag": "santander-cycles-swansea-swansea-university",
+            "city_uid": 486,
+            "meta": {
+                "name": "Santander Cycles",
+                "city": "Swansea",
+                "country": "GB",
+                "latitude": 51.6106,
+                "longitude": -3.9764
+            }
+        },
+        {
+            "domain": "ef",
+            "tag": "nextbike-erfurt",
+            "city_uid": 493,
+            "meta": {
+                "city": "Erfurt",
+                "country": "DE",
+                "latitude": 50.9785,
+                "longitude": 11.0334
+            }
+        },
+        {
+            "domain": "bj",
+            "tag": "bl-bike-banja-luka",
+            "city_uid": 494,
+            "meta": {
+                "name": "BL bike",
+                "city": "Banja Luka",
+                "country": "BA",
+                "latitude": 44.775,
+                "longitude": 17.1994
+            }
+        },
+        {
+            "domain": "ft",
+            "tag": "turku-turku",
+            "city_uid": 495,
+            "meta": {
+                "city": "Turku",
+                "country": "FI",
+                "latitude": 60.4525,
+                "longitude": 22.2695
             }
         },
         {
@@ -2073,20 +2430,67 @@
                 "name": "Zabrzański Rower Miejski",
                 "city": "Zabrze",
                 "country": "PL",
-                "latitude": 50.3249,
-                "longitude": 18.7857
+                "latitude": 50.3066,
+                "longitude": 18.7864
+            }
+        },
+        {
+            "domain": "nj",
+            "tag": "jerseybike-liberty-state-park",
+            "city_uid": 502,
+            "meta": {
+                "name": "JerseyBike",
+                "city": "Liberty State Park",
+                "country": "US",
+                "latitude": 40.7051,
+                "longitude": -74.052
+            }
+        },
+        {
+            "domain": "bi",
+            "tag": "chartered-bike-bhopal-tata-motors",
+            "city_uid": 503,
+            "meta": {
+                "name": "Chartered Bike",
+                "city": "Bhopal",
+                "country": "IN",
+                "latitude": 18.6556,
+                "longitude": 73.813
             }
         },
         {
             "domain": "pu",
-            "tag": "pobiedziski-rower-miejski-pobiedziska",
+            "tag": "pobiedziski-rower-gminny-pobiedziska",
             "city_uid": 504,
             "meta": {
-                "name": "Pobiedziski Rower Miejski",
+                "name": "Pobiedziski Rower Gminny",
                 "city": "Pobiedziska",
                 "country": "PL",
                 "latitude": 52.4765,
                 "longitude": 17.2866
+            }
+        },
+        {
+            "domain": "lr",
+            "tag": "lahr-pedelecs-lahr",
+            "city_uid": 505,
+            "meta": {
+                "city": "Lahr",
+                "country": "DE",
+                "latitude": 48.3396,
+                "longitude": 7.87376
+            }
+        },
+        {
+            "domain": "cb",
+            "tag": "berlin-buch-campus-berlin-buch",
+            "city_uid": 508,
+            "meta": {
+                "name": "Berlin-Buch Campus",
+                "city": "Berlin",
+                "country": "DE",
+                "latitude": 52.6364,
+                "longitude": 13.5029
             }
         },
         {
@@ -2101,6 +2505,29 @@
             }
         },
         {
+            "domain": "in",
+            "tag": "smartbike-delhi-delhi",
+            "city_uid": 511,
+            "meta": {
+                "name": "Smartbike Delhi",
+                "city": "Delhi",
+                "country": "IN",
+                "latitude": 28.6228,
+                "longitude": 77.2084
+            }
+        },
+        {
+            "domain": "kv",
+            "tag": "kyiv-kyiv",
+            "city_uid": 514,
+            "meta": {
+                "city": "Kyiv",
+                "country": "UA",
+                "latitude": 50.4282,
+                "longitude": 30.5314
+            }
+        },
+        {
             "domain": "np",
             "tag": "nextbike-swietochlowice",
             "city_uid": 516,
@@ -2109,6 +2536,100 @@
                 "country": "PL",
                 "latitude": 50.2956,
                 "longitude": 18.9165
+            }
+        },
+        {
+            "domain": "dp",
+            "tag": "piotrkowski-rower-miejski-piotrkow-trybunalski",
+            "city_uid": 518,
+            "meta": {
+                "name": "Piotrkowski Rower Miejski",
+                "city": "Piotrków Trybunalski",
+                "country": "PL",
+                "latitude": 51.3992,
+                "longitude": 19.6971
+            }
+        },
+        {
+            "domain": "sc",
+            "tag": "siemianowicki-rower-miejski-siemianowice-slaskie",
+            "city_uid": 519,
+            "meta": {
+                "name": "Siemianowicki Rower Miejski",
+                "city": "Siemianowice Śląskie",
+                "country": "PL",
+                "latitude": 50.3031,
+                "longitude": 19.0222
+            }
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-turin",
+            "city_uid": 520,
+            "meta": {
+                "city": "Turin",
+                "country": "DE",
+                "latitude": 45.0674,
+                "longitude": 7.66631
+            }
+        },
+        {
+            "domain": "ep",
+            "tag": "plocki-rower-miejski-prm-plock",
+            "city_uid": 521,
+            "meta": {
+                "name": "Płocki Rower Miejski",
+                "city": "Płock",
+                "country": "PL",
+                "latitude": 52.5421,
+                "longitude": 19.7081
+            }
+        },
+        {
+            "domain": "nu",
+            "tag": "lviv-odessa",
+            "city_uid": 525,
+            "meta": {
+                "city": "Odessa",
+                "country": "UA",
+                "latitude": 46.463,
+                "longitude": 30.7042
+            }
+        },
+        {
+            "domain": "py",
+            "tag": "tychowski-rower-miejski-tychowo",
+            "city_uid": 528,
+            "meta": {
+                "name": "Tychowski Rower Miejski",
+                "city": "Tychowo",
+                "country": "PL",
+                "latitude": 53.9395,
+                "longitude": 16.2306
+            }
+        },
+        {
+            "domain": "cn",
+            "tag": "nomagobikes-celje",
+            "city_uid": 531,
+            "meta": {
+                "name": "NomagoBikes",
+                "city": "Celje",
+                "country": "SI",
+                "latitude": 46.2388,
+                "longitude": 15.2693
+            }
+        },
+        {
+            "domain": "py",
+            "tag": "tychowski-rower-miejski-atrakcje-turystyczne-tychowo",
+            "city_uid": 534,
+            "meta": {
+                "name": "Atrakcje turystyczne Tychowo",
+                "city": "Tychowo",
+                "country": "PL",
+                "latitude": 53.9294,
+                "longitude": 16.2467
             }
         }
     ],
