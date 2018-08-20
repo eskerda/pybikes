@@ -2587,6 +2587,29 @@
         },
         {
             "domain": "nu",
+            "tag": "lviv-kharkiv",
+            "city_uid": 522,
+            "meta": {
+                "city": "Kharkiv",
+                "country": "UA",
+                "latitude": 49.9795,
+                "longitude": 36.2563
+            }
+        },
+        {
+            "domain": "pd",
+            "tag": "ciechanowski-rower-miejski-ciechanow",
+            "city_uid": 523,
+            "meta": {
+                "name": "Ciechanowski Rower Miejski",
+                "city": "Ciechanów",
+                "country": "PL",
+                "latitude": 52.8763,
+                "longitude": 20.6102
+            }
+        },
+        {
+            "domain": "nu",
             "tag": "lviv-odessa",
             "city_uid": 525,
             "meta": {
@@ -2594,6 +2617,18 @@
                 "country": "UA",
                 "latitude": 46.463,
                 "longitude": 30.7042
+            }
+        },
+        {
+            "domain": "os",
+            "tag": "otwocki-rower-miejski-otwock",
+            "city_uid": 527,
+            "meta": {
+                "name": "Otwocki Rower Miejski",
+                "city": "Otwock",
+                "country": "PL",
+                "latitude": 52.1083,
+                "longitude": 21.2661
             }
         },
         {
@@ -2606,6 +2641,18 @@
                 "country": "PL",
                 "latitude": 53.9395,
                 "longitude": 16.2306
+            }
+        },
+        {
+            "domain": "pm",
+            "tag": "zielonogorski-rower-miejski-zielona-gora",
+            "city_uid": 529,
+            "meta": {
+                "name": "Zielonogórski Rower Miejski",
+                "city": "Zielona Góra",
+                "country": "PL",
+                "latitude": 51.9381,
+                "longitude": 15.5048
             }
         },
         {
@@ -2630,6 +2677,18 @@
                 "country": "PL",
                 "latitude": 53.9294,
                 "longitude": 16.2467
+            }
+        },
+        {
+            "domain": "cn",
+            "tag": "nomagobikes-lasko",
+            "city_uid": 535,
+            "meta": {
+                "name": "NomagoBikes",
+                "city": "Laško",
+                "country": "SI",
+                "latitude": 46.1458,
+                "longitude": 15.2312
             }
         }
     ],
