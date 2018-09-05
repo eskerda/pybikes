@@ -2740,18 +2740,6 @@
             }
         },
         {
-            "domain": "sn",
-            "tag": "santander-monchengladbach-monchengladbach",
-            "city_uid": 530,
-            "meta": {
-                "name": "Santander Mönchengladbach",
-                "city": "Mönchengladbach",
-                "country": "DE",
-                "latitude": 51.1817,
-                "longitude": 6.43578
-            }
-        },
-        {
             "domain": "cn",
             "tag": "nomagobikes-celje",
             "city_uid": 531,
