@@ -2,25 +2,24 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import json
 import re
+import json
 
-from lxml import html
-from lxml import etree
+from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
-
-__all__ = ['BiciPalma']
-
-COOKIE_URL = "http://83.36.51.60:8080/eTraffic3/Control?act=mp"
-DATA_URL = "http://83.36.51.60:8080/eTraffic3/DataServer?ele=equ&type=401&li=2.6288892088318&ld=2.6721907911682&ln=39.58800054245&ls=39.55559945755&zoom=15&adm=N&mapId=1&lang=es"
-NAME_UID_RE = "\[(\d+)\] (.*)"
 
 headers = {
-'User-Agent':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535.2',
-'Referer':'http://83.36.51.60:8080/eTraffic3/Control?act=mp'
+    'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535.2',   # NOQA
 }
+
+API_INFO_URL = 'http://www.mobipalma.mobi/mobilitat/bicipalma/'
+# Even though we can get this from API info, we do not want outside control
+# over which domains we access
+API_BASE_URL = 'https://api.mobipalma.mobi/1.0'
+API_STATIONS_URL = '{baseurl}/bicipalma'.format(baseurl=API_BASE_URL)
+API_STATUS_URL = '{baseurl}/bicipalma/estados'.format(baseurl=API_BASE_URL)
+
 
 class BiciPalma(BikeShareSystem):
     meta = {}
@@ -28,47 +27,48 @@ class BiciPalma(BikeShareSystem):
     def __init__(self, tag, meta):
         super(BiciPalma, self).__init__(tag, meta)
 
-    def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
         scraper.headers.update(headers)
 
-        # First visit the cookie setter
-        scraper.request(COOKIE_URL)
-        # We should have now a nice cookie in our header
+        api_info_data = scraper.request(API_INFO_URL)
+        api_info_match = re.search(r'MobipalmaMapa\((.*})\);', api_info_data)
+        if not api_info_match:
+            raise Exception('Mobipalma API info not found on website')
 
-        # Wow many fuzzle, so ugly
-        fuzzle = scraper.request(DATA_URL)
-        markers = json.loads(fuzzle)
+        api_info = json.loads(api_info_match.group(1))
+        scraper.headers.update({
+            'Authorization': 'Bearer %s' % api_info['token_data']['token'],
+        })
+        stations = json.loads(scraper.request(API_STATIONS_URL))
+        status = json.loads(scraper.request(API_STATUS_URL))
 
-        stations = []
-        for marker in markers:
-            # id = marker['id']
-            # Seems that this id is just incremental, and not related to the
-            # system at all.. discrating until further notiche?
+        stations = {s['id']: s for s in stations}
+        status = {s['id']: s for s in status}
 
-            # [uid] name as [77] THIS IS HORRID SHIT
-            uid, name = re.findall(NAME_UID_RE, marker['title'])[0]
+        stations = [
+            (stations[uid], status[uid]) for uid in stations.keys()
+        ]
 
-            stat_fuzzle = html.fromstring(marker['paramsHtml'])
-            stats = stat_fuzzle.cssselect('div#popParam')
-            ints = []
-            for i in range(1,6):
-                ints.append(int([a for a in stats[i].itertext()][1].strip()))
+        self.stations = list(self.parse_stations(stations))
 
-            station = BikeShareStation()
-            station.latitude = float(marker['realLat'])
-            station.longitude = float(marker['realLon'])
-            station.name = utils.sp_capwords(re.sub('\ *-\ *',' - ',name).title())
-            station.bikes = ints[1]
-            station.free = ints[4]
-            station.extra = {
-                'uid': int(uid),
-                'enabled': marker['enabled'],
-                'used_slots': ints[2],
-                'faulty_slots': ints[3]
-            }
-            stations.append(station)
+    def parse_stations(self, stations):
+        for info, status in stations:
+            info.update(status)
+            station = BiciPalmaStation(info)
+            yield station
 
-        self.stations = stations
 
+class BiciPalmaStation(BikeShareStation):
+    def __init__(self, info):
+        super(BiciPalmaStation, self).__init__()
+
+        self.name = info['nombre_estacion']
+        self.latitude = float(info['latitud'])
+        self.longitude = float(info['longitud'])
+        self.bikes = int(info['bicis_libres'])
+        self.free = int(info['anclajes_libres'])
+        self.extra = {
+            'uid': info['id'],
+            'online': info['comunica'] and not info['cerrado'],
+        }
