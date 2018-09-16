@@ -3,12 +3,10 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-import operator
+from urlparse import urljoin
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
-
-__all__ = ['Gbfs', 'GbfsStation']
+from pybikes import BikeShareSystem, BikeShareStation, exceptions
+from pybikes.utils import PyBikesScraper
 
 
 class Gbfs(BikeShareSystem):
@@ -16,22 +14,34 @@ class Gbfs(BikeShareSystem):
     def __init__(self, tag, meta, feed_url):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
-
         super(Gbfs, self).__init__(tag, meta)
         self.feed_url = feed_url
 
-    def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+    @property
+    def default_feeds(self):
+        url = self.feed_url
+        return {
+            "station_information": urljoin(url, 'station_information.json'),
+            "station_status": urljoin(url, 'station_status.json'),
+        }
 
-        # Make the request to gbfs.json and convert to json
-        html_data = json.loads(scraper.request(self.feed_url, raw=True))
+    def get_feeds(self, url, scraper):
+        feed_data = scraper.request(url, raw=True)
+        if scraper.last_request.status_code == 404:
+            # GBFS service description not found. Try to guess based on
+            # defaults
+            return self.default_feeds
 
-        # Create a dict with name-url pairs for easier access
-        # of urls (just in case)
+        feed_data = json.loads(feed_data)
         feeds = {}
-        for feed in html_data['data']['en']['feeds']:
+        for feed in feed_data['data']['en']['feeds']:
             feeds[feed['name']] = feed['url']
+        return feeds
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+
+        feeds = self.get_feeds(self.feed_url, scraper)
 
         # Station Information and Station Status data retrieval
         station_information = json.loads(
