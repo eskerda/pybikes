@@ -784,6 +784,25 @@
                 ]
             },
             "feed_url": "https://guad.publicbikesystem.net/ube/gbfs/v1/"
+        },
+        {
+            "tag": "edinburgh-cycle-hire",
+            "meta": {
+                "latitude": 55.9411885,
+                "longitude": -3.2753783,
+                "city": "Edinburgh",
+                "name": "Just Eat Cycles",
+                "country": "UK",
+                "company": [
+                    "Your Bike",
+                    "Urban Sharing"
+                ],
+                "license": {
+                    "name": "OGL v3 license",
+                    "url": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                }
+            },
+            "feed_url": "http://gbfs.urbansharing.com/edinburghcyclehire/"
         }
     ],
     "system": "gbfs",

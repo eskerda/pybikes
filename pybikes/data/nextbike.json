@@ -1495,17 +1495,6 @@
             }
         },
         {
-            "domain": "uk",
-            "tag": "nextbike-edinburgh",
-            "city_uid": 360,
-            "meta": {
-                "city": "Edinburgh",
-                "country": "GB",
-                "latitude": 55.9526,
-                "longitude": -3.18902
-            }
-        },
-        {
             "domain": "nz",
             "tag": "nextbike-auckland-waterfront",
             "city_uid": 361,
