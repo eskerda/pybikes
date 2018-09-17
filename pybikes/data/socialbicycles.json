@@ -1,0 +1,16 @@
+{
+    "instances": [
+        {
+            "tag": "socialbicycles-wavelo",
+            "uid": 105,
+            "meta": {
+                "city": "Kraków",
+                "country": "PL",
+                "latitude": 50.06143,
+                "longitude": 19.93658
+            }
+        }
+    ],
+    "system": "socialbicycles",
+    "class": "SocialBicycles"
+}
