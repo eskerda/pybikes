@@ -27,18 +27,17 @@ class OpenSourceBikeShare(BikeShareSystem):
         data = json.loads(scraper.request(self.feed_url))
 
         for station in data:
-
-            longitude = float(station['lon'])
-            latitude = float(station['lat'])
+            longitude = float(station.get('lon') or station['longitude'])
+            latitude = float(station.get('lat') or station['latitude'])
 
             name = station['standName']
             free = None
             bikes = int(station['bikecount'])
 
             extra = {
-                'photo': station['standPhoto'],
-                'description': station['standDescription'],
-                'uid': int(station['standId'])
+                'uid': int(station['standId']),
+                'photo': station.get('standPhoto'),
+                'description': station.get('standDescription'),
             }
 
             station = BikeShareStation(name, latitude, longitude, bikes, free,
