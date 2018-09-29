@@ -34,6 +34,9 @@ class OpenSourceBikeShare(BikeShareSystem):
             free = None
             bikes = int(station['bikecount'])
 
+            if 'slotcount' in station:
+                free = int(station['slotcount'])
+
             extra = {
                 'uid': int(station['standId']),
                 'photo': station.get('standPhoto'),
