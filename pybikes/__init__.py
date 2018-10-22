@@ -16,6 +16,7 @@ from pybikes.exceptions import BikeShareSystemNotFound
 
 # Top class shortcuts
 from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 from pybikes import utils
 from pybikes import contrib
 
