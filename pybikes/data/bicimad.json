@@ -1,7 +1,6 @@
 {
     "instances":[
         {
-            "url":"http://helena.bonopark.es:16080/app/app/functions/get_all_estaciones_inicio.php",
             "tag":"bicimad",
             "meta":{
                 "latitude":40.4168,
@@ -12,6 +11,6 @@
             }
         }
     ],
-    "class":"Bonopark",
-    "system":"bonopark"
+    "class":"Bicimad",
+    "system":"bicimad"
 }
