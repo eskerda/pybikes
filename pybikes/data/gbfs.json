@@ -446,19 +446,19 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_houston/gbfs.json"
         },
         {
-            "tag": "hubway",
+            "tag": "blue-bikes",
             "meta": {
                 "latitude": 42.3584308,
                 "longitude": -71.0597732,
                 "city": "Boston, MA",
-                "name": "Hubway",
+                "name": "Blue Bikes",
                 "country": "US",
                 "company": [
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://gbfs.thehubway.com/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.bluebikes.com/gbfs/gbfs.json"
         },
         {
             "tag": "indego",
