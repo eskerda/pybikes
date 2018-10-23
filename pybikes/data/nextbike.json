@@ -1400,6 +1400,17 @@
             }
         },
         {
+            "domain": "nw",
+            "tag": "nextbike-ahmedabad",
+            "city_uid": 336,
+            "meta": {
+                "city": "Ahmedabad",
+                "country": "RO",
+                "latitude": 23.0203,
+                "longitude": 72.5824
+            }
+        },
+        {
             "domain": "ig",
             "tag": "grad-ivanic-grad-ivanic-grad",
             "city_uid": 337,
@@ -1490,8 +1501,8 @@
                 "name": "Rower Gminny Michałowice",
                 "city": "Michałowice",
                 "country": "PL",
-                "latitude": 52.6964,
-                "longitude": 57.5395
+                "latitude": 52.1679,
+                "longitude": 20.8877
             }
         },
         {
@@ -1572,6 +1583,17 @@
                 "country": "PL",
                 "latitude": 52.2265,
                 "longitude": 21.0127
+            }
+        },
+        {
+            "domain": "nw",
+            "tag": "nextbike-bukarest",
+            "city_uid": 373,
+            "meta": {
+                "city": "Bukarest",
+                "country": "RO",
+                "latitude": 44.4367,
+                "longitude": 26.1021
             }
         },
         {
@@ -2554,6 +2576,18 @@
             }
         },
         {
+            "domain": "wm",
+            "tag": "west-midlands-birmingham",
+            "city_uid": 506,
+            "meta": {
+                "name": "West Midlands",
+                "city": "Birmingham",
+                "country": "GB",
+                "latitude": 52.4035,
+                "longitude": -2.12834
+            }
+        },
+        {
             "domain": "cb",
             "tag": "berlin-buch-campus-berlin-buch",
             "city_uid": 508,
@@ -2575,6 +2609,17 @@
                 "country": "PL",
                 "latitude": 49.9497,
                 "longitude": 18.599
+            }
+        },
+        {
+            "domain": "nw",
+            "tag": "nextbike-focsani",
+            "city_uid": 510,
+            "meta": {
+                "city": "Focșani",
+                "country": "RO",
+                "latitude": 45.6947,
+                "longitude": 27.1851
             }
         },
         {
@@ -2729,6 +2774,18 @@
             }
         },
         {
+            "domain": "sn",
+            "tag": "santander-monchengladbach",
+            "city_uid": 530,
+            "meta": {
+                "name": "Santander Mönchengladbach",
+                "city": "Mönchengladbach",
+                "country": "DE",
+                "latitude": 51.1817,
+                "longitude": 6.43578
+            }
+        },
+        {
             "domain": "cn",
             "tag": "nomagobikes-celje",
             "city_uid": 531,
@@ -2738,6 +2795,18 @@
                 "country": "SI",
                 "latitude": 46.2388,
                 "longitude": 15.2693
+            }
+        },
+        {
+            "domain": "bo",
+            "tag": "bilbaobizi-bilbao",
+            "city_uid": 532,
+            "meta": {
+                "name": "Bilbaobizi",
+                "city": "Bilbao",
+                "country": "ES",
+                "latitude": 43.2752,
+                "longitude": -2.93528
             }
         },
         {
@@ -2765,6 +2834,29 @@
             }
         },
         {
+            "domain": "li",
+            "tag": "nextbike-lippstadt",
+            "city_uid": 536,
+            "meta": {
+                "city": "Lippstadt",
+                "country": "DE",
+                "latitude": 51.6755,
+                "longitude": 8.34394
+            }
+        },
+        {
+            "domain": "ak",
+            "tag": "bikekia-zilina",
+            "city_uid": 538,
+            "meta": {
+                "name": "BikeKia",
+                "city": "Žilina",
+                "country": "SK",
+                "latitude": 48.3088,
+                "longitude": 18.0783
+            }
+        },
+        {
             "domain": "pn",
             "tag": "koninski-rower-miejski-konin",
             "city_uid": 545,
@@ -2774,6 +2866,144 @@
                 "country": "PL",
                 "latitude": 52.2284,
                 "longitude": 18.2553
+            }
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-vinnytsia",
+            "city_uid": 546,
+            "meta": {
+                "city": "Vinnytsia",
+                "country": "UA",
+                "latitude": 49.2328,
+                "longitude": 28.4625
+            }
+        },
+        {
+            "domain": "bf",
+            "tag": "nextbike-bonn",
+            "city_uid": 547,
+            "meta": {
+                "city": "Bonn",
+                "country": "DE",
+                "latitude": 50.7367,
+                "longitude": 7.09541
+            }
+        },
+        {
+            "domain": "tn",
+            "tag": "tarnowski-rower-miejski-tarnow",
+            "city_uid": 548,
+            "meta": {
+                "name": "Tarnowski Rower Miejski",
+                "city": "Tarnów",
+                "country": "PL",
+                "latitude": 50.0113,
+                "longitude": 20.9728
+            }
+        },
+        {
+            "domain": "mk",
+            "tag": "kolo-marek-marki",
+            "city_uid": 550,
+            "meta": {
+                "name": "Koło Marek",
+                "city": "Marki",
+                "country": "PL",
+                "latitude": 52.3256,
+                "longitude": 21.1089
+            }
+        },
+        {
+            "domain": "zy",
+            "tag": "zyrardowski-rower-miejski-zyrardow",
+            "city_uid": 551,
+            "meta": {
+                "name": "Żyrardowski Rower Miejski",
+                "city": "Żyrardów",
+                "country": "PL",
+                "latitude": 52.0503,
+                "longitude": 20.4464
+            }
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-salzburg",
+            "city_uid": 553,
+            "meta": {
+                "city": "Salzburg",
+                "country": "DE",
+                "latitude": 47.7989,
+                "longitude": 13.0427
+            }
+        },
+        {
+            "domain": "cn",
+            "tag": "nomagobikes-zalec",
+            "city_uid": 555,
+            "meta": {
+                "name": "NomagoBikes",
+                "city": "Žalec",
+                "country": "SI",
+                "latitude": 46.2529,
+                "longitude": 15.1635
+            }
+        },
+        {
+            "domain": "cn",
+            "tag": "nomagobikes-polzela",
+            "city_uid": 556,
+            "meta": {
+                "name": "NomagoBikes",
+                "city": "Polzela",
+                "country": "SI",
+                "latitude": 46.2767,
+                "longitude": 15.0753
+            }
+        },
+        {
+            "domain": "pv",
+            "tag": "kajteroz-chorzowski-rower-miejski-chorzow",
+            "city_uid": 557,
+            "meta": {
+                "name": "Kajteroz - Chorzowski Rower Miejski",
+                "city": "Chorzów",
+                "country": "PL",
+                "latitude": 50.2969,
+                "longitude": 18.9551
+            }
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-odesa",
+            "city_uid": 572,
+            "meta": {
+                "city": "Odesa",
+                "country": "UA",
+                "latitude": 46.4672,
+                "longitude": 30.7164
+            }
+        },
+        {
+            "domain": "le",
+            "tag": "nextbike-alvsjo",
+            "city_uid": 576,
+            "meta": {
+                "city": "Älvsjö",
+                "country": "DE",
+                "latitude": 59.2745,
+                "longitude": 18.005
+            }
+        },
+        {
+            "domain": "de",
+            "tag": "nextbike-wittenberge",
+            "city_uid": 591,
+            "meta": {
+                "city": "Wittenberge",
+                "country": "DE",
+                "latitude": 52.9952,
+                "longitude": 11.7517
             }
         }
     ],
