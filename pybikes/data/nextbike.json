@@ -2775,6 +2775,18 @@
                 "latitude": 52.2284,
                 "longitude": 18.2553
             }
+        },
+        {
+            "domain": "bo",
+            "tag": "nextbike-bilbao",
+            "city_uid": 532,
+            "meta": {
+                "name": "Bilbaobizi",
+                "city": "Bilbao",
+                "country": "ES",
+                "latitude": 43.2627,
+                "longitude": -2.93185
+            }
         }
     ],
     "system": "nextbike",
