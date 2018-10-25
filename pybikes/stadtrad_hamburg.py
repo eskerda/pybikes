@@ -41,7 +41,7 @@ class StadtradHamburg(BikeShareSystem):
 class StadtradHamburgStation(BikeShareStation):
     def __init__(self, info):
         super(StadtradHamburgStation, self).__init__()
-        self.latitude = float(info['geometry']['coordinates'][0])
-        self.longitude = float(info['geometry']['coordinates'][1])
+        self.latitude = float(info['geometry']['coordinates'][1])
+        self.longitude = float(info['geometry']['coordinates'][0])
         self.name = info['properties']['name'].encode("utf-8")
         self.bikes = int(info['properties']['anzahl_raeder'])
