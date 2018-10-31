@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 TRAVIS_BUILD=${TRAVIS_BUILD:-0}
 export PYTHONPATH=$PYTHONPATH:.
 # It's not a really good idea to test spiders on travis
