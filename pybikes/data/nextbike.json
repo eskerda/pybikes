@@ -2460,17 +2460,6 @@
             }
         },
         {
-            "domain": "ft",
-            "tag": "turku-turku",
-            "city_uid": 495,
-            "meta": {
-                "city": "Turku",
-                "country": "FI",
-                "latitude": 60.4525,
-                "longitude": 22.2695
-            }
-        },
-        {
             "domain": "ps",
             "tag": "koszalinski-rower-miejski-koszalin",
             "city_uid": 496,
