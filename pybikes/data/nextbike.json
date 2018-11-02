@@ -2743,10 +2743,10 @@
         },
         {
             "domain": "bo",
-            "tag": "bilbaobizi-bilbao",
+            "tag": "bilbon-bizi",
             "city_uid": 532,
             "meta": {
-                "name": "Bilbaobizi",
+                "name": "BilbonBizi",
                 "city": "Bilbao",
                 "country": "ES",
                 "latitude": 43.2752,
