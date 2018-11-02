@@ -1400,17 +1400,6 @@
             }
         },
         {
-            "domain": "nw",
-            "tag": "nextbike-ahmedabad",
-            "city_uid": 336,
-            "meta": {
-                "city": "Ahmedabad",
-                "country": "RO",
-                "latitude": 23.0203,
-                "longitude": 72.5824
-            }
-        },
-        {
             "domain": "ig",
             "tag": "grad-ivanic-grad-ivanic-grad",
             "city_uid": 337,
@@ -1583,17 +1572,6 @@
                 "country": "PL",
                 "latitude": 52.2265,
                 "longitude": 21.0127
-            }
-        },
-        {
-            "domain": "nw",
-            "tag": "nextbike-bukarest",
-            "city_uid": 373,
-            "meta": {
-                "city": "Bukarest",
-                "country": "RO",
-                "latitude": 44.4367,
-                "longitude": 26.1021
             }
         },
         {
@@ -2576,18 +2554,6 @@
             }
         },
         {
-            "domain": "wm",
-            "tag": "west-midlands-birmingham",
-            "city_uid": 506,
-            "meta": {
-                "name": "West Midlands",
-                "city": "Birmingham",
-                "country": "GB",
-                "latitude": 52.4035,
-                "longitude": -2.12834
-            }
-        },
-        {
             "domain": "cb",
             "tag": "berlin-buch-campus-berlin-buch",
             "city_uid": 508,
@@ -2609,17 +2575,6 @@
                 "country": "PL",
                 "latitude": 49.9497,
                 "longitude": 18.599
-            }
-        },
-        {
-            "domain": "nw",
-            "tag": "nextbike-focsani",
-            "city_uid": 510,
-            "meta": {
-                "city": "Focșani",
-                "country": "RO",
-                "latitude": 45.6947,
-                "longitude": 27.1851
             }
         },
         {
@@ -2927,41 +2882,6 @@
             }
         },
         {
-            "domain": "de",
-            "tag": "nextbike-salzburg",
-            "city_uid": 553,
-            "meta": {
-                "city": "Salzburg",
-                "country": "DE",
-                "latitude": 47.7989,
-                "longitude": 13.0427
-            }
-        },
-        {
-            "domain": "cn",
-            "tag": "nomagobikes-zalec",
-            "city_uid": 555,
-            "meta": {
-                "name": "NomagoBikes",
-                "city": "Žalec",
-                "country": "SI",
-                "latitude": 46.2529,
-                "longitude": 15.1635
-            }
-        },
-        {
-            "domain": "cn",
-            "tag": "nomagobikes-polzela",
-            "city_uid": 556,
-            "meta": {
-                "name": "NomagoBikes",
-                "city": "Polzela",
-                "country": "SI",
-                "latitude": 46.2767,
-                "longitude": 15.0753
-            }
-        },
-        {
             "domain": "pv",
             "tag": "kajteroz-chorzowski-rower-miejski-chorzow",
             "city_uid": 557,
@@ -2971,6 +2891,126 @@
                 "country": "PL",
                 "latitude": 50.2969,
                 "longitude": 18.9551
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-koluszki",
+            "city_uid": 562,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Koluszki",
+                "country": "PL",
+                "latitude": 51.7401,
+                "longitude": 19.835
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-lask",
+            "city_uid": 563,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Łask",
+                "country": "PL",
+                "latitude": 51.5893,
+                "longitude": 19.142
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-lowicz",
+            "city_uid": 564,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Łowicz",
+                "country": "PL",
+                "latitude": 52.1057,
+                "longitude": 19.9381
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-pabianice",
+            "city_uid": 565,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Pabianice",
+                "country": "PL",
+                "latitude": 51.6651,
+                "longitude": 19.3548
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-sieradz",
+            "city_uid": 566,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Sieradz",
+                "country": "PL",
+                "latitude": 51.5902,
+                "longitude": 18.7382
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-skierniewice",
+            "city_uid": 567,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Skierniewice",
+                "country": "PL",
+                "latitude": 51.9539,
+                "longitude": 20.1469
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-zdunska-wola",
+            "city_uid": 568,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Zduńska Wola",
+                "country": "PL",
+                "latitude": 51.6011,
+                "longitude": 18.938
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-zgierz",
+            "city_uid": 569,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Zgierz",
+                "country": "PL",
+                "latitude": 51.8551,
+                "longitude": 19.4068
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-kutno",
+            "city_uid": 570,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Kutno",
+                "country": "PL",
+                "latitude": 52.2317,
+                "longitude": 19.3564
+            }
+        },
+        {
+            "domain": "pw",
+            "tag": "rowerowe-lodzkie-rl-lodz-rl",
+            "city_uid": 571,
+            "meta": {
+                "name": "Rowerowe Łódzkie",
+                "city": "Łódź",
+                "country": "PL",
+                "latitude": 51.7674,
+                "longitude": 19.4575
             }
         },
         {
