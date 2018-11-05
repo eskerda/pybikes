@@ -1,0 +1,15 @@
+{
+  "instances": [
+    {
+      "tag": "stadtrad-hamburg",
+      "meta": {
+        "latitude": 53.57532,
+        "longitude": 10.01534,
+        "city": "Hamburg",
+        "name": "StadtRAD Hamburg'",
+        "country": "DE"
+      }
+    }],
+    "system": "stadtrad_hamburg",
+    "class": "StadtradHamburg"
+}
