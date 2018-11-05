@@ -19,7 +19,7 @@ class StadtradHamburg(BikeShareSystem):
     unifeed = True
 
     meta = {
-        'system': 'stadtrad-hamburg',
+        'system': 'stadtrad_hamburg',
         'company': ['Transparenzportal Hamburg'],
         'license': {
             'name': 'Data licence Germany – attribution – version 2.0',

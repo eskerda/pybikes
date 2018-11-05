@@ -10,6 +10,6 @@
         "country": "DE"
       }
     }],
-    "system": "stadtrad-hamburg",
+    "system": "stadtrad_hamburg",
     "class": "StadtradHamburg"
 }
