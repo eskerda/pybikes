@@ -56,17 +56,6 @@
             "city_id": 100002
         },
         {
-            "tag": "stadtrad",
-            "meta": {
-                "latitude": 53.558572,
-                "city": "Hamburg",
-                "name": "StadtRAD Hamburg",
-                "longitude": 9.9278215,
-                "country": "DE"
-            },
-            "city_id": 75
-        },
-        {
             "tag": "callabike-koln",
             "meta": {
                 "latitude": 50.9572449,
