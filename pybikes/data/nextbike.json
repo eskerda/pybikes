@@ -129,6 +129,17 @@
         },
         {
             "domain": "de",
+            "tag": "nextbike-hamburg",
+            "city_uid": 43,
+            "meta": {
+                "city": "Hamburg",
+                "country": "DE",
+                "latitude": 53.5506,
+                "longitude": 9.99052
+            }
+        },
+        {
+            "domain": "de",
             "tag": "nextbike-dusseldorf",
             "city_uid": 50,
             "meta": {
