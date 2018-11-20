@@ -817,7 +817,7 @@
               "longitude": 144.96328,
               "latitude": -37.814107
           },
-          "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data",
+          "feed_url": "https://gbfs.melbourne.8d.com/gbfs/gbfs.json",
           "format": "json_from_xml"
         }
     ],
