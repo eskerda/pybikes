@@ -803,6 +803,20 @@
                 }
             },
             "feed_url": "http://gbfs.urbansharing.com/edinburghcyclehire/"
+        },
+        {
+            "tag": "libelo",
+            "meta": {
+                "latitude": 44.922726,
+                "longitude": 4.905634,
+                "city": "Valence",
+                "name": "Lib\u00e9lo",
+                "country": "FR",
+                "company": [
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://valence.publicbikesystem.net/ube/gbfs/v1/en/"
         }
     ],
     "system": "gbfs",
