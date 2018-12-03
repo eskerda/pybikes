@@ -58,17 +58,6 @@
                     "feed_url":"http://cli-velo-avignon.gir.fr/stations_inc.html"
                 },
                 {
-                    "tag":"libelo",
-                    "meta":{
-                        "latitude":44.922726,
-                        "city":"Valence",
-                        "name":"Lib\u00e9lo",
-                        "longitude":4.905634,
-                        "country":"FR"
-                    },
-                    "feed_url":"http://www.velo-libelo.fr/sag_stations_vls.html"
-                },
-                {
                     "tag":"batumvelo",
                     "meta":{
                         "latitude":41.660906,
