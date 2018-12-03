@@ -17,22 +17,6 @@
             "format": "xml"
         },
         {
-            "tag": "melbourne-bike-share",
-            "meta": {
-                "city": "Melbourne",
-                "name": "Melbourne Bike Share",
-                "country": "AU",
-                "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
-                ],
-                "longitude": 144.96328,
-                "latitude": -37.814107
-            },
-            "feed_url": "http://www.melbournebikeshare.com.au/stationmap/data",
-            "format": "json_from_xml"
-        },
-        {
             "tag": "we-cycle",
             "meta": {
                 "city": "Aspen, CO",
