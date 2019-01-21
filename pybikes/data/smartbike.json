@@ -27,8 +27,8 @@
                         "longitude": -0.8895811,
                         "country": "ES"
                     },
-                    "feed_url": "https://www.bizizaragoza.com/es/formmap/getJsonObject",
-                    "format": "json"
+                    "feed_url": "https://www.bizizaragoza.com/availability_map/getJsonObject",
+                    "format": "json_v2"
                 },
                 {
                     "tag": "bicing",
