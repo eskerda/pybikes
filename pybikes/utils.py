@@ -44,6 +44,7 @@ class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
     ssl_verification = True
+    requests_timeout = None
 
     def __init__(self, cachedict=None):
         self.headers = {'User-Agent': 'PyBikes'}
@@ -68,6 +69,7 @@ class PyBikesScraper(object):
             # some endpoints might fail verification, so it's up to the spider
             # to disable it
             verify=self.ssl_verification,
+            timeout=self.requests_timeout,
         )
 
         data = response.text
