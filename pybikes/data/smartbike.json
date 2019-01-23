@@ -31,18 +31,6 @@
                     "format": "json_v2"
                 },
                 {
-                    "tag": "bicing",
-                    "meta": {
-                        "latitude": 41.3850639,
-                        "city": "Barcelona",
-                        "name": "Bicing",
-                        "longitude": 2.1734035,
-                        "country": "ES"
-                    },
-                    "feed_url": "https://www.bicing.cat/availability_map/getJsonObject",
-                    "format": "json_v2"
-                },
-                {
                     "tag": "ecobici",
                     "meta": {
                         "latitude": 19.4326077,
