@@ -36,6 +36,8 @@ class BicincittaMixin(object):
 class Bicincitta(BikeShareSystem, BicincittaMixin):
     sync = False
 
+    source_url = 'http://www.bicincitta.com/frmLeStazioni.aspx?ID={city_id}'
+
     meta = {
         'system': 'Bicincittà',
         'company': ['Comunicare S.r.l.']
@@ -43,6 +45,7 @@ class Bicincitta(BikeShareSystem, BicincittaMixin):
 
     def __init__(self, tag, meta, city_ids):
         super(Bicincitta, self).__init__(tag, meta)
+        self.meta['source'] = self.source_url.format(city_id=city_ids[0])
         self.city_ids = city_ids
 
     def update(self, scraper=None):
