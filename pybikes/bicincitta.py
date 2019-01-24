@@ -1,58 +1,63 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
+# Copyright (C) 2019, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
 
-import re
-import HTMLParser
+import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
-class Bicincitta(BikeShareSystem):
-    sync = True
-    _RE_INFO="RefreshMap\((.*?)\)\;"
-    _endpoint = "http://bicincitta.tobike.it/frmLeStazioni.aspx?ID={id}"
+class BicincittaMixin(object):
+    stations_url = 'http://www.bicincitta.com/frmLeStazioniComune.aspx/RefreshStations'  # NOQA
+    stations_status_url = 'http://www.mimuovoinbici.it/frmLeStazioni.aspx/RefreshPopup'  # NOQA
+
+    headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+    }
+
+    @staticmethod
+    def get_stations(city_id, scraper):
+        payload = json.dumps({'IDComune': str(city_id)})
+        response = scraper.request(BicincittaMixin.stations_url, data=payload,
+                                   headers=BicincittaMixin.headers,
+                                   method='POST')
+        return json.loads(response)
+
+    @staticmethod
+    def get_station_status(station_id, scraper):
+        payload = json.dumps({'IDStazione': str(station_id)})
+        response = scraper.request(BicincittaMixin.stations_status_url,
+                                   data=payload,
+                                   headers=BicincittaMixin.headers,
+                                   method='POST')
+        return json.loads(response)
+
+
+class Bicincitta(BikeShareSystem, BicincittaMixin):
+    sync = False
 
     meta = {
         'system': 'Bicincittà',
         'company': ['Comunicare S.r.l.']
     }
 
-    def __init__(self, tag, meta, url):
+    def __init__(self, tag, meta, city_ids):
         super(Bicincitta, self).__init__(tag, meta)
-        self.url = url
-        if not isinstance(self.url, list):
-            self.url = [self.url]
+        self.city_ids = city_ids
 
     def update(self, scraper=None):
-        scraper = scraper or utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
+        self.stations = [s for s in self.parse_stations(scraper)]
 
-        self.stations = []
-        for url in self.url:
-            stations = Bicincitta._getComuneStations(url, scraper)
-            self.stations += stations
-
-    @staticmethod
-    def _getComuneStations(url, scraper):
-        data = scraper.request(url)
-        raw = re.findall(Bicincitta._RE_INFO, data)
-        info = raw[0].split('\',\'')
-        info = map(lambda chunk: chunk.split('|'), info)
-        # Yes, this is a joke
-        names = info[5]
-        descs = info[7]
-        lats = info[3]
-        lngs = info[4]
-        bikes = info[6]
-        status = info[8]
-        return [BicincittaStation(name, desc, float(lat), float(lng),
-                bikes.count('4'), bikes.count('0'), stat)
-                for name, desc, lat, lng, bikes, stat in
-                zip(names, descs, lats, lngs, bikes, status)]
+    def parse_stations(self, scraper):
+        for city in self.city_ids:
+            data = self.get_stations(city, scraper)
+            for s in data['d'][1:]:
+                params = s.split(u'§')
+                yield BicincittaStation(*params)
 
 
-class BicincittaStation(BikeShareStation):
+class BicincittaStation(BikeShareStation, BicincittaMixin):
 
     station_statuses = {
         0: 'online',
@@ -62,33 +67,24 @@ class BicincittaStation(BikeShareStation):
         4: 'planned',
     }
 
-
-    def __init__(self, name, description, lat, lng, bikes, free, status):
+    def __init__(self, uid, lat, lng, name, number, status):
         super(BicincittaStation, self).__init__()
-        if name[-1] == ":":
-            name = name[:-1]
 
-        # There's a bug that sometimes will give lat / lngs on 1E6
-        # http://www.tobike.it/frmLeStazioni.aspx?ID=22
-        # search for (7676168)
-        lat = float(lat)
-        lng = float(lng)
-        if lat > 85.0 or lat < -85.0:
-            lat = lat / 1E6
-        if lng > 180.0 or lng < -180.0:
-            lng = lng / 1E6
-
-        self.name        = utils.clean_string(name)
-        self.latitude    = lat
-        self.longitude   = lng
-        self.bikes       = int(bikes)
-        self.free        = int(free)
-
-        self.extra       = {
-            'status': BicincittaStation.station_statuses[int(status)]
+        self.name = name
+        self.latitude = float(lat)
+        self.longitude = float(lng)
+        self.extra = {
+            'uid': uid,
+            'number': int(number),
+            'status': self.station_statuses[int(status)],
         }
 
-        if description:
-            self.extra['description'] = utils \
-                    .clean_string(description) \
-                    .rstrip(' :')
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+        data = self.get_station_status(self.extra['uid'], scraper)
+        _, reviews, score, _, status, _, _ = data['d'].split(u'§')
+
+        self.bikes = status.count('4')
+        self.free = status.count('0')
+        self.extra['score'] = float(score.replace(',', '.'))
+        self.extra['reviews'] = int(reviews)
