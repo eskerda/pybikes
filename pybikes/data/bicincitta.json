@@ -122,18 +122,6 @@
         },
         {
             "city_ids": [
-                212
-            ],
-            "meta": {
-                "latitude": 45.83745947067494,
-                "city": "Cernobbio",
-                "longitude": 9.073591857810925,
-                "country": "IT"
-            },
-            "tag": "bicincitta-cernobbio"
-        },
-        {
-            "city_ids": [
                 80
             ],
             "meta": {
