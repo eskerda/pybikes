@@ -558,7 +558,8 @@
                 "longitude": 7.685676,
                 "country": "IT"
             },
-            "tag": "to-bike"
+            "tag": "to-bike",
+            "endpoint": "http://www.tobike.it/"
         },
         {
             "city_ids": [
