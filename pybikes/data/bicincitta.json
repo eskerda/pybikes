@@ -322,11 +322,12 @@
             "meta": {
                 "latitude": 44.8350382,
                 "city": "Ferrara",
-                "name": "MiMuovoFe",
+                "name": "Mi Muovo in Bici",
                 "longitude": 11.6240562,
                 "country": "IT"
             },
-            "tag": "mimuovofe"
+            "tag": "mimuovofe",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -334,11 +335,12 @@
             ],
             "meta": {
                 "latitude": 44.801485,
-                "city": "Parma",
-                "name": "Parma",
                 "longitude": 10.3279036,
+                "city": "Parma",
+                "name": "Mi Muovo in Bici",
                 "country": "IT"
             },
+            "endpoint": "http://www.mimuovoinbici.it/",
             "tag": "parma"
         },
         {
@@ -374,11 +376,12 @@
             "meta": {
                 "latitude": 45.0473754,
                 "city": "Piacenza",
-                "name": "Piacenza",
                 "longitude": 9.6865813,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "piacenza"
+            "tag": "piacenza",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -400,11 +403,12 @@
             "meta": {
                 "latitude": 44.6989932,
                 "city": "Reggio Emilia",
-                "name": "Reggio Emilia",
+                "name": "Mi Muovo in Bici",
                 "longitude": 10.6296859,
                 "country": "IT"
             },
-            "tag": "reggio-emilia"
+            "tag": "reggio-emilia",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -415,9 +419,11 @@
                 "city": "Rimini",
                 "name": "Rimini",
                 "longitude": 12.5646003,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "rimini"
+            "tag": "rimini",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1103,9 +1109,11 @@
                 "latitude": 44.2227398,
                 "city": "Forlì",
                 "longitude": 12.0407312,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "bicincitta-forli"
+            "tag": "bicincitta-forli",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1151,9 +1159,11 @@
                 "latitude": 44.4702725,
                 "city": "San Lazzaro di Savena",
                 "longitude": 11.409399,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "bicincitta-san-lazzaro-di-savena"
+            "tag": "bicincitta-san-lazzaro-di-savena",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1248,9 +1258,11 @@
                 "latitude": 44.647128,
                 "city": "Modena",
                 "longitude": 10.9252269,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in bici"
             },
-            "tag": "bicincitta-modena"
+            "tag": "bicincitta-modena",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1296,9 +1308,11 @@
                 "latitude": 44.5982342,
                 "city": "Scandiano",
                 "longitude": 10.6909273,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "bicincitta-scandiano"
+            "tag": "bicincitta-scandiano",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1549,9 +1563,11 @@
                 "latitude": 44.1396438,
                 "city": "Cesena",
                 "longitude": 12.2464292,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in bici"
             },
-            "tag": "bicincitta-cesena"
+            "tag": "bicincitta-cesena",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1597,9 +1613,11 @@
                 "latitude": 44.6405433,
                 "city": "San Giovanni in Persiceto",
                 "longitude": 11.1893053,
-                "country": "IT"
+                "country": "IT",
+                "name": "Mi Muovo in Bici"
             },
-            "tag": "bicincitta-san-giovanni-in-persiceto"
+            "tag": "bicincitta-san-giovanni-in-persiceto",
+            "endpoint": "http://www.mimuovoinbici.it/"
         },
         {
             "city_ids": [
@@ -1685,6 +1703,20 @@
                 "country": "IT"
             },
             "tag": "bicischio"
+        },
+        {
+            "city_ids": [
+                196
+            ],
+            "meta": {
+                "city": "Imola",
+                "name": "Mi Muovo in bici",
+                "country": "IT",
+                "latitude": 44.3559128,
+                "longitude": 11.7161197
+            },
+            "tag": "bicincitta-imola",
+            "endpoint": "http://www.mimuovoinbici.it/"
         }
     ],
     "system": "bicincitta",

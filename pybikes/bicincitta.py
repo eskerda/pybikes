@@ -4,12 +4,14 @@
 
 import json
 
+from urlparse import urljoin
+
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
 class BicincittaMixin(object):
     stations_url = 'http://www.bicincitta.com/frmLeStazioniComune.aspx/RefreshStations'  # NOQA
-    stations_status_url = 'http://www.mimuovoinbici.it/frmLeStazioni.aspx/RefreshPopup'  # NOQA
+    stations_status_url = 'http://www.bicincitta.com/frmLeStazioni.aspx/RefreshPopup'  # NOQA
 
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
@@ -35,18 +37,20 @@ class BicincittaMixin(object):
 
 class Bicincitta(BikeShareSystem, BicincittaMixin):
     sync = False
-
-    source_url = 'http://www.bicincitta.com/frmLeStazioni.aspx?ID={city_id}'
+    endpoint = 'http://www.bicincitta.com/'
+    source_url = 'frmLeStazioni.aspx?ID={city_id}'
 
     meta = {
         'system': 'Bicincittà',
         'company': ['Comunicare S.r.l.']
     }
 
-    def __init__(self, tag, meta, city_ids):
+    def __init__(self, tag, meta, city_ids, endpoint=None):
         super(Bicincitta, self).__init__(tag, meta)
-        self.meta['source'] = self.source_url.format(city_id=city_ids[0])
         self.city_ids = city_ids
+        self.endpoint = endpoint or self.endpoint
+        source_url = self.source_url.format(city_id=city_ids[0])
+        self.meta['source'] = urljoin(self.endpoint, source_url)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
