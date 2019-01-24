@@ -1056,18 +1056,6 @@
         },
         {
             "city_ids": [
-                62
-            ],
-            "meta": {
-                "latitude": 45.0787054,
-                "city": "Collegno",
-                "longitude": 7.566241,
-                "country": "IT"
-            },
-            "tag": "bicincitta-collegno"
-        },
-        {
-            "city_ids": [
                 106
             ],
             "meta": {
@@ -1414,18 +1402,6 @@
         },
         {
             "city_ids": [
-                61
-            ],
-            "meta": {
-                "latitude": 45.0563863,
-                "city": "Grugliasco",
-                "longitude": 7.5943754,
-                "country": "IT"
-            },
-            "tag": "bicincitta-grugliasco"
-        },
-        {
-            "city_ids": [
                 199
             ],
             "meta": {
@@ -1447,18 +1423,6 @@
                 "country": "IT"
             },
             "tag": "bicincitta-selargius"
-        },
-        {
-            "city_ids": [
-                65
-            ],
-            "meta": {
-                "latitude": 45.1346452,
-                "city": "Druento",
-                "longitude": 7.5765427,
-                "country": "IT"
-            },
-            "tag": "bicincitta-druento"
         },
         {
             "city_ids": [
@@ -1507,18 +1471,6 @@
                 "country": "CH"
             },
             "tag": "bicincitta-la-cote"
-        },
-        {
-            "city_ids": [
-                63
-            ],
-            "meta": {
-                "latitude": 45.1437329,
-                "city": "Venaria reale",
-                "longitude": 7.623289199999999,
-                "country": "IT"
-            },
-            "tag": "bicincitta-venaria-reale"
         },
         {
             "city_ids": [
@@ -1619,18 +1571,6 @@
             },
             "tag": "bicincitta-san-giovanni-in-persiceto",
             "endpoint": "http://www.mimuovoinbici.it/"
-        },
-        {
-            "city_ids": [
-                64
-            ],
-            "meta": {
-                "latitude": 45.0991116,
-                "city": "Alpignano",
-                "longitude": 7.516632899999999,
-                "country": "IT"
-            },
-            "tag": "bicincitta-alpignano"
         },
         {
             "city_ids": [
