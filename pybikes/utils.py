@@ -56,16 +56,20 @@ class PyBikesScraper(object):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
-                default_encoding='UTF-8'):
+                headers=None, default_encoding='UTF-8'):
         if self.cachedict and url in self.cachedict:
             return self.cachedict[url]
+
+        _headers = self.headers.copy()
+        _headers.update(headers or {})
+
         response = self.session.request(
             method=method,
             url=url,
             params=params,
             data=data,
             proxies=self.getProxies(),
-            headers=self.headers,
+            headers=_headers,
             # some endpoints might fail verification, so it's up to the spider
             # to disable it
             verify=self.ssl_verification,
