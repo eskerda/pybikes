@@ -15,17 +15,6 @@
                     }
                 },
                 {
-                    "url":"http://www.movesamba.com.br/bikesantos/mapaestacao.asp",
-                    "tag":"bikesantos",
-                    "meta":{
-                        "latitude":-23.954052,
-                        "city":"Santos",
-                        "name":"BikeSantos",
-                        "longitude":-46.333345,
-                        "country":"BR"
-                    }
-                },
-                {
                     "url":"http://ww2.mobilicidade.com.br/petrobike/mapaestacao.asp",
                     "tag":"bikepetrolina",
                     "meta":{
@@ -92,6 +81,17 @@
                         "city":"Belém",
                         "name":"Bike Belém",
                         "longitude":-48.490865,
+                        "country":"BR"
+                    }
+                },
+                {
+                    "url":"http://www.mobilicidade.com.br/bikesantos/mapaestacao.aspx",
+                    "tag":"bikesantos",
+                    "meta":{
+                        "latitude":-23.954052,
+                        "city":"Santos",
+                        "name":"BikeSantos",
+                        "longitude":-46.333345,
                         "country":"BR"
                     }
                 }
