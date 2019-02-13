@@ -3,7 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-from urlparse import urljoin
+from urlparse import urljoin, urlparse
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper
@@ -27,6 +27,7 @@ class Gbfs(BikeShareSystem):
 
     def get_feeds(self, url, scraper):
         feed_data = scraper.request(url, raw=True)
+        protocol = urlparse(url).scheme
         if scraper.last_request.status_code == 404:
             # GBFS service description not found. Try to guess based on
             # defaults
@@ -35,6 +36,9 @@ class Gbfs(BikeShareSystem):
         feed_data = json.loads(feed_data)
         feeds = {}
         for feed in feed_data['data']['en']['feeds']:
+            feed_parts = urlparse(feed['url'])
+            if protocol != feed_parts.scheme:
+                feed['url'] = feed_parts._replace(scheme=protocol).geturl()
             feeds[feed['name']] = feed['url']
         return feeds
 
