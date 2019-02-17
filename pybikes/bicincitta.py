@@ -74,9 +74,11 @@ class BicincittaStation(BikeShareStation, BicincittaMixin):
         4: 'planned',
     }
 
-    def __init__(self, uid, lat, lng, name, number, status):
+    def __init__(self, uid, lat, lng, name, number, status, *_):
+        # More shit might come from this ingnominious string, personally I do
+        # care at this point what other information can be found in this, so
+        # to avoid making it fail we just ignore anything else
         super(BicincittaStation, self).__init__()
-
         self.name = name
         self.latitude = float(lat)
         self.longitude = float(lng)
@@ -89,7 +91,10 @@ class BicincittaStation(BikeShareStation, BicincittaMixin):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         data = self.get_station_status(self.extra['uid'], scraper)
-        _, reviews, score, _, status, _, _ = data['d'].split(u'§')
+        # More shit might come from this ingnominious string, personally I do
+        # care at this point what other information can be found in this, so
+        # to avoid making it fail we just limit it to the first 5 fields.
+        _, reviews, score, _, status = data['d'].split(u'§')[:5]
 
         self.bikes = status.count('4')
         self.free = status.count('0')
