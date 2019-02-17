@@ -313,7 +313,8 @@
                 "longitude": 11.8767611,
                 "country": "IT"
             },
-            "tag": "goodbike"
+            "tag": "goodbike",
+            "endpoint": "http://www.goodbikepadova.it/"
         },
         {
             "city_ids": [
