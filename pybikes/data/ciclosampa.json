@@ -1,7 +1,7 @@
 {
     "instances":[
         {
-            "url":"http://www.ciclosampa.com.br/estacoes.php",
+            "url":"https://ciclosampa.pegbike.com.br/ciclosampa/api.php",
             "tag":"ciclosampa",
             "meta":{
                 "latitude":-23.55,
