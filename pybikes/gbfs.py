@@ -3,7 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-from urlparse import urljoin, urlparse
+from urlparse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper
@@ -11,11 +11,12 @@ from pybikes.utils import PyBikesScraper
 
 class Gbfs(BikeShareSystem):
 
-    def __init__(self, tag, meta, feed_url):
+    def __init__(self, tag, meta, feed_url, force_https=False):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
         super(Gbfs, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.force_https = force_https
 
     @property
     def default_feeds(self):
@@ -25,9 +26,8 @@ class Gbfs(BikeShareSystem):
             "station_status": urljoin(url, 'station_status.json'),
         }
 
-    def get_feeds(self, url, scraper):
+    def get_feeds(self, url, scraper, force_https):
         feed_data = scraper.request(url, raw=True)
-        protocol = urlparse(url).scheme
         if scraper.last_request.status_code == 404:
             # GBFS service description not found. Try to guess based on
             # defaults
@@ -36,16 +36,16 @@ class Gbfs(BikeShareSystem):
         feed_data = json.loads(feed_data)
         feeds = {}
         for feed in feed_data['data']['en']['feeds']:
-            feed_parts = urlparse(feed['url'])
-            if protocol != feed_parts.scheme:
-                feed['url'] = feed_parts._replace(scheme=protocol).geturl()
+            if force_https:
+                # Feed published with the wrong protocol
+                feed['url'] = feed['url'].replace('http://', 'https://')
             feeds[feed['name']] = feed['url']
         return feeds
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
 
-        feeds = self.get_feeds(self.feed_url, scraper)
+        feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
         # Station Information and Station Status data retrieval
         station_information = json.loads(

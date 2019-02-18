@@ -708,7 +708,8 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://rec.publicbikesystem.net/ube/gbfs/v1/"
+            "feed_url": "https://rec.publicbikesystem.net/ube/gbfs/v1/",
+            "force_https": "true"
         },
         {
             "tag": "bikesampa",
@@ -723,7 +724,8 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://saopaulo.publicbikesystem.net/ube/gbfs/v1/"
+            "feed_url": "https://saopaulo.publicbikesystem.net/ube/gbfs/v1/",
+            "force_https": "true"
         },
         {
             "tag": "bikerio",
@@ -738,7 +740,8 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/"
+            "feed_url": "https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/",
+            "force_https": "true"
         },
         {
             "tag":"bikesalvador",
@@ -768,7 +771,8 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://poa.publicbikesystem.net/ube/gbfs/v1/"
+            "feed_url": "https://poa.publicbikesystem.net/ube/gbfs/v1/",
+            "force_https": "true"
         },
         {
             "tag":"mibici-guadalajara",
@@ -783,7 +787,8 @@
                     "PBSC Urban Solutions"
                 ]
             },
-            "feed_url": "https://guad.publicbikesystem.net/ube/gbfs/v1/"
+            "feed_url": "https://guad.publicbikesystem.net/ube/gbfs/v1/",
+            "force_https": "true"
         },
         {
             "tag": "edinburgh-cycle-hire",
