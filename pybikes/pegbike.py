@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2014, iomartin <iomartin@iomartin.net>
+# Copyright (C) 2019, mmmaia <mauricio.maia@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
 
 import json
