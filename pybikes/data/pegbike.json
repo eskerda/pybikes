@@ -1,0 +1,23 @@
+{
+    "system": "pegbike",
+    "class": {
+        "PegBike": {
+            "instances": [
+                {
+                    "url":"https://ciclosampa.pegbike.com.br/ciclosampa/api.php",
+                    "tag":"ciclosampa",
+                    "meta":{
+                        "latitude":-23.55,
+                        "city":"S\u00e3o Paulo",
+                        "name":"CicloSampa",
+                        "longitude":-46.6333,
+                        "country":"BR",
+                        "company": [
+                            "PegBike"
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
