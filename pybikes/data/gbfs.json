@@ -837,6 +837,21 @@
                 ]
             },
             "feed_url": "https://valence.publicbikesystem.net/ube/gbfs/v1/en/"
+        },
+        {
+            "tag": "bikesantiago",
+            "meta": {
+                "latitude":-33.45,
+                "city":"Santiago",
+                "name":"BikeSantiago",
+                "longitude":-70.67,
+                "country":"CL",
+                "company": [
+                    "Tembici",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://santiago.publicbikesystem.net/ube/gbfs/v1/"
         }
     ],
     "system": "gbfs",
