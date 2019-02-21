@@ -45,17 +45,6 @@
             "feed_url": "http://nashville.bcycle.com/map"
         },
         {
-            "tag": "santiago",
-            "meta": {
-                "latitude": -33.457,
-                "city": "Santiago",
-                "name": "Bike Santiago",
-                "longitude": -70.648,
-                "country": "CL"
-            },
-            "feed_url": "https://bikesantiago.bcycle.com/station-locations-new/"
-        },
-        {
             "tag": "columbia-county",
             "meta": {
                 "latitude": 33.5375,
