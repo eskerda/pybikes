@@ -27,15 +27,9 @@ class Bicing(BikeShareSystem):
 
 class BicingStation(BikeShareStation):
 
-    name_format = u'{number} - {street} {street_number}'
-
     def __init__(self, data):
         super(BicingStation, self).__init__()
-        self.name = self.name_format.format(
-            number=data['id'],
-            street=data['streetName'],
-            street_number=data['streetNumber'],
-        )
+        self.name = data['streetName']
         self.latitude = float(data['latitude'])
         self.longitude = float(data['longitude'])
         self.bikes = int(data['bikes'])
