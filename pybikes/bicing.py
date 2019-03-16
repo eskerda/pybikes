@@ -12,14 +12,9 @@ class Bicing(BikeShareSystem):
             'CESPA',
             'PBSC',
         ],
-        'license': {
-            'name': 'CC BY 4.0',
-            'url': 'https://creativecommons.org/licenses/by/4.0/',
-        },
-        'source': 'http://opendata-ajuntament.barcelona.cat/data/en/dataset/bicing',
     }
 
-    url = 'http://wservice.viabicing.cat/v2/stations'
+    url = 'https://www.bicing.barcelona/get-stations'
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
@@ -47,12 +42,6 @@ class BicingStation(BikeShareStation):
         self.free = int(data['slots'])
         self.extra = {
             'uid': int(data['id']),
-            'altitude': data['altitude'],
-            'status': data['status'],
-            # We keep this shitty name because of compatibility with the old
-            # feed
-            'NearbyStationList': [
-                int(uid.strip()) for uid in data['nearbyStations'].split(',')
-            ],
+            'online': data['status'] == 1,
             'has_ebikes': 'ELECTRIC' in data['type'],
         }
