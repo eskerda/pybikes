@@ -12,7 +12,7 @@
                 "longitude": -9.149334,
                 "latitude": 38.724954
             },
-            "feed_url": "https://lisboa.city-platform.com/maps/wfs?SERVICE=wfs&REQUEST=GetFeature&VERSION=2.0.0&typeNames=emel_gira_stations&srsName=EPSG:4326&outputFormat=application/json",
+            "feed_url": "https://emel.city-platform.com/maps/wfs?SERVICE=wfs&REQUEST=GetFeature&VERSION=2.0.0&typeNames=emel_gira_stations&srsName=EPSG:4326&outputFormat=application/json",
             "format": "json"
         }
     ],
