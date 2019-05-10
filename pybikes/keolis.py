@@ -189,6 +189,7 @@ class KeolisSTAR(BikeShareSystem):
         records = map(lambda r: r['fields'], data['records'])
         self.stations = map(KeolisSTARStation, records)
 
+
 class KeolisSTARStation(BikeShareStation):
     def __init__(self, fields):
         name = fields['nom']
@@ -204,3 +205,50 @@ class KeolisSTARStation(BikeShareStation):
         }
         super(KeolisSTARStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
+
+
+class VCub(BikeShareSystem):
+
+    meta = {
+        'system': 'Keolis',
+        'company': ['Keolis'],
+    }
+
+    def __init__(self, tag, meta, feed_url):
+        super(VCub, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+        data = json.loads(scraper.request(self.feed_url))
+
+        station_dict = {station['id']: station for station in data['lists']}
+
+        for pred in data['predict']['predictions']['data']:
+            if pred['sid'] in station_dict :
+                station_dict[pred['sid']]['status'] = pred['status']
+
+        self.stations = map(VCubStation, station_dict)
+
+
+class VCubStation(BikeShareStation):
+    def __init__(self, fields):
+        super(VCubStation, self).__init__()
+        self.name = fields['name']
+        self.latitude = float(fields['latitude'])
+        self.longitude = float(fields['longitude'])
+        e_bikes = int(fields['nbElectricBikeAvailable'])
+        manual_bikes = int(fields['nbBikeAvailable'])
+        self.bikes = self.e_bikes + self.manual_bikes
+        self.free = int(fields['nbPlaceAvailable'])
+        self.extra = {
+            'status': int(fields['status']), # 0: maintenance, 1: operating
+            'slots': self.bikes + self.free,
+            'e_bikes': e_bikes,
+            'manual_bikes': manual_bikes,
+            'uid': str(fields['id']),
+            'last_update': fields['updatedAt'],
+            'online': fields['connexionState'] == 'CONNECTEE',
+            'address': fields['address'],
+            'city': fields['city']
+        }
