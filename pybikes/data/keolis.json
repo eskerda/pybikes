@@ -49,17 +49,17 @@
                 }
             ]
         },
-        "VCub": {
+        "V3": {
             "instances": [
                 {
-                    "tag": "vcub",
+                    "tag": "v3",
                     "meta": {
                         "country": "FR",
                         "city": "Bordeaux",
                         "latitude": 44.837789,
                         "longitude": -0.57918,
-                        "company": ["Keolis", "Bordeaux Métropole"],
-                        "name": "VCub"
+                        "company": ["Keolis Bordeaux Métropole"],
+                        "name": "V3"
                     },
                     "feed_url": "https://ws.infotbm.com/ws/1.0/vcubs"
                 }

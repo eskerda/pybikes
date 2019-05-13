@@ -207,7 +207,7 @@ class KeolisSTARStation(BikeShareStation):
                                                 bikes, free, extra)
 
 
-class VCub(BikeShareSystem):
+class V3(BikeShareSystem):
 
     meta = {
         'system': 'Keolis',
@@ -215,7 +215,7 @@ class VCub(BikeShareSystem):
     }
 
     def __init__(self, tag, meta, feed_url):
-        super(VCub, self).__init__(tag, meta)
+        super(V3, self).__init__(tag, meta)
         self.feed_url = feed_url
 
     def update(self, scraper=None):
@@ -225,30 +225,33 @@ class VCub(BikeShareSystem):
         station_dict = {station['id']: station for station in data['lists']}
 
         for pred in data['predict']['predictions']['data']:
-            if pred['sid'] in station_dict :
+            if pred['sid'] in station_dict:
                 station_dict[pred['sid']]['status'] = pred['status']
 
-        self.stations = map(VCubStation, station_dict)
+        self.stations = map(V3Station, station_dict.values())
 
 
-class VCubStation(BikeShareStation):
+class V3Station(BikeShareStation):
     def __init__(self, fields):
-        super(VCubStation, self).__init__()
+        super(V3Station, self).__init__()
         self.name = fields['name']
         self.latitude = float(fields['latitude'])
         self.longitude = float(fields['longitude'])
-        e_bikes = int(fields['nbElectricBikeAvailable'])
-        manual_bikes = int(fields['nbBikeAvailable'])
-        self.bikes = self.e_bikes + self.manual_bikes
-        self.free = int(fields['nbPlaceAvailable'])
+
         self.extra = {
-            'status': int(fields['status']), # 0: maintenance, 1: operating
-            'slots': self.bikes + self.free,
-            'e_bikes': e_bikes,
-            'manual_bikes': manual_bikes,
             'uid': str(fields['id']),
             'last_update': fields['updatedAt'],
-            'online': fields['connexionState'] == 'CONNECTEE',
             'address': fields['address'],
-            'city': fields['city']
+            'city': fields['city'],
+            'online': fields['connexionState'] == 'CONNECTEE',
+            'status': int(fields['status'])  # 0: maintenance, 1: operating
         }
+
+        if self.extra['status'] == 1 and self.extra['online']:
+            ebikes = int(fields['nbElectricBikeAvailable'])
+            manual_bikes = int(fields['nbBikeAvailable'])
+            self.bikes = ebikes + manual_bikes
+            self.free = int(fields['nbPlaceAvailable'])
+            self.extra['slots'] = self.bikes + self.free
+            self.extra['ebikes'] = ebikes
+            self.extra['has_ebikes'] = ebikes > 0
