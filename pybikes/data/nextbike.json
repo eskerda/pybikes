@@ -3034,6 +3034,18 @@
                 "latitude": 52.9952,
                 "longitude": 11.7517
             }
+        },
+        {
+            "domain": "df",
+            "tag": "frelo-freiburg",
+            "city_uid": 619,
+            "meta": {
+                "name": "Frelo Freiburg",
+                "city": "Freiburg",
+                "country": "DE",
+                "latitude": 47.9958,
+                "longitude": 7.84453
+            }
         }
     ],
     "system": "nextbike",
