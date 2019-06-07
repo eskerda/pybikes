@@ -37,7 +37,18 @@
                 ]
             },
             "feed_url": "https://routing.epsilon.sk/slovnaftbajk.php"
-        }
+        },
+        {
+            "tag":"bicyklezadobreskutky",
+            "meta":{
+                "latitude":48.996275,
+                "city":"Prešov",
+                "name":"Bicykle za dobré skutky",
+                "longitude":21.234341,
+                "country":"SK"
+            },
+            "feed_url":"https://app.bicyklezadobreskutky.sk/command.php?action=map:markers"
+        },
     ],
     "system":"open_source_bike_share",
     "class":"OpenSourceBikeShare"
