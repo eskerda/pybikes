@@ -48,7 +48,7 @@
                 "country":"SK"
             },
             "feed_url":"https://app.bicyklezadobreskutky.sk/command.php?action=map:markers"
-        },
+        }
     ],
     "system":"open_source_bike_share",
     "class":"OpenSourceBikeShare"
