@@ -189,6 +189,7 @@ class KeolisSTAR(BikeShareSystem):
         records = map(lambda r: r['fields'], data['records'])
         self.stations = map(KeolisSTARStation, records)
 
+
 class KeolisSTARStation(BikeShareStation):
     def __init__(self, fields):
         name = fields['nom']
@@ -204,3 +205,53 @@ class KeolisSTARStation(BikeShareStation):
         }
         super(KeolisSTARStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
+
+
+class V3(BikeShareSystem):
+
+    meta = {
+        'system': 'Keolis',
+        'company': ['Keolis'],
+    }
+
+    def __init__(self, tag, meta, feed_url):
+        super(V3, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+        data = json.loads(scraper.request(self.feed_url))
+
+        station_dict = {station['id']: station for station in data['lists']}
+
+        for pred in data['predict']['predictions']['data']:
+            if pred['sid'] in station_dict:
+                station_dict[pred['sid']]['status'] = pred['status']
+
+        self.stations = map(V3Station, station_dict.values())
+
+
+class V3Station(BikeShareStation):
+    def __init__(self, fields):
+        super(V3Station, self).__init__()
+        self.name = fields['name']
+        self.latitude = float(fields['latitude'])
+        self.longitude = float(fields['longitude'])
+
+        self.extra = {
+            'uid': str(fields['id']),
+            'last_update': fields['updatedAt'],
+            'address': fields['address'],
+            'city': fields['city'],
+            'online': fields['connexionState'] == 'CONNECTEE',
+            'status': int(fields['status'])  # 0: maintenance, 1: operating
+        }
+
+        if self.extra['status'] == 1 and self.extra['online']:
+            ebikes = int(fields['nbElectricBikeAvailable'])
+            manual_bikes = int(fields['nbBikeAvailable'])
+            self.bikes = ebikes + manual_bikes
+            self.free = int(fields['nbPlaceAvailable'])
+            self.extra['slots'] = self.bikes + self.free
+            self.extra['ebikes'] = ebikes
+            self.extra['has_ebikes'] = ebikes > 0
