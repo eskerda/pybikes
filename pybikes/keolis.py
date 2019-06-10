@@ -207,7 +207,7 @@ class KeolisSTARStation(BikeShareStation):
                                                 bikes, free, extra)
 
 
-class V3(BikeShareSystem):
+class VCub(BikeShareSystem):
 
     meta = {
         'system': 'Keolis',
@@ -215,7 +215,7 @@ class V3(BikeShareSystem):
     }
 
     def __init__(self, tag, meta, feed_url):
-        super(V3, self).__init__(tag, meta)
+        super(VCub, self).__init__(tag, meta)
         self.feed_url = feed_url
 
     def update(self, scraper=None):
@@ -228,12 +228,12 @@ class V3(BikeShareSystem):
             if pred['sid'] in station_dict:
                 station_dict[pred['sid']]['status'] = pred['status']
 
-        self.stations = map(V3Station, station_dict.values())
+        self.stations = map(VCubStation, station_dict.values())
 
 
-class V3Station(BikeShareStation):
+class VCubStation(BikeShareStation):
     def __init__(self, fields):
-        super(V3Station, self).__init__()
+        super(VCubStation, self).__init__()
         self.name = fields['name']
         self.latitude = float(fields['latitude'])
         self.longitude = float(fields['longitude'])
