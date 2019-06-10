@@ -852,6 +852,39 @@
                 ]
             },
             "feed_url": "https://santiago.publicbikesystem.net/ube/gbfs/v1/"
+        },
+        {
+            "tag":"oslo-bysykkel",
+            "meta":{
+                "latitude":59.913869,
+                "country":"NO",
+                "name":"Bysykkel",
+                "longitude":10.752245,
+                "city":"Oslo"
+            },
+            "feed_url": "https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json"
+        },
+        {
+            "tag":"bergen-bysykkel",
+            "meta":{
+                "latitude":60.391263,
+                "country":"NO",
+                "name":"Bysykkel",
+                "longitude":5.322054,
+                "city":"Bergen"
+            },
+            "feed_url": "https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json"
+        },
+        {
+            "tag":"trondheim-bysykkel",
+            "meta":{
+                "latitude":63.4307238,
+                "country":"NO",
+                "name":"Bysykkel",
+                "longitude":10.3936781,
+                "city":"Trondheim"
+            },
+            "feed_url": "https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json"
         }
     ],
     "system": "gbfs",

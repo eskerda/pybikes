@@ -35,7 +35,12 @@ class Gbfs(BikeShareSystem):
 
         feed_data = json.loads(feed_data)
         feeds = {}
-        for feed in feed_data['data']['en']['feeds']:
+
+        # Prefer "en", if not, take any
+        lang = "en"
+        feeds = feed_data['data'].get(lang, feed_data['data'].values().pop())
+
+        for feed in feeds['feeds']:
             if force_https:
                 # Feed published with the wrong protocol
                 feed['url'] = feed['url'].replace('http://', 'https://')
