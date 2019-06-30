@@ -28,7 +28,7 @@ class Gbfs(BikeShareSystem):
 
     def get_feeds(self, url, scraper, force_https):
         feed_data = scraper.request(url, raw=True)
-        if scraper.last_request.status_code == 404:
+        if scraper.last_request.status_code >= 400:
             # GBFS service description not found. Try to guess based on
             # defaults
             return self.default_feeds
