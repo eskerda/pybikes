@@ -6,19 +6,6 @@ from pybikes.gbfs import Gbfs
 from pybikes.utils import PyBikesScraper
 
 
-class AuthScraper(PyBikesScraper):
-    def __init__(self, key, *args, **kwargs):
-        self.key = key
-        super(AuthScraper, self).__init__(*args, **kwargs)
-
-    def request(self, *args, **kwargs):
-        params = kwargs.get('params', {})
-        params['client_id'] = self.key.get('client_id', None)
-        params['client_secret'] = self.key.get('client_secret', None)
-        kwargs['params'] = params
-        return super(AuthScraper, self).request(*args, **kwargs)
-
-
 class EcobiciBA(Gbfs):
     authed = True
 
@@ -44,6 +31,20 @@ class EcobiciBA(Gbfs):
             "station_status": urljoin(url, 'stationStatus'),
         }
 
+    @staticmethod
+    def authorize(scraper, key):
+        request = scraper.request
+
+        def _request(*args, **kwargs):
+            params = kwargs.get('params', {})
+            params.update(key)
+            kwargs['params'] = params
+            return request(*args, **kwargs)
+
+        scraper.request = _request
+
     def update(self, scraper=None):
-        scraper = scraper or AuthScraper(self.key)
+        # Patch default scraper request method
+        scraper = scraper or PyBikesScraper()
+        EcobiciBA.authorize(scraper, self.key)
         super(EcobiciBA, self).update(scraper)
