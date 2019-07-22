@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Copyright (C) 2019, Louis Turpinat <turpinat.louis@gmail.com>
 # Copyright (C) 2016, Lluis Esquerda <eskerda@gmail.com>
 # Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
@@ -71,6 +72,58 @@ class SmooveAPI(Smoove):
             if s['coordinates'] == '':
                 continue
             lat, lng = map(float, s['coordinates'].split(','))
+            name = s['name']
+            bikes = int(s['avl_bikes'])
+            free = int(s['free_slots'])
+            total = int(s['total_slots'])
+            status = 'online' if s['operative'] else 'offline'
+            extra = {
+                'slots': total,
+                'status': status,
+                'bank_card': s['style'] == 'CB',
+            }
+            idx = next(iter(re.findall(r'^(\w+\d+)\s+', name)), None)
+            if idx:
+                extra['uid'] = idx
+
+            station = BikeShareStation(name, lat, lng, bikes, free, extra)
+            stations.append(station)
+
+        self.stations = stations
+
+
+# Each station is formatted as:
+# {
+#   "name": "001 Jaude",
+#   "nid": "1915",
+#   "coordinates": [
+#       "45.777457",
+#       "3.081310"
+#   ],
+#   "total_slots": 24,
+#   "free_slots": 22,
+#   "avl_bikes": 0,
+#   "operative": 200,
+#   "style": "",
+#   "favorite": false,
+#   "sticky": false,
+#   "type": "station"
+# }
+# Extracted from : https://www.c-velo.fr/api/getStations at Clermont-Ferrand, France
+
+
+class CVeloSmoove(Smoove):    
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        data = json.loads(scraper.request(self.feed_url))
+        stations = []
+
+        for s in data['response']:
+            if s['coordinates'] == '':
+                continue
+            lat = float(s['coordinates'][0])
+            lng = float(s['coordinates'][1])
             name = s['name']
             bikes = int(s['avl_bikes'])
             free = int(s['free_slots'])
