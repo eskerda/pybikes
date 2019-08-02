@@ -3046,6 +3046,18 @@
                 "latitude": 47.9958,
                 "longitude": 7.84453
             }
+        },
+        {
+            "domain": "ak",
+            "tag": "bikekia",
+            "city_uid": 620,
+            "meta": {
+                "name": "BikeKIA",
+                "city": "Žilina",
+                "country": "SK",
+                "latitude": 49.2217,
+                "longitude": 18.7572
+            }
         }
     ],
     "system": "nextbike",
