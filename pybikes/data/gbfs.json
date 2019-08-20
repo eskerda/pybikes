@@ -129,7 +129,7 @@
                     "PBSC"
                 ]
             },
-            "feed_url": "https://gbfs.bikechattanooga.com/gbfs/gbfs.json"
+            "feed_url": "https://chat.publicbikesystem.net/ube/gbfs/v1/"
         },
         {
             "tag": "biketown",
