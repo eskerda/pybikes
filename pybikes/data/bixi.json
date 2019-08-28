@@ -29,7 +29,7 @@
                 "longitude": -106.837002,
                 "latitude": 39.194951
             },
-            "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
+            "feed_url": "https://asp.publicbikesystem.net/ube/gbfs/v1/",
             "format": "json"
         },
         {
