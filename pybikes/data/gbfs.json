@@ -807,7 +807,7 @@
                     "url": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
                 }
             },
-            "feed_url": "http://gbfs.urbansharing.com/edinburghcyclehire/"
+            "feed_url": "https://gbfs.urbansharing.com/edinburghcyclehire.com/gbfs.json"
         },
         {
           "tag": "melbourne-bike-share",
