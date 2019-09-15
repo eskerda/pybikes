@@ -5,17 +5,24 @@
 """ This is a really ugly and nasty script to ease filling up instance files
 without cities, latitudes and longitudes. Does more than it needs to """
 
-import os
-import sys, traceback
+import sys
 import time
 import json
 import argparse
-from urlparse import urlparse
 from collections import namedtuple
 import traceback
 from googlegeocoder import GoogleGeocoder
 from slugify import slugify
 import pybikes
+
+try:
+    # Python 2
+    raw_input
+    unicode
+except NameError:
+    # Python 3
+    raw_input = input
+    unicode = str
 
 geocoder = GoogleGeocoder()
 
@@ -131,7 +138,7 @@ def geocode(instance, systemCls, language, address = None):
     try:
         info = geocoder.get(query, language = language)
     except Exception as e:
-        print e
+        print(e)
         address = raw_input('Type an address: ')
         return geocode(instance, systemCls, language, address)
     if args.interactive:
@@ -178,7 +185,7 @@ def geocode(instance, systemCls, language, address = None):
                 instance['meta'] = metainfo
                 return True
         except Exception as e:
-            print e
+            print(e)
             return geocode(instance, systemCls, language)
 
     if args.verbose:
@@ -285,7 +292,7 @@ if __name__ == "__main__":
                 traceback.print_exc(file=sys.stderr)
             write_output(data, args.output)
     except KeyboardInterrupt as e:
-        print "KEYBOARD INTERRUPT"
+        print("KEYBOARD INTERRUPT")
         if args.continuous:
             if args.verbose:
                 sys.stderr.write("Writing file bc exception\n")

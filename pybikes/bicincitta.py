@@ -4,7 +4,12 @@
 
 import json
 
-from urlparse import urljoin
+try:
+    # Python 2
+    from urlparse import urljoin
+except ImportError:
+    # Python 3
+    from urllib.parse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 

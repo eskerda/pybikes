@@ -3,10 +3,22 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-from urlparse import urljoin
+try:
+    # Python 2
+    from urlparse import urljoin
+except ImportError:
+    # Python 3
+    from urllib.parse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper
+
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 
 class Gbfs(BikeShareSystem):

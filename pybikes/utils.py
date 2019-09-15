@@ -3,7 +3,12 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-from itertools import imap
+try:
+    # Python 2
+    from itertools import imap as map
+except ImportError:
+    # Python 3
+    pass
 
 import requests
 from shapely.geometry import Polygon, Point, box
@@ -27,7 +32,7 @@ def sp_capwords(word):
         u'ses', u'sa', u'ses'
     ]
     word = word.lower()
-    cap_lambda = lambda (i, w): w.capitalize() if i == 0 or w not in blacklist else w
+    cap_lambda = lambda iw: iw[1].capitalize() if iw[0] == 0 or iw[1] not in blacklist else iw[1]
     return " ".join(map(cap_lambda, enumerate(word.split())))
 
 
@@ -136,6 +141,6 @@ def filter_bounds(things, key, *point_bounds):
 
     for thing in things:
         point = Point(*key(thing))
-        if not any(imap(lambda pol: pol.contains(point), bounds)):
+        if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
