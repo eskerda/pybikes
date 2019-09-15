@@ -3,7 +3,6 @@ import re
 import json
 import zlib
 from pkg_resources import resource_string
-from itertools import imap
 
 from lxml import etree
 

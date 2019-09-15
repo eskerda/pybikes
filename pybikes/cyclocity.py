@@ -2,9 +2,14 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import re
 import json
-import HTMLParser
+
+try:
+    # Python 2
+    from HTMLParser import HTMLParser
+except ImportError:
+    # Python 3
+    from html.parser import HTMLParser
 
 from lxml import etree
 
@@ -21,7 +26,7 @@ endpoints = {
     'station'  : 'stations/{station_id}?contract={contract}&apiKey={api_key}'
 }
 
-html_parser = HTMLParser.HTMLParser()
+html_parser = HTMLParser()
 
 class Cyclocity(BikeShareSystem):
 

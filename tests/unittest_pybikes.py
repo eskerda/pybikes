@@ -6,6 +6,14 @@ import unittest
 import sys
 
 import pybikes
+
+try:
+    # Python 2
+    basestring
+except NameError:
+    # Python 3
+    basestring = str
+
 try:
     import keys
 except ImportError:

@@ -17,13 +17,6 @@ except ImportError:
     # Python 3
     pass
 
-try:
-    # Python 2
-    basestring
-except NameError:
-    # Python 3
-    basestring = str
-
 from pybikes.exceptions import BikeShareSystemNotFound
 
 # Top class shortcuts
@@ -31,6 +24,14 @@ from pybikes.base import BikeShareSystem, BikeShareStation
 from pybikes.utils import PyBikesScraper
 from pybikes import utils
 from pybikes import contrib
+
+try:
+    # Python 2
+    basestring
+except NameError:
+    # Python 3
+    basestring = str
+
 
 def get_data(schema):
     name = re.sub(r'\.json$', '', schema)

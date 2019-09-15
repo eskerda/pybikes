@@ -3,7 +3,12 @@
 # Distributed under the AGPL license, see LICENSE.txt
 import re
 import json
-from urlparse import urljoin
+try:
+    # Python 2
+    from urlparse import urljoin
+except ImportError:
+    # Python 3
+    from urllib.parse import urljoin
 
 from lxml import html
 
