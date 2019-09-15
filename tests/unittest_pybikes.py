@@ -10,9 +10,11 @@ import pybikes
 try:
     # Python 2
     basestring
+    unichr
 except NameError:
     # Python 3
     basestring = str
+    unichr = chr
 
 try:
     import keys

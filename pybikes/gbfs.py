@@ -13,6 +13,13 @@ except ImportError:
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper
 
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
+
 
 class Gbfs(BikeShareSystem):
 

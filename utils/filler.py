@@ -5,17 +5,24 @@
 """ This is a really ugly and nasty script to ease filling up instance files
 without cities, latitudes and longitudes. Does more than it needs to """
 
-import os
-import sys, traceback
+import sys
 import time
 import json
 import argparse
-from urlparse import urlparse
 from collections import namedtuple
 import traceback
 from googlegeocoder import GoogleGeocoder
 from slugify import slugify
 import pybikes
+
+try:
+    # Python 2
+    raw_input
+    unicode
+except NameError:
+    # Python 3
+    raw_input = input
+    unicode = str
 
 geocoder = GoogleGeocoder()
 
