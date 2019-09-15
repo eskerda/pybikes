@@ -131,7 +131,7 @@ def geocode(instance, systemCls, language, address = None):
     try:
         info = geocoder.get(query, language = language)
     except Exception as e:
-        print e
+        print(e)
         address = raw_input('Type an address: ')
         return geocode(instance, systemCls, language, address)
     if args.interactive:
@@ -178,7 +178,7 @@ def geocode(instance, systemCls, language, address = None):
                 instance['meta'] = metainfo
                 return True
         except Exception as e:
-            print e
+            print(e)
             return geocode(instance, systemCls, language)
 
     if args.verbose:
@@ -285,7 +285,7 @@ if __name__ == "__main__":
                 traceback.print_exc(file=sys.stderr)
             write_output(data, args.output)
     except KeyboardInterrupt as e:
-        print "KEYBOARD INTERRUPT"
+        print("KEYBOARD INTERRUPT")
         if args.continuous:
             if args.verbose:
                 sys.stderr.write("Writing file bc exception\n")
