@@ -37,5 +37,6 @@ class BicingStation(BikeShareStation):
         self.extra = {
             'uid': int(data['id']),
             'online': data['status'] == 1,
-            'has_ebikes': 'ELECTRIC' in data['type'],
+            'has_ebikes': int(data['electrical_bikes']) > 0,
+            'ebikes': int(data['electrical_bikes'])
         }
