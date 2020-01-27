@@ -885,6 +885,21 @@
                 "city":"Trondheim"
             },
             "feed_url": "https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json"
+        },
+        {
+            "tag": "we-cycle",
+            "meta": {
+                "city": "Aspen, CO",
+                "name": "WE-cycle",
+                "country": "US",
+                "company": [
+                    "PBSC",
+                    "Alta Bicycle Share, Inc"
+                ],
+                "longitude": -106.837002,
+                "latitude": 39.194951
+            },
+            "feed_url": "https://asp.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
         }
     ],
     "system": "gbfs",

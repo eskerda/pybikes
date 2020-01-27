@@ -17,22 +17,6 @@
             "format": "xml"
         },
         {
-            "tag": "we-cycle",
-            "meta": {
-                "city": "Aspen, CO",
-                "name": "WE-cycle",
-                "country": "US",
-                "company": [
-                    "PBSC",
-                    "Alta Bicycle Share, Inc"
-                ],
-                "longitude": -106.837002,
-                "latitude": 39.194951
-            },
-            "feed_url": "https://www.we-cycle.org/pbsc/stations.php",
-            "format": "json"
-        },
-        {
             "tag": "wowcycle-reykjavik",
             "meta": {
                 "city": "Reykjavík",

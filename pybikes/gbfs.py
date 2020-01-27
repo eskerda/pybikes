@@ -50,7 +50,11 @@ class Gbfs(BikeShareSystem):
 
         # Prefer "en", if not, take any
         lang = "en"
-        feeds = feed_data['data'].get(lang, feed_data['data'].values().pop())
+
+        if lang in feed_data['data']:
+            feeds = feed_data['data'][lang]
+        else:
+            feeds = list(feed_data['data'].values()).pop()
 
         for feed in feeds['feeds']:
             if force_https:
