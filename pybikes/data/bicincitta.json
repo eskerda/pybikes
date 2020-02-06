@@ -1659,6 +1659,19 @@
             },
             "tag": "bicincitta-imola",
             "endpoint": "http://www.mimuovoinbici.it/"
+        },
+        {
+            "city_ids": [
+                266
+            ],
+            "meta": {
+                "city": "Trieste",
+                "name": "BiTS",
+                "country": "IT",
+                "latitude": 45.6495,
+                "longitude": 13.7768
+            },
+            "tag": "bicincitta-trieste"
         }
     ],
     "system": "bicincitta",
