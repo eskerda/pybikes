@@ -222,13 +222,7 @@ class VCub(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
         data = json.loads(scraper.request(self.feed_url))
 
-        station_dict = {station['id']: station for station in data['lists']}
-
-        for pred in data['predict']['predictions']['data']:
-            if pred['sid'] in station_dict:
-                station_dict[pred['sid']]['status'] = pred['status']
-
-        self.stations = map(VCubStation, station_dict.values())
+        self.stations = map(VCubStation, data['lists'])
 
 
 class VCubStation(BikeShareStation):
@@ -238,20 +232,19 @@ class VCubStation(BikeShareStation):
         self.latitude = float(fields['latitude'])
         self.longitude = float(fields['longitude'])
 
+        ebikes = int(fields['nbElectricBikeAvailable'])
+        manual_bikes = int(fields['nbBikeAvailable'])
+        
+        self.bikes = ebikes + manual_bikes
+        self.free = int(fields['nbPlaceAvailable'])
+        
         self.extra = {
             'uid': str(fields['id']),
             'last_update': fields['updatedAt'],
             'address': fields['address'],
             'city': fields['city'],
             'online': fields['connexionState'] == 'CONNECTEE',
-            'status': int(fields['status'])  # 0: maintenance, 1: operating
+            'slots': self.bikes + self.free,
+            'ebikes': ebikes,
+            'has_ebikes': ebikes > 0
         }
-
-        if self.extra['status'] == 1 and self.extra['online']:
-            ebikes = int(fields['nbElectricBikeAvailable'])
-            manual_bikes = int(fields['nbBikeAvailable'])
-            self.bikes = ebikes + manual_bikes
-            self.free = int(fields['nbPlaceAvailable'])
-            self.extra['slots'] = self.bikes + self.free
-            self.extra['ebikes'] = ebikes
-            self.extra['has_ebikes'] = ebikes > 0
