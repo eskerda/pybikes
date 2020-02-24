@@ -222,7 +222,7 @@ class VCub(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
         data = json.loads(scraper.request(self.feed_url))
 
-        self.stations = map(VCubStation, data['lists'])
+        self.stations = list(map(VCubStation, data['lists']))
 
 
 class VCubStation(BikeShareStation):
@@ -234,10 +234,10 @@ class VCubStation(BikeShareStation):
 
         ebikes = int(fields['nbElectricBikeAvailable'])
         manual_bikes = int(fields['nbBikeAvailable'])
-        
+
         self.bikes = ebikes + manual_bikes
         self.free = int(fields['nbPlaceAvailable'])
-        
+
         self.extra = {
             'uid': str(fields['id']),
             'last_update': fields['updatedAt'],
