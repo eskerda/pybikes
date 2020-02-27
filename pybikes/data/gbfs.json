@@ -900,6 +900,20 @@
                 "latitude": 39.194951
             },
             "feed_url": "https://asp.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+        },
+        {
+            "tag":"velivert",
+            "meta":{
+                "city":"Saint-\u00c9tienne",
+                "name":"V\u00e9liVert",
+                "country":"FR",
+                "company": [
+                    "Smoove"
+                ],
+                "latitude":45.396667,
+                "longitude":4.290833
+            },
+            "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
         }
     ],
     "system": "gbfs",

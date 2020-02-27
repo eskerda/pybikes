@@ -22,7 +22,7 @@
                 }
             ]
         },
-	"CVeloSmoove":{
+        "CVeloSmoove":{
             "instances":[
                 {
                     "tag":"c-velo",
@@ -39,17 +39,6 @@
         },
         "Smoove":{
             "instances":[
-                {
-                    "tag":"velivert",
-                    "meta":{
-                        "latitude":45.396667,
-                        "city":"Saint-\u00c9tienne",
-                        "name":"V\u00e9liVert",
-                        "longitude":4.290833,
-                        "country":"FR"
-                    },
-                    "feed_url":"http://www.velivert.fr/sag_vls_stations.html"
-                },
                 {
                     "tag":"velopop",
                     "meta":{
