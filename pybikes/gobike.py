@@ -50,11 +50,11 @@ class GoBike(BikeShareSystem):
             for uid, bikes in self._parse_page(page):
                 stations_by_id[uid].bikes = bikes
 
-        self.stations = stations_by_id.values()
+        self.stations = list(stations_by_id.values())
 
     def _get_all_pages(self, scraper, n_stations):
         n_pages = n_stations/PAGE_SIZE + (n_stations % PAGE_SIZE > 0)
-        for p in range(0, n_pages):
+        for p in range(0, int(n_pages)):
             data = {
                 'lat': self.meta['latitude'],
                 'lng': self.meta['longitude'],
@@ -119,7 +119,7 @@ class GoBikeXML(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
         xml_stations = scraper.request(self.feed_url).encode('utf8')
         stations = etree.fromstring(xml_stations).xpath('//DockingStation')
-        self.stations = map(GoBikeXMLStation, stations)
+        self.stations = list(map(GoBikeXMLStation, stations))
 
 
 class GoBikeXMLStation(BikeShareStation):

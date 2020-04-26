@@ -57,7 +57,7 @@ class Nextbike(BikeShareSystem):
         # For now ignore bikes roaming around
         places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
 
-        self.stations = map(NextbikeStation, places)
+        self.stations = list(map(NextbikeStation, places))
 
 
 class NextbikeStation(BikeShareStation):

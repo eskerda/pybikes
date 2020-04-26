@@ -46,8 +46,10 @@ class Baksi(BikeShareSystem):
         bikes = [int(i) for i in bikes]
         latitude, longitude = zip(*geopoints)
 
-        self.stations = map(BaksiStation, zip(station_id, name, status, docks,
-            bikes, latitude, longitude))
+        fields = zip(station_id, name, status, docks, bikes, latitude,
+                     longitude)
+
+        self.stations = list(map(BaksiStation, fields))
 
 
 class BaksiStation(BikeShareStation):

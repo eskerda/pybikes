@@ -59,7 +59,7 @@ class YouBike(BikeShareSystem):
             lambda s: (float(s['lat']), float(s['lng'])),
             * self.city_bounds
         )
-        self.stations = map(YouBikeStation, filtered_data)
+        self.stations = list(map(YouBikeStation, filtered_data))
 
 
 class YouBikeStation(BikeShareStation):

@@ -46,7 +46,7 @@ def get_xml_stations(self, scraper):
     xml_data = scraper.request(self.feed_url)
     dom = etree.fromstring(xml_data.encode('utf-8'))
     markers = dom.xpath('/stations/station')
-    return map(BixiStation.from_xml, markers)
+    return list(map(BixiStation.from_xml, markers))
 
 def get_json_stations(self, scraper):
     data = json.loads(scraper.request(self.feed_url))
@@ -62,7 +62,7 @@ def get_json_stations(self, scraper):
 def get_json_xml_stations(self, scraper):
     raw = scraper.request(self.feed_url).decode('unicode-escape')
     data = json.loads(raw)
-    return map(BixiStation.from_json_xml, data)
+    return list(map(BixiStation.from_json_xml, data))
 
 class BixiStation(BikeShareStation):
     def __init__(self):

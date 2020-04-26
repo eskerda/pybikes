@@ -52,7 +52,7 @@ class Bikeu(BikeShareSystem):
             map_src = urljoin(self.url, map_src)
             map_body = scraper.request(map_src)
             markers = self.parse_map(map_body)
-        self.stations = map(BikeuStation, markers)
+        self.stations = list(map(BikeuStation, markers))
 
 
 class BikeuStation(BikeShareStation):
@@ -73,4 +73,4 @@ class BikeuStation(BikeShareStation):
             'uid': info['id'],
         }
         if bike_uids:
-            self.extra['bike_uids'] = bike_uids
+            self.extra['bike_uids'] = list(bike_uids)

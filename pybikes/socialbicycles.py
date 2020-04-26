@@ -42,7 +42,7 @@ class SocialBicycles(BikeShareSystem):
 
             places.extend(data['items'])
 
-        self.stations = map(SocialBicyclesStation, places)
+        self.stations = list(map(SocialBicyclesStation, places))
 
 
 class SocialBicyclesStation(BikeShareStation):

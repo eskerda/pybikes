@@ -52,13 +52,13 @@ def get_xml_stations(self, raw):
 def get_json_stations(self, raw):
     # Double encoded json FTWTF..
     data = json.loads(json.loads(raw)[1]['data'])
-    stations = map(SmartBikeStation, data)
+    stations = list(map(SmartBikeStation, data))
     return stations
 
 
 def get_json_v2_stations(self, raw):
     data = json.loads(raw)
-    stations = map(SmartBikeStation, data)
+    stations = list(map(SmartBikeStation, data))
     return stations
 
 
@@ -75,9 +75,9 @@ class SmartBikeStation(BikeShareStation):
                 'uid': int(info['StationID']),
                 'status': info['StationStatusCode'],
                 'districtCode': info['DisctrictCode'],
-                'NearbyStationList': map(
+                'NearbyStationList': list(map(
                     int, info['NearbyStationList'].split(',')
-                )
+                ))
             }
         except KeyError:
             # Either something has changed, or it's the other type of feed
@@ -100,9 +100,9 @@ class SmartBikeStation(BikeShareStation):
 
             nearby_stations = info.get('nearbyStations')
             if nearby_stations and nearby_stations != "0":
-                self.extra['NearbyStationList'] = map(
+                self.extra['NearbyStationList'] = list(map(
                     int, nearby_stations.split(',')
-                )
+                ))
 
             if 'zip' in info and info['zip']:
                 self.extra['zip'] = info['zip']

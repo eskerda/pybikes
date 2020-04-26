@@ -29,7 +29,7 @@ class GewistaCityBike(BikeShareSystem):
         data = scraper.request(self.endpoint)
         tree = etree.fromstring(data.encode('utf-8'))
         markers = tree.xpath('//station')
-        self.stations = map(GewistaStation, markers)
+        self.stations = list(map(GewistaStation, markers))
 
 
 class GewistaStation(BikeShareStation):
