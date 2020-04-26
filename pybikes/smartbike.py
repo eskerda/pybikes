@@ -147,8 +147,10 @@ class SmartShitty(BaseSystem):
             scraper = utils.PyBikesScraper()
 
         page = scraper.request(self.feed_url)
-        stations_data = re.findall(SmartShitty.RGX_MARKERS,
-                                   page.encode('utf-8'))
+        try:
+            stations_data = re.findall(SmartShitty.RGX_MARKERS, page)
+        except:
+            import pdb; pdb.set_trace()
         stations = []
         stats_query = """
             //td[span[text() = "%s"]]/
@@ -163,13 +165,14 @@ class SmartShitty(BaseSystem):
 
         for station_data in stations_data:
             latitude, longitude, name, mess = station_data
-            html_mess = html.fromstring(mess.decode('unicode_escape'))
+            # ??
+            html_mess = html.fromstring(mess.encode('utf-8').decode('unicode_escape'))
             stats = {}
             bikes = 0
             extra = {}
 
-            for k, rule in stats_rules.iteritems():
-                stats[k] = map(int, html_mess.xpath(stats_query % rule))
+            for k, rule in stats_rules.items():
+                stats[k] = list(map(int, html_mess.xpath(stats_query % rule)))
 
             if stats['std']:
                 bikes += stats['std'][0]
@@ -179,7 +182,7 @@ class SmartShitty(BaseSystem):
                 bikes += stats['ebikes'][0]
                 extra['ebikes'] = stats['ebikes'][0]
                 extra['has_ebikes'] = True
-            
+
             if stats['kids_bikes'] and stats['kids_bikes'][0] > 0:
                 bikes += stats['kids_bikes'][0]
                 extra['kids_bikes'] = stats['kids_bikes'][0]
