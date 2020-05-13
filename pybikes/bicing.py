@@ -2,6 +2,7 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.exceptions import InvalidStation
 
 
 class Bicing(BikeShareSystem):
@@ -18,20 +19,26 @@ class Bicing(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-
-        self.stations = []
-
         data = json.loads(scraper.request(self.url))
-        self.stations = [BicingStation(s) for s in data['stations']]
+        stations = []
+        for s in data['stations']:
+            try:
+                station = BicingStation(s)
+            except InvalidStation:
+                continue
+            stations.append(station)
+        self.stations = stations
 
 
 class BicingStation(BikeShareStation):
-
     def __init__(self, data):
         super(BicingStation, self).__init__()
         self.name = data['streetName']
-        self.latitude = float(data['latitude'])
-        self.longitude = float(data['longitude'])
+        try:
+            self.latitude = float(data['latitude'])
+            self.longitude = float(data['longitude'])
+        except ValueError:
+            raise InvalidStation
         self.bikes = int(data['bikes'])
         self.free = int(data['slots'])
         self.extra = {
