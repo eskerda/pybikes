@@ -64,10 +64,12 @@ class VelobikeRU(BikeShareSystem):
                 'uid': item['Id'],
                 'slots': int(item['TotalPlaces']),
                 'address': re.sub(r'^\d+\s*-\s*', '', item['Address']),
-                'ordinarySlots': int(item['TotalOrdinaryPlaces']),
-                'electricSlots': int(item['TotalElectricPlaces']),
-                'ordinaryBikes': int(item['AvailableOrdinaryBikes']),
-                'electricBikes': int(item['AvailableElectricBikes']),
+                'normal_slots': int(item['TotalOrdinaryPlaces']),
+                'electric_slots': int(item['TotalElectricPlaces']),
+                'normal_bikes': int(item['AvailableOrdinaryBikes']),
+                'ebikes': int(item['AvailableElectricBikes']),
+                'normal_free': int(item['FreeOrdinaryPlaces']),
+                'electric_free': int(item['FreeElectricPlaces'])
             }
             station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
             stations.append(station)
