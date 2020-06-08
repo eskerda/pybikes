@@ -147,11 +147,7 @@ class SmartShitty(BaseSystem):
             scraper = utils.PyBikesScraper()
 
         page = scraper.request(self.feed_url)
-        try:
-            stations_data = re.findall(SmartShitty.RGX_MARKERS, page)
-        except:
-            import pdb; pdb.set_trace()
-        stations = []
+        stations_data = re.findall(SmartShitty.RGX_MARKERS, page)
         stats_query = """
             //td[span[text() = "%s"]]/
                 following-sibling::td/text()
@@ -163,32 +159,38 @@ class SmartShitty(BaseSystem):
             'kids_bikes': 'Bicycles for kids'
         }
 
+        stations = []
+
         for station_data in stations_data:
             latitude, longitude, name, mess = station_data
             # ??
             html_mess = html.fromstring(mess.encode('utf-8').decode('unicode_escape'))
             stats = {}
-            bikes = 0
             extra = {}
 
             for k, rule in stats_rules.items():
                 stats[k] = list(map(int, html_mess.xpath(stats_query % rule)))
 
-            if stats['std']:
+            bikes = 0
+            free = None
+
+            if stats.get('std'):
                 bikes += stats['std'][0]
+                # std free already accounts for all slots
                 free = stats['std'][1]
 
-            if stats['ebikes'] and stats['ebikes'][0] > 0:
+            if stats.get('ebikes'):
+                extra['has_ebikes'] = True
                 bikes += stats['ebikes'][0]
                 extra['ebikes'] = stats['ebikes'][0]
-                extra['has_ebikes'] = True
 
-            if stats['kids_bikes'] and stats['kids_bikes'][0] > 0:
+            if stats.get('kids_bikes'):
+                extra['has_kids_bikes'] = True
                 bikes += stats['kids_bikes'][0]
                 extra['kids_bikes'] = stats['kids_bikes'][0]
-                extra['has_kids_bikes'] = True
 
             station = BikeShareStation(name, float(latitude), float(longitude),
                                        bikes, free, extra)
             stations.append(station)
+
         self.stations = stations
