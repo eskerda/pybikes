@@ -10,7 +10,8 @@
                         "city": "Milano",
                         "name": "BikeMi",
                         "longitude": 9.186516,
-                        "country": "IT"
+                        "country": "IT",
+                        "ebikes": true
                     },
                     "feed_url": "https://www.bikemi.com/en/stations-map.aspx"
                 }
