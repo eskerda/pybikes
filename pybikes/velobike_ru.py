@@ -71,6 +71,8 @@ class VelobikeRU(BikeShareSystem):
                 'normal_free': int(item['FreeOrdinaryPlaces']),
                 'electric_free': int(item['FreeElectricPlaces'])
             }
+            if 'electric' in item['StationTypes']:
+                extra['has_ebikes'] = True
             station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
             stations.append(station)
         self.stations = stations
