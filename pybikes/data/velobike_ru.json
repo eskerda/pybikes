@@ -9,7 +9,7 @@
                 "longitude": 37.616667,
                 "latitude": 55.75
             },
-            "feed_url": "http://apivelobike.velobike.ru/ride/parkings"
+            "feed_url": "https://velobike.ru/ajax/parkings/"
         }
     ],
     "system": "velobike_ru",
