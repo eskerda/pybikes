@@ -2579,17 +2579,6 @@
             }
         },
         {
-            "domain": "kv",
-            "tag": "kyiv-kyiv",
-            "city_uid": 514,
-            "meta": {
-                "city": "Kyiv",
-                "country": "UA",
-                "latitude": 50.4282,
-                "longitude": 30.5314
-            }
-        },
-        {
             "domain": "np",
             "tag": "nextbike-swietochlowice",
             "city_uid": 516,
