@@ -13,6 +13,7 @@ class Bicing(BikeShareSystem):
             'CESPA',
             'PBSC',
         ],
+        'ebikes': True,
     }
 
     url = 'https://www.bicing.barcelona/get-stations'
@@ -21,9 +22,9 @@ class Bicing(BikeShareSystem):
         scraper = scraper or PyBikesScraper()
         data = json.loads(scraper.request(self.url))
         stations = []
-        for s in data['stations']:
+        for station_data in data['stations']:
             try:
-                station = BicingStation(s)
+                station = BicingStation(station_data)
             except InvalidStation:
                 continue
             stations.append(station)
@@ -34,16 +35,23 @@ class BicingStation(BikeShareStation):
     def __init__(self, data):
         super(BicingStation, self).__init__()
         self.name = data['streetName']
+
         try:
             self.latitude = float(data['latitude'])
             self.longitude = float(data['longitude'])
         except ValueError:
             raise InvalidStation
+
         self.bikes = int(data['bikes'])
         self.free = int(data['slots'])
         self.extra = {
             'uid': int(data['id']),
             'online': data['status'] == 1,
-            'has_ebikes': int(data['electrical_bikes']) > 0,
-            'ebikes': int(data['electrical_bikes'])
         }
+
+        if 'mechanical_bikes' in data:
+            self.extra['normal_bikes'] = int(data['mechanical_bikes'])
+
+        if 'electrical_bikes' in data:
+            self.extra['has_ebikes'] = True
+            self.extra['ebikes'] = int(data['electrical_bikes'])

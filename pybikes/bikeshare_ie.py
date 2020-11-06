@@ -26,8 +26,9 @@ class BikeshareIE(BikeShareSystem):
         self.system_id = system_id
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or utils.PyBikesScraper()
+        # XXX Seems bikeshare.ie gives invalid certificates
+        scraper.ssl_verification = False
 
         stations = []
 

@@ -14,7 +14,8 @@ class Smovengo(BikeShareSystem):
 
     meta = {
         'system': 'Smovengo',
-        'company': ['Smovengo']
+        'company': ['Smovengo'],
+        'ebikes': True,
     }
 
     def __init__(self, tag, api_url, meta):
@@ -42,22 +43,32 @@ class Smovengo(BikeShareSystem):
             latitude = station_data["station"]["gps"]["latitude"]
             longitude = station_data["station"]["gps"]["longitude"]
 
-            manual_bikes = station_data["nbBike"]
-            electric_bikes = station_data["nbEbike"]
-            bikes = manual_bikes + electric_bikes
-
+            bikes = station_data["nbBike"] + station_data["nbEbike"]
             free = station_data["nbFreeDock"] + station_data["nbFreeEDock"]
 
             extra = {
                 "uid": station_data["station"]["code"],
+
+                "normal_bikes": station_data["nbBike"],
+                "ebikes": station_data["nbEbike"],
+                "has_ebikes": "nbEbike" in station_data,
+                "slots": station_data["nbDock"] + station_data["nbEDock"],
+
+                # canonical data on this is not to be trusted. Some
+                # stations report 0 normal_slots, but still have
+                # > 0 normal_bikes available, so it seems the distinction
+                # for parking does not apply on this system
+                # "normal_slots": station_data["nbDock"],
+                # "electric_slots": station_data["nbEDock"],
+                # "normal_free": station_data["nbFreeDock"],
+                # "electric_free": station_data["nbFreeEDock"],
+
                 "status": station_data["station"]["state"],
                 "banking": station_data["creditCard"] != "no",
                 "dueDate": station_data["station"]["dueDate"],
-                "slots": station_data["nbDock"] + station_data["nbEDock"],
+                # XXX Not sure what overflow are
                 "bikes_overflow": station_data["nbBikeOverflow"],
                 "ebikes_overflow": station_data["nbEBikeOverflow"],
-                "has_ebikes": station_data["nbEbike"] > 0,
-                "ebikes": station_data["nbEbike"],
                 "online": station_data["station"]["state"].lower() == "operative"
             }
             station = BikeShareStation(name, float(latitude), float(longitude),

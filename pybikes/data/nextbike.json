@@ -12,11 +12,11 @@
             }
         },
         {
-            "domain": "sz",
-            "tag": "sz-bike-dresden",
-            "city_uid": 2,
+            "domain": "dx",
+            "tag": "mobibike-dresden",
+            "city_uid": 685,
             "meta": {
-                "name": "sz-bike",
+                "name": "MOBIbike",
                 "city": "Dresden",
                 "country": "DE",
                 "latitude": 51.0535,
@@ -2576,17 +2576,6 @@
                 "country": "IN",
                 "latitude": 28.6228,
                 "longitude": 77.2084
-            }
-        },
-        {
-            "domain": "kv",
-            "tag": "kyiv-kyiv",
-            "city_uid": 514,
-            "meta": {
-                "city": "Kyiv",
-                "country": "UA",
-                "latitude": 50.4282,
-                "longitude": 30.5314
             }
         },
         {

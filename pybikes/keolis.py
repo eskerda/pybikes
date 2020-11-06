@@ -212,6 +212,7 @@ class VCub(BikeShareSystem):
     meta = {
         'system': 'Keolis',
         'company': ['Keolis'],
+        'ebikes': True,
     }
 
     def __init__(self, tag, meta, feed_url):
@@ -246,5 +247,6 @@ class VCubStation(BikeShareStation):
             'online': fields['connexionState'] == 'CONNECTEE',
             'slots': self.bikes + self.free,
             'ebikes': ebikes,
-            'has_ebikes': ebikes > 0
+            'normal_bikes': manual_bikes,
+            'has_ebikes': 'nbElectricBikeAvailable' in fields,
         }
