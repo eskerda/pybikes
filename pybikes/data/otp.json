@@ -5,12 +5,11 @@
         {
             "tag":"citybikes-helsinki",
             "meta":{
-                "city":"Helsinki",
-                "name":"City bikes",
+                "name":"Helsinki region city bikes",
                 "country":"FI",
                 "company":[
                     "Helsinki City Transport",
-                    "Helsinki Regional Transport",
+                    "Helsinki Region Transport",
                     "CityBikeFinland",
                     "Smoove SAS",
                     "Moventia",
@@ -22,17 +21,20 @@
             "feed_url":"https://api.digitransit.fi/routing/v1/routers/hsl/bike_rental"
         },
         {
-            "tag":"foli",
+            "tag":"citybikes-other-finland",
             "meta":{
-                "city":"Turku",
-                "name":"Föli-fillari",
+                "name":"Other urban region city bikes",
                 "country":"FI",
                 "company":[
-                    "Turku Region Traffic Föli",
-                    "Nextbike Polska"
+                    "EASYBIKE",
+                    "Föli - Turku Region Traffic",
+                    "KaaKau",
+                    "Rolan",
+                    "Sykkeli - Oulu City bikes",
+                    "Vilkku - Kuopio Region Public Transport"
                 ],
-                "longitude":22.2666,
-                "latitude":60.4506
+                "longitude":27.59,
+                "latitude":64.96
             },
             "feed_url":"https://api.digitransit.fi/routing/v1/routers/waltti/bike_rental"
         }
