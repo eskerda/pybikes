@@ -15,8 +15,8 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
 class BicincittaMixin(object):
-    stations_url = 'http://www.bicincitta.com/frmLeStazioniComune.aspx/RefreshStations'  # NOQA
-    stations_status_url = 'http://www.bicincitta.com/frmLeStazioni.aspx/RefreshPopup'  # NOQA
+    stations_url = 'https://www.bicincitta.com/frmLeStazioniComune.aspx/RefreshStations'  # NOQA
+    stations_status_url = 'https://www.bicincitta.com/frmLeStazioni.aspx/RefreshPopup'  # NOQA
 
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
@@ -42,7 +42,7 @@ class BicincittaMixin(object):
 
 class Bicincitta(BikeShareSystem, BicincittaMixin):
     sync = False
-    endpoint = 'http://www.bicincitta.com/'
+    endpoint = 'https://www.bicincitta.com/'
     source_url = 'frmLeStazioni.aspx?ID={city_id}'
 
     meta = {
