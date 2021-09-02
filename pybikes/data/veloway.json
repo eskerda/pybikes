@@ -37,21 +37,6 @@
                     "feed_url": "http://www.vel-in.fr/cartoV2/libProxyCarto.asp"
                 }
             ]
-        },
-        "VelowayDrupal": {
-            "instances": [
-                {
-                    "tag": "dkvelo",
-                    "meta": {
-                        "latitude": 51.0383,
-                        "city": "Dunkerque",
-                        "name": "DK'Vélo",
-                        "longitude": 2.3775,
-                        "country": "FR"
-                    },
-                    "feed_url": "http://www.dk-velo.fr"
-                }
-            ]
         }
     }
 }
