@@ -1,18 +1,19 @@
 {
     "system": "keolis",
     "class": {
-        "Keolis_v2": {
+        "KeolisIlevia": {
             "instances": [
                 {
                     "tag": "vlille",
                     "meta": {
                         "latitude": 50.62925,
                         "city": "Lille",
-                        "name": "V'lille",
+                        "name": "V'Lille",
                         "longitude": 3.057256,
-                        "country": "FR"
+                        "country": "FR",
+			"source":  "https://opendata.lillemetropole.fr/explore/dataset/vlille-realtime/"
                     },
-                    "feed_url": "http://www.vlille.fr"
+                    "dataset": "vlille-realtime"
                 }
             ]
         },
