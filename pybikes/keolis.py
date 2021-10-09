@@ -180,7 +180,6 @@ class KeolisIlevia(BikeShareSystem):
     def __init__(self, tag, dataset, meta):
         super(KeolisIlevia, self).__init__(tag, meta)
         self.feed_url = KeolisIlevia.BASE_URL.format(dataset=dataset)
-        self.meta['source'] = self.meta['source'].format(dataset=dataset)
 
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
@@ -202,7 +201,7 @@ class KeolisIleviaStation(BikeShareStation):
             'address': fields['adresse'],
             'last_update': fields['datemiseajour'],
             'online': fields['etat'] == 'EN SERVICE',
-			# payment: AVEC_TPE | SANS_TPE
+            # payment: AVEC_TPE | SANS_TPE
             # as in, accepts bank cards or not
             'payment': fields['type']
         }
