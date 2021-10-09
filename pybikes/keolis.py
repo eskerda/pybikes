@@ -196,15 +196,15 @@ class KeolisIleviaStation(BikeShareStation):
         bikes = int(fields['nbvelosdispo'])
         free = int(fields['nbplacesdispo'])
         extra = {
-            'status': fields['commune'],
+            'status': fields['etat'],
             'uid': str(fields['libelle']),
-            'city': fields['city'],
-            'address': fields['addresse'],
+            'city': fields['commune'],
+            'address': fields['adresse'],
             'last_update': fields['datemiseajour'],
             'online': fields['etat'] == 'EN SERVICE',
 			# payment: AVEC_TPE | SANS_TPE
             # as in, accepts bank cards or not
-            'payment': fields['paiement']
+            'payment': fields['type']
         }
         super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
