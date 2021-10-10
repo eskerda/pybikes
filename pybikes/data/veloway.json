@@ -34,7 +34,7 @@
                         "longitude": 1.85,
                         "country": "FR"
                     },
-                    "feed_url": "http://www.vel-in.fr/cartoV2/libProxyCarto.asp"
+                    "feed_url": "https://velo-vision-prod.azurewebsites.net/calais/oybike/stands.nsf/getsite?site=calais&format=json&key=veolia"
                 }
             ]
         },
