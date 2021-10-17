@@ -201,9 +201,10 @@ class KeolisIleviaStation(BikeShareStation):
             'address': fields['adresse'],
             'last_update': fields['datemiseajour'],
             'online': fields['etat'] == 'EN SERVICE',
-            # payment: AVEC_TPE | SANS_TPE
+            # payment: AVEC TPE | SANS TPE
             # as in, accepts bank cards or not
-            'payment': fields['type']
+            # convert it to AVEC_TPE | SANS_TPE as other keolis systems
+            'payment': fields['type'].replace(" ", "_"),
         }
         super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
