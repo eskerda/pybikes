@@ -15,17 +15,6 @@
                     "feed_url": "http://www.velobleu.org/cartoV2/libProxyCarto.asp"
                 },
                 {
-                    "tag": "velocea",
-                    "meta": {
-                        "latitude": 47.6559,
-                        "city": "Vannes",
-                        "name": "Vélocéa",
-                        "longitude": -2.7603,
-                        "country": "FR"
-                    },
-                    "feed_url": "http://www.velocea.fr/cartoV2/libProxyCarto.asp"
-                },
-                {
                     "tag": "vel-in",
                     "meta": {
                         "latitude": 50.95,
