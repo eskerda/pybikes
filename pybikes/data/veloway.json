@@ -37,21 +37,6 @@
                     "feed_url": "https://velo-vision-prod.azurewebsites.net/calais/oybike/stands.nsf/getsite?site=calais&format=json&key=veolia"
                 }
             ]
-        },
-        "VelowayDrupal": {
-            "instances": [
-                {
-                    "tag": "dkvelo",
-                    "meta": {
-                        "latitude": 51.0383,
-                        "city": "Dunkerque",
-                        "name": "DK'Vélo",
-                        "longitude": 2.3775,
-                        "country": "FR"
-                    },
-                    "feed_url": "http://www.dk-velo.fr"
-                }
-            ]
         }
     }
 }
