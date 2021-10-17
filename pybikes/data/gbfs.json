@@ -914,6 +914,20 @@
                 "longitude":4.290833
             },
             "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
+        },
+        {
+			"tag": "veloceo",
+			"meta": {
+				"latitude": 47.6559,
+				"city": "Vannes",
+				"name": "Vélocéo",
+				"longitude": -2.7603,
+				"country": "FR",
+				"company": [
+					"Smoove"
+                ]
+            },
+			"feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
