@@ -914,6 +914,21 @@
                 "longitude":4.290833
             },
             "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
+        },
+        {
+            "tag":"c-velo",
+            "meta":{
+                "city":"Clermont-Ferrand",
+                "name":"C.vélo",
+                "country":"FR",
+                "company": [
+                    "CityBike France"
+                    "PBSC Urban Solutions"
+                ],
+                "latitude":45.7831, 
+                "longitude":3.0824
+            },
+            "feed_url":"https://clermontferrand.publicbikesystem.net/customer/ube/gbfs/v1/"
         }
     ],
     "system": "gbfs",
