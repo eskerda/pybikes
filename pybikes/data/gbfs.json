@@ -678,7 +678,7 @@
                     "Motivate LLC"
                 ]
             },
-            "feed_url": "https://gbfs.baywheels.com/gbfs/en/station_status.json"
+            "feed_url": "https://gbfs.baywheels.com/gbfs/gbfs.json"
         },
         {
             "tag": "relay-atlanta",
