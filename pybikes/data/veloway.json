@@ -12,7 +12,7 @@
                         "longitude": 7.271413,
                         "country": "FR"
                     },
-                    "feed_url": "http://www.velobleu.org/cartoV2/libProxyCarto.asp"
+                    "feed_url": "https://velo-vision-prod.azurewebsites.net/nice/oybike/stands.nsf/getsite?site=nice&format=json"
                 },
                 {
                     "tag": "vel-in",
