@@ -931,6 +931,20 @@
             "feed_url":"https://clermontferrand.publicbikesystem.net/customer/ube/gbfs/v1/"
         },
         {
+            "tag": "monabike",
+            "meta": {
+                "city": "Monaco",
+                "name": "MonaBike",
+                "country": "MC",
+                "company": [
+                    "PBSC Urban Solutions"
+                ],
+                "latitude": 43.733333,
+                "longitude": 7.416667
+            },
+            "feed_url": "https://monaco.publicbikesystem.net/customer/ube/gbfs/v1/"
+        },
+        {
             "tag": "veloceo",
 		    "meta": {
 			    "city": "Vannes",
