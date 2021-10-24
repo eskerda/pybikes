@@ -667,7 +667,7 @@
             "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
         },
         {
-            "tag": "ford-gobike",
+            "tag": "bay-wheels",
             "meta": {
                 "latitude": 37.7141454,
                 "longitude": -122.25,
@@ -675,10 +675,10 @@
                 "name": "Bay Wheels",
                 "country": "US",
                 "company": [
-                    "Motivate International, Inc."
+                    "Motivate LLC"
                 ]
             },
-            "feed_url": "https://gbfs.fordgobike.com/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.baywheels.com/gbfs/gbfs.json"
         },
         {
             "tag": "relay-atlanta",
