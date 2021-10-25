@@ -1,0 +1,20 @@
+{
+    "system": "ecovelo",
+    "class": {
+        "Ecovelo": {
+            "instances": [
+                {
+                    "tag": "rubis-velo",
+                    "meta": {
+                        "city": "Bourg-en-Bresse",
+                        "name": "Rubis'Vélo",
+			"latitude": 46.2056,
+                        "longitude": 5.2289,
+                        "country": "FR"
+                    },
+                    "dataset": "beb"
+                }
+            ]
+        }
+    }
+}
