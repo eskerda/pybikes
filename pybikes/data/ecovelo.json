@@ -13,6 +13,17 @@
                         "country": "FR"
                     },
                     "dataset": "beb"
+                },
+		{
+                    "tag": "zebullo",
+                    "meta": {
+                        "city": "Reims",
+                        "name": "ZébullO",
+			"latitude": 49.2628,
+                        "longitude": 4.0347,
+                        "country": "FR"
+                    },
+                    "dataset": "zebullo"
                 }
             ]
         }
