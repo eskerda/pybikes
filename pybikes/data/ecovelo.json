@@ -5,25 +5,47 @@
             "instances": [
                 {
                     "tag": "rubis-velo",
-                    "meta": {
-                        "city": "Bourg-en-Bresse",
-                        "name": "Rubis'Vélo",
-			"latitude": 46.2056,
+					"meta": {
+            		"city": "Bourg-en-Bresse",
+            		"name": "Rubis'Vélo",
+					"latitude": 46.2056,
                         "longitude": 5.2289,
                         "country": "FR"
                     },
                     "dataset": "beb"
                 },
-		{
+				{
                     "tag": "zebullo",
                     "meta": {
                         "city": "Reims",
                         "name": "ZébullO",
-			"latitude": 49.2628,
+						"latitude": 49.2628,
                         "longitude": 4.0347,
                         "country": "FR"
                     },
                     "dataset": "zebullo"
+                },
+				{
+                    "tag": "tanlib",
+                    "meta": {
+                        "city": "Niort",
+                        "name": "Vélo tanlib",
+						"latitude": 46.3258,
+                        "longitude": -0.4606,
+                        "country": "FR"
+                    },
+                    "dataset": "tanlib"
+                },
+				{
+                    "tag": "marseillan",
+                    "meta": {
+                        "city": "Marseillan",
+                        "name": "Marseillan vélo libre-service",
+						"latitude": 43.3572,
+                        "longitude": 3.5283,
+                        "country": "FR"
+                    },
+                    "dataset": "marseillan"
                 }
             ]
         }
