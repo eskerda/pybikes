@@ -46,6 +46,17 @@
                         "country": "FR"
                     },
                     "dataset": "marseillan"
+                },
+				{
+                    "tag": "velectin",
+                    "meta": {
+                        "city": "Calais",
+                        "name": "Velect’in",
+						"latitude": 50.948056,
+                        "longitude": 1.856389,
+                        "country": "FR"
+                    },
+                    "dataset": "calais"
                 }
             ]
         }
