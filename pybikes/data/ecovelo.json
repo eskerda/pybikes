@@ -6,9 +6,9 @@
                 {
                     "tag": "rubis-velo",
 					"meta": {
-            		"city": "Bourg-en-Bresse",
-            		"name": "Rubis'Vélo",
-					"latitude": 46.2056,
+						"city": "Bourg-en-Bresse",
+						"name": "Rubis'Vélo",
+						"latitude": 46.2056,
                         "longitude": 5.2289,
                         "country": "FR"
                     },
@@ -56,7 +56,7 @@
                         "longitude": 1.856389,
                         "country": "FR"
                     },
-                    "dataset": "calais"
+					"dataset": "calais"
                 }
             ]
         }
