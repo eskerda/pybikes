@@ -79,6 +79,17 @@
                         "country": "FR"
                     },
 					"dataset": "via"
+                },
+				{
+                    "tag": "velocite-laon",
+                    "meta": {
+                        "city": "Laon",
+                        "name": "Vélo'Cité",
+						"latitude": 49.5639,
+                        "longitude": 3.6244,
+                        "country": "FR"
+                    },
+					"dataset": "velocite"
                 }
             ]
         }
