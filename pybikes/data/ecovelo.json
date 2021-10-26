@@ -101,6 +101,17 @@
                         "country": "FR"
                     },
 					"dataset": "labaule"
+                },
+				{
+                    "tag": "velyceo",
+                    "meta": {
+                        "city": "Saint-Nazaire",
+                        "name": "vélYcéo",
+						"latitude": 47.2806,
+                        "longitude": -2.2086,
+                        "country": "FR"
+                    },
+					"dataset": "velyceo"
                 }
             ]
         }
