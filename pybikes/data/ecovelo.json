@@ -145,6 +145,17 @@
                         "country": "FR"
                     },
 					"dataset": "cyclovis"
+                },
+				{
+                    "tag": "tempo-velo",
+                    "meta": {
+                        "city": "Agen",
+                        "name": "Tempo Vélo",
+						"latitude": 44.2049,
+                        "longitude": 0.6212,
+                        "country": "FR"
+                    },
+					"dataset": "tempovelo"
                 }
             ]
         }
