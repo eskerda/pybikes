@@ -90,6 +90,17 @@
                         "country": "FR"
                     },
 					"dataset": "velocite"
+                },
+				{
+                    "tag": "velo-baulois",
+                    "meta": {
+                        "city": "La Baule-Escoublac",
+                        "name": "Le Vélo Baulois",
+						"latitude": 47.2867,
+                        "longitude": -2.3908,
+                        "country": "FR"
+                    },
+					"dataset": "labaule"
                 }
             ]
         }
