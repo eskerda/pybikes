@@ -57,6 +57,17 @@
                         "country": "FR"
                     },
 					"dataset": "calais"
+                },
+				{
+                    "tag": "tlp-velo",
+                    "meta": {
+                        "city": "Tarbes, Lourdes",
+                        "name": "Tarbes et Lourdes vls",
+						"latitude": 43.23,
+                        "longitude": 0.07,
+                        "country": "FR"
+                    },
+					"dataset": "tlpmobilites"
                 }
             ]
         }
