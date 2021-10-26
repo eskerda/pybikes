@@ -134,6 +134,17 @@
                         "country": "FR"
                     },
 					"dataset": "semo"
+                },
+				{
+                    "tag": "cyclovis",
+                    "meta": {
+                        "city": "Soissons",
+                        "name": "Cyclovis",
+						"latitude": 49.3817,
+                        "longitude": 3.3236,
+                        "country": "FR"
+                    },
+					"dataset": "cyclovis"
                 }
             ]
         }
