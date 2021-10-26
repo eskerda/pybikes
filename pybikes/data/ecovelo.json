@@ -123,6 +123,17 @@
                         "country": "FR"
                     },
 					"dataset": "lemarcel"
+                },
+				{
+                    "tag": "semo",
+                    "meta": {
+                        "city": "Communauté d'agglomération Seine-Eure",
+                        "name": "semo",
+						"latitude": 49.22,
+                        "longitude": 1.17,
+                        "country": "FR"
+                    },
+					"dataset": "semo"
                 }
             ]
         }
