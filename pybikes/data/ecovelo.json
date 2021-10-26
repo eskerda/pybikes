@@ -156,6 +156,28 @@
                         "country": "FR"
                     },
 					"dataset": "tempovelo"
+                },
+				{
+                    "tag": "chanterie-captainbike",
+                    "meta": {
+                        "city": "La Chantrerie, Nantes",
+                        "name": "Chantrerie VLS (Captain Bike)",
+						"latitude": 47,2868203,
+                        "longitude": -1,5210917,
+                        "country": "FR"
+                    },
+					"dataset": "chantrerie"
+                },
+				{
+                    "tag": "saclay-captainbike",
+                    "meta": {
+                        "city": "Paris-Saclay",
+                        "name": "Saclay VLS (Captain Bike)",
+						"latitude": 48,7098082, 
+                        "longitude": 2,2113660,
+                        "country": "FR"
+                    },
+					"dataset": "saclay"
                 }
             ]
         }
