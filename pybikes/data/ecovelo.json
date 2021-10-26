@@ -68,6 +68,17 @@
                         "country": "FR"
                     },
 					"dataset": "tlpmobilites"
+                },
+				{
+                    "tag": "via-velo",
+                    "meta": {
+                        "city": "Val d'Ille-Aubigné",
+                        "name": "VIA Vélo",
+						"latitude": 48.2181,
+                        "longitude": -1.6947,
+                        "country": "FR"
+                    },
+					"dataset": "via"
                 }
             ]
         }
