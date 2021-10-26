@@ -112,6 +112,17 @@
                         "country": "FR"
                     },
 					"dataset": "velyceo"
+                },
+				{
+                    "tag": "le-marcel",
+                    "meta": {
+                        "city": "Troyes",
+                        "name": "Le Marcel",
+						"latitude": 48.2997,
+                        "longitude": 4.0792,
+                        "country": "FR"
+                    },
+					"dataset": "lemarcel"
                 }
             ]
         }
