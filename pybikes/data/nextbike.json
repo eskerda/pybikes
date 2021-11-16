@@ -1046,6 +1046,17 @@
             }
         },
         {
+            "domain": "nu",
+            "tag": "nextbike-ivano-frankivsk",
+            "city_uid": 525,
+            "meta": {
+                "city": "Ivano Frankivsk",
+                "country": "UA",
+                "latitude": 48.9281,
+                "longitude": 24.7103
+            }
+        },
+        {
             "domain": "de",
             "tag": "nextbike-wurzburg",
             "city_uid": 281,

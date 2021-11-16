@@ -667,7 +667,7 @@
             "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
         },
         {
-            "tag": "ford-gobike",
+            "tag": "bay-wheels",
             "meta": {
                 "latitude": 37.7141454,
                 "longitude": -122.25,
@@ -675,10 +675,10 @@
                 "name": "Bay Wheels",
                 "country": "US",
                 "company": [
-                    "Motivate International, Inc."
+                    "Motivate LLC"
                 ]
             },
-            "feed_url": "https://gbfs.fordgobike.com/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.baywheels.com/gbfs/gbfs.json"
         },
         {
             "tag": "relay-atlanta",
@@ -914,6 +914,49 @@
                 "longitude":4.290833
             },
             "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
+        },
+        {
+            "tag":"c-velo",
+            "meta":{
+                "city":"Clermont-Ferrand",
+                "name":"C.vélo",
+                "country":"FR",
+                "company": [
+                    "CityBike France",
+                    "PBSC Urban Solutions"
+                ],
+                "latitude":45.7831, 
+                "longitude":3.0824
+            },
+            "feed_url":"https://clermontferrand.publicbikesystem.net/customer/ube/gbfs/v1/"
+        },
+        {
+            "tag": "monabike",
+            "meta": {
+                "city": "Monaco",
+                "name": "MonaBike",
+                "country": "MC",
+                "company": [
+                    "PBSC Urban Solutions"
+                ],
+                "latitude": 43.733333,
+                "longitude": 7.416667
+            },
+            "feed_url": "https://monaco.publicbikesystem.net/customer/ube/gbfs/v1/"
+        },
+        {
+            "tag": "veloceo",
+		    "meta": {
+			    "city": "Vannes",
+				"name": "Vélocéo",
+			    "country": "FR",
+			    "company": [
+				    "Smoove"
+                ],
+                "latitude": 47.6559,
+                "longitude": -2.7603
+            },
+			"feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",

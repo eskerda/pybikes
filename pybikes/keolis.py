@@ -167,6 +167,47 @@ class KeolisStation_v2(BikeShareStation):
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
 
+class KeolisIlevia(BikeShareSystem):
+
+    meta = {
+        'system': 'Keolis',
+        'company': ['Keolis'],
+    }
+
+    # Rows: -1 gives us all the results without the need to paginate
+    BASE_URL = "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset={dataset}&rows=-1"     # NOQA
+
+    def __init__(self, tag, dataset, meta):
+        super(KeolisIlevia, self).__init__(tag, meta)
+        self.feed_url = KeolisIlevia.BASE_URL.format(dataset=dataset)
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+        data = json.loads(scraper.request(self.feed_url))
+        records = map(lambda r: r['fields'], data['records'])
+        self.stations = list(map(KeolisIleviaStation, records))
+
+
+class KeolisIleviaStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['nom']
+        latitude, longitude = map(float, fields['localisation'])
+        bikes = int(fields['nbvelosdispo'])
+        free = int(fields['nbplacesdispo'])
+        extra = {
+            'status': fields['etat'],
+            'uid': str(fields['libelle']),
+            'city': fields['commune'],
+            'address': fields['adresse'],
+            'last_update': fields['datemiseajour'],
+            'online': fields['etat'] == 'EN SERVICE',
+            # payment: AVEC TPE | SANS TPE
+            # as in, accepts bank cards or not
+            # convert it to AVEC_TPE | SANS_TPE as other keolis systems
+            'payment': fields['type'].replace(" ", "_"),
+        }
+        super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
+                                                bikes, free, extra)
 
 class KeolisSTAR(BikeShareSystem):
 

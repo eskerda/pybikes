@@ -22,21 +22,6 @@
                 }
             ]
         },
-        "CVeloSmoove":{
-            "instances":[
-                {
-                    "tag":"c-velo",
-                    "meta":{
-                        "latitude":45.770958,
-                        "city":"Clermont-Ferrand",
-                        "name":"C.V\u00e9lo",
-                        "longitude":3.073871,
-                        "country":"FR"
-                    },
-                    "feed_url":"https://www.c-velo.fr/api/getStations"
-                }
-            ]
-        },
         "Smoove":{
             "instances":[
                 {

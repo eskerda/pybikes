@@ -12,18 +12,7 @@
                         "longitude": 7.271413,
                         "country": "FR"
                     },
-                    "feed_url": "http://www.velobleu.org/cartoV2/libProxyCarto.asp"
-                },
-                {
-                    "tag": "velocea",
-                    "meta": {
-                        "latitude": 47.6559,
-                        "city": "Vannes",
-                        "name": "Vélocéa",
-                        "longitude": -2.7603,
-                        "country": "FR"
-                    },
-                    "feed_url": "http://www.velocea.fr/cartoV2/libProxyCarto.asp"
+                    "feed_url": "https://velo-vision-prod.azurewebsites.net/nice/oybike/stands.nsf/getsite?site=nice&format=json"
                 },
                 {
                     "tag": "vel-in",
@@ -34,22 +23,7 @@
                         "longitude": 1.85,
                         "country": "FR"
                     },
-                    "feed_url": "http://www.vel-in.fr/cartoV2/libProxyCarto.asp"
-                }
-            ]
-        },
-        "VelowayDrupal": {
-            "instances": [
-                {
-                    "tag": "dkvelo",
-                    "meta": {
-                        "latitude": 51.0383,
-                        "city": "Dunkerque",
-                        "name": "DK'Vélo",
-                        "longitude": 2.3775,
-                        "country": "FR"
-                    },
-                    "feed_url": "http://www.dk-velo.fr"
+                    "feed_url": "https://velo-vision-prod.azurewebsites.net/calais/oybike/stands.nsf/getsite?site=calais&format=json&key=veolia"
                 }
             ]
         }
