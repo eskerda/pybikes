@@ -9,7 +9,7 @@
                 "longitude": 2.8214264,
                 "country": "ES"
             },
-            "feed_url": "http://www.girocleta.cat/MAPAESTACIONS.aspx"
+            "feed_url": "https://www.girocleta.cat/mapaestacions.aspx"
         }
     ],
     "system": "emovity",

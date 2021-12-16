@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
+# Copyright (C) 2010-2021, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
 
 import re
 
 from lxml import html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-__all__ = ['Emovity']
-
+# this time and age and we are still banning requests based on user agent lol
+UA = 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4572.0 Safari/537.36'
+# nobody dares touch this site  with a ten-foot pole
+STATION_RE = r'addMarker\((\d+\.\d+),(\d+.\d+),(\d+),(\d+),\'(.*)\'\)\;'
 
 class Emovity(BikeShareSystem):
     sync = True
@@ -24,26 +25,27 @@ class Emovity(BikeShareSystem):
         self.feed_url = feed_url
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
+        scraper.setUserAgent(UA)
 
         fuzzle = scraper.request(self.feed_url)
-        data = zip(
-            re.findall(r"addMarker\(\d+,(\d+.\d+),(\d+.\d+)", fuzzle),
-            re.findall(r"html\[\d+\]='(.*?)';", fuzzle)
+        data = re.findall(STATION_RE, fuzzle)
+
+        self.stations = list(map(lambda d: EmovityStation(* d), data))
+
+
+class EmovityStation(BikeShareStation):
+    def __init__(self, latitude, longitude, bikes, free, fuzzle):
+        dom = html.fromstring(fuzzle)
+        text = dom.xpath('//div/text()')
+        name = text[0]
+        uid = next(iter(re.findall(r'(\d+)\s*-', name)))
+
+        super(EmovityStation, self).__init__(
+            name=text[0],
+            latitude=float(latitude),
+            longitude=float(longitude),
+            bikes=int(bikes),
+            free=int(free),
+            extra={'uid': uid},
         )
-        stations = []
-        for latlng, html_fuzzle in data:
-            dom = html.fromstring(html_fuzzle)
-            text = dom.xpath('//div/text()')
-            station = BikeShareStation()
-            station.latitude = float(latlng[0])
-            station.longitude = float(latlng[1])
-            station.name = text[1]
-            station.bikes = int(re.search(r'\d+', text[2]).group())
-            station.free = int(re.search(r'\d+', text[3]).group())
-            station.extra = {
-                'uid': re.search(r'^\d+', text[0]).group()
-            }
-            stations.append(station)
-        self.stations = stations
