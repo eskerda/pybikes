@@ -35,7 +35,7 @@ class EcoveloStation(BikeShareStation):
         latitude = float(fields['position']['latitude'])
         longitude = float(fields['position']['longitude'])
         bikes = int(fields['docks']['total_vehicules'])
-        free = int(fields['statistics']['type']['available']['classic'] + int(fields['statistics']['vehicules']['type']['vae'])
+        free = int(fields['statistics']['type']['available']['classic']) + int(fields['statistics']['vehicules']['type']['vae'])
         #should we add scooter?
         #free += int(fields['statistics']['vehicules']['type']['scooter'])
         extra = {
