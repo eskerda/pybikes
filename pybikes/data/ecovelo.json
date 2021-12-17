@@ -19,6 +19,7 @@
                     "meta": {
                         "city": "Reims",
                         "name": "ZébullO",
+                        "ebikes": true,
                         "latitude": 49.2628,
                         "longitude": 4.0347,
                         "country": "FR"
@@ -30,6 +31,7 @@
                     "meta": {
                         "city": "Niort",
                         "name": "Vélo tanlib",
+                        "ebikes": true,
                         "latitude": 46.3258,
                         "longitude": -0.4606,
                         "country": "FR"
@@ -52,6 +54,7 @@
                     "meta": {
                         "city": "Calais",
                         "name": "Velect’in",
+                        "ebikes": true,
                         "latitude": 50.948056,
                         "longitude": 1.856389,
                         "country": "FR"
@@ -63,6 +66,7 @@
                     "meta": {
                         "city": "Tarbes, Lourdes",
                         "name": "Tarbes et Lourdes vls",
+                        "ebikes": true,
                         "latitude": 43.23,
                         "longitude": 0.07,
                         "country": "FR"
@@ -74,6 +78,7 @@
                     "meta": {
                         "city": "Val d'Ille-Aubigné",
                         "name": "VIA Vélo",
+                        "ebikes": true,
                         "latitude": 48.2181,
                         "longitude": -1.6947,
                         "country": "FR"
@@ -85,6 +90,7 @@
                     "meta": {
                         "city": "Laon",
                         "name": "Vélo'Cité",
+                        "ebikes": true,
                         "latitude": 49.5639,
                         "longitude": 3.6244,
                         "country": "FR"
@@ -96,6 +102,7 @@
                     "meta": {
                         "city": "La Baule-Escoublac",
                         "name": "Le Vélo Baulois",
+                        "ebikes": true,
                         "latitude": 47.2867,
                         "longitude": -2.3908,
                         "country": "FR"
@@ -107,6 +114,7 @@
                     "meta": {
                         "city": "Saint-Nazaire",
                         "name": "vélYcéo",
+                        "ebikes": true,
                         "latitude": 47.2806,
                         "longitude": -2.2086,
                         "country": "FR"
@@ -118,6 +126,7 @@
                     "meta": {
                         "city": "Troyes",
                         "name": "Le Marcel",
+                        "ebikes": true,
                         "latitude": 48.2997,
                         "longitude": 4.0792,
                         "country": "FR"
@@ -140,6 +149,7 @@
                     "meta": {
                         "city": "Soissons",
                         "name": "Cyclovis",
+                        "ebikes": true,
                         "latitude": 49.3817,
                         "longitude": 3.3236,
                         "country": "FR"
@@ -151,6 +161,7 @@
                     "meta": {
                         "city": "Agen",
                         "name": "Tempo Vélo",
+                        "ebikes": true,
                         "latitude": 44.2049,
                         "longitude": 0.6212,
                         "country": "FR"
@@ -162,6 +173,8 @@
                     "meta": {
                         "city": "La Chantrerie, Nantes",
                         "name": "Chantrerie VLS (Captain Bike)",
+                        "ebikes": true,
+                        "scooters": true,
                         "latitude": 47.2868203,
                         "longitude": -1.5210917,
                         "country": "FR"
@@ -173,6 +186,7 @@
                     "meta": {
                         "city": "Paris-Saclay",
                         "name": "Saclay VLS (Captain Bike)",
+                        "ebikes": true,
                         "latitude": 48.7098082,
                         "longitude": 2.2113660,
                         "country": "FR"

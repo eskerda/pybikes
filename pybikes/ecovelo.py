@@ -11,7 +11,6 @@ class Ecovelo(BikeShareSystem):
     meta = {
         'system': 'Ecovelo',
         'company': ['Ecovelo'],
-        'ebikes': True #This field is always present in the api, even there are no ebikes in the city, is this a problem?
     }
 
     BASE_URL = "https://api.cyclist.ecovelo.mobi/stations"
