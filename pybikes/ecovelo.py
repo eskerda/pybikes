@@ -55,7 +55,7 @@ class EcoveloStation(BikeShareStation):
         types = fields['statistics']['vehicules']['type']
         extra = {
             'status': fields['status'],
-            'uid': str(fields['id']),
+            'uid': fields['id'],
             'online': fields['status'] == "open",
             'normal_bikes': int(fields['statistics']['vehicules']['available']['classic']),
             'ebikes': int(fields['statistics']['vehicules']['available']['vae']),
