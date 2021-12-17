@@ -1,0 +1,185 @@
+{
+    "system": "ecovelo",
+    "class": {
+        "Ecovelo": {
+            "instances": [
+                {
+                    "tag": "rubis-velo",
+					"meta": {
+						"city": "Bourg-en-Bresse",
+						"name": "Rubis'Vélo",
+						"latitude": 46.2056,
+                        "longitude": 5.2289,
+                        "country": "FR"
+                    },
+                    "dataset": "beb"
+                },
+				{
+                    "tag": "zebullo",
+                    "meta": {
+                        "city": "Reims",
+                        "name": "ZébullO",
+						"latitude": 49.2628,
+                        "longitude": 4.0347,
+                        "country": "FR"
+                    },
+                    "dataset": "zebullo"
+                },
+				{
+                    "tag": "tanlib",
+                    "meta": {
+                        "city": "Niort",
+                        "name": "Vélo tanlib",
+						"latitude": 46.3258,
+                        "longitude": -0.4606,
+                        "country": "FR"
+                    },
+                    "dataset": "tanlib"
+                },
+				{
+                    "tag": "marseillan",
+                    "meta": {
+                        "city": "Marseillan",
+                        "name": "Marseillan vélo libre-service",
+						"latitude": 43.3572,
+                        "longitude": 3.5283,
+                        "country": "FR"
+                    },
+                    "dataset": "marseillan"
+                },
+				{
+                    "tag": "velectin",
+                    "meta": {
+                        "city": "Calais",
+                        "name": "Velect’in",
+						"latitude": 50.948056,
+                        "longitude": 1.856389,
+                        "country": "FR"
+                    },
+					"dataset": "calais"
+                },
+				{
+                    "tag": "tlp-velo",
+                    "meta": {
+                        "city": "Tarbes, Lourdes",
+                        "name": "Tarbes et Lourdes vls",
+						"latitude": 43.23,
+                        "longitude": 0.07,
+                        "country": "FR"
+                    },
+					"dataset": "tlpmobilites"
+                },
+				{
+                    "tag": "via-velo",
+                    "meta": {
+                        "city": "Val d'Ille-Aubigné",
+                        "name": "VIA Vélo",
+						"latitude": 48.2181,
+                        "longitude": -1.6947,
+                        "country": "FR"
+                    },
+					"dataset": "via"
+                },
+				{
+                    "tag": "velocite-laon",
+                    "meta": {
+                        "city": "Laon",
+                        "name": "Vélo'Cité",
+						"latitude": 49.5639,
+                        "longitude": 3.6244,
+                        "country": "FR"
+                    },
+					"dataset": "velocite"
+                },
+				{
+                    "tag": "velo-baulois",
+                    "meta": {
+                        "city": "La Baule-Escoublac",
+                        "name": "Le Vélo Baulois",
+						"latitude": 47.2867,
+                        "longitude": -2.3908,
+                        "country": "FR"
+                    },
+					"dataset": "labaule"
+                },
+				{
+                    "tag": "velyceo",
+                    "meta": {
+                        "city": "Saint-Nazaire",
+                        "name": "vélYcéo",
+						"latitude": 47.2806,
+                        "longitude": -2.2086,
+                        "country": "FR"
+                    },
+					"dataset": "velyceo"
+                },
+				{
+                    "tag": "le-marcel",
+                    "meta": {
+                        "city": "Troyes",
+                        "name": "Le Marcel",
+						"latitude": 48.2997,
+                        "longitude": 4.0792,
+                        "country": "FR"
+                    },
+					"dataset": "lemarcel"
+                },
+				{
+                    "tag": "semo",
+                    "meta": {
+                        "city": "Communauté d'agglomération Seine-Eure",
+                        "name": "semo",
+						"latitude": 49.22,
+                        "longitude": 1.17,
+                        "country": "FR"
+                    },
+					"dataset": "semo"
+                },
+				{
+                    "tag": "cyclovis",
+                    "meta": {
+                        "city": "Soissons",
+                        "name": "Cyclovis",
+						"latitude": 49.3817,
+                        "longitude": 3.3236,
+                        "country": "FR"
+                    },
+					"dataset": "cyclovis"
+                },
+				{
+                    "tag": "tempo-velo",
+                    "meta": {
+                        "city": "Agen",
+                        "name": "Tempo Vélo",
+						"latitude": 44.2049,
+                        "longitude": 0.6212,
+                        "country": "FR"
+                    },
+					"dataset": "tempovelo"
+                },
+				{
+                    "tag": "chantrerie-captainbike",
+                    "meta": {
+                        "city": "La Chantrerie, Nantes",
+                        "name": "Chantrerie VLS (Captain Bike)",
+						"latitude": 47.2868203,
+                        "longitude": -1.5210917,
+                        "country": "FR"
+                    },
+					"dataset": "chantrerie"
+                },
+				{
+                    "tag": "saclay-captainbike",
+                    "meta": {
+                        "city": "Paris-Saclay",
+                        "name": "Saclay VLS (Captain Bike)",
+						"latitude": 48.7098082, 
+                        "longitude": 2.2113660,
+                        "country": "FR"
+                    },
+					"dataset": "saclay"
+                }
+            ]
+        }
+    }
+}
