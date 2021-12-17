@@ -8,11 +8,11 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 class Ecovelo(BikeShareSystem):
- 
+
     meta = {
         'system': 'Ecovelo',
         'company': ['Ecovelo'],
-		'ebikes': True #This field is always present in the api, even there are no ebikes in the city, is this a problem?
+        'ebikes': True #This field is always present in the api, even there are no ebikes in the city, is this a problem?
     }
 
     BASE_URL = "https://api.cyclist.ecovelo.mobi/stations?&program={dataset}&limit=100"
@@ -23,28 +23,28 @@ class Ecovelo(BikeShareSystem):
 
 
     def update(self, scraper=None):
-		scraper = scraper or utils.PyBikesScraper()
-		data = json.loads(scraper.request(self.feed_url))
-		stations = map(lambda r: r, data['data'])
-		self.stations = list(map(EcoveloStation, stations))
-		
+        scraper = scraper or utils.PyBikesScraper()
+        data = json.loads(scraper.request(self.feed_url))
+        stations = map(lambda r: r, data['data'])
+        self.stations = list(map(EcoveloStation, stations))
+
 
 class EcoveloStation(BikeShareStation):
     def __init__(self, fields):
-		name = fields['name']
-		latitude = float(fields['position']['latitude'])
-		longitude = float(fields['position']['longitude'])
-		bikes = int(fields['docks']['total_vehicules'])
-		free = int(fields['statistics']['type']['available']['classic'] + int(fields['statistics']['vehicules']['type']['vae'])
-		#should we add scooter?
-		#free += int(fields['statistics']['vehicules']['type']['scooter'])
-		extra = {
+        name = fields['name']
+        latitude = float(fields['position']['latitude'])
+        longitude = float(fields['position']['longitude'])
+        bikes = int(fields['docks']['total_vehicules'])
+        free = int(fields['statistics']['type']['available']['classic'] + int(fields['statistics']['vehicules']['type']['vae'])
+        #should we add scooter?
+        #free += int(fields['statistics']['vehicules']['type']['scooter'])
+        extra = {
             'status': fields['status'],
             'uid': str(fields['id']),
             'online': fields['status'] == "open",
-			'normal_bikes': int(fields['statistics']['vehicules']['available']['classic']),
-			'ebikes': int(fields['statistics']['vehicules']['available']['vae']),
-			#This field ('has_ebikes') is always present in the api, even there are no ebikes in the city, is this a problem?
-			'has_ebikes': 'vae' in fields['statistics']['vehicules']['available']
+            'normal_bikes': int(fields['statistics']['vehicules']['available']['classic']),
+            'ebikes': int(fields['statistics']['vehicules']['available']['vae']),
+            #This field ('has_ebikes') is always present in the api, even there are no ebikes in the city, is this a problem?
+            'has_ebikes': 'vae' in fields['statistics']['vehicules']['available']
         }
-		super(EcoveloStation, self).__init__(name, latitude, longitude, bikes, free, extra)
+        super(EcoveloStation, self).__init__(name, latitude, longitude, bikes, free, extra)
