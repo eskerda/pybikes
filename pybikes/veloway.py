@@ -1,14 +1,21 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2016, eskerda <eskerda@gmail.com>
+# Copyright (C) 2010-2021, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
 import json
-import urllib
+
+try:
+    # Python 2
+    from urllib import unquote_plus
+except ImportError:
+    # Python 3
+    from urllib.parse import unquote_plus
+
 from lxml import html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.exceptions import InvalidStation
 
 
 class BaseSystem(BikeShareSystem):
@@ -24,15 +31,14 @@ class Veloway(BaseSystem):
         self.feed_url = feed_url
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         data = json.loads(scraper.request(self.feed_url))
         stations = []
         for info in data['stand']:
             try:
                 station = VelowayStation(info)
-            except Exception:
+            except InvalidStation:
                 continue
             stations.append(station)
         self.stations = stations
@@ -56,9 +62,8 @@ class VelowayStation(BikeShareStation):
     """
     def __init__(self, info):
         super(VelowayStation, self).__init__()
-        self.name = urllib.unquote_plus(
-            info['name'].decode('latin-1').encode('utf-8')
-        )
+        # careful unicode to str conversion before unquoting
+        self.name = unquote_plus(str(info['name']))
         self.bikes = int(info['ab'])
         self.free = int(info['ap'])
         self.latitude = float(info['lat'])
@@ -67,19 +72,14 @@ class VelowayStation(BikeShareStation):
             'uid': int(info['id']),
             'slots': int(info['tc']),
             'slots_available': int(info['ac']),
+            'online': int(info['disp']) == 1,
         }
 
-        if int(info['disp']) == 1:
-            self.extra['status'] = 'OPEN'
-        else:
-            self.extra['status'] = 'CLOSED'
-
+        # careful unicode to str conversion before unquoting
         if info['wcom']:
-            self.extra['address'] = urllib.unquote_plus(
-                info['wcom'].decode('latin-1').encode('utf-8')
-            )
+            self.extra['address'] = unquote_plus(str(info['wcom']))
 
         if self.latitude is None or self.longitude is None:
-            raise Exception('A station needs a lat/lng to be defined!')
+            raise InvalidStation('A station needs a lat/lng to be defined!')
         if self.latitude == 0 and self.longitude == 0:
-            raise Exception('A station can\'t be located in Atlantic Ocean!')
+            raise InvalidStation('A station can\'t be located in Atlantic Ocean!')
