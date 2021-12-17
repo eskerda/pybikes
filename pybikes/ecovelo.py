@@ -4,8 +4,7 @@
 
 import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 class Ecovelo(BikeShareSystem):
 
@@ -15,17 +14,34 @@ class Ecovelo(BikeShareSystem):
         'ebikes': True #This field is always present in the api, even there are no ebikes in the city, is this a problem?
     }
 
-    BASE_URL = "https://api.cyclist.ecovelo.mobi/stations?&program={dataset}&limit=100"
+    BASE_URL = "https://api.cyclist.ecovelo.mobi/stations"
 
     def __init__(self, tag, dataset, meta):
         super(Ecovelo, self).__init__(tag, meta)
-        self.feed_url = Ecovelo.BASE_URL.format(dataset=dataset)
+        self.dataset = dataset
 
+    def params(self, limit=100, after=None):
+        return {
+            "program": self.dataset,
+            "limit": limit,
+            "starting_after": after,
+        }
 
     def update(self, scraper=None):
-        scraper = scraper or utils.PyBikesScraper()
-        data = json.loads(scraper.request(self.feed_url))
-        stations = map(lambda r: r, data['data'])
+        scraper = scraper or PyBikesScraper()
+
+        stations = []
+        params = self.params()
+
+        while True:
+            data = json.loads(scraper.request(Ecovelo.BASE_URL, params=params))
+            stations += (d for d in data['data'] if d['object'] == 'station')
+
+            if not data['has_more']:
+                break
+
+            params = self.params(after=data['data'][-1]['id'])
+
         self.stations = list(map(EcoveloStation, stations))
 
 
