@@ -57,9 +57,13 @@ class EcoveloStation(BikeShareStation):
             'status': fields['status'],
             'uid': fields['id'],
             'online': fields['status'] == "open",
-            'normal_bikes': int(fields['statistics']['vehicules']['available']['classic']),
-            'ebikes': int(fields['statistics']['vehicules']['available']['vae']),
-            #This field ('has_ebikes') is always present in the api, even there are no ebikes in the city, is this a problem?
-            'has_ebikes': 'vae' in fields['statistics']['vehicules']['available']
+            'slots': int(fields['docks']['total_count']),
+            'normal_bikes': types.get('classic', 0),
+            'ebikes': types.get('vae', 0),
+            'scooters': types.get('scooter', 0),
+            'has_ebikes': types.get('vae', 0) > 0,
+            'bike_uids': fields['vehicules']['data'],
         }
-        super(EcoveloStation, self).__init__(name, latitude, longitude, bikes, free, extra)
+
+        super(EcoveloStation, self).__init__(name, latitude, longitude, bikes,
+                                             free, extra)
