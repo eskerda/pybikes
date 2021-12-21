@@ -6,6 +6,8 @@ import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
+UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4572.0 Safari/537.36')"
+
 class Ecovelo(BikeShareSystem):
 
     meta = {
@@ -28,6 +30,7 @@ class Ecovelo(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        scraper.setUserAgent(UA)
 
         stations = []
         params = self.params()
