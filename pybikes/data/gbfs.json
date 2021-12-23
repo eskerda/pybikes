@@ -41,7 +41,8 @@
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions",
                     "BIXI Montréal"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://api-core.bixi.com/gbfs/gbfs.json"
         },
@@ -254,7 +255,8 @@
                 "company": [
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
-                ]
+                ],
+                "ebikes": true
 
             },
             "feed_url": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
@@ -297,7 +299,8 @@
                     "NYC Bike Share, LLC",
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
         },
@@ -327,7 +330,8 @@
                 "company": [
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
         },
@@ -354,7 +358,8 @@
                 "company": [
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
         },
@@ -456,7 +461,8 @@
                 "company": [
                     "Motivate International, Inc.",
                     "PBSC Urban Solutions"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://gbfs.bluebikes.com/gbfs/gbfs.json"
         },

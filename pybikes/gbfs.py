@@ -127,3 +127,7 @@ class GbfsStation(BikeShareStation):
             'returning': info['is_returning'],
             'last_updated': info['last_reported']
         }
+
+        if 'num_ebikes_available' in info:
+            self.extra['has_ebikes'] = True
+            self.extra['ebikes'] = int(info['num_ebikes_available'])
