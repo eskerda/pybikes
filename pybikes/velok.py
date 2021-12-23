@@ -1,65 +1,30 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
-# Distributed under the AGPL license, see LICENSE.txt
 
 import json
-import codecs
 
-from lxml import etree
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
-
-__all__ = ['VelokSystem', 'VelokStation']
-
-parse_methods = {
-    'json': 'get_json_stations'
-}
 
 class VelokSystem(BikeShareSystem):
 
-    sync = True
-
     meta = {
-        'system': 'Velok'
+        'system': 'Velok',
+        'company': ['CIGL ESCH'],
+        'source': 'https://docs.api.tfl.lu/v1/en/RESTAPIs/BikePoint/',
+        'ebikes': True,
     }
 
-    def __init__(self, tag, feed_url, meta, format):
-        super( VelokSystem, self).__init__(tag, meta)
-        self.feed_url = feed_url
-        self.method = format
+    feed_url = "https://api.tfl.lu/v1/BikePoint"
 
-    def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
-        if self.method not in parse_methods:
-            raise Exception(
-                'Extractor for method %s is not implemented' % self.method )
-
-        self.stations = eval(parse_methods[self.method])(self, scraper)
-
-def get_json_stations(self, scraper):
-    data = json.loads(scraper.request(self.feed_url))
-    stations = []
-    for marker in data['features']:
-        try:
-            station = VelokStation.from_json(marker)
-        except (exceptions.StationPlannedException, exceptions.InvalidStation):
-            continue
-        
-        stations.append(station)
-    return stations
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+        data = json.loads(scraper.request(VelokSystem.feed_url))
+        self.stations = list(map(VelokStation, data['features']))
 
 
 class VelokStation(BikeShareStation):
-    def __init__(self):
-        super(VelokStation, self).__init__()
-
-
-    @staticmethod
-    def from_json(data):
-        '''
+    def __init__(self, data):
+        """
           {
             "type": "Feature",
             "geometry": {
@@ -101,27 +66,23 @@ class VelokStation(BikeShareStation):
                     "bikeType": "manual"
                 }]
             }
-        }
-        '''
-        station = VelokStation()
-        # if data['statusValue'] == 'Planned' or data['testStation']:
-        #     raise exceptions.StationPlannedException()
-        if data['properties']['id'].split(':')[0] != 'velok':
-            raise exceptions.InvalidStation()
+          }
+        """
 
-        station.name      = "%s" % (data['properties']['name'])
-        station.longitude = float(data['geometry']['coordinates'][0])
-        station.latitude  = float(data['geometry']['coordinates'][1])
-        station.bikes     = int(data['properties']['available_bikes'])+ int(data['properties']['available_ebikes'])
-        station.free      = int(data['properties']['available_docks'])
+        props = data['properties']
+        name = props['name']
+        longitude, latitude = map(float, data['geometry']['coordinates'])
+        bikes = props['available_bikes'] + props['available_ebikes']
+        free = props['available_docks']
 
-        station.extra = {
-            'uid': int(data['properties']['id'].split(':')[1]),
-            'address': data['properties']['address'],
-            'city': data['properties']['city'],
-            'photo': data['properties']['photo'],
-            'totalDocks': data['properties']['docks'],
-            'open':data['properties']['open']
+        extra = {
+            'uid': props['id'].split(':')[-1],
+            'address': props['address'],
+            'photo': props['photo'],
+            'slots': props['docks'],
+            'online': props['open'],
+            'ebikes': props['available_ebikes'],
         }
 
-        return station
+        super(VelokStation, self).__init__(name=name, latitude=latitude,
+            longitude=longitude, bikes=bikes, free=free, extra=extra)
