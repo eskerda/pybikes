@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "tag": "velok",
+            "meta": {
+                "city": "Esch-sur-alzette",
+                "name": "Velok",
+                "country": "LU",
+                "longitude": 5.9722,
+                "latitude": 49.5024
+            },
+            "feed_url": "https://api.tfl.lu/v1/BikePoint",
+            "format": "json"
+        }
+    ],
+    "system": "velok",
+    "class": "VelokSystem"
+}
