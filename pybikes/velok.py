@@ -19,7 +19,10 @@ class VelokSystem(BikeShareSystem):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         data = json.loads(scraper.request(VelokSystem.feed_url))
-        self.stations = list(map(VelokStation, data['features']))
+        self.stations = [
+            VelokStation(f) for f in data['features']
+                if 'velok' in f['properties']['id']
+        ]
 
 
 class VelokStation(BikeShareStation):
