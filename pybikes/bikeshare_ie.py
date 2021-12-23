@@ -9,7 +9,7 @@ from .base import BikeShareSystem, BikeShareStation
 from . import utils
 
 FEED_URL = "https://www.bikeshare.ie/"
-STATIONS_RGX = "var\ mapsfromcache\ =\ (.*?);"
+STATIONS_RGX = "var\ mapsfromcache\ =\ (.*?\}\]\})"
 
 
 class BikeshareIE(BikeShareSystem):
@@ -27,8 +27,10 @@ class BikeshareIE(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
+        
+        # bikeshare.ie gave invalid certificates, but this seems resolved!
         # XXX Seems bikeshare.ie gives invalid certificates
-        scraper.ssl_verification = False
+        # scraper.ssl_verification = False
 
         stations = []
 
