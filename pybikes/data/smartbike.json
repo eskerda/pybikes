@@ -1,6 +1,22 @@
 {
     "system": "smartbike",
     "class": {
+        "SmartShitty": {
+            "instances": [
+                {
+                    "tag": "bikemi",
+                    "meta": {
+                        "latitude": 45.4654542,
+                        "city": "Milano",
+                        "name": "BikeMi",
+                        "longitude": 9.186516,
+                        "country": "IT",
+                        "ebikes": true
+                    },
+                    "feed_url": "https://bikemi.com/en/stations"
+                }
+            ]
+        },
         "SmartBike": {
             "instances": [
                 {
