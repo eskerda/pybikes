@@ -167,6 +167,52 @@ class KeolisStation_v2(BikeShareStation):
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
 
+class IDEcycle(BikeShareSystem):
+
+    sync = True
+
+    def __init__(self, tag, meta, feed_url):
+        super(IDEcycle, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        stations = []
+        
+        html = scraper.request(self.feed_url)
+        STATIONS_RGX = "var\ geojsondatas\ =\ (.*?\}\]\})"
+        stations_html = re.findall(STATIONS_RGX, html, flags=re.DOTALL)        
+        data = json.loads(stations_html[0])
+        stations_data = data["features"]
+
+        for station_data in stations_data:
+            stations.append(IDEcycleStation(station_data))
+        self.stations = stations
+
+class IDEcycleStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['properties']['title']
+        latitude = fields['geometry']['coordinates'][1]
+        longitude = fields['geometry']['coordinates'][0]
+
+        freeRGX = u"</li><li>(.*?)\ Places\ libres"
+        bikesRGX = u"<ul><li>(.*?)\ Vélos\ disponibles"
+        uidRGX = u"data-poi=\\\"(.*?)\\\"\ "
+        addressRGX = u"<p>(.*?)</br>"
+        slotsRGX = u"Capacité\ \:\ (.*?)\ vélos"
+        text = fields['properties']['popupContent']
+        
+        free = re.findall(freeRGX, text, re.UNICODE)[0]
+        bikes = re.findall(bikesRGX, text, re.UNICODE)[0]
+        extra = {
+            'uid': re.findall(uidRGX, text, re.UNICODE)[0],
+            'address': re.findall(addressRGX, text, re.UNICODE)[0],
+            'slots': re.findall(slotsRGX, text, re.UNICODE)[0]
+
+        }
+        super(IDEcycleStation, self).__init__(name, latitude, longitude, bikes, free, extra)
+
 class KeolisIlevia(BikeShareSystem):
 
     meta = {
