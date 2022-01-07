@@ -179,7 +179,6 @@ class IDEcycle(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
 
         stations = []
-        
         html = scraper.request(self.feed_url)
         STATIONS_RGX = "var\ geojsondatas\ =\ (.*?\}\]\})"
         stations_html = re.findall(STATIONS_RGX, html, flags=re.DOTALL)        
