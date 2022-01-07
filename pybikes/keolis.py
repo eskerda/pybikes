@@ -189,19 +189,17 @@ class IDEcycleStation(BikeShareStation):
         latitude = fields['geometry']['coordinates'][1]
         longitude = fields['geometry']['coordinates'][0]
 
-        freeRGX = u"</li><li>(.*?)\ Places\ libres"
-        bikesRGX = u"<ul><li>(.*?)\ Vélos\ disponibles"
-        uidRGX = u"data-poi=\\\"(.*?)\\\"\ "
-        addressRGX = u"<p>(.*?)</br>"
-        slotsRGX = u"Capacité\ \:\ (.*?)\ vélos"
-        text = fields['properties']['popupContent']
-        
-        free = int(re.findall(freeRGX, text, re.UNICODE)[0])
-        bikes = int(re.findall(bikesRGX, text, re.UNICODE)[0])
+        raw = fields['properties']['popupContent']
+        popup = lxml.html.fromstring(raw)
+        text = " ".join(popup.xpath("//text()"))
+
+        free = int(re.findall(r'(\d+) Places libres', text, re.UNICODE)[0])
+        bikes = int(re.findall(r'(\d+) Vélos disponibles', text, re.UNICODE)[0])
+
         extra = {
-            'uid': re.findall(uidRGX, text, re.UNICODE)[0],
+            'uid': uid = popup.xpath("//a/@data-poi")[0],
             'address': re.findall(addressRGX, text, re.UNICODE)[0],
-            'slots': int(re.findall(slotsRGX, text, re.UNICODE)[0]),
+            'slots': int(re.findall(r'Capacité : (\d+) vélos', text, re.UNICODE)[0]),
             # All current stations (17) have a payment card reader
             # See the data here: https://data.idelis.fr/explore/dataset/stations-velo-en-libre-service-idecycle/table/
             'payment': 'AVEC_TPE'
