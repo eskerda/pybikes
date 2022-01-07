@@ -197,7 +197,7 @@ class IDEcycleStation(BikeShareStation):
         bikes = int(re.findall(r'(\d+) Vélos disponibles', text, re.UNICODE)[0])
 
         extra = {
-            'uid': uid = popup.xpath("//a/@data-poi")[0],
+            'uid': popup.xpath("//a/@data-poi")[0],
             'address': re.findall(addressRGX, text, re.UNICODE)[0],
             'slots': int(re.findall(r'Capacité : (\d+) vélos', text, re.UNICODE)[0]),
             # All current stations (17) have a payment card reader
