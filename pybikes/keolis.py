@@ -181,11 +181,7 @@ class IDEcycle(BikeShareSystem):
         html = scraper.request(self.feed_url)
         geoj = re.findall(r'var geojsondatas = (.*?);', html, flags=re.DOTALL)
         data = json.loads(geoj[0])
-        stations_data = data["features"]
-
-        for station_data in stations_data:
-            stations.append(IDEcycleStation(station_data))
-        self.stations = stations
+        self.stations = [ IDEcycleStation(feature) for feature in data['features'] ]
 
 class IDEcycleStation(BikeShareStation):
     def __init__(self, fields):
