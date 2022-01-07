@@ -196,8 +196,8 @@ class IDEcycleStation(BikeShareStation):
         slotsRGX = u"Capacité\ \:\ (.*?)\ vélos"
         text = fields['properties']['popupContent']
         
-        free = re.findall(freeRGX, text, re.UNICODE)[0]
-        bikes = re.findall(bikesRGX, text, re.UNICODE)[0]
+        free = int(re.findall(freeRGX, text, re.UNICODE)[0])
+        bikes = int(re.findall(bikesRGX, text, re.UNICODE)[0])
         extra = {
             'uid': re.findall(uidRGX, text, re.UNICODE)[0],
             'address': re.findall(addressRGX, text, re.UNICODE)[0],
