@@ -179,9 +179,8 @@ class IDEcycle(BikeShareSystem):
         scraper = scraper or utils.PyBikesScraper()
 
         html = scraper.request(self.feed_url)
-        STATIONS_RGX = "var\ geojsondatas\ =\ (.*?\}\]\})"
-        stations_html = re.findall(STATIONS_RGX, html, flags=re.DOTALL)        
-        data = json.loads(stations_html[0])
+        geoj = re.findall(r'var geojsondatas = (.*?);', html, flags=re.DOTALL)
+        data = json.loads(geoj[0])
         stations_data = data["features"]
 
         for station_data in stations_data:
