@@ -201,7 +201,7 @@ class IDEcycleStation(BikeShareStation):
         extra = {
             'uid': re.findall(uidRGX, text, re.UNICODE)[0],
             'address': re.findall(addressRGX, text, re.UNICODE)[0],
-            'slots': re.findall(slotsRGX, text, re.UNICODE)[0],
+            'slots': int(re.findall(slotsRGX, text, re.UNICODE)[0]),
             # All current stations (17) have a payment card reader
             # See the data here: https://data.idelis.fr/explore/dataset/stations-velo-en-libre-service-idecycle/table/
             'payment': 'AVEC_TPE'
