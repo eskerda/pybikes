@@ -17,7 +17,7 @@
                 }
             ]
         },
-        "Keolis": {
+        "IDEcycle": {
             "instances": [
                 {
                     "tag": "idecycle",
@@ -29,7 +29,7 @@
                         "city": "Pau",
                         "company": ["Keolis", "STAP"]
                     },
-                    "feed_url": "http://www.idecycle.com/stations/plan"
+                    "feed_url": "https://www.idelis.fr/se-deplacer/velos-idecycle/le-velo-en-libre-service"
                 }
             ]
         },

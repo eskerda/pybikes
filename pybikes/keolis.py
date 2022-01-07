@@ -167,6 +167,46 @@ class KeolisStation_v2(BikeShareStation):
         # Update time as in 47 seconds ago: '47 secondes'
         self.extra['lastupd'] = xml_status.find('lastupd').text
 
+class IDEcycle(BikeShareSystem):
+
+    sync = True
+
+    def __init__(self, tag, meta, feed_url):
+        super(IDEcycle, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        html = scraper.request(self.feed_url)
+        geoj = re.findall(r'var geojsondatas = (.*?);', html, flags=re.DOTALL)
+        data = json.loads(geoj[0])
+        self.stations = [ IDEcycleStation(feature) for feature in data['features'] ]
+
+class IDEcycleStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['properties']['title']
+        latitude = fields['geometry']['coordinates'][1]
+        longitude = fields['geometry']['coordinates'][0]
+
+        raw = fields['properties']['popupContent']
+        popup = lxml.html.fromstring(raw)
+        text = " ".join(popup.xpath("//text()"))
+        addressRGX = u"<p>(.*?)</br>"
+
+        free = int(re.findall(u'(\d+) Places libres', text, re.UNICODE)[0])
+        bikes = int(re.findall(u'(\d+) Vélos disponibles', text, re.UNICODE)[0])
+
+        extra = {
+            'uid': popup.xpath("//a/@data-poi")[0],
+            'address': re.findall(addressRGX, raw, re.UNICODE)[0],
+            'slots': int(re.findall(u'Capacité : (\d+) vélos', text, re.UNICODE)[0]),
+            # All current stations (17) have a payment card reader
+            # See the data here: https://data.idelis.fr/explore/dataset/stations-velo-en-libre-service-idecycle/table/
+            'payment': 'AVEC_TPE'
+        }
+        super(IDEcycleStation, self).__init__(name, latitude, longitude, bikes, free, extra)
+
 class KeolisIlevia(BikeShareSystem):
 
     meta = {
