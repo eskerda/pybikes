@@ -128,7 +128,8 @@
                 "company": [
                     "Motivate International, Inc",
                     "PBSC"
-                ]
+                ],
+                "ebikes": true
             },
             "feed_url": "https://chat.publicbikesystem.net/ube/gbfs/v1/"
         },
