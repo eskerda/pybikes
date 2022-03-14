@@ -23,6 +23,8 @@ except NameError:
 
 class Gbfs(BikeShareSystem):
 
+    station_cls = None
+
     def __init__(self, tag, meta, feed_url, force_https=False):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
@@ -89,7 +91,7 @@ class Gbfs(BikeShareSystem):
         for info, status in stations:
             info.update(status)
             try:
-                station = GbfsStation(info)
+                station = self.station_cls(info)
             except exceptions.StationPlannedException:
                 continue
             self.stations.append(station)
@@ -120,14 +122,21 @@ class GbfsStation(BikeShareStation):
         self.latitude = float(info['lat'])
         self.longitude = float(info['lon'])
         self.extra = {
-            # address is optional
-            'address': info.get('address'),
             'uid': info['station_id'],
             'renting': info['is_renting'],
             'returning': info['is_returning'],
-            'last_updated': info['last_reported']
+            'last_updated': info['last_reported'],
         }
+
+        if 'address' in info:
+            self.extra['address'] = info['address']
 
         if 'num_ebikes_available' in info:
             self.extra['has_ebikes'] = True
             self.extra['ebikes'] = int(info['num_ebikes_available'])
+
+        if 'rental_methods' in info:
+            self.extra['payment'] = list(map(unicode.lower, info['rental_methods']))
+
+
+Gbfs.station_cls = GbfsStation
