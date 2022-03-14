@@ -44,7 +44,7 @@
                 ],
                 "ebikes": true
             },
-            "feed_url": "https://api-core.bixi.com/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.velobixi.com/gbfs/gbfs.json"
         },
         {
             "tag": "bixi-toronto",
