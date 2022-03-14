@@ -971,7 +971,11 @@
                  "country": "FR",
                  "name": "Velib' Métropôle",
                  "longitude": 2.3522219,
-                 "city": "Paris"
+                 "city": "Paris",
+                 "license": {
+                     "name": "OPEN LICENCE 2.0",
+                     "url": "etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf"
+                }
              },
              "feed_url": "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json"
         }
