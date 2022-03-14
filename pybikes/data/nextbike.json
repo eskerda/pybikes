@@ -2648,17 +2648,6 @@
             }
         },
         {
-            "domain": "nu",
-            "tag": "lviv-kharkiv",
-            "city_uid": 522,
-            "meta": {
-                "city": "Kharkiv",
-                "country": "UA",
-                "latitude": 49.9795,
-                "longitude": 36.2563
-            }
-        },
-        {
             "domain": "pd",
             "tag": "ciechanowski-rower-miejski-ciechanow",
             "city_uid": 523,
