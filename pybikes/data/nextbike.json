@@ -3035,6 +3035,18 @@
                 "latitude": 47.9958,
                 "longitude": 7.84453
             }
+        },
+        {
+            "domain": "wr",
+            "tag": "wienmobil-rad",
+            "city_uid": 748,
+            "meta": {
+                "name": "WienMobil Rad",
+                "city": "Wien",
+                "country": "AT",
+                "latitude": 48.2081743,
+                "longitude": 16.3738189
+            }
         }
     ],
     "system": "nextbike",
