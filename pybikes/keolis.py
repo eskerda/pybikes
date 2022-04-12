@@ -124,7 +124,12 @@ class KeolisSTARStation(BikeShareStation):
             'status': fields['etat'],
             'uid': str(fields['idstation']),
             'last_update': fields['lastupdate'],
-            'online': fields['etat'] == 'En fonctionnement'
+            'online': fields['etat'] == 'En fonctionnement',
+            # payment: AVEC_TPE | SANS_TPE
+            # as in, accepts bank cards or not
+            # All current stations have a payment card reader
+            # See the data here: https://data.rennesmetropole.fr/explore/dataset/stations_vls/api/
+            'payment': 'AVEC_TPE'
         }
         super(KeolisSTARStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
