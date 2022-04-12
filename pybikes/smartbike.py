@@ -115,28 +115,9 @@ class SmartBikeStation(BikeShareStation):
 class SmartShitty(BaseSystem):
     """
     BikeMI decided (again) to implement yet another way of displaying the map...
-    This time the data come in a less messy way in comparison to the previous version,
-    but the HTML comes unescaped (escaped bellow for better understanding).
-    Who the fuck pay this guys money, seriously?
 
-    GoogleMap.addMarker(
-        '/media/assets/images/station_map/more_than_five_bikes_flag.png',
-        45.464683238626,
-        9.18879747390747,
-        'Duomo',
-        '<div style="width: 240px; height: 120px;">
-            <span style="font-weight: bold;">178 - V Alpini</span>
-            <br>
-            <ul>
-                <li>Available bicycles: 9</li>
-                <li>Available electrical bicycles: 0</li>
-                <li>Available slots: 20</li>
-                </ul>
-        </div>');
     """
     sync = True
-
-    RGX_MARKERS = r'GoogleMap\.addMarker\(.*?,\s*(\d+.\d+)\s*,\s*(\d+.\d+),\s*\'(.*?)\',(.*?)\)\;'
 
     def __init__(self, tag, meta, feed_url):
         super(SmartShitty, self).__init__(tag, meta)
@@ -145,52 +126,38 @@ class SmartShitty(BaseSystem):
     def update(self, scraper=None):
         if scraper is None:
             scraper = utils.PyBikesScraper()
-
         page = scraper.request(self.feed_url)
-        stations_data = re.findall(SmartShitty.RGX_MARKERS, page)
-        stats_query = """
-            //td[span[text() = "%s"]]/
-                following-sibling::td/text()
-        """
-
-        stats_rules = {
-            'std': 'Bicycles',
-            'ebikes': 'Electric bicycles',
-            'kids_bikes': 'Bicycles for kids'
-        }
-
+        page_html=html.fromstring(page)
+        element = page_html.get_element_by_id("__NEXT_DATA__").text_content()
+        element_string = element.encode('utf-8').decode("utf-8")
+        raw_data = json.loads(element_string)
+        stations_data = raw_data['props']['pageProps']['apolloState']
         stations = []
 
-        for station_data in stations_data:
-            latitude, longitude, name, mess = station_data
-            # ??
-            html_mess = html.fromstring(mess.encode('utf-8').decode('unicode_escape'))
-            stats = {}
-            extra = {}
-
-            for k, rule in stats_rules.items():
-                stats[k] = list(map(int, html_mess.xpath(stats_query % rule)))
-
-            bikes = 0
-            free = None
-
-            if stats.get('std'):
-                bikes += stats['std'][0]
-                # std free already accounts for all slots
-                free = stats['std'][1]
-
-            if stats.get('ebikes'):
-                extra['has_ebikes'] = True
-                bikes += stats['ebikes'][0]
-                extra['ebikes'] = stats['ebikes'][0]
-
-            if stats.get('kids_bikes'):
-                extra['has_kids_bikes'] = True
-                bikes += stats['kids_bikes'][0]
-                extra['kids_bikes'] = stats['kids_bikes'][0]
-
-            station = BikeShareStation(name, float(latitude), float(longitude),
-                                       bikes, free, extra)
-            stations.append(station)
-
+        for station_key in stations_data:
+            station_data = stations_data[station_key]
+            if station_data['__typename']=='DockGroup':
+                stations.append(BikemiStation(station_data))
         self.stations = stations
+        
+class BikemiStation(BikeShareStation):
+    def __init__(self, fields):
+        name = fields['title']
+        latitude = fields['coord']['lat']
+        longitude = fields['coord']['lng']
+        free = fields['availabilityInfo']['availableDocks']
+        normal_bikes = fields['availabilityInfo']['availableVehicleCategories'][0]['count']
+        ebikes_without_childseat = fields['availabilityInfo']['availableVehicleCategories'][1]['count']
+        ebikes_with_childseat = fields['availabilityInfo']['availableVehicleCategories'][2]['count']
+        extra = {
+            'status': fields['state'],
+            'uid': str(fields['id']),
+            'address': fields['subTitle'],
+            'online': fields['enabled'],
+            'normal_bikes': normal_bikes,
+            'ebikes_without_childseat': ebikes_without_childseat,
+            'ebikes_with_childseat': ebikes_with_childseat,
+            'ebikes': ebikes_without_childseat + ebikes_with_childseat
+        }
+       	bikes = normal_bikes + ebikes_without_childseat + ebikes_with_childseat
+        super(BikemiStation, self).__init__(name, latitude, longitude, bikes, free, extra)
