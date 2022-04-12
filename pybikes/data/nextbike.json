@@ -270,18 +270,6 @@
             }
         },
         {
-            "domain": "lv",
-            "tag": "sixt-jurmala",
-            "city_uid": 140,
-            "meta": {
-                "name": "SiXT",
-                "city": "Jūrmala",
-                "country": "LV",
-                "latitude": 56.9732,
-                "longitude": 23.8225
-            }
-        },
-        {
             "domain": "la",
             "tag": "nextbike-wachau",
             "city_uid": 142,
@@ -636,18 +624,6 @@
             }
         },
         {
-            "domain": "sa",
-            "tag": "ibike-king-abdullah-economic-city",
-            "city_uid": 264,
-            "meta": {
-                "name": "iBike",
-                "city": "King Abdullah Economic City",
-                "country": "SA",
-                "latitude": 22.4053,
-                "longitude": 39.0815
-            }
-        },
-        {
             "domain": "vn",
             "tag": "vrn-ludwigshafen",
             "city_uid": 266,
@@ -657,17 +633,6 @@
                 "country": "DE",
                 "latitude": 49.4741,
                 "longitude": 8.43287
-            }
-        },
-        {
-            "domain": "up",
-            "tag": "nextbike-university-of-warwick",
-            "city_uid": 272,
-            "meta": {
-                "city": "Warwick",
-                "country": "GB",
-                "latitude": 52.3815,
-                "longitude": -1.56159
             }
         },
         {
@@ -724,18 +689,6 @@
                 "country": "AT",
                 "latitude": 47.0387,
                 "longitude": 10.6048
-            }
-        },
-        {
-            "domain": "gs",
-            "tag": "grad-gospic-gospic",
-            "city_uid": 291,
-            "meta": {
-                "name": "Grad Gospić",
-                "city": "Gospić",
-                "country": "HR",
-                "latitude": 44.5469,
-                "longitude": 15.375
             }
         },
         {
@@ -914,29 +867,6 @@
             }
         },
         {
-            "domain": "mp",
-            "tag": "system-legnicki-rower-miejski-slrm-legnica",
-            "city_uid": 363,
-            "meta": {
-                "name": "System Legnicki Rower Miejski (SLRM)",
-                "city": "Legnica",
-                "country": "PL",
-                "latitude": 51.2059,
-                "longitude": 16.1667
-            }
-        },
-        {
-            "domain": "hi",
-            "tag": "nextbike-hyderabad",
-            "city_uid": 367,
-            "meta": {
-                "city": "Hyderabad",
-                "country": "IN",
-                "latitude": 17.38,
-                "longitude": 78.4725
-            }
-        },
-        {
             "domain": "vp",
             "tag": "veturilo-stacje-sponsorskie-nextbike-veturilo",
             "city_uid": 372,
@@ -1088,18 +1018,6 @@
             }
         },
         {
-            "domain": "vi",
-            "tag": "smartbike-vijayawada-vijayawada",
-            "city_uid": 402,
-            "meta": {
-                "name": "Smartbike Vijayawada",
-                "city": "Vijayawada",
-                "country": "IN",
-                "latitude": 16.5109,
-                "longitude": 80.6313
-            }
-        },
-        {
             "domain": "el",
             "tag": "sitycleta-las-palmas-las-palmas-de-gran-canaria",
             "city_uid": 408,
@@ -1133,17 +1051,6 @@
                 "country": "HR",
                 "latitude": 45.4875,
                 "longitude": 16.3753
-            }
-        },
-        {
-            "domain": "at",
-            "tag": "nextbike-salzburg",
-            "city_uid": 417,
-            "meta": {
-                "city": "Salzburg ",
-                "country": "AT",
-                "latitude": 47.8014,
-                "longitude": 13.0458
             }
         },
         {
@@ -1442,17 +1349,6 @@
                 "country": "GB",
                 "latitude": 51.6106,
                 "longitude": -3.9764
-            }
-        },
-        {
-            "domain": "ch",
-            "tag": "nextbike-kussnacht-sz",
-            "city_uid": 490,
-            "meta": {
-                "city": "Küssnacht SZ",
-                "country": "CH",
-                "latitude": 47.0856,
-                "longitude": 8.44145
             }
         },
         {
