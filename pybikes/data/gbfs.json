@@ -963,6 +963,17 @@
                 "longitude": -2.7603
             },
             "feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
+        },
+        {
+            "tag": "bikeverona",
+            "meta": {
+                "city": "Verona",
+                "name": "Verona Bike",
+                "country": "IT",
+                "latitude": 45.438611,
+                "longitude": 10.992778
+            },
+            "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
         }
     ],
     "system": "gbfs",
