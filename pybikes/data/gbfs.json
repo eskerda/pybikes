@@ -585,11 +585,12 @@
                 "name": "Nice Ride",
                 "country": "US",
                 "company": [
-                    "Nice Ride Minnesota"
+                    "Nice Ride Minnesota",
+                    "Lyft"
                 ]
 
             },
-            "feed_url": "https://api-core.niceridemn.org/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.niceridemn.com/gbfs/gbfs.json"
         },
         {
             "tag": "sanantonio",
