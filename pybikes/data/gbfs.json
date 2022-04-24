@@ -76,21 +76,6 @@
             "feed_url": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
         },
         {
-            "tag": "velogo",
-            "meta": {
-                "latitude": 45.4285325522342,
-                "longitude": -75.6970576741095,
-                "city": "Ottawa, ON",
-                "name": "VeloGO",
-                "country": "CA",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://velogo.ca/opendata/gbfs.json"
-        },
-        {
             "tag": "arborbike",
             "meta": {
                 "latitude": 42.27853,
