@@ -139,7 +139,9 @@ class GbfsStation(BikeShareStation):
             self.extra['ebikes'] = int(info['num_ebikes_available'])
 
         if 'rental_methods' in info:
-            self.extra['payment'] = list(map(unicode.lower, info['rental_methods']))
+            payment = list(map(unicode.lower, info['rental_methods']))
+            self.extra['payment'] = payment
+            self.extra['payment-terminal'] = 'creditcard' in payment
 
 
 Gbfs.station_cls = GbfsStation

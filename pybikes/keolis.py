@@ -44,7 +44,7 @@ class IDEcycleStation(BikeShareStation):
             'slots': int(re.findall(u'Capacité : (\d+) vélos', text, re.UNICODE)[0]),
             # All current stations (17) have a payment card reader
             # See the data here: https://data.idelis.fr/explore/dataset/stations-velo-en-libre-service-idecycle/table/
-            'payment': 'AVEC_TPE'
+            'payment-terminal': True,
         }
         super(IDEcycleStation, self).__init__(name, latitude, longitude, bikes, free, extra)
 
@@ -83,10 +83,7 @@ class KeolisIleviaStation(BikeShareStation):
             'address': fields['adresse'],
             'last_update': fields['datemiseajour'],
             'online': fields['etat'] == 'EN SERVICE',
-            # payment: AVEC TPE | SANS TPE
-            # as in, accepts bank cards or not
-            # convert it to AVEC_TPE | SANS_TPE as other keolis systems
-            'payment': fields['type'].replace(" ", "_"),
+            'payment-terminal': fields['type'] == 'AVEC TPE',
         }
         super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
@@ -124,7 +121,9 @@ class KeolisSTARStation(BikeShareStation):
             'status': fields['etat'],
             'uid': str(fields['idstation']),
             'last_update': fields['lastupdate'],
-            'online': fields['etat'] == 'En fonctionnement'
+            'online': fields['etat'] == 'En fonctionnement',
+            # https://data.rennesmetropole.fr/explore/dataset/stations_vls/api/
+            'payment-terminal': True,
         }
         super(KeolisSTARStation, self).__init__(name, latitude, longitude,
                                                 bikes, free, extra)
