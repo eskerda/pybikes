@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
+# Copyright (c) 2022, Lluis Esquerda <eskerda@gmail.com>
 # Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
-import demjson
-from lxml import html
+import json
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
 class CycleHire(BikeShareSystem):
-
-    sync = True
 
     meta = {
         'system': 'Cycle Hire',
@@ -26,37 +23,33 @@ class CycleHire(BikeShareSystem):
         self.feed_url = feed_url
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         stations = []
 
-        """ Looks like:
-        var sites = [['<p><strong>001-Slough Train Station</strong></p>',
-            51.511350,-0.591562, ,
-            '<p><strong>001-Slough Train Station</strong></p>
-            <p>Number of bikes available: 17</p>
-            <p>Number of free docking points: 15</p>'], ...];
-        """
-        DATA_RGX = r'var sites = (\[.+?\]);'
+        DATA_RGX = r'Drupal\.settings\, (\{.*\})\)\;'
 
         page = scraper.request(self.feed_url)
-        data = re.search(DATA_RGX, page).group(1)
-        _stations = demjson.decode(data)
-        for _station in _stations:
-            latitude = float(_station[1])
-            longitude = float(_station[2])
-            tree = html.fromstring(_station[4])
-            name, bikes, free = tree.xpath('//p//text()')
-            bikes = int(re.search(r'\d+', bikes).group())
-            free = int(re.search(r'\d+', free).group())
-            # Matches (<number>)<symbol?><space?>name
-            uuid = re.search(r'(\d+)[\W]?\s*\w+', name)
-            uuid = uuid.group(1)
+        data = json.loads(re.search(DATA_RGX, page).group(1))
+        markers = data.get('markers', [])
+        for marker in markers:
+            name = marker['title']
+            latitude = float(marker['latitude'])
+            longitude = float(marker['longitude'])
+            nbikes = int(marker['avl_bikes'])
+            ebikes = int(marker['avl_ebikes'])
+            bikes = nbikes + ebikes
+            free = int(marker['free_slots'])
             extra = {
-                'uuid': uuid
+                'uid': marker['nid'],
+                'total_slots': int(marker['total_slots']),
+                'has_ebikes': True,
+                'ebikes': ebikes,
+                'normal_bikes': nbikes,
+                'online': marker['operative'] == '1',
             }
-            station = BikeShareStation(name, latitude, longitude, bikes, free,
-                                       extra)
+
+            station = BikeShareStation(name, latitude, longitude, bikes, free, extra)
             stations.append(station)
+
         self.stations = stations
