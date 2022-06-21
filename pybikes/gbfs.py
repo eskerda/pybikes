@@ -55,15 +55,18 @@ class Gbfs(BikeShareSystem):
 
         if lang in feed_data['data']:
             feeds = feed_data['data'][lang]
+            if isinstance(feeds, dict):
+                feeds = feeds['feeds']
         else:
             feeds = list(feed_data['data'].values()).pop()
 
-        for feed in feeds['feeds']:
+        for feed in feeds:
             if force_https:
                 # Feed published with the wrong protocol
                 feed['url'] = feed['url'].replace('http://', 'https://')
-            feeds[feed['name']] = feed['url']
-        return feeds
+
+        return {feed['name']: feed['url'] for feed in feeds}
+
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()

@@ -963,6 +963,18 @@
                 "longitude": -2.7603
             },
             "feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
+        },
+        {
+            "tag": "mibicitubici",
+            "meta": {
+              "city": "Rosario",
+              "name": "Mi bici tu bici",
+              "country": "AR",
+              "longitude": -60.65,
+              "latitude": -32.95,
+              "company": ["Mobilicidade Tecnologia LTD", "Municipalidad de Rosario"]
+            },
+            "feed_url": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
         }
     ],
     "system": "gbfs",
