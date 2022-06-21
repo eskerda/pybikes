@@ -1399,17 +1399,6 @@
         },
         {
             "domain": "nu",
-            "tag": "lviv-kharkiv",
-            "city_uid": 522,
-            "meta": {
-                "city": "Kharkiv",
-                "country": "UA",
-                "latitude": 49.9795,
-                "longitude": 36.2563
-            }
-        },
-        {
-            "domain": "nu",
             "tag": "lviv-odessa",
             "city_uid": 525,
             "meta": {
