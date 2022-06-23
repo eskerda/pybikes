@@ -986,6 +986,18 @@
                 "longitude": 10.992778
             },
             "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
+        },
+        {
+            "tag": "bikebrasilia",
+            "meta": {
+              "city": "Bras\u00edlia",
+              "name": "BikeBrasilia",
+              "country": "BR",
+              "longitude": -47.887424,
+              "latitude": -15.795115,
+              "company": ["Tembici"]
+            },
+            "feed_url": "https://brasilia.publicbikesystem.net/customer/ube/gbfs/v1/"
         }
     ],
     "system": "gbfs",
