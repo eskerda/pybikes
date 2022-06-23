@@ -30,17 +30,6 @@
         "SambaNew": {
             "instances": [
                 {
-                    "url":"http://www.maisbikecompartilhada.com.br/mapaestacao.aspx",
-                    "tag":"bikebrasilia",
-                    "meta":{
-                        "latitude":-15.795115,
-                        "city":"Bras\u00edlia",
-                        "name":"BikeBrasilia",
-                        "longitude":-47.887424,
-                        "country":"BR"
-                    }
-                },
-                {
                     "url":"http://www.debikegoiania.com/mapaestacao.aspx",
                     "tag":"debikegoiania",
                     "meta":{
