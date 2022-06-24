@@ -949,6 +949,36 @@
                 "longitude": -2.7603
             },
             "feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
+        },
+        {
+            "tag": "rtcbikeshare",
+            "meta": {
+                "latitude": 36.1438,
+                "longitude": -115.15682,
+                "city": "Las Vegas, NV",
+                "name": "RTC Bike Share BCycle",
+                "country": "US",
+                "company": [
+                    "Bcycle, LLC",
+                    "RTC Southern Nevada, Inc"
+                ]
+            },
+            "feed_url": "https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json"
+        },
+        {
+            "tag": "spokies",
+            "meta": {
+                "latitude": 35.46436,
+                "longitude": -97.50888,
+                "city": "Oklahoma, OK",
+                "name": "Spokies BCycle",
+                "country": "US",
+                "company": [
+                    "Bcycle, LLC",
+                    "Embark, Inc"
+                ]
+            },
+            "feed_url": "https://gbfs.bcycle.com/bcycle_spokies/gbfs.json"
         }
     ],
     "system": "gbfs",
