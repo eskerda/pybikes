@@ -58,12 +58,16 @@ class Gbfs(BikeShareSystem):
         else:
             feeds = list(feed_data['data'].values()).pop()
 
-        for feed in feeds['feeds']:
+        if isinstance(feeds, dict):
+            feeds = feeds['feeds']
+
+        for feed in feeds:
             if force_https:
                 # Feed published with the wrong protocol
                 feed['url'] = feed['url'].replace('http://', 'https://')
-            feeds[feed['name']] = feed['url']
-        return feeds
+
+        return {feed['name']: feed['url'] for feed in feeds}
+
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
@@ -136,7 +140,9 @@ class GbfsStation(BikeShareStation):
             self.extra['ebikes'] = int(info['num_ebikes_available'])
 
         if 'rental_methods' in info:
-            self.extra['payment'] = list(map(unicode.lower, info['rental_methods']))
+            payment = list(map(unicode.lower, info['rental_methods']))
+            self.extra['payment'] = payment
+            self.extra['payment-terminal'] = 'creditcard' in payment
 
 
 Gbfs.station_cls = GbfsStation

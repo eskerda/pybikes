@@ -951,6 +951,29 @@
             "feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
         },
         {
+            "tag": "mibicitubici",
+            "meta": {
+              "city": "Rosario",
+              "name": "Mi bici tu bici",
+              "country": "AR",
+              "longitude": -60.65,
+              "latitude": -32.95,
+              "company": ["Mobilicidade Tecnologia LTD", "Municipalidad de Rosario"]
+            },
+            "feed_url": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
+        },
+        {
+            "tag": "bikeverona",
+            "meta": {
+                "city": "Verona",
+                "name": "Verona Bike",
+                "country": "IT",
+                "latitude": 45.438611,
+                "longitude": 10.992778
+            },
+            "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
+        },
+        {
             "tag": "rtcbikeshare",
             "meta": {
                 "latitude": 36.1438,

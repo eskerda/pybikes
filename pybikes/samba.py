@@ -8,9 +8,8 @@ from . import utils
 
 import re
 import ast
-import demjson
 
-__all__ = ['Samba', 'SambaNew', 'SambaArgentina']
+__all__ = ['Samba', 'SambaNew']
 
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"  # NOQA
 
@@ -115,57 +114,3 @@ class SambaNew(BaseSystem):
                 'status': self.get_status(online_status, operation_status)
             }
             self.stations.append(station)
-
-class SambaArgentina(BaseSystem):
-    sync = True
-    _STATIONS_RGX = r'var estacoes = (\[.+\]);'
-
-    def __init__(self, tag, url, meta):
-        super(SambaArgentina, self).__init__(tag, meta)
-        self.feed_url = url
-
-    def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
-        html_data = scraper.request(self.feed_url)
-        raw_data = re.search(SambaArgentina._STATIONS_RGX, html_data).group(1)
-        data = demjson.decode(raw_data)
-
-        # Each station is like follows
-        # [
-        #   'Pellegrini',
-        #   '-32.953886',
-        #   '-60.656628',
-        #   '',
-        #   'A',
-        #   'EO',
-        #   '9',
-        #   '9',
-        #   '11',
-        #   'Est_Normal 1',
-        #   './img/ico_operacao.png',
-        #   '1',
-        #   'Museo Castagnino',
-        #   'en operación',
-        # ]
-
-        stations = []
-
-        for item in data:
-            name = item[12]
-            latitude = float(item[1])
-            longitude = float(item[2])
-            bikes = int(item[7])
-            free = int(item[8])
-            online_status = item[4]
-            operation_status = item[5]
-            extra = {
-                'uid': item[11],
-                'status': self.get_status(online_status, operation_status)
-            }
-            station = BikeShareStation(name, latitude, longitude, bikes, free,
-                                       extra)
-            stations.append(station)
-
-        self.stations = stations

@@ -1399,17 +1399,6 @@
         },
         {
             "domain": "nu",
-            "tag": "lviv-kharkiv",
-            "city_uid": 522,
-            "meta": {
-                "city": "Kharkiv",
-                "country": "UA",
-                "latitude": 49.9795,
-                "longitude": 36.2563
-            }
-        },
-        {
-            "domain": "nu",
             "tag": "lviv-odessa",
             "city_uid": 525,
             "meta": {
@@ -1702,6 +1691,18 @@
                 "country": "AT",
                 "latitude": 48.2081743,
                 "longitude": 16.3738189
+            }
+        },
+        {
+            "domain": "sf",
+            "tag": "sprottenflotte-kiel",
+            "city_uid": 613,
+            "meta": {
+                "name": "Sprottenflotte",
+                "city": "Kiel",
+                "country": "DE",
+                "latitude": 54.2837,
+                "longitude": 10.13213
             }
         }
     ],

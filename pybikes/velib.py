@@ -11,6 +11,8 @@ class VelibStation(GbfsStation):
 
         # old 'banking' field
         self.extra['banking'] = 'creditcard' in self.extra.get('payment', [])
+        # new payment-terminal field
+        self.extra['payment-terminal'] = self.extra['banking']
 
         # electric bikes. So far I have not seen this field on other GBFS
         # systems, so we must investigate. These according to specs go to a

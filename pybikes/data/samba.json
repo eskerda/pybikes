@@ -96,22 +96,6 @@
                     }
                 }
             ]
-        },
-        "SambaArgentina": {
-            "instances": [
-                {
-                    "url":"http://www.mibicitubici.gob.ar/estacione.aspx",
-                    "tag":"mibicitubici",
-                    "meta": {
-                        "city": "Rosario",
-                        "name": "Mi bici tu bici",
-                        "country": "AR",
-                        "longitude": -60.65,
-                        "latitude": -32.95,
-                        "company": ["Mobilicidade Tecnologia LTD", "Municipalidad de Rosario"]
-                    }
-                }
-            ]
         }
     }
 }
