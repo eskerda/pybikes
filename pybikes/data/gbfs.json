@@ -986,6 +986,18 @@
                 "longitude": 10.992778
             },
             "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
+        },
+        {
+            "tag": "velomagg",
+            "meta": {
+                "city": "Montpellier",
+                "name": "Vélomagg",
+                "country": "FR",
+                "latitude": 43.611111,
+                "longitude": 3.876667,
+                "company": ["TaM", "Smoove"]
+            },
+            "feed_url": "https://montpellier-fr-smoove.klervi.net/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
