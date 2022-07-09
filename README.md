@@ -31,12 +31,6 @@ sudo apt-get install python-setuptools
 sudo apt-get install libxml2 libxml2-dev libxslt1-dev libgeos-dev
 ```
 
-### Important
-
-Make sure to use Python 2 and not Python 3 when installing or using pybikes!
-When installing via `pip`, make sure you are not using a version of `pip` bundled with Python 3!
-
-
 Usage
 -----
 ```python
