@@ -49,7 +49,7 @@ class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
     ssl_verification = True
-    requests_timeout = None
+    requests_timeout = 300
 
     def __init__(self, cachedict=None):
         self.headers = {'User-Agent': 'PyBikes'}
