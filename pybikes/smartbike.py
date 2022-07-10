@@ -127,7 +127,7 @@ class SmartShitty(BaseSystem):
         if scraper is None:
             scraper = utils.PyBikesScraper()
         page = scraper.request(self.feed_url)
-        page_html=html.fromstring(page)
+        page_html=html.fromstring(page.encode('utf-8'))
         element = page_html.get_element_by_id("__NEXT_DATA__").text_content()
         element_string = element.encode('utf-8').decode("utf-8")
         raw_data = json.loads(element_string)
