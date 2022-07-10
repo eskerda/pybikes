@@ -2,4 +2,8 @@
 
 # Tests
 pytest
+pytest-xdist
 mock; python_version < '3.3'
+
+# Lint
+flake8

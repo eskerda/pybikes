@@ -54,7 +54,7 @@ class TestInstance:
         assert -90 <= instance.meta['latitude'] <= 90
         assert -180 <= instance.meta['longitude'] <= 180
 
-    def test_update_method_uses_scraper(self, instance, i_data, cls, mod):
+    def test_uses_scraper(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
         request = Mock
         scraper.request = request
