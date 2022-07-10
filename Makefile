@@ -1,4 +1,4 @@
-override T_FLAGS += -vv
+override T_FLAGS += -v
 install:
 	python -m pip install --upgrade pip
 	pip install -r requirements.txt

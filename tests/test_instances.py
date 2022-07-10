@@ -65,7 +65,9 @@ class TestInstance:
         assert request.called
 
     def test_update(self, instance, i_data, cls, mod):
-        instance.update()
+        scraper = pybikes.PyBikesScraper()
+        scraper.requests_timeout = 11
+        instance.update(scraper)
         assert len(instance.stations) > 0
 
         if instance.sync:
@@ -75,6 +77,7 @@ class TestInstance:
 
         for i in range(0, check_for):
             station = instance.stations[i]
+            station.update(scraper)
 
             assert isinstance(station.bikes, int)
             assert isinstance(station.latitude, float)

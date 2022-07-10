@@ -1,4 +1,4 @@
-name: Lint and test pybikes
+name: pybikes
 
 on:
   push:
@@ -29,9 +29,5 @@ jobs:
       run: make test-instances
     - name: Update instance tests (fail ok)
       run: |
-        if [[ "${{ matrix.python-version }}" == "2.7" ]]; then
-          make test-update-instances
-        else
-          make test-update-instances T_FLAGS+="-n 10"
-        fi
+        make test-update-instances T_FLAGS+="-n 10"
       continue-on-error: true
