@@ -1,4 +1,4 @@
-pybikes [![Build Status](https://travis-ci.org/eskerda/pybikes.svg?branch=master)](https://travis-ci.org/eskerda/pybikes)
+pybikes [![Build Status](https://github.com/eskerda/pybikes/actions/workflows/test.yml/badge.svg)](https://github.com/eskerda/pybikes/actions/workflows/test.yml)
 =======
 ![pybikes](http://citybik.es/files/pybikes.png)
 
