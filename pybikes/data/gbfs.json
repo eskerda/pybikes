@@ -993,8 +993,8 @@
                 "city": "Montpellier",
                 "name": "Vélomagg",
                 "country": "FR",
-                "latitude": 43.611111,
-                "longitude": 3.876667,
+                "latitude": 43.6119,
+                "longitude": 3.8772,
                 "company": ["TaM", "Smoove"]
             },
             "feed_url": "https://montpellier-fr-smoove.klervi.net/gbfs/gbfs.json"
