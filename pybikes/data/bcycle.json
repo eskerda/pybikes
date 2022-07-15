@@ -23,17 +23,6 @@
             "feed_url": "http://desmoines.bcycle.com/station-map"
         },
         {
-            "tag": "greenville",
-            "meta": {
-                "latitude": 34.85261759999999,
-                "city": "Greenville, SC",
-                "name": "Greenville B-cycle",
-                "longitude": -82.3940104,
-                "country": "US"
-            },
-            "feed_url": "http://greenville.bcycle.com/station-map"
-        },
-        {
             "tag": "nashville",
             "meta": {
                 "latitude": 36.1666667,

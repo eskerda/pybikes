@@ -1026,6 +1026,30 @@
               "company": ["Tembici"]
             },
             "feed_url": "https://brasilia.publicbikesystem.net/customer/ube/gbfs/v1/"
+        },
+        {
+            "tag": "greenville",
+            "meta": {
+                "latitude": 34.85261759999999,
+                "city": "Greenville, SC",
+                "name": "Greenville B-cycle",
+                "longitude": -82.3940104,
+                "country": "US",
+                "company": ["BCycle, LLC"]
+            },
+            "feed_url": "https://gbfs.bcycle.com/bcycle_greenville/gbfs.json"
+        },
+        {
+            "tag": "desmoines",
+            "meta": {
+                "latitude": 41.6005448,
+                "city": "Des Moines, IA",
+                "name": "Des Moines B-cycle",
+                "longitude": -93.6091064,
+                "country": "US",
+                "company": ["BCycle, LLC"]
+            },
+            "feed_url": "https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json"
         }
     ],
     "system": "gbfs",
