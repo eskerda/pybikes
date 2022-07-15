@@ -1704,6 +1704,21 @@
                 "latitude": 54.2837,
                 "longitude": 10.13213
             }
+        },
+        {
+            "domain": "sl",
+            "tag": "alsa-nextbike-leon",
+            "city_uid": 701,
+            "meta": {
+                "latitude": 42.5987263,
+                "city": "Le\u00f3n",
+                "name": "Alsa nextbike Le\u00f3n",
+                "longitude": -5.5670959,
+                "country": "ES",
+                "company": [
+                    "Leonbici Nextbike Gmbh Y Autobuses Urbanos De Leon S.a. Ute"
+                ]
+            }
         }
     ],
     "system": "nextbike",
