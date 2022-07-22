@@ -29,5 +29,15 @@ jobs:
       run: make test-instances
     - name: Update instance tests (fail ok)
       run: |
-        make test-update-instances T_FLAGS+="-n 10"
+        # json report does not support 2.7
+        T_FLAGS="-n 10 --junitxml=report/junit.xml"
+        if [[ "${{ matrix.python-version }}" != "2.7" ]]; then
+          T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
+        fi
+
+        make test-update-instances T_FLAGS+="$T_FLAGS"
       continue-on-error: true
+    - name: summary
+      if: matrix.python-version != '2.7'
+      run: |
+          ./utils/report.py report/report.json --summary >> $GITHUB_STEP_SUMMARY
