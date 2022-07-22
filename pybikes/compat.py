@@ -21,7 +21,7 @@ def get_schemas():
 
 
 def get_instances(schema=None):
-    schemas = [schema] or get_schemas()
+    schemas = [schema] if schema else get_schemas()
     for schema in schemas:
         data = get_data(schema)
         instances = data.get('instances')
