@@ -7,3 +7,7 @@ mock; python_version < '3.3'
 
 # Lint
 flake8
+
+# reports
+jinja2
+pytest-json-report; python_version > '2.7'
