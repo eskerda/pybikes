@@ -24,17 +24,17 @@ except ImportError:
 
     keys = DumbObject()
 
+
 def get_all_instances():
     for mod, cls, i_data in _traverse_lib():
         tag = i_data['tag']
         yield pybikes.get(tag, key=getattr(keys, mod, 'hunter2')), i_data, cls, mod
 
+
 instances = list(get_all_instances())
 tags = [i.tag for i, _, _, _ in instances]
-ids = ['%s.%s::%s' % (mod, cls, i.tag) for i, _, cls, mod in instances]
 
-@pytest.mark.parametrize(('instance', 'i_data', 'cls', 'mod'), instances, ids=ids)
-class TestInstance:
+class BaseInstanceTest(object):
     def test_tag_unique(self, instance, i_data, cls, mod):
         tag = instance.tag
         err = "tag '%s' is not unique (%s.%s)" % (tag, mod, cls)
@@ -64,6 +64,7 @@ class TestInstance:
             pass
         assert request.called
 
+    @pytest.mark.xfail(strict=False)
     def test_update(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
         scraper.requests_timeout = 11
@@ -85,3 +86,29 @@ class TestInstance:
 
             if station.free is not None:
                 assert isinstance(station.free, int)
+
+
+# XXX meh
+classes = {
+    cls: [x for x in instances if x[2] == cls]
+        for cls in set((cls for _, _, cls, _ in instances))
+}
+
+# even if pytest does not like it, generate test classes on runtime, so
+# instance tests are grouped by their class
+
+def get_test_cls(cls):
+    cls_instances = list(classes[cls])
+    ids = ['%s.%s::%s' % (mod, cls, i['tag']) for _, i, cls, mod in cls_instances]
+
+    @pytest.mark.parametrize(('instance', 'i_data', 'cls', 'mod'), cls_instances, ids=ids)
+    class TestWrap(BaseInstanceTest):
+        pass
+
+    name = 'Test%s' % cls
+    return type(str(name), (TestWrap,), {})
+
+
+for cls in sorted(classes):
+    test_cls = get_test_cls(cls)
+    globals()[test_cls.__name__] = test_cls

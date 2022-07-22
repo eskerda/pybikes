@@ -23,21 +23,17 @@ jobs:
       run: make install
     - name: lint
       run: make lint
-    - name: Core tests
-      run: make test-base
-    - name: Instance tests (not update)
-      run: make test-instances
-    - name: Update instance tests (fail ok)
+    - name: test
       run: |
-        # json report does not support 2.7
         T_FLAGS="-n 10 --junitxml=report/junit.xml"
+
+        # json report does not support 2.7
         if [[ "${{ matrix.python-version }}" != "2.7" ]]; then
           T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
         fi
 
-        make test-update-instances T_FLAGS+="$T_FLAGS"
-      continue-on-error: true
+        make test T_FLAGS+="$T_FLAGS"
     - name: summary
-      if: matrix.python-version != '2.7'
+      if: (success() || failure()) && matrix.python-version != '2.7'
       run: |
           ./utils/report.py report/report.json --summary >> $GITHUB_STEP_SUMMARY

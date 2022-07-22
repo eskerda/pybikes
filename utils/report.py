@@ -40,7 +40,7 @@ def format_duration(duration):
 
 
 def format_outcome(outcome):
-    sym = "✅" if outcome == "passed" else "❌"
+    sym = "✅" if outcome in ['passed', 'xpassed'] else "❌"
     return sym
 
 
@@ -57,9 +57,9 @@ def format_traceback(report):
 def parse_report(report):
     for test in report['tests']:
         # only parse instance update tests
-        if not test['nodeid'].startswith('tests/test_instances.py::TestInstance::test_update['):
+        if not test['keywords'][0].startswith('test_update['):
             continue
-        cls_attrs = test['keywords'][1]
+        cls_attrs = test['keywords'][3]
         mod, cls, tag = re.search(r'(.*)\.(.*)\:\:(.*)', cls_attrs).groups()
         yield (mod, cls, tag, test)
 
@@ -84,13 +84,18 @@ def generate_report(report, template):
             _instances = []
             for instance in instances:
                 tag = instance['tag']
+                if tag not in report_by_tag:
+                    continue
                 _instances.append({
                       'tag': tag,
                       'instance': instance,
                       'report': report_by_tag[tag],
                 })
 
-            passed = filter(lambda i: i['report']['outcome'] == 'passed', _instances)
+            if not _instances:
+                continue
+
+            passed = filter(lambda i: i['report']['outcome'] in ['passed', 'xpassed'], _instances)
             n_passed = len(list(passed))
             health = n_passed / len(_instances)
 
@@ -102,6 +107,9 @@ def generate_report(report, template):
                 'passed': n_passed,
                 'total': len(_instances),
             })
+
+        if not _classes:
+            continue
 
         health = sum(map(lambda c: c['health'], _classes)) / len(_classes)
         passed = sum(map(lambda c: c['passed'], _classes))
