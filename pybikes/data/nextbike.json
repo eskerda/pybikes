@@ -1719,6 +1719,21 @@
                     "Leonbici Nextbike Gmbh Y Autobuses Urbanos De Leon S.a. Ute"
                 ]
             }
+        },
+        {
+            "domain": "wo",
+            "tag": "oli-bike",
+            "city_uid": 754,
+            "meta": {
+                "latitude": 53.1385,
+                "city": "Oldenburg",
+                "name": "OLi-Bike",
+                "longitude": 8.21351,
+                "country": "DE",
+                "company": [
+                    "Bremer Tageszeitungen AG"
+                ]
+            }
         }
     ],
     "system": "nextbike",
