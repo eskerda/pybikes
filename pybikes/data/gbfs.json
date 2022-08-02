@@ -1050,6 +1050,29 @@
                 "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json"
+        },
+        {
+            "tag": "velhop",
+            "meta": {
+                "latitude": 48.583611,
+                "city": "Strasbourg",
+                "name": "Vélhop",
+                "longitude": 7.748056,
+                "country": "FR",
+                "company": ["Strasbourg Mobilités"]
+            },
+            "feed_url": "https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json"
+        },
+        {
+            "tag": "optymo",
+            "meta": {
+                "latitude": 47.641111,
+                "city": "Belfort",
+                "name": "Optymo",
+                "longitude": 6.849444,
+                "country": "FR"
+            },
+            "feed_url": "https://belfort-gbfs.klervi.net/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
