@@ -39,4 +39,4 @@ jobs:
     - name: summary
       if: (success() || failure()) && matrix.python-version != '2.7'
       run: |
-          ./utils/report.py report/report.json --summary >> $GITHUB_STEP_SUMMARY
+          ./utils/report.py report/report.json >> $GITHUB_STEP_SUMMARY
