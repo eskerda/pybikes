@@ -1,4 +1,4 @@
-override T_FLAGS += -v
+T_FLAGS =
 
 .PHONY: install
 install:
