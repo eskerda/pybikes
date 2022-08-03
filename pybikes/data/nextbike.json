@@ -2154,7 +2154,7 @@
         },
         {
             "domain": "dv",
-            "tag": "vag_rad",
+            "tag": "vagrad",
             "city_uid": 626,
             "meta": {
                 "name": "VAG_Rad",
@@ -2553,7 +2553,7 @@
         },
         {
             "domain": "ac",
-            "tag": "bergisches_e-bike",
+            "tag": "bergisches-e-bike",
             "city_uid": 676,
             "meta": {
                 "name": "Bergisches e-Bike",
@@ -2848,7 +2848,10 @@
                 "city": "Oldenburg",
                 "country": "DE",
                 "latitude": 53.1448,
-                "longitude": 8.22485
+                "longitude": 8.22485,
+                "company":[
+                    "Bremer Tageszeitungen AG"
+                ]
             }
         },
         {
@@ -2865,7 +2868,7 @@
         },
         {
             "domain": "um",
-            "tag": "mvrad",
+            "tag": "mvrad-hq",
             "city_uid": 775,
             "meta": {
                 "name": "MV-Rad",
@@ -2877,7 +2880,7 @@
         },
         {
             "domain": "um",
-            "tag": "mvrad",
+            "tag": "mvrad-anklam",
             "city_uid": 787,
             "meta": {
                 "name": "MV-Rad",
@@ -2913,7 +2916,7 @@
         },
         {
             "domain": "vt",
-            "tag": "vvtregiorad",
+            "tag": "vvtregiorad-kufstein",
             "city_uid": 773,
             "meta": {
                 "name": "VVT REGIORAD Tirol",
@@ -2925,7 +2928,7 @@
         },
         {
             "domain": "vt",
-            "tag": "vvtregiorad",
+            "tag": "vvtregiorad-ellmau",
             "city_uid": 774,
             "meta": {
                 "name": "VVT REGIORAD Tirol",
