@@ -1719,6 +1719,1296 @@
                     "Leonbici Nextbike Gmbh Y Autobuses Urbanos De Leon S.a. Ute"
                 ]
             }
+        },
+        {
+            "domain": "bp",
+            "tag": "biker-bialystok",
+            "city_uid": 245,
+            "meta": {
+                "name": "BIKER Bia\u0142ystok Poland",
+                "city": "Bia\u0142ystok",
+                "country": "PL",
+                "latitude": 53.1262,
+                "longitude": 23.1427
+            }
+        },
+        {
+            "domain": "cz",
+            "tag": "nextbike-prostejov",
+            "city_uid": 549,
+            "meta": {
+                "name": "nextbike Prostejov",
+                "city": "Prostejov",
+                "country": "CZ",
+                "latitude": 49.4722,
+                "longitude": 17.1055
+            }
+        },
+        {
+            "domain": "kw",
+            "tag": "bike-katowice",
+            "city_uid": 342,
+            "meta": {
+                "name": "Katowice Bike Poland",
+                "city": "Katowice",
+                "country": "PL",
+                "latitude": 50.2594,
+                "longitude": 19.0215
+            }
+        },
+        {
+            "domain": "nw",
+            "tag": "nextbike-focsani",
+            "city_uid": 510,
+            "meta": {
+                "name": "nextbike Romania",
+                "city": "Foc\u0219ani",
+                "country": "RO",
+                "latitude": 45.6947,
+                "longitude": 27.1851
+            }
+        },
+        {
+            "domain": "vu",
+            "tag": "grad-vukovar",
+            "city_uid": 328,
+            "meta": {
+                "name": "Grad Vukovar (Croatia)",
+                "city": "Vukovar",
+                "country": "HR",
+                "latitude": 45.3575,
+                "longitude": 18.9895
+            }
+        },
+        {
+            "domain": "ap",
+            "tag": "system-rowerow-miejskich-w-pszczynie-pszczyna",
+            "city_uid": 411,
+            "meta": {
+                "name": "System Rower\u00f3w Miejskich w Pszczynie Poland",
+                "city": "Pszczyna",
+                "country": "PL",
+                "latitude": 49.9757,
+                "longitude": 18.9463
+            }
+        },
+        {
+            "domain": "pt",
+            "tag": "tyski-rower-miejski-tychy",
+            "city_uid": 413,
+            "meta": {
+                "name": "Tyski Rower Miejski Poland",
+                "city": "Tychy",
+                "country": "PL",
+                "latitude": 50.1124,
+                "longitude": 18.9972
+            }
+        },
+        {
+            "domain": "jp",
+            "tag": "czestochowski-rower-miejski-czestochowa",
+            "city_uid": 450,
+            "meta": {
+                "name": "Cz\u0119stochowski Rower Miejski Poland",
+                "city": "Cz\u0119stochowa",
+                "country": "PL",
+                "latitude": 50.812,
+                "longitude": 19.1375
+            }
+        },
+        {
+            "domain": "or",
+            "tag": "pruszkowski-rower-miejski-pruszkow",
+            "city_uid": 442,
+            "meta": {
+                "name": "Pruszkowski Rower Miejski Poland",
+                "city": "Pruszk\u00f3w",
+                "country": "PL",
+                "latitude": 52.1622,
+                "longitude": 20.8062
+            }
+        },
+        {
+            "domain": "km",
+            "tag": "ok-bike-kedzierzyn-kozle",
+            "city_uid": 421,
+            "meta": {
+                "name": "OK Bike Poland",
+                "city": "K\u0119dzierzyn-Ko\u017ale",
+                "country": "PL",
+                "latitude": 50.3392,
+                "longitude": 18.2352
+            }
+        },
+        {
+            "domain": "sg",
+            "tag": "grad-zapresic",
+            "city_uid": 723,
+            "meta": {
+                "name": "Grad Zapre\u0161i\u0107 (Croatia)",
+                "city": "Zapre\u0161i\u0107",
+                "country": "HR",
+                "latitude": 45.8622,
+                "longitude": 15.8049
+            }
+        },
+        {
+            "domain": "cv",
+            "tag": "porec-bike-share-porec",
+            "city_uid": 429,
+            "meta": {
+                "name": "Porec bike share (Croatia)",
+                "city": "Pore\u010d",
+                "country": "HR",
+                "latitude": 45.2292,
+                "longitude": 13.6035
+            }
+        },
+        {
+            "domain": "pk",
+            "tag": "kaliski-rower-miejski-kalisz",
+            "city_uid": 431,
+            "meta": {
+                "name": "Kaliski Rower Miejski Poland",
+                "city": "Kalisz",
+                "country": "PL",
+                "latitude": 51.7525,
+                "longitude": 18.0341
+            }
+        },
+        {
+            "domain": "po",
+            "tag": "rower-miejski-w-ostrowie-wielkopolskim-ostrow-wielkopolski",
+            "city_uid": 452,
+            "meta": {
+                "name": "Rower Miejski w Ostrowie Wielkopolskim Poland",
+                "city": "Ostr\u00f3w Wielkopolski",
+                "country": "PL",
+                "latitude": 51.65,
+                "longitude": 17.8253
+            }
+        },
+        {
+            "domain": "ub",
+            "tag": "santander-brunel",
+            "city_uid": 487,
+            "meta": {
+                "name": "Santander Cycles - Brunel",
+                "city": "Brunel University",
+                "country": "GB",
+                "latitude": 51.5463,
+                "longitude": -0.48048
+            }
+        },
+        {
+            "domain": "ps",
+            "tag": "koszalinski-rower-miejski-koszalin",
+            "city_uid": 496,
+            "meta": {
+                "name": "Koszali\u0144ski Rower Miejski Poland",
+                "city": "Koszalin",
+                "country": "PL",
+                "latitude": 54.2026,
+                "longitude": 16.1678
+            }
+        },
+        {
+            "domain": "pr",
+            "tag": "ki-rower-miejski-sosnowiec",
+            "city_uid": 497,
+            "meta": {
+                "name": "Sosnowiecki Rower Miejski Poland",
+                "city": "Sosnowiec",
+                "country": "PL",
+                "latitude": 50.278,
+                "longitude": 19.1345
+            }
+        },
+        {
+            "domain": "pu",
+            "tag": "pobiedziski-rower-gminny-pobiedziska",
+            "city_uid": 504,
+            "meta": {
+                "name": "Pobiedziski Rower Gminny Poland",
+                "city": "Pobiedziska",
+                "country": "PL",
+                "latitude": 52.4765,
+                "longitude": 17.2866
+            }
+        },
+        {
+            "domain": "sc",
+            "tag": "siemianowicki-rower-miejski-siemianowice-slaskie",
+            "city_uid": 519,
+            "meta": {
+                "name": "Siemianowicki Rower Miejski Poland",
+                "city": "Siemianowice \u015al\u0105skie",
+                "country": "PL",
+                "latitude": 50.3031,
+                "longitude": 19.0222
+            }
+        },
+        {
+            "domain": "dp",
+            "tag": "piotrkowski-rower-miejski-piotrkow-trybunalski",
+            "city_uid": 518,
+            "meta": {
+                "name": "Piotrkowski Rower Miejski Poland",
+                "city": "Piotrk\u00f3w Trybunalski",
+                "country": "PL",
+                "latitude": 51.3975,
+                "longitude": 19.6779
+            }
+        },
+        {
+            "domain": "ep",
+            "tag": "i-rower-miejski-prm-plock",
+            "city_uid": 521,
+            "meta": {
+                "name": "P\u0142ocki Rower Miejski (PRM) Poland",
+                "city": "P\u0142ock",
+                "country": "PL",
+                "latitude": 52.5445,
+                "longitude": 19.7017
+            }
+        },
+        {
+            "domain": "ep",
+            "tag": "plocki-rower-miejski-prm-orlen-plock",
+            "city_uid": 639,
+            "meta": {
+                "name": "P\u0142ocki Rower Miejski (PRM) Poland",
+                "city": "Orlen P\u0142ock",
+                "country": "PL",
+                "latitude": 52.5466,
+                "longitude": 19.7047
+            }
+        },
+        {
+            "domain": "os",
+            "tag": "i-rower-miejski-otwock",
+            "city_uid": 527,
+            "meta": {
+                "name": "Otwocki Rower Miejski Poland",
+                "city": "Otwock",
+                "country": "PL",
+                "latitude": 52.1034,
+                "longitude": 21.2692
+            }
+        },
+        {
+            "domain": "pd",
+            "tag": "ciechanowski-rower-miejski-ciechanow",
+            "city_uid": 523,
+            "meta": {
+                "name": "Ciechanowski Rower Miejski Poland",
+                "city": "Ciechan\u00f3w",
+                "country": "PL",
+                "latitude": 52.8763,
+                "longitude": 20.6102
+            }
+        },
+        {
+            "domain": "zy",
+            "tag": "zyrardowski-rower-miejski-zyrardow",
+            "city_uid": 551,
+            "meta": {
+                "name": "\u017byrardowski Rower Miejski Poland",
+                "city": "\u017byrard\u00f3w",
+                "country": "PL",
+                "latitude": 52.0503,
+                "longitude": 20.4464
+            }
+        },
+        {
+            "domain": "ds",
+            "tag": "sap-walldorf",
+            "city_uid": 592,
+            "meta": {
+                "name": "SAP Walldorf",
+                "city": "Walldorf",
+                "country": "DE",
+                "latitude": 49.2945,
+                "longitude": 8.62324
+            }
+        },
+        {
+            "domain": "od",
+            "tag": "opcina-dugopolje",
+            "city_uid": 445,
+            "meta": {
+                "name": "Op\u0107ina Dugopolje (Croatia)",
+                "city": "Dugopolje",
+                "country": "HR",
+                "latitude": 43.5872,
+                "longitude": 16.5879
+            }
+        },
+        {
+            "domain": "se",
+            "tag": "opcina-pitomaca",
+            "city_uid": 574,
+            "meta": {
+                "name": "Op\u0107ina Pitoma\u010da (Croatia)",
+                "city": "Pitoma\u010da",
+                "country": "HR",
+                "latitude": 45.9077,
+                "longitude": 17.2622
+            }
+        },
+        {
+            "domain": "cc",
+            "tag": "nomago-ljubljana",
+            "city_uid": 717,
+            "meta": {
+                "name": "Nomago Bikes - LJUBLJANA",
+                "city": "Ljubljana",
+                "country": "SI",
+                "latitude": 46.0577,
+                "longitude": 14.5013
+            }
+        },
+        {
+            "domain": "pg",
+            "tag": "system-roweru-gminnego-pielgrzymka",
+            "city_uid": 593,
+            "meta": {
+                "name": "System Roweru Gminnego Poland",
+                "city": "Pielgrzymka",
+                "country": "PL",
+                "latitude": 51.1185,
+                "longitude": 15.8153
+            }
+        },
+        {
+            "domain": "dr",
+            "tag": "rvk",
+            "city_uid": 648,
+            "meta": {
+                "name": "RVK",
+                "city": "RVK e-Bike",
+                "country": "DE",
+                "latitude": 50.7069,
+                "longitude": 6.87607
+            }
+        },
+        {
+            "domain": "px",
+            "tag": "partnerzy-nextbike-polska-wolt",
+            "city_uid": 751,
+            "meta": {
+                "name": "Partnerzy Nextbike Polska",
+                "city": "Wolt",
+                "country": "PL",
+                "latitude": 52.2984,
+                "longitude": 21.0498
+            }
+        },
+        {
+            "domain": "dw",
+            "tag": "wupsi",
+            "city_uid": 607,
+            "meta": {
+                "name": "wupsiRad Leverkusen",
+                "city": "Leverkusen",
+                "country": "DE",
+                "latitude": 51.0732,
+                "longitude": 7.00814
+            }
+        },
+        {
+            "domain": "ls",
+            "tag": "lovesharing-canary-islands-gran-canaria",
+            "city_uid": 638,
+            "meta": {
+                "name": "Lovesharing (Canary Islands)",
+                "city": "Gran Canaria",
+                "country": "ES",
+                "latitude": 27.8154,
+                "longitude": -15.5182
+            }
+        },
+        {
+            "domain": "ls",
+            "tag": "lovesharing-canary-islands-lanzarote",
+            "city_uid": 674,
+            "meta": {
+                "name": "Lovesharing (Canary Islands)",
+                "city": "Lanzarote",
+                "country": "ES",
+                "latitude": 29.0491,
+                "longitude": -13.5729
+            }
+        },
+        {
+            "domain": "ls",
+            "tag": "lovesharing-canary-islands-fuerteventura",
+            "city_uid": 675,
+            "meta": {
+                "name": "Lovesharing (Canary Islands)",
+                "city": "Fuerteventura",
+                "country": "ES",
+                "latitude": 28.3584,
+                "longitude": -14.064
+            }
+        },
+        {
+            "domain": "dv",
+            "tag": "vagrad",
+            "city_uid": 626,
+            "meta": {
+                "name": "VAG_Rad",
+                "city": "N\u00fcrnberg",
+                "country": "DE",
+                "latitude": 49.4487,
+                "longitude": 11.0794,
+                "company": [
+                    "VAG Verkehrs-Aktiengesellschaft"
+                ]
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split",
+            "city_uid": 617,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Split",
+                "country": "HR",
+                "latitude": 43.5162,
+                "longitude": 16.4637
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-solin",
+            "city_uid": 740,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Solin",
+                "country": "HR",
+                "latitude": 43.5441,
+                "longitude": 16.4833
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-opcina-klis",
+            "city_uid": 741,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Op\u0107ina Klis",
+                "country": "HR",
+                "latitude": 43.5605,
+                "longitude": 16.5269
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-opcina-hrvace",
+            "city_uid": 742,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Op\u0107ina Hrvace",
+                "country": "HR",
+                "latitude": 43.7553,
+                "longitude": 16.6197
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-opcina-otok-dalmatinski",
+            "city_uid": 743,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Op\u0107ina Otok Dalmatinski",
+                "country": "HR",
+                "latitude": 43.6889,
+                "longitude": 16.7361
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-sinj",
+            "city_uid": 744,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Sinj",
+                "country": "HR",
+                "latitude": 43.7031,
+                "longitude": 16.6364
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-hvar",
+            "city_uid": 745,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Hvar",
+                "country": "HR",
+                "latitude": 43.1882,
+                "longitude": 16.6295
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-podstrana",
+            "city_uid": 766,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Podstrana",
+                "country": "HR",
+                "latitude": 43.4934,
+                "longitude": 16.5598
+            }
+        },
+        {
+            "domain": "gt",
+            "tag": "grad-split-trogir",
+            "city_uid": 802,
+            "meta": {
+                "name": "Grad Split (Croatia)",
+                "city": "Trogir",
+                "country": "HR",
+                "latitude": 43.5234,
+                "longitude": 16.2476
+            }
+        },
+        {
+            "domain": "to",
+            "tag": "nextbike-ostrava",
+            "city_uid": 271,
+            "meta": {
+                "name": "nextbike Ostrava",
+                "city": "Ostrava",
+                "country": "CZ",
+                "latitude": 49.8344,
+                "longitude": 18.2823
+            }
+        },
+        {
+            "domain": "to",
+            "tag": "nextbike-ostrava-hlucin",
+            "city_uid": 752,
+            "meta": {
+                "name": "nextbike Ostrava",
+                "city": "Hlu\u010d\u00edn",
+                "country": "CZ",
+                "latitude": 49.898,
+                "longitude": 18.1923
+            }
+        },
+        {
+            "domain": "to",
+            "tag": "nextbike-ostrava-vresina",
+            "city_uid": 758,
+            "meta": {
+                "name": "nextbike Ostrava",
+                "city": "V\u0159esina",
+                "country": "CZ",
+                "latitude": 49.825,
+                "longitude": 18.1206
+            }
+        },
+        {
+            "domain": "pq",
+            "tag": "ski-rower-miejski-lubon",
+            "city_uid": 620,
+            "meta": {
+                "name": "Lubo\u0144ski Rower Miejski Poland",
+                "city": "Lubo\u0144",
+                "country": "PL",
+                "latitude": 52.3461,
+                "longitude": 16.8765
+            }
+        },
+        {
+            "domain": "ei",
+            "tag": "ibizi-ibiza-city",
+            "city_uid": 629,
+            "meta": {
+                "name": "ibizi",
+                "city": "Ibiza-City",
+                "country": "ES",
+                "latitude": 38.9066,
+                "longitude": 1.42046
+            }
+        },
+        {
+            "domain": "dh",
+            "tag": "sprintrad",
+            "city_uid": 87,
+            "meta": {
+                "name": "sprintRAD",
+                "city": "Hannover",
+                "country": "DE",
+                "latitude": 52.3721,
+                "longitude": 9.73569
+            }
+        },
+        {
+            "domain": "pa",
+            "tag": "komornicki-system-rowerowy-komorniki",
+            "city_uid": 630,
+            "meta": {
+                "name": "Komornicki System Rowerowy Poland",
+                "city": "Komorniki",
+                "country": "PL",
+                "latitude": 52.3347,
+                "longitude": 16.8094
+            }
+        },
+        {
+            "domain": "th",
+            "tag": "nextbike-havirov",
+            "city_uid": 637,
+            "meta": {
+                "name": "nextbike Hav\u00ed\u0159ov",
+                "city": "Hav\u00ed\u0159ov",
+                "country": "CZ",
+                "latitude": 49.7799,
+                "longitude": 18.4328
+            }
+        },
+        {
+            "domain": "td",
+            "tag": "nextbike-berounsko",
+            "city_uid": 655,
+            "meta": {
+                "name": "nextbike Berounsko",
+                "city": "Berounsko",
+                "country": "CZ",
+                "latitude": 49.9616,
+                "longitude": 14.064
+            }
+        },
+        {
+            "domain": "da",
+            "tag": "ready4green-graben",
+            "city_uid": 647,
+            "meta": {
+                "name": "Graben - ready4green",
+                "city": "Graben",
+                "country": "DE",
+                "latitude": 51.1242,
+                "longitude": 10.8984
+            }
+        },
+        {
+            "domain": "pf",
+            "tag": "oleski-rower-miejski-olesno",
+            "city_uid": 650,
+            "meta": {
+                "name": "Oleski Rower Miejski Poland",
+                "city": "Olesno",
+                "country": "PL",
+                "latitude": 50.8773,
+                "longitude": 18.4212
+            }
+        },
+        {
+            "domain": "zg",
+            "tag": "styr-staell-goeteborg",
+            "city_uid": 658,
+            "meta": {
+                "name": "Styr & St\u00e4ll (Sweden, G\u00f6teborg)",
+                "city": "G\u00f6teborg",
+                "country": "SE",
+                "latitude": 57.6902,
+                "longitude": 11.9881
+            }
+        },
+        {
+            "domain": "dn",
+            "tag": "nibelungen-bike-braunschweig",
+            "city_uid": 657,
+            "meta": {
+                "name": "Nibelungen-Bike",
+                "city": "Braunschweig",
+                "country": "DE",
+                "latitude": 52.2597,
+                "longitude": 10.5307
+            }
+        },
+        {
+            "domain": "te",
+            "tag": "nextbike-brno",
+            "city_uid": 660,
+            "meta": {
+                "name": "nextbike Brno",
+                "city": "Brno",
+                "country": "CZ",
+                "latitude": 49.1911,
+                "longitude": 16.6148
+            }
+        },
+        {
+            "domain": "te",
+            "tag": "nextbike-brno-kurim",
+            "city_uid": 767,
+            "meta": {
+                "name": "nextbike Brno",
+                "city": "Ku\u0159im",
+                "country": "CZ",
+                "latitude": 49.2994,
+                "longitude": 16.5368
+            }
+        },
+        {
+            "domain": "tg",
+            "tag": "nextbike-praha",
+            "city_uid": 661,
+            "meta": {
+                "name": "nextbike Praha",
+                "city": "Praha",
+                "country": "CZ",
+                "latitude": 50.0592,
+                "longitude": 14.5761
+            }
+        },
+        {
+            "domain": "tg",
+            "tag": "nextbike-praha-ricany",
+            "city_uid": 736,
+            "meta": {
+                "name": "nextbike Praha",
+                "city": "\u0158\u00ed\u010dany",
+                "country": "CZ",
+                "latitude": 49.9976,
+                "longitude": 14.6685
+            }
+        },
+        {
+            "domain": "ti",
+            "tag": "nextbike-olomouc",
+            "city_uid": 663,
+            "meta": {
+                "name": "nextbike Olomouc",
+                "city": "Olomouc",
+                "country": "CZ",
+                "latitude": 49.5929,
+                "longitude": 17.2459
+            }
+        },
+        {
+            "domain": "tk",
+            "tag": "nextbike-kladno",
+            "city_uid": 659,
+            "meta": {
+                "name": "nextbike Kladno",
+                "city": "Kladno",
+                "country": "CZ",
+                "latitude": 50.1435,
+                "longitude": 14.1082
+            }
+        },
+        {
+            "domain": "tj",
+            "tag": "nextbike-opava",
+            "city_uid": 662,
+            "meta": {
+                "name": "nextbike Opava",
+                "city": "Opava",
+                "country": "CZ",
+                "latitude": 49.9289,
+                "longitude": 18.2634
+            }
+        },
+        {
+            "domain": "dg",
+            "tag": "nextbike-bielefeld",
+            "city_uid": 16,
+            "meta": {
+                "name": "meinSiggi",
+                "city": "Bielefeld",
+                "country": "DE",
+                "latitude": 52.0257,
+                "longitude": 8.53286
+            }
+        },
+        {
+            "domain": "yp",
+            "tag": "yoy-san-luis-potosi",
+            "city_uid": 664,
+            "meta": {
+                "name": "YOY - San Luis Potosi",
+                "city": "San Luis Potosi",
+                "country": "MX",
+                "latitude": 22.438,
+                "longitude": -100.514
+            }
+        },
+        {
+            "domain": "yp",
+            "tag": "yoy-san-luis-potosi-cancun",
+            "city_uid": 695,
+            "meta": {
+                "name": "YOY - San Luis Potosi",
+                "city": "Canc\u00fan",
+                "country": "MX",
+                "latitude": 21.1675,
+                "longitude": -86.8498
+            }
+        },
+        {
+            "domain": "ac",
+            "tag": "bergisches-e-bike",
+            "city_uid": 676,
+            "meta": {
+                "name": "Bergisches e-Bike",
+                "city": "Bergisches e-Bike",
+                "country": "DE",
+                "latitude": 51.0192,
+                "longitude": 7.18025
+            }
+        },
+        {
+            "domain": "tm",
+            "tag": "nextbike-pardubice",
+            "city_uid": 680,
+            "meta": {
+                "name": "nextbike Pardubice",
+                "city": "Pardubice",
+                "country": "CZ",
+                "latitude": 50.0343,
+                "longitude": 15.7812
+            }
+        },
+        {
+            "domain": "tl",
+            "tag": "nextbike-hradec-kralove",
+            "city_uid": 682,
+            "meta": {
+                "name": "nextbike Hradec Kr\u00e1lov\u00e9",
+                "city": "Hradec Kr\u00e1lov\u00e9",
+                "country": "CZ",
+                "latitude": 50.2079,
+                "longitude": 15.8334
+            }
+        },
+        {
+            "domain": "tq",
+            "tag": "nextbike-mladoboleslavsko-mlada-boleslav",
+            "city_uid": 681,
+            "meta": {
+                "name": "nextbike Mladoboleslavsko",
+                "city": "Mlad\u00e1 Boleslav",
+                "country": "CZ",
+                "latitude": 50.4278,
+                "longitude": 14.8999
+            }
+        },
+        {
+            "domain": "tq",
+            "tag": "nextbike-mladoboleslavsko-mnichovo-hradiste",
+            "city_uid": 704,
+            "meta": {
+                "name": "nextbike Mladoboleslavsko",
+                "city": "Mnichovo Hradi\u0161t\u011b",
+                "country": "CZ",
+                "latitude": 50.5218,
+                "longitude": 14.9741
+            }
+        },
+        {
+            "domain": "dz",
+            "tag": "oeynrad-bad-oeynhausen",
+            "city_uid": 689,
+            "meta": {
+                "name": "Oeynrad",
+                "city": "Bad Oeynhausen",
+                "country": "DE",
+                "latitude": 52.2051,
+                "longitude": 8.80074
+            }
+        },
+        {
+            "domain": "rb",
+            "tag": "rsvg-bike",
+            "city_uid": 691,
+            "meta": {
+                "name": "RSVG-Bike",
+                "city": "RSVG",
+                "country": "DE",
+                "latitude": 50.7669,
+                "longitude": 7.37457
+            }
+        },
+        {
+            "domain": "al",
+            "tag": "citybikelinz",
+            "city_uid": 692,
+            "meta": {
+                "name": "city bike Linz",
+                "city": "Linz",
+                "country": "AT",
+                "latitude": 48.3003,
+                "longitude": 14.2843
+            }
+        },
+        {
+            "domain": "rd",
+            "tag": "velopark-drobeta",
+            "city_uid": 693,
+            "meta": {
+                "name": "Drobeta Velopark",
+                "city": "Drobeta",
+                "country": "RO",
+                "latitude": 44.6326,
+                "longitude": 22.6564
+            }
+        },
+        {
+            "domain": "ce",
+            "tag": "nomago-gorica",
+            "city_uid": 688,
+            "meta": {
+                "name": "Nomago Bikes - GO2GO",
+                "city": "Nova Gorica",
+                "country": "SI",
+                "latitude": 45.9576,
+                "longitude": 13.6406
+            }
+        },
+        {
+            "domain": "rs",
+            "tag": "saturn",
+            "city_uid": 697,
+            "meta": {
+                "name": "Saturn",
+                "city": "Saturn",
+                "country": "RO",
+                "latitude": 43.82,
+                "longitude": 28.7445
+            }
+        },
+        {
+            "domain": "ts",
+            "tag": "nextbike-frydek-mistek",
+            "city_uid": 700,
+            "meta": {
+                "name": "nextbike Fr\u00fddek-M\u00edstek",
+                "city": "Fr\u00fddek-M\u00edstek",
+                "country": "CZ",
+                "latitude": 49.6832,
+                "longitude": 18.3457
+            }
+        },
+        {
+            "domain": "tt",
+            "tag": "nextbike-uherske-hradiste",
+            "city_uid": 702,
+            "meta": {
+                "name": "nextbike Uhersk\u00e9 Hradi\u0161t\u011b",
+                "city": "Uhersk\u00e9 Hradi\u0161t\u011b",
+                "country": "CZ",
+                "latitude": 49.0678,
+                "longitude": 17.4665
+            }
+        },
+        {
+            "domain": "tv",
+            "tag": "nextbike-zlin",
+            "city_uid": 703,
+            "meta": {
+                "name": "nextbike Zl\u00edn",
+                "city": "Zl\u00edn",
+                "country": "CZ",
+                "latitude": 49.238,
+                "longitude": 17.6788
+            }
+        },
+        {
+            "domain": "tw",
+            "tag": "nextbike-krnov",
+            "city_uid": 707,
+            "meta": {
+                "name": "nextbike Krnov",
+                "city": "Krnov",
+                "country": "CZ",
+                "latitude": 50.0703,
+                "longitude": 17.8837
+            }
+        },
+        {
+            "domain": "eb",
+            "tag": "eifel",
+            "city_uid": 706,
+            "meta": {
+                "name": "Eifel e-Bike",
+                "city": "Eifel e-Bike",
+                "country": "DE",
+                "latitude": 50.5771,
+                "longitude": 6.64673
+            }
+        },
+        {
+            "domain": "tx",
+            "tag": "nextbike-rychnovsko",
+            "city_uid": 708,
+            "meta": {
+                "name": "nextbike Rychnovsko",
+                "city": "Rychnovsko",
+                "country": "CZ",
+                "latitude": 50.1668,
+                "longitude": 16.2828
+            }
+        },
+        {
+            "domain": "ty",
+            "tag": "nextbike-pisek",
+            "city_uid": 709,
+            "meta": {
+                "name": "nextbike P\u00edsek",
+                "city": "P\u00edsek",
+                "country": "CZ",
+                "latitude": 49.3051,
+                "longitude": 14.1463
+            }
+        },
+        {
+            "domain": "tz",
+            "tag": "nextbike-jihlava",
+            "city_uid": 719,
+            "meta": {
+                "name": "nextbike Jihlava",
+                "city": "Jihlava",
+                "country": "CZ",
+                "latitude": 49.4078,
+                "longitude": 15.6061
+            }
+        },
+        {
+            "domain": "cf",
+            "tag": "nomago-zanaprej",
+            "city_uid": 725,
+            "meta": {
+                "name": "Nomago Bikes - ZANAPREJ",
+                "city": "Zagorje ob Savi",
+                "country": "SI",
+                "latitude": 46.1392,
+                "longitude": 14.9785
+            }
+        },
+        {
+            "domain": "rq",
+            "tag": "rower-powiatowy-sokolow-podlaski",
+            "city_uid": 727,
+            "meta": {
+                "name": "Rower Powiatowy Soko\u0142\u00f3w Podlaski",
+                "city": "Soko\u0142\u00f3w Podlaski",
+                "country": "PL",
+                "latitude": 52.4082,
+                "longitude": 22.2525
+            }
+        },
+        {
+            "domain": "ib",
+            "tag": "nextbike-bergamo",
+            "city_uid": 728,
+            "meta": {
+                "name": "nextbike Bergamo",
+                "city": "Bergamo",
+                "country": "IT",
+                "latitude": 45.6986,
+                "longitude": 9.67567
+            }
+        },
+        {
+            "domain": "em",
+            "tag": "emobi-osijek",
+            "city_uid": 734,
+            "meta": {
+                "name": "eMobi (Croatia)",
+                "city": "Osijek",
+                "country": "HR",
+                "latitude": 45.554,
+                "longitude": 18.6943
+            }
+        },
+        {
+            "domain": "ia",
+            "tag": "arval-scandicci",
+            "city_uid": 746,
+            "meta": {
+                "name": "ARVAL",
+                "city": "Scandicci",
+                "country": "IT",
+                "latitude": 43.7701,
+                "longitude": 11.1592
+            }
+        },
+        {
+            "domain": "wo",
+            "tag": "nextbike-oldenburg",
+            "city_uid": 754,
+            "meta": {
+                "name": "OLi-Bike",
+                "city": "Oldenburg",
+                "country": "DE",
+                "latitude": 53.1448,
+                "longitude": 8.22485,
+                "company":[
+                    "Bremer Tageszeitungen AG"
+                ]
+            }
+        },
+        {
+            "domain": "ey",
+            "tag": "nextbike-urdaibai",
+            "city_uid": 772,
+            "meta": {
+                "name": "BBK Klimabizi",
+                "city": "Urdaibai",
+                "country": "ES",
+                "latitude": 43.395,
+                "longitude": -2.68815
+            }
+        },
+        {
+            "domain": "um",
+            "tag": "mvrad-hq",
+            "city_uid": 775,
+            "meta": {
+                "name": "MV-Rad",
+                "city": "MV-Rad",
+                "country": "DE",
+                "latitude": 53.6707,
+                "longitude": 12.4255
+            }
+        },
+        {
+            "domain": "um",
+            "tag": "mvrad-anklam",
+            "city_uid": 787,
+            "meta": {
+                "name": "MV-Rad",
+                "city": "Anklam",
+                "country": "DE",
+                "latitude": 53.8614,
+                "longitude": 13.6907
+            }
+        },
+        {
+            "domain": "ug",
+            "tag": "greifswald",
+            "city_uid": 759,
+            "meta": {
+                "name": "StadtRad Greifswald",
+                "city": "Greifswald (StadtRad)",
+                "country": "DE",
+                "latitude": 54.0961,
+                "longitude": 13.3787
+            }
+        },
+        {
+            "domain": "tf",
+            "tag": "nextbike-dvur-kralove",
+            "city_uid": 768,
+            "meta": {
+                "name": "nextbike Dv\u016fr Kr\u00e1lov\u00e9",
+                "city": "Dv\u016fr Kr\u00e1lov\u00e9",
+                "country": "CZ",
+                "latitude": 50.4278,
+                "longitude": 15.8162
+            }
+        },
+        {
+            "domain": "vt",
+            "tag": "vvtregiorad-kufstein",
+            "city_uid": 773,
+            "meta": {
+                "name": "VVT REGIORAD Tirol",
+                "city": "Kufstein",
+                "country": "AT",
+                "latitude": 47.583,
+                "longitude": 12.1692
+            }
+        },
+        {
+            "domain": "vt",
+            "tag": "vvtregiorad-ellmau",
+            "city_uid": 774,
+            "meta": {
+                "name": "VVT REGIORAD Tirol",
+                "city": "Ellmau",
+                "country": "AT",
+                "latitude": 47.5134,
+                "longitude": 12.3025
+            }
+        },
+        {
+            "domain": "cw",
+            "tag": "ski-rower-chelm",
+            "city_uid": 776,
+            "meta": {
+                "name": "Che\u0142mski Rower",
+                "city": "Che\u0142m",
+                "country": "PL",
+                "latitude": 51.1318,
+                "longitude": 23.4755
+            }
+        },
+        {
+            "domain": "vr",
+            "tag": "nextbike-vrchlabi",
+            "city_uid": 769,
+            "meta": {
+                "name": "nextbike Vrchlab\u00ed",
+                "city": "Vrchlab\u00ed",
+                "country": "CZ",
+                "latitude": 50.6222,
+                "longitude": 15.6126
+            }
+        },
+        {
+            "domain": "wd",
+            "tag": "winsenrad",
+            "city_uid": 794,
+            "meta": {
+                "name": "WinsenRad",
+                "city": "Winsen (Luhe)",
+                "country": "DE",
+                "latitude": 53.3547,
+                "longitude": 10.2067
+            }
+        },
+        {
+            "domain": "oa",
+            "tag": "loker-lomza",
+            "city_uid": 796,
+            "meta": {
+                "name": "\u0141oKeR - \u0141om\u017ca",
+                "city": "\u0141om\u017ca",
+                "country": "PL",
+                "latitude": 53.1649,
+                "longitude": 22.0729
+            }
+        },
+        {
+            "domain": "ck",
+            "tag": "nomago-kranjska-gora",
+            "city_uid": 780,
+            "meta": {
+                "name": "Nomago Bikes - KRANJSKA GORA",
+                "city": "Kranjska Gora",
+                "country": "SI",
+                "latitude": 46.4846,
+                "longitude": 13.7836
+            }
+        },
+        {
+            "domain": "cl",
+            "tag": "nomago-portoroz",
+            "city_uid": 806,
+            "meta": {
+                "name": "Nomago Bikes - PORTOROZ",
+                "city": "Portoro\u017e",
+                "country": "SI",
+                "latitude": 45.5054,
+                "longitude": 13.5979
+            }
         }
     ],
     "system": "nextbike",
