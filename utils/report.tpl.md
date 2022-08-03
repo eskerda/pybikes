@@ -45,14 +45,8 @@
 #### Error Traceback
 
 ```
-{{ format_traceback(instance.report) }}
-```
-<details>
-    <summary>Full traceback</summary>
-    <pre>
 {{ instance.report.call.longrepr }}
-    </pre>
-</details>
+```
             {% endif %}
 
         {% endfor %}
