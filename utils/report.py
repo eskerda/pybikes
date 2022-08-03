@@ -40,7 +40,7 @@ def format_duration(duration):
 
 
 def format_outcome(outcome):
-    sym = "✅" if outcome in ['passed', 'xpassed'] else "❌"
+    sym = "✅" if outcome in ['passed'] else "❌"
     return sym
 
 
@@ -95,7 +95,7 @@ def generate_report(report, template):
             if not _instances:
                 continue
 
-            passed = filter(lambda i: i['report']['outcome'] in ['passed', 'xpassed'], _instances)
+            passed = filter(lambda i: i['report']['outcome'] in ['passed'], _instances)
             n_passed = len(list(passed))
             health = n_passed / len(_instances)
 

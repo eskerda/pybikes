@@ -64,7 +64,7 @@ class BaseInstanceTest(object):
             pass
         assert request.called
 
-    @pytest.mark.xfail(strict=False)
+    @pytest.mark.update
     def test_update(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
         scraper.requests_timeout = 11

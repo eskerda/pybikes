@@ -7,7 +7,11 @@ install:
 
 .PHONY: test
 test: install
-	pytest tests $(T_FLAGS)
+	pytest tests -m 'not update' $(T_FLAGS)
+
+.PHONY: test-update
+test-update: install
+	pytest tests -m update $(T_FLAGS)
 
 .PHONY: lint
 lint:

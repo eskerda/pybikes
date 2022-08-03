@@ -24,15 +24,18 @@ jobs:
     - name: lint
       run: make lint
     - name: test
+      run: make test
+    - name: test update
       run: |
-        T_FLAGS="-n 10 --junitxml=report/junit.xml"
+        T_FLAGS="-n 10 --junitxml=report/junit.xml --tb=native"
 
         # json report does not support 2.7
         if [[ "${{ matrix.python-version }}" != "2.7" ]]; then
           T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
         fi
 
-        make test T_FLAGS+="$T_FLAGS"
+        # allowed to fail for test runs
+        make test-update T_FLAGS+="$T_FLAGS" || true
     - name: summary
       if: (success() || failure()) && matrix.python-version != '2.7'
       run: |
