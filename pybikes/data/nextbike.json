@@ -648,6 +648,18 @@
             }
         },
         {
+            "domain": "vn",
+            "tag": "vrn-landau",
+            "city_uid": 678,
+            "meta": {
+                "name": "VRN",
+                "city": "Landau in der Pfalz",
+                "country": "DE",
+                "latitude": 49.1975,
+                "longitude": 8.11693
+            }
+        },
+        {
             "domain": "nu",
             "tag": "nextbike-lviv",
             "city_uid": 280,
