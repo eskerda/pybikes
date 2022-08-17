@@ -1074,6 +1074,17 @@
             },
             "feed_url": "https://belfort-gbfs.klervi.net/gbfs/gbfs.json"
         }
+        {
+            "tag": "bicicorunha",
+            "meta": {
+                "name": "Bicicoruña",
+                "city": "A Coruña",
+                "latitude": 43.3623,
+                "longitude": -8.4115,
+                "country": "ES"
+            },
+            "feed_url": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
     ],
     "system": "gbfs",
     "class": "Gbfs"
