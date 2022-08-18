@@ -1073,6 +1073,17 @@
                 "country": "FR"
             },
             "feed_url": "https://belfort-gbfs.klervi.net/gbfs/gbfs.json"
+        },
+        {
+            "tag": "velocity-aachen",
+            "meta": {
+                "latitude": 50.776667,
+                "city": "Aachen",
+                "name": "Velocity",
+                "longitude": 6.083611,
+                "country": "DE"
+            },
+            "feed_url": "https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
