@@ -1073,7 +1073,7 @@
                 "country": "FR"
             },
             "feed_url": "https://belfort-gbfs.klervi.net/gbfs/gbfs.json"
-        }
+        },
         {
             "tag": "bicicorunha",
             "meta": {
@@ -1084,7 +1084,7 @@
                 "country": "ES"
             },
             "feed_url": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
+        }
     ],
     "system": "gbfs",
     "class": "Gbfs"
