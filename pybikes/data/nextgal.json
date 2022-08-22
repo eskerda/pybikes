@@ -1,17 +1,6 @@
 {
     "instances":[
         {
-            "tag": "bicicorunha",
-            "meta": {
-                "name": "Bicicoruña",
-                "city": "A Coruña",
-                "latitude": 43.3623,
-                "longitude": -8.4115,
-                "country": "ES"
-            },
-            "url": "https://bicicoruna.es"
-        },
-        {
             "tag": "bici-ferrol-terra",
             "meta": {
                 "name": "BiciFerrolTerra",
