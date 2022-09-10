@@ -20,7 +20,7 @@
                 "longitude": 33.074,
                 "latitude": 68.968
             },
-            "feed_url": "https://murmansk.velobike.ru/ajax/parkings/?CityCode=murmansk"
+            "feed_url": "https://murmansk.velobike.ru/ajax/parkings/"
         }
     ],
     "system": "velobike_ru",
