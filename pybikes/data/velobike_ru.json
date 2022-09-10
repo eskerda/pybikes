@@ -12,17 +12,6 @@
             "feed_url": "https://velobike.ru/ajax/parkings/"
         },
         {
-            "tag": "velobike-nizhniy-novgorod",
-            "meta": {
-                "city": "Nizhniy Novgorod",
-                "name": "Velobike",
-                "country": "RU",
-                "longitude": 44.003,
-                "latitude": 56.194
-            },
-            "feed_url": "https://nnovgorod.velobike.ru/ajax/parkings/?CityCode=nnovgorod"
-        },
-        {
             "tag": "velobike-murmansk",
             "meta": {
                 "city": "Murmansk",
