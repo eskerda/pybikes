@@ -1672,6 +1672,20 @@
                 "longitude": 13.7768
             },
             "tag": "bicincitta-trieste"
+        },
+        {
+            "city_ids": [
+                40
+            ],
+            "meta": {
+                "city": "Brescia",
+                "name": "bicimia",
+                "country": "IT",
+                "latitude": 45.5378,
+                "longitude": 10.2173
+            },
+            "tag": "bicimia",
+            "endpoint": "https://bicimia.bresciamobilita.it"
         }
     ],
     "system": "bicincitta",
