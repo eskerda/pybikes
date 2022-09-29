@@ -15,25 +15,27 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
 class BicincittaMixin(object):
-    stations_url = 'http://www.bicincitta.com/frmLeStazioniComune.aspx/RefreshStations'  # NOQA
-    stations_status_url = 'http://www.bicincitta.com/frmLeStazioni.aspx/RefreshPopup'  # NOQA
+    stations_path = 'frmLeStazioniComune.aspx/RefreshStations'  # NOQA
+    stations_status_path = 'frmLeStazioni.aspx/RefreshPopup'  # NOQA
 
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
     }
 
     @staticmethod
-    def get_stations(city_id, scraper):
+    def get_stations(city_id, endpoint, scraper):
         payload = json.dumps({'IDComune': str(city_id)})
-        response = scraper.request(BicincittaMixin.stations_url, data=payload,
+        url = urljoin(endpoint, BicincittaMixin.stations_path)
+        response = scraper.request(url, data=payload,
                                    headers=BicincittaMixin.headers,
                                    method='POST')
         return json.loads(response)
 
     @staticmethod
-    def get_station_status(station_id, scraper):
+    def get_station_status(station_id, endpoint, scraper):
         payload = json.dumps({'IDStazione': str(station_id)})
-        response = scraper.request(BicincittaMixin.stations_status_url,
+        url = urljoin(endpoint, BicincittaMixin.stations_status_path)
+        response = scraper.request(url,
                                    data=payload,
                                    headers=BicincittaMixin.headers,
                                    method='POST')
@@ -42,7 +44,7 @@ class BicincittaMixin(object):
 
 class Bicincitta(BikeShareSystem, BicincittaMixin):
     sync = False
-    endpoint = 'http://www.bicincitta.com/'
+    endpoint = 'https://www.bicincitta.com/'
     source_url = 'frmLeStazioni.aspx?ID={city_id}'
 
     meta = {
@@ -63,10 +65,10 @@ class Bicincitta(BikeShareSystem, BicincittaMixin):
 
     def parse_stations(self, scraper):
         for city in self.city_ids:
-            data = self.get_stations(city, scraper)
+            data = self.get_stations(city, self.endpoint, scraper)
             for s in data['d'][1:]:
                 params = s.split(u'§')
-                yield BicincittaStation(*params)
+                yield BicincittaStation(self.endpoint, *params)
 
 
 class BicincittaStation(BikeShareStation, BicincittaMixin):
@@ -79,11 +81,12 @@ class BicincittaStation(BikeShareStation, BicincittaMixin):
         4: 'planned',
     }
 
-    def __init__(self, uid, lat, lng, name, number, status, *_):
+    def __init__(self, endpoint, uid, lat, lng, name, number, status, *_):
         # More shit might come from this ingnominious string, personally I do
         # care at this point what other information can be found in this, so
         # to avoid making it fail we just ignore anything else
         super(BicincittaStation, self).__init__()
+        self.endpoint = endpoint
         self.name = name
         self.latitude = float(lat)
         self.longitude = float(lng)
@@ -95,7 +98,7 @@ class BicincittaStation(BikeShareStation, BicincittaMixin):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-        data = self.get_station_status(self.extra['uid'], scraper)
+        data = self.get_station_status(self.extra['uid'], self.endpoint, scraper)
         # More shit might come from this ingnominious string, personally I do
         # care at this point what other information can be found in this, so
         # to avoid making it fail we just limit it to the first 5 fields.
