@@ -1098,7 +1098,7 @@
             "feed_url": "https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json"
         },
         {
-            "tag": "avelo_quebec",
+            "tag": "avelo-quebec",
             "meta": {
                 "latitude": 46.81305,
                 "city": "Québec",
