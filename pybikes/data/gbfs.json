@@ -1107,6 +1107,17 @@
                 "country": "CA"
             },
             "feed_url": "https://quebec.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "acces-velo-saguenay",
+            "meta": {
+                "latitude": 48.433333,
+                "city": "Saguenay",
+                "name": "Accès Vélo",
+                "longitude": -71.083333,
+                "country": "CA"
+            },
+            "feed_url": "https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
