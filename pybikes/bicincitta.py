@@ -2,6 +2,7 @@
 # Copyright (C) 2019, eskerda <eskerda@gmail.com>
 # Distributed under the LGPL license, see LICENSE.txt
 
+import re
 import json
 
 try:
@@ -88,13 +89,26 @@ class BicincittaStation(BikeShareStation, BicincittaMixin):
         super(BicincittaStation, self).__init__()
         self.endpoint = endpoint
         self.name = name
-        self.latitude = float(lat)
-        self.longitude = float(lng)
+        self.latitude = BicincittaStation.parse_shitty_float(lat)
+        self.longitude = BicincittaStation.parse_shitty_float(lng)
         self.extra = {
             'uid': uid,
             'number': int(number),
             'status': self.station_statuses[int(status)],
         }
+
+    @staticmethod
+    def parse_shitty_float(blergh):
+        # One particular station info on 'bici-perugia' has the following
+        # 1647§43.10652759999998612.38971570000001§12.38971570000001§08. Bellucci§8§3§0
+        # which means we need to know how to parse
+        # 43.10652759999998612.38971570000001 as just
+        # 43.106527599999986
+        try:
+            return float(re.search(r'\d+\.\d{5,15}', blergh).group())
+        # Worst case, do what we were doing and fail
+        except:
+            return float(blergh)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
