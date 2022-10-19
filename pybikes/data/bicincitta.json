@@ -811,19 +811,6 @@
         },
         {
             "city_ids": [
-                188
-            ],
-            "meta": {
-                "latitude": 46.06050419001399,
-                "city": "Pergine Valsugana",
-                "name": "e.motion",
-                "longitude": 11.239041694195503,
-                "country": "IT"
-            },
-            "tag": "e-motion-pergine-valsugana"
-        },
-        {
-            "city_ids": [
                 189
             ],
             "meta": {
@@ -1672,6 +1659,20 @@
                 "longitude": 13.7768
             },
             "tag": "bicincitta-trieste"
+        },
+        {
+            "city_ids": [
+                40
+            ],
+            "meta": {
+                "city": "Brescia",
+                "name": "bicimia",
+                "country": "IT",
+                "latitude": 45.5378,
+                "longitude": 10.2173
+            },
+            "tag": "bicimia",
+            "endpoint": "https://bicimia.bresciamobilita.it"
         }
     ],
     "system": "bicincitta",
