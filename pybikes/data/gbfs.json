@@ -1117,7 +1117,8 @@
                 "longitude": -71.083333,
                 "country": "CA"
             },
-            "feed_url": "https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+            "feed_url": "https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json",
+            "force_https": "true"
         }
     ],
     "system": "gbfs",
