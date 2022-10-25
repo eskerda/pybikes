@@ -36,15 +36,6 @@ def sp_capwords(word):
     return " ".join(map(cap_lambda, enumerate(word.split())))
 
 
-def clean_string(dirty):
-    # Way generic strip_tags. This is unsafe in some cases, but gets the job
-    # done for most inputs
-    dirty = re.sub(r'<[^>]*?>', '', dirty)
-    # Decode any escaped sequences
-    dirty = dirty.encode('utf-8').decode('unicode_escape')
-    return dirty
-
-
 class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
