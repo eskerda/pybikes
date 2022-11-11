@@ -19,7 +19,6 @@ setup(
     install_requires=[
         'requests>=2.20.0',
         'lxml',
-        'cssselect>=0.9',
         'shapely>=1.5.13',
     ],
 )
