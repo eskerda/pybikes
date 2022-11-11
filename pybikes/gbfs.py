@@ -25,12 +25,28 @@ class Gbfs(BikeShareSystem):
 
     station_cls = None
 
-    def __init__(self, tag, meta, feed_url, force_https=False):
+    def __init__(
+        self,
+        tag,
+        meta,
+        feed_url,
+        force_https=False,
+        station_information=False,
+        station_status=False
+    ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
         super(Gbfs, self).__init__(tag, meta)
         self.feed_url = feed_url
         self.force_https = force_https
+
+        # Allow hardcoding feed urls on initialization
+        self.feeds = {}
+        if station_information:
+            self.feeds['station_information'] = station_information
+
+        if station_status:
+            self.feeds['station_status'] = station_status
 
     @property
     def default_feeds(self):
@@ -41,6 +57,9 @@ class Gbfs(BikeShareSystem):
         }
 
     def get_feeds(self, url, scraper, force_https):
+        if self.feeds:
+            return self.feeds
+
         feed_data = scraper.request(url, raw=True)
         if scraper.last_request.status_code >= 400:
             # GBFS service description not found. Try to guess based on
@@ -134,15 +153,30 @@ class GbfsStation(BikeShareStation):
 
         if 'address' in info:
             self.extra['address'] = info['address']
+        if 'post_code' in info:
+            self.extra['post_code'] = info['post_code']
 
         if 'num_ebikes_available' in info:
             self.extra['has_ebikes'] = True
             self.extra['ebikes'] = int(info['num_ebikes_available'])
 
+        if 'num_bikes_available_types' in info:
+            bike_types = info['num_bikes_available_types']
+            if 'ebike' in bike_types:
+                self.extra['has_ebikes'] = True
+                self.extra['ebikes'] = int(bike_types['ebike'])
+                self.extra['normal_bikes'] = int(bike_types['mechanical'])
+
         if 'rental_methods' in info:
             payment = list(map(unicode.lower, info['rental_methods']))
             self.extra['payment'] = payment
             self.extra['payment-terminal'] = 'creditcard' in payment
+
+        if 'altitude' in info:
+            self.extra['altitude'] = info['altitude']
+
+        if 'capacity' in info:
+            self.extra['slots'] = info['capacity']
 
 
 Gbfs.station_cls = GbfsStation
