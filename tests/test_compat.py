@@ -4,7 +4,7 @@ from pybikes.compat import get_all_data, get_schemas, get_system_cls
 from pybikes.compat import get_instance
 
 from pybikes.data import find
-from pybikes.bicing import Bicing
+from pybikes.emovity import Emovity
 
 
 def test_get_all_data():
@@ -16,9 +16,9 @@ def test_get_schemas():
 
 
 def test_get_system_cls():
-    assert get_system_cls('bicing', 'Bicing') == Bicing
+    assert get_system_cls('emovity', 'Emovity') == Emovity
 
 
 def test_get_instance():
-    mod_name, cls_name, i_data = find('bicing')
-    assert get_instance('bicing', 'bicing') == (cls_name, i_data)
+    mod_name, cls_name, i_data = find('girocleta')
+    assert get_instance('emovity', 'girocleta') == (cls_name, i_data)

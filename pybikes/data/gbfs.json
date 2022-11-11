@@ -1119,6 +1119,19 @@
             },
             "feed_url": "https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json",
             "force_https": "true"
+        },
+        {
+            "tag": "bicing",
+            "meta": {
+               "latitude": 41.3850639,
+               "city": "Barcelona",
+               "name": "Bicing",
+               "longitude": 2.1734035,
+               "country": "ES"
+            },
+            "feed_url": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/",
+            "station_information": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_information",
+            "station_status": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status"
         }
     ],
     "system": "gbfs",
