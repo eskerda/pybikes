@@ -1,0 +1,16 @@
+{
+    "instances": [
+        {
+            "tag": "publibike",
+            "meta": {
+                "latitude": 0, 
+                "city": "", 
+                "name": "", 
+                "longitude": 0, 
+                "country": "CH"
+            }
+        }
+    ], 
+    "system": "publibike", 
+    "class": "Publibike"
+}
