@@ -3033,6 +3033,159 @@
                 "longitude": 2.646634,
                 "country": "ES"
             }
+        },
+        {
+            "domain": "hg",
+            "tag": "heraeus-hanau",
+            "city_uid": 301,
+            "meta": {
+                "name": "Heraeus Hanau",
+                "city": "Hanau",
+                "country": "DE",
+                "latitude": 50.1387,
+                "longitude": 8.94429,
+                "company":[
+                    "Heraeus Holding GmbH"
+                ]
+            }
+        },
+        {
+            "domain": "ol",
+            "tag": "stari-grad-hvar",
+            "city_uid": 745,
+            "meta": {
+                "name": "Hvar",
+                "city": "Stari Grad",
+                "country": "HR",
+                "latitude": 43.1841,
+                "longitude": 16.5886
+            }
+        },
+        {
+            "domain": "re",
+            "tag": "revgmobic",
+            "city_uid": 817,
+            "meta": {
+                "name": "mobic",
+                "city": "REVG",
+                "country": "DE",
+                "latitude": 50.8493,
+                "longitude": 6.6687,
+                "company":[
+                    "Rhein-Erft-Verkehrsgesellschaft mbH"
+                ]
+            }
+        },
+        {
+            "domain": "gh",
+            "tag": "westbike-erkelenz",
+            "city_uid": 807,
+            "meta": {
+                "name": "westBike",
+                "city": "Erkelenz",
+                "country": "DE",
+                "latitude": 51.0753,
+                "longitude": 6.31233
+            }
+        },
+        {
+            "domain": "gh",
+            "tag": "westbike-geilenkirchen",
+            "city_uid": 808,
+            "meta": {
+                "name": "westBike",
+                "city": "Geilenkirchen",
+                "country": "DE",
+                "latitude": 50.9671,
+                "longitude": 6.11886
+            }
+        },
+        {
+            "domain": "gh",
+            "tag": "westbike-heinsberg",
+            "city_uid": 809,
+            "meta": {
+                "name": "westBike",
+                "city": "Heinsberg",
+                "country": "DE",
+                "latitude": 51.0597,
+                "longitude": 6.11849
+            }
+        },
+        {
+            "domain": "gh",
+            "tag": "westbike-hueckelhoven",
+            "city_uid": 810,
+            "meta": {
+                "name": "westBike",
+                "city": "H\u00fcckelhoven",
+                "country": "DE",
+                "latitude": 51.0529,
+                "longitude": 6.21933
+            }
+        },
+        {
+            "domain": "gh",
+            "tag": "westbike-wegberg",
+            "city_uid": 811,
+            "meta": {
+                "name": "westBike",
+                "city": "Wegberg",
+                "country": "DE",
+                "latitude": 51.1427,
+                "longitude": 6.2813
+            }
+        },
+        {
+            "domain": "ed",
+            "tag": "edeka-gruenheide-mark",
+            "city_uid": 819,
+            "meta": {
+                "name": "EDEKA Gr\u00fcnheide",
+                "city": "Gr\u00fcnheide (Mark)",
+                "country": "DE",
+                "latitude": 52.4247,
+                "longitude": 13.8203
+            }
+        },
+        {
+            "domain": "er",
+            "tag": "nextbike-erlangen",
+            "city_uid": 829,
+            "meta": {
+                "name": "nextbike Erlangen",
+                "city": "Erlangen",
+                "country": "DE",
+                "latitude": 49.589,
+                "longitude": 11.0065
+            }
+        },
+        {
+            "domain": "cd",
+            "tag": "nomago-gorizia",
+            "city_uid": 771,
+            "meta": {
+                "name": "GO2GO - Gorizia",
+                "city": "Gorizia",
+                "country": "IT",
+                "latitude": 45.9469,
+                "longitude": 13.6208
+            }
+        },
+        {
+            "domain": "mz",
+            "tag": "mvg-meinrad-nextbike-mainz",
+            "city_uid": 771,
+            "meta": {
+                "name": "meinRad MVG Mainz",
+                "city": "Mainz",
+                "country": "DE",
+                "latitude": 45.9469,
+                "longitude": 13.6208,
+                "company": [
+                    "Mainzer Verkehrsgesellschaft mbH"
+                ]
+            }
         }
     ],
     "system": "nextbike",
