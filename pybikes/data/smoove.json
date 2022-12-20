@@ -25,17 +25,6 @@
         "Smoove":{
             "instances":[
                 {
-                    "tag":"velopop",
-                    "meta":{
-                        "latitude":43.943689,
-                        "city":"Avignon",
-                        "name":"V\u00e9lopop",
-                        "longitude":4.805833,
-                        "country":"FR"
-                    },
-                    "feed_url":"http://cli-velo-avignon.gir.fr/stations_inc.html"
-                },
-                {
                     "tag":"batumvelo",
                     "meta":{
                         "latitude":41.660906,
