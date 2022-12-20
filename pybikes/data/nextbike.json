@@ -162,7 +162,7 @@
             }
         },
         {
-            "domain": "ms",
+            "domain": "mr",
             "tag": "metropolradruhr-bochum",
             "city_uid": 130,
             "meta": {
@@ -305,7 +305,7 @@
         {
             "domain": "pl",
             "tag": "wrm-wroclaw",
-            "city_uid": 148,
+            "city_uid": 618,
             "meta": {
                 "name": "WRM",
                 "city": "Wrocław",
@@ -416,18 +416,6 @@
             }
         },
         {
-            "domain": "pb",
-            "tag": "prm-poznan",
-            "city_uid": 192,
-            "meta": {
-                "name": "PRM",
-                "city": "Poznań",
-                "country": "PL",
-                "latitude": 52.4077,
-                "longitude": 16.9323
-            }
-        },
-        {
             "domain": "nz",
             "tag": "nextbike-christchurch",
             "city_uid": 193,
@@ -483,18 +471,6 @@
                 "country": "CY",
                 "latitude": 35.1728,
                 "longitude": 33.3653
-            }
-        },
-        {
-            "domain": "vp",
-            "tag": "veturilo-warszawa",
-            "city_uid": 210,
-            "meta": {
-                "name": "VETURILO",
-                "city": "Warszawa",
-                "country": "PL",
-                "latitude": 52.2265,
-                "longitude": 21.0127
             }
         },
         {
@@ -586,41 +562,6 @@
                 "country": "PL",
                 "latitude": 51.2469,
                 "longitude": 22.5697
-            }
-        },
-        {
-            "domain": "pp",
-            "tag": "healthy-ride-pittsburgh-pittsburgh",
-            "city_uid": 254,
-            "meta": {
-                "name": "Healthy Ride",
-                "city": "Pittsburgh",
-                "country": "US",
-                "latitude": 40.4459,
-                "longitude": -79.9945
-            }
-        },
-        {
-            "domain": "gp",
-            "tag": "grm-grodzisk-grodzisk-mazowiecki",
-            "city_uid": 255,
-            "meta": {
-                "name": "GRM Grodzisk",
-                "city": "Grodzisk Mazowiecki",
-                "country": "PL",
-                "latitude": 52.113,
-                "longitude": 20.6265
-            }
-        },
-        {
-            "domain": "dq",
-            "tag": "nextbike-quickborn",
-            "city_uid": 256,
-            "meta": {
-                "city": "Quickborn",
-                "country": "DE",
-                "latitude": 53.7333,
-                "longitude": 9.90272
             }
         },
         {
@@ -822,18 +763,6 @@
             }
         },
         {
-            "domain": "sp",
-            "tag": "bike-s-srm-szczecin",
-            "city_uid": 346,
-            "meta": {
-                "name": "Bike_S SRM",
-                "city": "Szczecin",
-                "country": "PL",
-                "latitude": 53.4301,
-                "longitude": 14.5498
-            }
-        },
-        {
             "domain": "ba",
             "tag": "nextbike-sarajevo",
             "city_uid": 350,
@@ -876,42 +805,6 @@
                 "country": "DE",
                 "latitude": 52.5087,
                 "longitude": 13.3563
-            }
-        },
-        {
-            "domain": "vp",
-            "tag": "veturilo-stacje-sponsorskie-nextbike-veturilo",
-            "city_uid": 372,
-            "meta": {
-                "name": "Stacje Sponsorskie Nextbike Veturilo",
-                "city": "Warszawa",
-                "country": "PL",
-                "latitude": 52.2265,
-                "longitude": 21.0127
-            }
-        },
-        {
-            "domain": "bl",
-            "tag": "bike4all-byblos",
-            "city_uid": 375,
-            "meta": {
-                "name": "bike4all",
-                "city": "Byblos",
-                "country": "LB",
-                "latitude": 34.1236,
-                "longitude": 35.6511
-            }
-        },
-        {
-            "domain": "bi",
-            "tag": "chartered-bike-bhopal-bhopal",
-            "city_uid": 376,
-            "meta": {
-                "name": "Chartered Bike",
-                "city": "Bhopal",
-                "country": "IN",
-                "latitude": 23.2467,
-                "longitude": 77.411
             }
         },
         {
@@ -984,18 +877,6 @@
             }
         },
         {
-            "domain": "pb",
-            "tag": "prm-stacje-sponsorskie-nextbike-prm",
-            "city_uid": 394,
-            "meta": {
-                "name": "Stacje Sponsorskie Nextbike PRM",
-                "city": "Poznań",
-                "country": "PL",
-                "latitude": 52.4077,
-                "longitude": 16.9323
-            }
-        },
-        {
             "domain": "la",
             "tag": "nextbike-gross-enzersdorf",
             "city_uid": 395,
@@ -1063,18 +944,6 @@
                 "country": "HR",
                 "latitude": 45.4875,
                 "longitude": 16.3753
-            }
-        },
-        {
-            "domain": "kr",
-            "tag": "kolobrzeski-rower-miejski-kolobrzeg",
-            "city_uid": 422,
-            "meta": {
-                "name": "Kołobrzeski Rower Miejski",
-                "city": "Kołobrzeg",
-                "country": "PL",
-                "latitude": 54.1762,
-                "longitude": 15.5761
             }
         },
         {
@@ -1169,29 +1038,6 @@
             }
         },
         {
-            "domain": "rm",
-            "tag": "rower-miejski-szamotuly-rms-szamotuly",
-            "city_uid": 446,
-            "meta": {
-                "name": "Rower Miejski Szamotuły",
-                "city": "Szamotuły",
-                "country": "PL",
-                "latitude": 52.6112,
-                "longitude": 16.5819
-            }
-        },
-        {
-            "domain": "nd",
-            "tag": "nextbike-dordrecht",
-            "city_uid": 447,
-            "meta": {
-                "city": "Dordrecht",
-                "country": "NL",
-                "latitude": 51.7833,
-                "longitude": 4.69391
-            }
-        },
-        {
             "domain": "vn",
             "tag": "vrn-heppenheim",
             "city_uid": 448,
@@ -1201,18 +1047,6 @@
                 "country": "DE",
                 "latitude": 49.6431,
                 "longitude": 8.63889
-            }
-        },
-        {
-            "domain": "pi",
-            "tag": "piaseczynski-rower-miejski-piaseczno",
-            "city_uid": 461,
-            "meta": {
-                "name": "Piaseczyński Rower Miejski",
-                "city": "Piaseczno",
-                "country": "PL",
-                "latitude": 52.0733,
-                "longitude": 21.0269
             }
         },
         {
@@ -1398,18 +1232,6 @@
             }
         },
         {
-            "domain": "cb",
-            "tag": "berlin-buch-campus-berlin-buch",
-            "city_uid": 508,
-            "meta": {
-                "name": "Berlin-Buch Campus",
-                "city": "Berlin",
-                "country": "DE",
-                "latitude": 52.6364,
-                "longitude": 13.5029
-            }
-        },
-        {
             "domain": "nu",
             "tag": "lviv-odessa",
             "city_uid": 525,
@@ -1418,18 +1240,6 @@
                 "country": "UA",
                 "latitude": 46.463,
                 "longitude": 30.7042
-            }
-        },
-        {
-            "domain": "pm",
-            "tag": "zielonogorski-rower-miejski-zielona-gora",
-            "city_uid": 529,
-            "meta": {
-                "name": "Zielonogórski Rower Miejski",
-                "city": "Zielona Góra",
-                "country": "PL",
-                "latitude": 51.9381,
-                "longitude": 15.5048
             }
         },
         {
@@ -1504,18 +1314,6 @@
             }
         },
         {
-            "domain": "pn",
-            "tag": "koninski-rower-miejski-konin",
-            "city_uid": 545,
-            "meta": {
-                "name": "Koniński Rower Miejski",
-                "city": "Konin",
-                "country": "PL",
-                "latitude": 52.2284,
-                "longitude": 18.2553
-            }
-        },
-        {
             "domain": "uv",
             "tag": "nextbike-vinnytsia",
             "city_uid": 546,
@@ -1535,30 +1333,6 @@
                 "country": "DE",
                 "latitude": 50.7367,
                 "longitude": 7.09541
-            }
-        },
-        {
-            "domain": "tn",
-            "tag": "tarnowski-rower-miejski-tarnow",
-            "city_uid": 548,
-            "meta": {
-                "name": "Tarnowski Rower Miejski",
-                "city": "Tarnów",
-                "country": "PL",
-                "latitude": 50.0113,
-                "longitude": 20.9728
-            }
-        },
-        {
-            "domain": "mk",
-            "tag": "kolo-marek-marki",
-            "city_uid": 550,
-            "meta": {
-                "name": "Koło Marek",
-                "city": "Marki",
-                "country": "PL",
-                "latitude": 52.3256,
-                "longitude": 21.1089
             }
         },
         {
@@ -1733,18 +1507,6 @@
             }
         },
         {
-            "domain": "bp",
-            "tag": "biker-bialystok",
-            "city_uid": 245,
-            "meta": {
-                "name": "BIKER Bia\u0142ystok Poland",
-                "city": "Bia\u0142ystok",
-                "country": "PL",
-                "latitude": 53.1262,
-                "longitude": 23.1427
-            }
-        },
-        {
             "domain": "cz",
             "tag": "nextbike-prostejov",
             "city_uid": 549,
@@ -1754,18 +1516,6 @@
                 "country": "CZ",
                 "latitude": 49.4722,
                 "longitude": 17.1055
-            }
-        },
-        {
-            "domain": "kw",
-            "tag": "bike-katowice",
-            "city_uid": 342,
-            "meta": {
-                "name": "Katowice Bike Poland",
-                "city": "Katowice",
-                "country": "PL",
-                "latitude": 50.2594,
-                "longitude": 19.0215
             }
         },
         {
@@ -1793,66 +1543,6 @@
             }
         },
         {
-            "domain": "ap",
-            "tag": "system-rowerow-miejskich-w-pszczynie-pszczyna",
-            "city_uid": 411,
-            "meta": {
-                "name": "System Rower\u00f3w Miejskich w Pszczynie Poland",
-                "city": "Pszczyna",
-                "country": "PL",
-                "latitude": 49.9757,
-                "longitude": 18.9463
-            }
-        },
-        {
-            "domain": "pt",
-            "tag": "tyski-rower-miejski-tychy",
-            "city_uid": 413,
-            "meta": {
-                "name": "Tyski Rower Miejski Poland",
-                "city": "Tychy",
-                "country": "PL",
-                "latitude": 50.1124,
-                "longitude": 18.9972
-            }
-        },
-        {
-            "domain": "jp",
-            "tag": "czestochowski-rower-miejski-czestochowa",
-            "city_uid": 450,
-            "meta": {
-                "name": "Cz\u0119stochowski Rower Miejski Poland",
-                "city": "Cz\u0119stochowa",
-                "country": "PL",
-                "latitude": 50.812,
-                "longitude": 19.1375
-            }
-        },
-        {
-            "domain": "or",
-            "tag": "pruszkowski-rower-miejski-pruszkow",
-            "city_uid": 442,
-            "meta": {
-                "name": "Pruszkowski Rower Miejski Poland",
-                "city": "Pruszk\u00f3w",
-                "country": "PL",
-                "latitude": 52.1622,
-                "longitude": 20.8062
-            }
-        },
-        {
-            "domain": "km",
-            "tag": "ok-bike-kedzierzyn-kozle",
-            "city_uid": 421,
-            "meta": {
-                "name": "OK Bike Poland",
-                "city": "K\u0119dzierzyn-Ko\u017ale",
-                "country": "PL",
-                "latitude": 50.3392,
-                "longitude": 18.2352
-            }
-        },
-        {
             "domain": "sg",
             "tag": "grad-zapresic",
             "city_uid": 723,
@@ -1862,42 +1552,6 @@
                 "country": "HR",
                 "latitude": 45.8622,
                 "longitude": 15.8049
-            }
-        },
-        {
-            "domain": "cv",
-            "tag": "porec-bike-share-porec",
-            "city_uid": 429,
-            "meta": {
-                "name": "Porec bike share (Croatia)",
-                "city": "Pore\u010d",
-                "country": "HR",
-                "latitude": 45.2292,
-                "longitude": 13.6035
-            }
-        },
-        {
-            "domain": "pk",
-            "tag": "kaliski-rower-miejski-kalisz",
-            "city_uid": 431,
-            "meta": {
-                "name": "Kaliski Rower Miejski Poland",
-                "city": "Kalisz",
-                "country": "PL",
-                "latitude": 51.7525,
-                "longitude": 18.0341
-            }
-        },
-        {
-            "domain": "po",
-            "tag": "rower-miejski-w-ostrowie-wielkopolskim-ostrow-wielkopolski",
-            "city_uid": 452,
-            "meta": {
-                "name": "Rower Miejski w Ostrowie Wielkopolskim Poland",
-                "city": "Ostr\u00f3w Wielkopolski",
-                "country": "PL",
-                "latitude": 51.65,
-                "longitude": 17.8253
             }
         },
         {
@@ -1913,30 +1567,6 @@
             }
         },
         {
-            "domain": "ps",
-            "tag": "koszalinski-rower-miejski-koszalin",
-            "city_uid": 496,
-            "meta": {
-                "name": "Koszali\u0144ski Rower Miejski Poland",
-                "city": "Koszalin",
-                "country": "PL",
-                "latitude": 54.2026,
-                "longitude": 16.1678
-            }
-        },
-        {
-            "domain": "pr",
-            "tag": "ki-rower-miejski-sosnowiec",
-            "city_uid": 497,
-            "meta": {
-                "name": "Sosnowiecki Rower Miejski Poland",
-                "city": "Sosnowiec",
-                "country": "PL",
-                "latitude": 50.278,
-                "longitude": 19.1345
-            }
-        },
-        {
             "domain": "pu",
             "tag": "pobiedziski-rower-gminny-pobiedziska",
             "city_uid": 504,
@@ -1946,18 +1576,6 @@
                 "country": "PL",
                 "latitude": 52.4765,
                 "longitude": 17.2866
-            }
-        },
-        {
-            "domain": "sc",
-            "tag": "siemianowicki-rower-miejski-siemianowice-slaskie",
-            "city_uid": 519,
-            "meta": {
-                "name": "Siemianowicki Rower Miejski Poland",
-                "city": "Siemianowice \u015al\u0105skie",
-                "country": "PL",
-                "latitude": 50.3031,
-                "longitude": 19.0222
             }
         },
         {
@@ -1973,66 +1591,6 @@
             }
         },
         {
-            "domain": "ep",
-            "tag": "i-rower-miejski-prm-plock",
-            "city_uid": 521,
-            "meta": {
-                "name": "P\u0142ocki Rower Miejski (PRM) Poland",
-                "city": "P\u0142ock",
-                "country": "PL",
-                "latitude": 52.5445,
-                "longitude": 19.7017
-            }
-        },
-        {
-            "domain": "ep",
-            "tag": "plocki-rower-miejski-prm-orlen-plock",
-            "city_uid": 639,
-            "meta": {
-                "name": "P\u0142ocki Rower Miejski (PRM) Poland",
-                "city": "Orlen P\u0142ock",
-                "country": "PL",
-                "latitude": 52.5466,
-                "longitude": 19.7047
-            }
-        },
-        {
-            "domain": "os",
-            "tag": "i-rower-miejski-otwock",
-            "city_uid": 527,
-            "meta": {
-                "name": "Otwocki Rower Miejski Poland",
-                "city": "Otwock",
-                "country": "PL",
-                "latitude": 52.1034,
-                "longitude": 21.2692
-            }
-        },
-        {
-            "domain": "pd",
-            "tag": "ciechanowski-rower-miejski-ciechanow",
-            "city_uid": 523,
-            "meta": {
-                "name": "Ciechanowski Rower Miejski Poland",
-                "city": "Ciechan\u00f3w",
-                "country": "PL",
-                "latitude": 52.8763,
-                "longitude": 20.6102
-            }
-        },
-        {
-            "domain": "zy",
-            "tag": "zyrardowski-rower-miejski-zyrardow",
-            "city_uid": 551,
-            "meta": {
-                "name": "\u017byrardowski Rower Miejski Poland",
-                "city": "\u017byrard\u00f3w",
-                "country": "PL",
-                "latitude": 52.0503,
-                "longitude": 20.4464
-            }
-        },
-        {
             "domain": "ds",
             "tag": "sap-walldorf",
             "city_uid": 592,
@@ -2042,18 +1600,6 @@
                 "country": "DE",
                 "latitude": 49.2945,
                 "longitude": 8.62324
-            }
-        },
-        {
-            "domain": "od",
-            "tag": "opcina-dugopolje",
-            "city_uid": 445,
-            "meta": {
-                "name": "Op\u0107ina Dugopolje (Croatia)",
-                "city": "Dugopolje",
-                "country": "HR",
-                "latitude": 43.5872,
-                "longitude": 16.5879
             }
         },
         {
@@ -2102,18 +1648,6 @@
                 "country": "DE",
                 "latitude": 50.7069,
                 "longitude": 6.87607
-            }
-        },
-        {
-            "domain": "px",
-            "tag": "partnerzy-nextbike-polska-wolt",
-            "city_uid": 751,
-            "meta": {
-                "name": "Partnerzy Nextbike Polska",
-                "city": "Wolt",
-                "country": "PL",
-                "latitude": 52.2984,
-                "longitude": 21.0498
             }
         },
         {
@@ -2253,18 +1787,6 @@
         },
         {
             "domain": "gt",
-            "tag": "grad-split-hvar",
-            "city_uid": 745,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Hvar",
-                "country": "HR",
-                "latitude": 43.1882,
-                "longitude": 16.6295
-            }
-        },
-        {
-            "domain": "gt",
             "tag": "grad-split-podstrana",
             "city_uid": 766,
             "meta": {
@@ -2321,18 +1843,6 @@
                 "country": "CZ",
                 "latitude": 49.825,
                 "longitude": 18.1206
-            }
-        },
-        {
-            "domain": "pq",
-            "tag": "ski-rower-miejski-lubon",
-            "city_uid": 620,
-            "meta": {
-                "name": "Lubo\u0144ski Rower Miejski Poland",
-                "city": "Lubo\u0144",
-                "country": "PL",
-                "latitude": 52.3461,
-                "longitude": 16.8765
             }
         },
         {
@@ -2984,30 +2494,6 @@
                 "country": "DE",
                 "latitude": 53.3547,
                 "longitude": 10.2067
-            }
-        },
-        {
-            "domain": "oa",
-            "tag": "loker-lomza",
-            "city_uid": 796,
-            "meta": {
-                "name": "\u0141oKeR - \u0141om\u017ca",
-                "city": "\u0141om\u017ca",
-                "country": "PL",
-                "latitude": 53.1649,
-                "longitude": 22.0729
-            }
-        },
-        {
-            "domain": "ck",
-            "tag": "nomago-kranjska-gora",
-            "city_uid": 780,
-            "meta": {
-                "name": "Nomago Bikes - KRANJSKA GORA",
-                "city": "Kranjska Gora",
-                "country": "SI",
-                "latitude": 46.4846,
-                "longitude": 13.7836
             }
         },
         {
