@@ -1,0 +1,25 @@
+{
+    "system":"fifteen",
+    "class":{
+        "LeVelo":{
+            "instances":[
+                {
+                    "tag":"levelo",
+                    "meta":{
+                        "city":"Marseille",
+                        "name":"LeVélo",
+                        "country":"FR",
+                        "company":[
+                            "LeVélo AMP Métropole",
+                            "Ville de Marseille",
+                            "Fifteen SAS"
+                        ],
+                        "longitude":5.36978,
+                        "latitude":43.296482
+                    },
+                    "feed_url":"https://levelo.ampmetropole.fr/api/stations"
+                }
+            ]
+        }
+    }
+}
