@@ -920,7 +920,7 @@
                 "latitude":45.7831, 
                 "longitude":3.0824
             },
-            "feed_url":"https://clermontferrand.publicbikesystem.net/customer/ube/gbfs/v1/"
+            "feed_url":"https://opendata.clermontmetropole.eu/api/v2/catalog/datasets/etat-des-stations-vls-c-velo-gbfs"
         },
         {
             "tag": "monabike",
