@@ -908,6 +908,20 @@
             "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
         },
         {
+            "tag":"velopop",
+            "meta":{
+                "city":"Avignon",
+                "name":"V\u00e9lopop",
+                "country":"FR",
+                "company": [
+                    "Smoove"
+                ],
+                "latitude":43.943689,
+                "longitude":4.805833
+            },
+            "feed_url":"https://avignon-gbfs.klervi.net/gbfs/en/station_information.json"
+        },
+        {
             "tag":"c-velo",
             "meta":{
                 "city":"Clermont-Ferrand",
