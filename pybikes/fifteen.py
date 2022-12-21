@@ -66,8 +66,13 @@ class LeVelo(FifteenAPI):
             lng = float(s['location']['coordinates'][1])
             name = s['label']
             bikes = int(s['info']['number_of_bikes'])
-            free = 15 - bikes
+            free = 10 - bikes
 
+            # Since there is no limit on the number of bikes, 
+            # we set it to 0 if the station is full
+            if free < 0:
+                free = 0
+            
             # bike_state_of_charge is not always present
             if 'bike_state_of_charge' in s['info']:
                 bike_state_of_charge = int(s['info']['bike_state_of_charge'])
@@ -80,7 +85,40 @@ class LeVelo(FifteenAPI):
                 'distance' : int(s['distance']),
             }
             station = BikeShareStation(name, lat, lng, bikes, free, extra)
-            print(station)
+            stations.append(station)
+
+        self.stations = stations
+
+class Vilvolt(FifteenAPI):    
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        data = json.loads(scraper.request(self.feed_url))
+        stations = []
+
+        for s in data:
+            lat = float(s['location']['coordinates'][0])
+            lng = float(s['location']['coordinates'][1])
+            name = s['label']
+            bikes = int(s['info']['number_of_bikes'])
+            free = 10 - bikes
+
+            # Since there is no limit on the number of bikes, 
+            # we set it to 0 if the station is full
+            if free < 0:
+                free = 0
+            # bike_state_of_charge is not always present
+            if 'bike_state_of_charge' in s['info']:
+                bike_state_of_charge = int(s['info']['bike_state_of_charge'])
+            else:
+                bike_state_of_charge = 0
+            extra = {
+                'bike_state_of_charge': bike_state_of_charge,
+                'bike_autonomy': int(s['info']['bike_autonomy']),
+                'id': s['id'],
+                'distance' : int(s['distance']),
+            }
+            station = BikeShareStation(name, lat, lng, bikes, free, extra)
             stations.append(station)
 
         self.stations = stations
