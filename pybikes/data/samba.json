@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "url":"http://www.mobilicidade.com.br/bikesantos/mapaestacao.aspx",
+                    "url":"https://www.mobilicidade.com.br/bikesantos/mapaestacao.aspx",
                     "tag":"bikesantos",
                     "meta":{
                         "latitude":-23.954052,
