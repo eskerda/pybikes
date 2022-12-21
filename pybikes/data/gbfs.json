@@ -1152,8 +1152,7 @@
             },
             "feed_url": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/saintbrieuc/en/gbfs.json?key=YmE1ZDVlNDYtMGIwNy00MGEyLWIxZWYtNGEwOGQ4NTYxNTYz",
             "station_information": "https://gateway.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/saintbrieuc/en/station_information.json?key=YmE1ZDVlNDYtMGIwNy00MGEyLWIxZWYtNGEwOGQ4NTYxNTYz",
-            "station_status": "https://gateway.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/saintbrieuc/en/station_status.json?key=YmE1ZDVlNDYtMGIwNy00MGEyLWIxZWYtNGEwOGQ4NTYxNTYz",
-            "free_bike_status": "https://gateway.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/saintbrieuc/en/free_bike_status.json?key=YmE1ZDVlNDYtMGIwNy00MGEyLWIxZWYtNGEwOGQ4NTYxNTYz"
+            "station_status": "https://gateway.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/saintbrieuc/en/station_status.json?key=YmE1ZDVlNDYtMGIwNy00MGEyLWIxZWYtNGEwOGQ4NTYxNTYz"
         }
     ],
     "system": "gbfs",
