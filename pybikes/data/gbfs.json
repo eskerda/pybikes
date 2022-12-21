@@ -1137,6 +1137,17 @@
             "feed_url": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/",
             "station_information": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_information",
             "station_status": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status"
+        },
+        {
+            "tag": "ecobici",
+            "meta": {
+                "latitude": 19.4326077,
+                "city": "Cd de M\u00e9xico",
+                "name": "EcoBici",
+                "longitude": -99.133208,
+                "country": "MX"
+            },
+            "feed_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
