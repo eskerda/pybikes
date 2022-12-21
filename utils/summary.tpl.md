@@ -18,7 +18,7 @@
 
 {% for system in systems %}
     {% for cls in system.classes %}
-## <a name="cls-{{cls.name}}-{{version}}">{{system.name}}.{{ cls.name }}</a>
+## <a name="user-content-cls-{{cls.name}}-{{version}}">{{system.name}}.{{ cls.name }}</a>
 
 | | instance | outcome | duration |
 |-|----------|---------|----------|
