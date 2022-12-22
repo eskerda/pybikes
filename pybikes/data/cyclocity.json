@@ -238,17 +238,6 @@
                     "contract": "Kazan"
                 },
                 {
-                    "tag": "le-velo",
-                    "meta": {
-                        "latitude": 43.296482,
-                        "country": "FR",
-                        "name": "Le v\u00e9lo",
-                        "longitude": 5.36978,
-                        "city": "Marseille"
-                    },
-                    "contract": "Marseille"
-                },
-                {
                     "tag": "bicloo",
                     "meta": {
                         "latitude": 47.218371,
