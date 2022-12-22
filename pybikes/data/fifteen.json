@@ -40,6 +40,25 @@
                     "feed_url":"https://vilvolt.cw.fifteen.eu/api/stations"
                 }
             ]
+        },
+        "VeloBaie":{
+            "instances": [
+                {
+                    "tag":"velobaie",
+                    "meta":{
+                        "city":"Saint-Brieuc",
+                        "name":"VeloBaie",
+                        "country":"FR",
+                        "company":[
+                            "VeloBaie",
+                            "Fifteen SAS"
+                        ],
+                        "longitude":-2.765,
+                        "latitude":48.514
+                    },
+                    "feed_url":"https://www.data.gouv.fr/fr/datasets/r/407ae361-d196-45e1-ba9a-0b34997dad25"
+                }
+            ]
         }
     }
 }

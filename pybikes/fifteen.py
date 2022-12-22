@@ -122,3 +122,30 @@ class Vilvolt(FifteenAPI):
             stations.append(station)
 
         self.stations = stations
+
+class VeloBaie(FifteenAPI):
+    
+    info_url = "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
+    
+    def update(self, scraper=None):
+        scraper = scraper or utils.PyBikesScraper()
+
+        info = json.loads(scraper.request(self.info_url))['data']['stations']
+        status = json.loads(scraper.request(self.feed_url))['data']['stations']
+        stations = []
+        nb_stations = len(info)
+        for i in range(nb_stations):
+            if status[i]['is_installed'] == False:
+                continue
+            if info[i]['station_id'] != status[i]['station_id']:
+                continue
+            lat = float(info[i]['lat'])
+            lng = float(info[i]['lon'])
+            name = info[i]['name']
+            bikes = int(status[i]['num_bikes_available'])
+            free = int(status[i]['num_docks_available'])
+            extra = {}
+            station = BikeShareStation(name, lat, lng, bikes, free, extra)
+            stations.append(station)
+
+        self.stations = stations
