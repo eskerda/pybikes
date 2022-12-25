@@ -1,0 +1,94 @@
+{
+    "instances": [
+        {
+            "organization": 1,
+            "tag": "cykleo-divia-velodi-dijon",
+            "meta": {
+                "name": "DiviaVélodi",
+                "city": "Dijon",
+                "country": "FR",
+                "latitude": 47.3215806,
+                "longitude": 5.0414701
+            }
+        },
+        {
+            "organization": 2,
+            "tag": "cykleo-twistovelo-caen",
+            "meta": {
+                "name": "Twisto vélo",
+                "city": "Caen",
+                "country": "FR",
+                "latitude": 49.1813403,
+                "longitude": -0.3635615
+            }
+        },
+        {
+            "organization": 3,
+            "tag": "cykleo-idecycle-pau",
+            "meta": {
+                "name": "IDEcycle",
+                "city": "Pau",
+                "country": "FR",
+                "latitude": 43.2957547,
+                "longitude": -0.3685668
+            }
+        },
+        {
+            "organization": 4,
+            "tag": "cykleo-star-rennes",
+            "meta": {
+                "name": "STAR",
+                "city": "Rennes",
+                "country": "FR",
+                "latitude": 48.1113387,
+                "longitude": -1.6800198
+            }
+        },
+        {
+            "organization": 5,
+            "tag": "cykleo-veloplus-velotao-orleans",
+            "meta": {
+                "name": "Vélo+/VéloTAO",
+                "city": "Orleéns",
+                "country": "FR",
+                "latitude": 47.9027336,
+                "longitude": 1.9086066
+            }
+        },
+        {
+            "organization": 6,
+            "tag": "cykleo-velitul-laval",
+            "meta": {
+                "name": "Vélitul",
+                "city": "Laval",
+                "country": "FR",
+                "latitude": 48.0706687,
+                "longitude": -0.7734022
+            }
+        },
+        {
+            "organization": 7,
+            "tag": "cykleo-tbm-bordeaux",
+            "meta": {
+                "name": "TBM_V3",
+                "city": "Bordeaux",
+                "country": "FR",
+                "latitude": 44.841225,
+                "longitude": -0.5800364
+            }
+        },
+        {
+            "organization": 8,
+            "tag": "cykleo-vlille-lille",
+            "meta": {
+                "name": "V'lille",
+                "city": "Lille",
+                "country": "FR",
+                "latitude": 50.6365654,
+                "longitude": 3.0635282
+            }
+        }
+    ],
+    "system": "cykleo",
+    "class": "Cykleo"
+}
