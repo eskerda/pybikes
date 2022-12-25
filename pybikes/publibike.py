@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2022, eskerda <eskerda@gmail.com>
+# Copyright (C) 2022, eUgEntOptIc44 (https://github.com/eUgEntOptIc44)
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
