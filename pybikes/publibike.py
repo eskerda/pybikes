@@ -20,7 +20,7 @@ cache = TSTCache(delta=60)
 
 class Publibike(BikeShareSystem):
     sync = True
-    unifeed = True
+    unifeed = True # all 'networks' (instances) share the same feed
 
     meta = {
         'system': 'PubliBike',
@@ -30,7 +30,7 @@ class Publibike(BikeShareSystem):
     def __init__(self, tag, meta, city_uid, hostname='api.publibike.ch',
                  bbox=None):
         super(Publibike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(hostname=hostname, domain=domain)
+        self.url = BASE_URL.format(hostname=hostname)
         self.uid = city_uid
         self.bbox = bbox
 
@@ -44,6 +44,10 @@ class Publibike(BikeShareSystem):
         assert "stations" in stations, "Failed to find any PubliBike stations"
             
         stations = stations['stations']
+
+        # currently (Dezember 2022) there is no endpoint available to query only stations for 'city_uid'
+        # so we need to filter the data
+        stations = filter(lambda s: s['network']['id'] == self.uid, stations)
 
         if self.bbox:
             def getter(station):
@@ -87,6 +91,3 @@ class PublibikeStation(BikeShareStation):
 
             if self.extra['slots'] > 0:
                 self.free = self.extra['slots'] - self.bikes
-
-        if 'bike_numbers' in station:
-            self.extra['bike_uids'] = station['bike_numbers'].split(',')
