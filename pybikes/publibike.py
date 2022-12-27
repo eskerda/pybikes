@@ -14,8 +14,7 @@ __all__ = ['Publibike', 'PublibikeStation']
 
 BASE_URL = 'https://{hostname}/v1/public/partner/stations'
 
-# Since most networks share the same hostname, there's no need to keep hitting
-# the endpoint on the same urls. This caches the feed for 60s
+# caches the feed for 60s
 cache = TSTCache(delta=60)
 
 
@@ -25,7 +24,8 @@ class Publibike(BikeShareSystem):
 
     meta = {
         'system': 'PubliBike',
-        'company': ['PubliBike AG']
+        'company': ['PubliBike AG'],
+        'source': 'https://api.publibike.ch/v1/static/api.html'
     }
 
     def __init__(self, tag, meta, city_uid, hostname='api.publibike.ch',
@@ -37,7 +37,9 @@ class Publibike(BikeShareSystem):
 
     def update(self, scraper=None):
         if scraper is None:
+            # use cached feed if possible
             scraper = PyBikesScraper(cache)
+
         stations = json.loads(
             scraper.request(self.url).encode('utf-8')
         )
