@@ -1,0 +1,3112 @@
+
+{
+    "instances": [
+        {
+            "tag": "ovfiets-vtn-nl",
+            "meta": {
+                "latitude": 52.10148,
+                "country": "NL",
+                "name": "OV Fiets - Vleuten",
+                "longitude": 5.02616,
+                "city": "Vleuten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VTN"
+            ]
+        },
+        {
+            "tag": "ovfiets-ehv-nl",
+            "meta": {
+                "latitude": 51.44318,
+                "country": "NL",
+                "name": "OV Fiets - Eindhoven",
+                "longitude": 5.48016,
+                "city": "Eindhoven",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EHV"
+            ]
+        },
+        {
+            "tag": "ovfiets-bmn-nl",
+            "meta": {
+                "latitude": 52.09104,
+                "country": "NL",
+                "name": "OV Fiets - Brummen",
+                "longitude": 6.14726,
+                "city": "Brummen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BMN"
+            ]
+        },
+        {
+            "tag": "ovfiets-eml-nl",
+            "meta": {
+                "latitude": 52.30039,
+                "country": "NL",
+                "name": "OV Fiets - Ermelo",
+                "longitude": 5.61434,
+                "city": "Ermelo",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EML"
+            ]
+        },
+        {
+            "tag": "ovfiets-rvs-nl",
+            "meta": {
+                "latitude": 51.79497,
+                "country": "NL",
+                "name": "OV Fiets - Ravenstein",
+                "longitude": 5.63763,
+                "city": "Ravenstein",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RVS"
+            ]
+        },
+        {
+            "tag": "ovfiets-bgn-nl",
+            "meta": {
+                "latitude": 51.49517,
+                "country": "NL",
+                "name": "OV Fiets - Bergen op Zoom",
+                "longitude": 4.29575,
+                "city": "Bergen op Zoom",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BGN"
+            ]
+        },
+        {
+            "tag": "ovfiets-lc-nl",
+            "meta": {
+                "latitude": 52.16652,
+                "country": "NL",
+                "name": "OV Fiets - Lochem",
+                "longitude": 6.42582,
+                "city": "Lochem",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LC"
+            ]
+        },
+        {
+            "tag": "ovfiets-sgn-nl",
+            "meta": {
+                "latitude": 52.78558,
+                "country": "NL",
+                "name": "OV Fiets - Schagen",
+                "longitude": 4.80506,
+                "city": "Schagen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SGN"
+            ]
+        },
+        {
+            "tag": "ovfiets-odz-nl",
+            "meta": {
+                "latitude": 52.3064,
+                "country": "NL",
+                "name": "OV Fiets - Oldenzaal",
+                "longitude": 6.93371,
+                "city": "Oldenzaal",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ODZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-ck-nl",
+            "meta": {
+                "latitude": 51.72659,
+                "country": "NL",
+                "name": "OV Fiets - Cuijk",
+                "longitude": 5.87423,
+                "city": "Cuijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "CK"
+            ]
+        },
+        {
+            "tag": "ovfiets-vhp-nl",
+            "meta": {
+                "latitude": 52.45748,
+                "country": "NL",
+                "name": "OV Fiets - Vroomshoop",
+                "longitude": 6.57211,
+                "city": "Vroomshoop",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VHP"
+            ]
+        },
+        {
+            "tag": "ovfiets-bet-nl",
+            "meta": {
+                "latitude": 51.50841,
+                "country": "NL",
+                "name": "OV Fiets - Best",
+                "longitude": 5.38957,
+                "city": "Best",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BET"
+            ]
+        },
+        {
+            "tag": "ovfiets-ww-nl",
+            "meta": {
+                "latitude": 51.96775,
+                "country": "NL",
+                "name": "OV Fiets - Winterswijk",
+                "longitude": 6.71545,
+                "city": "Winterswijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WW"
+            ]
+        },
+        {
+            "tag": "ovfiets-asb-nl",
+            "meta": {
+                "latitude": 52.35623,
+                "country": "NL",
+                "name": "OV Fiets - Amsterdam",
+                "longitude": 4.89128,
+                "city": "Amsterdam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ASB",
+                "ASDM",
+                "ASS",
+                "ASDZ",
+                "ASD",
+                "RAI",
+                "ASA",
+                "ASDL"
+            ]
+        },
+        {
+            "tag": "ovfiets-ut-nl",
+            "meta": {
+                "latitude": 52.0964,
+                "country": "NL",
+                "name": "OV Fiets - Utrecht",
+                "longitude": 5.10077,
+                "city": "Utrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "UT",
+                "UTO",
+                "UTZL",
+                "UTLR",
+                "UTT"
+            ]
+        },
+        {
+            "tag": "ovfiets-zh-nl",
+            "meta": {
+                "latitude": 53.24816,
+                "country": "NL",
+                "name": "OV Fiets - Zuidhorn",
+                "longitude": 6.40638,
+                "city": "Zuidhorn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZH"
+            ]
+        },
+        {
+            "tag": "ovfiets-sd-nl",
+            "meta": {
+                "latitude": 52.17449,
+                "country": "NL",
+                "name": "OV Fiets - Soest",
+                "longitude": 5.30133,
+                "city": "Soest",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SD",
+                "STZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-hd-nl",
+            "meta": {
+                "latitude": 52.3377,
+                "country": "NL",
+                "name": "OV Fiets - Harderwijk",
+                "longitude": 5.61903,
+                "city": "Harderwijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HD"
+            ]
+        },
+        {
+            "tag": "ovfiets-zwd-nl",
+            "meta": {
+                "latitude": 51.81608,
+                "country": "NL",
+                "name": "OV Fiets - Zwijndrecht",
+                "longitude": 4.64041,
+                "city": "Zwijndrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZWD"
+            ]
+        },
+        {
+            "tag": "ovfiets-mz-nl",
+            "meta": {
+                "latitude": 51.30583,
+                "country": "NL",
+                "name": "OV Fiets - Maarheeze",
+                "longitude": 5.63594,
+                "city": "Maarheeze",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-gv-nl",
+            "meta": {
+                "latitude": 52.08061,
+                "country": "NL",
+                "name": "OV Fiets - 's-Gravenhage",
+                "longitude": 4.33768,
+                "city": "'s-Gravenhage",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GV",
+                "GVM",
+                "GVC"
+            ]
+        },
+        {
+            "tag": "ovfiets-hwd-nl",
+            "meta": {
+                "latitude": 52.66929,
+                "country": "NL",
+                "name": "OV Fiets - Heerhugowaard",
+                "longitude": 4.82352,
+                "city": "Heerhugowaard",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HWD"
+            ]
+        },
+        {
+            "tag": "ovfiets-gerp-nl",
+            "meta": {
+                "latitude": 53.2157,
+                "country": "NL",
+                "name": "OV Fiets - Groningen",
+                "longitude": 6.56405,
+                "city": "Groningen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GERP",
+                "GNN",
+                "GN"
+            ]
+        },
+        {
+            "tag": "ovfiets-dv-nl",
+            "meta": {
+                "latitude": 52.257,
+                "country": "NL",
+                "name": "OV Fiets - Deventer",
+                "longitude": 6.16105,
+                "city": "Deventer",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DV"
+            ]
+        },
+        {
+            "tag": "ovfiets-swk-nl",
+            "meta": {
+                "latitude": 52.79051,
+                "country": "NL",
+                "name": "OV Fiets - Steenwijk",
+                "longitude": 6.11712,
+                "city": "Steenwijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SWK"
+            ]
+        },
+        {
+            "tag": "ovfiets-hmbv-nl",
+            "meta": {
+                "latitude": 51.46936,
+                "country": "NL",
+                "name": "OV Fiets - Helmond",
+                "longitude": 5.6507,
+                "city": "Helmond",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HMBV",
+                "HMBH",
+                "HMH",
+                "HM"
+            ]
+        },
+        {
+            "tag": "ovfiets-hdrz-nl",
+            "meta": {
+                "latitude": 52.94853,
+                "country": "NL",
+                "name": "OV Fiets - Den Helder",
+                "longitude": 4.76209,
+                "city": "Den Helder",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HDRZ",
+                "HDR"
+            ]
+        },
+        {
+            "tag": "ovfiets-ledn-nl",
+            "meta": {
+                "latitude": 52.15941,
+                "country": "NL",
+                "name": "OV Fiets - Leiden",
+                "longitude": 4.47336,
+                "city": "Leiden",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LEDN",
+                "DVNK"
+            ]
+        },
+        {
+            "tag": "ovfiets-sk-nl",
+            "meta": {
+                "latitude": 53.03254,
+                "country": "NL",
+                "name": "OV Fiets - Sneek",
+                "longitude": 5.65161,
+                "city": "Sneek",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SK"
+            ]
+        },
+        {
+            "tag": "ovfiets-gp-nl",
+            "meta": {
+                "latitude": 51.42056,
+                "country": "NL",
+                "name": "OV Fiets - Geldrop",
+                "longitude": 5.55033,
+                "city": "Geldrop",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GP"
+            ]
+        },
+        {
+            "tag": "ovfiets-odb-nl",
+            "meta": {
+                "latitude": 51.58795,
+                "country": "NL",
+                "name": "OV Fiets - Oudenbosch",
+                "longitude": 4.53329,
+                "city": "Oudenbosch",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ODB"
+            ]
+        },
+        {
+            "tag": "ovfiets-ana-nl",
+            "meta": {
+                "latitude": 52.86759,
+                "country": "NL",
+                "name": "OV Fiets - Anna Paulowna",
+                "longitude": 4.81198,
+                "city": "Anna Paulowna",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ANA"
+            ]
+        },
+        {
+            "tag": "ovfiets-hrt-nl",
+            "meta": {
+                "latitude": 51.4276,
+                "country": "NL",
+                "name": "OV Fiets - Sevenum",
+                "longitude": 6.0408,
+                "city": "Sevenum",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HRT"
+            ]
+        },
+        {
+            "tag": "ovfiets-amfs-nl",
+            "meta": {
+                "latitude": 52.16066,
+                "country": "NL",
+                "name": "OV Fiets - Amersfoort",
+                "longitude": 5.38427,
+                "city": "Amersfoort",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "AMFS",
+                "AMF"
+            ]
+        },
+        {
+            "tag": "ovfiets-rsd-nl",
+            "meta": {
+                "latitude": 51.54078,
+                "country": "NL",
+                "name": "OV Fiets - Roosendaal",
+                "longitude": 4.46115,
+                "city": "Roosendaal",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RSD"
+            ]
+        },
+        {
+            "tag": "ovfiets-ah-nl",
+            "meta": {
+                "latitude": 51.98345,
+                "country": "NL",
+                "name": "OV Fiets - Arnhem",
+                "longitude": 5.90125,
+                "city": "Arnhem",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "AH"
+            ]
+        },
+        {
+            "tag": "ovfiets-gz-nl",
+            "meta": {
+                "latitude": 51.58404,
+                "country": "NL",
+                "name": "OV Fiets - Rijen",
+                "longitude": 4.92483,
+                "city": "Rijen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-emn-nl",
+            "meta": {
+                "latitude": 52.78953,
+                "country": "NL",
+                "name": "OV Fiets - Emmen",
+                "longitude": 6.89916,
+                "city": "Emmen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EMN"
+            ]
+        },
+        {
+            "tag": "ovfiets-hwzb-nl",
+            "meta": {
+                "latitude": 52.38647,
+                "country": "NL",
+                "name": "OV Fiets - Halfweg",
+                "longitude": 4.74689,
+                "city": "Halfweg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HWZB"
+            ]
+        },
+        {
+            "tag": "ovfiets-hnk-nl",
+            "meta": {
+                "latitude": 52.64904,
+                "country": "NL",
+                "name": "OV Fiets - Hoorn",
+                "longitude": 5.06994,
+                "city": "Hoorn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HNK",
+                "HN"
+            ]
+        },
+        {
+            "tag": "ovfiets-rta-nl",
+            "meta": {
+                "latitude": 51.91946,
+                "country": "NL",
+                "name": "OV Fiets - Rotterdam",
+                "longitude": 4.51511,
+                "city": "Rotterdam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RTA",
+                "RTB",
+                "RTD",
+                "RLB"
+            ]
+        },
+        {
+            "tag": "ovfiets-rhn-nl",
+            "meta": {
+                "latitude": 51.95732,
+                "country": "NL",
+                "name": "OV Fiets - Rhenen",
+                "longitude": 5.57803,
+                "city": "Rhenen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RHN"
+            ]
+        },
+        {
+            "tag": "ovfiets-rsn-nl",
+            "meta": {
+                "latitude": 52.31288,
+                "country": "NL",
+                "name": "OV Fiets - Rijssen",
+                "longitude": 6.52329,
+                "city": "Rijssen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RSN"
+            ]
+        },
+        {
+            "tag": "ovfiets-vl-nl",
+            "meta": {
+                "latitude": 51.36502,
+                "country": "NL",
+                "name": "OV Fiets - Venlo",
+                "longitude": 6.17161,
+                "city": "Venlo",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VL"
+            ]
+        },
+        {
+            "tag": "ovfiets-omn-nl",
+            "meta": {
+                "latitude": 52.50989,
+                "country": "NL",
+                "name": "OV Fiets - Ommen",
+                "longitude": 6.41725,
+                "city": "Ommen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OMN"
+            ]
+        },
+        {
+            "tag": "ovfiets-cl-nl",
+            "meta": {
+                "latitude": 51.94704,
+                "country": "NL",
+                "name": "OV Fiets - Culemborg",
+                "longitude": 5.22706,
+                "city": "Culemborg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "CL"
+            ]
+        },
+        {
+            "tag": "ovfiets-vb-nl",
+            "meta": {
+                "latitude": 52.06676,
+                "country": "NL",
+                "name": "OV Fiets - Voorburg",
+                "longitude": 4.35956,
+                "city": "Voorburg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VB"
+            ]
+        },
+        {
+            "tag": "ovfiets-hlms-nl",
+            "meta": {
+                "latitude": 52.38488,
+                "country": "NL",
+                "name": "OV Fiets - Haarlem",
+                "longitude": 4.65458,
+                "city": "Haarlem",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HLMS",
+                "HLM"
+            ]
+        },
+        {
+            "tag": "ovfiets-ddr-nl",
+            "meta": {
+                "latitude": 51.80781,
+                "country": "NL",
+                "name": "OV Fiets - Dordrecht",
+                "longitude": 4.66785,
+                "city": "Dordrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DDR"
+            ]
+        },
+        {
+            "tag": "ovfiets-hrn-nl",
+            "meta": {
+                "latitude": 53.17197,
+                "country": "NL",
+                "name": "OV Fiets - Haren",
+                "longitude": 6.60514,
+                "city": "Haren",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HRN",
+                "GN"
+            ]
+        },
+        {
+            "tag": "ovfiets-hor-nl",
+            "meta": {
+                "latitude": 52.17815,
+                "country": "NL",
+                "name": "OV Fiets - Hollandsche Rading",
+                "longitude": 5.17915,
+                "city": "Hollandsche Rading",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HOR"
+            ]
+        },
+        {
+            "tag": "ovfiets-mtr-nl",
+            "meta": {
+                "latitude": 50.85202,
+                "country": "NL",
+                "name": "OV Fiets - Maastricht",
+                "longitude": 5.71156,
+                "city": "Maastricht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MTR",
+                "MTN",
+                "MT"
+            ]
+        },
+        {
+            "tag": "ovfiets-cas-nl",
+            "meta": {
+                "latitude": 52.54554,
+                "country": "NL",
+                "name": "OV Fiets - Castricum",
+                "longitude": 4.65954,
+                "city": "Castricum",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "CAS"
+            ]
+        },
+        {
+            "tag": "ovfiets-wf-nl",
+            "meta": {
+                "latitude": 52.0057,
+                "country": "NL",
+                "name": "OV Fiets - Wolfheze",
+                "longitude": 5.79213,
+                "city": "Wolfheze",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WF"
+            ]
+        },
+        {
+            "tag": "ovfiets-mes-nl",
+            "meta": {
+                "latitude": 50.88299,
+                "country": "NL",
+                "name": "OV Fiets - Meerssen",
+                "longitude": 5.75139,
+                "city": "Meerssen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MES"
+            ]
+        },
+        {
+            "tag": "ovfiets-wp-nl",
+            "meta": {
+                "latitude": 52.32071,
+                "country": "NL",
+                "name": "OV Fiets - Weesp - Muiden",
+                "longitude": 5.04653,
+                "city": "Weesp",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WP"
+            ]
+        },
+        {
+            "tag": "ovfiets-vlb-nl",
+            "meta": {
+                "latitude": 51.592,
+                "country": "NL",
+                "name": "OV Fiets - Vierlingsbeek",
+                "longitude": 5.99728,
+                "city": "Vierlingsbeek",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VLB"
+            ]
+        },
+        {
+            "tag": "ovfiets-gr-nl",
+            "meta": {
+                "latitude": 51.83366,
+                "country": "NL",
+                "name": "OV Fiets - Gorinchem",
+                "longitude": 4.96788,
+                "city": "Gorinchem",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GR"
+            ]
+        },
+        {
+            "tag": "ovfiets-vk-nl",
+            "meta": {
+                "latitude": 50.86873,
+                "country": "NL",
+                "name": "OV Fiets - Valkenburg",
+                "longitude": 5.8336,
+                "city": "Valkenburg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VK"
+            ]
+        },
+        {
+            "tag": "ovfiets-bll-nl",
+            "meta": {
+                "latitude": 52.40441,
+                "country": "NL",
+                "name": "OV Fiets - Bloemendaal",
+                "longitude": 4.6273,
+                "city": "Bloemendaal",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BLL"
+            ]
+        },
+        {
+            "tag": "ovfiets-etn-nl",
+            "meta": {
+                "latitude": 51.57517,
+                "country": "NL",
+                "name": "OV Fiets - Etten-Leur",
+                "longitude": 4.63655,
+                "city": "Etten-Leur",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ETN"
+            ]
+        },
+        {
+            "tag": "ovfiets-aml-nl",
+            "meta": {
+                "latitude": 52.35614,
+                "country": "NL",
+                "name": "OV Fiets - Almelo",
+                "longitude": 6.65732,
+                "city": "Almelo",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "AML"
+            ]
+        },
+        {
+            "tag": "ovfiets-hlo-nl",
+            "meta": {
+                "latitude": 52.60011,
+                "country": "NL",
+                "name": "OV Fiets - Heiloo",
+                "longitude": 4.70089,
+                "city": "Heiloo",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HLO"
+            ]
+        },
+        {
+            "tag": "ovfiets-pmo-nl",
+            "meta": {
+                "latitude": 52.50757,
+                "country": "NL",
+                "name": "OV Fiets - Purmerend",
+                "longitude": 4.96093,
+                "city": "Purmerend",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "PMO",
+                "PMR"
+            ]
+        },
+        {
+            "tag": "ovfiets-dtc-nl",
+            "meta": {
+                "latitude": 51.95897,
+                "country": "NL",
+                "name": "OV Fiets - Doetinchem",
+                "longitude": 6.27768,
+                "city": "Doetinchem",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DTC",
+                "DTCH"
+            ]
+        },
+        {
+            "tag": "ovfiets-lls-nl",
+            "meta": {
+                "latitude": 52.50801,
+                "country": "NL",
+                "name": "OV Fiets - Lelystad",
+                "longitude": 5.47328,
+                "city": "Lelystad",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LLS"
+            ]
+        },
+        {
+            "tag": "ovfiets-nmgo-nl",
+            "meta": {
+                "latitude": 51.8323,
+                "country": "NL",
+                "name": "OV Fiets - Nijmegen",
+                "longitude": 5.84782,
+                "city": "Nijmegen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "NMGO",
+                "NM",
+                "NMH"
+            ]
+        },
+        {
+            "tag": "ovfiets-zvt-nl",
+            "meta": {
+                "latitude": 52.37594,
+                "country": "NL",
+                "name": "OV Fiets - Zandvoort",
+                "longitude": 4.53027,
+                "city": "Zandvoort",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZVT"
+            ]
+        },
+        {
+            "tag": "ovfiets-zl-nl",
+            "meta": {
+                "latitude": 52.5054,
+                "country": "NL",
+                "name": "OV Fiets - Zwolle",
+                "longitude": 6.09098,
+                "city": "Zwolle",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZL"
+            ]
+        },
+        {
+            "tag": "ovfiets-hon-nl",
+            "meta": {
+                "latitude": 52.28396,
+                "country": "NL",
+                "name": "OV Fiets - Holten",
+                "longitude": 6.42169,
+                "city": "Holten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HON"
+            ]
+        },
+        {
+            "tag": "ovfiets-bdpb-nl",
+            "meta": {
+                "latitude": 51.59914,
+                "country": "NL",
+                "name": "OV Fiets - Breda",
+                "longitude": 4.75991,
+                "city": "Breda",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BDPB",
+                "BD"
+            ]
+        },
+        {
+            "tag": "ovfiets-brn-nl",
+            "meta": {
+                "latitude": 52.20787,
+                "country": "NL",
+                "name": "OV Fiets - Baarn",
+                "longitude": 5.28219,
+                "city": "Baarn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BRN"
+            ]
+        },
+        {
+            "tag": "ovfiets-bkg-nl",
+            "meta": {
+                "latitude": 52.69531,
+                "country": "NL",
+                "name": "OV Fiets - Bovenkarspel",
+                "longitude": 5.23641,
+                "city": "Bovenkarspel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BKG"
+            ]
+        },
+        {
+            "tag": "ovfiets-dr-nl",
+            "meta": {
+                "latitude": 52.04548,
+                "country": "NL",
+                "name": "OV Fiets - Dieren",
+                "longitude": 6.10312,
+                "city": "Dieren",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DR"
+            ]
+        },
+        {
+            "tag": "ovfiets-db-nl",
+            "meta": {
+                "latitude": 52.06505,
+                "country": "NL",
+                "name": "OV Fiets - Driebergen-Zeist",
+                "longitude": 5.25978,
+                "city": "Driebergen-Zeist",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DB"
+            ]
+        },
+        {
+            "tag": "ovfiets-ec-nl",
+            "meta": {
+                "latitude": 51.10008,
+                "country": "NL",
+                "name": "OV Fiets - Echt",
+                "longitude": 5.87851,
+                "city": "Echt",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EC"
+            ]
+        },
+        {
+            "tag": "ovfiets-rat-nl",
+            "meta": {
+                "latitude": 52.39069,
+                "country": "NL",
+                "name": "OV Fiets - Raalte",
+                "longitude": 6.27817,
+                "city": "Raalte",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RAT"
+            ]
+        },
+        {
+            "tag": "ovfiets-dl-nl",
+            "meta": {
+                "latitude": 52.49825,
+                "country": "NL",
+                "name": "OV Fiets - Dalfsen",
+                "longitude": 6.25946,
+                "city": "Dalfsen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DL"
+            ]
+        },
+        {
+            "tag": "ovfiets-bmr-nl",
+            "meta": {
+                "latitude": 51.64444,
+                "country": "NL",
+                "name": "OV Fiets - Boxmeer",
+                "longitude": 5.93956,
+                "city": "Boxmeer",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BMR"
+            ]
+        },
+        {
+            "tag": "ovfiets-ns-nl",
+            "meta": {
+                "latitude": 52.37103,
+                "country": "NL",
+                "name": "OV Fiets - Nunspeet",
+                "longitude": 5.7839,
+                "city": "Nunspeet",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "NS"
+            ]
+        },
+        {
+            "tag": "ovfiets-vh-nl",
+            "meta": {
+                "latitude": 52.2237,
+                "country": "NL",
+                "name": "OV Fiets - Voorhout",
+                "longitude": 4.4842,
+                "city": "Voorhout",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VH"
+            ]
+        },
+        {
+            "tag": "ovfiets-ddn-nl",
+            "meta": {
+                "latitude": 52.26021,
+                "country": "NL",
+                "name": "OV Fiets - Delden",
+                "longitude": 6.71482,
+                "city": "Delden",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DDN"
+            ]
+        },
+        {
+            "tag": "ovfiets-hde-nl",
+            "meta": {
+                "latitude": 52.40879,
+                "country": "NL",
+                "name": "OV Fiets - 't Harde",
+                "longitude": 5.89185,
+                "city": "'t Harde",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HDE"
+            ]
+        },
+        {
+            "tag": "ovfiets-hglg-nl",
+            "meta": {
+                "latitude": 52.26211,
+                "country": "NL",
+                "name": "OV Fiets - Hengelo",
+                "longitude": 6.77961,
+                "city": "Hengelo",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HGLG",
+                "HGL"
+            ]
+        },
+        {
+            "tag": "ovfiets-bdg-nl",
+            "meta": {
+                "latitude": 52.08154,
+                "country": "NL",
+                "name": "OV Fiets - Bodegraven",
+                "longitude": 4.74653,
+                "city": "Bodegraven",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BDG"
+            ]
+        },
+        {
+            "tag": "ovfiets-hvsp-nl",
+            "meta": {
+                "latitude": 52.22129,
+                "country": "NL",
+                "name": "OV Fiets - Hilversum",
+                "longitude": 5.18422,
+                "city": "Hilversum",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HVSP",
+                "HVS"
+            ]
+        },
+        {
+            "tag": "ovfiets-vg-nl",
+            "meta": {
+                "latitude": 51.6559,
+                "country": "NL",
+                "name": "OV Fiets - Vught",
+                "longitude": 5.29209,
+                "city": "Vught",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VG"
+            ]
+        },
+        {
+            "tag": "ovfiets-hk-nl",
+            "meta": {
+                "latitude": 52.49418,
+                "country": "NL",
+                "name": "OV Fiets - Heemskerk",
+                "longitude": 4.68518,
+                "city": "Heemskerk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HK"
+            ]
+        },
+        {
+            "tag": "ovfiets-apn-nl",
+            "meta": {
+                "latitude": 52.12492,
+                "country": "NL",
+                "name": "OV Fiets - Alphen aan Den Rijn",
+                "longitude": 4.65789,
+                "city": "Alphen aan Den Rijn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "APN"
+            ]
+        },
+        {
+            "tag": "ovfiets-vz-nl",
+            "meta": {
+                "latitude": 52.40158,
+                "country": "NL",
+                "name": "OV Fiets - Vriezenveen",
+                "longitude": 6.60089,
+                "city": "Vriezenveen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-ws-nl",
+            "meta": {
+                "latitude": 53.13925,
+                "country": "NL",
+                "name": "OV Fiets - Winschoten",
+                "longitude": 7.03468,
+                "city": "Winschoten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WS"
+            ]
+        },
+        {
+            "tag": "ovfiets-ndb-nl",
+            "meta": {
+                "latitude": 52.27363,
+                "country": "NL",
+                "name": "OV Fiets - Bussum",
+                "longitude": 5.16033,
+                "city": "Bussum",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "NDB",
+                "BSMZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-wd-nl",
+            "meta": {
+                "latitude": 52.08536,
+                "country": "NL",
+                "name": "OV Fiets - Woerden",
+                "longitude": 4.89283,
+                "city": "Woerden",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WD"
+            ]
+        },
+        {
+            "tag": "ovfiets-ht-nl",
+            "meta": {
+                "latitude": 51.69576,
+                "country": "NL",
+                "name": "OV Fiets - 's-Hertogenbosch",
+                "longitude": 5.30637,
+                "city": "'s-Hertogenbosch",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HT",
+                "HTO"
+            ]
+        },
+        {
+            "tag": "ovfiets-ovn-nl",
+            "meta": {
+                "latitude": 52.39079,
+                "country": "NL",
+                "name": "OV Fiets - Overveen",
+                "longitude": 4.60765,
+                "city": "Overveen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OVN"
+            ]
+        },
+        {
+            "tag": "ovfiets-mas-nl",
+            "meta": {
+                "latitude": 52.13565,
+                "country": "NL",
+                "name": "OV Fiets - Maarssen",
+                "longitude": 5.03139,
+                "city": "Maarssen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MAS"
+            ]
+        },
+        {
+            "tag": "ovfiets-krd-nl",
+            "meta": {
+                "latitude": 50.86112,
+                "country": "NL",
+                "name": "OV Fiets - Kerkrade",
+                "longitude": 6.05724,
+                "city": "Kerkrade",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "KRD"
+            ]
+        },
+        {
+            "tag": "ovfiets-vry-nl",
+            "meta": {
+                "latitude": 51.52736,
+                "country": "NL",
+                "name": "OV Fiets - Venray",
+                "longitude": 6.01351,
+                "city": "Venray",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VRY"
+            ]
+        },
+        {
+            "tag": "ovfiets-vndw-nl",
+            "meta": {
+                "latitude": 52.02855,
+                "country": "NL",
+                "name": "OV Fiets - Veenendaal west",
+                "longitude": 5.5332,
+                "city": "Veenendaal west",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VNDW"
+            ]
+        },
+        {
+            "tag": "ovfiets-atn-nl",
+            "meta": {
+                "latitude": 51.92492,
+                "country": "NL",
+                "name": "OV Fiets - Aalten",
+                "longitude": 6.58185,
+                "city": "Aalten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ATN"
+            ]
+        },
+        {
+            "tag": "ovfiets-klp-nl",
+            "meta": {
+                "latitude": 52.045937,
+                "country": "NL",
+                "name": "OV Fiets - De Klomp",
+                "longitude": 5.574096,
+                "city": "De Klomp",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "KLP"
+            ]
+        },
+        {
+            "tag": "ovfiets-bhv-nl",
+            "meta": {
+                "latitude": 52.12949,
+                "country": "NL",
+                "name": "OV Fiets - Bilthoven",
+                "longitude": 5.20514,
+                "city": "Bilthoven",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BHV"
+            ]
+        },
+        {
+            "tag": "ovfiets-hdb-nl",
+            "meta": {
+                "latitude": 52.57456,
+                "country": "NL",
+                "name": "OV Fiets - Hardenberg",
+                "longitude": 6.62907,
+                "city": "Hardenberg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HDB"
+            ]
+        },
+        {
+            "tag": "ovfiets-bv-nl",
+            "meta": {
+                "latitude": 52.47875,
+                "country": "NL",
+                "name": "OV Fiets - Beverwijk",
+                "longitude": 4.65448,
+                "city": "Beverwijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BV"
+            ]
+        },
+        {
+            "tag": "ovfiets-btl-nl",
+            "meta": {
+                "latitude": 51.58489,
+                "country": "NL",
+                "name": "OV Fiets - Boxtel",
+                "longitude": 5.31926,
+                "city": "Boxtel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BTL"
+            ]
+        },
+        {
+            "tag": "ovfiets-hgz-nl",
+            "meta": {
+                "latitude": 53.16012,
+                "country": "NL",
+                "name": "OV Fiets - Hoogezand",
+                "longitude": 6.77107,
+                "city": "Hoogezand",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HGZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-avat-nl",
+            "meta": {
+                "latitude": 52.19261,
+                "country": "NL",
+                "name": "OV Fiets - Hooglanderveen",
+                "longitude": 5.43362,
+                "city": "Hooglanderveen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "AVAT"
+            ]
+        },
+        {
+            "tag": "ovfiets-rm-nl",
+            "meta": {
+                "latitude": 51.19222,
+                "country": "NL",
+                "name": "OV Fiets - Roermond",
+                "longitude": 5.99312,
+                "city": "Roermond",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RM"
+            ]
+        },
+        {
+            "tag": "ovfiets-kma-nl",
+            "meta": {
+                "latitude": 52.49511,
+                "country": "NL",
+                "name": "OV Fiets - Assendelft",
+                "longitude": 4.75479,
+                "city": "Assendelft",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "KMA"
+            ]
+        },
+        {
+            "tag": "ovfiets-hrl-nl",
+            "meta": {
+                "latitude": 50.89033,
+                "country": "NL",
+                "name": "OV Fiets - Heerlen",
+                "longitude": 5.97444,
+                "city": "Heerlen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HRL"
+            ]
+        },
+        {
+            "tag": "ovfiets-shl-nl",
+            "meta": {
+                "latitude": 52.30963,
+                "country": "NL",
+                "name": "OV Fiets - Luchthaven Schiphol",
+                "longitude": 4.76206,
+                "city": "Luchthaven Schiphol",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SHL"
+            ]
+        },
+        {
+            "tag": "ovfiets-rs-nl",
+            "meta": {
+                "latitude": 51.71515,
+                "country": "NL",
+                "name": "OV Fiets - Rosmalen",
+                "longitude": 5.36992,
+                "city": "Rosmalen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RS"
+            ]
+        },
+        {
+            "tag": "ovfiets-amr-nl",
+            "meta": {
+                "latitude": 52.64182,
+                "country": "NL",
+                "name": "OV Fiets - Alkmaar",
+                "longitude": 4.75576,
+                "city": "Alkmaar",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "AMR",
+                "AMRN"
+            ]
+        },
+        {
+            "tag": "ovfiets-tbu-nl",
+            "meta": {
+                "latitude": 51.56525,
+                "country": "NL",
+                "name": "OV Fiets - Tilburg",
+                "longitude": 5.05507,
+                "city": "Tilburg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "TBU",
+                "TB",
+                "TBR"
+            ]
+        },
+        {
+            "tag": "ovfiets-gdg-nl",
+            "meta": {
+                "latitude": 52.01651,
+                "country": "NL",
+                "name": "OV Fiets - Gouda",
+                "longitude": 4.72393,
+                "city": "Gouda",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GDG",
+                "GD"
+            ]
+        },
+        {
+            "tag": "ovfiets-laa-nl",
+            "meta": {
+                "latitude": 52.08006,
+                "country": "NL",
+                "name": "OV Fiets - Den Haag",
+                "longitude": 4.33248,
+                "city": "Den Haag",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LAA",
+                "GVC"
+            ]
+        },
+        {
+            "tag": "ovfiets-utg-nl",
+            "meta": {
+                "latitude": 52.52228,
+                "country": "NL",
+                "name": "OV Fiets - Uitgeest",
+                "longitude": 4.70232,
+                "city": "Uitgeest",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "UTG"
+            ]
+        },
+        {
+            "tag": "ovfiets-htn-nl",
+            "meta": {
+                "latitude": 52.02623,
+                "country": "NL",
+                "name": "OV Fiets - Houten",
+                "longitude": 5.17339,
+                "city": "Houten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HTN",
+                "HTNC"
+            ]
+        },
+        {
+            "tag": "ovfiets-zlw-nl",
+            "meta": {
+                "latitude": 51.69034,
+                "country": "NL",
+                "name": "OV Fiets - Zevenbergschen Hoek",
+                "longitude": 4.66225,
+                "city": "Zevenbergschen Hoek",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZLW"
+            ]
+        },
+        {
+            "tag": "ovfiets-hgv-nl",
+            "meta": {
+                "latitude": 52.73309,
+                "country": "NL",
+                "name": "OV Fiets - Hoogeveen",
+                "longitude": 6.47358,
+                "city": "Hoogeveen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HGV"
+            ]
+        },
+        {
+            "tag": "ovfiets-zp-nl",
+            "meta": {
+                "latitude": 52.14475,
+                "country": "NL",
+                "name": "OV Fiets - Zutphen",
+                "longitude": 6.19585,
+                "city": "Zutphen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZP"
+            ]
+        },
+        {
+            "tag": "ovfiets-zbm-nl",
+            "meta": {
+                "latitude": 51.80812,
+                "country": "NL",
+                "name": "OV Fiets - Zaltbommel",
+                "longitude": 5.26288,
+                "city": "Zaltbommel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZBM"
+            ]
+        },
+        {
+            "tag": "ovfiets-bnn-nl",
+            "meta": {
+                "latitude": 52.15073,
+                "country": "NL",
+                "name": "OV Fiets - Barneveld",
+                "longitude": 5.59426,
+                "city": "Barneveld",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BNN",
+                "BNC"
+            ]
+        },
+        {
+            "tag": "ovfiets-alm-nl",
+            "meta": {
+                "latitude": 52.37458,
+                "country": "NL",
+                "name": "OV Fiets - Almere",
+                "longitude": 5.21898,
+                "city": "Almere",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ALM"
+            ]
+        },
+        {
+            "tag": "ovfiets-sdm-nl",
+            "meta": {
+                "latitude": 51.92149,
+                "country": "NL",
+                "name": "OV Fiets - Schiedam",
+                "longitude": 4.40774,
+                "city": "Schiedam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SDM"
+            ]
+        },
+        {
+            "tag": "ovfiets-ztm-nl",
+            "meta": {
+                "latitude": 52.05198,
+                "country": "NL",
+                "name": "OV Fiets - Zoetermeer",
+                "longitude": 4.48512,
+                "city": "Zoetermeer",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZTM",
+                "ZTMO"
+            ]
+        },
+        {
+            "tag": "ovfiets-bn-nl",
+            "meta": {
+                "latitude": 52.29841,
+                "country": "NL",
+                "name": "OV Fiets - Borne",
+                "longitude": 6.74904,
+                "city": "Borne",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BN"
+            ]
+        },
+        {
+            "tag": "ovfiets-zvb-nl",
+            "meta": {
+                "latitude": 51.64198,
+                "country": "NL",
+                "name": "OV Fiets - Zevenbergen",
+                "longitude": 4.60957,
+                "city": "Zevenbergen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZVB"
+            ]
+        },
+        {
+            "tag": "ovfiets-drh-nl",
+            "meta": {
+                "latitude": 52.44301,
+                "country": "NL",
+                "name": "OV Fiets - Driehuis",
+                "longitude": 4.63908,
+                "city": "Driehuis",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DRH"
+            ]
+        },
+        {
+            "tag": "ovfiets-rh-nl",
+            "meta": {
+                "latitude": 52.00973,
+                "country": "NL",
+                "name": "OV Fiets - Rheden",
+                "longitude": 6.03041,
+                "city": "Rheden",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RH"
+            ]
+        },
+        {
+            "tag": "ovfiets-brd-nl",
+            "meta": {
+                "latitude": 51.85342,
+                "country": "NL",
+                "name": "OV Fiets - Barendrecht",
+                "longitude": 4.55417,
+                "city": "Barendrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BRD"
+            ]
+        },
+        {
+            "tag": "ovfiets-obd-nl",
+            "meta": {
+                "latitude": 52.67812,
+                "country": "NL",
+                "name": "OV Fiets - Obdam",
+                "longitude": 4.90919,
+                "city": "Obdam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OBD"
+            ]
+        },
+        {
+            "tag": "ovfiets-tl-nl",
+            "meta": {
+                "latitude": 51.88973,
+                "country": "NL",
+                "name": "OV Fiets - Tiel",
+                "longitude": 5.42399,
+                "city": "Tiel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "TL"
+            ]
+        },
+        {
+            "tag": "ovfiets-sptn-nl",
+            "meta": {
+                "latitude": 52.434,
+                "country": "NL",
+                "name": "OV Fiets - Santpoort-Noord",
+                "longitude": 4.63195,
+                "city": "Santpoort-Noord",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SPTN"
+            ]
+        },
+        {
+            "tag": "ovfiets-ow-nl",
+            "meta": {
+                "latitude": 51.76187,
+                "country": "NL",
+                "name": "OV Fiets - Oss",
+                "longitude": 5.51889,
+                "city": "Oss",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OW",
+                "O"
+            ]
+        },
+        {
+            "tag": "ovfiets-es-nl",
+            "meta": {
+                "latitude": 52.22169,
+                "country": "NL",
+                "name": "OV Fiets - Enschede",
+                "longitude": 6.88984,
+                "city": "Enschede",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ES"
+            ]
+        },
+        {
+            "tag": "ovfiets-pt-nl",
+            "meta": {
+                "latitude": 52.26525,
+                "country": "NL",
+                "name": "OV Fiets - Putten",
+                "longitude": 5.57581,
+                "city": "Putten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "PT"
+            ]
+        },
+        {
+            "tag": "ovfiets-hr-nl",
+            "meta": {
+                "latitude": 52.96098,
+                "country": "NL",
+                "name": "OV Fiets - Heerenveen",
+                "longitude": 5.91617,
+                "city": "Heerenveen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HR"
+            ]
+        },
+        {
+            "tag": "ovfiets-kpn-nl",
+            "meta": {
+                "latitude": 52.56016,
+                "country": "NL",
+                "name": "OV Fiets - Kampen",
+                "longitude": 5.92167,
+                "city": "Kampen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "KPN"
+            ]
+        },
+        {
+            "tag": "ovfiets-vdm-nl",
+            "meta": {
+                "latitude": 53.1043,
+                "country": "NL",
+                "name": "OV Fiets - Veendam",
+                "longitude": 6.88473,
+                "city": "Veendam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VDM"
+            ]
+        },
+        {
+            "tag": "ovfiets-did-nl",
+            "meta": {
+                "latitude": 51.93351,
+                "country": "NL",
+                "name": "OV Fiets - Didam",
+                "longitude": 6.13221,
+                "city": "Didam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DID"
+            ]
+        },
+        {
+            "tag": "ovfiets-had-nl",
+            "meta": {
+                "latitude": 52.35899,
+                "country": "NL",
+                "name": "OV Fiets - Heemstede",
+                "longitude": 4.60547,
+                "city": "Heemstede",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HAD"
+            ]
+        },
+        {
+            "tag": "ovfiets-ekz-nl",
+            "meta": {
+                "latitude": 52.69996,
+                "country": "NL",
+                "name": "OV Fiets - Enkhuizen",
+                "longitude": 5.28904,
+                "city": "Enkhuizen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EKZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-nvd-nl",
+            "meta": {
+                "latitude": 52.36599,
+                "country": "NL",
+                "name": "OV Fiets - Hellendoorn",
+                "longitude": 6.46956,
+                "city": "Hellendoorn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "NVD"
+            ]
+        },
+        {
+            "tag": "ovfiets-go-nl",
+            "meta": {
+                "latitude": 52.23056,
+                "country": "NL",
+                "name": "OV Fiets - Goor",
+                "longitude": 6.58465,
+                "city": "Goor",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GO"
+            ]
+        },
+        {
+            "tag": "ovfiets-hfd-nl",
+            "meta": {
+                "latitude": 52.2933,
+                "country": "NL",
+                "name": "OV Fiets - Hoofddorp",
+                "longitude": 4.69816,
+                "city": "Hoofddorp",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HFD"
+            ]
+        },
+        {
+            "tag": "ovfiets-ot-nl",
+            "meta": {
+                "latitude": 51.58217,
+                "country": "NL",
+                "name": "OV Fiets - Oisterwijk",
+                "longitude": 5.1949,
+                "city": "Oisterwijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OT"
+            ]
+        },
+        {
+            "tag": "ovfiets-dvd-nl",
+            "meta": {
+                "latitude": 52.32369,
+                "country": "NL",
+                "name": "OV Fiets - Duivendrecht",
+                "longitude": 4.93629,
+                "city": "Duivendrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DVD"
+            ]
+        },
+        {
+            "tag": "ovfiets-dron-nl",
+            "meta": {
+                "latitude": 52.53284,
+                "country": "NL",
+                "name": "OV Fiets - Dronten",
+                "longitude": 5.72051,
+                "city": "Dronten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DRON"
+            ]
+        },
+        {
+            "tag": "ovfiets-std-nl",
+            "meta": {
+                "latitude": 51.00126,
+                "country": "NL",
+                "name": "OV Fiets - Sittard",
+                "longitude": 5.85969,
+                "city": "Sittard",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "STD"
+            ]
+        },
+        {
+            "tag": "ovfiets-dmn-nl",
+            "meta": {
+                "latitude": 52.33766,
+                "country": "NL",
+                "name": "OV Fiets - Diemen",
+                "longitude": 4.96204,
+                "city": "Diemen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DMN",
+                "DMNZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-hks-nl",
+            "meta": {
+                "latitude": 52.69046,
+                "country": "NL",
+                "name": "OV Fiets - Hoogkarspel",
+                "longitude": 5.18181,
+                "city": "Hoogkarspel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HKS"
+            ]
+        },
+        {
+            "tag": "ovfiets-wtv-nl",
+            "meta": {
+                "latitude": 51.96271,
+                "country": "NL",
+                "name": "OV Fiets - Westervoort",
+                "longitude": 5.96851,
+                "city": "Westervoort",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WTV"
+            ]
+        },
+        {
+            "tag": "ovfiets-vp-nl",
+            "meta": {
+                "latitude": 51.99526,
+                "country": "NL",
+                "name": "OV Fiets - Velp",
+                "longitude": 5.98094,
+                "city": "Velp",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VP"
+            ]
+        },
+        {
+            "tag": "ovfiets-lw-nl",
+            "meta": {
+                "latitude": 53.19678,
+                "country": "NL",
+                "name": "OV Fiets - Leeuwarden",
+                "longitude": 5.79636,
+                "city": "Leeuwarden",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LW"
+            ]
+        },
+        {
+            "tag": "ovfiets-bnk-nl",
+            "meta": {
+                "latitude": 52.06346,
+                "country": "NL",
+                "name": "OV Fiets - Bunnik",
+                "longitude": 5.19642,
+                "city": "Bunnik",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BNK"
+            ]
+        },
+        {
+            "tag": "ovfiets-mp-nl",
+            "meta": {
+                "latitude": 52.69232,
+                "country": "NL",
+                "name": "OV Fiets - Meppel",
+                "longitude": 6.19411,
+                "city": "Meppel",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MP"
+            ]
+        },
+        {
+            "tag": "ovfiets-gdm-nl",
+            "meta": {
+                "latitude": 51.88156,
+                "country": "NL",
+                "name": "OV Fiets - Gelderrmalsen",
+                "longitude": 5.2703,
+                "city": "Gelderrmalsen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GDM"
+            ]
+        },
+        {
+            "tag": "ovfiets-wt-nl",
+            "meta": {
+                "latitude": 51.2493,
+                "country": "NL",
+                "name": "OV Fiets - Weert",
+                "longitude": 5.70558,
+                "city": "Weert",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WT"
+            ]
+        },
+        {
+            "tag": "ovfiets-wsm-nl",
+            "meta": {
+                "latitude": 53.32991,
+                "country": "NL",
+                "name": "OV Fiets - Winsum",
+                "longitude": 6.51986,
+                "city": "Winsum",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WSM"
+            ]
+        },
+        {
+            "tag": "ovfiets-zd-nl",
+            "meta": {
+                "latitude": 52.43879,
+                "country": "NL",
+                "name": "OV Fiets - Zaandam",
+                "longitude": 4.81588,
+                "city": "Zaandam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZD"
+            ]
+        },
+        {
+            "tag": "ovfiets-ed-nl",
+            "meta": {
+                "latitude": 52.02701,
+                "country": "NL",
+                "name": "OV Fiets - Ede",
+                "longitude": 5.67182,
+                "city": "Ede",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ED"
+            ]
+        },
+        {
+            "tag": "ovfiets-gs-nl",
+            "meta": {
+                "latitude": 51.49874,
+                "country": "NL",
+                "name": "OV Fiets - Goes",
+                "longitude": 3.88823,
+                "city": "Goes",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "GS"
+            ]
+        },
+        {
+            "tag": "ovfiets-dvn-nl",
+            "meta": {
+                "latitude": 51.94356,
+                "country": "NL",
+                "name": "OV Fiets - Duiven",
+                "longitude": 6.01459,
+                "city": "Duiven",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DVN"
+            ]
+        },
+        {
+            "tag": "ovfiets-tbg-nl",
+            "meta": {
+                "latitude": 51.9223,
+                "country": "NL",
+                "name": "OV Fiets - Terborg",
+                "longitude": 6.3644,
+                "city": "Terborg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "TBG"
+            ]
+        },
+        {
+            "tag": "ovfiets-vsv-nl",
+            "meta": {
+                "latitude": 51.93728,
+                "country": "NL",
+                "name": "OV Fiets - Varsseveld",
+                "longitude": 6.45807,
+                "city": "Varsseveld",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VSV"
+            ]
+        },
+        {
+            "tag": "ovfiets-sptz-nl",
+            "meta": {
+                "latitude": 52.41917,
+                "country": "NL",
+                "name": "OV Fiets - Santpoort-Zuid",
+                "longitude": 4.63085,
+                "city": "Santpoort-Zuid",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SPTZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-zv-nl",
+            "meta": {
+                "latitude": 51.92322,
+                "country": "NL",
+                "name": "OV Fiets - Zevenaar",
+                "longitude": 6.07304,
+                "city": "Zevenaar",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ZV"
+            ]
+        },
+        {
+            "tag": "ovfiets-bkl-nl",
+            "meta": {
+                "latitude": 52.17035,
+                "country": "NL",
+                "name": "OV Fiets - Breukelen",
+                "longitude": 4.99054,
+                "city": "Breukelen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BKL"
+            ]
+        },
+        {
+            "tag": "ovfiets-dn-nl",
+            "meta": {
+                "latitude": 51.45625,
+                "country": "NL",
+                "name": "OV Fiets - Deurne",
+                "longitude": 5.78731,
+                "city": "Deurne",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DN"
+            ]
+        },
+        {
+            "tag": "ovfiets-lg-nl",
+            "meta": {
+                "latitude": 50.89575,
+                "country": "NL",
+                "name": "OV Fiets - Landgraaf",
+                "longitude": 6.02039,
+                "city": "Landgraaf",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "LG"
+            ]
+        },
+        {
+            "tag": "ovfiets-hze-nl",
+            "meta": {
+                "latitude": 51.38531,
+                "country": "NL",
+                "name": "OV Fiets - Heeze-Leende",
+                "longitude": 5.56985,
+                "city": "Heeze-Leende",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HZE"
+            ]
+        },
+        {
+            "tag": "ovfiets-ost-nl",
+            "meta": {
+                "latitude": 52.33477,
+                "country": "NL",
+                "name": "OV Fiets - Olst",
+                "longitude": 6.11278,
+                "city": "Olst",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "OST"
+            ]
+        },
+        {
+            "tag": "ovfiets-bsd-nl",
+            "meta": {
+                "latitude": 51.8993,
+                "country": "NL",
+                "name": "OV Fiets - Beesd",
+                "longitude": 5.1943,
+                "city": "Beesd",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BSD"
+            ]
+        },
+        {
+            "tag": "ovfiets-bl-nl",
+            "meta": {
+                "latitude": 52.85592,
+                "country": "NL",
+                "name": "OV Fiets - Beilen",
+                "longitude": 6.52117,
+                "city": "Beilen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "BL"
+            ]
+        },
+        {
+            "tag": "ovfiets-dld-nl",
+            "meta": {
+                "latitude": 52.14002,
+                "country": "NL",
+                "name": "OV Fiets - Den Dolder",
+                "longitude": 5.24177,
+                "city": "Den Dolder",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DLD"
+            ]
+        },
+        {
+            "tag": "ovfiets-asn-nl",
+            "meta": {
+                "latitude": 52.99185,
+                "country": "NL",
+                "name": "OV Fiets - Assen",
+                "longitude": 6.57033,
+                "city": "Assen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "ASN"
+            ]
+        },
+        {
+            "tag": "ovfiets-vs-nl",
+            "meta": {
+                "latitude": 51.44385,
+                "country": "NL",
+                "name": "OV Fiets - Vlissingen",
+                "longitude": 3.59536,
+                "city": "Vlissingen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VS"
+            ]
+        },
+        {
+            "tag": "ovfiets-dz-nl",
+            "meta": {
+                "latitude": 53.33364,
+                "country": "NL",
+                "name": "OV Fiets - Delfzijl",
+                "longitude": 6.92372,
+                "city": "Delfzijl",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DZ"
+            ]
+        },
+        {
+            "tag": "ovfiets-sdt-nl",
+            "meta": {
+                "latitude": 51.82931,
+                "country": "NL",
+                "name": "OV Fiets - Sliedrecht",
+                "longitude": 4.77768,
+                "city": "Sliedrecht",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "SDT"
+            ]
+        },
+        {
+            "tag": "ovfiets-vst-nl",
+            "meta": {
+                "latitude": 52.12624,
+                "country": "NL",
+                "name": "OV Fiets - Voorschoten",
+                "longitude": 4.43502,
+                "city": "Voorschoten",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "VST"
+            ]
+        },
+        {
+            "tag": "ovfiets-wh-nl",
+            "meta": {
+                "latitude": 52.39079,
+                "country": "NL",
+                "name": "OV Fiets - Wijhe",
+                "longitude": 6.13632,
+                "city": "Wijhe",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WH"
+            ]
+        },
+        {
+            "tag": "ovfiets-hil-nl",
+            "meta": {
+                "latitude": 52.30292,
+                "country": "NL",
+                "name": "OV Fiets - Hillegom",
+                "longitude": 4.56551,
+                "city": "Hillegom",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "HIL"
+            ]
+        },
+        {
+            "tag": "ovfiets-rv-nl",
+            "meta": {
+                "latitude": 51.28327,
+                "country": "NL",
+                "name": "OV Fiets - Reuver",
+                "longitude": 6.07882,
+                "city": "Reuver",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RV"
+            ]
+        },
+        {
+            "tag": "ovfiets-wc-nl",
+            "meta": {
+                "latitude": 51.81136,
+                "country": "NL",
+                "name": "OV Fiets - Wijchen",
+                "longitude": 5.72893,
+                "city": "Wijchen",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "WC"
+            ]
+        },
+        {
+            "tag": "ovfiets-est-nl",
+            "meta": {
+                "latitude": 51.91727,
+                "country": "NL",
+                "name": "OV Fiets - Elst",
+                "longitude": 5.8539,
+                "city": "Elst",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "EST"
+            ]
+        },
+        {
+            "tag": "ovfiets-apd-nl",
+            "meta": {
+                "latitude": 52.20958,
+                "country": "NL",
+                "name": "OV Fiets - Apeldoorn",
+                "longitude": 5.9692,
+                "city": "Apeldoorn",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "APD"
+            ]
+        },
+        {
+            "tag": "ovfiets-dt-nl",
+            "meta": {
+                "latitude": 52.00647,
+                "country": "NL",
+                "name": "OV Fiets - Delft",
+                "longitude": 4.35744,
+                "city": "Delft",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "DT"
+            ]
+        },
+        {
+            "tag": "ovfiets-apg-nl",
+            "meta": {
+                "latitude": 53.32525,
+                "country": "NL",
+                "name": "OV Fiets - Appingedam",
+                "longitude": 6.86362,
+                "city": "Appingedam",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "APG"
+            ]
+        },
+        {
+            "tag": "ovfiets-mdb-nl",
+            "meta": {
+                "latitude": 51.49517,
+                "country": "NL",
+                "name": "OV Fiets - Middelburg",
+                "longitude": 3.61768,
+                "city": "Middelburg",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "MDB"
+            ]
+        },
+        {
+            "tag": "ovfiets-rsw-nl",
+            "meta": {
+                "latitude": 52.03988,
+                "country": "NL",
+                "name": "OV Fiets - Rijswijk",
+                "longitude": 4.31965,
+                "city": "Rijswijk",
+                "company": [
+                    "Nederlandse Spoorwegen NV"
+                ]
+            },
+            "region_codes": [
+                "RSW"
+            ]
+        }
+    ],
+    "system": "ovfiets",
+    "class": "Ovfiets"
+}
