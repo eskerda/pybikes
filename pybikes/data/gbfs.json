@@ -905,7 +905,7 @@
                 "latitude":45.396667,
                 "longitude":4.290833
             },
-            "feed_url":"https://saint-etienne-gbfs.klervi.net/gbfs/en/gbfs.json"
+            "feed_url":"https://saint-etienne-fr-smoove.klervi.net/gbfs/gbfs.json"
         },
         {
             "tag":"c-velo",
