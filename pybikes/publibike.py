@@ -20,7 +20,7 @@ cache = TSTCache(delta=60)
 
 class Publibike(BikeShareSystem):
     sync = True
-    unifeed = True # all 'networks' (instances) share the same feed
+    unifeed = True  # all 'networks' (instances) share the same feed
 
     meta = {
         'system': 'PubliBike',
@@ -28,12 +28,10 @@ class Publibike(BikeShareSystem):
         'source': 'https://api.publibike.ch/v1/static/api.html'
     }
 
-    def __init__(self, tag, meta, city_uid, hostname='api.publibike.ch',
-                 bbox=None):
+    def __init__(self, tag, meta, city_uid, hostname='api.publibike.ch'):
         super(Publibike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname)
         self.uid = city_uid
-        self.bbox = bbox
 
     def update(self, scraper=None):
         if scraper is None:
@@ -45,18 +43,12 @@ class Publibike(BikeShareSystem):
         )
 
         assert "stations" in stations, "Failed to find any PubliBike stations"
-            
+
         stations = stations['stations']
 
         # currently (Dezember 2022) there is no endpoint available to query only stations for 'city_uid'
         # so we need to filter the data
         stations = filter(lambda s: s['network']['id'] == self.uid, stations)
-
-        if self.bbox:
-            def getter(station):
-                lat, lng = station['latitude'], station['longitude']
-                return (float(lat), float(lng))
-            stations = filter_bounds(stations, getter, self.bbox)
 
         self.stations = list(map(PublibikeStation, stations))
 
@@ -64,14 +56,14 @@ class Publibike(BikeShareSystem):
 class PublibikeStation(BikeShareStation):
     def __init__(self, station):
         super(PublibikeStation, self).__init__()
-        
+
         self.name = station['name']
         self.latitude = float(station['latitude'])
         self.longitude = float(station['longitude'])
         self.extra = {}
 
         self.extra['uid'] = station['id']
-        
+
         if 'address' in station:
             self.extra['address'] = station['address']
 
@@ -84,7 +76,7 @@ class PublibikeStation(BikeShareStation):
         self.bikes = 0
         if "vehicles" in station:
             self.bikes = len(station['vehicles'])
-  
+
         self.free = None
         if "capacity" in station:
             try:
