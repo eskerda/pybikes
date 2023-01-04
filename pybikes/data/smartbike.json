@@ -32,18 +32,6 @@
                     "format": "json_v2"
                 },
                 {
-                    "tag": "ecobici",
-                    "meta": {
-                        "latitude": 19.4326077,
-                        "city": "Cd de M\u00e9xico",
-                        "name": "EcoBici",
-                        "longitude": -99.133208,
-                        "country": "MX"
-                    },
-                    "feed_url": "https://www.ecobici.cdmx.gob.mx/availability_map/getJsonObject",
-                    "format": "json_v2"
-                },
-                {
                     "tag": "velo-antwerpen",
                     "meta": {
                         "latitude": 51.216667,
