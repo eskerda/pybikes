@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
+# Copyright (C) 2010-2023, eskerda <eskerda@gmail.com>
+# Copyright (C) 2023, eUgEntOptIc44 (https://github.com/eUgEntOptIc44)
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
@@ -112,6 +113,10 @@ class Gbfs(BikeShareSystem):
         ]
         self.stations = []
         for info, status in stations:
+            if info['lat'] == None or info['lon'] == None:
+                #TODO: raise exception ?!
+                continue
+
             info.update(status)
             try:
                 station = self.station_cls(info)
