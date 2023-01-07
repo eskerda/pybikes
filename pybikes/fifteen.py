@@ -46,7 +46,7 @@ class FifteenAPI(BikeShareSystem):
 # Extracted from :https://levelo.ampmetropole.fr/api/stations at Marseille, France
 
 
-class LeVelo(FifteenAPI):    
+class LeVelo(FifteenAPI):
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
 
@@ -55,7 +55,7 @@ class LeVelo(FifteenAPI):
 
         if response["statusCode"] != 200:
             return stations
-        
+
         data = response["data"]["stations"]
         for s in data:
             lat = float(s['location']['coordinates'][0])
@@ -64,11 +64,11 @@ class LeVelo(FifteenAPI):
             bikes = int(s['info']['number_of_bikes'])
             free = 10 - bikes
 
-            # Since there is no limit on the number of bikes, 
+            # Since there is no limit on the number of bikes,
             # we set it to 0 if the station is full
             if free < 0:
                 free = 0
-            
+
             # bike_state_of_charge is not always present
             if 'bike_state_of_charge' in s['info']:
                 bike_state_of_charge = int(s['info']['bike_state_of_charge'])
@@ -85,7 +85,7 @@ class LeVelo(FifteenAPI):
 
         self.stations = stations
 
-class Vilvolt(FifteenAPI):    
+class Vilvolt(FifteenAPI):
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
 
@@ -99,7 +99,7 @@ class Vilvolt(FifteenAPI):
             bikes = int(s['info']['number_of_bikes'])
             free = 10 - bikes
 
-            # Since there is no limit on the number of bikes, 
+            # Since there is no limit on the number of bikes,
             # we set it to 0 if the station is full
             if free < 0:
                 free = 0
@@ -120,9 +120,9 @@ class Vilvolt(FifteenAPI):
         self.stations = stations
 
 class VeloBaie(FifteenAPI):
-    
+
     info_url = "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
-    
+
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
 
