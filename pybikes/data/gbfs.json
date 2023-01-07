@@ -1148,6 +1148,23 @@
                 "country": "MX"
             },
             "feed_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json"
+        },
+        {
+            "tag":"velobaie",
+            "meta":{
+                "city":"Saint-Brieuc",
+                "name":"VeloBaie",
+                "country":"FR",
+                "company":[
+                    "VeloBaie",
+                    "Fifteen SAS"
+                ],
+                "longitude":-2.765,
+                "latitude":48.514
+            },
+            "feed_url": "",
+            "station_information": "https://www.data.gouv.fr/fr/datasets/r/407ae361-d196-45e1-ba9a-0b34997dad25",
+            "station_status": "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
         }
     ],
     "system": "gbfs",
