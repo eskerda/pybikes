@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2019, Louis Turpinat <turpinat.louis@gmail.com>
-# Copyright (C) 2016, Lluis Esquerda <eskerda@gmail.com>
-# Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
-# Distributed under the AGPL license, see LICENSE.txt
 
 import re
 import json
