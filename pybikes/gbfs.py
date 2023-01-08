@@ -32,13 +32,15 @@ class Gbfs(BikeShareSystem):
         feed_url,
         force_https=False,
         station_information=False,
-        station_status=False
+        station_status=False,
+        ignore_errors=False
     ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
         super(Gbfs, self).__init__(tag, meta)
         self.feed_url = feed_url
         self.force_https = force_https
+        self.ignore_errors = ignore_errors
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -117,6 +119,11 @@ class Gbfs(BikeShareSystem):
                 station = self.station_cls(info)
             except exceptions.StationPlannedException:
                 continue
+            except Exception as e:
+                if self.ignore_errors:
+                    continue
+                raise e
+
             self.stations.append(station)
 
 
