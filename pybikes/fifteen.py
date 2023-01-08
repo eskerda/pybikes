@@ -64,8 +64,8 @@ class FifteenAPI(BikeShareSystem):
                 continue
             seen_ids.add(s['parent_id'])
 
-            lat = float(s['location']['coordinates'][0])
-            lng = float(s['location']['coordinates'][1])
+            lat = float(s['location']['coordinates'][1])
+            lng = float(s['location']['coordinates'][0])
             name = s['label']
             bikes = int(s['info']['number_of_bikes'])
 
