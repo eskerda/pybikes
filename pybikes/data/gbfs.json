@@ -923,6 +923,7 @@
             "feed_url": "",
             "station_information":"https://avignon-gbfs.klervi.net/gbfs/en/station_information.json",
             "station_status":"https://avignon-gbfs.klervi.net/gbfs/en/station_status.json",
+            "ignore_errors": true
         },
         {
             "tag":"c-velo",
