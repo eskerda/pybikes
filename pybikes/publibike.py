@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2010-2022, eskerda <eskerda@gmail.com>
-# Copyright (C) 2022, eUgEntOptIc44 (https://github.com/eUgEntOptIc44)
+# Copyright (C) 2022-2023, eUgEntOptIc44 (https://github.com/eUgEntOptIc44)
 # Distributed under the AGPL license, see LICENSE.txt
 
-import re
 import json
 
 from .base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper, filter_bounds
+from pybikes.utils import PyBikesScraper
 from pybikes.contrib import TSTCache
 
 __all__ = ['Publibike', 'PublibikeStation']
@@ -46,7 +45,8 @@ class Publibike(BikeShareSystem):
 
         stations = stations['stations']
 
-        # currently (Dezember 2022) there is no endpoint available to query only stations for 'city_uid'
+        # currently (Dezember 2022) there is no endpoint available
+        # to query only stations for 'city_uid'
         # so we need to filter the data
         stations = filter(lambda s: s['network']['id'] == self.uid, stations)
 
@@ -78,11 +78,10 @@ class PublibikeStation(BikeShareStation):
             self.bikes = len(station['vehicles'])
 
         self.free = None
-        if "capacity" in station:
-            try:
-                self.extra['slots'] = int(station['capacity'])
-            except TypeError:
-                self.extra['slots'] = 0
+        try:
+            self.extra['slots'] = station['capacity']
+        except TypeError:
+            self.extra['slots'] = 0
 
-            if self.extra['slots'] > 0:
-                self.free = self.extra['slots'] - self.bikes
+        if self.extra['slots'] > 0:
+            self.free = self.extra['slots'] - self.bikes
