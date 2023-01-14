@@ -41,15 +41,15 @@ class Bicimad(BikeShareSystem):
 class BicimadStation(BikeShareStation):
     def __init__(self, data):
         super(BicimadStation, self).__init__()
-        self.name = str(data['name']).strip()
+        self.name = data['name']
         self.longitude = float(data['longitude'])
         self.latitude = float(data['latitude'])
         self.bikes = int(data['dock_bikes'])
         self.free = int(data['free_bases'])
         self.extra = {
-            'number': str(data['number']),
+            'number': data['number'],
             'uid': data['id'],
-            'address': str(data['address']).strip(),
+            'address': data['address'],
             'online': data['activate'] == 1 and data['no_available'] == 0,
             'slots': int(data['total_bases']),
             'light': COLORS[int(data['light'])]
