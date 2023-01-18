@@ -128,11 +128,10 @@
                 "country": "US",
                 "company": [
                     "Portland Bureau of Transportation (PBOT)",
-                    "Motivate International, Inc",
-                    "Social Bicycles Inc."
+                    "Lyft Inc."
                 ]
             },
-            "feed_url": "http://biketownpdx.socialbicycles.com/opendata/gbfs.json"
+            "feed_url": "https://gbfs.biketownpdx.com/gbfs/gbfs.json"
         },
         {
             "tag": "britebikes",
