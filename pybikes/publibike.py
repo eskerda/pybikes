@@ -9,9 +9,7 @@ from .base import BikeShareSystem, BikeShareStation
 from pybikes.utils import PyBikesScraper
 from pybikes.contrib import TSTCache
 
-__all__ = ['Publibike', 'PublibikeStation']
-
-BASE_URL = 'https://{hostname}/v1/public/partner/stations'
+FEED_URL = 'https://api.publibike.ch/v1/public/partner/stations'
 
 # caches the feed for 60s
 cache = TSTCache(delta=60)
@@ -27,9 +25,8 @@ class Publibike(BikeShareSystem):
         'source': 'https://api.publibike.ch/v1/static/api.html'
     }
 
-    def __init__(self, tag, meta, city_uid, hostname='api.publibike.ch'):
+    def __init__(self, tag, meta, city_uid):
         super(Publibike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(hostname=hostname)
         self.uid = city_uid
 
     def update(self, scraper=None):
@@ -38,7 +35,7 @@ class Publibike(BikeShareSystem):
             scraper = PyBikesScraper(cache)
 
         stations = json.loads(
-            scraper.request(self.url).encode('utf-8')
+            scraper.request(FEED_URL).encode('utf-8')
         )
 
         assert "stations" in stations, "Failed to find any PubliBike stations"
@@ -78,10 +75,7 @@ class PublibikeStation(BikeShareStation):
             self.bikes = len(station['vehicles'])
 
         self.free = None
-        try:
-            self.extra['slots'] = station['capacity']
-        except TypeError:
-            self.extra['slots'] = 0
+        self.extra['slots'] = station.get('capacity', 0)
 
         if self.extra['slots'] > 0:
             self.free = self.extra['slots'] - self.bikes
