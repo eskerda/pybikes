@@ -908,6 +908,24 @@
             "feed_url":"https://saint-etienne-fr-smoove.klervi.net/gbfs/gbfs.json"
         },
         {
+            "tag":"velopop",
+            "meta":{
+                "city":"Avignon",
+                "name":"V\u00e9lopop",
+                "country":"FR",
+                "company": [
+                    "TCRA Public Transport Region Avignon",
+                    "Fifteen"
+                ],
+                "latitude":43.943689,
+                "longitude":4.805833
+            },
+            "feed_url": "",
+            "station_information":"https://avignon-gbfs.klervi.net/gbfs/en/station_information.json",
+            "station_status":"https://avignon-gbfs.klervi.net/gbfs/en/station_status.json",
+            "ignore_errors": true
+        },
+        {
             "tag":"c-velo",
             "meta":{
                 "city":"Clermont-Ferrand",
@@ -1137,6 +1155,34 @@
             "feed_url": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/",
             "station_information": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_information",
             "station_status": "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status"
+        },
+        {
+            "tag": "ecobici",
+            "meta": {
+                "latitude": 19.4326077,
+                "city": "Cd de M\u00e9xico",
+                "name": "EcoBici",
+                "longitude": -99.133208,
+                "country": "MX"
+            },
+            "feed_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json"
+        },
+        {
+            "tag":"velobaie",
+            "meta":{
+                "city":"Saint-Brieuc",
+                "name":"VeloBaie",
+                "country":"FR",
+                "company":[
+                    "VeloBaie",
+                    "Fifteen SAS"
+                ],
+                "longitude":-2.765,
+                "latitude":48.514
+            },
+            "feed_url": "",
+            "station_information": "https://www.data.gouv.fr/fr/datasets/r/407ae361-d196-45e1-ba9a-0b34997dad25",
+            "station_status": "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
         }
     ],
     "system": "gbfs",

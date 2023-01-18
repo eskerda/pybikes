@@ -9,7 +9,7 @@
                 "longitude": -3.7038,
                 "city": "Madrid"
             },
-			"feed_url": "https://openapi.emtmadrid.es/v1/transport/bicimad/stations/"
+			"feed_url": "https://mynavega.emtmadrid.es/services/api/BiciMadrid/GetAllStationsInfo"
         }
     ],
     "class":"Bicimad",

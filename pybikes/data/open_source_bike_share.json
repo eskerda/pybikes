@@ -9,7 +9,7 @@
                 "longitude":17.113922,
                 "country":"SK"
             },
-            "feed_url":"http://whitebikes.info/command.php?action=map:markers"
+            "feed_url":"https://whitebikes.info/command.php?action=map:markers"
         },
         {
             "tag":"cykl",
