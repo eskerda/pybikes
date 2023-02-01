@@ -84,9 +84,15 @@ def _iter_data():
 @patch('pybikes.data._t_cache', {})
 @patch('pybikes.data._traversor', _traverse_lib())
 class TestData:
+
     def test_find_not_found(self):
         with pytest.raises(BikeShareSystemNotFound):
             find("abracadabra")
+    
+
+    def test_find_not_found_empty_tag(self):
+        with pytest.raises(BikeShareSystemNotFound):
+            find("")
 
 
     def test_find_single_class(self):
@@ -106,6 +112,11 @@ class TestData:
     def test_get_not_found(self):
         with pytest.raises(BikeShareSystemNotFound):
             get("abracadabra")
+
+
+    def test_get_not_found_empty_tag(self):
+        with pytest.raises(BikeShareSystemNotFound):
+            get("")
 
 
     def test_get_instances(self):
