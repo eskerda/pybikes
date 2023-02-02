@@ -1184,7 +1184,7 @@
             "station_status": "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
         },
         {
-            "tag": "donkey_gh",
+            "tag": "donkey-gh",
             "meta": {
                 "latitude": 3.7251733,
                 "longitude": 51.0537177,
