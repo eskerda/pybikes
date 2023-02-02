@@ -1182,6 +1182,18 @@
             "feed_url": "",
             "station_information": "https://www.data.gouv.fr/fr/datasets/r/407ae361-d196-45e1-ba9a-0b34997dad25",
             "station_status": "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
+        },
+        {
+            "tag": "donkey-gh",
+            "meta": {
+                "latitude": 3.7251733,
+                "longitude": 51.0537177,
+                "name": "Donkey Republic - Gent",
+                "city": "Gent",
+                "country": "BE",
+                "company": ["Donkey Republic"]
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/donkey_gh/gbfs"
         }
     ],
     "system": "gbfs",
