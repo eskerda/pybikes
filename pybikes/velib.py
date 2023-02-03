@@ -1,8 +1,8 @@
 from pybikes.gbfs import Gbfs, GbfsStation
 
 class VelibStation(GbfsStation):
-    def __init__(self, info):
-        super(VelibStation, self).__init__(info)
+    def __init__(self, info, * args, ** kwargs):
+        super(VelibStation, self).__init__(info, * args, ** kwargs)
         # This is the traditional code for a velib station. stationCode is not
         # on the GBFS specification. Provide stationCode as id, keep station_id
         # available.
