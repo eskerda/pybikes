@@ -1202,10 +1202,11 @@
                 "name":"Mobi",
                 "country":"CA",
                 "company":[
-                    "Vanncouver Bike Share Inc",
+                    "Vanncouver Bike Share Inc.",
                     "CycleHop LLC",
                     "City of Vancouver",
-                    "Smoove SAS"
+                    "Shaw Communications Inc.",
+                    "Fifteen"
                 ],
                 "longitude":-123.1207,
                 "latitude":49.2827
