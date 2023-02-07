@@ -255,17 +255,6 @@
                     },
                     "tag": "dublinbikes",
                     "contract": "Dublin"
-                },
-                {
-                    "meta": {
-                        "latitude": -27.4710107,
-                        "city": "Brisbane",
-                        "name": "CityCycle",
-                        "longitude": 153.0234489,
-                        "country": "AU"
-                    },
-                    "tag": "citycycle",
-                    "contract": "Brisbane"
                 }
             ]
         }
