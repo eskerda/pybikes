@@ -58,6 +58,20 @@ class Gbfs(BikeShareSystem):
             "station_status": urljoin(url, 'station_status.json'),
         }
 
+    @property
+    def vehicle_taxonomy(self):
+        # contains pairs of (vehicle query, resolver)
+        return [
+            (
+                lambda v: v['propulsion_type'] == 'human' and v['form_factor'] == 'bicycle',
+                lambda v: {'normal_bikes': v['count']}
+            ),
+            (
+                lambda v: v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
+                lambda v: {'has_ebikes': True, 'ebikes': v['count']}
+            ),
+        ]
+
     def get_feeds(self, url, scraper, force_https):
         if self.feeds:
             return self.feeds
@@ -102,6 +116,18 @@ class Gbfs(BikeShareSystem):
         station_status = json.loads(
             scraper.request(feeds['station_status'])
         )['data']['stations']
+
+        if 'vehicle_types' in feeds:
+            vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
+            # map vehicle id to vehicle info AND extra info resolver
+            # for direct access
+            vehicles = {
+                v['vehicle_type_id']: (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
+                    for v in vehicle_info['data'].get('vehicle_types', [])
+            }
+        else:
+            vehicles = {}
+
         # Aggregate status and information by uid
         # Note there's no guarantee that station_status has the same
         # station_ids as station_information.
@@ -116,7 +142,7 @@ class Gbfs(BikeShareSystem):
         for info, status in stations:
             info.update(status)
             try:
-                station = self.station_cls(info)
+                station = self.station_cls(info, vehicles)
             except exceptions.StationPlannedException:
                 continue
             except Exception as e:
@@ -129,7 +155,7 @@ class Gbfs(BikeShareSystem):
 
 class GbfsStation(BikeShareStation):
 
-    def __init__(self, info):
+    def __init__(self, info, vehicles_info):
         """
         Example info variable:
         {u'is_installed': 1, u'post_code': u'null', u'capacity': 31,
@@ -184,6 +210,13 @@ class GbfsStation(BikeShareStation):
 
         if 'capacity' in info:
             self.extra['slots'] = info['capacity']
+
+        if 'vehicle_types_available' in info:
+            for vehicle in info['vehicle_types_available']:
+                if vehicle['vehicle_type_id'] not in vehicles_info:
+                    continue
+                vehicle_info, parser = vehicles_info[vehicle['vehicle_type_id']]
+                self.extra.update(parser(vehicle))
 
 
 Gbfs.station_cls = GbfsStation
