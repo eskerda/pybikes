@@ -1,9 +1,6 @@
 {
     "system": "cyclocity",
     "class": {
-        "CyclocityWeb": {
-            "instances": []
-        },
         "Cyclocity": {
             "instances": [
                 {
