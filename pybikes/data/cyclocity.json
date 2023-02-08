@@ -1,9 +1,6 @@
 {
     "system": "cyclocity",
     "class": {
-        "CyclocityWeb": {
-            "instances": []
-        },
         "Cyclocity": {
             "instances": [
                 {
@@ -49,17 +46,6 @@
                         "city": "Valencia"
                     },
                     "contract": "Valence"
-                },
-                {
-                    "tag": "goeteborg",
-                    "meta": {
-                        "latitude": 57.70887,
-                        "country": "SE",
-                        "name": "Styr & St\u00e4ll",
-                        "longitude": 11.97456,
-                        "city": "G\u00f6teborg"
-                    },
-                    "contract": "Goteborg"
                 },
                 {
                     "tag": "lundahoj",
@@ -227,17 +213,6 @@
                     "contract": "Toyama"
                 },
                 {
-                    "tag": "velik",
-                    "meta": {
-                        "latitude": 55.7949414,
-                        "country": "RU",
-                        "name": "Veli'k",
-                        "longitude": 49.1050445,
-                        "city": "\u041a\u0430\u0437\u0430\u043d\u044c"
-                    },
-                    "contract": "Kazan"
-                },
-                {
                     "tag": "bicloo",
                     "meta": {
                         "latitude": 47.218371,
@@ -272,14 +247,14 @@
                 },
                 {
                     "meta": {
-                        "latitude": -27.4710107,
-                        "city": "Brisbane",
-                        "name": "CityCycle",
-                        "longitude": 153.0234489,
-                        "country": "AU"
+                        "latitude": 46.5547,
+                        "city": "Maribor",
+                        "name": "MBajk",
+                        "longitude": 15.6459,
+                        "country": "SI"
                     },
-                    "tag": "citycycle",
-                    "contract": "Brisbane"
+                    "tag": "mbajk",
+                    "contract": "maribor"
                 }
             ]
         }
