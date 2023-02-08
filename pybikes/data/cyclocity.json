@@ -244,6 +244,17 @@
                     },
                     "tag": "dublinbikes",
                     "contract": "Dublin"
+                },
+                {
+                    "meta": {
+                        "latitude": 46.5547,
+                        "city": "Maribor",
+                        "name": "MBajk",
+                        "longitude": 15.6459,
+                        "country": "SI"
+                    },
+                    "tag": "mbajk",
+                    "contract": "maribor"
                 }
             ]
         }
