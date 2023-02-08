@@ -15,7 +15,7 @@
             "meta": {
                 "latitude": 37.5639397319,
                 "longitude": 22.8093402872,
-                "city": "Maroussi",
+                "city": "Nafplio",
                 "country": "GR"
             },
             "feed_url": "http://nafplio.cyclopolis.gr/index.php/en/stations"
@@ -25,7 +25,7 @@
             "meta": {
                 "latitude": 38.2511101325,
                 "longitude": 22.0821570196,
-                "city": "Maroussi",
+                "city": "Aigialeia",
                 "country": "GR"
             },
             "feed_url": "http://aigialeia.cyclopolis.gr/index.php/en/stations"
