@@ -1,5 +1,3 @@
-import re
-
 try:
     # Python 3
     from unittest.mock import Mock
@@ -7,28 +5,27 @@ except ImportError:
     # Python 2
     from mock import Mock
 
-
+import os
+import re
 import pytest
 
 import pybikes
 from pybikes.data import _traverse_lib
 
-try:
-    import keys
-except ImportError:
-    print("Keys for testing not found, going to use invalid keys")
+class Keys:
+    def __getattr__(self, key):
+        return os.environ.get('PYBIKES_%s' % key.upper())
 
-    class DumbObject(object):
-        def __getattr__(self, name):
-            return 'hunter2'
-
-    keys = DumbObject()
-
+keys = Keys()
+keys.ecobici_ba = {
+    'client_id': keys.ecobici_ba_client_id,
+    'client_secret': keys.ecobici_ba_client_secret,
+}
 
 def get_all_instances():
     for mod, cls, i_data in _traverse_lib():
         tag = i_data['tag']
-        yield pybikes.get(tag, key=getattr(keys, mod, 'hunter2')), i_data, cls, mod
+        yield pybikes.get(tag, key=getattr(keys, mod) or 'hunter2'), i_data, cls, mod
 
 
 instances = list(get_all_instances())
