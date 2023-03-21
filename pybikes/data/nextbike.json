@@ -2661,7 +2661,7 @@
         {
             "domain": "mz",
             "tag": "mvg-meinrad-nextbike-mainz",
-            "city_uid": 771,
+            "city_uid": 755,
             "meta": {
                 "name": "meinRad MVG Mainz",
                 "city": "Mainz",
@@ -2671,6 +2671,18 @@
                 "company": [
                     "Mainzer Verkehrsgesellschaft mbH"
                 ]
+            }
+        },
+        {
+            "domain": "vw",
+            "tag": "veturilo-nextbike-warsaw",
+            "city_uid": 812,
+            "meta": {
+                "name": "VETURILO 3.0",
+                "city": "Warsaw",
+                "country": "PL",
+                "latitude": 52.2581,
+                "longitude": 20.9949
             }
         }
     ],
