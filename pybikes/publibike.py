@@ -5,8 +5,7 @@
 
 import json
 
-from .base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.contrib import TSTCache
 
 FEED_URL = 'https://api.publibike.ch/v1/public/partner/stations'
@@ -57,25 +56,12 @@ class PublibikeStation(BikeShareStation):
         self.name = station['name']
         self.latitude = float(station['latitude'])
         self.longitude = float(station['longitude'])
-        self.extra = {}
-
-        self.extra['uid'] = station['id']
-
-        if 'address' in station:
-            self.extra['address'] = station['address']
-
-        if 'zip' in station:
-            self.extra['zip'] = station['zip']
-
-        if 'city' in station:
-            self.extra['city'] = station['city']
-
-        self.bikes = 0
-        if "vehicles" in station:
-            self.bikes = len(station['vehicles'])
-
-        self.free = None
-        self.extra['slots'] = station.get('capacity', 0)
-
-        if self.extra['slots'] > 0:
-            self.free = self.extra['slots'] - self.bikes
+        self.extra = {
+            'uid': station['id'],
+            'address': station['address'],
+            'zip': station['zip'],
+            'city': station['city'],
+            'slots': station['capacity'],
+        }
+        self.bikes = len(station['vehicles'])
+        self.free = self.extra['slots'] - self.bikes
