@@ -1031,19 +1031,6 @@
         },
         {
             "city_ids": [
-                123,
-                124
-            ],
-            "meta": {
-                "latitude": 46.5196535,
-                "city": "Lausanne - Morges - Campus",
-                "longitude": 6.6322734,
-                "country": "CH"
-            },
-            "tag": "bicincitta-lausanne-campus-morges"
-        },
-        {
-            "city_ids": [
                 106
             ],
             "meta": {
@@ -1065,18 +1052,6 @@
                 "country": "IT"
             },
             "tag": "bicincitta-livorno"
-        },
-        {
-            "city_ids": [
-                89
-            ],
-            "meta": {
-                "latitude": 46.2331221,
-                "city": "Sion",
-                "longitude": 7.360625999999999,
-                "country": "CH"
-            },
-            "tag": "bicincitta-valais-central"
         },
         {
             "city_ids": [
@@ -1217,18 +1192,6 @@
         },
         {
             "city_ids": [
-                33
-            ],
-            "meta": {
-                "latitude": 46.8064773,
-                "city": "Fribourg",
-                "longitude": 7.161971899999999,
-                "country": "CH"
-            },
-            "tag": "bicincitta-agglo-fribourg"
-        },
-        {
-            "city_ids": [
                 180
             ],
             "meta": {
@@ -1252,30 +1215,6 @@
                 "country": "IT"
             },
             "tag": "bicincitta-brancaleone"
-        },
-        {
-            "city_ids": [
-                34
-            ],
-            "meta": {
-                "latitude": 46.6154512,
-                "city": "Bulle",
-                "longitude": 7.057726799999999,
-                "country": "CH"
-            },
-            "tag": "bicincitta-bulle"
-        },
-        {
-            "city_ids": [
-                129
-            ],
-            "meta": {
-                "latitude": 46.4628333,
-                "city": "Distretto della Riviera-Pays-d'Enhaut",
-                "longitude": 6.8419192,
-                "country": "CH"
-            },
-            "tag": "bicincitta-riviera"
         },
         {
             "city_ids": [
@@ -1414,18 +1353,6 @@
         },
         {
             "city_ids": [
-                116
-            ],
-            "meta": {
-                "latitude": 46.7784736,
-                "city": "Yverdon-les-Bains",
-                "longitude": 6.641183,
-                "country": "CH"
-            },
-            "tag": "bicincitta-yverdon-les-bains"
-        },
-        {
-            "city_ids": [
                 224
             ],
             "meta": {
@@ -1447,30 +1374,6 @@
                 "country": "IT"
             },
             "tag": "bicincitta-morigerati"
-        },
-        {
-            "city_ids": [
-                32
-            ],
-            "meta": {
-                "latitude": 46.3832683,
-                "city": "Nyon",
-                "longitude": 6.2347852,
-                "country": "CH"
-            },
-            "tag": "bicincitta-la-cote"
-        },
-        {
-            "city_ids": [
-                60
-            ],
-            "meta": {
-                "latitude": 46.2521873,
-                "city": "Monthey - Aigle",
-                "longitude": 6.9469598,
-                "country": "CH"
-            },
-            "tag": "bicincitta-chablais"
         },
         {
             "city_ids": [
@@ -1509,18 +1412,6 @@
             },
             "tag": "bicincitta-cesena",
             "endpoint": "http://www.mimuovoinbici.it/"
-        },
-        {
-            "city_ids": [
-                130
-            ],
-            "meta": {
-                "latitude": 45.9907174,
-                "city": "Paradiso",
-                "longitude": 8.945261799999999,
-                "country": "CH"
-            },
-            "tag": "bicincitta-lugano-paradiso"
         },
         {
             "city_ids": [
@@ -1595,18 +1486,6 @@
                 "country": "IT"
             },
             "tag": "bicincitta-lavis"
-        },
-        {
-            "city_ids": [
-                35
-            ],
-            "meta": {
-                "latitude": 46.92922110000001,
-                "city": "Murten",
-                "longitude": 7.120184,
-                "country": "CH"
-            },
-            "tag": "bicincitta-les-lacs-romont"
         },
         {
             "city_ids": [
