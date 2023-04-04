@@ -53,6 +53,7 @@ class PyBikesScraper(object):
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
                 headers=None, default_encoding='UTF-8'):
+        # XXX proper encode arguments for proper call args -> response
         if self.cachedict and url in self.cachedict:
             return self.cachedict[url]
 
