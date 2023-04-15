@@ -10,17 +10,6 @@
             },
             "feed_url":"http://www.citibikemiami.com/downtown-miami-locations2.xml",
             "tag":"decobike-miami-beach"
-        },
-        {
-            "meta":{
-                "latitude":32.715738,
-                "city":"San Diego, CA",
-                "name":"Decobike San Diego",
-                "longitude":-117.1610838,
-                "country":"US"
-            },
-            "feed_url":"http://www.discoverbikesandiego.com/DiscoverSanDiegoLocations.xml",
-            "tag":"decobike-san-diego"
         }
     ],
     "system":"decobike",
