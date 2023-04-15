@@ -176,21 +176,6 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json"
         },
         {
-            "tag": "breeze-bike-share",
-            "meta": {
-                "latitude": 34.01780925008178,
-                "longitude": -118.4965717792511,
-                "city": "Santa Monica, CA",
-                "name": "Breeze Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://santamonicabikeshare.com/opendata/gbfs.json"
-        },
-        {
             "tag": "broward",
             "meta": {
                 "latitude": 26.12026,
