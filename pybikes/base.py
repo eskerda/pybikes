@@ -58,6 +58,22 @@ class BikeShareStation(object):
 
         return json.dumps(self, **args)
 
+    def to_geojson(self, **args):
+        return {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [self.longitude, self.latitude],
+            },
+            "properties": {
+                "name": self.name,
+                "bikes": self.bikes,
+                "free": self.free,
+                "extra": self.extra,
+                # ...
+            },
+        }
+
     def get_hash(self):
         """ Return a unique hash representing this station, usually with
             latitude and longitude, since it's the only globally ready and
@@ -119,3 +135,10 @@ class BikeShareSystem(object):
 
         return json.dumps(self, **args)
 
+    def to_geojson(self, **args):
+        return {
+            "type": "FeatureCollection",
+            "features": [
+                station.to_geojson() for station in self.stations
+            ],
+        }

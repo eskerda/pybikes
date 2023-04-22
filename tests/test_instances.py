@@ -7,6 +7,7 @@ except ImportError:
 
 import os
 import re
+import json
 import pytest
 
 import pybikes
@@ -56,7 +57,7 @@ class BaseInstanceTest(object):
         assert request.called
 
     @pytest.mark.update
-    def test_update(self, instance, i_data, cls, mod):
+    def test_update(self, instance, i_data, cls, mod, record_property):
         scraper = pybikes.PyBikesScraper(
             # use a simple dict cache for systems that use a single endpoint
             cachedict=cache if instance.unifeed else None,
@@ -82,6 +83,10 @@ class BaseInstanceTest(object):
 
             if station.free is not None:
                 assert isinstance(station.free, int)
+
+        # FIXME: there's some serialization issue with pytest-xdist and some
+        # of the data (ex: girocleta). Encoding and decoding it again fixes it
+        record_property('geojson', json.loads(json.dumps(instance.to_geojson())))
 
 
 # XXX meh
