@@ -20,18 +20,6 @@
         "SmartBike": {
             "instances": [
                 {
-                    "tag": "bizi",
-                    "meta": {
-                        "latitude": 41.6487908,
-                        "city": "Zaragoza",
-                        "name": "Bizi",
-                        "longitude": -0.8895811,
-                        "country": "ES"
-                    },
-                    "feed_url": "https://www.bizizaragoza.com/availability_map/getJsonObject",
-                    "format": "json_v2"
-                },
-                {
                     "tag": "velo-antwerpen",
                     "meta": {
                         "latitude": 51.216667,
@@ -66,6 +54,21 @@
                     },
                     "feed_url": "https://www.bicilascondes.cl/availability_map/getJsonObject",
                     "format": "json_v2"
+                }
+            ]
+        },
+        "SmartBike2": {
+            "instances": [
+                {
+                    "tag": "bizi",
+                    "meta": {
+                        "latitude": 41.6487908,
+                        "city": "Zaragoza",
+                        "name": "Bizi",
+                        "longitude": -0.8895811,
+                        "country": "ES"
+                    },
+                    "endpoint": "https://cc-smartbike-opendata.s3.eu-west-1.amazonaws.com/zaragoza"
                 }
             ]
         }
