@@ -6,8 +6,8 @@ import re
 import json
 from lxml import html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+
 
 LAT_LNG_RGX = 'point \= new GLatLng\((.*?)\,(.*?)\)'
 ID_ADD_RGX = 'idStation\=(.*)\&addressnew\=(.*)\&s\_id\_idioma'
@@ -38,8 +38,7 @@ class SmartBike(BaseSystem):
         self.method = parse_methods[format]
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         raw_req = scraper.request(self.feed_url)
         self.stations = eval(self.method)(self, raw_req)
@@ -124,8 +123,8 @@ class SmartShitty(BaseSystem):
         self.feed_url = feed_url
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
+
         page = scraper.request(self.feed_url)
         page_html=html.fromstring(page.encode('utf-8'))
         element = page_html.get_element_by_id("__NEXT_DATA__").text_content()
@@ -139,7 +138,8 @@ class SmartShitty(BaseSystem):
             if station_data['__typename']=='DockGroup':
                 stations.append(BikemiStation(station_data))
         self.stations = stations
-        
+
+
 class BikemiStation(BikeShareStation):
     def __init__(self, fields):
         name = fields['title']
@@ -159,5 +159,41 @@ class BikemiStation(BikeShareStation):
             'ebikes_with_childseat': ebikes_with_childseat,
             'ebikes': ebikes_without_childseat + ebikes_with_childseat
         }
-       	bikes = normal_bikes + ebikes_without_childseat + ebikes_with_childseat
+        bikes = normal_bikes + ebikes_without_childseat + ebikes_with_childseat
         super(BikemiStation, self).__init__(name, latitude, longitude, bikes, free, extra)
+
+
+class SmartBike2(BaseSystem):
+
+    def __init__(self, tag, meta, endpoint):
+        super(SmartBike2, self).__init__(tag, meta)
+
+        self.stations_url = endpoint + '/station_list.json'
+        self.stations_status_url = endpoint + '/station_status_list.json'
+
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+
+        stations = json.loads(scraper.request(self.stations_url))
+        statuses = json.loads(scraper.request(self.stations_status_url))
+
+        self.stations = list(map(lambda z: SmartBike2Station(*z), zip(stations, statuses)))
+
+
+class SmartBike2Station(BikeShareStation):
+    def __init__(self, info, status):
+        assert info['id'] == status['id'], "info and status are non consecutive, fix your code"
+
+        name = info['name']
+        latitude = float(info['location']['lat'])
+        longitude = float(info['location']['lon'])
+        bikes = int(status['availability']['bikes'])
+        free = int(status['availability']['slots'])
+        extra = {
+            'status': status['status'],
+            'uid': int(info['id']),
+            'address': info['address'],
+        }
+
+        super(SmartBike2Station, self).__init__(name, latitude, longitude, bikes, free, extra)
