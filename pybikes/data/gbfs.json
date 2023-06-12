@@ -1211,7 +1211,7 @@
                     "INURBA Mobility"
                 ]
             },
-            "feed_url": "https://gbfs.urbansharing.com/lovelolibreservice.fr/system_information.json"
+            "feed_url": "https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json"
         }
     ],
     "system": "gbfs",
