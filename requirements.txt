@@ -10,4 +10,6 @@ flake8
 
 # reports
 jinja2
+## pin pytest-metadata until https://github.com/numirias/pytest-json-report/issues/89
+pytest-metadata==2.0.4; python_version > '2.7'
 pytest-json-report; python_version > '2.7'
