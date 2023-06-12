@@ -1197,6 +1197,21 @@
                 "latitude":49.2827
             },
             "feed_url": "https://vancouver-gbfs.smoove.pro/gbfs/2/gbfs.json"
+        },
+        {
+            "tag": "lovelolibreservice",
+            "meta": {
+                "latitude": 49.4432552,
+                "longitude": 1.0999821,
+                "city": "Rouen",
+                "name": "Lovélo Libre Service",
+                "country": "FR",
+                "company": [
+                    "Citybike Normandie",
+                    "INURBA Mobility"
+                ]
+            },
+            "feed_url": "https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json"
         }
     ],
     "system": "gbfs",
