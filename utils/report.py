@@ -59,9 +59,15 @@ def parse_report(report):
         # only parse instance update tests
         if not test['keywords'][0].startswith('test_update['):
             continue
-        cls_attrs = test['keywords'][3]
-        mod, cls, tag = re.search(r'(.*)\.(.*)\:\:(.*)', cls_attrs).groups()
-        yield (mod, cls, tag, test)
+        for keyword in test['keywords']:
+            match = re.search(r'test_update\[(.*)\.(.*)\:\:(.*)\]$', keyword)
+            if not match:
+                continue
+
+            mod, cls, tag = match.groups()
+
+            yield (mod, cls, tag, test)
+            break
 
 
 def generate_report(report, template):
