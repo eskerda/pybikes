@@ -4,17 +4,6 @@
         "Cyclocity": {
             "instances": [
                 {
-                    "tag": "cyclic",
-                    "meta": {
-                        "latitude": 49.44323199999999,
-                        "country": "FR",
-                        "name": "cy'clic",
-                        "longitude": 1.099971,
-                        "city": "Rouen"
-                    },
-                    "contract": "Rouen"
-                },
-                {
                     "tag": "velo",
                     "meta": {
                         "latitude": 43.604652,
