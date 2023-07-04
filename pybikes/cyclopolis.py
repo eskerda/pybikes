@@ -9,8 +9,9 @@ from . import utils, exceptions
 
 __all__ = ['Cyclopolis', 'CyclopolisStation']
 
-LAT_LNG_RGX = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
-DATA_RGX = r'data\:.*?<span.*?>(.*?)</span>'
+LAT_LNG_RGX_GOOGLE = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
+LAT_LNG_RGX_MAPBOX = r'"lat":\s?"(\d+.\d+).*?"lon":\s?"(\d+.\d+)'
+DATA_RGX = r'data"?\:.*?<span.*?>(.*?)<\\?/span>'
 
 """
 In some systems, e.g., maroussi, nafplio, stations come as:
@@ -42,9 +43,10 @@ class Cyclopolis(BikeShareSystem):
         'company': ['Cyclopolis Systems']
     }
 
-    def __init__(self, tag, feed_url, meta):
+    def __init__(self, tag, mapstyle, feed_url, meta):
         super(Cyclopolis, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.mapstyle = mapstyle
 
     def update(self, scraper = None):
         if scraper is None:
@@ -53,6 +55,7 @@ class Cyclopolis(BikeShareSystem):
         stations = []
 
         html = scraper.request(self.feed_url)
+        LAT_LNG_RGX = LAT_LNG_RGX_GOOGLE if self.mapstyle == "google" else LAT_LNG_RGX_MAPBOX
         data = zip(
             re.findall(LAT_LNG_RGX, html, re.DOTALL),
             re.findall(DATA_RGX, html, re.DOTALL)
@@ -60,7 +63,7 @@ class Cyclopolis(BikeShareSystem):
         for lat_lng, info in data:
             latitude = float(lat_lng[0])
             longitude = float(lat_lng[1])
-            fields = info.replace('<b>','').replace('</b>','').split('<br/>')
+            fields = re.split(r'<br.?/?>', info.replace('<b>','').replace('</b>',''))
             extra = {}
             if len(fields) == 4: # there is not slots information available
                 name, raw_bikes, raw_free, status = fields
