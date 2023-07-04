@@ -29,6 +29,16 @@
                 "city": "Galway",
                 "country": "IE"
             }
+        },
+        {
+            "tag": "waterford",
+            "system_id": "waterford",
+            "meta": {
+                "latitude": 52.2475049,
+                "longitude": -7.1130299,
+                "city": "Waterford",
+                "country": "IE"
+            }
         }
     ],
     "system": "bikeshare_ie",
