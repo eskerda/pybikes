@@ -63,7 +63,7 @@ class Cyclopolis(BikeShareSystem):
         for lat_lng, info in data:
             latitude = float(lat_lng[0])
             longitude = float(lat_lng[1])
-            fields = re.split(r'<br.?/?>', info.replace('<b>','').replace('</b>',''))
+            fields = re.split(r'<br.?/?>', re.sub(r'<\\?/?b>', '', info))
             extra = {}
             if len(fields) == 4: # there is not slots information available
                 name, raw_bikes, raw_free, status = fields
@@ -74,7 +74,7 @@ class Cyclopolis(BikeShareSystem):
             # In some circumstances, e.g., station is offline,
             # the number of 'bikes' and/or 'free' is 'n/a'
             try:
-                bikes = int(raw_bikes.split(':')[-1])
+                bikes = int(raw_bikes.split(': ')[-1])
             except ValueError:
                 bikes = 0
             try:
