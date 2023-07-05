@@ -8,7 +8,8 @@
                 "city": "Maroussi",
                 "country": "GR"
             },
-            "feed_url": "http://maroussi.cyclopolis.gr/index.php/en/stations"
+            "mapstyle": "google",
+            "feed_url": "https://maroussi.cyclopolis.gr/index.php/en/stations"
         },
         {
             "tag": "cyclopolis-nafplio",
@@ -18,7 +19,8 @@
                 "city": "Nafplio",
                 "country": "GR"
             },
-            "feed_url": "http://nafplio.cyclopolis.gr/index.php/en/stations"
+            "mapstyle": "mapbox",
+            "feed_url": "https://nafplio.cyclopolis.gr/index.php/en/stations"
         },
         {
             "tag": "cyclopolis-aigialeia",
@@ -28,6 +30,7 @@
                 "city": "Aigialeia",
                 "country": "GR"
             },
+            "mapstyle": "google",
             "feed_url": "http://aigialeia.cyclopolis.gr/index.php/en/stations"
         },
         {
@@ -38,6 +41,7 @@
                 "city": "Marathon",
                 "country": "GR"
             },
+            "mapstyle": "google",
             "feed_url": "http://marathon.cyclopolis.gr/index.php/en/stations"
         },
         {
@@ -48,6 +52,7 @@
                 "city": "Νea Smyrni",
                 "country": "GR"
             },
+            "mapstyle": "google",
             "feed_url": "http://neasmyrni.cyclopolis.gr/index.php/en/stations"
         },
         {
@@ -58,7 +63,8 @@
                 "city": "Μoschato-Tavros",
                 "country": "GR"
             },
-            "feed_url": "http://moschatotavros.cyclopolis.gr/index.php/en/stations"
+            "mapstyle": "mapbox",
+            "feed_url": "https://moschatotavros.cyclopolis.gr/index.php/en/stations"
         },
         {
             "tag": "cyclopolis-arxaiaolympia",
@@ -68,6 +74,7 @@
                 "city": "Αrxaia Olympia",
                 "country": "GR"
             },
+            "mapstyle": "google",
             "feed_url": "http://arxaiaolympia.cyclopolis.gr/index.php/en/stations"
         },
         {
@@ -78,6 +85,7 @@
                 "city": "Kιato",
                 "country": "GR"
             },
+            "mapstyle": "google",
             "feed_url": "http://kiato.cyclopolis.gr/index.php/en/stations"
         },
         {
@@ -88,7 +96,8 @@
                 "city": "Rhodes",
                 "country": "GR"
             },
-            "feed_url": "http://rhodes.cyclopolis.gr/index.php/en/stations"
+            "mapstyle": "mapbox",
+            "feed_url": "https://rhodes.cyclopolis.gr/index.php/en/stations"
         },
         {
             "tag": "cyclopolis-florina",
@@ -98,7 +107,8 @@
                 "city": "Florina",
                 "country": "GR"
             },
-            "feed_url": "http://florina.cyclopolis.gr/index.php/en/stations"
+            "mapstyle": "mapbox",
+            "feed_url": "https://florina.cyclopolis.gr/index.php/en/stations"
         },
         {
             "tag": "cyclopolis-limnos",
@@ -108,7 +118,63 @@
                 "city": "Limnos",
                 "country": "GR"
             },
+            "mapstyle": "mapbox",
             "feed_url": "http://limnos.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-loutraki",
+            "meta": {
+                "latitude": 37.9782137,
+                "longitude": 22.9767486,
+                "city": "Loutraki",
+                "country": "GR"
+            },
+            "mapstyle": "mapbox",
+            "feed_url": "https://loutraki.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-igoumenitsa",
+            "meta": {
+                "latitude": 39.5031199,
+                "longitude": 20.2639271,
+                "city": "Igoumenitsa",
+                "country": "GR"
+            },
+            "mapstyle": "mapbox",
+            "feed_url": "https://igoumenitsa.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-edessa",
+            "meta": {
+                "latitude": 40.8033168,
+                "longitude": 22.0436732,
+                "city": "Edessa",
+                "country": "GR"
+            },
+            "mapstyle": "mapbox",
+            "feed_url": "https://edessa.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-syros",
+            "meta": {
+                "latitude": 37.443861,
+                "longitude": 24.9393979,
+                "city": "Syros",
+                "country": "GR"
+            },
+            "mapstyle": "mapbox",
+            "feed_url": "https://syros.cyclopolis.gr/index.php/en/stations"
+        },
+        {
+            "tag": "cyclopolis-chania",
+            "meta": {
+                "latitude": 35.5148425,
+                "longitude": 24.0177549,
+                "city": "Chania",
+                "country": "GR"
+            },
+            "mapstyle": "mapbox",
+            "feed_url": "https://chania.cyclopolis.gr/index.php/en/useful-info-en/stations"
         }
     ],
     "system": "cyclopolis",
