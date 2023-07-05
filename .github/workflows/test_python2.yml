@@ -1,3 +1,6 @@
+# There are still parts of the project using python2.7 so it's a good idea
+# to check if it works at all
+
 name: pybikes
 
 env:
@@ -14,17 +17,16 @@ on:
 
 jobs:
   test:
+    name: test (2.7)
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+    - name: Set up Python 2.7
+      uses: MatteoH2O1999/setup-python@v1
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '2.7'
+        allow-build: info
+        cache-build: true
     - name: Install dependencies
       run: make install
     - name: lint
@@ -34,10 +36,5 @@ jobs:
     - name: test update
       run: |
         T_FLAGS="-n 10 --junitxml=report/junit.xml --tb=native"
-        T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
         # allowed to fail for test runs
         make test-update T_FLAGS+="$T_FLAGS" || true
-    - name: summary
-      if: (success() || failure())
-      run: |
-          ./utils/report.py report/report.json >> $GITHUB_STEP_SUMMARY
