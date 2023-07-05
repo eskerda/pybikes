@@ -96,7 +96,7 @@
                 "city": "Rhodes",
                 "country": "GR"
             },
-            "mapstyle": "google",
+            "mapstyle": "mapbox",
             "feed_url": "https://rhodes.cyclopolis.gr/index.php/en/stations"
         },
         {
