@@ -3021,6 +3021,18 @@
                 "latitude": 45.5054,
                 "longitude": 13.5979
             }
+        },
+        {
+            "domain": "ea",
+            "tag": "bicipalma",
+            "city_uid": 789,
+            "meta": {
+                "latitude": 39.57119,
+                "city": "Palma",
+                "name": "Bicipalma",
+                "longitude": 2.646634,
+                "country": "ES"
+            }
         }
     ],
     "system": "nextbike",
