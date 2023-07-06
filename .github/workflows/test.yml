@@ -37,7 +37,8 @@ jobs:
         T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
         # allowed to fail for test runs
         make test-update T_FLAGS+="$T_FLAGS" || true
+    # Only run summary once
     - name: summary
-      if: (success() || failure())
+      if: (success() || failure()) && matrix.python-version == '3.8'
       run: |
           ./utils/report.py report/report.json >> $GITHUB_STEP_SUMMARY
