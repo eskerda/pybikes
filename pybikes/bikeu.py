@@ -12,10 +12,7 @@ except ImportError:
 
 from lxml import html
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
-
-__all__ = ['Bikeu', 'BikeuStation']
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 REGEX = "setConfig\('StationsData',(\[.*\])\);"
 
@@ -38,9 +35,7 @@ class Bikeu(BikeShareSystem):
         return markers
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
+        scraper = scraper or PyBikesScraper()
         body = scraper.request(self.url)
         markers = self.parse_map(body)
         if not markers:
