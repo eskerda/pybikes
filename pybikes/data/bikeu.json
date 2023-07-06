@@ -1,17 +1,6 @@
 {
     "instances": [
         {
-            "tag": "bbbike",
-            "url": "https://bbbike.eu/mapa-stacji.html",
-            "meta": {
-                "latitude": 49.8225,
-                "city": "Bielsko-Biała",
-                "name": "BBBike",
-                "longitude": 19.044444,
-                "country": "PL"
-            }
-        },
-        {
             "tag": "bikeu-bra",
             "url": "https://www.bra.org.pl/mapa-stacji.html",
             "meta": {
