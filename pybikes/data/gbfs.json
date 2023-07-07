@@ -880,16 +880,16 @@
         {
             "tag":"velivert",
             "meta":{
-                "city":"Saint-\u00c9tienne",
-                "name":"V\u00e9liVert",
+                "city":"Saint-Étienne",
+                "name":"VéliVert",
                 "country":"FR",
                 "company": [
-                    "Smoove"
+                    "Fifteen"
                 ],
                 "latitude":45.396667,
                 "longitude":4.290833
             },
-            "feed_url":"https://saint-etienne-fr-smoove.klervi.net/gbfs/gbfs.json"
+            "feed_url":"https://api.saint-etienne-metropole.fr/velivert/api/gbfs/gbfs.json"
         },
         {
             "tag":"velopop",
