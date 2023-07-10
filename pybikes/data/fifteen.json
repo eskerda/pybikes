@@ -33,6 +33,35 @@
                 "latitude": 48.1833
             },
             "feed_url": "https://vilvolt.cw.fifteen.eu/api/stations"
+        },
+        {
+            "tag": "gijon",
+            "meta": {
+                "city": "Gijón",
+                "name": "Gijón Bici",
+                "country": "ES",
+                "company": [
+                    "Citybike España S.L.U.",
+                    "Fifteen SAS"
+                ],
+                "longitude": -5.6663604,
+                "latitude": 43.5396116
+            },
+            "feed_url": "https://bici.gijon.es/api/stations"
+        },
+        {
+            "tag": "auxrmlevelo",
+            "meta": {
+                "city": "Auxerre",
+                "name": "AuxR_M le vélo",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "longitude": 3.572376,
+                "latitude": 47.797221
+            },
+            "feed_url": "https://auxrmlevelo.com/api/stations"
         }
     ]
 }
