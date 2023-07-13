@@ -218,5 +218,15 @@ class GbfsStation(BikeShareStation):
                 vehicle_info, parser = vehicles_info[vehicle['vehicle_type_id']]
                 self.extra.update(parser(vehicle))
 
+        if 'rental_uris' in info:
+            self.extra['rental_uris'] = {}
+            if 'android' in info['rental_uris']:
+                self.extra['rental_uris']['android'] = info['rental_uris']['android']
+            if 'ios' in info['rental_uris']:
+                self.extra['rental_uris']['ios'] = info['rental_uris']['ios']
+            if 'web' in info['rental_uris']:
+                self.extra['rental_uris']['web'] = info['rental_uris']['web']
+
+
 
 Gbfs.station_cls = GbfsStation
