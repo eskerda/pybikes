@@ -218,7 +218,7 @@ class GbfsStation(BikeShareStation):
                 vehicle_info, parser = vehicles_info[vehicle['vehicle_type_id']]
                 self.extra.update(parser(vehicle))
 
-        if 'rental_uris' in info:
+        if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
             if 'android' in info['rental_uris']:
                 self.extra['rental_uris']['android'] = info['rental_uris']['android']
