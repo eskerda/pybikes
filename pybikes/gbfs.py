@@ -122,7 +122,8 @@ class Gbfs(BikeShareSystem):
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
-                v['vehicle_type_id']: (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
+                # TODO: ungrok this line
+                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
                     for v in vehicle_info['data'].get('vehicle_types', [])
             }
         else:
@@ -218,7 +219,7 @@ class GbfsStation(BikeShareStation):
                 vehicle_info, parser = vehicles_info[vehicle['vehicle_type_id']]
                 self.extra.update(parser(vehicle))
 
-        if 'rental_uris' in info:
+        if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
             if 'android' in info['rental_uris']:
                 self.extra['rental_uris']['android'] = info['rental_uris']['android']
