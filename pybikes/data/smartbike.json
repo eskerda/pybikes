@@ -42,18 +42,6 @@
                     },
                     "feed_url": "https://www.malmobybike.se/availability_map/getJsonObject",
                     "format": "json_v2"
-                },
-                {
-                    "tag": "bicilascondes",
-                    "meta": {
-                        "latitude": -33.401944,
-                        "city": "Las Condes",
-                        "name": "Bici las Condes",
-                        "longitude": -70.55,
-                        "country": "CL"
-                    },
-                    "feed_url": "https://www.bicilascondes.cl/availability_map/getJsonObject",
-                    "format": "json_v2"
                 }
             ]
         },
