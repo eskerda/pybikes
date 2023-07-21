@@ -43,8 +43,10 @@ class PyBikesScraper(object):
     ssl_verification = True
     requests_timeout = 300
 
-    def __init__(self, cachedict=None):
-        self.headers = {'User-Agent': 'PyBikes'}
+    def __init__(self, cachedict=None, headers=None):
+        self.headers = headers if isinstance(headers, dict) else {
+            'User-Agent': 'PyBikes'
+        }
         self.proxies = {}
         self.session = requests.session()
         self.cachedict = cachedict

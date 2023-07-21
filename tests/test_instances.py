@@ -23,6 +23,7 @@ def get_all_instances():
 instances = list(get_all_instances())
 tags = [i.tag for i, _, _, _ in instances]
 cache = {}
+headers = {}
 
 class BaseInstanceTest(object):
     def test_tag_unique(self, instance, i_data, cls, mod):
@@ -56,8 +57,12 @@ class BaseInstanceTest(object):
 
     @pytest.mark.update
     def test_update(self, instance, i_data, cls, mod):
-        # use a simple dict cache for systems that use a single endpoint
-        scraper = pybikes.PyBikesScraper(cache if instance.unifeed else None)
+        scraper = pybikes.PyBikesScraper(
+            # use a simple dict cache for systems that use a single endpoint
+            cachedict=cache if instance.unifeed else None,
+            # reuse headers per mod
+            headers=headers.setdefault(mod, {}),
+        )
         scraper.requests_timeout = 11
         instance.update(scraper)
         assert len(instance.stations) > 0
