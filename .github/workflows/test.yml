@@ -40,4 +40,4 @@ jobs:
     - name: summary
       if: (success() || failure()) && matrix.python-version == '3.8'
       run: |
-          make summary >> $GITHUB_STEP_SUMMARY
+          make github-summary >> $GITHUB_STEP_SUMMARY

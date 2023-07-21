@@ -20,9 +20,12 @@ report/report.json:
 report: report/report.json
 
 summary: report/report.json
-	./utils/report.py report/report.json
+	@./utils/report.py report/report.json
 
 map: report/report.json
-	./utils/report.py report/report.json --template utils/map.tpl.html
+	@./utils/report.py report/report.json --template utils/map.tpl.html
 
-.PHONY: install test test-update lint report summary map
+github-summary: report/report.json
+	@./utils/report.py report/report.json --template utils/github-summary.tpl.md
+
+.PHONY: install test test-update lint report summary map github-summary
