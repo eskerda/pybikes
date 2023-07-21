@@ -304,20 +304,6 @@
         },
         {
             "city_ids": [
-                59
-            ],
-            "meta": {
-                "latitude": 45.4064349,
-                "city": "Padova",
-                "name": "GoodBike",
-                "longitude": 11.8767611,
-                "country": "IT"
-            },
-            "tag": "goodbike",
-            "endpoint": "http://www.goodbikepadova.it/"
-        },
-        {
-            "city_ids": [
                 142
             ],
             "meta": {
