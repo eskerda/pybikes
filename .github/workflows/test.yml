@@ -5,6 +5,8 @@ env:
   PYBIKES_ECOBICI_BA_CLIENT_ID: ${{ secrets.PYBIKES_ECOBICI_BA_CLIENT_ID }}
   PYBIKES_ECOBICI_BA_CLIENT_SECRET: ${{ secrets.PYBIKES_ECOBICI_BA_CLIENT_SECRET }}
   PYBIKES_BYSYKKEL: ${{ secrets.PYBIKES_BYSYKKEL }}
+  PYBIKES_WEELO_CLIENT_ID: ${{ secrets.PYBIKES_WEELO_CLIENT_ID }}
+  PYBIKES_WEELO_CLIENT_SECRET: ${{ secrets.PYBIKES_WEELO_CLIENT_SECRET }}
 
 on:
   push:
@@ -33,12 +35,9 @@ jobs:
       run: make test
     - name: test update
       run: |
-        T_FLAGS="-n 10 --junitxml=report/junit.xml --tb=native"
-        T_FLAGS="$T_FLAGS --json-report --json-report-file=report/report.json"
-        # allowed to fail for test runs
-        make test-update T_FLAGS+="$T_FLAGS" || true
+        make report T_FLAGS+='-n 10' || true
     # Only run summary once
     - name: summary
       if: (success() || failure()) && matrix.python-version == '3.8'
       run: |
-          ./utils/report.py report/report.json >> $GITHUB_STEP_SUMMARY
+          make github-summary >> $GITHUB_STEP_SUMMARY

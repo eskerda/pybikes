@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src='https://unpkg.com/maplibre-gl@%5E2.4/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js'></script>
+    <style>
+      div.container {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      div#map {
+        height: 100%;
+        border-radius: 8px;
+        width: 50%;
+        float: left;
+      }
+
+      div#sidebar {
+          height: 100%;
+          width: 50%;
+          float: left;
+          margin: 0;
+          padding: 0;
+      }
+
+      div#systems {
+          height: 75%;
+          overflow: scroll;
+      }
+
+      div#console {
+          height: 25%;
+          overflow: scroll;
+      }
+
+
+      ul { margin: 0; padding: 0; }
+      ul li { display: inline-block; margin: 10px; }
+    </style>
+    <script type="application/json" id="allthethings">{{json.dumps(geojson)}} </script>
+  </head>
+  <body>
+    <div class='container'>
+        <div id='map'></div>
+        <div id='sidebar'>
+            <div id='systems'>
+            {% for system in systems %}
+                {% for cls in system.classes %}
+                <h1>{{system.name}}</h1>
+                    <ul>
+                    {% for instance in cls.instances %}
+                    <li>
+                    <a href='#' class='instance-link' data-tag='{{instance.tag}}'>
+                        {{format_outcome(instance.report.outcome)}}
+                        {{instance.tag}}
+                        {% if instance.report.user_properties %}
+                            ({{len(instance.report.user_properties[0].geojson.features)}})
+                        {% else %}
+                            (error)
+                        {% endif %}
+                    </a>
+                    </li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% endfor %}
+            </div>
+            <div id='console'><pre id='theconsole'></pre></div>
+        </div>
+    </div>
+    <script>
+
+        const groupBy = (x,f)=>x.reduce((a,b,i)=>((a[f(b,i,x)]||=[]).push(b),a),{});
+        var allthethings = JSON.parse(document.getElementById('allthethings').innerHTML);
+        var stations = {
+            'type': 'FeatureCollection',
+            'features': allthethings.features.filter(elem => elem.properties.type == 'station'),
+        }
+        var networks = {
+            'type': 'FeatureCollection',
+            'features': allthethings.features.filter(elem => elem.properties.type == 'network'),
+        }
+        var hulls = {
+            'type': 'FeatureCollection',
+            'features': Object.entries(
+                groupBy(stations.features,elem => elem.properties.tag)).map(
+                    ([tag, features]) => {
+                        var hull = turf.convex({'type': 'FeatureCollection', 'features': features})
+                        if (hull) {
+                            hull.properties = {'tag': tag}
+                        }
+                        return hull;
+                    }
+                ).filter(n => n)
+        }
+        var fitBoundsOptions = {
+          'networks': {
+            duration: 0,
+            padding: { top: 25, left: 100, bottom: 25, right: 75 }
+          },
+          'stations': {
+              duration: 0,
+              maxZoom: 16,
+              padding: { top: 25, bottom: 25, right: 25, left: 25 }
+          },
+        }
+
+        var map = new maplibregl.Map({
+          container: 'map',
+          style: 'https://tiles.citybik.es/styles/basic-preview/style.json',
+          center: [5, 24],
+          zoom: 2,
+        });
+
+        map.on('load', function() {
+            map.addSource('stations', {'type': 'geojson', data: stations});
+            map.addSource('networks', {'type': 'geojson', data: networks});
+            map.addSource('hulls', {'type': 'geojson', data: hulls});
+            map.addLayer({
+                id: 'networks',
+                type: 'circle',
+                source: 'networks',
+                paint: {
+                    'circle-radius': [
+                        // XXX Maybe tune these
+                        'interpolate', ['linear'], ['zoom'],
+                        0, 2,
+                        5, 5,
+                        10, 10
+                    ],
+                    'circle-color': [
+                        'match',
+                        ['get', 'outcome'],
+                        'failed', '#E33033',
+                        '#009933',
+                    ],
+                }
+            })
+            map.addLayer({
+                id: 'stations',
+                type: 'circle',
+                source: 'stations',
+                paint: {
+                    'circle-radius': [
+                          // XXX Maybe tune these
+                          'interpolate', ['linear'], ['zoom'],
+                          8,     0.5  ,
+                          10,    2    ,
+                          12,    4    ,
+                          15,    8    ,
+                          22,    40   ,
+                    ],
+                    'circle-color': [
+                        'match',
+                        ['get', 'status'],
+                        'green', '#009933',
+                        'yellow', '#FFB43F',
+                        'red', '#E33033',
+                        'rgba(84, 7, 91, 0.7)',
+                    ],
+                }
+            })
+            map.addLayer({
+              'id': 'hulls',
+              'type': 'fill',
+              'source': 'hulls',
+              'layout': {},
+              'paint': {
+                'fill-color': '#444444',
+                'fill-opacity': 0.2
+              }
+            })
+
+            map.on('click', e => {
+                // Set `bbox` as 5px reactangle area around clicked point.
+                const bbox = [
+                    [e.point.x - 5, e.point.y - 5],
+                    [e.point.x + 5, e.point.y + 5]
+                ];
+                const selectedFeatures = map.queryRenderedFeatures(bbox, {
+                    layers: ['stations', 'networks']
+                });
+
+                const selHull = map.queryRenderedFeatures(bbox, {
+                    layers: ['hulls'],
+                })
+
+                var data = "";
+
+                if (selHull.length > 0) {
+                    data += 'Zone: ' + selHull[0].properties.tag + '\n';
+                }
+
+                data += JSON.stringify(selectedFeatures, null, 2)
+
+                document.getElementById('theconsole').innerHTML = data;
+            })
+        });
+
+        document.querySelectorAll('a.instance-link').forEach(link => {
+            link.addEventListener('click', function (ev) {
+                ev.preventDefault();
+                var tag = ev.target.dataset.tag;
+                var elements = stations.features.filter(elem => elem.properties.tag == tag);
+                if (!elements.length) {
+                    elements = networks.features.filter(elem => elem.properties.tag == tag)
+                }
+                var bbox = turf.bbox({'type': 'FeatureCollection', 'features': elements});
+                map.fitBounds(bbox, fitBoundsOptions['stations']);
+            })
+        })
+    </script>
+  </body>
+</html>

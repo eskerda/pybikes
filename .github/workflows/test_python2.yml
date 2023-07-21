@@ -8,6 +8,9 @@ env:
   PYBIKES_ECOBICI_BA_CLIENT_ID: ${{ secrets.PYBIKES_ECOBICI_BA_CLIENT_ID }}
   PYBIKES_ECOBICI_BA_CLIENT_SECRET: ${{ secrets.PYBIKES_ECOBICI_BA_CLIENT_SECRET }}
   PYBIKES_BYSYKKEL: ${{ secrets.PYBIKES_BYSYKKEL }}
+  PYBIKES_WEELO_CLIENT_ID: ${{ secrets.PYBIKES_WEELO_CLIENT_ID }}
+  PYBIKES_WEELO_CLIENT_SECRET: ${{ secrets.PYBIKES_WEELO_CLIENT_SECRET }}
+
 
 on:
   push:
@@ -35,6 +38,5 @@ jobs:
       run: make test
     - name: test update
       run: |
-        T_FLAGS="-n 10 --junitxml=report/junit.xml --tb=native"
         # allowed to fail for test runs
-        make test-update T_FLAGS+="$T_FLAGS" || true
+        make test-update T_FLAGS+='-n 10' || true

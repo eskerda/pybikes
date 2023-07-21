@@ -135,12 +135,52 @@ def generate_report(report, template):
     failed = sum(map(lambda s: s['failed'], systems))
     total = passed + failed
 
+    # Create one big massive geojson file
+    networks = {
+        'type': "FeatureCollection",
+        'features': [],
+    }
+
+    for system in sorted_systems:
+        for cls in system['classes']:
+            for instance in cls['instances']:
+                networks['features'].append({
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [
+                            instance['instance']['meta']['longitude'],
+                            instance['instance']['meta']['latitude'],
+                        ],
+                    },
+                    'properties': {
+                        'name': instance['instance']['meta'].get('name'),
+                        'type': 'network',
+                        'tag': instance['tag'],
+                        'outcome': instance['report']['outcome'],
+                        'failed': instance['report']['outcome'] == 'failed',
+                    }
+                })
+
+                if 'user_properties' not in instance['report']:
+                    continue
+
+                features = instance['report']['user_properties'][0]['geojson']['features']
+                for feature in features:
+                    feature['properties']['type'] = 'station'
+                    feature['properties']['tag'] = instance['tag']
+
+                    networks['features'].append(feature)
+
+
     tpl = Template(template, trim_blocks=True, lstrip_blocks=True)
     return tpl.render(
         health={'passed': passed, 'failed': failed, 'total': total},
         systems=sorted_systems,
+        geojson=networks,
         version=report['environment']['Python'],
         pformat=pformat,
+        json=json,
         len=len,
         int=int,
         format_duration=format_duration,

@@ -112,3 +112,52 @@ using a proxy. This class uses [Requests][2] module internally.
 
 [1]: http://www.citybik.es              "CityBikes"
 [2]: http://docs.python-requests.org    "Requests"
+
+Tests
+-----
+Tests are separated between unit tests and integration tests with the different
+sources supported.
+
+To run unit tests simply
+
+```bash
+make test
+```
+
+To run integration tests
+
+```bash
+make test-update
+```
+
+This project uses pytest for tests. Test a particular network by passing a
+filter expresson
+
+```bash
+pytest -k bicing
+pytest -k gbfs
+```
+
+To speed up tests execution, install [pytest-xdist][3] to specify the number of
+CPUs to use
+
+```bash
+pytest -k gbfs -n auto
+```
+
+To use Makefile steps and pass along pytest arguments, append to the `T_FLAGS`
+variable
+
+```bash
+make test-update T_FLAGS+='-n 10 -k gbfs'
+```
+
+Integration tests can generate a json report file with all extracted data stored
+as geojson. Using this json report file, further useful reports can be generated
+like a summary of the overall health of the library or a map visualization of
+all the information.
+
+For more information on reports see [utils/README.md][4]
+
+[3]: https://pypi.org/project/pytest-xdist/
+[4]: utils/README.md
