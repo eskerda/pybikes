@@ -11,16 +11,8 @@ import pytest
 
 import pybikes
 from pybikes.data import _traverse_lib
+from pybikes.utils import keys
 
-class Keys:
-    def __getattr__(self, key):
-        return os.environ.get('PYBIKES_%s' % key.upper())
-
-keys = Keys()
-keys.ecobici_ba = {
-    'client_id': keys.ecobici_ba_client_id,
-    'client_secret': keys.ecobici_ba_client_secret,
-}
 
 def get_all_instances():
     for mod, cls, i_data in _traverse_lib():

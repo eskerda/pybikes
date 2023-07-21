@@ -2,6 +2,7 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+import os
 import re
 try:
     # Python 2
@@ -136,3 +137,18 @@ def filter_bounds(things, key, *point_bounds):
         if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
+
+
+class Keys:
+    def __getattr__(self, key):
+        return os.environ.get('PYBIKES_%s' % key.upper())
+
+keys = Keys()
+keys.ecobici_ba = {
+    'client_id': keys.ecobici_ba_client_id,
+    'client_secret': keys.ecobici_ba_client_secret,
+}
+keys.weelo = {
+    'client_id': keys.weelo_client_id,
+    'client_secret': keys.weelo_client_secret,
+}
