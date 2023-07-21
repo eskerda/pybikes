@@ -4,3 +4,7 @@ ecobici_ba = {
     'client_id': '<some client_id>',
     'client_secret': '<some client secret>',
 }
+weelo = {
+    'client_id': '<some client id>',
+    'client_secret': '<some client secret>',
+}

@@ -2,6 +2,7 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+import os
 import re
 try:
     # Python 2
@@ -42,8 +43,10 @@ class PyBikesScraper(object):
     ssl_verification = True
     requests_timeout = 300
 
-    def __init__(self, cachedict=None):
-        self.headers = {'User-Agent': 'PyBikes'}
+    def __init__(self, cachedict=None, headers=None):
+        self.headers = headers if isinstance(headers, dict) else {
+            'User-Agent': 'PyBikes'
+        }
         self.proxies = {}
         self.session = requests.session()
         self.cachedict = cachedict
@@ -136,3 +139,18 @@ def filter_bounds(things, key, *point_bounds):
         if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
+
+
+class Keys:
+    def __getattr__(self, key):
+        return os.environ.get('PYBIKES_%s' % key.upper())
+
+keys = Keys()
+keys.ecobici_ba = {
+    'client_id': keys.ecobici_ba_client_id,
+    'client_secret': keys.ecobici_ba_client_secret,
+}
+keys.weelo = {
+    'client_id': keys.weelo_client_id,
+    'client_secret': keys.weelo_client_secret,
+}

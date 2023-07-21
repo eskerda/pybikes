@@ -304,20 +304,6 @@
         },
         {
             "city_ids": [
-                59
-            ],
-            "meta": {
-                "latitude": 45.4064349,
-                "city": "Padova",
-                "name": "GoodBike",
-                "longitude": 11.8767611,
-                "country": "IT"
-            },
-            "tag": "goodbike",
-            "endpoint": "http://www.goodbikepadova.it/"
-        },
-        {
-            "city_ids": [
                 142
             ],
             "meta": {
@@ -769,19 +755,6 @@
                 "country": "IT"
             },
             "tag": "carbonia"
-        },
-        {
-            "city_ids": [
-                175
-            ],
-            "meta": {
-                "latitude": 44.40430089372731,
-                "city": "Genova",
-                "name": "MoBike",
-                "longitude": 8.92908986230462,
-                "country": "IT"
-            },
-            "tag": "mobike"
         },
         {
             "city_ids": [
