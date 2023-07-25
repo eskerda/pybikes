@@ -1194,7 +1194,23 @@
                 ]
             },
             "feed_url": "https://gbfs.urbansharing.com/lovelolibreservice.fr/gbfs.json"
+        },
+        {
+            "tag":"foli",
+            "meta":{
+                "city":"Turku",
+                "name":"Fölläri bikes",
+                "country":"FI",
+                "company":[
+                    "Turku Region Traffic Föli",
+                    "DonkeyRepublic Admin ApS"
+                ],
+                "longitude":22.2666,
+                "latitude":60.4506
+            },
+            "feed_url":"https://stables.donkey.bike/api/public/gbfs/2/donkey_turku/gbfs.json"
         }
+
     ],
     "system": "gbfs",
     "class": "Gbfs"
