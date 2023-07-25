@@ -1,0 +1,138 @@
+{
+    "system": "ambici",
+    "class": "Ambici",
+    "instances": [
+        {
+            "domain": "bs",
+            "tag": "ambici-badalona",
+            "city_uid": 840,
+            "meta": {
+                "city": "Badalona",
+                "country": "ES",
+                "latitude": 41.4470,
+                "longitude": 2.2450
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-cornella-de-llobregat",
+            "city_uid": 842,
+            "meta": {
+                "city": "Cornell\u00e0 de Llobregat",
+                "country": "ES",
+                "latitude": 41.3585,
+                "longitude": 2.07081
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-santa-coloma-de-gramenet",
+            "city_uid": 843,
+            "meta": {
+                "city": "Santa Coloma de Gramenet",
+                "country": "ES",
+                "latitude": 41.4459,
+                "longitude": 2.21033
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-el-prat-de-llobregat",
+            "city_uid": 844,
+            "meta": {
+                "city": "El Prat de Llobregat",
+                "country": "ES",
+                "latitude": 41.3239,
+                "longitude": 2.09317
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-castelldefels",
+            "city_uid": 845,
+            "meta": {
+                "city": "Castelldefels",
+                "country": "ES",
+                "latitude": 41.2816,
+                "longitude": 1.97678
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-viladecans",
+            "city_uid": 846,
+            "meta": {
+                "city": "Viladecans",
+                "country": "ES",
+                "latitude": 41.3165,
+                "longitude": 2.01306
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-esplugues-de-llobregat",
+            "city_uid": 848,
+            "meta": {
+                "city": "Esplugues de Llobregat",
+                "country": "ES",
+                "latitude": 41.3771,
+                "longitude": 2.08938
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-gava",
+            "city_uid": 849,
+            "meta": {
+                "city": "Gav\u00e0",
+                "country": "ES",
+                "latitude": 41.303,
+                "longitude": 2.00269
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-sant-joan-despi",
+            "city_uid": 851,
+            "meta": {
+                "city": "Sant Joan Desp\u00ed",
+                "country": "ES",
+                "latitude": 41.368,
+                "longitude": 2.05635
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-molins-de-rei",
+            "city_uid": 852,
+            "meta": {
+                "city": "Molins de Rei",
+                "country": "ES",
+                "latitude": 41.4132,
+                "longitude": 2.02037
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-sant-just-desvern",
+            "city_uid": 853,
+            "meta": {
+                "city": "Sant Just Desvern",
+                "country": "ES",
+                "latitude": 41.3807,
+                "longitude": 2.07496
+            }
+        },
+        {
+            "domain": "bs",
+            "tag": "ambici-sant-boi-de-llobregat",
+            "city_uid": 856,
+            "meta": {
+                "city": "Sant Boi de Llobregat",
+                "country": "ES",
+                "latitude": 41.3458,
+                "longitude": 2.03404
+            }
+        }
+    ]
+}
