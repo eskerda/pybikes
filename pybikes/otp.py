@@ -15,13 +15,17 @@ class OTP(BikeShareSystem):
         'system': 'OTP',
     }
 
-    def __init__(self, tag, feed_url, meta):
+    authed = True
+
+    def __init__(self, tag, feed_url, meta, key):
         super(OTP, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.key = key
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         scraper.headers['Accept'] = 'application/json'
+        scraper.headers['digitransit-subscription-key'] = self.key
 
         data = json.loads(scraper.request(self.feed_url))
         stations = []

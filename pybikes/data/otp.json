@@ -20,21 +20,6 @@
                 "latitude":60.16985569999999
             },
             "feed_url":"https://api.digitransit.fi/routing/v1/routers/hsl/bike_rental"
-        },
-        {
-            "tag":"foli",
-            "meta":{
-                "city":"Turku",
-                "name":"Föli-fillari",
-                "country":"FI",
-                "company":[
-                    "Turku Region Traffic Föli",
-                    "Nextbike Polska"
-                ],
-                "longitude":22.2666,
-                "latitude":60.4506
-            },
-            "feed_url":"https://api.digitransit.fi/routing/v1/routers/waltti/bike_rental"
         }
     ]
 }
