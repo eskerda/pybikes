@@ -28,7 +28,7 @@ class Nextbike(BikeShareSystem):
         'company': ['Nextbike GmbH']
     }
 
-    def __init__(self, tag, meta, domain, city_uid, hostname='api.nextbike.net',
+    def __init__(self, tag, meta, domain, city_uid, hostname='maps.nextbike.net',
                  bbox=None):
         super(Nextbike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
