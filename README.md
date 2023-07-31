@@ -28,7 +28,7 @@ The following dependencies are required (example using Ubuntu package manager):
 ```
 sudo apt-get install python
 sudo apt-get install python-setuptools
-sudo apt-get install libxml2 libxml2-dev libxslt1-dev libgeos-dev
+sudo apt-get install libxml2 libxml2-dev libxslt1-dev
 ```
 
 Usage
