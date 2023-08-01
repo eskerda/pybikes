@@ -44,9 +44,8 @@ class PyBikesScraper(object):
     requests_timeout = 300
 
     def __init__(self, cachedict=None, headers=None):
-        self.headers = headers if isinstance(headers, dict) else {
-            'User-Agent': 'PyBikes'
-        }
+        self.headers = headers if isinstance(headers, dict) else {}
+        self.headers.setdefault('User-Agent', 'PyBikes')
         self.proxies = {}
         self.session = requests.session()
         self.cachedict = cachedict
