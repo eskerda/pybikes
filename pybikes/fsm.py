@@ -1,55 +1,67 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2017, aronsky <aronsky@gmail.com>
+# Copyright (C) 2023, eskerda <eskerda@gmail.com>
 
-import re
-from lxml import etree
+import json
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+
+
+ENDPOINT = "https://www.tel-o-fun.co.il/api/privatearea/v1"
+STATIONS_URL = ENDPOINT + "/map"
+STATION_INFO_URL = ENDPOINT + "/station/{uid}"
+
+headers = {
+    'Accept-Language': 'en',
+}
 
 
 class FSMSystem(BikeShareSystem):
-    sync = True
-    unifeed = False
+
+    sync = False
 
     meta = {
         'system': 'fsm',
         'company': ['FSM Ground Services Ltd.']
     }
 
-    def __init__(self, tag, meta, feed_url):
-        super(FSMSystem, self).__init__(tag, meta)
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+        data = json.loads(scraper.request(STATIONS_URL, headers=headers))
 
-        self.feed_url = feed_url
+        self.stations = list(map(FSMStation, data['stations']))
+
+class FSMStation(BikeShareStation):
+
+    def __init__(self, data):
+        super(FSMStation, self).__init__()
+
+        self.name = data['name']
+        self.latitude = data['location']['lat']
+        self.longitude = data['location']['lng']
+
+        normal_bikes = data['novatechBikes']
+        e_bikes = data['omniBikes']
+
+        self.bikes = normal_bikes + e_bikes
+
+        self.extra = {
+            'uid': data['id'],
+            'number': data['stationNumber'],
+            # I think this means if the station works on shabbat
+            'shabbat': data['isShabbatStation'],
+        }
 
     def update(self, scraper=None):
-        scraper = scraper or utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
+        url = STATION_INFO_URL.format(uid=self.extra['uid'])
+        data = json.loads(scraper.request(url, headers=headers))
 
-        stations = []
+        e_slots = data['availableOmniPoles']
+        normal_slots = data['availableNovatechPoles']
 
-        data = scraper.request(self.feed_url)
-        dom = etree.fromstring(data.encode('utf-8'))
-        stations = self.get_stations(dom)
-        self.stations = list(stations)
+        self.free = e_slots + normal_slots
+        self.extra['normal_slots'] = normal_slots
+        self.extra['e_slots'] = e_slots
 
-    def get_stations(self, dom):
-        ns = {'kml': 'http://www.opengis.net/kml/2.2'}
-        for placemark in dom.xpath('//kml:Placemark', namespaces=ns):
-            name = placemark.findtext('kml:name', namespaces=ns)
-            info = placemark.findtext('kml:description', namespaces=ns)
-            station_uid, bikes, free = map(int,
-                re.findall(r'\w+\:\s*(\d+)', info)
-            )
-            longitude, latitude = placemark.findtext(
-                'kml:Point/kml:coordinates',
-                namespaces=ns
-            ).split(',')
-            latitude = float(latitude)
-            longitude = float(longitude)
-            extra = {
-                'uid': station_uid,
-            }
-
-            station = BikeShareStation(name, latitude, longitude, bikes, free,
-                                       extra)
-            yield station
+        self.extra['address'] = data['address']

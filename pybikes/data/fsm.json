@@ -8,8 +8,7 @@
                 "country": "IL",
                 "latitude": 32.087053,
                 "longitude": 34.789776
-            },
-            "feed_url": "http://zigit.co.il/includes/barcode/sandbox3/soap/telofunkmlen.asp?lang=en"
+            }
         }
     ],
     "system": "fsm",
