@@ -2,20 +2,6 @@
 {
     "instances": [
         {
-            "tag": "curtin-bike-share",
-            "meta": {
-                "latitude": -32.0034172153127,
-                "longitude": 115.89431270956993,
-                "city": "Curtin University, Perth, WA",
-                "name": "Curtin Bike Share",
-                "country": "AU",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://curtinbikeshare.com/opendata/gbfs.json"
-        },
-        {
             "tag": "monash-bikeshare",
             "meta": {
                 "latitude": -37.91238410208696,
