@@ -17,22 +17,6 @@
                 }
             ]
         },
-        "IDEcycle": {
-            "instances": [
-                {
-                    "tag": "idecycle",
-                    "meta": {
-                        "latitude": 43.2951,
-                        "country": "FR",
-                        "name": "IDECycle",
-                        "longitude": -0.370797,
-                        "city": "Pau",
-                        "company": ["Keolis", "STAP"]
-                    },
-                    "feed_url": "https://www.idelis.fr/se-deplacer/velos-idecycle/localiser-une-station"
-                }
-            ]
-        },
         "KeolisSTAR": {
             "instances": [
                 {

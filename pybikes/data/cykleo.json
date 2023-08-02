@@ -1,0 +1,61 @@
+{
+    "instances": [
+        {
+            "organization": 1,
+            "tag": "divia-velodi",
+            "meta": {
+                "name": "DiviaVélodi",
+                "city": "Dijon",
+                "country": "FR",
+                "latitude": 47.3215806,
+                "longitude": 5.0414701
+            }
+        },
+        {
+            "organization": 2,
+            "tag": "twisto-velo",
+            "meta": {
+                "name": "Twisto vélo",
+                "city": "Caen",
+                "country": "FR",
+                "latitude": 49.1813403,
+                "longitude": -0.3635615
+            }
+        },
+        {
+            "organization": 3,
+            "tag": "idecycle",
+            "meta": {
+                "name": "IDEcycle",
+                "city": "Pau",
+                "country": "FR",
+                "latitude": 43.2957547,
+                "longitude": -0.3685668
+            }
+        },
+        {
+            "organization": 5,
+            "tag": "veloplus-velotao",
+            "meta": {
+                "name": "Vélo+/VéloTAO",
+                "city": "Orléans",
+                "country": "FR",
+                "latitude": 47.9027336,
+                "longitude": 1.9086066
+            }
+        },
+        {
+            "organization": 6,
+            "tag": "velitul",
+            "meta": {
+                "name": "Vélitul",
+                "city": "Laval",
+                "country": "FR",
+                "latitude": 48.0706687,
+                "longitude": -0.7734022
+            }
+        }
+    ],
+    "system": "cykleo",
+    "class": "Cykleo"
+}
