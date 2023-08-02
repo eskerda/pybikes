@@ -6,8 +6,8 @@ import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-BASE_URL = 'https://portail.cykleo.fr/pu/stations/availability?organization_id={organization}&get_biketypes=1'
 
+BASE_URL = 'https://portail.cykleo.fr/pu/stations/availability?organization_id={organization}'
 
 
 class Cykleo(BikeShareSystem):
