@@ -32,7 +32,7 @@ class GiraStation(BikeShareStation):
         self.bikes = int(info['properties']['num_bicicletas'])
         self.free = int(info['properties']['num_docas']) - self.bikes
         self.extra = {
-            'uuid': info['properties']['id_expl'],
+            'uid': info['properties']['id_expl'],
             'slots': info['properties']['num_docas'],
             'status': info['properties']['estado'],
             'online': info['properties']['estado'] == 'active',
