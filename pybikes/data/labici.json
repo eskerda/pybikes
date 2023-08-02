@@ -53,7 +53,8 @@
                 "longitude":-1.1306544,
                 "city":"Murcia"
             },
-            "city_code":"MU"
+            "city_code":"MU",
+            "hostname": "muybici.es"
         },
         {
             "tag":"ponfemobi",
