@@ -40,7 +40,6 @@ class CykleoStation(BikeShareStation):
         station_details = station['station']
         asset_station = station_details['assetStation']
         station_coords = asset_station['coordinate']
-        address = asset_station['address']
 
         self.name = asset_station['commercialName']
         self.latitude = float(station_coords['y'])
@@ -57,14 +56,6 @@ class CykleoStation(BikeShareStation):
             'number': asset_station['commercialNumber'],
             'ebikes': e_bikes,
             'normal_bikes': normal_bikes,
-            'address': ' '.join(filter(None, map(str.strip, [
-                address.get('line1', ''),
-                address.get('line2', ''),
-                address.get('line3', ''),
-                address.get('line4', ''),
-                address.get('postalCode', ''),
-                address.get('city', '').capitalize(),
-            ]))),
             'online': station_details['status'] == 'IN_SERVICE',
             'status': station_details['status']
         }
