@@ -439,14 +439,13 @@
                 "latitude": 33.7627941119619,
                 "longitude": -84.38727110624313,
                 "city": "Atlanta, GA",
-                "name": "Relay Bike Share",
+                "name": "HOPR",
                 "country": "US",
                 "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc"
+                    "CycleHop LLC"
                 ]
             },
-            "feed_url": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
+            "feed_url": "https://gbfs.hopr.city/api/gbfs/20/",
         },
         {
             "tag": "bikerecife",
