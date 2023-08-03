@@ -350,30 +350,6 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
         },
         {
-            "tag": "kansascity",
-            "meta": {
-                "latitude": 39.0999,
-                "longitude": -94.5857,
-                "city": "Kansas City, MO",
-                "name": "B-cycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_kc/gbfs.json"
-        },
-        {
-            "tag": "linkdayton",
-            "meta": {
-                "latitude": 39.75626,
-                "longitude": -84.21119,
-                "city": "Dayton, OH",
-                "name": "Link",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json"
-        },
-        {
             "tag": "madison",
             "meta": {
                 "latitude": 43.07571,
