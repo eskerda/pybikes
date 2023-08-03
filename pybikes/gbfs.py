@@ -11,7 +11,7 @@ except ImportError:
     from urllib.parse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
-from pybikes.utils import PyBikesScraper
+from pybikes.utils import PyBikesScraper, filter_bounds
 
 try:
     # Python 2
@@ -35,6 +35,7 @@ class Gbfs(BikeShareSystem):
         station_status=False,
         ignore_errors=False,
         retry=None,
+        bbox=None,
     ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
@@ -43,6 +44,7 @@ class Gbfs(BikeShareSystem):
         self.force_https = force_https
         self.ignore_errors = ignore_errors
         self.retry = retry
+        self.bbox = bbox
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -159,7 +161,11 @@ class Gbfs(BikeShareSystem):
 
             stations.append(station)
 
+        if self.bbox:
+            stations = list(filter_bounds(stations, None, self.bbox))
+
         self.stations = stations
+
 
 class GbfsStation(BikeShareStation):
 
