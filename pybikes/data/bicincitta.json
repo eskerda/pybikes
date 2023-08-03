@@ -1525,6 +1525,58 @@
             },
             "tag": "bicimia",
             "endpoint": "https://bicimia.bresciamobilita.it"
+        },
+        {
+              "city_ids": [
+                  268
+              ],
+              "meta": {
+                  "city": "Montesilvano",
+                  "name": "Costa Blu",
+                  "country": "IT",
+                  "latitude": 42.5009,
+                  "longitude": 14.1282
+              },
+              "tag": "bicincitta-costa-blu"          
+        },
+        {
+            "city_ids": [
+                270
+            ],
+            "meta": {
+                "city": "Taranto",
+                "name": "PisTA!",
+                "country": "IT",
+                "latitude": 40.4351,
+                "longitude": 17.2096
+            },
+            "tag": "bicincitta-pista"
+        },
+        {
+            "city_ids": [
+                274
+            ],
+            "meta": {
+                "city": "Monteriggioni",
+                "name": "Sipedala",
+                "country": "IT",
+                "latitude": 43.3896,
+                "longitude": 11.2236
+            },
+            "tag": "bicincitta-monteriggioni"
+        },
+        {
+            "city_ids": [
+                275
+            ],
+            "meta": {
+                "city": "Massa",
+                "name": "Bici in Massa",
+                "country": "IT",
+                "latitude": 44.0146,
+                "longitude": 10.1017
+            },
+            "tag": "bicincitta-massa"
         }
     ],
     "system": "bicincitta",
