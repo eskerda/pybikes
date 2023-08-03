@@ -19,6 +19,6 @@ setup(
     install_requires=[
         'requests>=2.20.0',
         'lxml',
-        'sympy',
+        'shapely>=1.5.13',
     ],
 )
