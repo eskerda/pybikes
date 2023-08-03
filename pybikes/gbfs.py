@@ -11,7 +11,7 @@ except ImportError:
     from urllib.parse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
-from pybikes.utils import PyBikesScraper
+from pybikes.utils import PyBikesScraper, filter_bounds
 
 try:
     # Python 2
@@ -33,7 +33,9 @@ class Gbfs(BikeShareSystem):
         force_https=False,
         station_information=False,
         station_status=False,
-        ignore_errors=False
+        ignore_errors=False,
+        retry=None,
+        bbox=None,
     ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
@@ -41,6 +43,8 @@ class Gbfs(BikeShareSystem):
         self.feed_url = feed_url
         self.force_https = force_https
         self.ignore_errors = ignore_errors
+        self.retry = retry
+        self.bbox = bbox
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -106,6 +110,9 @@ class Gbfs(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        if self.retry:
+            scraper.retry = True
+            scraper.retry_opts.update(self.retry)
 
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
@@ -135,13 +142,14 @@ class Gbfs(BikeShareSystem):
         station_information = {s['station_id']: s for s in station_information}
         station_status = {s['station_id']: s for s in station_status}
         # Any station not in station_information will be ignored
-        stations = [
+        station_zip = [
             (station_information[uid], station_status[uid])
             for uid in station_information.keys()
         ]
-        self.stations = []
-        for info, status in stations:
-            info.update(status)
+        stations = []
+        for info, status in station_zip:
+            # Some feeds have info keys set to none on status
+            info.update({k: v for k, v in status.items() if v is not None})
             try:
                 station = self.station_cls(info, vehicles)
             except exceptions.StationPlannedException:
@@ -151,7 +159,12 @@ class Gbfs(BikeShareSystem):
                     continue
                 raise e
 
-            self.stations.append(station)
+            stations.append(station)
+
+        if self.bbox:
+            stations = list(filter_bounds(stations, None, self.bbox))
+
+        self.stations = stations
 
 
 class GbfsStation(BikeShareStation):
