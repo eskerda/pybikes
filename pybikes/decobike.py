@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
+# Copyright (C) 2010-2023, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 from lxml import etree
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import filter_bounds
 
-__all__ = ['DecoBike']
 
 class DecoBike(BikeShareSystem):
     sync = True
@@ -17,14 +16,22 @@ class DecoBike(BikeShareSystem):
         'company': ['DecoBike LLC']
     }
 
-    def __init__(self, tag, meta, feed_url):
+    headers = {
+        'Accept': 'application/xml, text/xml, */*; q=0.01',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 13; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
+        'X-Requested-With': 'com.citibike.miami',
+    }
+
+    def __init__(self, tag, meta, feed_url, bbox=None):
         super(DecoBike, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.bbox = bbox
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = PyBikesScraper()
-        raw = scraper.request(self.feed_url)
+        scraper = scraper or PyBikesScraper()
+        raw = scraper.request(self.feed_url, headers=self.headers)
         tree = etree.fromstring(raw)
         stations = []
         for location in tree.xpath('//location'):
@@ -44,5 +51,8 @@ class DecoBike(BikeShareSystem):
             }
 
             stations.append(station)
+
+        if self.bbox:
+            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
