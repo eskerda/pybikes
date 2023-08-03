@@ -478,7 +478,8 @@
                 ]
             },
             "feed_url": "https://saopaulo.publicbikesystem.net/ube/gbfs/v1/",
-            "force_https": "true"
+            "force_https": "true",
+            "ignore_errors": true
         },
         {
             "tag": "bikerio",
@@ -494,7 +495,8 @@
                 ]
             },
             "feed_url": "https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/",
-            "force_https": "true"
+            "force_https": "true",
+            "ignore_errors": true
         },
         {
             "tag":"bikesalvador",
