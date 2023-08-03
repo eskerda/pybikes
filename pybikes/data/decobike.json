@@ -3,13 +3,14 @@
         {
             "meta":{
                 "latitude":25.790654,
-                "city":"Miami Beach, FL",
+                "city":"Miami, FL",
                 "name":"Citi Bike Miami",
                 "longitude":-80.1300455,
                 "country":"US"
             },
-            "feed_url":"http://www.citibikemiami.com/downtown-miami-locations2.xml",
-            "tag":"decobike-miami-beach"
+            "feed_url":"http://54.148.96.96/CitiBikeMiamiStationXML/KioskDistanceService.svc/locations?lat=25.72200&long=-80.1381&radius=10000",
+            "tag":"citi-bike-miami",
+            "bbox": [[26.102286, -80.444492], [25.584935, -79.942323]]
         }
     ],
     "system":"decobike",
