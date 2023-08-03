@@ -296,11 +296,11 @@
                 "latitude": 39.72055,
                 "longitude": -104.95253,
                 "city": "Denver, CO",
-                "name": "Denver B-cycle",
+                "name": "Lyft",
                 "country": "US",
-                "company": ["BCycle, LLC"]
+                "company": ["Lyft Inc."]
             },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_denver/gbfs.json"
+            "feed_url": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/den/gbfs.json"
         },
         {
             "tag": "divvy",
