@@ -576,7 +576,7 @@
                 ]
             },
             "feed_url": "https://santiago.publicbikesystem.net/ube/gbfs/v1/",
-            "ignore_errors": true
+            "ignore_errors": true,
         },
         {
             "tag":"oslo-bysykkel",
@@ -711,7 +711,8 @@
               "latitude": -32.95,
               "company": ["Mobilicidade Tecnologia LTD", "Municipalidad de Rosario"]
             },
-            "feed_url": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
+            "feed_url": "https://www.mibicitubici.gob.ar/opendata/gbfs.json",
+            "ignore_errors": true
         },
         {
             "tag": "bikeverona",
