@@ -406,20 +406,6 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
         },
         {
-            "tag": "share-a-bull-bikes",
-            "meta": {
-                "latitude": 28.060548696070995,
-                "longitude": -82.4076198041439,
-                "city": "University of South Florida, FL",
-                "name": "Share-a-Bull Bikes",
-                "country": "US",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://usf.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
             "tag": "sobi-long-beach",
             "meta": {
                 "latitude": 40.5833058203002,
@@ -432,47 +418,6 @@
                 ]
             },
             "feed_url": "http://sobilongbeach.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "spartanburg",
-            "meta": {
-                "latitude": 34.94867,
-                "longitude": -81.93345,
-                "city": "Spartanburg, SC",
-                "name": "Spartanburg BCycle",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json"
-        },
-        {
-            "tag": "topeka-metro-bikes",
-            "meta": {
-                "latitude": 39.0337646098385,
-                "longitude": -95.7027213202284,
-                "city": "Topeka, KS",
-                "name": "Topeka Metro Bikes",
-                "country": "US",
-                "company": [
-                    "Topeka Metropolitan Transit Authority",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://topekametrobikes.org/opendata/gbfs.json"
-        },
-        {
-            "tag": "ubike",
-            "meta": {
-                "latitude": 38.0357625021372,
-                "longitude": -78.5072994363201,
-                "city": "University of Virginia, VA",
-                "name": "UBike",
-                "country": "US",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://ubike.virginia.edu/opendata/gbfs.json"
         },
         {
             "tag": "bay-wheels",
@@ -597,21 +542,6 @@
             },
             "feed_url": "https://guad.publicbikesystem.net/ube/gbfs/v1/",
             "force_https": "true"
-        },
-        {
-          "tag": "melbourne-bike-share",
-          "meta": {
-              "city": "Melbourne",
-              "name": "Melbourne Bike Share",
-              "country": "AU",
-              "company": [
-                  "PBSC",
-                  "Alta Bicycle Share, Inc"
-              ],
-              "longitude": 144.96328,
-              "latitude": -37.814107
-          },
-          "feed_url": "https://gbfs.melbourne.8d.com/gbfs/gbfs.json"
         },
         {
             "tag": "libelo",
