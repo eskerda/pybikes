@@ -577,6 +577,7 @@
             },
             "feed_url": "https://santiago.publicbikesystem.net/ube/gbfs/v1/",
             "ignore_errors": true,
+            "bbox": [[-33.266358, -70.993412], [-33.776481, -70.253289]]
         },
         {
             "tag":"oslo-bysykkel",
@@ -946,7 +947,8 @@
                 "longitude":-123.1207,
                 "latitude":49.2827
             },
-            "feed_url": "https://vancouver-gbfs.smoove.pro/gbfs/2/gbfs.json"
+            "feed_url": "https://vancouver-gbfs.smoove.pro/gbfs/2/gbfs.json",
+            "bbox": [[49.378755, -123.379146], [49.133163, -122.828082]]
         },
         {
             "tag": "lovelolibreservice",
