@@ -417,7 +417,7 @@
                     "Social Bicycles Inc."
                 ]
             },
-            "feed_url": "http://sobilongbeach.com/opendata/gbfs.json"
+            "feed_url": "https://www.longbeachbikeshare.com/opendata/gbfs.json"
         },
         {
             "tag": "bay-wheels",
