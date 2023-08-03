@@ -2,20 +2,6 @@
 {
     "instances": [
         {
-            "tag": "monash-bikeshare",
-            "meta": {
-                "latitude": -37.91238410208696,
-                "longitude": 145.1362281292677,
-                "city": "Melbourne, AU",
-                "name": "Monash BikeShare",
-                "country": "AU",
-                "company": [
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://monashbikeshare.com/opendata/gbfs.json"
-        },
-        {
             "tag": "bixi-montreal",
             "meta": {
                 "latitude": 45.508693,
@@ -62,21 +48,6 @@
             "feed_url": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
         },
         {
-            "tag": "arborbike",
-            "meta": {
-                "latitude": 42.27853,
-                "longitude": -83.74536,
-                "city": "Ann Arbor, MI",
-                "name": "ArborBike",
-                "country": "US",
-                "company": [
-                    "Clean Energy Coalition",
-                    "BCycle, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json"
-        },
-        {
             "tag": "austin",
             "meta": {
                 "latitude": 30.26408,
@@ -118,36 +89,6 @@
                 ]
             },
             "feed_url": "https://gbfs.biketownpdx.com/gbfs/gbfs.json"
-        },
-        {
-            "tag": "britebikes",
-            "meta": {
-                "latitude": 37.759444753878,
-                "longitude": -121.955134881881,
-                "city": "San Ramon, CA",
-                "name": "BRiteBikes",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://britebikes.socialbicycles.com/opendata/gbfs.json"
-        },
-        {
-            "tag": "boise-greenbike",
-            "meta": {
-                "latitude": 43.6153060610528,
-                "longitude": -116.201761349309,
-                "city": "Boise, ID",
-                "name": "Boise GreenBike",
-                "country": "US",
-                "company": [
-                    "ValleyRide",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://boise.greenbike.com/opendata/gbfs.json"
         },
         {
             "tag": "boulder",
@@ -261,20 +202,6 @@
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
         },
         {
-            "tag": "coast-bike-share",
-            "meta": {
-                "latitude": 27.9627193250593,
-                "longitude": -82.438056400783,
-                "city": "Tampa, FL",
-                "name": "Coast Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC"
-                ]
-            },
-            "feed_url": "https://gbfs.hopr.city/api/gbfs/8/"
-        },
-        {
             "tag": "cogo",
             "meta": {
                 "latitude": 39.983333,
@@ -343,18 +270,6 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_fortworth/gbfs.json"
         },
         {
-            "tag": "greatrides",
-            "meta": {
-                "latitude": 46.89248,
-                "longitude": -96.80095,
-                "city": "Fargo, ND",
-                "name": "Great Rides Bike Share",
-                "country": "US",
-                "company": ["BCycle, LLC"]
-            },
-            "feed_url": "https://gbfs.bcycle.com/bcycle_greatrides/gbfs.json"
-        },
-        {
             "tag": "greenbikeslc",
             "meta": {
                 "latitude": 40.76745,
@@ -365,21 +280,6 @@
                 "company": ["BCycle, LLC"]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json"
-        },
-        {
-            "tag": "grid-bike-share",
-            "meta": {
-                "latitude": 33.4591031356657,
-                "longitude": -112.074010667085,
-                "city": "Phoenix, AZ",
-                "name": "Grid Bike Share",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://grid.socialbicycles.com/opendata/gbfs.json"
         },
         {
             "tag": "omaha",
@@ -450,21 +350,6 @@
             "feed_url": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
         },
         {
-            "tag": "juice-bike-share",
-            "meta": {
-                "latitude": 28.536663311743688,
-                "longitude": -81.37922197580338,
-                "city": "Orlando, FL",
-                "name": "Juice",
-                "country": "US",
-                "company": [
-                    "CycleHop, LLC",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "https://juicebikeshare.com/opendata/gbfs.json"
-        },
-        {
             "tag": "kansascity",
             "meta": {
                 "latitude": 39.0999,
@@ -515,21 +400,6 @@
                 ]
             },
             "feed_url": "https://gbfs.bcycle.com/bcycle_lametro/gbfs.json"
-        },
-        {
-            "tag": "mountain-rides-bike-share",
-            "meta": {
-                "latitude": 43.5194695168239,
-                "longitude": -114.317415758737,
-                "city": "Ketchum / Sun Valley, ID",
-                "name": "Mountain Rides Bike Share",
-                "country": "US",
-                "company": [
-                    "Mountain Rides",
-                    "Social Bicycles Inc."
-                ]
-            },
-            "feed_url": "http://mrbikeshare.org/opendata/gbfs.json"
         },
         {
             "tag": "nice-ride",
