@@ -12,6 +12,7 @@ except ImportError:
     pass
 
 import requests
+from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Polygon, Point, box
 
 from pybikes.base import BikeShareStation
@@ -42,6 +43,8 @@ class PyBikesScraper(object):
     last_request = None
     ssl_verification = True
     requests_timeout = 300
+    retry = False
+    retry_opts = {}
 
     def __init__(self, cachedict=None, headers=None):
         self.headers = headers if isinstance(headers, dict) else {}
@@ -58,6 +61,10 @@ class PyBikesScraper(object):
         # XXX proper encode arguments for proper call args -> response
         if self.cachedict and url in self.cachedict:
             return self.cachedict[url]
+
+        if self.retry:
+            retries = Retry(** self.retry_opts)
+            self.session.mount(url, HTTPAdapter(max_retries=retries))
 
         _headers = self.headers.copy()
         _headers.update(headers or {})

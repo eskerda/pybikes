@@ -446,6 +446,10 @@
                 ]
             },
             "feed_url": "https://gbfs.hopr.city/api/gbfs/20/",
+            "retry": {
+                "total": 5,
+                "backoff_factor": 1
+            }
         },
         {
             "tag": "bikerecife",

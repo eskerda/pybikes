@@ -33,7 +33,8 @@ class Gbfs(BikeShareSystem):
         force_https=False,
         station_information=False,
         station_status=False,
-        ignore_errors=False
+        ignore_errors=False,
+        retry=None,
     ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
@@ -41,6 +42,7 @@ class Gbfs(BikeShareSystem):
         self.feed_url = feed_url
         self.force_https = force_https
         self.ignore_errors = ignore_errors
+        self.retry = retry
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -106,6 +108,9 @@ class Gbfs(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        if self.retry:
+            scraper.retry = True
+            scraper.retry_opts.update(self.retry)
 
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
