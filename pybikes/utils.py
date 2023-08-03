@@ -12,7 +12,7 @@ except ImportError:
     pass
 
 import requests
-from sympy import Point, Polygon
+from shapely.geometry import Polygon, Point, box
 
 from pybikes.base import BikeShareStation
 
@@ -125,22 +125,17 @@ def filter_bounds(things, key, *point_bounds):
     for pb in point_bounds:
         # Assume that a 2 length bound is a square NE/SW
         if len(pb) == 2:
-            pb = [
-                # NE
-                (pb[0][0], pb[0][1]),
-                # NW
-                (pb[0][0], pb[1][1]),
-                # SW
-                (pb[1][0], pb[1][1]),
-                # SE
-                (pb[1][0], pb[0][1]),
-            ]
-        bb = Polygon(* map(Point, pb))
+            bb = box(min(pb[0][0], pb[1][0]),
+                     min(pb[0][1], pb[1][1]),
+                     max(pb[0][0], pb[1][0]),
+                     max(pb[0][1], pb[1][1]))
+        else:
+            bb = Polygon(pb)
         bounds.append(bb)
 
     for thing in things:
         point = Point(*key(thing))
-        if not any(map(lambda pol: pol.encloses(point), bounds)):
+        if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
 
