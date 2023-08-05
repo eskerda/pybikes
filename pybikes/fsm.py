@@ -52,6 +52,7 @@ class FSMStation(BikeShareStation):
             'shabbat': data['isShabbatStation'],
             'has_ebikes': True,
             'ebikes': e_bikes,
+            'normal_bikes': normal_bikes,
         }
 
     def update(self, scraper=None):
