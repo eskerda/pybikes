@@ -7,9 +7,14 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.contrib import TSTCache
 
 
+PASSKEY = 'C3D0E659D8D397782B414AB6FCC477B5C727435FE91E72069D34CEBB2C1491B3B8563FDAC043EA704660C0E87E6FE503C39D38FF43F7447563B1E437B349ACEC'
+CLIENTID = '8ff527f9-f85b-45ef-b1b2-bd9eb59e0fff'
 COLORS = ['green', 'red', 'yellow', 'gray']
+
+cache = TSTCache(delta=3600)
 
 
 class Bicimad(BikeShareSystem):
@@ -23,27 +28,30 @@ class Bicimad(BikeShareSystem):
         self.feed_url = feed_url
 
     def update(self, scraper=None):
-        headers = {
-            'Content-Type': 'application/json; charset=utf-8',
-            'DNT':'1',
-            'User-Agent':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535.2',
-            'Referer':'https://mynavega.emtmadrid.es/?locale=es'
-        }
         scraper = scraper or PyBikesScraper()
-        scraper_content = scraper.request(self.feed_url, method='POST', headers=headers)
+
+        access_token_scraper = PyBikesScraper(cache)
+        access_token_content = access_token_scraper.request(
+            'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/',
+            headers={'passkey': PASSKEY, 'x-clientid': CLIENTID}
+        )
+        access_token = json.loads(access_token_content)['data'][0]['accessToken']
+
+        scraper_content = scraper.request(self.feed_url, headers={
+            'accesstoken': access_token
+        })
 
         data = json.loads(scraper_content)
 
-        data2 = json.loads(data['data'])
+        self.stations = [BicimadStation(s) for s in data['data']]
 
-        self.stations = [BicimadStation(s) for s in data2['stations']]
 
 class BicimadStation(BikeShareStation):
     def __init__(self, data):
         super(BicimadStation, self).__init__()
         self.name = data['name']
-        self.longitude = float(data['longitude'])
-        self.latitude = float(data['latitude'])
+        self.longitude = float(data['geometry']['coordinates'][0])
+        self.latitude = float(data['geometry']['coordinates'][1])
         self.bikes = int(data['dock_bikes'])
         self.free = int(data['free_bases'])
         self.extra = {
