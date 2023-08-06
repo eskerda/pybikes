@@ -10,36 +10,49 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.contrib import TSTCache
 
 
-PASSKEY = 'C3D0E659D8D397782B414AB6FCC477B5C727435FE91E72069D34CEBB2C1491B3B8563FDAC043EA704660C0E87E6FE503C39D38FF43F7447563B1E437B349ACEC'
-CLIENTID = '8ff527f9-f85b-45ef-b1b2-bd9eb59e0fff'
 COLORS = ['green', 'red', 'yellow', 'gray']
 
 cache = TSTCache(delta=3600)
 
 
 class Bicimad(BikeShareSystem):
+    authed = True
+
     meta = {
         'system': 'bicimad',
         'company': 'Empresa Municipal de Transportes de Madrid, S.A.'
     }
 
-    def __init__(self, tag, meta, feed_url):
+    def __init__(self, tag, meta, feed_url, key):
         super(Bicimad, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.key = key
+
+    @staticmethod
+    def authorize(scraper, key):
+        request = scraper.request
+
+        accesstoken_scraper = PyBikesScraper(cache)
+        accesstoken_content = accesstoken_scraper.request(
+            'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/',
+            headers={'passkey': key['passkey'], 'x-clientid': key['clientid']}
+        )
+        accesstoken = json.loads(accesstoken_content)['data'][0]['accessToken']
+
+        def _request(*args, **kwargs):
+            headers = kwargs.get('headers', {})
+            headers.update({'accesstoken': accesstoken})
+            kwargs['headers'] = headers
+            return request(*args, **kwargs)
+
+        scraper.request = _request
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
 
-        access_token_scraper = PyBikesScraper(cache)
-        access_token_content = access_token_scraper.request(
-            'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/',
-            headers={'passkey': PASSKEY, 'x-clientid': CLIENTID}
-        )
-        access_token = json.loads(access_token_content)['data'][0]['accessToken']
+        Bicimad.authorize(scraper, self.key)
 
-        scraper_content = scraper.request(self.feed_url, headers={
-            'accesstoken': access_token
-        })
+        scraper_content = scraper.request(self.feed_url)
 
         data = json.loads(scraper_content)
 
