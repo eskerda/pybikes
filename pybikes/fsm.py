@@ -50,6 +50,9 @@ class FSMStation(BikeShareStation):
             'number': data['stationNumber'],
             # I think this means if the station works on shabbat
             'shabbat': data['isShabbatStation'],
+            'has_ebikes': True,
+            'ebikes': e_bikes,
+            'normal_bikes': normal_bikes,
         }
 
     def update(self, scraper=None):
