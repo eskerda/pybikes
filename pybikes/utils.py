@@ -57,9 +57,9 @@ class PyBikesScraper(object):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
-                headers=None, default_encoding='UTF-8'):
+                headers=None, default_encoding='UTF-8', skip_cache=False):
         # XXX proper encode arguments for proper call args -> response
-        if self.cachedict and url in self.cachedict:
+        if self.cachedict and url in self.cachedict and not skip_cache:
             return self.cachedict[url]
 
         if self.retry:

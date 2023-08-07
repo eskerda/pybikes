@@ -9,3 +9,8 @@ weelo = {
     'client_secret': '<some client secret>',
 }
 otp = 'get your API key at https://portal-api.digitransit.fi'
+bicimad = {
+    # Get your credentials at https://mobilitylabs.emtmadrid.es
+    'client_id': '<some client id>',
+    'client_secret': '<some client secret>',
+}
