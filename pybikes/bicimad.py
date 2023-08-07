@@ -7,43 +7,64 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.contrib import TSTCache
 
 
 COLORS = ['green', 'red', 'yellow', 'gray']
 
+cache = TSTCache(delta=3600)
+
 
 class Bicimad(BikeShareSystem):
+    authed = True
+
     meta = {
         'system': 'bicimad',
         'company': 'Empresa Municipal de Transportes de Madrid, S.A.'
     }
 
-    def __init__(self, tag, meta, feed_url):
+    def __init__(self, tag, meta, feed_url, key):
         super(Bicimad, self).__init__(tag, meta)
         self.feed_url = feed_url
+        self.key = key
+
+    @staticmethod
+    def authorize(scraper, key):
+        request = scraper.request
+
+        accesstoken_scraper = PyBikesScraper(cache)
+        accesstoken_content = accesstoken_scraper.request(
+            'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/',
+            headers={'passkey': key['passkey'], 'x-clientid': key['clientid']}
+        )
+        accesstoken = json.loads(accesstoken_content)['data'][0]['accessToken']
+
+        def _request(*args, **kwargs):
+            headers = kwargs.get('headers', {})
+            headers.update({'accesstoken': accesstoken})
+            kwargs['headers'] = headers
+            return request(*args, **kwargs)
+
+        scraper.request = _request
 
     def update(self, scraper=None):
-        headers = {
-            'Content-Type': 'application/json; charset=utf-8',
-            'DNT':'1',
-            'User-Agent':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535.2',
-            'Referer':'https://mynavega.emtmadrid.es/?locale=es'
-        }
         scraper = scraper or PyBikesScraper()
-        scraper_content = scraper.request(self.feed_url, method='POST', headers=headers)
+
+        Bicimad.authorize(scraper, self.key)
+
+        scraper_content = scraper.request(self.feed_url)
 
         data = json.loads(scraper_content)
 
-        data2 = json.loads(data['data'])
+        self.stations = [BicimadStation(s) for s in data['data']]
 
-        self.stations = [BicimadStation(s) for s in data2['stations']]
 
 class BicimadStation(BikeShareStation):
     def __init__(self, data):
         super(BicimadStation, self).__init__()
         self.name = data['name']
-        self.longitude = float(data['longitude'])
-        self.latitude = float(data['latitude'])
+        self.longitude = float(data['geometry']['coordinates'][0])
+        self.latitude = float(data['geometry']['coordinates'][1])
         self.bikes = int(data['dock_bikes'])
         self.free = int(data['free_bases'])
         self.extra = {
