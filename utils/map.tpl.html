@@ -190,6 +190,8 @@
 
                 var data = "";
 
+                data += 'LatLng: ' + e.lngLat.lat + ', ' + e.lngLat.lng + '\n';
+
                 if (selHull.length > 0) {
                     data += 'Zone: ' + selHull[0].properties.tag + '\n';
                 }
