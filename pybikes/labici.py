@@ -12,11 +12,11 @@ class LaBici(BikeShareSystem):
         'company': ['Labici Bicicletas Públicas SL'],
     }
 
-    base_url = 'http://labici.net/api-labici.php?module=parking&method=get-locations&city={city_code}'  # NOQA
+    base_url = 'https://{hostname}/api-labici.php?module=parking&method=get-locations&city={city_code}'  # NOQA
 
-    def __init__(self, tag, meta, city_code):
+    def __init__(self, tag, meta, city_code, hostname='labici.net'):
         super(LaBici, self).__init__(tag, meta)
-        self.feed_url = self.base_url.format(city_code=city_code)
+        self.feed_url = self.base_url.format(hostname=hostname, city_code=city_code)
 
     def update(self, scraper=None):
         if scraper is None:
