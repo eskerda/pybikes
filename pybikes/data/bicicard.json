@@ -1,0 +1,83 @@
+{
+    "class": "Bicicard",
+    "instances": [
+        {
+            "endpoint": "https://services.vaibike.bicicard.es",
+            "meta": {
+                "city": "Vilagarcía de Arousa",
+                "country": "ES",
+                "latitude": 42.5954,
+                "longitude": -8.7659,
+                "name": "VaiBike"
+            },
+            "tag": "vaibike"
+        },
+        {
+            "endpoint": "https://services.bikenmedio.bicicard.es",
+            "meta": {
+                "city": "Campoo de Enmedio",
+                "country": "ES",
+                "latitude": 42.9995,
+                "longitude": -4.1393,
+                "name": "BikEnmedio"
+            },
+            "tag": "bikenmedio"
+        },
+        {
+            "endpoint": "https://services.pedaleandoaller.bicicard.es",
+            "meta": {
+                "city": "Aller",
+                "country": "ES",
+                "latitude": 43.1482,
+                "longitude": -5.6295,
+                "name": "Pedaleando por Aller (BeALLER)"
+            },
+            "tag": "bealler"
+        },
+        {
+            "endpoint": "https://bicis.ailladearousa.es/prodwservice",
+            "meta": {
+                "city": "A Illa de Arousa",
+                "country": "ES",
+                "latitude": 42.5521,
+                "longitude": -8.8666,
+                "name": "BiciArousa"
+            },
+            "tag": "biciarousa"
+        },
+        {
+            "endpoint": "https://albabici.bicicard.es",
+            "meta": {
+                "city": "Albacete",
+                "country": "ES",
+                "latitude": 38.9943,
+                "longitude": -1.8602,
+                "name": "AlbaBici"
+            },
+            "tag": "albabici"
+        },
+        {
+            "endpoint": "https://bicialcazar.es/ProdWService",
+            "meta": {
+                "city": "Alcázar de San Juan",
+                "country": "ES",
+                "latitude": 39.3901,
+                "longitude": -3.2101,
+                "name": "BiciAlcázar"
+            },
+            "tag": "bicialcazar"
+        },
+        {
+            "endpoint": "https://bikews.publictransport.com.mt/ProdWService",
+            "meta": {
+                "city": "Valletta - Malta - Gozo",
+                "country": "MT",
+                "latitude": 35.8992,
+                "longitude": 14.5141,
+                "name": "Tallinja Bike"
+            },
+            "tag": "tallinja-bike"
+        }
+    ],
+    "system": "bicicard"
+}
