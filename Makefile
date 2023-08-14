@@ -33,6 +33,9 @@ map: report/report.json
 	@./utils/report.py report/report.json --template utils/map.tpl.html > report/map.html
 	open report/map.html
 
+.PHONY: map!
+map!: clean map
+
 .PHONY: github-summary
 github-summary: report/report.json
 	@./utils/report.py report/report.json --template utils/github-summary.tpl.md
