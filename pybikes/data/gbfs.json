@@ -979,8 +979,22 @@
                 "latitude":60.4506
             },
             "feed_url":"https://stables.donkey.bike/api/public/gbfs/2/donkey_turku/gbfs.json"
+        },
+        {
+            "tag": "tugo-bike-share",
+            "meta": {
+                "city": "Tucson, AZ",
+                "name": "Tugo Bike Share",
+                "country": "US",
+                "company": [
+                    "PBSC Urban Solutions",
+                    "Shift Transit"
+                ],
+                "latitude": 32.2225,
+                "longitude": -110.9749
+            },
+            "feed_url": "https://tucson.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
-
     ],
     "system": "gbfs",
     "class": "Gbfs"
