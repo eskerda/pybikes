@@ -3,13 +3,12 @@
         {
             "tag": "encicla",
             "meta": {
-                "latitude": 6.254942,
-                "longitude": -75.567982,
+                "latitude": 6.2443,
+                "longitude": -75.5735,
                 "city": "Medellin",
                 "name": "EnCicla",
                 "country": "CO"
-            },
-            "feed_url": "http://www.encicla.gov.co/status/"
+            }
         }
     ],
     "system": "encicla",
