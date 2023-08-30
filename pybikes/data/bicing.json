@@ -1,0 +1,16 @@
+{
+    "system": "bicing",
+    "class": "Bicing",
+    "instances": [
+        {
+            "tag": "bicing",
+            "meta": {
+               "latitude": 41.3850639,
+               "city": "Barcelona",
+               "name": "Bicing",
+               "longitude": 2.1734035,
+               "country": "ES"
+            }
+        }
+    ]
+}
