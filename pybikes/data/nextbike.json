@@ -1480,18 +1480,6 @@
             }
         },
         {
-            "domain": "sf",
-            "tag": "sprottenflotte-kiel",
-            "city_uid": 613,
-            "meta": {
-                "name": "Sprottenflotte",
-                "city": "Kiel",
-                "country": "DE",
-                "latitude": 54.2837,
-                "longitude": 10.13213
-            }
-        },
-        {
             "domain": "sl",
             "tag": "alsa-nextbike-leon",
             "city_uid": 701,

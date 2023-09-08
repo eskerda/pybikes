@@ -914,6 +914,18 @@
             "feed_url": "https://stables.donkey.bike/api/public/gbfs/donkey_gh/gbfs"
         },
         {
+            "tag": "donkey-kiel",
+            "meta": {
+                "latitude": 54.2837,
+                "longitude": 10.13213,
+                "name": "Sprottenflotte",
+                "city": "Kiel",
+                "country": "DE",
+                "company": ["Donkey Republic"]
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kiel/gbfs"
+        },
+        {
             "tag":"mobibikes",
             "meta":{
                 "city":"Vancouver",
