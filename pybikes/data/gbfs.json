@@ -914,7 +914,7 @@
             "feed_url": "https://stables.donkey.bike/api/public/gbfs/donkey_gh/gbfs"
         },
         {
-            "tag": "donkey-kiel",
+            "tag": "sprottenflotte-kiel",
             "meta": {
                 "latitude": 54.2837,
                 "longitude": 10.13213,
