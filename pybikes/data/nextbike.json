@@ -2672,6 +2672,18 @@
                 "latitude": 52.2581,
                 "longitude": 20.9949
             }
+        },
+        {
+            "domain": "nr",
+            "tag": "nextbike-prerov",
+            "city_uid": 917,
+            "meta": {
+                "name": "nextbike Prerov",
+                "city": "Prerov",
+                "country": "CZ",
+                "latitude": 49.4574,
+                "longitude": 17.4408
+            }
         }
     ],
     "system": "nextbike",
