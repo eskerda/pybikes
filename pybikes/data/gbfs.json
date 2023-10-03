@@ -988,6 +988,20 @@
                 "longitude": -110.9749
             },
             "feed_url": "https://tucson.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "hellocycling",
+            "meta": {
+                "city": "Multiple",
+                "name": "HELLO CYCLING",
+                "country": "JP",
+                "company": [
+                    "OpenStreet Corp."
+                ],
+                "latitude": 36.3921,
+                "longitude": 138.8623
+            },
+            "feed_url": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json"
         }
     ],
     "system": "gbfs",
