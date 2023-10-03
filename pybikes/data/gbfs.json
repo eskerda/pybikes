@@ -1018,7 +1018,12 @@
                     "OpenStreet Corp."
                 ],
                 "latitude": 36.3921,
-                "longitude": 138.8623
+                "longitude": 138.8623,
+                "source": "https://ckan.odpt.org/dataset/c_bikeshare_gbfs-openstreet",
+                "license": {
+                    "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+                    "url": "https://creativecommons.org/licenses/by/4.0/"
+                }
             },
             "feed_url": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json"
         }
