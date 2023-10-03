@@ -88,6 +88,50 @@
                 "name": "Gbici"
             },
             "tag": "gbici"
+        },
+        {
+            "endpoint": "https://enbici.aviles.es/prodws",
+            "meta": {
+                "city": "Avilés",
+                "country": "ES",
+                "latitude": 43.5554,
+                "longitude": -5.9222,
+                "name": "Avilés en Bici"
+            },
+            "tag": "aviles-en-bici"
+        },
+        {
+            "endpoint": "https://prodws.verdeciclos.com",
+            "meta": {
+                "city": "Caldas de Reis",
+                "country": "ES",
+                "latitude": 42.6041,
+                "longitude": -8.6419,
+                "name": "VerdeCiclos"
+            },
+            "tag": "verdeciclos"
+        },
+        {
+            "endpoint": "https://bicibadajoz.aytobadajoz.es/ProdWService",
+            "meta": {
+                "city": "Badajoz",
+                "country": "ES",
+                "latitude": 38.8780,
+                "longitude": -6.9701,
+                "name": "BiBa"
+            },
+            "tag": "biba"
+        },
+        {
+            "endpoint": "https://prodwservice.bicibur.es",
+            "meta": {
+                "city": "Burgos",
+                "country": "ES",
+                "latitude": 42.34392,
+                "longitude": -3.69697,
+                "name": "BiciBur"
+            },
+            "tag": "bicibur"
         }
     ],
     "system": "bicicard"
