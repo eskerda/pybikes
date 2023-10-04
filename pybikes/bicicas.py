@@ -26,9 +26,9 @@ class BicicasStation(BikeShareStation):
     def __init__(self, item):
         super(BicicasStation, self).__init__()
 
-        self.name      = item['properties']['name']
+        self.name = item['properties']['name']
         self.longitude = item['geometry']['coordinates'][0]
-        self.latitude  = item['geometry']['coordinates'][1]
+        self.latitude = item['geometry']['coordinates'][1]
 
         anchors = item['properties']['anchors']
         bikes = item['properties']['bikes_available']
