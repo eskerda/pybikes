@@ -44,11 +44,9 @@ class MiBisiValenciaStation(BikeShareStation):
     def __init__(self, html):
         super(MiBisiValenciaStation, self).__init__()
 
-        for div in html.xpath('//div[@class="hiright"]'):
-            for entry in div.xpath('.//img'):
-                self.name = entry.xpath('string(following-sibling::text()[1])').strip()
-                self.bikes = get_int(entry.xpath('./following-sibling::text()[1]')[0].strip())
-                self.free = get_int(entry.xpath('./following-sibling::text()[2]')[0].strip())
-                # TK
-                self.longitude = 0.1
-                self.latitude = 0.1
+        self.name = html.xpath('string(following-sibling::text()[1])').strip()
+        self.bikes = get_int(html.xpath('./following-sibling::text()[1]')[0].strip())
+        self.free = get_int(html.xpath('./following-sibling::text()[2]')[0].strip())
+        # TK
+        self.longitude = 0.1
+        self.latitude = 0.1
