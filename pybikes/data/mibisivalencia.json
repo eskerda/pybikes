@@ -1,53 +1,65 @@
 {
     "instances": [
         {
-            "tag": "hortasudenbici",
+            "tag": "mibisivalencia",
             "meta": {
-                "city": "Aldaia, Alaquàs, Quart de Poblet, Xirivella",
+                "city": "Valencia, área metropolitana",
                 "country": "ES",
-                "name": "Horta Sud en bici",
-                "latitude": 39.4696,
-                "longitude": -0.4605
-            }
-        },
-        {
-            "tag": "torrentbici",
-            "meta": {
-                "city": "Torrent",
-                "country": "ES",
-                "name": "TorrentBici",
-                "latitude": 39.4319,
-                "longitude": -0.4730
-            }
-        },
-        {
-            "tag": "xufabike",
-            "meta": {
-                "city": "Alboraia",
-                "country": "ES",
-                "name": "XufaBike",
-                "latitude": 39.4988,
-                "longitude": -0.3511
-            }
-        },
-        {
-            "tag": "bicimeliana",
-            "meta": {
-                "city": "Meliana",
-                "country": "ES",
-                "name": "BiciMeliana",
-                "latitude": 39.5285,
-                "longitude": -0.3480
-            }
-        },
-        {
-            "tag": "carraixet",
-            "meta": {
-                "city": "Alfara del Patriarca, Foios, Bonrepòs i Mirambell, Vinales",
-                "country": "ES",
-                "name": "Carraixet Bici",
-                "latitude": 39.5384,
-                "longitude": -0.3715
+                "name": "MIBISI",
+                "latitude": 39.4364,
+                "longitude": -0.4647,
+                "instances": [
+                    {
+                        "tag": "horta-sud-en-bici",
+                        "meta": {
+                            "city": "Aldaia, Alaquàs, Quart de Poblet, Xirivella",
+                            "country": "ES",
+                            "name": "Horta Sud en bici",
+                            "latitude": 39.4696,
+                            "longitude": -0.4605
+                        }
+                    },
+                    {
+                        "tag": "torrentbici",
+                        "meta": {
+                            "city": "Torrent",
+                            "country": "ES",
+                            "name": "TorrentBici",
+                            "latitude": 39.4319,
+                            "longitude": -0.4730
+                        }
+                    },
+                    {
+                        "tag": "xufabike",
+                        "meta": {
+                            "city": "Alboraia",
+                            "country": "ES",
+                            "name": "XufaBike",
+                            "latitude": 39.4988,
+                            "longitude": -0.3511
+                        }
+                    },
+                    {
+                        "tag": "bicimeliana",
+                        "meta": {
+                            "city": "Meliana",
+                            "country": "ES",
+                            "name": "BiciMeliana",
+                            "latitude": 39.5285,
+                            "longitude": -0.3480
+                        }
+                    },
+                    {
+                        "tag": "carraixet-bici",
+                        "meta": {
+                            "city": "Alfara del Patriarca, Foios, Bonrepòs i Mirambell, Vinales",
+                            "country": "ES",
+                            "name": "Carraixet Bici",
+                            "latitude": 39.5384,
+                            "longitude": -0.3715
+                        }
+                    }
+                ]
             }
         }
     ],
