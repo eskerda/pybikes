@@ -35,9 +35,6 @@ class MiBisiValencia(BikeShareSystem):
 
         stations = []
 
-        script = raw.xpath('//script[contains(text(), "var misPuntos")]')
-        javascript_code = script[0].text_content()
-
         for div in raw.xpath('//div[@class="hiright"]'):
             for entry in div.xpath('.//img'):
                 stations.append(MiBisiValenciaStation(entry))
