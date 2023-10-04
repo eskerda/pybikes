@@ -45,7 +45,7 @@ class BicicasStation(BikeShareStation):
         self.extra = {
             'has_ebikes': any(has_ebikes),
             'ebikes': ebikes,
-            'slots': bikes + self.free,
+            'slots': len(list(anchors)),
             'last_seen': item['properties']['last_seen'],
             'number_loans': int(item['properties']['number_loans']),
             'incidents': item['properties']['incidents'],
