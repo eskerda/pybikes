@@ -47,7 +47,7 @@
                 "longitude": -5.6663604,
                 "latitude": 43.5396116
             },
-            "feed_url": "https://bici.gijon.es/api/stations"
+            "feed_url": "https://bici.gijon.es/api/client/stations"
         },
         {
             "tag": "auxrmlevelo",
@@ -61,7 +61,7 @@
                 "longitude": 3.572376,
                 "latitude": 47.797221
             },
-            "feed_url": "https://auxrmlevelo.com/api/stations"
+            "feed_url": "https://auxrmlevelo.com/api/client/stations"
         }
     ]
 }
