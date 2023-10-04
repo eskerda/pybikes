@@ -2684,6 +2684,21 @@
                 "latitude": 49.4574,
                 "longitude": 17.4408
             }
+        },
+        {
+            "domain": "ad",
+            "tag": "bicimislata",
+            "city_uid": 835,
+            "meta": {
+                "name": "BiciMislata",
+                "city": "Mislata",
+                "country": "ES",
+                "latitude": 39.4763,
+                "longitude": -0.4182,
+                "company": [
+                    "Movilidad Urbana Sostenible, S.L"
+                ]
+            }
         }
     ],
     "system": "nextbike",
