@@ -19,10 +19,9 @@ class WeGoShare(BikeShareSystem):
         'Content-Type': 'application/json; charset=utf-8',
     }
 
-    def __init__(self, tag, meta, endpoint, bbox=None):
+    def __init__(self, tag, meta, endpoint):
         super(WeGoShare, self).__init__(tag, meta)
         self.endpoint = endpoint
-        self.bbox = bbox
 
     @property
     def stations_url(self):
