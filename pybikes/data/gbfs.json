@@ -1091,17 +1091,17 @@
             "feed_url": "https://nordelta.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "ba-ecobici",
+            "tag": "ecobici-buenos-aires",
             "meta": {
                 "city": "Buenos Aires",
-                "name": "BA Ecobici",
+                "name": "Ecobici",
                 "country": "AR",
                 "company": [
                     "Tembici",
                     "Itaú Argentina"
                 ],
-                "latitude": -34.6081,
-                "longitude": -58.4393
+                "latitude": -34.630665,
+                "longitude": -58.411560
             },
             "feed_url": "https://buenosaires.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
