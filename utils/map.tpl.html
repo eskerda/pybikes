@@ -27,15 +27,22 @@
       }
 
       div#systems {
-          height: 75%;
+          height: 50%;
           overflow: scroll;
       }
 
       div#console {
-          height: 25%;
+          height: 50%;
           overflow: scroll;
+          background-color: rgba(0,0,0,0.1);
+          color: #444;
+          font-size: 1.2em;
+          font-weight: 600;
       }
 
+      div#console pre {
+          margin: 1em;
+      }
 
       ul { margin: 0; padding: 0; }
       ul li { display: inline-block; margin: 10px; }
@@ -75,6 +82,7 @@
 
         const groupBy = (x,f)=>x.reduce((a,b,i)=>((a[f(b,i,x)]||=[]).push(b),a),{});
         var allthethings = JSON.parse(document.getElementById('allthethings').innerHTML);
+        var last_selected
         var stations = {
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'station'),
@@ -116,7 +124,7 @@
         });
 
         map.on('load', function() {
-            map.addSource('stations', {'type': 'geojson', data: stations});
+            map.addSource('stations', {'type': 'geojson', data: stations, generateId: true});
             map.addSource('networks', {'type': 'geojson', data: networks});
             map.addSource('hulls', {'type': 'geojson', data: hulls});
             map.addLayer({
@@ -145,13 +153,17 @@
                 source: 'stations',
                 paint: {
                     'circle-radius': [
+                        'let', 'selected',
+                            ['case', ['boolean', ['feature-state', 'selected'], false], 2, 1],
+                        [
                           // XXX Maybe tune these
                           'interpolate', ['linear'], ['zoom'],
-                          8,     0.5  ,
-                          10,    2    ,
-                          12,    4    ,
-                          15,    8    ,
-                          22,    40   ,
+                          8,    ['*', ['var', 'selected'], 0.5 ] ,
+                          10,   ['*', ['var', 'selected'], 2   ] ,
+                          12,   ['*', ['var', 'selected'], 4   ] ,
+                          15,   ['*', ['var', 'selected'], 8   ] ,
+                          22,   ['*', ['var', 'selected'], 40  ] ,
+                        ]
                     ],
                     'circle-color': [
                         'match',
@@ -196,7 +208,23 @@
                     data += 'Zone: ' + selHull[0].properties.tag + '\n';
                 }
 
-                data += JSON.stringify(selectedFeatures, null, 2)
+                if (selectedFeatures.length) {
+                    var elem = selectedFeatures[0]
+                    var std = elem.properties
+
+                    if (std.extra) {
+                        // nested properties get stringified in mapbox-gl
+                        std.extra = JSON.parse(std.extra)
+                    }
+
+                    data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
+
+                    if (last_selected)
+                        map.removeFeatureState({'source': last_selected.source, id: last_selected.id})
+
+                    map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
+                    last_selected = elem
+                }
 
                 document.getElementById('theconsole').innerHTML = data;
             })
