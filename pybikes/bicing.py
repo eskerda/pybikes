@@ -3,24 +3,28 @@ import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.exceptions import InvalidStation
+from pybikes.utils import filter_bounds
+
+STATIONS_URL = '{endpoint}/get-stations'
 
 
 class Bicing(BikeShareSystem):
     meta = {
-        'system': 'Bicing',
-        'company': [
-            'Barcelona de Serveis Municipals, S.A. (BSM)',
-            'CESPA',
-            'PBSC',
-        ],
         'ebikes': True,
     }
 
-    url = 'https://www.bicing.barcelona/get-stations'
+    def __init__(self, tag, meta, endpoint, bbox=None):
+        super(Bicing, self).__init__(tag, meta)
+        self.endpoint = endpoint
+        self.bbox = bbox
+
+    @property
+    def stations_url(self):
+        return STATIONS_URL.format(endpoint=self.endpoint)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-        data = json.loads(scraper.request(self.url))
+        data = json.loads(scraper.request(self.stations_url))
         stations = []
         for station_data in data['stations']:
             try:
@@ -28,6 +32,10 @@ class Bicing(BikeShareSystem):
             except InvalidStation:
                 continue
             stations.append(station)
+
+        if self.bbox:
+            stations = list(filter_bounds(stations, None, self.bbox))
+
         self.stations = stations
 
 

@@ -1,16 +1,37 @@
 {
-    "system": "bicing",
-    "class": "Bicing",
     "instances": [
         {
             "tag": "bicing",
+            "endpoint": "https://www.bicing.barcelona",
             "meta": {
-               "latitude": 41.3850639,
-               "city": "Barcelona",
-               "name": "Bicing",
-               "longitude": 2.1734035,
-               "country": "ES"
+                "country": "ES",
+                "city": "Barcelona",
+                "name": "Bicing",
+                "latitude": 41.3850639,
+                "longitude": 2.1734035,
+                "company": [
+                    "Barcelona de Serveis Municipals, S.A. (BSM)",
+                    "CESPA",
+                    "PBSC"
+                ]
+            }
+        },
+        {
+            "tag": "biki",
+            "endpoint": "https://biki-valladolid.es/es",
+            "bbox": [[41.4602, -5.0492], [41.8421, -4.3764]],
+            "meta": {
+                "country": "ES",
+                "city": "Valladolid",
+                "name": "BIKI",
+                "latitude": 41.6522,
+                "longitude": -4.7243,
+                "company": [
+                    "Autobuses Urbanos de Valladolid S.A"
+                ]
             }
         }
-    ]
+    ],
+    "system": "bicing",
+    "class": "Bicing"
 }
