@@ -39,6 +39,9 @@ class WeGoShare(BikeShareSystem):
                                           method='POST'))
         stations = []
         for station_data in data['results']:
+            # discard planned stations
+            if station_data['stationStatus'] == 'PLANNED':
+                continue
             station = WeGoShareStation(station_data, self.endpoint)
             stations.append(station)
 
