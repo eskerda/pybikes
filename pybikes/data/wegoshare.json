@@ -58,6 +58,21 @@
                 ]
             },
             "tag": "summit-bike-share"
+        },
+        {
+            "endpoint": "https://api.rvabikes.com",
+            "meta": {
+                "city": "Richmond, VA",
+                "country": "US",
+                "latitude": 37.53833,
+                "longitude": -77.43464,
+                "name": "RVA Bike Share",
+                "ebikes": true,
+                "company": [
+                    "Richmond Department of Public Works"
+                ]
+            },
+            "tag": "rva-bikes"
         }
     ],
     "system": "wegoshare",

@@ -9,17 +9,20 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 STATIONS_URL = '{endpoint}/cxf/am/station/map/search'
 FILES_URL = '{endpoint}/cxf/fm/files/{file_id}'
 
+
 def file_url(endpoint, file_id):
     return FILES_URL.format(endpoint=endpoint, file_id=file_id)
 
-class WeGoShare(BikeShareSystem):
-    sync = True
 
+class WeGoShare(BikeShareSystem):
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
     }
 
+    company = ['Wegoshare, Lda']
+
     def __init__(self, tag, meta, endpoint):
+        meta['company'] += WeGoShare.company
         super(WeGoShare, self).__init__(tag, meta)
         self.endpoint = endpoint
 
@@ -51,15 +54,16 @@ class WeGoShareStation(BikeShareStation):
         self.latitude = float(data['areaCentroid']['latitude'])
         self.longitude = float(data['areaCentroid']['longitude'])
 
-        # a "secondaryLock" seems to be a portable lock that can be used for a quick stop during a trip
-        # should we use totalLockedCycleCount or primaryLockedCycleCount?
-        self.bikes = int(data['primaryLockedCycleCount'])
+        # totalLocked: primaryLocked (station) + secondaryLocked (overflow)
+        # overflow means locking the bike near the station when it is full
+        self.bikes = int(data['totalLockedCycleCount'])
         self.free = int(data['freeDocksCount'])
+
         self.extra = {
             'uid': data['id'],
             'description': data['description'],
             'address': data['address'],
             'online': data['stationStatus'] == 'OPEN',
             'last_update': data['lastUpdateCycleCountAt'],
-            'photo': file_url(endpoint, data['photoId']),
+            'photo': file_url(endpoint, data['photoId']) if 'photoId' in data else None,
         }
