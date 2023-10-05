@@ -1026,6 +1026,84 @@
                 }
             },
             "feed_url": "https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json"
+        },
+        {
+            "tag": "tembici-bogota",
+            "meta": {
+                "city": "Bogotá",
+                "name": "Tembici",
+                "country": "CO",
+                "company": [
+                    "M1 Transportes Sustentáveis Ltda.",
+                    "Tembici"
+                ],
+                "latitude": 4.6569,
+                "longitude": -74.0656
+            },
+            "feed_url": "https://bogota.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "bike-curitiba",
+            "meta": {
+                "city": "Curitiba",
+                "name": "BikeCuritiba",
+                "country": "BR",
+                "company": [
+                    "M1 Transportes Sustentáveis Ltda.",
+                    "M2 Soluções Em Engenharia Ltda.",
+                    "Tembici"
+                ],
+                "latitude": -25.4299,
+                "longitude": -49.2722
+            },
+            "feed_url": "https://curitiba.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "rivibike",
+            "meta": {
+                "city": "Riviera de São Lourenço",
+                "name": "Rivibike",
+                "country": "BR",
+                "company": [
+                    "Sobloco Construtora S/A",
+                    "Associação dos Amigos da Riviera",
+                    "Tembici"
+                ],
+                "latitude": -23.7948,
+                "longitude": -46.0249
+            },
+            "feed_url": "https://riviera.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "bike-itau-nordelta",
+            "meta": {
+                "city": "Nordelta",
+                "name": "Bike Itaú Nordelta",
+                "country": "AR",
+                "company": [
+                    "Tembici",
+                    "Itaú Argentina",
+                    "Zurich Insurance Group"
+                ],
+                "latitude": -34.4146,
+                "longitude": -58.6493
+            },
+            "feed_url": "https://nordelta.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "ba-ecobici",
+            "meta": {
+                "city": "Buenos Aires",
+                "name": "BA Ecobici",
+                "country": "AR",
+                "company": [
+                    "Tembici",
+                    "Itaú Argentina"
+                ],
+                "latitude": -34.6081,
+                "longitude": -58.4393
+            },
+            "feed_url": "https://buenosaires.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
