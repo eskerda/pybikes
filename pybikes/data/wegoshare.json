@@ -1,0 +1,65 @@
+{
+    "instances": [
+        {
+            "endpoint": "https://api.algira.almeirim.pt",
+            "meta": {
+                "city": "Almeirim",
+                "country": "PT",
+                "latitude": 39.2082,
+                "longitude": -8.6252,
+                "name": "AlGira",
+                "ebikes": true,
+                "company": [
+                    "Município de Almeirim"
+                ]
+            },
+            "tag": "algira"
+        },
+        {
+            "endpoint": "https://api.rmbikes.cm-riomaior.pt",
+            "meta": {
+                "city": "Rio Maior",
+                "country": "PT",
+                "latitude": 39.3374,
+                "longitude": -8.9374,
+                "name": "RMBikes",
+                "ebikes": true,
+                "company": [
+                    "Município de Rio Maior"
+                ]
+            },
+            "tag": "rmbikes"
+        },
+        {
+            "endpoint": "https://api.figas.cm-figfoz.pt",
+            "meta": {
+                "city": "Figueira da Foz",
+                "country": "PT",
+                "latitude": 40.1548,
+                "longitude":-8.8613,
+                "name": "Figas",
+                "company": [
+                    "Município de Figueira da Foz"
+                ]
+            },
+            "tag": "figas"
+        },
+        {
+            "endpoint": "https://api.summitbikeshare.com",
+            "meta": {
+                "city": "Park City, UT",
+                "country": "US",
+                "latitude": 40.6474,
+                "longitude": -111.4981,
+                "name": "Summit Bike Share",
+                "ebikes": true,
+                "company": [
+                    "Summit County Department of Transportation"
+                ]
+            },
+            "tag": "summit-bike-share"
+        }
+    ],
+    "system": "wegoshare",
+    "class": "WeGoShare"
+}
