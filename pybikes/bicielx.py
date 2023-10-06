@@ -40,7 +40,3 @@ class BiciElxStation(BikeShareStation):
         free, bikes = re.search(r'libres: (\d+).*disponibles: (\d+)', data).groups()
         self.bikes = int(bikes)
         self.free = int(free)
-
-        uid = re.search(r'"([^"]+)"', data).group(1)
-        self.extra = {'uid': int(uid)}
-
