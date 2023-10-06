@@ -16,21 +16,6 @@
             "feed_url":"https://integrabike.tembici.com.br/stations.json"
         },
         {
-            "tag":"rivibike",
-            "meta":{
-                "latitude":-22.1124,
-                "city":"São Lourenço",
-                "name":"RiviBike",
-                "longitude":-45.0280,
-                "country":"BR",
-                "company":[
-                    "Associação dos Amigos da Riviera de São Lourenço",
-                    "Sobloco"
-                ]
-            },
-            "feed_url":"https://rivibike.tembici.com.br/stations.json"
-        },
-        {
             "tag":"dukebike",
             "meta":{
                 "latitude":-23.0553,
