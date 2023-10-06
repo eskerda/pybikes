@@ -15,6 +15,27 @@
                     "feed_url":"http://cli-velo-batumi.gir.fr/sag_map.html"
                 }
             ]
+        },
+        "CityBikeLima": {
+            "instances": [
+                {
+                    "tag": "citybike-lima",
+                    "meta": {
+                        "city": "Lima",
+                        "name": "CityBike Lima",
+                        "country": "PE",
+                        "latitude": -12.1209,
+                        "longitude": -77.0296,
+                        "company": [
+                            "CityBike Miraflores S.A.C.",
+                            "CityBike San Isidro S.A.C",
+                            "Fifteen",
+                            "Moventia"
+                        ]
+                    },
+                    "feed_url": "https://www.citybikelima.com/api/getStations"
+                }
+            ]
         }
     }
 }
