@@ -26,16 +26,12 @@ class Espe(BikeShareSystem):
         data = json.loads(scraper.request(self.stations_url,
                                           headers=Espe.headers,
                                           method='GET'))
-        stations = []
-        for station_data in data['data']['estacionesList']:
-            # not sure if this means offline yet or if it is gestionaBahias
-            if station_data['estado'] != 'I':
-                continue
-            station = EspeStation(station_data)
-            stations.append(station)
+        # There is a lot of trash on the feed, 'PUBLICA' means it is displayed
+        # on their map
+        public_stations = filter(lambda s: s['tipoEstacion'] == 'PUBLICA',
+                                 data['data']['estacionesList'])
 
-        self.stations = stations
-
+        self.stations = list(map(EspeStation, public_stations))
 
 class EspeStation(BikeShareStation):
     def __init__(self, data):
@@ -52,4 +48,6 @@ class EspeStation(BikeShareStation):
             'uid': data['idEstaciones'],
             'address': data['direccion'],
             'slots': data['bahiasEnTotal'],
+            # [A]ctivo, [I]nactivo
+            'online': data['estado'] == 'A',
         }
