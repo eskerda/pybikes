@@ -1,0 +1,19 @@
+{
+    "instances": [
+        {
+            "tag": "bicielx",
+            "meta": {
+                "city": "Elx",
+                "country": "ES",
+                "name": "Bicielx",
+                "latitude": 38.2665,
+                "longitude": -0.7000,
+                "company": [
+                    "Promociones e Iniciativas Municipales de Elche, S.A."
+                ]
+            }
+        }
+    ],
+    "system": "bicielx",
+    "class": "BiciElx"
+}
