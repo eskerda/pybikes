@@ -7,7 +7,10 @@
                 "name": "Velobike",
                 "country": "KZ",
                 "longitude": 71.416667,
-                "latitude": 51.166667
+                "latitude": 51.166667,
+                "company": [
+                    "Velobike.kz, LLP"
+                ]
             },
             "feed_url": "http://velobike.kz/api/stations/get"
         },
@@ -18,7 +21,10 @@
                 "name": "Almatybike",
                 "country": "KZ",
                 "longitude": 76.9268076,
-                "latitude": 43.2391010
+                "latitude": 43.2391010,
+                "company": [
+                    "Velobike.kz, LLP"
+                ]
             },
             "feed_url": "http://almatybike.kz/api/stations/get"
         },
@@ -29,9 +35,29 @@
                 "name": "Shymkentbike",
                 "country": "KZ",
                 "longitude": 69.5978,
-                "latitude": 42.3184
+                "latitude": 42.3184,
+                "company": [
+                    "Velobike.kz, LLP"
+                ]
             },
             "feed_url": "http://shymkentbike.kz/api/stations/get"
+        },
+        {
+            "tag": "citybike-lima",
+            "meta": {
+                "city": "Lima",
+                "name": "CityBike Lima",
+                "country": "PE",
+                "longitude": -12.1209,
+                "latitude": -77.0296,
+                "company": [
+                    "CityBike Miraflores S.A.C.",
+                    "CityBike San Isidro S.A.C",
+                    "Fifteen",
+                    "Moventia"
+                ]
+            },
+            "feed_url": "https://www.citybikelima.com/api/getStations"
         }
     ],
     "system": "velobike",
