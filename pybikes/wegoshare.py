@@ -19,10 +19,12 @@ class WeGoShare(BikeShareSystem):
         'Content-Type': 'application/json; charset=utf-8',
     }
 
-    company = ['Wegoshare, Lda']
+    meta = {
+        "company": ['Wegoshare, Lda'],
+    }
 
     def __init__(self, tag, meta, endpoint):
-        meta['company'] += WeGoShare.company
+        meta['company'] += WeGoShare.meta['company']
         super(WeGoShare, self).__init__(tag, meta)
         self.endpoint = endpoint
 
