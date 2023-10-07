@@ -1,0 +1,22 @@
+{
+    "instances": [
+        {
+            "tag": "skrova-bike",
+            "meta": {
+                "city": "Skrova",
+                "name": "Skrova Bysykkel",
+                "country": "NO",
+                "company": [
+                    "UIP Drift AS",
+                    "Skrova Outdoor Photo Spot (SOPS)",
+                    "Skrova Næringsforening",
+                    "Urban Sharing"
+                ],
+                "latitude": 68.1669,
+                "longitude": 14.6611
+            }
+        }
+    ],
+    "system": "urbansharing",
+    "class": "UrbanSharing"
+}
