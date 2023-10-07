@@ -2,6 +2,8 @@
     "instances": [
         {
             "tag": "mibisivalencia",
+            "ebikes": false,
+            "feed_url": "https://www.mibisivalencia.es/mapa/mapa.php",
             "meta": {
                 "city": "Valencia, área metropolitana",
                 "country": "ES",
@@ -61,8 +63,33 @@
                     }
                 ]
             }
+        },
+        {
+            "tag": "bicisanvi",
+            "ebikes": false,
+            "feed_url": "https://www.bicisanvi.es/online.php",
+            "meta": {
+                "city": "Sant Vicent del Raspeig",
+                "country": "ES",
+                "name": "Bicisanvi",
+                "latitude": 38.39611,
+                "longitude": -0.5236
+            }
+        },
+        {
+            "tag": "dbizi",
+            "ebikes": true,
+            "feed_url": "https://www.dbizi.eus/es/plano-y-estaciones",
+            "meta": {
+                "city": "Donostia/San Sebastián",
+                "country": "ES",
+                "name": "Dbizi",
+                "latitude": 43.3184,
+                "longitude": -1.9817,
+                "company": ["UTE BIZISS", "Movilidad Urbana Sostenible SLU", "URBASER, S.A.", "AENOR INTERNACIONAL S.A."]
+            }
         }
     ],
-    "system": "mibisivalencia",
-    "class": "MiBisiValencia"
+    "system": "movus",
+    "class": "Movus"
 }
