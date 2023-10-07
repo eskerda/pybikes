@@ -1,55 +1,50 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2015, David Kreitschmann <david@kreitschmann.de>
+# Copyright (C) 2023, Martín González Gómez <m@martingonzalez.net>
+# Copyright (C) 2021, Altonss https://github.com/Altonss
 # Distributed under the AGPL license, see LICENSE.txt
-import re
-import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes.gbfs import Gbfs
 
-__all__ = ['Callabike', 'CallabikeStation']
-
-BASE_URL = 'https://www.callabike-interaktiv.de/kundenbuchung/hal2ajax_process.php?callee=getMarker&mapstadt_id={city_id}&requester=bikesuche&ajxmod=hal2map&bereich=2&buchungsanfrage=N&webfirma_id=500&searchmode=default'
-
-
-class Callabike(BikeShareSystem):
-    sync = True
-    unifeed = True
+class Callabike(Gbfs):
+    authed = True
 
     meta = {
-        'system': 'Call-A-Bike',
-        'company': ['DB Rent GmbH']
+        'system': 'callabike',
+        'company': ['DB'],
     }
 
-    def __init__(self, tag, meta, city_id):
-        super(Callabike, self).__init__(tag, meta)
-        self.url = BASE_URL.format(city_id=city_id)
+    def __init__(self, tag, meta, feed_url, key):
+        super(Callabike, self).__init__(tag, meta, feed_url)
+        self.key = key
+
+    @staticmethod
+    def authorize(scraper, key):
+        request = scraper.request
+
+        print(key)
+        headers = {
+            'DB-Client-Id': key['client_id'],
+            'DB-Api-Key': key['client_secret'],
+            'accept': "application/json"
+        }
+
+        def _request(*args, **kwargs):
+            headers = kwargs.get('headers', {})
+            kwargs['headers'] = headers
+            return request(*args, **kwargs)
+
+        scraper.request = _request
+
+    @property
+    def default_feeds(self):
+        url = self.feed_url
+        return {
+            "station_information": 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike/station_information',
+            "station_status": 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike/station_status',
+        }
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
-        markers = json.loads(scraper.request(self.url))
-        self.stations = [
-            CallabikeStation(a) for a in markers['marker']
-            if a['hal2option']['standort_id']
-        ]
-
-
-class CallabikeStation(BikeShareStation):
-    def __init__(self, info):
-        super(CallabikeStation, self).__init__()
-        self.latitude = float(info['lat'])
-        self.longitude = float(info['lng'])
-
-        hal2 = info['hal2option']
-        tooltip = hal2['tooltip']
-        tooltip = tooltip.replace("&nbsp;", " ")
-        tooltip = re.sub(r"^'|'$", "", tooltip)
-        tooltip = tooltip.strip()
-        tooltip = tooltip.encode("utf-8")
-        bikes = hal2['bikelist']
-        bikes = [a for a in bikes if a['canBeRented']]
-
-        self.name = tooltip
-        self.bikes = len(bikes)
+        # Patch default scraper request method
+        scraper = scraper or PyBikesScraper()
+        Callabike.authorize(scraper, self.key)
+        super(Callabike, self).update(scraper)

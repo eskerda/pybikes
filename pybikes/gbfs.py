@@ -81,6 +81,7 @@ class Gbfs(BikeShareSystem):
             return self.feeds
 
         feed_data = scraper.request(url, raw=True)
+
         if scraper.last_request.status_code >= 400:
             # GBFS service description not found. Try to guess based on
             # defaults
@@ -115,6 +116,8 @@ class Gbfs(BikeShareSystem):
             scraper.retry_opts.update(self.retry)
 
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
+
+        print(feeds, scraper.request(feeds['station_information']))
 
         # Station Information and Station Status data retrieval
         station_information = json.loads(

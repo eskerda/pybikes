@@ -152,10 +152,6 @@ class Keys:
         return os.environ.get('PYBIKES_%s' % key.upper())
 
 keys = Keys()
-keys.ecobici_ba = {
-    'client_id': keys.ecobici_ba_client_id,
-    'client_secret': keys.ecobici_ba_client_secret,
-}
 keys.bicimad = {
     'passkey': keys.bicimad_passkey,
     'clientid': keys.bicimad_clientid,
@@ -163,4 +159,8 @@ keys.bicimad = {
 keys.weelo = {
     'client_id': keys.weelo_client_id,
     'client_secret': keys.weelo_client_secret,
+}
+keys.callabike = {
+    'client_id': keys.callabike_client_id,
+    'client_secret': keys.callabike_client_secret,
 }
