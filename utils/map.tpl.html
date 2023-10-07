@@ -38,6 +38,7 @@
           color: #444;
           font-size: 1.2em;
           font-weight: 600;
+          position: relative;
       }
 
       div#console pre {
@@ -46,6 +47,19 @@
 
       ul { margin: 0; padding: 0; }
       ul li { display: inline-block; margin: 10px; }
+
+      div#console a.close {
+          font-family: monospace;
+          position: absolute;
+          top: 0px; right: 0px;
+          display: none;
+      }
+
+      div#console a.close.visible {
+          display: block;
+      }
+
+
     </style>
     <script type="application/json" id="allthethings">{{json.dumps(geojson)}} </script>
   </head>
@@ -75,23 +89,85 @@
                 {% endfor %}
             {% endfor %}
             </div>
-            <div id='console'><pre id='theconsole'></pre></div>
+            <div id='console'>
+                <a href='#' class='close'>[x]</a>
+                <pre id='theconsole'></pre>
+            </div>
         </div>
     </div>
     <script>
 
         const groupBy = (x,f)=>x.reduce((a,b,i)=>((a[f(b,i,x)]||=[]).push(b),a),{});
-        var allthethings = JSON.parse(document.getElementById('allthethings').innerHTML);
-        var last_selected
-        var stations = {
+        let allthethings = JSON.parse(document.getElementById('allthethings').innerHTML);
+        let last_selected
+        let anchored_event
+
+        const removeAnchor = () => {
+            anchored_event = null
+            last_selected = null
+            document.querySelector('div#console a.close').classList.remove('visible')
+            map.removeFeatureState({source: 'stations'})
+            document.getElementById('theconsole').innerHTML = ''
+        }
+
+        const debugZone = (e) => {
+            // Set `bbox` as 5px reactangle area around clicked point.
+            const bbox = [
+                [e.point.x - 5, e.point.y - 5],
+                [e.point.x + 5, e.point.y + 5]
+            ];
+            const selectedFeatures = map.queryRenderedFeatures(bbox, {
+                layers: ['stations', 'networks']
+            });
+
+            const selHull = map.queryRenderedFeatures(bbox, {
+                layers: ['hulls'],
+            })
+
+            let data = "";
+
+            data += 'LatLng: ' + e.lngLat.lat + ', ' + e.lngLat.lng + '\n';
+
+            if (selHull.length > 0) {
+                data += 'Zone: ' + selHull[0].properties.tag + '\n';
+            }
+
+            let elem
+
+            if (selectedFeatures.length) {
+                elem = selectedFeatures[0]
+            } else if (last_selected) {
+                elem = last_selected
+            }
+
+            map.removeFeatureState({source: 'stations'})
+
+            if (elem) {
+                var std = elem.properties
+
+                if (std.extra && typeof std.extra === 'string') {
+                    // nested properties get stringified in mapbox-gl
+                    std.extra = JSON.parse(std.extra)
+                }
+
+                data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
+
+                map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
+                last_selected = elem
+            }
+
+            document.getElementById('theconsole').innerHTML = data;
+        }
+
+        let stations = {
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'station'),
         }
-        var networks = {
+        let networks = {
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'network'),
         }
-        var hulls = {
+        let hulls = {
             'type': 'FeatureCollection',
             'features': Object.entries(
                 groupBy(stations.features,elem => elem.properties.tag)).map(
@@ -104,7 +180,7 @@
                     }
                 ).filter(n => n)
         }
-        var fitBoundsOptions = {
+        let fitBoundsOptions = {
           'networks': {
             duration: 0,
             padding: { top: 25, left: 100, bottom: 25, right: 75 }
@@ -116,18 +192,15 @@
           },
         }
 
-        var map = new maplibregl.Map({
+        let map = new maplibregl.Map({
           container: 'map',
           style: 'https://tiles.citybik.es/styles/basic-preview/style.json',
           center: [5, 24],
           zoom: 2,
         });
 
-        map.on('load', function() {
-            map.addSource('stations', {'type': 'geojson', data: stations, generateId: true});
-            map.addSource('networks', {'type': 'geojson', data: networks});
-            map.addSource('hulls', {'type': 'geojson', data: hulls});
-            map.addLayer({
+        const layers = {
+            networks: {
                 id: 'networks',
                 type: 'circle',
                 source: 'networks',
@@ -146,8 +219,8 @@
                         '#009933',
                     ],
                 }
-            })
-            map.addLayer({
+            },
+            stations: {
                 id: 'stations',
                 type: 'circle',
                 source: 'stations',
@@ -174,74 +247,55 @@
                         'rgba(84, 7, 91, 0.7)',
                     ],
                 }
-            })
-            map.addLayer({
-              'id': 'hulls',
-              'type': 'fill',
-              'source': 'hulls',
-              'layout': {},
-              'paint': {
-                'fill-color': '#444444',
-                'fill-opacity': 0.2
+            },
+            hulls: {
+              id: 'hulls',
+              type: 'fill',
+              source: 'hulls',
+              layout: {},
+              paint: {
+                "fill-color": '#444444',
+                "fill-opacity": 0.2,
               }
+            },
+        }
+
+        map.on('load', function() {
+            map.addSource('stations', {'type': 'geojson', data: stations, generateId: true});
+            map.addSource('networks', {'type': 'geojson', data: networks});
+            map.addSource('hulls', {'type': 'geojson', data: hulls});
+            map.addLayer(layers.networks)
+            map.addLayer(layers.stations)
+            map.addLayer(layers.hulls)
+            map.on('mousemove', (e) => {
+                if (anchored_event) return
+                debugZone(e)
             })
 
-            map.on('click', e => {
-                // Set `bbox` as 5px reactangle area around clicked point.
-                const bbox = [
-                    [e.point.x - 5, e.point.y - 5],
-                    [e.point.x + 5, e.point.y + 5]
-                ];
-                const selectedFeatures = map.queryRenderedFeatures(bbox, {
-                    layers: ['stations', 'networks']
-                });
-
-                const selHull = map.queryRenderedFeatures(bbox, {
-                    layers: ['hulls'],
-                })
-
-                var data = "";
-
-                data += 'LatLng: ' + e.lngLat.lat + ', ' + e.lngLat.lng + '\n';
-
-                if (selHull.length > 0) {
-                    data += 'Zone: ' + selHull[0].properties.tag + '\n';
-                }
-
-                if (selectedFeatures.length) {
-                    var elem = selectedFeatures[0]
-                    var std = elem.properties
-
-                    if (std.extra) {
-                        // nested properties get stringified in mapbox-gl
-                        std.extra = JSON.parse(std.extra)
-                    }
-
-                    data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
-
-                    if (last_selected)
-                        map.removeFeatureState({'source': last_selected.source, id: last_selected.id})
-
-                    map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
-                    last_selected = elem
-                }
-
-                document.getElementById('theconsole').innerHTML = data;
+            map.on('click', (e) => {
+                // Anchor event
+                anchored_event = e
+                debugZone(e)
+                document.querySelector('div#console a.close').classList.add('visible')
             })
+
+            map.on('contextmenu', removeAnchor)
         });
 
         document.querySelectorAll('a.instance-link').forEach(link => {
             link.addEventListener('click', function (ev) {
                 ev.preventDefault();
-                var tag = ev.target.dataset.tag;
-                var elements = stations.features.filter(elem => elem.properties.tag == tag);
+                const tag = ev.target.dataset.tag;
+                let elements = stations.features.filter(elem => elem.properties.tag == tag);
                 if (!elements.length) {
                     elements = networks.features.filter(elem => elem.properties.tag == tag)
                 }
-                var bbox = turf.bbox({'type': 'FeatureCollection', 'features': elements});
+                const bbox = turf.bbox({'type': 'FeatureCollection', 'features': elements});
                 map.fitBounds(bbox, fitBoundsOptions['stations']);
             })
         })
+
+        document.querySelector('div#console a.close').addEventListener('click', removeAnchor)
     </script>
   </body>
 </html>
