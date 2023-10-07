@@ -2,6 +2,7 @@
     "instances": [
         {
             "tag": "mibisivalencia",
+            "feed_url": "https://www.mibisivalencia.es/mapa/mapa.php",
             "meta": {
                 "city": "Valencia, área metropolitana",
                 "country": "ES",
@@ -61,8 +62,19 @@
                     }
                 ]
             }
+        },
+        {
+            "tag": "bicisanvi",
+            "feed_url": "https://www.bicisanvi.es/online.php",
+            "meta": {
+                "city": "Sant Vicent del Raspeig",
+                "country": "ES",
+                "name": "Bicisanvi",
+                "latitude": 38.39611,
+                "longitude": -0.5236
+            }
         }
     ],
-    "system": "mibisivalencia",
-    "class": "MiBisiValencia"
+    "system": "movus",
+    "class": "Movus"
 }
