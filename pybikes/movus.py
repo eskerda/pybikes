@@ -11,14 +11,11 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 class Movus(BikeShareSystem):
     sync = True
 
-    company = ['Movilidad Urbana Sostenible SLU']
+    meta = {
+        "company": ['Movilidad Urbana Sostenible SLU'],
+    }
 
     def __init__(self, tag, meta, feed_url, ebikes):
-        if 'company' in meta:
-            meta['company'] += Movus.company
-        else:
-            meta['company'] = Movus.company
-
         super(Movus, self).__init__(tag, meta)
         self.feed_url = feed_url
         self.ebikes = ebikes
