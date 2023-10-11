@@ -1,0 +1,20 @@
+{
+    "instances": [
+        {
+            "tag": "bici-bolzano",
+            "network": "BZ",
+            "meta": {
+                "city": "Bolzano",
+                "country": "IT",
+                "name": "Bici Bolzano",
+                "latitude": 46.4900,
+                "longitude": 11.3401,
+                "company": [
+                    "Ecospazio Logiss S.r.l."
+                ]
+            }
+        }
+    ],
+    "system": "openmove",
+    "class": "OpenMove"
+}
