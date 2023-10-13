@@ -2,21 +2,16 @@
 # Copyright (C) 2023, Martín González Gómez <m@martingonzalez.net>
 # Distributed under the AGPL license, see LICENSE.txt
 
+from pybikes import PyBikesScraper
 from pybikes.gbfs import Gbfs
 from pybikes.contrib import TSTCache
 
 
 FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/{provider}/gbfs'
 
-# caches the feed for 60s
-cache = TSTCache(delta=60)
-
 
 class DB(Gbfs):
     authed = True
-
-    # All networks within use the same data feed
-    unifeed = True
 
     meta = {
         'company': ['Deutsche Bahn AG'],
@@ -41,7 +36,7 @@ class DB(Gbfs):
         }
 
     def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper(cache)
+        scraper = scraper or PyBikesScraper()
         scraper.headers.update(self.auth_headers)
         super(DB, self).update(scraper)
 
@@ -56,6 +51,12 @@ class Callabike(DB):
 
     provider = 'CallABike'
 
+    # caches the feed for 60s
+    cache = TSTCache(delta=60)
 
     def __init__(self, * args, ** kwargs):
         super(Callabike, self).__init__(* args, ** kwargs, provider=Callabike.provider)
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper(self.cache)
+        super(Callabike, self).update(scraper)
