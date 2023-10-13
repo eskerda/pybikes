@@ -1,0 +1,97 @@
+{
+    "system": "deutschebahn",
+    "class": {
+        "Callabike": {
+            "instances": [
+                {
+                    "tag": "callabike-koln",
+                    "bbox": [[50.83044, 6.77253], [51.084974, 7.162028]],
+                    "meta": {
+                        "city": "Köln",
+                        "latitude": 50.9390,
+                        "longitude": 6.9595,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "callabike-berlin",
+                    "bbox": [[52.236398, 12.779306], [52.829506, 14.056467]],
+                    "meta": {
+                        "city": "Berlin",
+                        "latitude": 52.5179,
+                        "longitude": 13.3895,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "callabike-frankfurt",
+                    "bbox": [[50.008608, 8.47276], [50.227143, 8.888954]],
+                    "meta": {
+                        "city": "Frankfurt",
+                        "latitude": 50.1109,
+                        "longitude": 8.6795,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "callabike-munchen",
+                    "bbox": [[48.0279, 11.3236], [48.3182, 11.8655]],
+                    "meta": {
+                        "city": "München",
+                        "latitude": 48.1375,
+                        "longitude": 11.5759,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "callabike-darmstadt",
+                    "bbox": [[49.795668, 8.558161], [49.953804, 8.866771]],
+                    "meta": {
+                        "city": "Darmstadt",
+                        "latitude": 49.8707135,
+                        "longitude": 8.6527299,
+                        "country": "DE"
+                    }
+                }
+            ]
+        },
+        "DB": {
+            "instances": [
+                {
+                    "tag": "stadtrad-hamburg-db",
+                    "provider": "StadtRadHamburg",
+                    "meta": {
+                        "name": "StadtRAD Hamburg",
+                        "city": "Hamburg",
+                        "latitude": 53.550308,
+                        "longitude": 10.00063,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "stadtrad-lueneburg",
+                    "provider": "StadtRADLueneburg",
+                    "meta": {
+                        "name": "StadtRAD Lüneburg",
+                        "city": "Lüneburg",
+                        "latitude": 53.248697,
+                        "longitude": 10.407776,
+                        "country": "DE"
+                    }
+                },
+                {
+                    "tag": "stadtrad-stuttgart",
+                    "provider": "RegioRadStuttgart",
+                    "meta": {
+                        "name": "RegioRadStuttgart",
+                        "city": "Stuttgart",
+                        "latitude": 48.778147,
+                        "longitude": 9.1801512,
+                        "country": "DE"
+                    }
+                }
+
+            ]
+        }
+    }
+}
