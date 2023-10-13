@@ -81,6 +81,11 @@ class Gbfs(BikeShareSystem):
             return self.feeds
 
         feed_data = scraper.request(url, raw=True)
+
+        # do not hide Unauthorized or Too many requests status codes
+        if scraper.last_request.status_code in [401, 429]:
+            raise Exception(feed_data)
+
         if scraper.last_request.status_code >= 400:
             # GBFS service description not found. Try to guess based on
             # defaults
