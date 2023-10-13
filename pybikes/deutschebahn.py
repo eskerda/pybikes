@@ -14,6 +14,18 @@ FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobilit
 class DB(Gbfs):
     authed = True
 
+    cache = True
+    cache_deltas = {
+        # 12 hours
+        'gbfs': 12 * 60 * 60,
+        # 1 hour
+        'station_information': 60 * 60,
+        # 60 seconds
+        'station_status': 60,
+        # 12 hours
+        'vehicle_types': 12 * 60 * 60,
+    }
+
     meta = {
         'company': ['Deutsche Bahn AG'],
         'system': 'deutschebahn',
@@ -52,12 +64,5 @@ class Callabike(DB):
 
     provider = 'CallABike'
 
-    # caches the feed for 60s
-    cache = TSTCache(delta=60)
-
     def __init__(self, * args, ** kwargs):
         super(Callabike, self).__init__(* args, provider=Callabike.provider, ** kwargs)
-
-    def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper(self.cache)
-        super(Callabike, self).update(scraper)
