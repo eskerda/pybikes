@@ -6,35 +6,30 @@ from pybikes.gbfs import Gbfs
 from pybikes.contrib import TSTCache
 
 
-FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike'
-STATION_INFORMATION = FEED_URL + '/station_information'
-STATION_STATUS = FEED_URL + '/station_status'
+FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/{provider}/gbfs'
 
 # caches the feed for 60s
 cache = TSTCache(delta=60)
 
 
-class Callabike(Gbfs):
+class DB(Gbfs):
     authed = True
 
     # All networks within use the same data feed
     unifeed = True
 
     meta = {
-        'name': 'Call-A-Bike',
-        'system': 'callabike',
         'company': ['Deutsche Bahn AG'],
+        'system': 'deutschebahn',
     }
 
-    def __init__(self, tag, meta, key, bbox):
+    def __init__(self, tag, meta, key, bbox, provider):
         self.key = key
-        super(Callabike, self).__init__(
+        super(DB, self).__init__(
             tag,
             meta,
-            FEED_URL,
+            FEED_URL.format(provider=provider),
             bbox=bbox,
-            station_information=STATION_INFORMATION,
-            station_status=STATION_STATUS
         )
 
     @property
@@ -48,4 +43,19 @@ class Callabike(Gbfs):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper(cache)
         scraper.headers.update(self.auth_headers)
-        super(Callabike, self).update(scraper)
+        super(DB, self).update(scraper)
+
+
+class Callabike(DB):
+    # All networks within use the same data feed
+    unifeed = True
+
+    meta = {
+        'name': 'Call-A-Bike',
+    }
+
+    provider = 'CallABike'
+
+
+    def __init__(self, * args, ** kwargs):
+        super(Callabike, self).__init__(* args, ** kwargs, provider=Callabike.provider)

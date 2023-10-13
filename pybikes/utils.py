@@ -58,9 +58,6 @@ class PyBikesScraper(object):
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
                 headers=None, default_encoding='UTF-8', skip_cache=False):
-        # XXX proper encode arguments for proper call args -> response
-        if self.cachedict and url in self.cachedict and not skip_cache:
-            return self.cachedict[url]
 
         if self.retry:
             retries = Retry(** self.retry_opts)
@@ -69,18 +66,22 @@ class PyBikesScraper(object):
         _headers = self.headers.copy()
         _headers.update(headers or {})
 
-        response = self.session.request(
-            method=method,
-            url=url,
-            params=params,
-            data=data,
-            proxies=self.getProxies(),
-            headers=_headers,
-            # some endpoints might fail verification, so it's up to the spider
-            # to disable it
-            verify=self.ssl_verification,
-            timeout=self.requests_timeout,
-        )
+        # XXX proper encode arguments for proper call args -> response
+        if self.cachedict and url in self.cachedict and not skip_cache:
+            response = self.cachedict[url]
+        else:
+            response = self.session.request(
+                method=method,
+                url=url,
+                params=params,
+                data=data,
+                proxies=self.getProxies(),
+                headers=_headers,
+                # some endpoints might fail verification, so it's up to the spider
+                # to disable it
+                verify=self.ssl_verification,
+                timeout=self.requests_timeout,
+            )
 
         data = response.text
 
@@ -97,8 +98,10 @@ class PyBikesScraper(object):
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
         self.last_request = response
+
         if self.cachedict is not None:
-            self.cachedict[url] = data
+            self.cachedict[url] = response
+
         return data
 
     def clearCookie(self):
@@ -160,7 +163,7 @@ keys.weelo = {
     'client_id': keys.weelo_client_id,
     'client_secret': keys.weelo_client_secret,
 }
-keys.callabike = {
-    'client_id': keys.callabike_client_id,
-    'client_secret': keys.callabike_client_secret,
+keys.deutschebahn = {
+    'client_id': keys.deutschebahn_client_id,
+    'client_secret': keys.deutschebahn_client_secret,
 }
