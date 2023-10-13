@@ -60,7 +60,7 @@ class BaseInstanceTest(object):
     def test_update(self, instance, i_data, cls, mod, record_property):
         scraper = pybikes.PyBikesScraper(
             # use a simple dict cache for systems that use a single endpoint
-            cachedict=cache if instance.unifeed else None,
+            cachedict=cache if (instance.unifeed or instance.cache) else None,
             # reuse headers per mod
             headers=headers.setdefault(mod, {}),
         )

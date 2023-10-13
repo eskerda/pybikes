@@ -12,6 +12,7 @@ except ImportError:
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
+from pybikes.contrib import TSTCache
 
 try:
     # Python 2
@@ -29,6 +30,7 @@ class Gbfs(BikeShareSystem):
     # not change so often, like vehicle_types or station_information
     # XXX: Additionally, some responses come with a ttl, which could be
     # respected too
+    cache = False
     cache_deltas = {
         'gbfs': None,
         'station_information': None,
@@ -45,6 +47,9 @@ class Gbfs(BikeShareSystem):
         station_information=False,
         station_status=False,
         ignore_errors=False,
+        cache=False,
+        cache_default_delta=60,
+        cache_deltas=None,
         retry=None,
         bbox=None,
     ):
@@ -56,6 +61,9 @@ class Gbfs(BikeShareSystem):
         self.ignore_errors = ignore_errors
         self.retry = retry
         self.bbox = bbox
+
+        self.cache = (self.cache or cache) and TSTCache(delta=cache_default_delta)
+        self.cache_deltas.update(cache_deltas or {})
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -129,27 +137,30 @@ class Gbfs(BikeShareSystem):
 
 
     def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper()
+        scraper = scraper or PyBikesScraper(self.cache or None)
         if self.retry:
             scraper.retry = True
             scraper.retry_opts.update(self.retry)
 
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
-        info_delta = self.cache_deltas['station_information']
-        status_delta = self.cache_deltas['station_status']
+        cache_d = self.cache_deltas
 
-        # Station Information and Station Status data retrieval
-        station_information = json.loads(
-            scraper.request(feeds['station_information'], cache_with_delta=info_delta)
-        )['data']['stations']
-        station_status = json.loads(
-            scraper.request(feeds['station_status'], cache_with_delta=status_delta)
-        )['data']['stations']
+        info_rq = scraper.request(feeds['station_information'],
+            cache_with_delta=cache_d['station_information'],
+        )
+        station_information = json.loads(info_rq)['data']['stations']
+
+        status_rq = scraper.request(feeds['station_status'],
+            cache_with_delta=cache_d['station_status'],
+        )
+        station_status = json.loads(status_rq)['data']['stations']
 
         if 'vehicle_types' in feeds:
-            vehicle_delta = self.cache_deltas['vehicle_types']
-            vehicle_info = json.loads(scraper.request(feeds['vehicle_types'], cache_with_delta=vehicle_delta))
+            vehicle_rq = scraper.request(feeds['vehicle_types'],
+                cache_with_delta=cache_d['vehicle_types'],
+            )
+            vehicle_info = json.loads(vehicle_rq)
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
