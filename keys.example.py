@@ -9,7 +9,7 @@ bicimad = {
     'passkey': '<some pass key>',
     'clientid': '<some client id>',
 }
-callabike = {
+deutschebahn = {
     # Get your credentials at https://developers.deutschebahn.com
     'client_id': '<some client id>',
     'client_secret': '<some client secret>',
