@@ -25,6 +25,17 @@ class Gbfs(BikeShareSystem):
 
     station_cls = None
 
+    # Specific deltas can be configured here to cache parts of the feed that do
+    # not change so often, like vehicle_types or station_information
+    # XXX: Additionally, some responses come with a ttl, which could be
+    # respected too
+    cache_deltas = {
+        'gbfs': None,
+        'station_information': None,
+        'station_status': None,
+        'vehicle_types': None,
+    }
+
     def __init__(
         self,
         tag,
@@ -80,7 +91,11 @@ class Gbfs(BikeShareSystem):
         if self.feeds:
             return self.feeds
 
-        feed_data = scraper.request(url, raw=True)
+        feed_data = scraper.request(
+            url,
+            raw=True,
+            cache_with_delta=self.cache_deltas['gbfs'],
+        )
 
         # do not hide Unauthorized or Too many requests status codes
         if scraper.last_request.status_code in [401, 429]:
@@ -121,16 +136,20 @@ class Gbfs(BikeShareSystem):
 
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
+        info_delta = self.cache_deltas['station_information']
+        status_delta = self.cache_deltas['station_status']
+
         # Station Information and Station Status data retrieval
         station_information = json.loads(
-            scraper.request(feeds['station_information'])
+            scraper.request(feeds['station_information'], cache_with_delta=info_delta)
         )['data']['stations']
         station_status = json.loads(
-            scraper.request(feeds['station_status'])
+            scraper.request(feeds['station_status'], cache_with_delta=status_delta)
         )['data']['stations']
 
         if 'vehicle_types' in feeds:
-            vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
+            vehicle_delta = self.cache_deltas['vehicle_types']
+            vehicle_info = json.loads(scraper.request(feeds['vehicle_types'], cache_with_delta=vehicle_delta))
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {

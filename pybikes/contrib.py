@@ -34,9 +34,14 @@ class TSTCache(dict):
             raise KeyError('%s' % key)
         if key not in self.store:
             raise KeyError('%s' % key)
+
         ts_value = self.store[key]
-        if time.time() - ts_value['ts'] > self.delta:
+        the_time = time.time()
+        delta = ts_value.get('delta', self.delta)
+
+        if the_time - ts_value['ts'] > delta:
             raise KeyError('%s' % key)
+
         return ts_value['value']
 
     def __contains__(self, key):
@@ -58,3 +63,11 @@ class TSTCache(dict):
 
     def __transform_key__(self, key):
         return key
+
+    def set_with_delta(self, key, value, delta):
+        """ Set a key-value with a specific delta """
+        self.store[key] = {
+            'value': value,
+            'ts': time.time(),
+            'delta': delta,
+        }

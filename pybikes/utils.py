@@ -57,7 +57,8 @@ class PyBikesScraper(object):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
-                headers=None, default_encoding='UTF-8', skip_cache=False):
+                headers=None, default_encoding='UTF-8', skip_cache=False,
+                cache_with_delta=None):
 
         if self.retry:
             retries = Retry(** self.retry_opts)
@@ -66,8 +67,10 @@ class PyBikesScraper(object):
         _headers = self.headers.copy()
         _headers.update(headers or {})
 
+        cached = self.cachedict and url in self.cachedict and not skip_cache
+
         # XXX proper encode arguments for proper call args -> response
-        if self.cachedict and url in self.cachedict and not skip_cache:
+        if cached:
             response = self.cachedict[url]
         else:
             response = self.session.request(
@@ -99,8 +102,11 @@ class PyBikesScraper(object):
             self.headers['Cookie'] = response.headers['set-cookie']
         self.last_request = response
 
-        if self.cachedict is not None:
-            self.cachedict[url] = response
+        if not cached and self.cachedict is not None and response.status_code in [200, 206]:
+            if cache_with_delta:
+                self.cachedict.set_with_delta(url, response, delta=cache_with_delta)
+            else:
+                self.cachedict[url] = response
 
         return data
 
