@@ -55,7 +55,7 @@ class Callabike(DB):
     cache = TSTCache(delta=60)
 
     def __init__(self, * args, ** kwargs):
-        super(Callabike, self).__init__(* args, ** kwargs, provider=Callabike.provider)
+        super(Callabike, self).__init__(* args, provider=Callabike.provider, ** kwargs)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper(self.cache)
