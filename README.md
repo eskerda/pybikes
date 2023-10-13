@@ -130,6 +130,20 @@ To run integration tests
 make test-update
 ```
 
+Note that some systems require authorization keys, tests expect these to be
+set as environment variables like:
+
+```bash
+PYBIKES_CYCLOCITY='some-api-key'
+PYBIKES_DEUTSCHEBAHN_CLIENT_ID='some-client-id'
+PYBIKES_DEUTSCHEBAHN_CLIENT_SECRET='some-client-secret'
+
+# or if using an .env file
+# source .env
+
+make test-update
+```
+
 This project uses pytest for tests. Test a particular network by passing a
 filter expresson
 
