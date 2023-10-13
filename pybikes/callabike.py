@@ -3,7 +3,12 @@
 # Copyright (C) 2021, Altonss https://github.com/Altonss
 # Distributed under the AGPL license, see LICENSE.txt
 
+from pybikes.utils import keys
 from pybikes.gbfs import Gbfs
+
+STATION_INFORMATION = '{feed_url}/station_information'
+STATION_STATUS = '{feed_url}/station_status'
+
 
 class Callabike(Gbfs):
     authed = True
@@ -13,23 +18,29 @@ class Callabike(Gbfs):
         'company': ['DB'],
     }
 
-    def __init__(self, tag, meta, feed_url, key):
+    def __init__(self, tag, meta, feed_url, key, bbox):
         super(Callabike, self).__init__(tag, meta, feed_url)
-        self.key = key
+        self.bbox = bbox
+
+    @property
+    def station_information(self):
+        return STATION_INFORMATION.format(feed_url=self.feed_url)
+
+    @property
+    def station_status(self):
+        return STATION_STATUS.format(feed_url=self.feed_url)
 
     @staticmethod
-    def authorize(scraper, key):
+    def authorize(scraper):
         request = scraper.request
 
-        print(key)
         headers = {
-            'DB-Client-Id': key['client_id'],
-            'DB-Api-Key': key['client_secret'],
+            'DB-Client-Id': keys.client_id,
+            'DB-Api-Key': keys.client_secret,
             'accept': "application/json"
         }
 
         def _request(*args, **kwargs):
-            headers = kwargs.get('headers', {})
             kwargs['headers'] = headers
             return request(*args, **kwargs)
 
@@ -37,14 +48,13 @@ class Callabike(Gbfs):
 
     @property
     def default_feeds(self):
-        url = self.feed_url
         return {
-            "station_information": 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike/station_information',
-            "station_status": 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike/station_status',
+            "station_information": self.station_information,
+            "station_status": self.station_status,
         }
 
     def update(self, scraper=None):
         # Patch default scraper request method
         scraper = scraper or PyBikesScraper()
-        Callabike.authorize(scraper, self.key)
+        Callabike.authorize(scraper)
         super(Callabike, self).update(scraper)

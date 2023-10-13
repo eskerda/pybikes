@@ -1,12 +1,61 @@
 {
     "instances": [
         {
-            "tag": "callabike-darmstadt",
-            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike/gbfs",
+            "tag": "callabike-koln",
+            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike",
+            "bbox": [[50.83044, 6.77253], [51.084974, 7.162028]],
             "meta": {
-                "latitude": 49.8707135,
+                "city": "Köln",
+                "name": "Call-A-Bike Köln",
+                "latitude": 50.9390,
+                "longitude": 6.9595,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-berlin",
+            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike",
+            "bbox": [[52.236398, 12.779306], [52.829506, 14.056467]],
+            "meta": {
+                "city": "Berlin",
+                "name": "Call-A-Bike Berlin",
+                "latitude": 52.5179,
+                "longitude": 13.3895,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-frankfurt",
+            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike",
+            "bbox": [[50.008608, 8.47276], [50.227143, 8.888954]],
+            "meta": {
+                "city": "Frankfurt",
+                "name": "Call-A-Bike Frankfurt",
+                "latitude": 50.1109,
+                "longitude": 8.6795,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-munchen",
+            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike",
+            "bbox": [[48.0279, 11.3236], [48.3182, 11.8655]],
+            "meta": {
+                "city": "München",
+                "name": "Call-A-Bike München",
+                "latitude": 48.1375,
+                "longitude": 11.5759,
+                "country": "DE"
+            }
+        },
+        {
+            "tag": "callabike-darmstadt",
+            "feed_url": "https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/CallABike",
+            "bbox": [[49.795668, 8.558161], [49.953804, 8.866771]],
+            "meta": {
                 "city": "Darmstadt",
                 "name": "Call-A-Bike Darmstadt",
+                "latitude": 49.8707135,
                 "longitude": 8.6527299,
                 "country": "DE"
             }
