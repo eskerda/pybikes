@@ -23,7 +23,7 @@ class DB(Gbfs):
         'system': 'deutschebahn',
     }
 
-    def __init__(self, tag, meta, key, bbox, provider):
+    def __init__(self, tag, meta, key, provider, bbox=None):
         self.key = key
         super(DB, self).__init__(
             tag,
