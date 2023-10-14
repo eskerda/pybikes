@@ -192,6 +192,18 @@
                         "country": "FR"
                     },
                     "dataset": "saclay"
+                },
+                {
+                    "tag": "petites-reines",
+                    "meta": {
+                        "city": "Les Sables d'Olonne",
+                        "name": "Les Petites Reines",
+                        "ebikes": true,
+                        "latitude": 46.4971,
+                        "longitude": -1.7805,
+                        "country": "FR"
+                    },
+                    "dataset": "petitesreines"
                 }
             ]
         }
