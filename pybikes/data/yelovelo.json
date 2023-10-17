@@ -1,0 +1,17 @@
+{
+    "system": "yelovelo",
+    "class": "YeloVelo",
+    "instances": [
+        {
+            "tag": "yelo-velo",
+            "meta": {
+                "city": "La Rochelle",
+                "name": "Yélo Vélo",
+                "latitude": 46.1591,
+                "longitude": -1.1509,
+                "country": "FR",
+                "company": ["Communauté d'Agglomération de La Rochelle"]
+            }
+        }
+    ]
+}
