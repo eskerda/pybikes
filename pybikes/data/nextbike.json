@@ -2699,6 +2699,23 @@
                     "Movilidad Urbana Sostenible, S.L"
                 ]
             }
+        },
+        {
+            "domain": "ex",
+            "tag": "getxobizi",
+            "city_uid": 749,
+            "meta": {
+                "name": "Getxobizi",
+                "city": "Getxo",
+                "country": "ES",
+                "latitude": 43.3476,
+                "longitude": -3.0088,
+                "company": [
+                    "UTE TIER",
+                    "Mobility SE",
+                    "Empresa Sagales SA GETXOBIZI"
+                ]
+            }
         }
     ],
     "system": "nextbike",
