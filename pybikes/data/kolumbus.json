@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "tag": "kolumbus-rogaland",
+            "bbox": [[58.3935, 4.8855], [59.6411, 6.7337]],
+            "meta": {
+                "country": "NO",
+                "city": "Rogaland",
+                "name": "Bysykkelen",
+                "latitude": 58.9689,
+                "longitude": 5.7310,
+                "ebikes": true
+            }
+        }
+    ],
+    "system": "kolumbus",
+    "class": "Kolumbus"
+}
