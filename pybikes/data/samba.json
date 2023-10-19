@@ -83,6 +83,17 @@
                         "longitude":-46.333345,
                         "country":"BR"
                     }
+                },
+                {
+                    "url": "https://www.bicicuenca.com/mapaestacao.aspx",
+                    "tag": "bicicuenca",
+                    "meta": {
+                        "latitude": -2.8970,
+                        "longitude": -79.0038,
+                        "name": "Bici Pública Cuenca",
+                        "city": "Cuenca",
+                        "country": "EC"
+                    }
                 }
             ]
         }
