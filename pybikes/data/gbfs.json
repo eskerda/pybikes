@@ -1115,7 +1115,12 @@
                     "Fifteen SAS"
                 ],
                 "latitude": 48.4512,
-                "longitude": -4.2551
+                "longitude": -4.2551,
+                "source": "https://www.data.gouv.fr/fr/datasets/r/e32b6154-ab60-4eca-8271-0ce846c7bace",
+                "license": {
+                    "name": "Open Data Commons Open Database License (ODbL)",
+                    "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                }
             },
             "feed_url": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/gbfs.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
             "station_information": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_information.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
