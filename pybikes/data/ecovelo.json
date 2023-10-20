@@ -204,6 +204,18 @@
                         "country": "FR"
                     },
                     "dataset": "petitesreines"
+                },
+                {
+                    "tag": "cyclolibre",
+                    "meta": {
+                        "city": "Carcassonne",
+                        "name": "CYCLOlibre",
+                        "ebikes": true,
+                        "latitude": 43.2127,
+                        "longitude": 2.3492,
+                        "country": "FR"
+                    },
+                    "dataset": "cyclolibre"
                 }
             ]
         }
