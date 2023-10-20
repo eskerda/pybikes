@@ -53,7 +53,8 @@ class KolumbusStation(BikeShareStation):
         # this means we could have more bikes than slots: in that case count it as 0
         self.free = max(slots - bikes, 0)
         self.extra = {
-            'ebikes': True,
+            'has_ebikes': True,
             'slots': slots,
-            'uid': data['id']
+            'uid': data['id'],
+            'number': int(data['external_id']),
         }
