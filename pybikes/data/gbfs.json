@@ -1125,6 +1125,92 @@
             "feed_url": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/gbfs.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
             "station_information": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_information.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
             "station_status": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_status.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0"
+        },
+        {
+            "tag": "velopartage-geneve",
+            "meta": {
+                "city": "Genève",
+                "name": "VéloPartage",
+                "country": "CH",
+                "company": [
+                    "Genèveroule",
+                    "Donkey Republic"
+                ],
+                "latitude": 46.2021,
+                "longitude": 6.1457
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_ge/gbfs.json"
+        },
+        {
+            "tag": "regivelo-kreuzlingen",
+            "meta": {
+                "city": "Kreuzlingen",
+                "name": "Regivelo",
+                "country": "CH",
+                "company": [
+                    "Regivelo",
+                    "Donkey Republic"
+                ],
+                "latitude": 47.6460,
+                "longitude": 9.1716
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/gbfs.json"
+        },
+        {
+            "tag": "lelocleroule",
+            "meta": {
+                "city": "Le Locle",
+                "name": "LeLocleroule",
+                "country": "CH",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 47.0554,
+                "longitude": 6.7466
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_le_locle/gbfs.json"
+        },
+        {
+            "tag": "neuchatelroule",
+            "meta": {
+                "city": "Neuchâtel",
+                "name": "Neuchâtelroule",
+                "country": "CH",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 46.9916,
+                "longitude": 6.9269
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_neuchatel/gbfs.json"
+        },
+        {
+            "tag": "thun",
+            "meta": {
+                "city": "Thun",
+                "name": "Donkey Republic Thun",
+                "country": "CH",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 46.7576,
+                "longitude": 7.6287
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_thun/gbfs.json"
+        },
+        {
+            "tag": "yverdon-les-bains",
+            "meta": {
+                "city": "Yverdon-les-Bains",
+                "name": "Donkey Republic Yverdon-les-Bains",
+                "country": "CH",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 46.7788,
+                "longitude": 6.6414
+            },
+            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_yverdon-les-bains/gbfs.json"
         }
     ],
     "system": "gbfs",
