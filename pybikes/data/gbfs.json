@@ -1211,6 +1211,35 @@
                 "longitude": 6.6414
             },
             "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_yverdon-les-bains/gbfs.json"
+        },
+        {
+            "tag": "hibike",
+            "meta": {
+                "city": "Kailua-Kona",
+                "name": "Hibike",
+                "country": "US",
+                "company": [
+                    "Bikeshare Hawaii Island"
+                ],
+                "latitude": 19.6417,
+                "longitude": -155.9962
+            },
+            "bbox": [[18.704, -156.4264], [20.4842, -154.5371]],
+            "feed_url": "https://kona.publicbikesystem.net/customer/ube/gbfs/v1/en/gbfs.json"
+        },
+        {
+            "tag": "gobiki",
+            "meta": {
+                "city": "Honolulu",
+                "name": "Biki",
+                "country": "US",
+                "company": [
+                    "Bikeshare Hawaii Island"
+                ],
+                "latitude": 21.3043,
+                "longitude": -157.8560
+            },
+            "feed_url": "https://hon.publicbikesystem.net/customer/ube/gbfs/v1/en/gbfs.json"
         }
     ],
     "system": "gbfs",
