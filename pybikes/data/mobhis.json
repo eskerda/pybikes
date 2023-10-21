@@ -1,0 +1,28 @@
+{
+    "instances": [
+        {
+            "tag": "passofundo",
+            "meta": {
+                "city": "Passo Fundo",
+                "name": "Passo Fundo Vai de Bici",
+                "latitude": -28.2555,
+                "longitude": -52.3981,
+                "country": "BR"
+            },
+            "feed_url": "https://pfvaidebici.mobhis.com.br/"
+        },
+        {
+            "tag": "cascavel",
+            "meta": {
+                "city": "Cascavel",
+                "name": "Cascavel Vai de Bici",
+                "latitude": -24.9558,
+                "longitude": -53.4566,
+                "country": "BR"
+            },
+            "feed_url": "https://www.cascavelvaidebici.mobhis.com.br/"
+        }
+    ],
+    "system": "mobhis",
+    "class": "Mobhis"
+}
