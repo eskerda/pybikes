@@ -1,0 +1,105 @@
+{
+    "system": "bizkaibizi",
+    "class": "Bizkaibizi",
+    "instances": [
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-bilbao",
+            "city_uid": 873,
+            "meta": {
+                "city": "Bilbao",
+                "country": "ES",
+                "latitude": 43.2617,
+                "longitude": -2.9491
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-erandio",
+            "city_uid": 903,
+            "meta": {
+                "city": "Erandio",
+                "country": "ES",
+                "latitude": 43.3029,
+                "longitude": -2.9756
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-getxo",
+            "city_uid": 904,
+            "meta": {
+                "city": "getxo",
+                "country": "ES",
+                "latitude": 43.3476,
+                "longitude": -3.0088
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-leioa",
+            "city_uid": 905,
+            "meta": {
+                "city": "Leioa",
+                "country": "ES",
+                "latitude": 43.3266,
+                "longitude": -2.9897
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-santurtzi",
+            "city_uid": 906,
+            "meta": {
+                "city": "Santurtzi",
+                "country": "ES",
+                "latitude": 43.3280,
+                "longitude": -3.0335
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-barakaldo",
+            "city_uid": 907,
+            "meta": {
+                "city": "Barakaldo",
+                "country": "ES",
+                "latitude": 43.2966,
+                "longitude": -2.9870
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-sestao",
+            "city_uid": 908,
+            "meta": {
+                "city": "Sestao",
+                "country": "ES",
+                "latitude": 43.3093,
+                "longitude": -3.0068
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-portugalete",
+            "city_uid": 909,
+            "meta": {
+                "city": "Portugalete",
+                "country": "ES",
+                "latitude": 43.3180,
+                "longitude": -3.0214
+            }
+        },
+        {
+            "domain": "bw",
+            "tag": "bizkaibizi-berango",
+            "city_uid": 910,
+            "meta": {
+                "city": "Berango",
+                "country": "ES",
+                "latitude": 43.3619,
+                "longitude": -2.9968
+            }
+        }
+    ]
+}
