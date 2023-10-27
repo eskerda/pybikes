@@ -216,6 +216,78 @@
                         "country": "FR"
                     },
                     "dataset": "cyclolibre"
+                },
+                {
+                    "tag": "karuvelo",
+                    "meta": {
+                        "city": "Pointe-à-Pitre",
+                        "name": "Karu'Vélo",
+                        "ebikes": true,
+                        "latitude": 16.2411,
+                        "longitude": -61.5331,
+                        "country": "FR"
+                    },
+                    "dataset": "karuvelo"
+                },
+                {
+                    "tag": "velibeo",
+                    "meta": {
+                        "city": "Brive-la-Gaillarde",
+                        "name": "Vélibéo",
+                        "ebikes": true,
+                        "latitude": 45.1583,
+                        "longitude": 1.5321,
+                        "country": "FR"
+                    },
+                    "dataset": "velibeo"
+                },
+                {
+                    "tag": "cyclam",
+                    "meta": {
+                        "city": "Ardenne Métropole",
+                        "name": "Cycl’AM",
+                        "ebikes": true,
+                        "latitude": 49.7719,
+                        "longitude": 4.7161,
+                        "country": "FR"
+                    },
+                    "dataset": "cyclam"
+                },
+                {
+                    "tag": "perivelo",
+                    "meta": {
+                        "city": "Grand Périgueux",
+                        "name": "Périvélo",
+                        "ebikes": true,
+                        "latitude": 45.1929,
+                        "longitude": 0.7217,
+                        "country": "FR"
+                    },
+                    "dataset": "perivelolibreservice"
+                },
+                {
+                    "tag": "velodaqui",
+                    "meta": {
+                        "city": "Argelès-sur-Mer",
+                        "name": "Vélos d’Aquí",
+                        "ebikes": true,
+                        "latitude": 42.5449,
+                        "longitude": 3.0235,
+                        "country": "FR"
+                    },
+                    "dataset": "velodaqui"
+                },
+                {
+                    "tag": "choletbus",
+                    "meta": {
+                        "city": "Cholet",
+                        "name": "Choletbus 2 roues",
+                        "ebikes": true,
+                        "latitude": 47.06,
+                        "longitude": -0.8783,
+                        "country": "FR"
+                    },
+                    "dataset": "choletbus2roues"
                 }
             ]
         }
