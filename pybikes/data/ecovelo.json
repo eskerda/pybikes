@@ -227,7 +227,7 @@
                         "longitude": -61.5331,
                         "country": "FR"
                     },
-                    "dataset": "karuvelo"
+                    "dataset": "karu"
                 },
                 {
                     "tag": "velibeo",
@@ -263,7 +263,7 @@
                         "longitude": 0.7217,
                         "country": "FR"
                     },
-                    "dataset": "perivelolibreservice"
+                    "dataset": "perivelo"
                 },
                 {
                     "tag": "velodaqui",
@@ -287,7 +287,7 @@
                         "longitude": -0.8783,
                         "country": "FR"
                     },
-                    "dataset": "choletbus2roues"
+                    "dataset": "choletbus"
                 }
             ]
         }
