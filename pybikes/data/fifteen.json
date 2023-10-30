@@ -62,6 +62,20 @@
                 "latitude": 47.797221
             },
             "feed_url": "https://auxrmlevelo.com/api/client/stations"
+        },
+        {
+            "tag": "velomodalis",
+            "meta": {
+                "city": "Ligne TER Royan - Angoulême",
+                "name": "Vélo Modalis",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "longitude": -0.33,
+                "latitude": 45.7
+            },
+            "feed_url": "https://www.velomodalis.fr/api/client/stations"
         }
     ]
 }
