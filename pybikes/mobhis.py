@@ -4,6 +4,8 @@
 
 import re
 
+from lxml import html
+
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
@@ -20,48 +22,49 @@ class Mobhis(BikeShareSystem):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
 
-        html = scraper.request(self.feed_url)
+        data = scraper.request(self.feed_url)
 
-        # coords are on the first line, info on the second
-        pattern = r'var marker = L\.marker\((.*?)\)\.addTo\(map\);\n(.*?)(?=\n\n|\n\Z)'
-        all = re.findall(pattern, html, re.DOTALL)
+        latlngs = re.findall(r'var marker = L\.marker\(\[(-?\d+\.\d+), (-?\d+\.\d+)\]', data)
+        infos = re.findall(r'marker.bindPopup\("(.*)"\)', data)
+        stations = zip(latlngs, infos)
 
-        # filter out offline stations
-        stations = filter(lambda item: item[1].find('Estação offline ou não instalada') == -1, all)
-
-        self.stations = list(map(lambda d: MobhisStation(* d), stations))
+        self.stations = list(map(lambda i: MobhisStation(*i), stations))
 
 
 class MobhisStation(BikeShareStation):
     def __init__(self, coords, info):
         super(MobhisStation, self).__init__()
 
-        lat, lon = re.search(r'\[([^\]]+)\]', coords).group(1).split(', ')
-        id, name = re.search(r'bindPopup\("<center><b>([^<]+)</b>', info).group(1).split(' - ')
+        lat, lng = map(float, coords)
 
-        info = re.search(r'</b>(.*?)</center>', info).group(1).split('<br>')
-        info = list(filter(lambda item: item != '', info))
-        info = list(map(lambda s: re.findall(r'\d+', s)[0], info))
+        popup = html.fromstring(info)
+        elems = popup.xpath('//text()')
 
-        bikes_kids = None
-        free_kids = None
-
-        # some systems have data for kid-sized bikes and spaces
-        if len(info) > 2:
-            bikes, bikes_kids, free, free_kids = info
-        else:
-           bikes, free = info
+        name = elems.pop(0)
+        uid, _ = name.split(' - ')
+        online = 'Estação offline' not in info
 
         self.name = name
-        self.latitude = float(lat)
-        self.longitude = float(lon)
+        self.latitude = lat
+        self.longitude = lng
+        self.extra = {'uid': uid, 'online': online}
+
+        if not online:
+            self.bikes, self.free = 0, 0
+            return
+
+        # find ints on remaining elements
+        elems = list(map(lambda s: re.search(r'\d+', s).group(), elems))
+
+        # some systems have data for kid-sized bikes and spaces
+        if len(elems) > 2:
+            bikes, bikes_kids, free, free_kids = elems
+            self.extra.update({
+                'kid_bikes': int(bikes_kids),
+                'kid_slots': int(free_kids),
+            })
+        else:
+            bikes, free = elems
+
         self.bikes = int(bikes)
         self.free = int(free)
-        self.extra = {
-            'uid': id
-        }
-
-        if bikes_kids:
-            self.extra['bikes_kids'] = int(bikes_kids)
-        if free_kids:
-            self.extra['free_kids'] = int(free_kids)
