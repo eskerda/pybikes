@@ -1,0 +1,194 @@
+{
+    "system": "beryl",
+    "class": "Beryl",
+    "instances": [
+        {
+            "tag": "beryl-bcp",
+            "meta": {
+                "city": "Bournemouth, Christchurch and Poole",
+                "name": "Beryl - Bournemouth, Christchurch and Poole",
+                "country": "GB",
+                "latitude": 50.7196,
+                "longitude": -1.8734
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/BCP/gbfs.json"
+        },
+        {
+            "tag": "beryl-brighton",
+            "meta": {
+                "city": "Brighton",
+                "name": "Beryl - Brighton",
+                "country": "GB",
+                "latitude": 50.8222,
+                "longitude": -0.1403
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Brighton/gbfs.json"
+        },
+        {
+            "tag": "beryl-cornwall",
+            "meta": {
+                "city": "Cornwall",
+                "name": "Beryl - Cornwall",
+                "country": "GB",
+                "latitude": 50.2616,
+                "longitude": -5.0510
+            },
+            "bbox": [[49.9554, -5.7471], [50.9313, -4.1649]],
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Cornwall/gbfs.json"
+        },
+        {
+            "tag": "beryl-greater-manchester",
+            "meta": {
+                "city": "Greater Manchester",
+                "name": "Beryl - Greater Manchester",
+                "country": "GB",
+                "latitude": 53.4795,
+                "longitude": -2.2436
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Greater_Manchester/gbfs.json"
+        },
+        {
+            "tag": "beryl-hackney-cargo-bike",
+            "meta": {
+                "city": "Hackney",
+                "name": "Beryl - Hackney Cargo Bike",
+                "country": "GB",
+                "latitude": 51.5366,
+                "longitude": -0.0751
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Hackney_Cargo_Bike/gbfs.json"
+        },
+        {
+            "tag": "beryl-hereford",
+            "meta": {
+                "city": "Hereford",
+                "name": "Beryl - Hereford",
+                "country": "GB",
+                "latitude": 52.0549,
+                "longitude": -2.7156
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Hereford/gbfs.json"
+        },
+        {
+            "tag": "beryl-hertsmere",
+            "meta": {
+                "city": "Hertsmere",
+                "name": "Beryl - Hertsmere",
+                "country": "GB",
+                "latitude": 51.6577,
+                "longitude": -0.2695
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Hertsmere/gbfs.json"
+        },
+        {
+            "tag": "beryl-isle-of-wight",
+            "meta": {
+                "city": "Isle of Wight",
+                "name": "Beryl - Isle of Wight",
+                "country": "GB",
+                "latitude": 50.6958,
+                "longitude": -1.2238
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Isle_of_Wight/gbfs.json"
+        },
+        {
+            "tag": "beryl-leeds",
+            "meta": {
+                "city": "Leeds",
+                "name": "Beryl - Leeds",
+                "country": "GB",
+                "latitude": 53.7971,
+                "longitude": -1.5438
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Leeds/gbfs.json"
+        },
+        {
+            "tag": "beryl-norwich",
+            "meta": {
+                "city": "Norwich",
+                "name": "Beryl - Norwich",
+                "country": "GB",
+                "latitude": 52.6288,
+                "longitude": 1.2934
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Norwich/gbfs.json"
+        },
+        {
+            "tag": "beryl-plymouth",
+            "meta": {
+                "city": "Plymouth",
+                "name": "Beryl - Plymouth",
+                "country": "GB",
+                "latitude": 50.3714,
+                "longitude": -4.1421
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Plymouth/gbfs.json"
+        },
+        {
+            "tag": "beryl-portsmouth",
+            "meta": {
+                "city": "Portsmouth",
+                "name": "Beryl - Portsmouth",
+                "country": "GB",
+                "latitude": 50.8035,
+                "longitude": -1.0736
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Portsmouth/gbfs.json"
+        },
+        {
+            "tag": "beryl-southampton",
+            "meta": {
+                "city": "Southampton",
+                "name": "Beryl - Southampton",
+                "country": "GB",
+                "latitude": 50.9021,
+                "longitude": -1.3998
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Southampton/gbfs.json"
+        },
+        {
+            "tag": "beryl-watford",
+            "meta": {
+                "city": "Watford",
+                "name": "Beryl - Watford",
+                "country": "GB",
+                "latitude": 51.6556,
+                "longitude": -0.3953
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Watford/gbfs.json"
+        },
+        {
+            "tag": "beryl-west-midlands",
+            "meta": {
+                "city": "West Midlands",
+                "name": "Beryl - West Midlands",
+                "country": "GB",
+                "latitude": 52.4798,
+                "longitude": -1.9014
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/West_Midlands/gbfs.json"
+        },
+        {
+            "tag": "beryl-westminster-cargo-bike",
+            "meta": {
+                "city": "Westminster",
+                "name": "Beryl - Westminster Cargo Bike",
+                "country": "GB",
+                "latitude": 51.5215,
+                "longitude": -0.1840
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Westminster_Cargo_Bike/gbfs.json"
+        },
+        {
+            "tag": "beryl-wool",
+            "meta": {
+                "city": "Wool",
+                "name": "Beryl - Wool",
+                "country": "GB",
+                "latitude": 50.6883,
+                "longitude": -2.2361
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Wool/gbfs.json"
+        }
+    ]
+}
