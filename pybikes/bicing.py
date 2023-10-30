@@ -24,7 +24,10 @@ class Bicing(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        # biki takes more than 30s to reply, increase it to at least 60s
+        scraper.requests_timeout = max(scraper.requests_timeout, 600)
         data = json.loads(scraper.request(self.stations_url))
+
         stations = []
         for station_data in data['stations']:
             try:
