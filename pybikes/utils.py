@@ -3,7 +3,6 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import os
-import re
 try:
     # Python 2
     from itertools import imap as map
@@ -16,6 +15,7 @@ from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Polygon, Point, box
 
 from pybikes.base import BikeShareStation
+from pybikes.contrib import PBCache
 
 
 def str2bool(v):
@@ -45,19 +45,26 @@ class PyBikesScraper(object):
     requests_timeout = 300
     retry = False
     retry_opts = {}
+    use_cache = False
+    cache_statuses = [200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501]
 
     def __init__(self, cachedict=None, headers=None):
         self.headers = headers if isinstance(headers, dict) else {}
         self.headers.setdefault('User-Agent', 'PyBikes')
         self.proxies = {}
         self.session = requests.session()
-        self.cachedict = cachedict
+
+        # Implicit enable cache if we got a cache as argument
+        self.use_cache = cachedict is not None
+        # Always have a cache with delta 0 in hand for explicit caching
+        self.cachedict = cachedict if cachedict is not None else PBCache(delta=0)
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
-                headers=None, default_encoding='UTF-8', skip_cache=False):
+                headers=None, default_encoding='UTF-8', skip_cache=False,
+                cache_for=None):
 
         if self.retry:
             retries = Retry(** self.retry_opts)
@@ -66,10 +73,14 @@ class PyBikesScraper(object):
         _headers = self.headers.copy()
         _headers.update(headers or {})
 
+        response = None
+        must_cache = self.use_cache and not skip_cache or cache_for
+
         # XXX proper encode arguments for proper call args -> response
-        if self.cachedict and url in self.cachedict and not skip_cache:
-            response = self.cachedict[url]
-        else:
+        if must_cache:
+            response = self.cachedict.get(url)
+
+        if not response:
             response = self.session.request(
                 method=method,
                 url=url,
@@ -82,6 +93,13 @@ class PyBikesScraper(object):
                 verify=self.ssl_verification,
                 timeout=self.requests_timeout,
             )
+
+            if must_cache and response.status_code in self.cache_statuses:
+                #                quack
+                if cache_for and hasattr(self.cachedict, 'set_with_delta'):
+                    self.cachedict.set_with_delta(url, response, cache_for)
+                else:
+                    self.cachedict[url] = response
 
         data = response.text
 
@@ -97,10 +115,8 @@ class PyBikesScraper(object):
 
         if 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
-        self.last_request = response
 
-        if self.cachedict is not None:
-            self.cachedict[url] = response
+        self.last_request = response
 
         return data
 
