@@ -16,7 +16,7 @@ class Controlnet(BikeShareSystem):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         res = json.loads(scraper.request(self.feed_url, method='GET'))
-        stations = list(filter(lambda item: item.get('Borrado') == '0', res))
+        stations = filter(lambda item: item.get('Borrado') == '0', res)
         self.stations = list(map(ControlnetStation, stations))
 
 
