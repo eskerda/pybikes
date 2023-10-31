@@ -36,7 +36,7 @@ class ControlnetStation(BikeShareStation):
 
         self.extra = {
             'uid': station['TotemId'],
-            'online': station['IsOffline'] == False,
+            'online': not station['IsOffline'],
             'address': station['Direccion'],
             'station_type': 'manual' if station['TipoEstacion'] == 'M' else 'automatic',
             'slots': station['CantidadAnclajes'] or station['Capacidad']
