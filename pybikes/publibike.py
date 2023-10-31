@@ -6,12 +6,8 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.contrib import TSTCache
 
 FEED_URL = 'https://api.publibike.ch/v1/public/partner/stations'
-
-# caches the feed for 60s
-cache = TSTCache(delta=60)
 
 
 class Publibike(BikeShareSystem):
@@ -29,9 +25,7 @@ class Publibike(BikeShareSystem):
         self.uid = city_uid
 
     def update(self, scraper=None):
-        if scraper is None:
-            # use cached feed if possible
-            scraper = PyBikesScraper(cache)
+        scraper = scraper or PyBikesScraper()
 
         stations = json.loads(
             scraper.request(FEED_URL).encode('utf-8')

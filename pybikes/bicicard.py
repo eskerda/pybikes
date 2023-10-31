@@ -5,12 +5,10 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.contrib import TSTCache
+
 
 AUTH_URL = '{endpoint}/api/certificado'
 STATIONS_URL = '{endpoint}/apiapp/SBancada/Estado/TodosSimple'
-
-cache = TSTCache(delta=3600)
 
 
 def stupidict(thing):
@@ -45,18 +43,23 @@ class Bicicard(BikeShareSystem):
     def stations_url(self):
         return STATIONS_URL.format(endpoint=self.endpoint)
 
-    def update(self, scraper=None):
-        headers = {
-            'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; ROCINANTE FIRE Build/9001',
-            'DeviceModel': 'ROCINANTE FIRE',
-        }
-        scraper = scraper or PyBikesScraper(cache)
-        cert = json.loads(scraper.request(self.auth_url, headers=headers))
+    def authorize(self, scraper):
+        cert = json.loads(scraper.request(self.auth_url, cache_for=3600))
         cert = stupidict(cert)
-        headers.update({
+        scraper.headers.update({
             'Thumbprint': cert['thumbprint'],
         })
-        data = scraper.request(self.stations_url, headers=headers, skip_cache=True)
+        return scraper
+
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+        scraper.headers.update({
+            'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; ROCINANTE FIRE Build/9001',
+            'DeviceModel': 'ROCINANTE FIRE',
+        })
+        self.authorize(scraper)
+        data = scraper.request(self.stations_url)
         info = map(stupidict, json.loads(data))
         self.stations = list(map(BicicardStation, info))
 

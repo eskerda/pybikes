@@ -8,15 +8,9 @@ from lxml import etree
 
 from .base import BikeShareSystem, BikeShareStation
 from pybikes.utils import PyBikesScraper, filter_bounds
-from pybikes.contrib import TSTCache
 
-__all__ = ['Nextbike', 'NextbikeStation']
 
 BASE_URL = 'https://{hostname}/maps/nextbike-live.xml?domains={domain}'  # NOQA
-
-# Since most networks share the same hostname, there's no need to keep hitting
-# the endpoint on the same urls. This caches the feed for 60s
-cache = TSTCache(delta=60)
 
 
 class Nextbike(BikeShareSystem):
@@ -38,7 +32,7 @@ class Nextbike(BikeShareSystem):
 
     def update(self, scraper=None):
         if scraper is None:
-            scraper = PyBikesScraper(cache)
+            scraper = PyBikesScraper()
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8')
         )

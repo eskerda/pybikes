@@ -7,14 +7,11 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.contrib import TSTCache
 
 
 COLORS = ['green', 'red', 'yellow', 'gray']
 AUTH_URL = 'https://openapi.emtmadrid.es/v2/mobilitylabs/user/login/'
 FEED_URL = 'https://openapi.emtmadrid.es/v2/transport/bicimad/stations/'
-
-cache = TSTCache(delta=3600)
 
 
 class Bicimad(BikeShareSystem):
@@ -30,31 +27,22 @@ class Bicimad(BikeShareSystem):
         super(Bicimad, self).__init__(tag, meta)
         self.key = key
 
-    @staticmethod
-    def authorize(scraper, key):
-        request = scraper.request
-
+    def authorize(self, scraper, key):
         headers = {
             'passkey': key['passkey'],
             'x-clientid': key['clientid'],
         }
-        accesstoken_content = scraper.request(AUTH_URL, headers=headers)
+        accesstoken_content = scraper.request(AUTH_URL, headers=headers, cache_for=3600)
         accesstoken = json.loads(accesstoken_content)['data'][0]['accessToken']
 
-        def _request(*args, **kwargs):
-            headers = kwargs.get('headers', {})
-            headers.update({'accesstoken': accesstoken})
-            kwargs['headers'] = headers
-            return request(*args, **kwargs)
-
-        scraper.request = _request
+        scraper.headers.update({'accesstoken': accesstoken})
 
     def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper(cache)
+        scraper = scraper or PyBikesScraper()
 
-        Bicimad.authorize(scraper, self.key)
+        self.authorize(scraper, self.key)
 
-        scraper_content = scraper.request(FEED_URL, skip_cache=True)
+        scraper_content = scraper.request(FEED_URL)
 
         data = json.loads(scraper_content)
 

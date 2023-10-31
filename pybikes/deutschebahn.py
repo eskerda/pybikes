@@ -5,7 +5,6 @@
 
 from pybikes import PyBikesScraper
 from pybikes.gbfs import Gbfs
-from pybikes.contrib import TSTCache
 
 
 FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/{provider}/gbfs'
@@ -52,12 +51,9 @@ class Callabike(DB):
 
     provider = 'CallABike'
 
-    # caches the feed for 60s
-    cache = TSTCache(delta=60)
-
     def __init__(self, * args, ** kwargs):
         super(Callabike, self).__init__(* args, provider=Callabike.provider, ** kwargs)
 
     def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper(self.cache)
+        scraper = scraper or PyBikesScraper()
         super(Callabike, self).update(scraper)
