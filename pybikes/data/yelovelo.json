@@ -1,0 +1,22 @@
+{
+    "system": "yelovelo",
+    "class": "YeloVelo",
+    "instances": [
+        {
+            "tag": "yelo-velo",
+            "meta": {
+                "city": "La Rochelle",
+                "name": "Yélo Vélo",
+                "country": "FR",
+                "latitude": 46.1591,
+                "longitude": -1.1509,
+                "company": ["Communauté d'Agglomération de La Rochelle"],
+                "license": {
+                    "name": "Licence Ouverte",
+                    "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+                }
+            },
+            "bbox": [[45.955328, -1.241923], [46.317459,-0.843708]]
+        }
+    ]
+}
