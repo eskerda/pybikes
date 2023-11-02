@@ -38,14 +38,12 @@ class YeloVeloStation(BikeShareStation):
         super(YeloVeloStation, self).__init__()
 
         station_data = data['fields']
-        uid, name = station_data['station_nom'].split(' ', 1)
 
-        self.name = name
+        self.name = station_data['station_nom']
         self.latitude = float(station_data['station_latitude'])
         self.longitude = float(station_data['station_longitude'])
         self.bikes = int(station_data['velos_disponibles'])
         self.free = int(station_data['accroches_libres'])
         self.extra = {
             'slots': station_data['nombre_emplacements'],
-            'uid': uid
         }
