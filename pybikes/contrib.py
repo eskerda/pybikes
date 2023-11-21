@@ -109,18 +109,33 @@ class PBCache(TSTCache):
     delta will be aplied to entries based on its annotation.
     """
 
-    def __init__(self, * args, deltas=None, ** kwargs):
+    def __init__(self, * args, ** kwargs):
+        self.deltas = kwargs.pop('deltas', [])
         super(PBCache, self).__init__(* args, ** kwargs)
-        self.deltas = deltas or []
 
     def __get_annotation__(self, key):
         """ introspect call stack to find a bike share system """
+
+        def get_frame(entry):
+            """ python 2 and 3 compatible frame getter """
+            if isinstance(entry, tuple):
+                return entry[0]
+            else:
+                return entry.frame
+
+        def get_function(finfo):
+            """ python 2 and 3 compatible function getter """
+            if isinstance(finfo, tuple):
+                return finfo[3]
+            else:
+                return finfo.function
+
         valid_types = (BikeShareSystem, )
         stack = inspect.stack()
-        selfs = map(lambda f: (f.frame.f_locals.get('self'), f), stack)
+        selfs = map(lambda f: (get_frame(f).f_locals.get('self'), f), stack)
         bss = filter(lambda f: isinstance(f[0], valid_types), selfs)
 
-        some_bikeshare, frame_info = next(bss, (None, None))
+        some_bikeshare, frame_info = next(iter(bss), (None, None))
 
         # no bike share found on call stack, bail
         if not some_bikeshare:
@@ -131,7 +146,7 @@ class PBCache(TSTCache):
         annotation = '{cls}::{tag}::{method}::{key}'.format(
             cls=some_bikeshare.__class__.__name__.lower(),
             tag=some_bikeshare.tag,
-            method=frame_info.function,
+            method=get_function(frame_info),
             key=key,
         )
 
@@ -157,7 +172,7 @@ class PBCache(TSTCache):
         # flatten iterator
         deltas = (e for it in deltas for e in it)
         apply_rules = filter(lambda r: re.match(r[0], annotation), deltas)
-        _, delta = next(apply_rules, (None, self.delta))
+        _, delta = next(iter(apply_rules), (None, self.delta))
 
         return delta, annotation
 
