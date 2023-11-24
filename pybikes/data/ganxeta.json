@@ -1,0 +1,19 @@
+{
+    "instances": [
+        {
+            "tag": "ganxeta-reus",
+            "meta": {
+                "city": "Reus",
+                "name": "Ganxeta",
+                "country": "ES",
+                "latitude": 41.1589,
+                "longitude": 1.10623,
+                "company": [
+                    "Ajuntament de Reus"
+                ]
+            }
+        }
+    ],
+    "system": "ganxeta",
+    "class": "Ganxeta"
+}
