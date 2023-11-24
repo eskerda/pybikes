@@ -22,7 +22,7 @@ class Bicimad(BikeShareSystem):
 
     meta = {
         'system': 'bicimad',
-        'company': 'Empresa Municipal de Transportes de Madrid, S.A.',
+        'company': ['Empresa Municipal de Transportes de Madrid, S.A.'],
         'source': 'https://mobilitylabs.emtmadrid.es/',
     }
 
