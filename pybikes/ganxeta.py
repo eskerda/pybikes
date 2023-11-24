@@ -73,4 +73,5 @@ class GanxetaStation(BikeShareStation):
             "uid": data["station_id"],
             "address": data["station_address"],
             "slots": int(data["racks_total"]),
+            "number": data["station_external_id"],
         }
