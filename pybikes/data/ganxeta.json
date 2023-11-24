@@ -1,0 +1,19 @@
+{
+    "instances": [
+        {
+            "tag": "ganxeta-reus",
+            "meta": {
+                "city": "Reus",
+                "name": "Ganxeta",
+                "country": "ES",
+                "latitude": 41.1589,
+                "longitude": 1.10623,
+                "company": [
+                    "REUS MOBILITAT I SERVEIS, S.A. (RMS)"
+                ]
+            }
+        }
+    ],
+    "system": "ganxeta",
+    "class": "Ganxeta"
+}
