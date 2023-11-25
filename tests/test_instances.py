@@ -46,6 +46,14 @@ class BaseInstanceTest(object):
         assert -90 <= instance.meta['latitude'] <= 90
         assert -180 <= instance.meta['longitude'] <= 180
 
+        assert 'company' in instance.meta
+
+        company = instance.meta['company']
+        err = "[company] expected list, found '%s' for %s" % (
+            type(company).__name__, company
+        )
+        assert isinstance(instance.meta['company'], list), err
+
     def test_uses_scraper(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
         request = Mock

@@ -46,9 +46,9 @@ class Callabike(DB):
     # All networks within use the same data feed
     unifeed = True
 
-    meta = {
+    meta = dict({
         'name': 'Call-A-Bike',
-    }
+    }, ** DB.meta)
 
     provider = 'CallABike'
 

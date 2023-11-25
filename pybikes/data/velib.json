@@ -12,6 +12,7 @@
                     "name": "OPEN LICENCE 2.0",
                     "url": "etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf"
                 },
+                "company": ["Smovengo"],
                 "ebikes": true
             },
             "feed_url": "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json"
