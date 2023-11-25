@@ -7,7 +7,8 @@
                 "country": "AR",
                 "name": "En la Bici",
                 "latitude": -32.8895,
-                "longitude": -68.8433
+                "longitude": -68.8433,
+                "company": ["Municipalidad de la Ciudad de Mendoza"]
             },
             "feed_url": "https://enbici.ciudaddemendoza.gob.ar/bici2/mobile/EstacionesUsuarioWeb"
         }

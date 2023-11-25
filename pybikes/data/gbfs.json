@@ -586,7 +586,8 @@
                 "country":"NO",
                 "name":"Bysykkel",
                 "longitude":10.752245,
-                "city":"Oslo"
+                "city":"Oslo",
+                "company": ["Urban Sharing AS"]
             },
             "feed_url": "https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json"
         },
@@ -597,7 +598,8 @@
                 "country":"NO",
                 "name":"Bysykkel",
                 "longitude":5.322054,
-                "city":"Bergen"
+                "city":"Bergen",
+                "company": ["Urban Sharing AS"]
             },
             "feed_url": "https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json"
         },
@@ -608,7 +610,8 @@
                 "country":"NO",
                 "name":"Bysykkel",
                 "longitude":10.3936781,
-                "city":"Trondheim"
+                "city":"Trondheim",
+                "company": ["Urban Sharing AS"]
             },
             "feed_url": "https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json"
         },
@@ -722,7 +725,8 @@
                 "name": "Verona Bike",
                 "country": "IT",
                 "latitude": 45.438611,
-                "longitude": 10.992778
+                "longitude": 10.992778,
+                "company": ["IGP S.p.A.", "Urban Sharing AS"]
             },
             "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
         },
@@ -823,7 +827,8 @@
                 "city": "Belfort",
                 "name": "Optymo",
                 "longitude": 6.849444,
-                "country": "FR"
+                "country": "FR",
+                "company": ["SMTC 90"]
             },
             "feed_url": "https://belfort-gbfs.klervi.net/gbfs/gbfs.json"
         },
@@ -835,7 +840,8 @@
                 "city": "A Coruña",
                 "latitude": 43.3623,
                 "longitude": -8.4115,
-                "country": "ES"
+                "country": "ES",
+                "company": ["PBSC Urban Solutions"]
             },
             "feed_url": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
@@ -846,7 +852,8 @@
                 "city": "Aachen",
                 "name": "Velocity",
                 "longitude": 6.083611,
-                "country": "DE"
+                "country": "DE",
+                "company": ["Velocity Region Aachen GmbH"]
             },
             "feed_url": "https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json"
         },
@@ -857,7 +864,8 @@
                 "city": "Québec",
                 "name": "àVélo",
                 "longitude": -71.2168,
-                "country": "CA"
+                "country": "CA",
+                "company": ["PBSC Urban Solutions"]
             },
             "feed_url": "https://quebec.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
@@ -868,7 +876,8 @@
                 "city": "Saguenay",
                 "name": "Accès Vélo",
                 "longitude": -71.083333,
-                "country": "CA"
+                "country": "CA",
+                "company": ["PBSC Urban Solutions"]
             },
             "feed_url": "https://saguenay.publicbikesystem.net/customer/gbfs/v2/gbfs.json",
             "force_https": "true"
@@ -880,7 +889,12 @@
                 "city": "Cd de M\u00e9xico",
                 "name": "EcoBici",
                 "longitude": -99.133208,
-                "country": "MX"
+                "country": "MX",
+                "company": [
+                    "5M2 S.A. DE C.V.",
+                    "BKT BICIPÚBLICA S.A. DE C.V.",
+                    "Lyft Inc."
+                ]
             },
             "feed_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json"
         },
