@@ -15,7 +15,7 @@
                 "company": ["Smovengo"],
                 "ebikes": true
             },
-            "feed_url": "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json"
+            "feed_url": "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/gbfs.json"
         }
     ],
     "system": "velib",
