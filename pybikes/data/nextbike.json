@@ -2716,6 +2716,21 @@
                     "Empresa Sagales SA GETXOBIZI"
                 ]
             }
+        },
+        {
+            "domain": "aa",
+            "tag": "biciarteixo",
+            "city_uid": 874,
+            "meta": {
+                "name": "biciArteixo",
+                "city": "Arteixo",
+                "country": "ES",
+                "latitude": 43.3053,
+                "longitude": -8.5069,
+                "company": [
+                    "Servizos Urbanos Municipais de Arteixo, S. A."
+                ]
+            }
         }
     ],
     "system": "nextbike",
