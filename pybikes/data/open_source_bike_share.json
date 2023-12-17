@@ -23,22 +23,6 @@
             "feed_url":"https://www.cykl.nl/command.php?action=map:markers"
         },
         {
-            "tag": "slovnaft-bajk",
-            "meta": {
-                "latitude": 48.1356952,
-                "longitude": 16.9758332,
-                "city": "Bratislava",
-                "country": "SK",
-                "name": "Slovnaft BAjk",
-                "company": [
-                        "Dopravný podnik Bratislava",
-                        "Bratislavská integrovaná doprava, a.s.",
-                        "Hlavné mesto SR Bratislava"
-                ]
-            },
-            "feed_url": "https://routing.epsilon.sk/slovnaftbajk.php"
-        },
-        {
             "tag":"bicyklezadobreskutky",
             "meta":{
                 "latitude":48.996275,
