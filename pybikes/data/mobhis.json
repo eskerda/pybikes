@@ -21,6 +21,21 @@
                 "country": "BR"
             },
             "feed_url": "https://www.cascavelvaidebici.mobhis.com.br/"
+        },
+        {
+            "tag": "integrabike",
+            "meta": {
+                "city": "Sorocaba",
+                "name": "Integrabike",
+                "latitude": -23.5015,
+                "longitude": -47.4526,
+                "country": "BR",
+                "company": [
+                    "Prefeiture de Sorocaba",
+                    "Urbes"
+                ]
+            },
+            "feed_url": "https://integrabike.mobhis.com.br/"
         }
     ],
     "system": "mobhis",

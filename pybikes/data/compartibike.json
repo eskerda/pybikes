@@ -1,20 +1,5 @@
 {
     "instances":[
-       {
-            "tag":"integrabike",
-            "meta":{
-                "latitude":-23.5015,
-                "city":"Sorocaba",
-                "name":"Integrabike",
-                "longitude":-47.4526,
-                "country":"BR",
-                "company":[
-                    "Prefeiture de Sorocaba",
-                    "Urbes"
-                ]
-            },
-            "feed_url":"https://integrabike.tembici.com.br/stations.json"
-        },
         {
             "tag":"dukebike",
             "meta":{
