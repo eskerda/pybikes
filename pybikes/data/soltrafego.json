@@ -1,0 +1,17 @@
+{
+    "class": "Soltrafego",
+    "instances": [
+        {
+            "uid": "82609bf53fe4aa4a5cccf28a25d8868b979b1622",
+            "meta": {
+                "city": "Aveiro",
+                "country": "PT",
+                "latitude": 40.6388,
+                "longitude": -8.6479,
+                "name": "BUGA"
+            },
+            "tag": "buga"
+        }
+    ],
+    "system": "soltrafego"
+}
