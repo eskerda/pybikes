@@ -1254,6 +1254,51 @@
                 "longitude": -157.8560
             },
             "feed_url": "https://hon.publicbikesystem.net/customer/ube/gbfs/v1/en/gbfs.json"
+        },
+        {
+            "tag": "dubai-careem-bike",
+            "meta": {
+                "city": "Dubai",
+                "name": "Dubai Careem BIKE",
+                "country": "AE",
+                "company": [
+                    "Careem"
+                ],
+                "latitude": 25.1713,
+                "longitude": 55.2324
+            },
+            "bbox": [[24.8683, 54.8369], [25.5183, 55.6783]],
+            "feed_url": "https://dubai.publicbikesystem.net/customer/gbfs/v2/en/gbfs.json"
+        },
+        {
+            "tag": "abu-dhabi-careem-bike",
+            "meta": {
+                "city": "Abu Dhabi",
+                "name": "Abu Dhabi Careem BIKE",
+                "country": "AE",
+                "company": [
+                    "Careem"
+                ],
+                "latitude": 24.4866,
+                "longitude": 54.3728
+            },
+            "bbox": [[24.1056, 54.0922], [24.7597, 54.9336]],
+            "feed_url": "https://dubai.publicbikesystem.net/customer/gbfs/v2/en/gbfs.json"
+        },
+        {
+            "tag": "medina-careem-bike",
+            "meta": {
+                "city": "Medina",
+                "name": "Medina Careem BIKE",
+                "country": "SA",
+                "company": [
+                    "Careem"
+                ],
+                "latitude": 24.4682,
+                "longitude": 39.6120
+            },
+            "bbox": [[24.1864, 39.1973], [24.84, 40.0387]],
+            "feed_url": "https://dubai.publicbikesystem.net/customer/gbfs/v2/en/gbfs.json"
         }
     ],
     "system": "gbfs",
