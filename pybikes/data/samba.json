@@ -94,6 +94,17 @@
                         "city": "Cuenca",
                         "country": "EC"
                     }
+                },
+                {
+                    "url": "https://www.bikevitoria.com/mapaestacao.aspx",
+                    "tag": "bikevitoria",
+                    "meta": {
+                        "latitude": -20.3202,
+                        "longitude": -40.3375,
+                        "name": "Bike Vitória",
+                        "city": "Vitória",
+                        "country": "BR"
+                    }
                 }
             ]
         }
