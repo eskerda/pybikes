@@ -1,78 +1,72 @@
 # -*- coding: utf-8 -*-
-import re
+# Copyright (C) 2023, Martín González Gómez <m@martingonzalez.net>
+# Distributed under the AGPL license, see LICENSE.txt
+
 import json
-import zlib
-from pkg_resources import resource_string
 
-from lxml import etree
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes.utils import PyBikesScraper, filter_bounds
-from pybikes.contrib import TSTCache
-
-
-_kml_ns = {
-    'kml': 'http://earth.google.com/kml/2.2'
-}
-
-cache = TSTCache(delta=60)
+FEED_URL_V1 = "https://apis.youbike.com.tw/json/station-yb1.json"
+FEED_URL_V2 = "https://apis.youbike.com.tw/json/station-yb2.json"
 
 
 class YouBike(BikeShareSystem):
+    unifeed = True
+
     meta = {
-        'system': 'YouBike',
-        'company': [
-            'Taipei City Government',
-            'Giant Manufacturing Co. Ltd.',
-        ]
+        "system": "YouBike",
+        "company": [
+            "YouBike Co., Ltd.",
+        ],
     }
 
-    main_url = 'http://ntpc.youbike.com.tw/cht/index.php'
-
-    def __init__(self, tag, kml_name, meta):
+    def __init__(self, tag, meta, uid):
         super(YouBike, self).__init__(tag, meta)
-        data = zlib.decompress(
-            resource_string('pybikes', 'kml/taiwan.kml.gz'),
-            zlib.MAX_WBITS | 16
-        )
-        kml_tree = etree.fromstring(data)
-        city_bounds = kml_tree.xpath("""
-            //kml:Placemark[kml:name[text()="%s"]]//kml:coordinates
-        """ % kml_name, namespaces=_kml_ns)
-        # Rather ugly way to get the coordinates out of this kml, but its what
-        # we have.
-        self.city_bounds = []
-        for bound in city_bounds:
-            coords = filter(None, bound.text.split('\n'))
-            # We got the kml with lng / lat
-            coords = map(lambda c: reversed(c.split(',')), coords)
-            coords = map(lambda ll: map(float, ll), coords)
-            self.city_bounds.append(coords)
+        self.uid = uid
 
     def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper(cache)
-        html = scraper.request(self.main_url)
-        data_m = re.search(r'siteContent=\'({.+?})\';', html)
-        data = json.loads(data_m.group(1))
-        filtered_data = filter_bounds(
-            data.itervalues(),
-            lambda s: (float(s['lat']), float(s['lng'])),
-            * self.city_bounds
+        scraper = scraper or PyBikesScraper()
+        v1 = json.loads(scraper.request(FEED_URL_V1))
+        v2 = json.loads(scraper.request(FEED_URL_V2))
+
+        data = v1 + v2
+        data = filter(
+            lambda item: item.get("area_code") == self.uid
+            and item.get("lat") != ""
+            and item.get("lng") != "",
+            data,
         )
-        self.stations = list(map(YouBikeStation, filtered_data))
+
+        stations = []
+
+        for item in data:
+            station = YouBikeStation(item)
+            stations.append(station)
+
+        self.stations = stations
 
 
 class YouBikeStation(BikeShareStation):
     def __init__(self, data):
         super(YouBikeStation, self).__init__()
-        self.name = data['sna']
-        self.latitude = float(data['lat'])
-        self.longitude = float(data['lng'])
-        self.bikes = int(data['sbi'])
-        self.free = int(data['bemp'])
+
+        self.name = data["name_tw"]
+        self.latitude = float(data["lat"])
+        self.longitude = float(data["lng"])
+        self.bikes = int(data["available_spaces"])
+        self.free = int(data["empty_spaces"])
+
         self.extra = {
-            'uid': data['sno'],
-            'district': data['sarea'],
-            'slots': data['tot'],
-            'address': data['ar'],
+            "uid": data["station_no"],
+            "district": data["district_tw"],
+            "address": data["address_tw"],
+            "slots": data["parking_spaces"],
+            "last_updated": data["updated_at"],
+            "online": data["status"] == 1,
+            "youbike_version": data["type"],
+            "en": {
+                "name": data["name_en"],
+                "district": data["district_en"],
+                "address": data["address_en"],
+            },
         }

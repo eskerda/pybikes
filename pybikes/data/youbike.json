@@ -2,53 +2,123 @@
     "instances": [
         {
             "tag": "youbike-new-taipei",
+            "uid": "05",
             "meta": {
                 "city": "新北市 New Taipei",
                 "country": "TW",
                 "latitude": 25.0169826,
                 "longitude": 121.4627868
-            },
-            "kml_name": "New Taipei City"
+            }
         },
         {
             "tag": "youbike-taipei",
+            "uid": "00",
             "meta": {
                 "city": "台北市 Taipei City",
                 "country": "TW",
-                "latitude":25.0329636,
-                "longitude":121.5654268
-            },
-            "kml_name": "Taipei"
+                "latitude": 25.0329636,
+                "longitude": 121.5654268
+            }
         },
         {
             "tag": "youbike-taoyuan",
+            "uid": "07",
             "meta": {
                 "city": "桃園市 Taoyuan City",
                 "country": "TW",
-                "latitude":24.9936281,
-                "longitude":121.3009798
-            },
-            "kml_name": "Taoyuan"
+                "latitude": 24.9936281,
+                "longitude": 121.3009798
+            }
         },
         {
             "tag": "youbike-taichung",
+            "uid": "01",
             "meta": {
                 "city": "臺中市 Taichung City",
                 "country": "TW",
-                "latitude":24.1477358,
-                "longitude":120.6736482
-            },
-            "kml_name": "Taichung"
+                "latitude": 24.1477358,
+                "longitude": 120.6736482
+            }
         },
         {
-            "tag": "youbike-changhua",
+            "tag": "youbike-hsinchu-county",
+            "uid": "0B",
             "meta": {
-                "city": "彰化 Changhua County",
+                "city": "新竹縣 Hsinchu County",
                 "country": "TW",
-                "latitude":24.0517963,
-                "longitude":120.5161352
-            },
-            "kml_name": "Changhua"
+                "latitude": 24.8269,
+                "longitude": 121.0129
+            }
+        },
+        {
+            "tag": "youbike-hsinchu-city",
+            "uid": "09",
+            "meta": {
+                "city": "新竹市 Hsinchu City",
+                "country": "TW",
+                "latitude": 24.8018,
+                "longitude": 120.9714
+            }
+        },
+        {
+            "tag": "youbike-hsinchu-science-park",
+            "uid": "10",
+            "meta": {
+                "city": "新竹科學工業園區 Hsinchu Science Park",
+                "country": "TW",
+                "latitude": 24.7818,
+                "longitude": 121.0050
+            }
+        },
+        {
+            "tag": "youbike-miaoli-county",
+            "uid": "0A",
+            "meta": {
+                "city": "台灣 Miaoli County",
+                "country": "TW",
+                "latitude": 24.5648,
+                "longitude": 120.8185
+            }
+        },
+        {
+            "tag": "youbike-chiayi-city",
+            "uid": "08",
+            "meta": {
+                "city": "台灣 Chiayi City",
+                "country": "TW",
+                "latitude": 23.4797,
+                "longitude": 120.4397
+            }
+        },
+        {
+            "tag": "youbike-tainan-city",
+            "uid": "13",
+            "meta": {
+                "city": "臺南市 Tainan City",
+                "country": "TW",
+                "latitude": 22.9923,
+                "longitude": 120.1850
+            }
+        },
+        {
+            "tag": "youbike-kaohsiung-city",
+            "uid": "12",
+            "meta": {
+                "city": "高雄市 Kaohsiung City",
+                "country": "TW",
+                "latitude": 22.6314,
+                "longitude": 120.3018
+            }
+        },
+        {
+            "tag": "youbike-pingtung-county",
+            "uid": "14",
+            "meta": {
+                "city": "屏東縣 Pingtung County",
+                "country": "TW",
+                "latitude": 22.6830,
+                "longitude": 120.4879
+            }
         }
     ],
     "system": "youbike",
