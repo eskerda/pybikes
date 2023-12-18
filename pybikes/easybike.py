@@ -2,6 +2,7 @@
 # Copyright (C) 2015, bparmentier <dev@brunoparmentier.be>
 # Copyright (C) 2016, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Copyright (C) 2016, eskerda <eskerda@gmail.com>
+# Copyright (C) 2023, Martín González Gómez <m@martingonzalez.net>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
@@ -10,7 +11,11 @@ from pybikes.base import BikeShareSystem, BikeShareStation
 from pybikes import utils
 
 
-class EasyBike(BikeShareSystem):
+class BaseSystem(BikeShareSystem):
+    meta = {"system": "EasyBike", "company": ["Brainbox Technology", "Smoove SAS"]}
+
+
+class EasyBike(BaseSystem):
     sync = True
     unifeed = True
 
@@ -50,3 +55,40 @@ class EasyBike(BikeShareSystem):
             station = BikeShareStation(name, latitude, longitude, bikes, free,
                                        extra)
             yield station
+
+
+class EasyBikeNew(BaseSystem):
+    sync = True
+    FEED_URL = "https://{city_uid}.easybike.gr:8001/imet/v2/availability"
+
+    def __init__(self, tag, meta, city_uid):
+        super(EasyBikeNew, self).__init__(tag, meta)
+        self.city_uid = city_uid
+
+    def update(self, scraper=None):
+        if scraper is None:
+            scraper = utils.PyBikesScraper()
+
+        data = json.loads(
+            scraper.request(
+                self.FEED_URL.format(city_uid=self.city_uid),
+                headers={
+                    "Authorization": "Basic aW1ldDIwMTkwNTAxOkomZ2UjdXBQbUBNbT81aGI0eTZZ",
+                },
+            )
+        )
+
+        stations = data["stations"]
+
+        self.stations = []
+        for data in stations:
+            station = BikeShareStation()
+            station.name = data["label"]
+            station.latitude = float(data["lat"])
+            station.longitude = float(data["lng"])
+            station.bikes = int(data["available"])
+            station.free = int(data["spaces"])
+            station.extra = {
+                "uid": data["station_id"],
+            }
+            self.stations.append(station)
