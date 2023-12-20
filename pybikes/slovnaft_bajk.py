@@ -4,18 +4,14 @@
 
 import json
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 FEED_URL = "https://gate.slovnaftbajk.sk/AppGate2.php"
 
 
 class SlovnaftBajk(BikeShareSystem):
-    def __init__(self, tag, meta):
-        super(SlovnaftBajk, self).__init__(tag, meta)
-
     def update(self, scraper=None):
-        scraper = scraper or utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         stations = []
 
