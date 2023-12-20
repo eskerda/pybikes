@@ -25,9 +25,6 @@ class Soltrafego(BikeShareSystem):
 
         stations = []
         for station_data in data["stations"]:
-            # discard offline stations
-            if station_data["active"] == "0":
-                continue
             station = SoltrafegoStation(station_data)
             stations.append(station)
 
