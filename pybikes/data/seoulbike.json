@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "tag": "seoul-bike",
+            "meta": {
+                "name": "Seoul Bike 따릉이",
+                "city": "Seoul",
+                "country": "KR",
+                "latitude": 37.5664,
+                "longitude": 126.9785,
+                "company": ["Seoul Metropolitan Government"]
+            },
+            "feed_url": "https://www.bikeseoul.com/app/station/getStationRealtimeStatus.do"
+        }
+    ],
+    "system": "seoulbike",
+    "class": "SeoulBike"
+}
