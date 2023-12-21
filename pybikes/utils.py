@@ -13,7 +13,7 @@ except ImportError:
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
-from shapely.geometry import Polygon, Point, box
+from shapely.geometry import Point, box, shape
 
 from pybikes.base import BikeShareStation
 
@@ -58,7 +58,6 @@ class PyBikesScraper(object):
     def request(self, url, method='GET', params=None, data=None, raw=False,
                 headers=None, default_encoding='UTF-8', skip_cache=False,
                 ssl_verification=True):
-
         if self.retry:
             retries = Retry(** self.retry_opts)
             self.session.mount(url, HTTPAdapter(max_retries=retries))
@@ -127,20 +126,26 @@ class PyBikesScraper(object):
 def filter_bounds(things, key, *point_bounds):
     def default_getter(thing):
         if isinstance(thing, BikeShareStation):
-            return (thing.latitude, thing.longitude)
-        return (thing[0], thing[1])
+            return (thing.longitude, thing.latitude)
+        return (thing[1], thing[0])
+
     key = key or default_getter
 
     bounds = []
     for pb in point_bounds:
-        # Assume that a 2 length bound is a square NE/SW
-        if len(pb) == 2:
-            bb = box(min(pb[0][0], pb[1][0]),
-                     min(pb[0][1], pb[1][1]),
-                     max(pb[0][0], pb[1][0]),
-                     max(pb[0][1], pb[1][1]))
+        # Assume that a 2 length bound list is a square NE/SW
+        if isinstance(pb, list) and len(pb) == 2:
+            bb = box(
+                min(pb[0][1], pb[1][1]),
+                min(pb[0][0], pb[1][0]),
+                max(pb[0][1], pb[1][1]),
+                max(pb[0][0], pb[1][0]),
+            )
+        # Support GeoJSON features
+        elif isinstance(pb, dict):
+            bb = shape(pb).buffer(0)
         else:
-            bb = Polygon(pb)
+            raise TypeError("Point bounds only support lists and dicts.")
         bounds.append(bb)
 
     for thing in things:

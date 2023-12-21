@@ -11,7 +11,7 @@ setup(
     author_email="eskerda@gmail.com",
     packages=["pybikes"],
     package_data={
-        'pybikes': ['data/*.json'],
+        'pybikes': ['data/*.json', 'geojson/*.json'],
     },
     license="LICENSE.txt",
     description="A python library for scrapping bike sharing data",

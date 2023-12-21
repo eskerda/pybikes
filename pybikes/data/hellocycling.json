@@ -1,0 +1,248 @@
+{
+    "instances": [
+        {
+            "uid": 3,
+            "tag": "hellocycling-iwate",
+            "meta": {
+                "city": "岩手県 (Iwate)",
+                "name": "HELLO CYCLING Iwate",
+                "country": "JP",
+                "latitude": 39.6992,
+                "longitude": 141.1343
+            }
+        },
+        {
+            "uid": 8,
+            "tag": "hellocycling-ibaraki",
+            "meta": {
+                "city": "茨城県 (Ibaraki)",
+                "name": "HELLO CYCLING Ibaraki",
+                "country": "JP",
+                "latitude": 36.0852,
+                "longitude": 140.2008
+            }
+        },
+        {
+            "uid": 9,
+            "tag": "hellocycling-tochigi",
+            "meta": {
+                "city": "栃木県 (Tochigi)",
+                "name": "HELLO CYCLING Tochigi",
+                "country": "JP",
+                "latitude": 36.75349,
+                "longitude":  139.6115
+            }
+        },
+        {
+            "uid": 11,
+            "tag": "hellocycling-saitama",
+            "meta": {
+                "city": "埼玉県 (Saitama)",
+                "name": "HELLO CYCLING Saitama",
+                "country": "JP",
+                "latitude": 35.86017,
+                "longitude": 139.64347
+            }
+        },
+        {
+            "uid": 12,
+            "tag": "hellocycling-chiba",
+            "meta": {
+                "city": "千葉県 (Chiba)",
+                "name": "HELLO CYCLING Chiba",
+                "country": "JP",
+                "latitude": 35.6687,
+                "longitude": 140.0201
+            }
+        },
+        {
+            "uid": 13,
+            "tag": "hellocycling-tokyo",
+            "meta": {
+                "city": "東京都 (Tokyo)",
+                "name": "HELLO CYCLING Tokyo",
+                "country": "JP",
+                "latitude": 35.671,
+                "longitude": 139.765
+            }
+        },
+        {
+            "uid": 14,
+            "tag": "hellocycling-kanagawa",
+            "meta": {
+                "city": "神奈川県 (Kanagawa)",
+                "name": "HELLO CYCLING Kanagawa",
+                "country": "JP",
+                "latitude": 35.3629,
+                "longitude": 139.4677
+            }
+        },
+        {
+            "uid": 21,
+            "tag": "hellocycling-gifu",
+            "meta": {
+                "city": "岐阜県 (Gifu)",
+                "name": "HELLO CYCLING Gifu",
+                "country": "JP",
+                "latitude": 35.3348,
+                "longitude": 137.1236
+            }
+        },
+        {
+            "uid": 22,
+            "tag": "hellocycling-shizuoka",
+            "meta": {
+                "city": "静岡県 (Shizuoka)",
+                "name": "HELLO CYCLING Shizuoka",
+                "country": "JP",
+                "latitude": 34.9769,
+                "longitude": 138.3855
+            }
+        },
+        {
+            "uid": 23,
+            "tag": "hellocycling-aichi",
+            "meta": {
+                "city": "愛知県 (Aichi)",
+                "name": "HELLO CYCLING Aichi",
+                "country": "JP",
+                "latitude": 35.1827,
+                "longitude": 136.9096
+            }
+        },
+        {
+            "uid": 20,
+            "tag": "hellocycling-nagano",
+            "meta": {
+                "city": "長野県 (Nagano)",
+                "name": "HELLO CYCLING Nagano",
+                "country": "JP",
+                "latitude": 36.2395,
+                "longitude": 137.9697
+            }
+        },
+        {
+            "uid": 27,
+            "tag": "hellocycling-osaka",
+            "meta": {
+                "city": "大阪府 (Osaka)",
+                "name": "HELLO CYCLING Osaka",
+                "country": "JP",
+                "latitude": 34.6917,
+                "longitude": 135.5091
+            }
+        },
+        {
+            "uid": 26,
+            "tag": "hellocycling-kyoto",
+            "meta": {
+                "city": "京都府 (Kyoto)",
+                "name": "HELLO CYCLING Kyoto",
+                "country": "JP",
+                "latitude": 35.01897,
+                "longitude": 135.75747
+            }
+        },
+        {
+            "uid": 28,
+            "tag": "hellocycling-hyougo",
+            "meta": {
+                "city": "兵庫県 (Hyougo)",
+                "name": "HELLO CYCLING Hyougo",
+                "country": "JP",
+                "latitude": 34.7356,
+                "longitude": 135.3697
+            }
+        },
+        {
+            "uid": 29,
+            "tag": "hellocycling-nara",
+            "meta": {
+                "city": "奈良県 (Nara)",
+                "name": "HELLO CYCLING Nara",
+                "country": "JP",
+                "latitude": 34.6819,
+                "longitude": 135.8007
+            }
+        },
+        {
+            "uid": 37,
+            "tag": "hellocycling-kagawa",
+            "meta": {
+                "city": "香川県 (Kagawa)",
+                "name": "HELLO CYCLING Kagawa",
+                "country": "JP",
+                "latitude": 34.4898,
+                "longitude": 134.2600
+            }
+        },
+        {
+            "uid": 38,
+            "tag": "hellocycling-ehime",
+            "meta": {
+                "city": "愛媛県 (Ehime)",
+                "name": "HELLO CYCLING Ehime",
+                "country": "JP",
+                "latitude": 33.84450,
+                "longitude": 132.76913
+            }
+        },
+        {
+            "uid": 34,
+            "tag": "hellocycling-hiroshima",
+            "meta": {
+                "city": "広島県 (Hiroshima)",
+                "name": "HELLO CYCLING Hiroshima",
+                "country": "JP",
+                "latitude": 34.40061,
+                "longitude": 133.19824
+            }
+        },
+        {
+            "uid": 40,
+            "tag": "hellocycling-fukuoka",
+            "meta": {
+                "city": "福岡県 (Fukuoka)",
+                "name": "HELLO CYCLING Fukuoka",
+                "country": "JP",
+                "latitude": 33.8823,
+                "longitude": 130.8759
+            }
+        },
+        {
+            "uid": 41,
+            "tag": "hellocycling-saga",
+            "meta": {
+                "city": "佐賀県 (Saga)",
+                "name": "HELLO CYCLING Saga",
+                "country": "JP",
+                "latitude": 33.2622,
+                "longitude": 130.2988
+            }
+        },
+        {
+            "uid": 43,
+            "tag": "hellocycling-kumamoto",
+            "meta": {
+                "city": "熊本県 (Kumamoto)",
+                "name": "HELLO CYCLING Kumamoto",
+                "country": "JP",
+                "latitude": 32.21207,
+                "longitude": 130.75388
+            }
+        },
+        {
+            "uid": 47,
+            "tag": "hellocycling-okinawa",
+            "meta": {
+                "city": "沖縄県 (Okinawa)",
+                "name": "HELLO CYCLING Okinawa",
+                "country": "JP",
+                "latitude": 26.2127,
+                "longitude": 127.6828
+            }
+        }
+    ],
+    "system": "hellocycling",
+    "class": "HelloCycling"
+}
