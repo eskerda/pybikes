@@ -1,0 +1,21 @@
+{
+    "instances": [
+        {
+            "tag": "slovnaft-bajk",
+            "meta": {
+                "latitude": 48.1514,
+                "longitude": 17.1056,
+                "city": "Bratislava",
+                "country": "SK",
+                "name": "Slovnaft BAjk",
+                "company": [
+                        "Dopravný podnik Bratislava",
+                        "Bratislavská integrovaná doprava, a.s.",
+                        "Hlavné mesto SR Bratislava"
+                ]
+            }
+        }
+    ],
+    "system": "slovnaft_bajk",
+    "class": "SlovnaftBajk"
+}
