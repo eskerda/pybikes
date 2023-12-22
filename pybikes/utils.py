@@ -41,7 +41,6 @@ def sp_capwords(word):
 class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
-    ssl_verification = True
     requests_timeout = 300
     retry = False
     retry_opts = {}
@@ -57,7 +56,8 @@ class PyBikesScraper(object):
         self.headers['User-Agent'] = user_agent
 
     def request(self, url, method='GET', params=None, data=None, raw=False,
-                headers=None, default_encoding='UTF-8', skip_cache=False):
+                headers=None, default_encoding='UTF-8', skip_cache=False,
+                ssl_verification=True):
 
         if self.retry:
             retries = Retry(** self.retry_opts)
@@ -79,7 +79,7 @@ class PyBikesScraper(object):
                 headers=_headers,
                 # some endpoints might fail verification, so it's up to the spider
                 # to disable it
-                verify=self.ssl_verification,
+                verify=ssl_verification,
                 timeout=self.requests_timeout,
             )
 
