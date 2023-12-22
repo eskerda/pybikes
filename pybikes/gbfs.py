@@ -112,6 +112,22 @@ class Gbfs(BikeShareSystem):
 
         return {feed['name']: feed['url'] for feed in feeds}
 
+    # We use these dumb functions to mark requests for caching with a
+    # 'gbfs::tag::get_station_information::url' signature
+    def get_station_information(self, scraper, feeds):
+        return json.loads(
+            scraper.request(feeds['station_information'])
+        )['data']['stations']
+
+    def get_station_status(self, scraper, feeds):
+        return json.loads(
+            scraper.request(feeds['station_status'])
+        )['data']['stations']
+
+    def get_vehicle_types(self, scraper, feeds):
+        return json.loads(
+            scraper.request(feeds['vehicle_types'])
+        )['data']['vehicle_types']
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
@@ -122,21 +138,17 @@ class Gbfs(BikeShareSystem):
         feeds = self.get_feeds(self.feed_url, scraper, self.force_https)
 
         # Station Information and Station Status data retrieval
-        station_information = json.loads(
-            scraper.request(feeds['station_information'])
-        )['data']['stations']
-        station_status = json.loads(
-            scraper.request(feeds['station_status'])
-        )['data']['stations']
+        station_information = self.get_station_information(scraper, feeds)
+        station_status = self.get_station_status(scraper, feeds)
 
         if 'vehicle_types' in feeds:
-            vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
+            vehicle_info = self.get_vehicle_types(scraper, feeds)
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
                 # TODO: ungrok this line
                 v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
-                    for v in vehicle_info['data'].get('vehicle_types', [])
+                    for v in vehicle_info
             }
         else:
             vehicles = {}

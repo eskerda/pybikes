@@ -1,5 +1,16 @@
-from pybikes import BikeShareStation
+try:
+    # python 3
+    from unittest.mock import patch, Mock
+except ImportError:
+    # python 2
+    from mock import patch, Mock
+
+import pytest
+import requests
+
+from pybikes import BikeShareStation, PyBikesScraper
 from pybikes.utils import filter_bounds
+
 
 def test_filter_bounds():
     """ Tests that filter_bounds utils function correctly filters stations
@@ -76,3 +87,147 @@ def test_filter_bounds_with_key():
     )
 
     assert in_bounds == list(result)
+
+
+class TestPyBikesScraper:
+
+    class FakeSession(Mock):
+        response_data = {
+            'headers': {},
+            'status_code': 200,
+            'text': 'hi'
+        }
+
+        def request(self, * args, ** kwargs):
+            r = Mock(requests.Request, * args, ** kwargs)
+            return Mock(requests.Response, request=r, ** self.response_data)
+
+    @pytest.fixture()
+    def fake_session(self):
+        session = TestPyBikesScraper.FakeSession()
+        session.request = Mock(side_effect=session.request)
+        with patch('requests.sessions.Session.request', session.request):
+            yield session
+
+    def test_default_useragent(self, fake_session):
+        scraper = PyBikesScraper()
+        scraper.request('https://citybik.es')
+        req = scraper.last_request.request
+        assert req.headers['User-Agent'] == 'PyBikes'
+
+    def test_base_headers(self, fake_session):
+        headers = {
+            'Hello-World': 42,
+            'Foo': 'Bar',
+        }
+        scraper = PyBikesScraper(headers=headers)
+        scraper.request('https://citybik.es')
+        req = scraper.last_request.request
+
+        assert req.headers == headers
+
+    def test_req_headers(self, fake_session):
+        headers = {
+            'Hello-World': 42,
+        }
+
+        req_headers = {
+            'Foo': 'Bar',
+            'Hello-World': 45,
+        }
+
+        scraper = PyBikesScraper(headers=headers)
+        scraper.request('https://citybik.es', headers=req_headers)
+        req = scraper.last_request.request
+
+        assert req.headers == dict(req.headers, ** req_headers)
+        # checks that original headers are unaffected
+        assert headers != req_headers
+
+        # next request uses base headers
+        scraper.request('https://citybik.es')
+        req = scraper.last_request.request
+        assert req.headers == headers
+
+    def test_set_cookie(self, fake_session):
+        scraper = PyBikesScraper()
+        fake_session.response_data['headers']['set-cookie'] = 'Hello'
+        scraper.request('https://citybik.es')
+        assert scraper.headers['Cookie'] == 'Hello'
+
+    def test_cache_disabled(self, fake_session):
+        scraper = PyBikesScraper()
+        scraper.request('https://citybik.es')
+
+    def test_uses_cache_if_provided(self, fake_session):
+        cache = {}
+        scraper = PyBikesScraper(cache)
+        scraper.request('https://citybik.es')
+        assert 'https://citybik.es' in cache
+        assert fake_session.request.called
+
+        fake_session.request.reset_mock()
+
+        scraper.request('https://citybik.es')
+        assert not fake_session.request.called
+
+    def test_skip_cache(self, fake_session):
+        cache = {}
+        scraper = PyBikesScraper(cache)
+        scraper.request('https://citybik.es')
+        assert 'https://citybik.es' in cache
+
+        fake_session.request.reset_mock()
+
+        scraper.request('https://citybik.es', skip_cache=True)
+        assert fake_session.request.called
+
+    def test_disable_cache(self, fake_session):
+        cache = {}
+        scraper = PyBikesScraper(cache)
+        scraper.request('https://citybik.es')
+        assert 'https://citybik.es' in cache
+
+        fake_session.request.reset_mock()
+
+        scraper.use_cache = False
+        scraper.request('https://citybik.es')
+        assert fake_session.request.called
+
+        fake_session.request.reset_mock()
+
+        scraper.use_cache = True
+        scraper.request('https://citybik.es')
+        assert not fake_session.request.called
+
+    def test_cache_statuses(self, fake_session):
+        cache = {}
+        scraper = PyBikesScraper(cache)
+        fake_session.response_data['status_code'] = 500
+        scraper.request('https://citybik.es')
+
+        assert 'https://citybik.es' not in cache
+
+        fake_session.request.reset_mock()
+        fake_session.response_data['status_code'] = 200
+
+        scraper.request('https://citybik.es')
+        assert 'https://citybik.es' in cache
+
+        scraper.request('https://citybik.es')
+        scraper.request('https://citybik.es')
+        scraper.request('https://citybik.es')
+        scraper.request('https://citybik.es')
+
+        assert fake_session.request.call_count == 1
+
+    def test_forwards_cache_for(self, fake_session):
+        scraper = PyBikesScraper()
+        mock = Mock()
+
+        with patch('pybikes.contrib.PBCache.set_with_delta', mock):
+            scraper.request('https://citybik.es', cache_for=3600)
+
+        response = scraper.last_request
+
+        assert mock.called_with('https://citybik.es', response, 3600)
