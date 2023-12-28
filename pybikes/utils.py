@@ -18,26 +18,6 @@ from shapely.geometry import Point, box, shape
 from pybikes.base import BikeShareStation
 
 
-def str2bool(v):
-    return v.lower() in ["yes", "true", "t", "1"]
-
-
-def sp_capwords(word):
-    blacklist = [
-        u'el', u'la', u'los', u'las',
-        u'un', u'una', u'unos', u'unas',
-        u'lo', u'al', u'del',
-        u'a', u'ante', u'bajo', u'cabe', u'con', u'contra', u'de', u'desde',
-        u'en', u'entre', u'hacia', u'hasta', u'mediante', u'para', u'por',
-        u'según', u'sin',
-        # Catala | Valencia | Mallorqui
-        u'ses', u'sa', u'ses'
-    ]
-    word = word.lower()
-    cap_lambda = lambda iw: iw[1].capitalize() if iw[0] == 0 or iw[1] not in blacklist else iw[1]
-    return " ".join(map(cap_lambda, enumerate(word.split())))
-
-
 class PyBikesScraper(object):
     proxy_enabled = False
     last_request = None
