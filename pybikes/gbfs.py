@@ -33,6 +33,7 @@ class Gbfs(BikeShareSystem):
         force_https=False,
         station_information=False,
         station_status=False,
+        vehicle_types=False,
         ignore_errors=False,
         retry=None,
         bbox=None,
@@ -53,6 +54,9 @@ class Gbfs(BikeShareSystem):
 
         if station_status:
             self.feeds['station_status'] = station_status
+
+        if vehicle_types:
+            self.feeds['vehicle_types'] = vehicle_types
 
     @property
     def default_feeds(self):
