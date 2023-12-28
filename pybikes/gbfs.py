@@ -33,6 +33,7 @@ class Gbfs(BikeShareSystem):
         force_https=False,
         station_information=False,
         station_status=False,
+        vehicle_types=False,
         ignore_errors=False,
         retry=None,
         bbox=None,
@@ -54,6 +55,9 @@ class Gbfs(BikeShareSystem):
         if station_status:
             self.feeds['station_status'] = station_status
 
+        if vehicle_types:
+            self.feeds['vehicle_types'] = vehicle_types
+
     @property
     def default_feeds(self):
         url = self.feed_url
@@ -64,15 +68,24 @@ class Gbfs(BikeShareSystem):
 
     @property
     def vehicle_taxonomy(self):
+        def update_normal_bikes(station, vehicle):
+            station.extra.setdefault('normal_bikes', 0)
+            station.extra['normal_bikes'] += vehicle['count']
+
+        def update_ebikes(station, vehicle):
+            station.extra.setdefault('ebikes', 0)
+            station.extra['ebikes'] += vehicle['count']
+            station.extra['has_ebikes'] = True
+
         # contains pairs of (vehicle query, resolver)
         return [
             (
                 lambda v: v['propulsion_type'] == 'human' and v['form_factor'] == 'bicycle',
-                lambda v: {'normal_bikes': v['count']}
+                update_normal_bikes
             ),
             (
                 lambda v: v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
-                lambda v: {'has_ebikes': True, 'ebikes': v['count']}
+                update_ebikes
             ),
         ]
 
@@ -237,8 +250,8 @@ class GbfsStation(BikeShareStation):
             for vehicle in info['vehicle_types_available']:
                 if vehicle['vehicle_type_id'] not in vehicles_info:
                     continue
-                vehicle_info, parser = vehicles_info[vehicle['vehicle_type_id']]
-                self.extra.update(parser(vehicle))
+                _, resolve = vehicles_info[vehicle['vehicle_type_id']]
+                resolve(self, vehicle)
 
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
