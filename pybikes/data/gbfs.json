@@ -1143,14 +1143,14 @@
         {
             "tag": "zoov-paris-sud",
             "meta": {
-                "city": "Saclay",
+                "city": "Paris Sud",
                 "name": "Zoov",
                 "country": "FR",
                 "company": [
                     "Fifteen SAS"
                 ],
-                "latitude": 48.7307,
-                "longitude": 2.1742,
+                "latitude": 48.7429,
+                "longitude": 2.2380,
                 "source": "https://www.data.gouv.fr/fr/datasets/r/4646ba01-4fe0-4cd8-91d3-09e204bbaf86",
                 "license": {
                     "name": "Open Data Commons Open Database License (ODbL)",
