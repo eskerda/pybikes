@@ -1,78 +1,92 @@
+import json
+from pkg_resources import resource_string
+
+import pytest
+
 from pybikes import BikeShareStation
 from pybikes.utils import filter_bounds
 
-def test_filter_bounds():
-    """ Tests that filter_bounds utils function correctly filters stations
-    out of a given number of bounds. Function must accept multiple lists
-    of points to form polygons (4 for a box, oc)."""
-    in_bounds = [
-        # First bound
-        BikeShareStation(latitude=1.1, longitude=1.1),
-        BikeShareStation(latitude=2.2, longitude=2.2),
-        BikeShareStation(latitude=3.3, longitude=3.3),
-        BikeShareStation(latitude=4.4, longitude=4.4),
+barcelona = [
+    BikeShareStation(latitude=41.38530363280023, longitude=2.1537750659833534),
+    BikeShareStation(latitude=41.38670644238084, longitude=2.14627128),
+]
 
-        # Second bound
-        BikeShareStation(latitude=21.0, longitude=21.0),
-        BikeShareStation(latitude=22.0, longitude=22.0),
-        BikeShareStation(latitude=23.0, longitude=23.0),
-        BikeShareStation(latitude=24.0, longitude=24.0),
-    ]
-    off_bounds = [
-        BikeShareStation(latitude=11.1, longitude=11.1),
-        BikeShareStation(latitude=12.2, longitude=12.2),
-        BikeShareStation(latitude=13.3, longitude=13.3),
-        BikeShareStation(latitude=14.4, longitude=14.4),
-    ]
-    bounds = ([
-        [0.0, 0.0],
-        [5.0, 0.0],
-        [5.0, 5.0],
-        [0.0, 5.0]
-    ], [
-        # This bounding box is a set of two points, NE, SW
-        [20.0, 25.0],
-        [25.0, 20.0],
-    ])
-    result = filter_bounds(in_bounds + off_bounds, None, *bounds)
+girona = [
+    BikeShareStation(latitude=41.97290243618622, longitude=2.812822876238897),
+]
 
-    assert in_bounds == list(result)
+mordor = [
+    BikeShareStation(latitude=-100, longitude=3000),
+    BikeShareStation(latitude=0, longitude=0),
+]
 
+shape = json.loads(resource_string('tests.fixtures', 'shape.json'))
 
-def test_filter_bounds_with_key():
-    """ Tests that filter_bounds accepts a key parameter """
-    in_bounds = [
-        # First bound
-        {'x': 1.1, 'y': 1.1},
-        {'x': 2.2, 'y': 2.2},
-        {'x': 3.3, 'y': 3.3},
-        {'x': 4.4, 'y': 4.4},
-        # Second bound
-        {'x': 21.1, 'y': 21.1},
-        {'x': 22.2, 'y': 22.2},
-        {'x': 23.3, 'y': 23.3},
-        {'x': 24.4, 'y': 24.4},
-    ]
-    off_bounds = [
-        {'x': 11.1, 'y': 11.1},
-        {'x': 12.2, 'y': 12.2},
-        {'x': 13.3, 'y': 13.3},
-        {'x': 14.4, 'y': 14.4},
-    ]
-    bounds = ([
-        [0.0, 0.0],
-        [5.0, 0.0],
-        [5.0, 5.0],
-        [0.0, 5.0]
-    ], [
-        # This bounding box is a set of two points, NE, SW
-        [20.0, 25.0],
-        [25.0, 20.0],
-    ])
-    result = filter_bounds(
-        in_bounds + off_bounds,
-        lambda s: (s['x'], s['y']),
-        * bounds
-    )
+filter_bounds_cases = [
+    (
+        "A bbox filter of barcelona displays only stations in Barcelona",
+        barcelona + girona + mordor,
+        barcelona,
+        None,
+        [[41.429655489542995, 2.265798843028506], [41.324098007178094, 2.060483133624132]]
+    ),
+    (
+        "A geojson shape filter displays only stations within the filter",
+        barcelona + girona + mordor,
+        barcelona + girona,
+        None,
+        shape
+    ),
+    (
+        "A bbox filter of points using a getter display only points within bbox",
+        [
+            {'lat': 41.3853036328, 'lng': 2.1537750659833534},
+            {'lat': 31.3853036328, 'lng': 1.1537750659833534},
+        ],
+        [
+            {'lat': 41.3853036328, 'lng': 2.1537750659833534},
+        ],
+        lambda thing: (thing['lat'], thing['lng']),
+        [[41.429655489542995, 2.265798843028506], [41.324098007178094, 2.060483133624132]],
+    ),
+    (
+        "A shape filter of points using a getter display only points within bbox",
+        [
+            {'lat': 41.3853036328, 'lng': 2.1537750659833534},
+            {'lat': 31.3853036328, 'lng': 1.1537750659833534},
+        ],
+        [
+            {'lat': 41.3853036328, 'lng': 2.1537750659833534},
+        ],
+        lambda thing: (thing['lat'], thing['lng']),
+        shape
+    ),
+    (
+        "A bbox filter of pairs display only points within bbox",
+        [
+            (41.3853036328, 2.1537750659833534),
+            (31.3853036328, 1.1537750659833534),
+        ],
+        [
+            (41.3853036328, 2.1537750659833534),
+        ],
+        None,
+        [[41.429655489542995, 2.265798843028506], [41.324098007178094, 2.060483133624132]],
+    ),
+    (
+        "A shape filter of pairs display only points within bbox",
+        [
+            (41.3853036328, 2.1537750659833534),
+            (31.3853036328, 1.1537750659833534),
+        ],
+        [
+            (41.3853036328, 2.1537750659833534),
+        ],
+        None,
+        shape
+    ),
+]
 
-    assert in_bounds == list(result)
+@pytest.mark.parametrize("msg, data, expected, getter, bounds", filter_bounds_cases)
+def test_filter_bounds(msg, data, expected, getter, bounds):
+    assert expected == list(filter_bounds(data, getter, bounds)), msg
