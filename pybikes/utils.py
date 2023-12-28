@@ -106,30 +106,30 @@ class PyBikesScraper(object):
 def filter_bounds(things, key, *point_bounds):
     def default_getter(thing):
         if isinstance(thing, BikeShareStation):
-            return (thing.longitude, thing.latitude)
-        return (thing[1], thing[0])
+            return (thing.latitude, thing.longitude)
+        return (thing[0], thing[1])
 
     key = key or default_getter
 
     bounds = []
     for pb in point_bounds:
         # Assume that a 2 length bound list is a square NE/SW
+        # passed as a list of two (lat, lng) pairs
+        # What we are exposing, are lat, lng pairs. So we keep consistency
+        # expecting (lat, lng) pairs, (y, x) instead of (x, y) pairs
         if isinstance(pb, list) and len(pb) == 2:
-            bb = box(
-                min(pb[0][1], pb[1][1]),
-                min(pb[0][0], pb[1][0]),
-                max(pb[0][1], pb[1][1]),
-                max(pb[0][0], pb[1][0]),
-            )
+            bb = box(pb[1][1], pb[1][0], pb[0][1], pb[0][0])
         # Support GeoJSON features
         elif isinstance(pb, dict):
             bb = shape(pb).buffer(0)
         else:
-            raise TypeError("Point bounds only support lists and dicts.")
+            raise TypeError("Point bounds only supports lists and dicts.")
         bounds.append(bb)
 
     for thing in things:
-        point = Point(*key(thing))
+        # What we are exposing, are lat, lng pairs. So we keep consistency
+        # expecting (lat, lng) pairs, (y, x) instead of (x, y) pairs
+        point = Point(*reversed(key(thing)))
         if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
