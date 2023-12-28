@@ -1141,6 +1141,27 @@
             "station_status": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_status.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0"
         },
         {
+            "tag": "zoov-paris-sud",
+            "meta": {
+                "city": "Saclay",
+                "name": "Zoov",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 48.7307,
+                "longitude": 2.1742,
+                "source": "https://www.data.gouv.fr/fr/datasets/r/4646ba01-4fe0-4cd8-91d3-09e204bbaf86",
+                "license": {
+                    "name": "Open Data Commons Open Database License (ODbL)",
+                    "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                }
+            },
+            "feed_url": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/gbfs.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1",
+            "station_information": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/station_information.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1",
+            "station_status": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/station_status.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1"
+        },
+        {
             "tag": "velopartage-geneve",
             "meta": {
                 "city": "Genève",
