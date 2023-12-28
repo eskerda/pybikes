@@ -9,6 +9,11 @@ from pybikes.gbfs import Gbfs
 from pkg_resources import resource_string
 
 
+geojson = json.loads(
+    resource_string("pybikes", "geojson/japan_prefectures.json")
+)
+
+
 class HelloCycling(Gbfs):
     unifeed = True
 
@@ -23,10 +28,6 @@ class HelloCycling(Gbfs):
 
     def __init__(self, tag, meta, uid, bbox=None):
         feed_url = "https://api-public.odpt.org/api/v4/gbfs/hellocycling/gbfs.json"
-
-        geojson = json.loads(
-            resource_string("pybikes", "geojson/japan_prefectures.json")
-        )
 
         bbox = list(
             filter(lambda d: d["properties"]["id"] == uid, geojson["features"])
