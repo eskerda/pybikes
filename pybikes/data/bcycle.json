@@ -1,0 +1,392 @@
+{
+    "instances": [
+        {
+            "tag": "charlotte",
+            "uid": "bcycle_charlotte",
+            "meta": {
+                "latitude": 35.22716,
+                "longitude": -80.83855,
+                "city": "Charlotte, NC",
+                "name": "Charlotte Joyrides",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "austin",
+            "uid": "bcycle_austin",
+            "meta": {
+                "latitude": 30.26408,
+                "longitude": -97.74355,
+                "city": "Austin, TX",
+                "name": "ATX MetroBike",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "boulder",
+            "uid": "bcycle_boulder",
+            "meta": {
+                "latitude": 40.00811,
+                "longitude": -105.26385,
+                "city": "Boulder, CO",
+                "name": "Boulder BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "broward",
+            "uid": "bcycle_broward",
+            "meta": {
+                "latitude": 26.12026,
+                "longitude": -80.14819,
+                "city": "Fort Lauderdale, FL",
+                "name": "Broward BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "elpaso",
+            "uid": "bcycle_elpaso",
+            "meta": {
+                "latitude": 31.76148,
+                "longitude": -106.48507,
+                "city": "El Paso, TX",
+                "name": "El Paso BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "fortworth",
+            "uid": "bcycle_fortworth",
+            "meta": {
+                "latitude": 32.7516,
+                "longitude": -97.32888,
+                "city": "Fort Worth, TX",
+                "name": "Fort Worth Bike Sharing",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "omaha",
+            "uid": "bcycle_heartland",
+            "meta": {
+                "latitude": 41.25832,
+                "longitude": -96.00853,
+                "city": "Omaha, NE",
+                "name": "Heartland BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "greenbikeslc",
+            "uid": "bcycle_greenbikeslc",
+            "meta": {
+                "latitude": 40.76745,
+                "longitude": -111.88736,
+                "city": "Salt Lake City",
+                "name": "GREENbike",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "houston",
+            "uid": "bcycle_houston",
+            "meta": {
+                "latitude": 29.75983,
+                "longitude": -95.36949,
+                "city": "Houston, TX",
+                "name": "Houston BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "madison",
+            "uid": "bcycle_madison",
+            "meta": {
+                "latitude": 43.07571,
+                "longitude": -89.38527,
+                "city": "Madison, WI",
+                "name": "BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "greenville",
+            "uid": "bcycle_greenville",
+            "meta": {
+                "latitude": 34.85261759999999,
+                "city": "Greenville, SC",
+                "name": "Greenville BCycle",
+                "longitude": -82.3940104,
+                "country": "US"
+            }
+        },
+        {
+            "tag": "desmoines",
+            "uid": "bcycle_desmoines",
+            "meta": {
+                "latitude": 41.6005448,
+                "city": "Des Moines, IA",
+                "name": "Des Moines BCycle",
+                "longitude": -93.6091064,
+                "country": "US"
+            }
+        },
+        {
+            "tag": "bublr-bikes",
+            "uid": "bcycle_bublr",
+            "meta": {
+                "latitude": 43.0369,
+                "longitude": -87.89667,
+                "city": "Milwaukee, WI",
+                "name": "Bublr Bikes",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "cincy-red-bike",
+            "uid": "bcycle_cincyredbike",
+            "meta": {
+                "latitude": 39.10138,
+                "longitude": -84.51217,
+                "city": "Cincinnati, OH",
+                "name": "Cincy Red Bike",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "indego",
+            "uid": "bcycle_indego",
+            "meta": {
+                "latitude": 39.95378,
+                "longitude": -75.16374,
+                "city": "Philadelphia, PA",
+                "name": "Indego",
+                "country": "US",
+                "company": [
+                    "City of Philadelphia",
+                    "Bicycle Transit Systems"
+                ]
+            }
+        }, 
+        {
+            "tag": "indiana-pacers-bikeshare",
+            "uid": "bcycle_pacersbikeshare",
+            "meta": {
+                "latitude": 39.76593,
+                "longitude": -86.16216,
+                "city": "Indianapolis, IN",
+                "name": "Indiana Pacers Bikeshare",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "metro-bike-share",
+            "uid": "bcycle_lametro",
+            "meta": {
+                "latitude": 34.04855,
+                "longitude": -118.25905,
+                "city": "Los Angeles, CA",
+                "name": "Metro Bike Share",
+                "country": "US",
+                "company": [
+                    "Los Angeles County Metropolitan Transportation Authority (Metro)",
+                    "Bicycle Transit Systems"
+                ]
+            }
+        },
+        {
+            "tag": "sanantonio",
+            "uid": "bcycle_sanantonio",
+            "meta": {
+                "latitude": 29.43701,
+                "longitude": -98.48236,
+                "city": "San Antonio, TX",
+                "name": "SWell Cycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "rtc-bike-share",
+            "uid": "bcycle_rtcbikeshare",
+            "meta": {
+                "latitude": 36.1438,
+                "longitude": -115.15682,
+                "city": "Las Vegas, NV",
+                "name": "RTC Bike Share",
+                "country": "US",
+                "company": [
+                    "RTC Southern Nevada, Inc"
+                ]
+            }
+        },
+        {
+            "tag": "aventura",
+            "uid": "bcycle_aventura",
+            "meta": {
+                "latitude": 25.95711,
+                "longitude": -80.1395,
+                "city": "Aventura, FL",
+                "name": "Aventura BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "bentonville",
+            "uid": "bcycle_bentonville",
+            "meta": {
+                "latitude": 36.3605,
+                "longitude": -94.1996,
+                "city": "Bentonville, AR",
+                "name": "Bentonville BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "bismarck",
+            "uid": "bcycle_bismarck",
+            "meta": {
+                "latitude": 46.8082,
+                "longitude": -100.7847,
+                "city": "Bismarck, ND",
+                "name": "BisPArks BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "clarksville",
+            "uid": "bcycle_clarksville",
+            "meta": {
+                "latitude": 36.5277,
+                "longitude": -87.3561,
+                "city": "Clarksville, TN",
+                "name": "Clarksville BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "encinitas",
+            "uid": "bcycle_encinitas",
+            "meta": {
+                "latitude": 33.0365,
+                "longitude": -117.2912,
+                "city": "Encinitas, CA",
+                "name": "Encinitas BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "jackson",
+            "uid": "bcycle_jacksoncounty",
+            "meta": {
+                "latitude": 42.2462,
+                "longitude": -84.4031,
+                "city": "Jackson, MI",
+                "name": "Jackson County BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "lincoln",
+            "uid": "bcycle_bikelnk",
+            "meta": {
+                "latitude": 40.8087,
+                "longitude": -96.7075,
+                "city": "Lincoln, NE",
+                "name": "BikeLNK",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "memphis",
+            "uid": "bcycle_memphis",
+            "meta": {
+                "latitude": 35.1486,
+                "longitude": -90.045,
+                "city": "Memphis, TN",
+                "name": "Explore Bike Share",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "nashville",
+            "uid": "bcycle_nashville",
+            "meta": {
+                "latitude": 36.15768,
+                "longitude": -86.773,
+                "city": "Nashville, TN",
+                "name": "Nashville BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "redding",
+            "uid": "bcycle_redding",
+            "meta": {
+                "latitude": 40.5875,
+                "longitude": -122.3860,
+                "city": "Redding, CA",
+                "name": "Redding BCycle",
+                "country": "US"
+            },
+            "bbox": [[40.4347, -122.51], [40.7565,-122.1681]]
+        },
+        {
+            "tag": "santa-barbara",
+            "uid": "bcycle_santabarbara",
+            "meta": {
+                "latitude": 34.42178,
+                "longitude": -119.7001,
+                "city": "Santa Barbara, CA",
+                "name": "Santa Barbara BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "santa-cruz",
+            "uid": "bcycle_santacruz",
+            "meta": {
+                "latitude": 36.97484,
+                "longitude":  -122.0277,
+                "city": "Santa Cruz, CA",
+                "name": "Santa Cruz BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "valentine",
+            "uid": "bcycle_valentine",
+            "meta": {
+                "latitude": 42.8747,
+                "longitude": -100.5511,
+                "city": "Valentine, NE",
+                "name": "Valentine BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "mcallen",
+            "uid": "bcycle_mcallen",
+            "meta": {
+                "latitude": 26.20438,
+                "longitude": -98.2261,
+                "city": "McAllen, TX",
+                "name": "RGV BCycle",
+                "country": "US"
+            }
+        },
+        {
+            "tag": "clemson",
+            "uid": "bcycle_clemson",
+            "meta": {
+                "latitude": 34.67847,
+                "longitude": -82.8351,
+                "city": "Clemson, SC",
+                "name": "Clemson University Bike Share",
+                "country": "US"
+            }
+        }
+    ],
+    "system": "bcycle",
+    "class": "BCycle"
+}
