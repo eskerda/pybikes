@@ -182,18 +182,6 @@
                     "dataset": "chantrerie"
                 },
                 {
-                    "tag": "saclay-captainbike",
-                    "meta": {
-                        "city": "Paris-Saclay",
-                        "name": "Saclay VLS (Captain Bike)",
-                        "ebikes": true,
-                        "latitude": 48.7098082,
-                        "longitude": 2.2113660,
-                        "country": "FR"
-                    },
-                    "dataset": "saclay"
-                },
-                {
                     "tag": "petites-reines",
                     "meta": {
                         "city": "Les Sables d'Olonne",
