@@ -15,7 +15,8 @@ class Cykleo(BikeShareSystem):
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
         'User-Agent':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.106 Safari/535.2',
-        'Referer':'https://portail.cykleo.fr/'
+        'Referer':'https://portail.cykleo.fr/',
+        'Authority': 'portail.cykleo.fr',
     }
 
     meta = {
@@ -29,7 +30,7 @@ class Cykleo(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-        places = json.loads(scraper.request(self.url, method='GET', headers=Cykleo.headers))
+        places = json.loads(scraper.request(self.url, method='GET', headers=Cykleo.headers, ssl_verification=False))
         self.stations = list(map(CykleoStation, places))
 
 
