@@ -1020,6 +1020,20 @@
                 "longitude": -157.8560
             },
             "feed_url": "https://hon.publicbikesystem.net/customer/ube/gbfs/v1/en/gbfs.json"
+        },
+        {
+            "tag": "wolf-ride-bike-share",
+            "meta": {
+                "city": "Stony Brook",
+                "name": "Wolf Ride Bike Share (Stony Brook University)",
+                "country": "US",
+                "company": [
+                    "Stony Brook University"
+                ],
+                "latitude": 40.9124,
+                "longitude": -73.1249
+            },
+            "feed_url": "https://sbu.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
