@@ -3,28 +3,39 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
+import time
+from base64 import b64encode, b64decode
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-STATIONS_URL = '{endpoint}/station/stationPublic'
+STATIONS_URL = '{endpoint}/station/stationPublic?idEmpresa={uid}'
+
 
 class Espe(BikeShareSystem):
-    headers = {
-        'Authorization': "Basic QklDSVMtQklYMjAyM0RFU19Vc2VyOkJJQ0lTLUJJWDIwMjNERVNfUGFzc3dvcmQ6MTY5NjU1NjEzNzg3MQ==",
-    }
 
-    def __init__(self, tag, meta, endpoint):
+    @property
+    def auth_headers(self):
+        fixed = str(b64decode('QklDSVMtQklYMjAyM0RFU19Vc2VyOkJJQ0lTLUJJWDIwMjNERVNfUGFzc3dvcmQ6'), 'utf-8')
+        timestamp = str(int(time.time()) * 1000)
+        token = b64encode(bytes(fixed + timestamp, 'utf-8'))
+
+        return {
+            'Authorization': 'Basic ' + str(token, 'utf-8')
+        }
+
+    def __init__(self, tag, meta, uid, endpoint):
         super(Espe, self).__init__(tag, meta)
         self.endpoint = endpoint
+        self.uid = uid
 
     @property
     def stations_url(self):
-        return STATIONS_URL.format(endpoint=self.endpoint)
+        return STATIONS_URL.format(endpoint=self.endpoint, uid=self.uid)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         data = json.loads(scraper.request(self.stations_url,
-                                          headers=Espe.headers,
+                                          headers=self.auth_headers,
                                           method='GET'))
         # There is a lot of trash on the feed, 'PUBLICA' means it is displayed
         # on their map
