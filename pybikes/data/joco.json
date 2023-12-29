@@ -1,0 +1,23 @@
+{
+    "instances": [
+        {
+            "tag": "joco-new-york",
+            "bbox": [[40.528083, -74.206935],[40.942386, -73.725738]],
+            "meta": {
+                "city": "New York",
+                "name": "JOCO New York",
+                "country": "US",
+                "company": [
+                    "BEAM BIKE CORP.",
+                    "JOCO"
+                ],
+                "latitude": 40.7572,
+                "longitude": -73.9859,
+                "ebikes": true
+            },
+            "feed_url": "https://ridejoco.com/locationinfo.json"
+        }
+    ],
+    "system": "joco",
+    "class": "Joco"
+}
