@@ -20,19 +20,26 @@ mordor = [
     BikeShareStation(latitude=0, longitude=0),
 ]
 
+morpork = [
+    BikeShareStation(latitude=-180, longitude=-90),
+    BikeShareStation(latitude=180, longitude=90),
+]
+
 shape = json.loads(resource_string('tests.fixtures', 'shape.json'))
+multipolygon = json.loads(resource_string('tests.fixtures', 'multipolygon.json'))
+hole = json.loads(resource_string('tests.fixtures', 'hole.json'))
 
 filter_bounds_cases = [
     (
         "A bbox filter of barcelona displays only stations in Barcelona",
-        barcelona + girona + mordor,
+        barcelona + girona + mordor + morpork,
         barcelona,
         None,
         [[41.429655489542995, 2.265798843028506], [41.324098007178094, 2.060483133624132]]
     ),
     (
         "A geojson shape filter displays only stations within the filter",
-        barcelona + girona + mordor,
+        barcelona + girona + mordor + morpork,
         barcelona + girona,
         None,
         shape
@@ -84,6 +91,32 @@ filter_bounds_cases = [
         ],
         None,
         shape
+    ),
+    (
+        "A filter with a split multipolygon displays only stations within",
+        [
+            (40.06787253110281, -1.2728061635069423),
+            (39.45257232150425, -0.11859136593309927),
+            (39.46613316471084, -0.37452595148192813),
+        ],
+        [
+            (40.06787253110281, -1.2728061635069423),
+            (39.46613316471084, -0.37452595148192813),
+        ],
+        None,
+        multipolygon
+    ),
+    (
+        "A polygon with a hole displays only stations within the filter",
+        [
+            (0, 0),
+            (51.5, 0),
+        ],
+        [
+            (51.5, 0),
+        ],
+        None,
+        hole
     ),
 ]
 
