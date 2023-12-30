@@ -1045,6 +1045,22 @@
                 ]
             },
             "feed_url": "https://gbfs.urbansharing.com/bikemi.com/gbfs.json"
+        },
+        {
+            "tag": "mogo-detroit",
+            "meta": {
+                "latitude": 42.331548,
+                "longitude": -83.0465,
+                "city": "Detroit, MI",
+                "name": "MoGo",
+                "country": "US",
+                "company": [
+                    "PBSC Urban Solutions",
+                    "Shift Transit"
+                ],
+                "ebikes": true
+            },
+            "feed_url": "https://detroit.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
