@@ -164,7 +164,21 @@ class Gbfs(BikeShareSystem):
             (station_information[uid], station_status[uid])
             for uid in station_information.keys()
         )
+
+        # Filter station by bbox before parsing and appending to a list.
+        # Some networks have a LOT of stations
+        if self.bbox:
+            def getter(zipinfo):
+                info, status = zipinfo
+                # some networks break spec by setting lat and lng in status
+                lat = info.get('lat') or status.get('lat')
+                lng = info.get('lon') or status.get('lon')
+                return (lat, lng)
+
+            station_zip = filter_bounds(station_zip, getter, self.bbox)
+
         stations = []
+
         for info, status in station_zip:
             # Some feeds have info keys set to none on status
             info.update({k: v for k, v in status.items() if v is not None})
@@ -178,9 +192,6 @@ class Gbfs(BikeShareSystem):
                 raise e
 
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 
