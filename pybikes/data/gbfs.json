@@ -1030,6 +1030,21 @@
                 "longitude": -123.0949
             },
             "feed_url": "https://peacehealthrides.com/opendata/gbfs.json"
+        },
+        {
+            "tag": "bikemi",
+            "meta": {
+                "latitude": 45.4654542,
+                "city": "Milano",
+                "name": "BikeMi",
+                "longitude": 9.186516,
+                "country": "IT",
+                "ebikes": true,
+                "company": [
+                    "IGP S.p.A."
+                ]
+            },
+            "feed_url": "https://gbfs.urbansharing.com/bikemi.com/gbfs.json"
         }
     ],
     "system": "gbfs",

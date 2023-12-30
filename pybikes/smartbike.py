@@ -111,58 +111,6 @@ class SmartBikeStation(BikeShareStation):
                 self.extra['ebikes'] = True
 
 
-class SmartShitty(BaseSystem):
-    """
-    BikeMI decided (again) to implement yet another way of displaying the map...
-
-    """
-    sync = True
-
-    def __init__(self, tag, meta, feed_url):
-        super(SmartShitty, self).__init__(tag, meta)
-        self.feed_url = feed_url
-
-    def update(self, scraper=None):
-        scraper = scraper or PyBikesScraper()
-
-        page = scraper.request(self.feed_url)
-        page_html=html.fromstring(page.encode('utf-8'))
-        element = page_html.get_element_by_id("__NEXT_DATA__").text_content()
-        element_string = element.encode('utf-8').decode("utf-8")
-        raw_data = json.loads(element_string)
-        stations_data = raw_data['props']['pageProps']['apolloState']
-        stations = []
-
-        for station_key in stations_data:
-            station_data = stations_data[station_key]
-            if station_data['__typename']=='DockGroup':
-                stations.append(BikemiStation(station_data))
-        self.stations = stations
-
-
-class BikemiStation(BikeShareStation):
-    def __init__(self, fields):
-        name = fields['title']
-        latitude = fields['coord']['lat']
-        longitude = fields['coord']['lng']
-        free = fields['availabilityInfo']['availableDocks']
-        normal_bikes = fields['availabilityInfo']['availableVehicleCategories'][0]['count']
-        ebikes_without_childseat = fields['availabilityInfo']['availableVehicleCategories'][1]['count']
-        ebikes_with_childseat = fields['availabilityInfo']['availableVehicleCategories'][2]['count']
-        extra = {
-            'status': fields['state'],
-            'uid': str(fields['id']),
-            'address': fields['subTitle'],
-            'online': fields['enabled'],
-            'normal_bikes': normal_bikes,
-            'ebikes_without_childseat': ebikes_without_childseat,
-            'ebikes_with_childseat': ebikes_with_childseat,
-            'ebikes': ebikes_without_childseat + ebikes_with_childseat
-        }
-        bikes = normal_bikes + ebikes_without_childseat + ebikes_with_childseat
-        super(BikemiStation, self).__init__(name, latitude, longitude, bikes, free, extra)
-
-
 class SmartBike2(BaseSystem):
 
     def __init__(self, tag, meta, endpoint):
