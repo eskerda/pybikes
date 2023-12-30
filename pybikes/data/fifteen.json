@@ -16,7 +16,7 @@
                 "longitude": 5.36978,
                 "latitude": 43.296482
             },
-            "feed_url": "https://levelo.ampmetropole.fr/api/stations"
+            "feed_url": "https://levelo.ampmetropole.fr/api/client/stations"
         },
         {
             "tag": "vilvolt",
@@ -32,7 +32,7 @@
                 "longitude": 6.4508,
                 "latitude": 48.1833
             },
-            "feed_url": "https://vilvolt.cw.fifteen.eu/api/stations"
+            "feed_url": "https://vilvolt.cw.fifteen.eu/api/client/stations"
         },
         {
             "tag": "gijon",
