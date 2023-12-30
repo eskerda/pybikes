@@ -779,6 +779,7 @@
                 "latitude": 4.6569,
                 "longitude": -74.0656
             },
+            "bbox": [[4.719375734803037, -74.02234088704458], [4.588374427629375, -74.0977190296218]],
             "feed_url": "https://bogota.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {

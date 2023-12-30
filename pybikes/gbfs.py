@@ -3,6 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
+from warnings import warn
 try:
     # Python 2
     from urlparse import urljoin
@@ -68,14 +69,24 @@ class Gbfs(BikeShareSystem):
 
     @property
     def vehicle_taxonomy(self):
-        def update_normal_bikes(station, vehicle):
+        def update_normal_bikes(station, vehicle, info):
             station.extra.setdefault('normal_bikes', 0)
             station.extra['normal_bikes'] += vehicle['count']
 
-        def update_ebikes(station, vehicle):
+        def update_ebikes(station, vehicle, info):
             station.extra.setdefault('ebikes', 0)
             station.extra['ebikes'] += vehicle['count']
             station.extra['has_ebikes'] = True
+
+        def update_ecargo(station, vehicle, info):
+            station.extra.setdefault('ecargo', 0)
+            station.extra['ecargo'] += vehicle['count']
+            station.extra['has_ecargo'] = True
+
+        def update_cargo(station, vehicle, info):
+            station.extra.setdefault('cargo', 0)
+            station.extra['cargo'] += vehicle['count']
+            station.extra['has_cargo'] = True
 
         # contains pairs of (vehicle query, resolver)
         return [
@@ -86,6 +97,15 @@ class Gbfs(BikeShareSystem):
             (
                 lambda v: v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
                 update_ebikes
+            ),
+            (
+                lambda v: v['propulsion_type'] == 'human' and v['form_factor'] == 'cargo_bicycle',
+                update_cargo
+            ),
+
+            (
+                lambda v: v['propulsion_type'] == 'electric_assist' and v['form_factor'] == 'cargo_bicycle',
+                update_ecargo
             ),
         ]
 
@@ -143,12 +163,17 @@ class Gbfs(BikeShareSystem):
         )['data']['stations']
 
         if 'vehicle_types' in feeds:
+            # Useful for warning possible interesting types of vehicles that
+            # we do not support
+            def noop(s, v, i):
+                warn("Unhandled vehicle type %s with count %d" % (i, v['count']))
+
             vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
                 # TODO: ungrok this line
-                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
+                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), noop))
                     for v in vehicle_info['data'].get('vehicle_types', [])
             }
         else:
@@ -160,11 +185,25 @@ class Gbfs(BikeShareSystem):
         station_information = {s['station_id']: s for s in station_information}
         station_status = {s['station_id']: s for s in station_status}
         # Any station not in station_information will be ignored
-        station_zip = [
+        station_zip = (
             (station_information[uid], station_status[uid])
             for uid in station_information.keys()
-        ]
+        )
+
+        # Filter station by bbox before parsing and appending to a list.
+        # Some networks have a LOT of stations
+        if self.bbox:
+            def getter(zipinfo):
+                info, status = zipinfo
+                # some networks break spec by setting lat and lng in status
+                lat = info.get('lat') or status.get('lat')
+                lng = info.get('lon') or status.get('lon')
+                return (lat, lng)
+
+            station_zip = filter_bounds(station_zip, getter, self.bbox)
+
         stations = []
+
         for info, status in station_zip:
             # Some feeds have info keys set to none on status
             info.update({k: v for k, v in status.items() if v is not None})
@@ -178,9 +217,6 @@ class Gbfs(BikeShareSystem):
                 raise e
 
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 
@@ -250,8 +286,8 @@ class GbfsStation(BikeShareStation):
             for vehicle in info['vehicle_types_available']:
                 if vehicle['vehicle_type_id'] not in vehicles_info:
                     continue
-                _, resolve = vehicles_info[vehicle['vehicle_type_id']]
-                resolve(self, vehicle)
+                vi, resolve = vehicles_info[vehicle['vehicle_type_id']]
+                resolve(self, vehicle, vi)
 
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
