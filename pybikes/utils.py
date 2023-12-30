@@ -13,29 +13,9 @@ except ImportError:
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
-from shapely.geometry import Polygon, Point, box
+from shapely.geometry import Point, box, shape
 
 from pybikes.base import BikeShareStation
-
-
-def str2bool(v):
-    return v.lower() in ["yes", "true", "t", "1"]
-
-
-def sp_capwords(word):
-    blacklist = [
-        u'el', u'la', u'los', u'las',
-        u'un', u'una', u'unos', u'unas',
-        u'lo', u'al', u'del',
-        u'a', u'ante', u'bajo', u'cabe', u'con', u'contra', u'de', u'desde',
-        u'en', u'entre', u'hacia', u'hasta', u'mediante', u'para', u'por',
-        u'según', u'sin',
-        # Catala | Valencia | Mallorqui
-        u'ses', u'sa', u'ses'
-    ]
-    word = word.lower()
-    cap_lambda = lambda iw: iw[1].capitalize() if iw[0] == 0 or iw[1] not in blacklist else iw[1]
-    return " ".join(map(cap_lambda, enumerate(word.split())))
 
 
 class PyBikesScraper(object):
@@ -58,7 +38,6 @@ class PyBikesScraper(object):
     def request(self, url, method='GET', params=None, data=None, raw=False,
                 headers=None, default_encoding='UTF-8', skip_cache=False,
                 ssl_verification=True):
-
         if self.retry:
             retries = Retry(** self.retry_opts)
             self.session.mount(url, HTTPAdapter(max_retries=retries))
@@ -129,22 +108,28 @@ def filter_bounds(things, key, *point_bounds):
         if isinstance(thing, BikeShareStation):
             return (thing.latitude, thing.longitude)
         return (thing[0], thing[1])
+
     key = key or default_getter
 
     bounds = []
     for pb in point_bounds:
-        # Assume that a 2 length bound is a square NE/SW
-        if len(pb) == 2:
-            bb = box(min(pb[0][0], pb[1][0]),
-                     min(pb[0][1], pb[1][1]),
-                     max(pb[0][0], pb[1][0]),
-                     max(pb[0][1], pb[1][1]))
+        # Assume that a 2 length bound list is a square NE/SW
+        # passed as a list of two (lat, lng) pairs
+        # What we are exposing, are lat, lng pairs. So we keep consistency
+        # expecting (lat, lng) pairs, (y, x) instead of (x, y) pairs
+        if isinstance(pb, list) and len(pb) == 2:
+            bb = box(pb[1][1], pb[1][0], pb[0][1], pb[0][0])
+        # Support GeoJSON features
+        elif isinstance(pb, dict):
+            bb = shape(pb).buffer(0)
         else:
-            bb = Polygon(pb)
+            raise TypeError("Point bounds only supports lists and dicts.")
         bounds.append(bb)
 
     for thing in things:
-        point = Point(*key(thing))
+        # What we are exposing, are lat, lng pairs. So we keep consistency
+        # expecting (lat, lng) pairs, (y, x) instead of (x, y) pairs
+        point = Point(*reversed(key(thing)))
         if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing

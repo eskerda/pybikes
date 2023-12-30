@@ -7,16 +7,20 @@ import codecs
 
 from lxml import etree
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.exceptions import StationPlannedException
 
-__all__ = ['BixiSystem', 'BixiStation']
 
 parse_methods = {
     'xml': 'get_xml_stations',
     'json': 'get_json_stations',
     'json_from_xml': 'get_json_xml_stations'
 }
+
+
+def str2bool(v):
+    return v.lower() in ["yes", "true", "t", "1"]
+
 
 class BixiSystem(BikeShareSystem):
 
@@ -33,9 +37,7 @@ class BixiSystem(BikeShareSystem):
         self.method = format
 
     def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
-
+        scraper = scraper or PyBikesScraper()
         if self.method not in parse_methods:
             raise Exception(
                 'Extractor for method %s is not implemented' % self.method )
@@ -54,7 +56,7 @@ def get_json_stations(self, scraper):
     for marker in data['stationBeanList']:
         try:
             station = BixiStation.from_json(marker)
-        except exceptions.StationPlannedException:
+        except StationPlannedException:
             continue
         stations.append(station)
     return stations
@@ -101,9 +103,9 @@ class BixiStation(BikeShareStation):
             'uid': int(xml_data.findtext('id')),
             'name': name,
             'terminalName' : terminalName,
-            'locked': utils.str2bool(xml_data.findtext('locked')),
-            'installed': utils.str2bool(xml_data.findtext('installed')),
-            'temporary': utils.str2bool(xml_data.findtext('temporary')),
+            'locked': str2bool(xml_data.findtext('locked')),
+            'installed': str2bool(xml_data.findtext('installed')),
+            'temporary': str2bool(xml_data.findtext('temporary')),
             'installDate': xml_data.findtext('installDate'),
             'removalDate': xml_data.findtext('removalDate')
         }
@@ -139,7 +141,7 @@ class BixiStation(BikeShareStation):
         '''
         station = BixiStation()
         if data['statusValue'] == 'Planned' or data['testStation']:
-            raise exceptions.StationPlannedException()
+            raise StationPlannedException()
 
         station.name      = "%s - %s" % (data['id'], data['stationName'])
         station.longitude = float(data['longitude'])
@@ -200,12 +202,12 @@ class BixiStation(BikeShareStation):
             'name': data['name'],
             'terminalName': data['terminalName'],
             'lastCommWithServer': data['lastCommWithServer'],
-            'installed': utils.str2bool(data['installed']),
-            'locked': utils.str2bool(data['locked']),
+            'installed': str2bool(data['installed']),
+            'locked': str2bool(data['locked']),
             'installDate': data['installDate'],
             'removalDate': data['removalDate'],
-            'temporary': utils.str2bool(data['temporary']),
-            'public': utils.str2bool(data['public']),
+            'temporary': str2bool(data['temporary']),
+            'public': str2bool(data['public']),
             'latestUpdateTime': data['latestUpdateTime']
         }
         return station
