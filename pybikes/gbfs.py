@@ -3,6 +3,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
+from warnings import warn
 try:
     # Python 2
     from urlparse import urljoin
@@ -68,11 +69,11 @@ class Gbfs(BikeShareSystem):
 
     @property
     def vehicle_taxonomy(self):
-        def update_normal_bikes(station, vehicle):
+        def update_normal_bikes(station, vehicle, info):
             station.extra.setdefault('normal_bikes', 0)
             station.extra['normal_bikes'] += vehicle['count']
 
-        def update_ebikes(station, vehicle):
+        def update_ebikes(station, vehicle, info):
             station.extra.setdefault('ebikes', 0)
             station.extra['ebikes'] += vehicle['count']
             station.extra['has_ebikes'] = True
@@ -143,12 +144,17 @@ class Gbfs(BikeShareSystem):
         )['data']['stations']
 
         if 'vehicle_types' in feeds:
+            # Useful for warning possible interesting types of vehicles that
+            # we do not support
+            def noop(s, v, i):
+                warn("Unhandled vehicle type %s with count %d" % (i, v['count']))
+
             vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
                 # TODO: ungrok this line
-                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), lambda v: {}))
+                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), noop))
                     for v in vehicle_info['data'].get('vehicle_types', [])
             }
         else:
@@ -261,8 +267,8 @@ class GbfsStation(BikeShareStation):
             for vehicle in info['vehicle_types_available']:
                 if vehicle['vehicle_type_id'] not in vehicles_info:
                     continue
-                _, resolve = vehicles_info[vehicle['vehicle_type_id']]
-                resolve(self, vehicle)
+                vi, resolve = vehicles_info[vehicle['vehicle_type_id']]
+                resolve(self, vehicle, vi)
 
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
