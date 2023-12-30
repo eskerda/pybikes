@@ -1,187 +1,171 @@
 {
-    "instances": [
-        {
-            "tag": "easybike-didymoteicho",
-            "meta": {
-                "latitude": 41.3502539849,
-                "city": "Didymoteicho",
-                "name": "EasyBike",
-                "longitude": 26.4972960949,
-                "country": "GR"
-            },
-            "city_uid": "didymoteicho"
+    "class": {
+        "EasyBike": {
+            "instances": [
+                {
+                    "tag": "easybike-didymoteicho",
+                    "meta": {
+                        "latitude": 41.3502539849,
+                        "city": "Didymoteicho",
+                        "name": "EasyBike",
+                        "longitude": 26.4972960949,
+                        "country": "GR"
+                    },
+                    "city_uid": "didymoteicho"
+                },
+                {
+                    "tag": "easybike-glyfada",
+                    "meta": {
+                        "latitude": 37.8715809825,
+                        "city": "Glyfada",
+                        "name": "EasyBike",
+                        "longitude": 23.7355544376,
+                        "country": "GR"
+                    },
+                    "city_uid": "glyfada"
+                },
+                {
+                    "tag": "easybike-igoumenitsa",
+                    "meta": {
+                        "latitude": 39.5005770633,
+                        "city": "Igoumenitsa",
+                        "name": "EasyBike",
+                        "longitude": 20.2635206985,
+                        "country": "GR"
+                    },
+                    "city_uid": "igoumenitsa"
+                },
+                {
+                    "tag": "easybike-ioannina",
+                    "meta": {
+                        "latitude": 39.6639818,
+                        "city": "Ioannina",
+                        "name": "EasyBike",
+                        "longitude": 20.8522784,
+                        "country": "GR"
+                    },
+                    "city_uid": "ioannina"
+                },
+                {
+                    "tag": "easybike-karditsa",
+                    "meta": {
+                        "latitude": 39.3634604,
+                        "city": "Karditsa",
+                        "name": "EasyBike",
+                        "longitude": 21.9211192,
+                        "country": "GR"
+                    },
+                    "city_uid": "karditsa"
+                },
+                {
+                    "tag": "easybike-kinouria",
+                    "meta": {
+                        "latitude": 37.1476704305,
+                        "city": "Kinouria",
+                        "name": "EasyBike",
+                        "longitude": 22.8933729935,
+                        "country": "GR"
+                    },
+                    "city_uid": "kinouria"
+                },
+                {
+                    "tag": "easybike-komotini",
+                    "meta": {
+                        "latitude": 41.117833,
+                        "city": "Komotini",
+                        "name": "EasyBike",
+                        "longitude": 25.4041307,
+                        "country": "GR"
+                    },
+                    "city_uid": "komotini"
+                },
+                {
+                    "tag": "easybike-patra",
+                    "meta": {
+                        "latitude": 38.2410966371,
+                        "city": "Patra",
+                        "name": "EasyBike",
+                        "longitude": 21.7259683418,
+                        "country": "GR"
+                    },
+                    "city_uid": "patra"
+                },
+                {
+                    "tag": "easybike-rethymno",
+                    "meta": {
+                        "latitude": 35.3667571777,
+                        "city": "Rethymno",
+                        "name": "EasyBike",
+                        "longitude": 24.4832845736,
+                        "country": "GR"
+                    },
+                    "city_uid": "rethymno"
+                },
+                {
+                    "tag": "easybike-samos",
+                    "meta": {
+                        "latitude": 37.754065919,
+                        "city": "Samos",
+                        "name": "EasyBike",
+                        "longitude": 26.9787850189,
+                        "country": "GR"
+                    },
+                    "city_uid": "samos"
+                },
+                {
+                    "tag": "easybike-mani",
+                    "meta": {
+                        "latitude": 41.4097472,
+                        "city": "Mani",
+                        "name": "EasyBike",
+                        "longitude": 26.4024952,
+                        "country": "GR"
+                    },
+                    "city_uid": "anatoliki_mani"
+                },
+                {
+                    "tag": "easybike-irakleio",
+                    "meta": {
+                        "latitude": 35.338735,
+                        "city": "Irakleio",
+                        "name": "EasyBike",
+                        "longitude": 25.144213,
+                        "country": "GR"
+                    },
+                    "city_uid": "irakleio"
+                },
+                {
+                    "tag": "athens-bikes",
+                    "meta": {
+                        "latitude": 37.9838,
+                        "city": "Athens",
+                        "name": "AthensBikes",
+                        "longitude": 23.7275,
+                        "country": "GR"
+                    },
+                    "city_uid": "athens",
+                    "bbox": [
+                        [38.0328563, 23.7896925],
+                        [37.9488181, 23.6869861]
+                    ]
+                }
+            ]
         },
-        {
-            "tag": "easybike-glyfada",
-            "meta": {
-                "latitude": 37.8715809825,
-                "city": "Glyfada",
-                "name": "EasyBike",
-                "longitude": 23.7355544376,
-                "country": "GR"
-            },
-            "city_uid": "glyfada"
-        },
-        {
-            "tag": "easybike-igoumenitsa",
-            "meta": {
-                "latitude": 39.5005770633,
-                "city": "Igoumenitsa",
-                "name": "EasyBike",
-                "longitude": 20.2635206985,
-                "country": "GR"
-            },
-            "city_uid": "igoumenitsa"
-        },
-        {
-            "tag": "easybike-ioannina",
-            "meta": {
-                "latitude": 39.6639818,
-                "city": "Ioannina",
-                "name": "EasyBike",
-                "longitude": 20.8522784,
-                "country": "GR"
-            },
-            "city_uid": "ioannina"
-        },
-        {
-            "tag": "easybike-karditsa",
-            "meta": {
-                "latitude": 39.3634604,
-                "city": "Karditsa",
-                "name": "EasyBike",
-                "longitude": 21.9211192,
-                "country": "GR"
-            },
-            "city_uid": "karditsa"
-        },
-        {
-            "tag": "easybike-kavala",
-            "meta": {
-                "latitude": 40.9369068,
-                "city": "Kavala",
-                "name": "EasyBike",
-                "longitude": 24.4122164,
-                "country": "GR"
-            },
-            "city_uid": "kavala"
-        },
-        {
-            "tag": "easybike-kinouria",
-            "meta": {
-                "latitude": 37.1476704305,
-                "city": "Kinouria",
-                "name": "EasyBike",
-                "longitude": 22.8933729935,
-                "country": "GR"
-            },
-            "city_uid": "kinouria"
-        },
-        {
-            "tag": "easybike-komotini",
-            "meta": {
-                "latitude": 41.117833,
-                "city": "Komotini",
-                "name": "EasyBike",
-                "longitude": 25.4041307,
-                "country": "GR"
-            },
-            "city_uid": "komotini"
-        },
-        {
-            "tag": "easybike-patra",
-            "meta": {
-                "latitude": 38.2410966371,
-                "city": "Patra",
-                "name": "EasyBike",
-                "longitude": 21.7259683418,
-                "country": "GR"
-            },
-            "city_uid": "patra"
-        },
-        {
-            "tag": "easybike-rethymno",
-            "meta": {
-                "latitude": 35.3667571777,
-                "city": "Rethymno",
-                "name": "EasyBike",
-                "longitude": 24.4832845736,
-                "country": "GR"
-            },
-            "city_uid": "rethymno"
-        },
-        {
-            "tag": "easybike-samos",
-            "meta": {
-                "latitude": 37.754065919,
-                "city": "Samos",
-                "name": "EasyBike",
-                "longitude": 26.9787850189,
-                "country": "GR"
-            },
-            "city_uid": "samos"
-        },
-        {
-            "tag": "easybike-nicosia",
-            "meta": {
-                "latitude": 35.1739302,
-                "city": "Nicosia",
-                "name": "EasyBike",
-                "longitude": 33.364726,
-                "country": "CY"
-            },
-            "city_uid": "nicosia"
-        },
-        {
-            "tag": "easybike-mani",
-            "meta": {
-                "latitude": 41.4097472,
-                "city": "Mani",
-                "name": "EasyBike",
-                "longitude": 26.4024952,
-                "country": "GR"
-            },
-            "city_uid": "anatoliki_mani"
-        },
-        {
-            "tag": "easybike-irakleio",
-            "meta": {
-                "latitude": 35.338735,
-                "city": "Irakleio",
-                "name": "EasyBike",
-                "longitude": 25.144213,
-                "country": "GR"
-            },
-            "city_uid": "irakleio"
-        },
-        {
-            "tag": "thessbike",
-            "meta": {
-                "latitude": 40.6403167,
-                "city": "Thessaloniki",
-                "name": "ThessBike",
-                "longitude": 22.9352716,
-                "country": "GR"
-            },
-            "city_uid": "thessbike"
-        },
-        {
-            "tag": "athens-bikes",
-            "meta": {
-                "latitude": 37.9838,
-                "city": "Athens",
-                "name": "AthensBikes",
-                "longitude": 23.7275,
-                "country": "GR"
-            },
-            "city_uid": "athens",
-            "bbox": [
-                [38.0328563, 23.7896925],
-                [37.9488181, 23.6869861]
+        "EasyBikeNew": {
+            "instances": [
+                {
+                    "tag": "thessbike",
+                    "city_uid": "tbo",
+                    "meta": {
+                        "latitude": 40.6403167,
+                        "city": "Thessaloniki",
+                        "name": "ThessBike",
+                        "longitude": 22.9352716,
+                        "country": "GR"
+                    }
+                }
             ]
         }
-
-    ], 
-    "system": "easybike", 
-    "class": "EasyBike"
+    },
+    "system": "easybike"
 }
