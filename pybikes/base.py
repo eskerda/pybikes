@@ -67,6 +67,8 @@ class BikeShareStation(object):
             },
             "properties": {
                 "name": self.name,
+                "latitude": self.latitude,
+                "longitude": self.longitude,
                 "bikes": self.bikes,
                 "free": self.free,
                 "extra": self.extra,
