@@ -5,6 +5,8 @@
 import json
 import time
 from base64 import b64encode, b64decode
+# Python 2
+from builtins import bytes, str
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
