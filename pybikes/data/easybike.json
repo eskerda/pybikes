@@ -58,17 +58,6 @@
                     "city_uid": "karditsa"
                 },
                 {
-                    "tag": "easybike-kavala",
-                    "meta": {
-                        "latitude": 40.9369068,
-                        "city": "Kavala",
-                        "name": "EasyBike",
-                        "longitude": 24.4122164,
-                        "country": "GR"
-                    },
-                    "city_uid": "kavala"
-                },
-                {
                     "tag": "easybike-kinouria",
                     "meta": {
                         "latitude": 37.1476704305,
@@ -122,17 +111,6 @@
                         "country": "GR"
                     },
                     "city_uid": "samos"
-                },
-                {
-                    "tag": "easybike-nicosia",
-                    "meta": {
-                        "latitude": 35.1739302,
-                        "city": "Nicosia",
-                        "name": "EasyBike",
-                        "longitude": 33.364726,
-                        "country": "CY"
-                    },
-                    "city_uid": "nicosia"
                 },
                 {
                     "tag": "easybike-mani",
