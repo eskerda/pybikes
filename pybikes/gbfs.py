@@ -252,8 +252,10 @@ class GbfsStation(BikeShareStation):
             'uid': info['station_id'],
             'renting': info['is_renting'],
             'returning': info['is_returning'],
-            'last_updated': info['last_reported'],
         }
+
+        if 'last_reported' in info:
+            self.extra["last_updated"] = info['last_reported']
 
         if 'address' in info:
             self.extra['address'] = info['address']

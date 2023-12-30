@@ -1061,6 +1061,108 @@
                 "ebikes": true
             },
             "feed_url": "https://detroit.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "green-bike-aruba",
+            "meta": {
+                "latitude": 12.5524,
+                "longitude": -70.0491,
+                "city": "Aruba",
+                "name": "Green Bike",
+                "country": "AW",
+                "company": [
+                    "Friendly Green Bike Company Aruba, V.B.A.",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://aru.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "biketown-whq",
+            "meta": {
+                "latitude": 45.5087,
+                "longitude": -122.8294,
+                "city": "Beavertown",
+                "name": "Biketown WHQ (Nike campus)",
+                "country": "US"
+            },
+            "feed_url": "https://nike.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "sibiu",
+            "meta": {
+                "latitude": 45.7963,
+                "longitude": 24.1518,
+                "city": "Sibiu",
+                "name": "Sibiu Bike Share",
+                "country": "RO",
+                "company": [
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://sibiu.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "santana",
+            "meta": {
+                "latitude": 46.3461,
+                "longitude": 21.5064,
+                "city": "Sântana",
+                "name": "Sântana Velo",
+                "country": "RO",
+                "company": [
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://santana.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "nicosia",
+            "meta": {
+                "latitude": 45.7963,
+                "longitude": 24.1518,
+                "city": "Nicosia",
+                "name": "Nicosia Bike Share",
+                "country": "CY",
+                "company": [
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "bbox": [[35.044749, 33.175679],[35.293126, 33.538914]],
+            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "famagusta",
+            "meta": {
+                "latitude": 45.7963,
+                "longitude": 24.1518,
+                "city": "Famagusta",
+                "name": "Famagusta Bike Share",
+                "country": "CY",
+                "company": [
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "bbox": [[35.049682,33.793569],[35.205207, 34.061976]],
+            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "dbizi",
+            "meta": {
+                "latitude": 43.3184,
+                "longitude": 21.5064,
+                "city": "Donostia/San Sebastián",
+                "name": "Dbizi",
+                "country": "ES",
+                "company": [
+                    "UTE BIZISS",
+                    "Movilidad Urbana Sostenible SLU",
+                    "URBASER, S.A.",
+                    "AENOR INTERNACIONAL S.A.", 
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://sansebastian.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
