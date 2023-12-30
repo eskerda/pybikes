@@ -553,18 +553,6 @@
             "feed_url": "https://brasilia.publicbikesystem.net/customer/ube/gbfs/v1/"
         },
         {
-            "tag": "velhop",
-            "meta": {
-                "latitude": 48.583611,
-                "city": "Strasbourg",
-                "name": "Vélhop",
-                "longitude": 7.748056,
-                "country": "FR",
-                "company": ["Strasbourg Mobilités"]
-            },
-            "feed_url": "https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json"
-        },
-        {
             "tag": "optymo",
             "meta": {
                 "latitude": 47.641111,

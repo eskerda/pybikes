@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "tag": "velhop",
+            "meta": {
+                "latitude": 48.583611,
+                "city": "Strasbourg",
+                "name": "Vélhop",
+                "longitude": 7.748056,
+                "country": "FR",
+                "company": ["Strasbourg Mobilités"]
+            },
+            "feed_url": "https://data.strasbourg.eu/api/explore/v2.1/catalog/datasets/stations-velhop/exports/json"
+        }
+    ],
+    "system": "velhop",
+    "class": "Velhop"
+}
