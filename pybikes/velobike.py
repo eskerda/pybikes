@@ -24,7 +24,7 @@ class Velobike(BikeShareSystem):
 
         stations = []
 
-        data = json.loads(scraper.request(self.feed_url))
+        data = json.loads(scraper.request(self.feed_url, ssl_verification=False))
         # Some feeds have it inside a list, others within `data`
         if isinstance(data, dict):
             data = data['data']

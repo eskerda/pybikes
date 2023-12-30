@@ -9,7 +9,7 @@
                 "longitude": 71.416667,
                 "latitude": 51.166667
             },
-            "feed_url": "http://velobike.kz/api/stations/get"
+            "feed_url": "https://velobike.kz/api/stations/get"
         },
         {
             "tag": "almatybike",
@@ -20,7 +20,7 @@
                 "longitude": 76.9268076,
                 "latitude": 43.2391010
             },
-            "feed_url": "http://almatybike.kz/api/stations/get"
+            "feed_url": "https://almatybike.kz/api/stations/get"
         },
         {
             "tag": "shymkentbike",
@@ -31,7 +31,7 @@
                 "longitude": 69.5978,
                 "latitude": 42.3184
             },
-            "feed_url": "http://shymkentbike.kz/api/stations/get"
+            "feed_url": "https://shymkentbike.kz/api/stations/get"
         }
     ],
     "system": "velobike",
