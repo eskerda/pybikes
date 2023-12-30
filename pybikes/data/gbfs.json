@@ -1015,6 +1015,20 @@
                 "longitude": -73.1249
             },
             "feed_url": "https://sbu.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "peacehealth-rides",
+            "meta": {
+                "city": "Eugene, OR",
+                "name": "PeaceHealth Rides",
+                "country": "US",
+                "company": [
+                    "Social Bicycles Inc."
+                ],
+                "latitude": 44.0502,
+                "longitude": -123.0949
+            },
+            "feed_url": "https://peacehealthrides.com/opendata/gbfs.json"
         }
     ],
     "system": "gbfs",
