@@ -9,7 +9,7 @@
                 "longitude": 23.5975,
                 "latitude": 46.775
             },
-            "feed_url": "http://portal.clujbike.eu/Station/Read"
+            "feed_url": "https://portal.clujbike.eu/harta-statii-biciclete"
         }
     ],
     "system": "clujbike",
