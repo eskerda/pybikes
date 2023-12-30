@@ -160,10 +160,10 @@ class Gbfs(BikeShareSystem):
         station_information = {s['station_id']: s for s in station_information}
         station_status = {s['station_id']: s for s in station_status}
         # Any station not in station_information will be ignored
-        station_zip = [
+        station_zip = (
             (station_information[uid], station_status[uid])
             for uid in station_information.keys()
-        ]
+        )
         stations = []
         for info, status in station_zip:
             # Some feeds have info keys set to none on status
