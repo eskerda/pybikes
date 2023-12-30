@@ -2,6 +2,7 @@
     "instances": [
         {
             "endpoint": "https://apisbp.zarppa.com",
+            "uid": 1,
             "tag": "sbp-quito",
             "meta": {
                 "latitude": -0.1890,

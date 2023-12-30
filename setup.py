@@ -20,5 +20,6 @@ setup(
         'requests>=2.20.0',
         'lxml',
         'shapely>=1.5.13',
+        'future',
     ],
 )
