@@ -12,17 +12,6 @@
             }
         },
         {
-            "city_uid": 10,
-            "tag": "publibike-sierre",
-            "meta": {
-                "latitude": 46.28986,
-                "city": "Sierre",
-                "name": "PubliBike Sierre",
-                "longitude": 7.53194,
-                "country": "CH"
-            }
-        },
-        {
             "city_uid": 9,
             "tag": "publibike-region-de-nyon",
             "meta": {
@@ -74,17 +63,6 @@
                 "city": "Lausanne",
                 "name": "PubliBike Lausanne-Morges",
                 "longitude": 6.62948,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 4,
-            "tag": "publibike-sion",
-            "meta": {
-                "latitude": 46.228227,
-                "city": "Sion",
-                "name": "PubliBike Sion",
-                "longitude": 7.358901,
                 "country": "CH"
             }
         }
