@@ -4,6 +4,7 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
@@ -26,9 +27,10 @@ class Movus(BikeShareSystem):
         raw = scraper.request(self.feed_url)
 
         marker_var = re.search(r'var misPuntos = \[(.*?)\];', raw, re.DOTALL)
-        markers = re.findall(r'\[(.*?)\],', marker_var.group(1), re.DOTALL)
 
-        markers = map(lambda m: re.findall(r'\"(.*?)\"', m), markers)
+        # transform to valid json by removing last trailing comma and adding brackets
+        marker_var = '[' + re.sub(r',\s*$', '', marker_var.group(1)) + ']'
+        markers = json.loads(marker_var)
 
         stations = []
 
@@ -62,8 +64,9 @@ class MovusStation(BikeShareStation):
             self.free = int(free)
             self.extra = {'ebikes': int(ebikes)}
         else:
-            rgx = r'Totales=(\d+).*disponibles=(\d+).*libres=(\d+)'
+            rgx = r'Totales=(\d+).*disponibles=(\d+).*libres=(-?\d+)'
             slots, bikes, free = re.search(rgx, info).groups()
             self.bikes = int(bikes)
-            self.free = int(free)
+            # this can come as negative so we clamp to zero
+            self.free = max(int(free), 0)
             self.extra = {'slots': int(slots)}
