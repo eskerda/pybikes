@@ -1,112 +1,52 @@
 {
     "system": "samba",
-    "class": {
-        "Samba": {
-            "instances":[
-                {
-                    "url":"http://www.movesamba.com.br/bikebh/mapaestacao.asp",
-                    "tag":"bikebh",
-                    "meta":{
-                        "latitude":-19.920793,
-                        "city":"Belo Horizonte",
-                        "name":"BikeBH",
-                        "longitude":-43.922165,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"http://ww2.mobilicidade.com.br/petrobike/mapaestacao.asp",
-                    "tag":"bikepetrolina",
-                    "meta":{
-                        "latitude":-9.389049,
-                        "city":"Petrolina",
-                        "name":"BikePetrolina",
-                        "longitude":-40.502751,
-                        "country":"BR"
-                    }
-                }
-            ]
+    "class": "Samba",
+    "instances": [
+        {
+            "url":"http://www.bicicletar.com.br/mapaestacao.aspx",
+            "tag":"bicicletar",
+            "meta":{
+                "latitude":-3.7321944,
+                "city":"Fortaleza",
+                "name":"Bicicletar",
+                "longitude":-38.510347,
+                "country":"BR"
+            },
+            "bbox": [[-4.102216,-38.804195],[-3.692105, -38.189793]]
         },
-        "SambaNew": {
-            "instances": [
-                {
-                    "url":"http://www.debikegoiania.com/mapaestacao.aspx",
-                    "tag":"debikegoiania",
-                    "meta":{
-                        "latitude":-16.670492,
-                        "city":"Goiânia",
-                        "name":"GynDebike",
-                        "longitude":-49.259535,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"http://www.bicicletar.com.br/mapaestacao.aspx",
-                    "tag":"bicicletar",
-                    "meta":{
-                        "latitude":-3.7321944,
-                        "city":"Fortaleza",
-                        "name":"Bicicletar",
-                        "longitude":-38.510347,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"http://www.cajubike.com/mapaestacao.aspx",
-                    "tag":"cajubike",
-                    "meta":{
-                        "latitude":-10.987263,
-                        "city":"Aracajú",
-                        "name":"CajuBike",
-                        "longitude":-37.051898,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"https://bikebelem.tembici.com.br/mapaestacao.aspx",
-                    "tag":"bikebelem",
-                    "meta":{
-                        "latitude":-1.4600794,
-                        "city":"Belém",
-                        "name":"Bike Belém",
-                        "longitude":-48.490865,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url":"http://www.mobilicidade.com.br/bikesantos/mapaestacao.aspx",
-                    "tag":"bikesantos",
-                    "meta":{
-                        "latitude":-23.954052,
-                        "city":"Santos",
-                        "name":"BikeSantos",
-                        "longitude":-46.333345,
-                        "country":"BR"
-                    }
-                },
-                {
-                    "url": "https://www.bicicuenca.com/mapaestacao.aspx",
-                    "tag": "bicicuenca",
-                    "meta": {
-                        "latitude": -2.8970,
-                        "longitude": -79.0038,
-                        "name": "Bici Pública Cuenca",
-                        "city": "Cuenca",
-                        "country": "EC"
-                    }
-                },
-                {
-                    "url": "https://www.bikevitoria.com/mapaestacao.aspx",
-                    "tag": "bikevitoria",
-                    "meta": {
-                        "latitude": -20.3202,
-                        "longitude": -40.3375,
-                        "name": "Bike Vitória",
-                        "city": "Vitória",
-                        "country": "BR"
-                    }
-                }
-            ]
+        {
+            "url":"http://www.mobilicidade.com.br/bikesantos/mapaestacao.aspx",
+            "tag":"bikesantos",
+            "meta":{
+                "latitude":-23.954052,
+                "city":"Santos",
+                "name":"BikeSantos",
+                "longitude":-46.333345,
+                "country":"BR"
+            },
+            "bbox": [[-23.99322, -46.402437],[-23.735385,-46.176959]]
+        },
+        {
+            "url": "https://www.bicicuenca.com/mapaestacao.aspx",
+            "tag": "bicicuenca",
+            "meta": {
+                "latitude": -2.8970,
+                "longitude": -79.0038,
+                "name": "Bici Pública Cuenca",
+                "city": "Cuenca",
+                "country": "EC"
+            }
+        },
+        {
+            "url": "https://www.bikevitoria.com/mapaestacao.aspx",
+            "tag": "bikevitoria",
+            "meta": {
+                "latitude": -20.3202,
+                "longitude": -40.3375,
+                "name": "Bike Vitória",
+                "city": "Vitória",
+                "country": "BR"
+            }
         }
-    }
+    ]
 }
