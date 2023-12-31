@@ -2731,6 +2731,21 @@
                     "Servizos Urbanos Municipais de Arteixo, S. A."
                 ]
             }
+        },
+        {
+            "domain": "oy",
+            "tag": "ontibici",
+            "city_uid": 951,
+            "meta": {
+                "name": "Ontibici",
+                "city": "Ontinyent",
+                "country": "ES",
+                "latitude": 38.8211,
+                "longitude": -0.6090,
+                "company": [
+                    "Movilidad Urbana Sostenible S.L."
+                ]
+            }
         }
     ],
     "system": "nextbike",
