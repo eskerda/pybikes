@@ -188,22 +188,6 @@
             "feed_url": "https://gbfs.bluebikes.com/gbfs/gbfs.json"
         },
         {
-            "tag": "nice-ride",
-            "meta": {
-                "latitude": 44.983334,
-                "longitude": -93.26666999999999,
-                "city": "Minneapolis, MN",
-                "name": "Nice Ride",
-                "country": "US",
-                "company": [
-                    "Nice Ride Minnesota",
-                    "Lyft"
-                ]
-
-            },
-            "feed_url": "https://gbfs.niceridemn.com/gbfs/gbfs.json"
-        },
-        {
             "tag": "sobi-long-beach",
             "meta": {
                 "latitude": 33.76897,
