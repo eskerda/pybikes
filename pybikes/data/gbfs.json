@@ -1082,9 +1082,10 @@
             "meta": {
                 "latitude": 45.5087,
                 "longitude": -122.8294,
-                "city": "Beavertown",
+                "city": "Beaverton, OR",
                 "name": "Biketown WHQ (Nike campus)",
-                "country": "US"
+                "country": "US",
+                "company": []
             },
             "feed_url": "https://nike.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
