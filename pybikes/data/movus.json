@@ -77,19 +77,6 @@
             }
         },
         {
-            "tag": "dbizi",
-            "ebikes": true,
-            "feed_url": "https://www.dbizi.eus/es/plano-y-estaciones",
-            "meta": {
-                "city": "Donostia/San Sebastián",
-                "country": "ES",
-                "name": "Dbizi",
-                "latitude": 43.3184,
-                "longitude": -1.9817,
-                "company": ["UTE BIZISS", "Movilidad Urbana Sostenible SLU", "URBASER, S.A.", "AENOR INTERNACIONAL S.A."]
-            }
-        },
-        {
             "tag": "bibo",
             "ebikes": false,
             "feed_url": "https://www.biciboadilla.com/mapa.php",
