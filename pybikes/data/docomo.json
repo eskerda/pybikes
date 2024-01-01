@@ -1,0 +1,215 @@
+{
+    "instances": [
+        {
+            "uid": 47,
+            "tag": "docomo-cycle-okinawa",
+            "meta": {
+                "city": "沖縄県 (Okinawa)",
+                "name": "Docomo Bike Share Okinawa",
+                "country": "JP",
+                "latitude": 26.2097,
+                "longitude": 127.6841
+            }
+        },
+        {
+            "uid": 34,
+            "tag": "docomo-cycle-hiroshima",
+            "meta": {
+                "city": "広島県 (Hiroshima)",
+                "name": "Docomo Bike Share Hiroshima",
+                "country": "JP",
+                "latitude": 34.3904,
+                "longitude": 132.4527
+            }
+        },
+        {
+            "uid": 33,
+            "tag": "docomo-cycle-okayama",
+            "meta": {
+                "city": "岡山県 (Okayama)",
+                "name": "Docomo Bike Share Okayama",
+                "country": "JP",
+                "latitude": 34.6030,
+                "longitude": 133.7650
+            }
+        },
+        {
+            "uid": 28,
+            "tag": "docomo-cycle-hyogo",
+            "meta": {
+                "city": "兵庫県 (Hyōgo)",
+                "name": "Docomo Bike Share Hyōgo",
+                "country": "JP",
+                "latitude": 34.8147,
+                "longitude": 134.6890
+            }
+        },
+        {
+            "uid": 27,
+            "tag": "docomo-cycle-osaka",
+            "meta": {
+                "city": "大阪府 (Osaka)",
+                "name": "Docomo Bike Share Osaka",
+                "country": "JP",
+                "latitude": 34.6930,
+                "longitude": 135.5028
+            }
+        },
+        {
+            "uid": 26,
+            "tag": "docomo-cycle-kyoto",
+            "meta": {
+                "city": "京都府 (Kyoto)",
+                "name": "Docomo Bike Share Kyoto",
+                "country": "JP",
+                "latitude": 35.0001,
+                "longitude": 135.7587
+            }
+        },
+        {
+            "uid": 25,
+            "tag": "docomo-cycle-shiga",
+            "meta": {
+                "city": "滋賀県 (Shiga)",
+                "name": "Docomo Bike Share Shiga",
+                "country": "JP",
+                "latitude": 35.03780,
+                "longitude": 135.9801
+            }
+        },
+        {
+            "uid": 17,
+            "tag": "docomo-cycle-ishikawa",
+            "meta": {
+                "city": "石川県 (Ishikawa)",
+                "name": "Docomo Bike Share Ishikawa",
+                "country": "JP",
+                "latitude": 36.5594,
+                "longitude": 136.6580
+            }
+        },
+        {
+            "uid": 21,
+            "tag": "docomo-cycle-gifu",
+            "meta": {
+                "city": "岐阜県 (Gifu)",
+                "name": "Docomo Bike Share Gifu",
+                "country": "JP",
+                "latitude": 35.4512,
+                "longitude": 137.02627
+            }
+        },
+        {
+            "uid": 23,
+            "tag": "docomo-cycle-aichi",
+            "meta": {
+                "city": "愛知県 (Aichi)",
+                "name": "Docomo Bike Share Aichi",
+                "country": "JP",
+                "latitude": 35.1835,
+                "longitude": 136.9040
+            }
+        },
+        {
+            "uid": 18,
+            "tag": "docomo-cycle-fukui",
+            "meta": {
+                "city": "福井県 (Fukui)",
+                "name": "Docomo Bike Share Fukui",
+                "country": "JP",
+                "latitude": 36.0665,
+                "longitude": 136.2138
+            }
+        },
+        {
+            "uid": 19,
+            "tag": "docomo-cycle-yamanashi",
+            "meta": {
+                "city": "山梨県 (Yamanashi)",
+                "name": "Docomo Bike Share Yamanashi",
+                "country": "JP",
+                "latitude": 35.6848,
+                "longitude": 138.7330
+            }
+        },
+        {
+            "uid": 15,
+            "tag": "docomo-cycle-niigata",
+            "meta": {
+                "city": "新潟県 (Niigata)",
+                "name": "Docomo Bike Share Niigata",
+                "country": "JP",
+                "latitude": 37.9186,
+                "longitude": 139.0488
+            }
+        },
+        {
+            "uid": 14,
+            "tag": "docomo-cycle-kanagawa",
+            "meta": {
+                "city": "神奈川県 (Kanagawa)",
+                "name": "Docomo Bike Share Kanagawa",
+                "country": "JP",
+                "latitude": 35.4504,
+                "longitude": 139.6250
+            }
+        },
+        {
+            "uid": 8,
+            "tag": "docomo-cycle-ibaraki",
+            "meta": {
+                "city": "茨城県 (Ibaraki)",
+                "name": "Docomo Bike Share Ibaraki",
+                "country": "JP",
+                "latitude": 36.3732,
+                "longitude": 140.2549
+            }
+        },
+        {
+            "uid": 4,
+            "tag": "docomo-cycle-miyagi",
+            "meta": {
+                "city": "茨城県 (Miyagi)",
+                "name": "Docomo Bike Share Miyagi",
+                "country": "JP",
+                "latitude": 38.2607,
+                "longitude": 140.8814
+            }
+        },
+        {
+            "uid": 44,
+            "tag": "docomo-cycle-oita",
+            "meta": {
+                "city": "大分県 (Ōita)",
+                "name": "Docomo Bike Share Ōita",
+                "country": "JP",
+                "latitude": 33.2393,
+                "longitude": 131.6124
+            }
+        },
+        {
+            "uid": 46,
+            "tag": "docomo-cycle-kagoshima",
+            "meta": {
+                "city": "鹿児島県 (Kagoshima)",
+                "name": "Docomo Bike Share Kagoshima",
+                "country": "JP",
+                "latitude": 31.588,
+                "longitude": 130.5547
+            }
+        },
+        {
+            "uid": 29,
+            "tag": "docomo-cycle-nara",
+            "meta": {
+                "city": "奈良県 (Nara)",
+                "name": "Docomo Bike Share Nara",
+                "country": "JP",
+                "latitude": 34.6839,
+                "longitude": 135.8087
+            }
+        }
+    ],
+    "system": "docomo",
+    "class": "Docomo"
+}
