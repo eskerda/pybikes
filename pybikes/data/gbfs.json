@@ -1092,8 +1092,8 @@
         {
             "tag": "nicosia",
             "meta": {
-                "latitude": 45.7963,
-                "longitude": 24.1518,
+                "latitude": 35.1886,
+                "longitude": 33.3570,
                 "city": "Nicosia",
                 "name": "Nicosia Bike Share",
                 "country": "CY",
@@ -1107,8 +1107,8 @@
         {
             "tag": "famagusta",
             "meta": {
-                "latitude": 45.7963,
-                "longitude": 24.1518,
+                "latitude": 35.1230,
+                "longitude": 33.9346,
                 "city": "Famagusta",
                 "name": "Famagusta Bike Share",
                 "country": "CY",
@@ -1122,8 +1122,8 @@
         {
             "tag": "dbizi",
             "meta": {
-                "latitude": 43.3184,
-                "longitude": 21.5064,
+                "latitude": 43.3186,
+                "longitude": -1.9836,
                 "city": "Donostia/San Sebastián",
                 "name": "Dbizi",
                 "country": "ES",
