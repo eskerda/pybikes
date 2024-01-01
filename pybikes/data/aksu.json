@@ -29,6 +29,19 @@
             },
             "endpoint": "http://www.akspub.com/statics/bikemap/station.php",
             "bbox": [[40.336,80.9903],[40.8596,81.6535]]
+        },
+        {
+            "tag": "kuitunbike",
+            "meta":{
+                "city": "奎屯市 (Kuitun)",
+                "name": "Kuitun Bike",
+                "latitude": 44.4290,
+                "longitude": 84.9009,
+                "country": "CN",
+                "company": []
+            },
+            "endpoint": "http://pub.123aks.com/statics/ktmap/station.php",
+            "bbox": [[44.1374,84.355],[44.8057,85.420]]
         }
     ],
     "system":"aksu",
