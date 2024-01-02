@@ -1,0 +1,49 @@
+{
+    "instances":[
+        {
+            "tag": "aksu",
+            "meta":{
+                "city": "阿克苏市 (Aksu City)",
+                "name": "Aksu",
+                "latitude": 41.1664,
+                "longitude": 80.2617,
+                "country": "CN",
+                "company": [
+                    "阿克苏公共服务"
+                ]
+            },
+            "endpoint": "http://www.akspub.com/statics/bikemap/station.php",
+            "bbox": [[40.9849,79.9559],[41.5034,80.619]]
+        },
+        {
+            "tag": "aral",
+            "meta":{
+                "city": "阿拉尔市 (Aral)",
+                "name": "Aral",
+                "latitude": 40.5577,
+                "longitude": 81.2879,
+                "country": "CN",
+                "company": [
+                    "阿克苏公共服务"
+                ]
+            },
+            "endpoint": "http://www.akspub.com/statics/bikemap/station.php",
+            "bbox": [[40.336,80.9903],[40.8596,81.6535]]
+        },
+        {
+            "tag": "kuitunbike",
+            "meta":{
+                "city": "奎屯市 (Kuitun)",
+                "name": "Kuitun Bike",
+                "latitude": 44.4290,
+                "longitude": 84.9009,
+                "country": "CN",
+                "company": []
+            },
+            "endpoint": "http://pub.123aks.com/statics/ktmap/station.php",
+            "bbox": [[44.1374,84.355],[44.8057,85.420]]
+        }
+    ],
+    "system":"aksu",
+    "class":"Aksu"
+}
