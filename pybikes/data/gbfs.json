@@ -1136,6 +1136,21 @@
                 ]
             },
             "feed_url": "https://sansebastian.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "pittsburgh",
+            "meta": {
+                "latitude": 40.4406,
+                "longitude": -79.9893,
+                "city": "Pittsburgh, PA",
+                "name": "Pogoh",
+                "country": "US",
+                "company": [
+                    "Bike Share Pittsburgh Inc.",
+                    "PBSC Urban Solutions"
+                ]
+            },
+            "feed_url": "https://pittsburgh.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
