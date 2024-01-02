@@ -73,6 +73,53 @@
                 ]
             },
             "tag": "rva-bikes"
+        },
+        {
+            "endpoint": "https://api.bikeshare-peninsulapapagayo.com",
+            "meta": {
+                "city": "Península de Papagayo",
+                "country": "CR",
+                "latitude": 10.6246,
+                "longitude": -85.6796,
+                "name": "Peninsula Papagayo Bike-Share",
+                "ebikes": true,
+                "company": [
+                    "Ecodesarrollo Papagayo Limitada"
+                ]
+            },
+            "tag": "bikeshare-peninsula-papagayo"
+        },
+        {
+            "endpoint": "https://api.hi-bike.co.uk",
+            "meta": {
+                "city": "Inverness",
+                "country": "GB",
+                "latitude": 57.4767,
+                "longitude": -4.2269,
+                "name": "Hi-Bike Inverness",
+                "ebikes": true,
+                "company": [
+                    "HITRANS"
+                ]
+            },
+            "tag": "hi-bike-inverness",
+            "bbox": [[57.1918,-4.6709],[57.6603,-3.7518]]
+        },
+        {
+            "endpoint": "https://api.hi-bike.co.uk",
+            "meta": {
+                "city": "Fort William",
+                "country": "GB",
+                "latitude": 56.8171,
+                "longitude": -5.1054,
+                "name": "Hi-Bike Fort William",
+                "ebikes": true,
+                "company": [
+                    "HITRANS"
+                ]
+            },
+            "tag": "hi-bike-fort-william",
+            "bbox": [[56.737564,-5.320007],[56.959523,-4.863472]]
         }
     ],
     "system": "wegoshare",
