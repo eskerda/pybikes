@@ -172,9 +172,10 @@
             'features': Object.entries(
                 groupBy(stations.features,elem => elem.properties.tag)).map(
                     ([tag, features]) => {
-                        var hull = turf.convex({'type': 'FeatureCollection', 'features': features})
+                        var hull = turf.concave({'type': 'FeatureCollection', 'features': features}, {maxEdge: 2, units: 'kilometers'})
                         if (hull) {
                             hull.properties = {'tag': tag}
+                            hull = turf.buffer(hull, 1, {units: 'kilometers', steps: 8})
                         }
                         return hull;
                     }
