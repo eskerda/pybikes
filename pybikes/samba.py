@@ -5,7 +5,7 @@
 # Distributed under the LGPL license, see LICENSE.txt
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 import re
 import ast
@@ -13,16 +13,15 @@ import ast
 USERAGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/31.0.1650.63 Chrome/31.0.1650.63 Safari/537.36"  # NOQA
 
 
-class Samba(BikeShareSystem):
+class Samba(Bounded, BikeShareSystem):
     meta = {
         'system': 'Samba',
         'company': ['Mobilicidade Tecnologia LTD', 'Grupo Serttel LTDA']
     }
 
     def __init__(self, tag, meta, url, bbox=None):
-        super(Samba, self).__init__(tag, meta)
+        super(Samba, self).__init__(tag, meta, bounds=bbox)
         self.feed_url = url
-        self.bbox = bbox
 
     def update(self, scraper=None):
         if scraper is None:
@@ -38,9 +37,6 @@ class Samba(BikeShareSystem):
 
         for station in stations_data:
             stations.append(SambaStation(station))
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

@@ -5,7 +5,7 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 STATIONS_URL = '{endpoint}/cxf/am/station/map/search'
 FILES_URL = '{endpoint}/cxf/fm/files/{file_id}'
@@ -15,7 +15,7 @@ def file_url(endpoint, file_id):
     return FILES_URL.format(endpoint=endpoint, file_id=file_id)
 
 
-class WeGoShare(BikeShareSystem):
+class WeGoShare(Bounded, BikeShareSystem):
     headers = {
         'Content-Type': 'application/json; charset=utf-8',
     }
@@ -26,9 +26,8 @@ class WeGoShare(BikeShareSystem):
 
     def __init__(self, tag, meta, endpoint, bbox=None):
         meta['company'] += WeGoShare.meta['company']
-        super(WeGoShare, self).__init__(tag, meta)
+        super(WeGoShare, self).__init__(tag, meta, bounds=bbox)
         self.endpoint = endpoint
-        self.bbox = bbox
 
     @property
     def stations_url(self):
@@ -48,9 +47,6 @@ class WeGoShare(BikeShareSystem):
                 continue
             station = WeGoShareStation(station_data, self.endpoint)
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

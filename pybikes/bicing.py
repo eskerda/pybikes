@@ -2,21 +2,20 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import Bounded
 from pybikes.exceptions import InvalidStation
-from pybikes.utils import filter_bounds
 
 STATIONS_URL = '{endpoint}/get-stations'
 
 
-class Bicing(BikeShareSystem):
+class Bicing(Bounded, BikeShareSystem):
     meta = {
         'ebikes': True,
     }
 
     def __init__(self, tag, meta, endpoint, bbox=None):
-        super(Bicing, self).__init__(tag, meta)
+        super(Bicing, self).__init__(tag, meta, bounds=bbox)
         self.endpoint = endpoint
-        self.bbox = bbox
 
     @property
     def stations_url(self):
@@ -35,9 +34,6 @@ class Bicing(BikeShareSystem):
             except InvalidStation:
                 continue
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

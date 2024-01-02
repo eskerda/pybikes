@@ -7,15 +7,15 @@
 
 import json
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes import utils
+from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper, Bounded
 
 
 class BaseSystem(BikeShareSystem):
     meta = {"system": "EasyBike", "company": ["Brainbox Technology", "Smoove SAS"]}
 
 
-class EasyBike(BaseSystem):
+class EasyBike(Bounded, BaseSystem):
     sync = True
     unifeed = True
 
@@ -27,19 +27,16 @@ class EasyBike(BaseSystem):
     feed_url = 'http://reseller.easybike.gr/{city_uid}/api.php'
 
     def __init__(self, tag, meta, city_uid, bbox=None):
-        super(EasyBike, self).__init__(tag, meta)
+        super(EasyBike, self).__init__(tag, meta, bounds=bbox)
         self.feed_url = EasyBike.feed_url.format(city_uid=city_uid)
-        self.bbox = bbox
 
     def update(self, scraper=None):
-        scraper = scraper or utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         stations = []
 
         data = json.loads(scraper.request(self.feed_url))
         stations = self.get_stations(data)
-        if self.bbox:
-            stations = utils.filter_bounds(stations, None, self.bbox)
         self.stations = list(stations)
 
     def get_stations(self, data):
@@ -66,8 +63,7 @@ class EasyBikeNew(BaseSystem):
         self.city_uid = city_uid
 
     def update(self, scraper=None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+        scraper = scraper or PyBikesScraper()
 
         data = json.loads(
             scraper.request(

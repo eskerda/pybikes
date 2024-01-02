@@ -6,16 +6,15 @@ import re
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 
-class Aksu(BikeShareSystem):
+class Aksu(Bounded, BikeShareSystem):
     unifeed = True
 
     def __init__(self, tag, meta, endpoint, bbox=None):
-        super(Aksu, self).__init__(tag, meta)
+        super(Aksu, self).__init__(tag, meta, bounds=bbox)
         self.endpoint = endpoint
-        self.bbox = bbox
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
@@ -29,9 +28,6 @@ class Aksu(BikeShareSystem):
 
         for station in markers["station"]:
             stations.append(AksuStation(station))
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

@@ -4,14 +4,13 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 
-class Joco(BikeShareSystem):
+class Joco(Bounded, BikeShareSystem):
     def __init__(self, tag, meta, bbox, feed_url):
-        super(Joco, self).__init__(tag, meta)
+        super(Joco, self).__init__(tag, meta, bounds=bbox)
 
-        self.bbox = bbox
         self.feed_url = feed_url
 
     def update(self, scraper=None):
@@ -22,9 +21,6 @@ class Joco(BikeShareSystem):
 
         for station in data:
             stations.append(JocoStation(station))
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

@@ -15,7 +15,7 @@ import requests
 from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
-from pybikes.base import BikeShareStation
+from pybikes.base import BikeShareSystem, BikeShareStation
 
 
 class PyBikesScraper(object):
@@ -133,6 +133,29 @@ def filter_bounds(things, key, *point_bounds):
         if not any(map(lambda pol: pol.contains(point), bounds)):
             continue
         yield thing
+
+
+class Bounded:
+    """ Class mixin providing automatic bound filtering to stations """
+    bounds = None
+    _stations = None
+
+    def __init__(self, * args, ** kwargs):
+        self._stations = []
+        self.bounds = kwargs.pop('bounds', None)
+        super(Bounded, self).__init__(* args, ** kwargs)
+
+    @property
+    def stations(self):
+        return self._stations
+
+    @stations.setter
+    def stations(self, value):
+        # XXX: note that any list method applied to self.stations will
+        # circumvent this method (such as append)
+        if self.bounds:
+            value = list(filter_bounds(value, None, self.bounds))
+        self._stations = value
 
 
 class Keys:
