@@ -22,7 +22,7 @@ class Aksu(BikeShareSystem):
 
         raw = scraper.request(self.endpoint)
 
-        marker_var = re.search(r'var ibike = (.*)', raw, re.DOTALL)
+        marker_var = re.search(r'var ibike = (.*)', raw)
         markers = json.loads(marker_var.group(1))
 
         stations = []
@@ -43,10 +43,12 @@ class AksuStation(BikeShareStation):
         self.latitude = float(data["lat"])
         self.longitude = float(data["lng"])
 
+        slots = int(data["capacity"])
         self.bikes = int(data["availBike"])
-        self.free = int(data["capacity"])
+        self.free = slots - self.bikes
 
         self.extra = {
             "uid": data["id"],
-            "address": data["address"]
+            "address": data["address"],
+            "slots": slots,
         }
