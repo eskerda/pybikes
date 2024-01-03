@@ -135,7 +135,7 @@ def filter_bounds(things, key, *point_bounds):
         yield thing
 
 
-class Bounded:
+class Bounded(object):
     """ Class mixin providing automatic bound filtering to stations """
     bounds = None
     _stations = None
