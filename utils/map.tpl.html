@@ -144,13 +144,21 @@
 
             if (elem) {
                 var std = elem.properties
+                var traceback
 
                 if (std.extra && typeof std.extra === 'string') {
                     // nested properties get stringified in mapbox-gl
                     std.extra = JSON.parse(std.extra)
                 }
 
+                if (std.traceback) {
+                    traceback = std.traceback
+                    delete std.traceback
+                }
+
                 data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
+
+                if (traceback) data += '\n==== Traceback ====\n\n' + traceback + '\n'
 
                 map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
                 last_selected = elem
@@ -286,13 +294,23 @@
         document.querySelectorAll('a.instance-link').forEach(link => {
             link.addEventListener('click', function (ev) {
                 ev.preventDefault();
-                const tag = ev.target.dataset.tag;
-                let elements = stations.features.filter(elem => elem.properties.tag == tag);
-                if (!elements.length) {
-                    elements = networks.features.filter(elem => elem.properties.tag == tag)
-                }
-                const bbox = turf.bbox({'type': 'FeatureCollection', 'features': elements});
-                map.fitBounds(bbox, fitBoundsOptions['stations']);
+                const tag = ev.target.dataset.tag
+                const f_networks = networks.features.filter(elem => elem.properties.tag == tag)
+                const f_stations = stations.features.filter(elem => elem.properties.tag == tag)
+                const features = [].concat(
+                    f_networks,
+                    f_stations,
+                    hulls.features.filter(elem => elem.properties.tag == tag),
+                )
+
+                const bbox = turf.bbox({'type': 'FeatureCollection', 'features': features})
+                map.fitBounds(bbox, fitBoundsOptions['stations'])
+                // XXX Hack: generate a fake click event
+                setTimeout(() => {
+                    removeAnchor()
+                    const point = f_networks[0].geometry.coordinates
+                    debugZone({point: map.project(point), lngLat: {lng: point[0], lat: point[1]}})
+                }, 100)
             })
         })
 

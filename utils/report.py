@@ -9,6 +9,7 @@ $ python utils/report.py .report.json > report.md
 import os
 import re
 import sys
+import html
 import json
 import argparse
 from pprint import pformat
@@ -159,6 +160,7 @@ def generate_report(report, template):
                         'tag': instance['tag'],
                         'outcome': instance['report']['outcome'],
                         'failed': instance['report']['outcome'] == 'failed',
+                        'traceback': html.escape(instance['report']['call']['longrepr']) if instance['report']['outcome'] == 'failed' else '',
                     }
                 })
 
