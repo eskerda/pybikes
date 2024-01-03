@@ -23,7 +23,6 @@ class PyBikesScraper(object):
     last_request = None
     requests_timeout = 300
     retry = False
-    retry_opts = {}
 
     def __init__(self, cachedict=None, headers=None):
         self.headers = headers if isinstance(headers, dict) else {}
@@ -31,6 +30,7 @@ class PyBikesScraper(object):
         self.proxies = {}
         self.session = requests.session()
         self.cachedict = cachedict
+        self.retry_opts = {}
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
