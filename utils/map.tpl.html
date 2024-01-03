@@ -89,6 +89,20 @@
                 {% endfor %}
             {% endfor %}
             </div>
+            <div id='controls'>
+                <div>
+                    <input type='range' id='hullEdge' min=0 max=10 value=2 step=0.5 />
+                    <label for="hullEdge">
+                        Hull Edge Distance: <span id='edge_d'/>2</span> km
+                    </label>
+                </div>
+                <div>
+                    <input type='range' id='hullBuffer' min=0 max=2000 value=500 step=100 />
+                    <label for="hullBuffer">
+                        Hull Buffer: <span id='buffer_d'/>500</span> m
+                    </label>
+                </div>
+            </div>
             <div id='console'>
                 <a href='#' class='close'>[x]</a>
                 <pre id='theconsole'></pre>
@@ -101,6 +115,9 @@
         let allthethings = JSON.parse(document.getElementById('allthethings').innerHTML);
         let last_selected
         let anchored_event
+
+        let edge_d = document.querySelector('input#hullEdge').value
+        let buffer_d = document.querySelector('input#hullBuffer').value
 
         const removeAnchor = () => {
             anchored_event = null
@@ -167,6 +184,23 @@
             document.getElementById('theconsole').innerHTML = data;
         }
 
+        const getHulls = (edge_d, buffer_d) => {
+            return {
+            'type': 'FeatureCollection',
+            'features': Object.entries(groupBy(stations.features,elem => elem.properties.tag)).map(
+                    ([tag, features]) => {
+                        var hull = turf.concave(
+                            {'type': 'FeatureCollection', 'features': features}, {maxEdge: edge_d, units: 'kilometers'}
+                        )
+                        if (hull) {
+                            hull.properties = {'tag': tag}
+                            hull = turf.buffer(hull, buffer_d, {units: 'meters', steps: 8})
+                        }
+                        return hull;
+                    }
+                ).filter(n => n)
+            }}
+
         let stations = {
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'station'),
@@ -175,20 +209,9 @@
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'network'),
         }
-        let hulls = {
-            'type': 'FeatureCollection',
-            'features': Object.entries(
-                groupBy(stations.features,elem => elem.properties.tag)).map(
-                    ([tag, features]) => {
-                        var hull = turf.concave({'type': 'FeatureCollection', 'features': features}, {maxEdge: 2, units: 'kilometers'})
-                        if (hull) {
-                            hull.properties = {'tag': tag}
-                            hull = turf.buffer(hull, 1, {units: 'kilometers', steps: 8})
-                        }
-                        return hull;
-                    }
-                ).filter(n => n)
-        }
+
+        let hulls = getHulls(edge_d, buffer_d)
+
         let fitBoundsOptions = {
           'networks': {
             duration: 0,
@@ -312,6 +335,18 @@
                     debugZone({point: map.project(point), lngLat: {lng: point[0], lat: point[1]}})
                 }, 100)
             })
+        })
+
+        document.querySelector('input#hullEdge').addEventListener('input', e => {
+            edge_d = e.target.value
+            map.getSource('hulls').setData(getHulls(edge_d, buffer_d))
+            document.querySelector('#edge_d').textContent = edge_d
+        })
+
+        document.querySelector('input#hullBuffer').addEventListener('input', e => {
+            buffer_d = e.target.value
+            map.getSource('hulls').setData(getHulls(edge_d, buffer_d))
+            document.querySelector('#buffer_d').textContent = buffer_d
         })
 
         document.querySelector('div#console a.close').addEventListener('click', removeAnchor)
