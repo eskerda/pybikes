@@ -5,10 +5,10 @@
 from lxml import etree
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 
-class DecoBike(BikeShareSystem):
+class DecoBike(Bounded, BikeShareSystem):
     sync = True
 
     meta = {
@@ -25,9 +25,8 @@ class DecoBike(BikeShareSystem):
     }
 
     def __init__(self, tag, meta, feed_url, bbox=None):
-        super(DecoBike, self).__init__(tag, meta)
+        super(DecoBike, self).__init__(tag, meta, bounds=bbox)
         self.feed_url = feed_url
-        self.bbox = bbox
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
@@ -51,8 +50,5 @@ class DecoBike(BikeShareSystem):
             }
 
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations

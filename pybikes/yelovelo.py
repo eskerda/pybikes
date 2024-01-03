@@ -5,16 +5,15 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import filter_bounds
+from pybikes.utils import Bounded
 
 
 FEED_URL = 'https://opendata.agglo-larochelle.fr/d4c/api/records/2.0/downloadfile/format=json&resource_id=1f124bea-d55f-457f-9eab-b7877d803435'
 
 
-class YeloVelo(BikeShareSystem):
+class YeloVelo(Bounded, BikeShareSystem):
     def __init__(self, tag, meta, bbox=None):
-        super(YeloVelo, self).__init__(tag, meta)
-        self.bbox = bbox
+        super(YeloVelo, self).__init__(tag, meta, bounds=bbox)
 
     def update(self, scraper=None):
         if scraper is None:
@@ -26,9 +25,6 @@ class YeloVelo(BikeShareSystem):
         for station_data in stations_data:
             station = YeloVeloStation(station_data)
             stations.append(station)
-
-        if self.bbox:
-            stations = list(filter_bounds(stations, None, self.bbox))
 
         self.stations = stations
 

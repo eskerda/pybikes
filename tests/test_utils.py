@@ -3,8 +3,8 @@ from pkg_resources import resource_string
 
 import pytest
 
-from pybikes import BikeShareStation
-from pybikes.utils import filter_bounds
+from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.utils import filter_bounds, Bounded
 
 barcelona = [
     BikeShareStation(latitude=41.38530363280023, longitude=2.1537750659833534),
@@ -123,3 +123,37 @@ filter_bounds_cases = [
 @pytest.mark.parametrize("msg, data, expected, getter, bounds", filter_bounds_cases)
 def test_filter_bounds(msg, data, expected, getter, bounds):
     assert expected == list(filter_bounds(data, getter, bounds)), msg
+
+
+class TestBounded:
+
+    class BoundsSystem(Bounded, BikeShareSystem):
+        pass
+
+    def test_with_no_bounds(self):
+        tag = 'foo'
+        meta = {'name': 'Foo', 'system': 'Foo'}
+        bbox = None
+        foo = TestBounded.BoundsSystem(tag, meta, bounds=bbox)
+        foo.stations = [
+            (41.3853036328, 2.1537750659833534),
+            (31.3853036328, 1.1537750659833534),
+        ]
+        assert [
+            (41.3853036328, 2.1537750659833534),
+            (31.3853036328, 1.1537750659833534),
+        ] == foo.stations
+
+
+    def test_with_bounds(self):
+        tag = 'foo'
+        meta = {'name': 'Foo', 'system': 'Foo'}
+        bbox = [[41.429655489542995, 2.265798843028506], [41.324098007178094, 2.060483133624132]]
+        foo = TestBounded.BoundsSystem(tag, meta, bounds=bbox)
+        foo.stations = [
+            (41.3853036328, 2.1537750659833534),
+            (31.3853036328, 1.1537750659833534),
+        ]
+        assert [
+            (41.3853036328, 2.1537750659833534),
+        ] == foo.stations
