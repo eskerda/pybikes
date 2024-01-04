@@ -40,8 +40,14 @@ class MobhisStation(BikeShareStation):
         popup = html.fromstring(info)
         elems = popup.xpath('//text()')
 
+        # in cascavel offline stations lack name and id
         name = elems.pop(0)
-        uid, _ = name.split(' - ')
+        if 'Estação offline' in name:
+            name = ''
+            uid = ''
+        else:
+            uid, _ = name.split(' - ')
+
         online = 'Estação offline' not in info
 
         self.name = name
