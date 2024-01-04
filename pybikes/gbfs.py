@@ -196,8 +196,8 @@ class Gbfs(BikeShareSystem):
             def getter(zipinfo):
                 info, status = zipinfo
                 # some networks break spec by setting lat and lng in status
-                lat = info.get('lat') or status.get('lat')
-                lng = info.get('lon') or status.get('lon')
+                lat = info.get('lat', status.get('lat'))
+                lng = info.get('lon', status.get('lon'))
                 return (lat, lng)
 
             station_zip = filter_bounds(station_zip, getter, self.bbox)
