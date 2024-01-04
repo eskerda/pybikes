@@ -62,6 +62,10 @@ class PublibikeStation(BikeShareStation):
             'zip': station['zip'],
             'city': station['city'],
             'slots': station['capacity'],
+            'ebikes': 0,
         }
+        for vehicle in station['vehicles']:
+            if (vehicle['type']['id'] == 2):
+                self.extra['ebikes'] += 1
         self.bikes = len(station['vehicles'])
         self.free = self.extra['slots'] - self.bikes
