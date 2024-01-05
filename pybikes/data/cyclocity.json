@@ -48,17 +48,6 @@
                     "contract": "Lund"
                 },
                 {
-                    "tag": "tusbic",
-                    "meta": {
-                        "latitude": 43.46230569999999,
-                        "country": "ES",
-                        "name": "Tusbic",
-                        "longitude": -3.8099803,
-                        "city": "Santander"
-                    },
-                    "contract": "Santander"
-                },
-                {
                     "tag": "velam",
                     "meta": {
                         "latitude": 49.894067,

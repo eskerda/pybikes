@@ -2746,6 +2746,21 @@
                     "Movilidad Urbana Sostenible S.L."
                 ]
             }
+        },
+        {
+            "domain": "ek",
+            "tag": "tuebici",
+            "city_uid": 914,
+            "meta": {
+                "name": "TUeBICI",
+                "city": "Santander",
+                "country": "ES",
+                "latitude": 43.46230569999999,
+                "longitude": -3.8099803,
+                "company": [
+                    "UTE BICIS SANTANDER"
+                ]
+            }
         }
     ],
     "system": "nextbike",
