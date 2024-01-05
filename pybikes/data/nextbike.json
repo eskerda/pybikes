@@ -2623,18 +2623,6 @@
             }
         },
         {
-            "domain": "er",
-            "tag": "nextbike-erlangen",
-            "city_uid": 829,
-            "meta": {
-                "name": "nextbike Erlangen",
-                "city": "Erlangen",
-                "country": "DE",
-                "latitude": 49.589,
-                "longitude": 11.0065
-            }
-        },
-        {
             "domain": "cd",
             "tag": "nomago-gorizia",
             "city_uid": 771,
@@ -2697,23 +2685,6 @@
                 "longitude": -0.4182,
                 "company": [
                     "Movilidad Urbana Sostenible, S.L"
-                ]
-            }
-        },
-        {
-            "domain": "ex",
-            "tag": "getxobizi",
-            "city_uid": 749,
-            "meta": {
-                "name": "Getxobizi",
-                "city": "Getxo",
-                "country": "ES",
-                "latitude": 43.3476,
-                "longitude": -3.0088,
-                "company": [
-                    "UTE TIER",
-                    "Mobility SE",
-                    "Empresa Sagales SA GETXOBIZI"
                 ]
             }
         },
