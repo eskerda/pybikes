@@ -176,3 +176,10 @@ For more information on reports see [utils/README.md][4]
 
 [3]: https://pypi.org/project/pytest-xdist/
 [4]: utils/README.md
+
+Development
+-----------
+We welcome contributions from the community! The best place to get started is
+by diving into the codebase or checking the issues list.
+
+Join our developer community on Matrix: [#citybikes:matrix.org](https://matrix.to/#/#citybikes:matrix.org)
