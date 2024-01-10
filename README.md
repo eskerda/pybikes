@@ -1,4 +1,5 @@
 pybikes [![Build Status](https://github.com/eskerda/pybikes/actions/workflows/test.yml/badge.svg)](https://github.com/eskerda/pybikes/actions/workflows/test.yml)
+[![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#citybikes:matrix.org)
 =======
 ![pybikes](http://citybik.es/files/pybikes.png)
 
@@ -175,3 +176,10 @@ For more information on reports see [utils/README.md][4]
 
 [3]: https://pypi.org/project/pytest-xdist/
 [4]: utils/README.md
+
+Development
+-----------
+We welcome contributions from the community! The best place to get started is
+by diving into the codebase or checking the issues list.
+
+Join our developer community on Matrix: [#citybikes:matrix.org](https://matrix.to/#/#citybikes:matrix.org)
