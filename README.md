@@ -1,4 +1,5 @@
 pybikes [![Build Status](https://github.com/eskerda/pybikes/actions/workflows/test.yml/badge.svg)](https://github.com/eskerda/pybikes/actions/workflows/test.yml)
+[![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#citybikes:matrix.org)
 =======
 ![pybikes](http://citybik.es/files/pybikes.png)
 
