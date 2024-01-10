@@ -40,18 +40,19 @@ class MobhisStation(BikeShareStation):
         popup = html.fromstring(info)
         elems = popup.xpath('//text()')
 
-        name = elems.pop(0)
-        uid, _ = name.split(' - ')
-        online = 'Estação offline' not in info
-
-        self.name = name
         self.latitude = lat
         self.longitude = lng
-        self.extra = {'uid': uid, 'online': online}
 
+        online = 'Estação offline' not in info
+        self.extra = {'online': online}
+
+        # in cascavel offline stations lack name and id
         if not online:
+            self.name = None
             self.bikes, self.free = 0, 0
             return
+
+        self.name = elems.pop(0)
 
         # find ints on remaining elements
         elems = list(map(lambda s: re.search(r'\d+', s).group(), elems))
