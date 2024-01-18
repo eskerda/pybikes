@@ -1,0 +1,19 @@
+{
+    "system": "xian",
+    "class": "Xian",
+    "instances": [
+        {
+            "meta": {
+                "latitude": 34.2688,
+                "longitude": 108.9458,
+                "city": "西安 (Xi'an)",
+                "name": "Xi'an Public Bicycle",
+                "country": "CN",
+                "company": ["西安城市公共自行车服务管理有"]
+            },
+            "bbox": [[32.82,106.78],[36.44,111.54]],
+            "endpoint": "http://www.xazxc.com/service/IBikeSitesService?wsdl/findBikeSites",
+            "tag": "xian-public-bicycle"
+        }
+    ]
+}
