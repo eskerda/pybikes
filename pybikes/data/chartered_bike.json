@@ -1,0 +1,86 @@
+{
+    "instances": [
+        {
+            "tag": "chartered-bike-moradabad",
+            "meta": {
+                "latitude": 28.83263,
+                "longitude": 78.77346,
+                "city": "Moradabad",
+                "country": "IN"
+            },
+            "bounds": [78.662109375,28.725668231802942,78.88247966766357,28.967222769224946]
+        },
+        {
+            "tag": "chartered-bike-rajarhat-new-town",
+            "meta": {
+                "latitude": 22.58797,
+                "longitude": 88.4731,
+                "city": "Rajarhat New Town",
+                "country": "IN"
+            },
+            "bounds": [88.39683294296265,22.516263712594778,88.54304552078247,22.634292693793526]
+        },
+        {
+            "tag": "chartered-bike-ranchi",
+            "meta": {
+                "latitude": 23.37005,
+                "longitude": 85.325004,
+                "city": "Ranchi",
+                "country": "IN"
+            },
+            "bounds":[85.1841688156128,23.214450223569315,85.45444965362549,23.48324321061233]
+        },
+        {
+            "tag": "chartered-bike-bilaspur",
+            "meta": {
+                "latitude": 22.07834,
+                "longitude": 82.14768,
+                "city": "Bilaspur",
+                "country": "IN"
+            },
+            "bounds": [82.122802734375,22.05509605057584,82.188720703125,22.11617714721062]
+        },
+        {
+            "tag": "chartered-bike-prayagraj",
+            "meta": {
+                "latitude": 25.43802,
+                "longitude": 81.83383,
+                "city": "Prayagraj",
+                "country": "IN"
+            },
+            "bounds": [81.64841651916504,25.253312952776724,82.03225135803223,25.623960273264785]
+        },
+        {
+            "tag": "chartered-bike-bhopal",
+            "meta": {
+                "latitude": 23.258546,
+                "longitude": 77.401851,
+                "city": "Bhopal",
+                "country": "IN"
+            },
+            "bounds": [77.255859375,23.160563309048314,77.58317470550537,23.37609862128896]
+        },
+        {
+            "tag": "chartered-bike-srinagar",
+            "meta": {
+                "latitude": 34.07471,
+                "longitude": 74.82044,
+                "city": "Srinagar",
+                "country": "IN"
+            },
+            "bounds": [74.794921875,33.943359946578795,75.01125812530518,34.24834839064579]
+        },
+        {
+            "tag": "chartered-bike-surat",
+            "meta": {
+                "latitude": 21.18626,
+                "longitude": 72.80798,
+                "city": "Surat",
+                "country": "IN"
+            },
+            "bounds": [72.75146484375,21.105000275382068,72.88330078125,21.227941905058145]
+        }
+    ],
+    "system": "chartered_bike",
+    "class": "CharteredBike"
+}

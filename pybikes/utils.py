@@ -119,6 +119,9 @@ def filter_bounds(things, key, *point_bounds):
         # expecting (lat, lng) pairs, (y, x) instead of (x, y) pairs
         if isinstance(pb, list) and len(pb) == 2:
             bb = box(pb[1][1], pb[1][0], pb[0][1], pb[0][0])
+        # bbox as [minX, minY, maxX, maxY]
+        elif isinstance(pb, list) and len(pb) == 4:
+            bb = box(* pb)
         # Support GeoJSON features
         elif isinstance(pb, dict):
             bb = shape(pb).buffer(0)

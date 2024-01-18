@@ -45,6 +45,13 @@ filter_bounds_cases = [
         shape
     ),
     (
+        "A bbox filter can also be defined by 4 points as [minX, minY, maxX, maxY]",
+        barcelona + girona + mordor + morpork,
+        barcelona,
+        None,
+        [2.060483133624132,41.324098007178094, 2.265798843028506, 41.429655489542995]
+    ),
+    (
         "A bbox filter of points using a getter display only points within bbox",
         [
             {'lat': 41.3853036328, 'lng': 2.1537750659833534},
