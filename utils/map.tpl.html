@@ -5,30 +5,89 @@
     <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js'></script>
     <style>
+
+      body {
+          font-family: system-ui;
+      }
+
       div.container {
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-flow: column wrap;
       }
       div#map {
         height: 100%;
         border-radius: 8px;
         width: 50%;
-        float: left;
       }
 
       div#sidebar {
           height: 100%;
-          width: 50%;
-          float: left;
           margin: 0;
-          padding: 0;
+          padding: 10px;
+          width: 50%;
+          box-sizing: border-box;
       }
 
       div#systems {
-          height: 50%;
+          height: 45%;
           overflow: scroll;
+      }
+
+      div#systems ul li {
+          padding: 3px 5px;
+          border-radius: 3px;
+          background-color: #EEE;
+      }
+
+      div#systems a {
+          text-decoration: none;
+          color: inherit;
+      }
+
+      div#systems a:hover {
+          text-decoration: none;
+          color: inherit;
+      }
+
+
+      div#systems .hulls {
+          display: none;
+      }
+
+      div#systems .hulls.visible {
+          display: block;
+      }
+
+      div#systems .hulls li {
+          padding: 3px 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          border: solid 1px #444;
+      }
+
+      div#systems .hulls li:hover {
+          background-color: #444;
+          color: #EEE;
+          border-color: transparent;
+      }
+
+      div#systems .hulls li.stE {
+          color: #f54f4f;
+          border-color: #f54f4f;
+      }
+
+      div#systems .hulls li.stE:hover {
+          color: #FFF;
+          background-color: #f54f4f;
+      }
+
+
+      div#controls {
+          height: 5%;
       }
 
       div#console {
@@ -59,6 +118,19 @@
           display: block;
       }
 
+      div#controls div.control {
+          display: flex;
+          gap: 10px;
+      }
+
+      div#controls div.control input[type=range] {
+          flex-grow: 4;
+      }
+
+      div#controls div.control input[type=number] {
+          flex-shrink: 4;
+      }
+
 
     </style>
     <script type="application/json" id="allthethings">{{json.dumps(geojson)}} </script>
@@ -83,6 +155,10 @@
                             (error)
                         {% endif %}
                     </a>
+                    {% if instance.report.user_properties %}
+                    <a href="#" class='list-hulls' data-tag='{{instance.tag}}'>[+]</a>
+                    <div class='hulls' data-tag='{{instance.tag}}'><ul></ul></div>
+                    {% endif %}
                     </li>
                     {% endfor %}
                     </ul>
@@ -90,17 +166,15 @@
             {% endfor %}
             </div>
             <div id='controls'>
-                <div>
-                    <input type='range' id='hullEdge' min=0 max=10 value=2 step=0.5 />
-                    <label for="hullEdge">
-                        Hull Edge Distance: <span id='edge_d'/>2</span> km
-                    </label>
+                <div class='control'>
+                    <label for="hullEdge">Hull Edge</label>
+                    <input type='number' id='hullEdge' min=0 value=2000 /> m
+                    <input type='range' id='hullEdgeR' min=0 max=50000 value=2000 step=100 />
                 </div>
-                <div>
-                    <input type='range' id='hullBuffer' min=0 max=2000 value=500 step=100 />
-                    <label for="hullBuffer">
-                        Hull Buffer: <span id='buffer_d'/>500</span> m
-                    </label>
+                <div class='control'>
+                    <label for="hullBuffer">Hull Buffer</label>
+                    <input type='number' id='hullBuffer' min=0 value=500 /> m
+                    <input type='range' id='hullBufferR' min=0 max=100000 value=500 step=100 />
                 </div>
             </div>
             <div id='console'>
@@ -127,12 +201,26 @@
             document.getElementById('theconsole').innerHTML = ''
         }
 
-        const debugZone = (e) => {
+        const debugZone = ({point, lngLat}) => {
+            // XXX Hack
+            if (point == undefined && lngLat !== undefined) {
+                if (lngLat.length && lngLat.length == 2)
+                    lngLat = {lng: lngLat[0], lat: lngLat[1]}
+                point = map.project(lngLat)
+
+                // Wait for map project to finish any shit
+                setTimeout(() => {
+                    debugZone({point: point, lngLat: lngLat})
+                }, 100)
+
+                return
+            }
+
             // Set `bbox` as 5px reactangle area around clicked point.
             const bbox = [
-                [e.point.x - 5, e.point.y - 5],
-                [e.point.x + 5, e.point.y + 5]
-            ];
+                [point.x - 5, point.y - 5],
+                [point.x + 5, point.y + 5]
+            ]
             const selectedFeatures = map.queryRenderedFeatures(bbox, {
                 layers: ['stations', 'networks']
             });
@@ -143,10 +231,11 @@
 
             let data = "";
 
-            data += 'LatLng: ' + e.lngLat.lat + ', ' + e.lngLat.lng + '\n';
+            data += 'LatLng: ' + lngLat.lat + ', ' + lngLat.lng + '\n'
 
             if (selHull.length > 0) {
-                data += 'Zone: ' + selHull[0].properties.tag + '\n';
+                data += 'Zone: ' + selHull[0].properties.tag + '\n'
+                data += 'bbox: ' + JSON.stringify(turf.bbox(selHull[0])) + '\n'
             }
 
             let elem
@@ -177,7 +266,9 @@
 
                 if (traceback) data += '\n==== Traceback ====\n\n' + traceback + '\n'
 
-                map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
+                if (elem.id !== undefined)
+                    map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
+
                 last_selected = elem
             }
 
@@ -190,7 +281,7 @@
             'features': Object.entries(groupBy(stations.features,elem => elem.properties.tag)).map(
                     ([tag, features]) => {
                         var hull = turf.concave(
-                            {'type': 'FeatureCollection', 'features': features}, {maxEdge: edge_d, units: 'kilometers'}
+                            {'type': 'FeatureCollection', 'features': features}, {maxEdge: edge_d, units: 'meters'}
                         )
                         if (hull) {
                             hull.properties = {'tag': tag}
@@ -200,6 +291,57 @@
                     }
                 ).filter(n => n)
             }}
+
+
+        const hullE = (name, coords, hull) => {
+            let elem = document.createElement("li")
+            elem.className = 'hullE'
+            let bbox = turf.bbox(turf.polygon(coords))
+            elem.addEventListener('click', () => {
+                map.fitBounds(bbox, fitBoundsOptions['stations'])
+                removeAnchor()
+                debugZone({lngLat: map.getCenter()})
+            })
+            elem.append(name)
+
+            return elem
+        }
+
+        const listHulls = (hulls) => {
+            hulls.forEach( (hull) => {
+                const tag = hull.properties.tag
+                const target = document.querySelector('.hulls[data-tag="' + tag + '"] ul')
+                let cont = document.createElement('ul')
+                switch(hull.geometry.type) {
+                    case 'Polygon':
+                        cont.append(hullE('Hull #1', hull.geometry.coordinates, hull))
+                        break;
+                    case 'MultiPolygon':
+                        hull.geometry.coordinates.forEach((h, idx) => {
+                            cont.append(hullE('Hull #' + idx, h, hull))
+                        })
+                        break;
+                }
+                // find elements outside of hull and list them
+                let sts = stations.features.filter((f) => {return f.properties.tag == tag})
+                let nsts = sts.filter((f) => ! turf.booleanPointInPolygon(f, hull))
+
+                nsts.forEach((e, idx) => {
+                    let stE = document.createElement('li')
+                    stE.className = 'stE'
+                    stE.append('Station #' + idx)
+                    stE.addEventListener('click', (ev) => {
+                        map.setCenter({lng: e.geometry.coordinates[0], lat: e.geometry.coordinates[1]})
+                        map.setZoom(13)
+                        removeAnchor()
+                        debugZone({lngLat: e.geometry.coordinates})
+                    })
+                    cont.append(stE)
+                })
+
+                target.replaceWith(cont)
+            })
+        }
 
         let stations = {
             'type': 'FeatureCollection',
@@ -211,6 +353,7 @@
         }
 
         let hulls = getHulls(edge_d, buffer_d)
+        listHulls(hulls.features)
 
         let fitBoundsOptions = {
           'networks': {
@@ -230,6 +373,12 @@
           center: [5, 24],
           zoom: 2,
         });
+
+        let events = {
+            hull_changed: ({...args}) => {
+                return new CustomEvent("hull_changed", {detail: args})
+            },
+        }
 
         const layers = {
             networks: {
@@ -318,6 +467,7 @@
             link.addEventListener('click', function (ev) {
                 ev.preventDefault();
                 const tag = ev.target.dataset.tag
+
                 const f_networks = networks.features.filter(elem => elem.properties.tag == tag)
                 const f_stations = stations.features.filter(elem => elem.properties.tag == tag)
                 const features = [].concat(
@@ -328,28 +478,62 @@
 
                 const bbox = turf.bbox({'type': 'FeatureCollection', 'features': features})
                 map.fitBounds(bbox, fitBoundsOptions['stations'])
-                // XXX Hack: generate a fake click event
-                setTimeout(() => {
-                    removeAnchor()
-                    const point = f_networks[0].geometry.coordinates
-                    debugZone({point: map.project(point), lngLat: {lng: point[0], lat: point[1]}})
-                }, 100)
+                removeAnchor()
+                debugZone({lngLat: f_networks[0].geometry.coordinates})
+            })
+        })
+
+        document.querySelectorAll('a.list-hulls').forEach(link => {
+            link.addEventListener('click', (ev) => {
+                const tag = ev.target.dataset.tag
+                let hullsC = document.querySelector('.hulls[data-tag="' + tag +'"]')
+                hullsC.classList.toggle('visible')
+
+                if (hullsC.classList.contains('visible')) {
+                    link.textContent = '[-]'
+                } else {
+                    link.textContent = '[+]'
+                }
             })
         })
 
         document.querySelector('input#hullEdge').addEventListener('input', e => {
-            edge_d = e.target.value
-            map.getSource('hulls').setData(getHulls(edge_d, buffer_d))
-            document.querySelector('#edge_d').textContent = edge_d
+            document.dispatchEvent(events.hull_changed({edge: e.target.value, buffer: buffer_d}))
         })
 
         document.querySelector('input#hullBuffer').addEventListener('input', e => {
-            buffer_d = e.target.value
-            map.getSource('hulls').setData(getHulls(edge_d, buffer_d))
-            document.querySelector('#buffer_d').textContent = buffer_d
+            document.dispatchEvent(events.hull_changed({edge: edge_d, buffer: e.target.value}))
+        })
+
+        document.querySelector('input#hullEdgeR').addEventListener('input', e => {
+            document.dispatchEvent(events.hull_changed({edge: e.target.value, buffer: buffer_d}))
+        })
+
+        document.querySelector('input#hullBufferR').addEventListener('input', e => {
+            document.dispatchEvent(events.hull_changed({edge: edge_d, buffer: e.target.value}))
         })
 
         document.querySelector('div#console a.close').addEventListener('click', removeAnchor)
+
+        document.addEventListener("hull_changed", (e) => {
+            edge_d = e.detail.edge
+            buffer_d = e.detail.buffer
+
+            document.querySelector('input#hullEdge').value = edge_d
+            document.querySelector('input#hullEdgeR').value = edge_d
+            document.querySelector('input#hullBuffer').value = buffer_d
+            document.querySelector('input#hullBufferR').vaue = buffer_d
+
+            hulls = getHulls(edge_d, buffer_d)
+            map.getSource('hulls').setData(hulls)
+            listHulls(hulls.features)
+        })
+
+        document.querySelectorAll('a.list-hulls').forEach( (elem) => {
+            elem.addEventListener("click", (e) => {
+                console.log(e.target.dataset.tag)
+            })
+        })
     </script>
   </body>
 </html>
