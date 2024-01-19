@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "linkbike-penang",
+            "meta":{
+                "name": "LinkBike",
+                "latitude": 5.4192,
+                "longitude":  100.3281,
+                "country": "MY",
+                "city": "Penang",
+                "company": ["FAST RENT BIKE (PG) Sdn. Bhd"]
+            }
+        }
+    ],
+    "system":"linkbike",
+    "class":"LinkBike"
+}
