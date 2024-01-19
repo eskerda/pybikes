@@ -231,11 +231,13 @@
 
             let data = "";
 
-            data += 'LatLng: ' + lngLat.lat + ', ' + lngLat.lng + '\n'
+            data += `LatLng: ${lngLat.lat.toFixed(4)}, ${lngLat.lng.toFixed(4)}\n`
 
             if (selHull.length > 0) {
-                data += 'Zone: ' + selHull[0].properties.tag + '\n'
-                data += 'bbox: ' + JSON.stringify(turf.bbox(selHull[0])) + '\n'
+                const hullBbox = turf.bbox(selHull[0]).map(d => d.toFixed(4));
+
+                data += `Zone: ${selHull[0].properties.tag}\n`
+                data += `bbox: [[${hullBbox[1]}, ${hullBbox[0]}], [${hullBbox[3]}, ${hullBbox[2]}]]\n`
             }
 
             let elem
