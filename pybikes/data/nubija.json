@@ -1,0 +1,18 @@
+{
+    "instances": [
+        {
+            "tag": "nubija-changwon",
+            "endpoint": "https://nubija.com/v1/list.do",
+            "meta":{
+                "name": "누비자 (Nubija)",
+                "latitude": 35.22369091380072,
+                "longitude": 128.67059887227657,
+                "country": "KR",
+                "city": "창원시 (Changwon)",
+                "company": ["Changwon City"]
+            }
+        }
+    ],
+    "system":"nubija",
+    "class":"Nubija"
+}
