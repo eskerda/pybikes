@@ -1,0 +1,19 @@
+{
+    "system": "sejong",
+    "class": "Sejong",
+    "instances": [
+        {
+            "tag": "eoulling-sejong",
+            "feed_url": "https://www.sejongbike.kr/api/v1/station/list/extra",
+            "bbox": [[36.4213, 127.2217], [36.6332, 127.4311]],
+            "meta": {
+                "latitude": 36.4901,
+                "longitude": 127.2829,
+                "city": "세종 (Sejong)",
+                "name": "어울링 (Eoulling)",
+                "company": ["Sejong City Transportation Corporation"],
+                "country": "KR"
+            }
+        }
+    ]
+}
