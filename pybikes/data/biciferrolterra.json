@@ -1,0 +1,21 @@
+{
+    "instances":[
+        {
+            "tag": "bici-ferrol-terra",
+            "meta": {
+                "name": "BiciFerrolTerra",
+                "city": "Ferrol - Narón",
+                "latitude": 43.4896,
+                "longitude": -8.2193,
+                "country": "ES",
+                "company": [
+                    "2K SYSTEMS, S.L.",
+                    "Bike Works Naron"
+                ]
+            },
+            "url": "http://xestion.biciferrolterra.com/Estaciones.aspx"
+        }
+    ],
+    "system": "biciferrolterra",
+    "class": "BiciFerrolTerra"
+}
