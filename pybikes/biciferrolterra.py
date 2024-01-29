@@ -39,7 +39,7 @@ class BiciFerrolTerraStation(BikeShareStation):
         self.latitude = latitude
         self.longitude = longitude
 
-        self.bikes = int(re.search(r'Bicicletas dispoñibles: (-?\d+)', availability).group(1))
+        self.bikes = int(re.search(r'Bicicletas dispo\xf1ibles: (-?\d+)', availability).group(1))
         self.free = int(re.search(r'Postos libres: (-?\d+)', availability).group(1))
         self.extra = {
             'slots': self.bikes + self.free,
