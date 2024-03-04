@@ -61,6 +61,8 @@ class YouBikeTwStation(BikeShareStation):
             "district": data["district_tw"],
             "address": data["address_tw"],
             "slots": data["parking_spaces"],
+            "normal_bikes": data["available_spaces_detail"]["yb1"] + data["available_spaces_detail"]["yb2"],
+            "ebikes": data["available_spaces_detail"]["eyb"],
             "last_updated": data["updated_at"],
             "online": data["status"] == 1,
             "youbike_version": data["type"],
