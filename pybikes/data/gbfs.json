@@ -1173,15 +1173,19 @@
         {
             "tag": "ov-fiets",
             "meta": {
-                "latitude": 52.3685,
-                "longitude": 4.8948,
-                "city": "Multiple",
+                "latitude": 52.1449,
+                "longitude": 5.5603,
+                "city": "Nederland",
                 "name": "OV-fiets",
                 "country": "NL",
                 "company": [
                     "NS Groep NV"
                 ],
-                "source": "https://openov.nl/"
+                "source": "https://openov.nl/",
+                "license": {
+                    "name": "CC BY-SA 3.0 NL AKTE",
+                    "url": "https://creativecommons.org/licenses/by-sa/3.0/nl/"
+                }
             },
             "feed_url": "https://gbfs.openov.nl/ovfiets/gbfs.json"
         }
