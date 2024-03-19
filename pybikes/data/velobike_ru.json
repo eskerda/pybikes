@@ -12,17 +12,6 @@
             "feed_url": "https://velobike.ru/ajax/parkings/"
         },
         {
-            "tag": "velobike-nizhniy-novgorod",
-            "meta": {
-                "city": "Nizhniy Novgorod",
-                "name": "Velobike",
-                "country": "RU",
-                "longitude": 44.003,
-                "latitude": 56.194
-            },
-            "feed_url": "https://nnovgorod.velobike.ru/ajax/parkings/?CityCode=nnovgorod"
-        },
-        {
             "tag": "velobike-murmansk",
             "meta": {
                 "city": "Murmansk",
@@ -31,7 +20,29 @@
                 "longitude": 33.074,
                 "latitude": 68.968
             },
-            "feed_url": "https://murmansk.velobike.ru/ajax/parkings/?CityCode=murmansk"
+            "feed_url": "https://murmansk.velobike.ru/ajax/parkings/"
+        },
+        {
+            "tag": "velobike-dvfu",
+            "meta": {
+                "city": "Far Eastern Federal University",
+                "name": "Velobike",
+                "country": "RU",
+                "longitude": 131.892988,
+                "latitude": 43.02803
+            },
+            "feed_url": "https://dvfu.velobike.ru/ajax/parkings/"
+        },
+        {
+            "tag": "velobike-tyumen",
+            "meta": {
+                "city": "Tyumen",
+                "name": "Velobike",
+                "country": "RU",
+                "longitude": 65.568,
+                "latitude": 57.159
+            },
+            "feed_url": "https://tyumen.velobike.ru/ajax/parkings/"
         }
     ],
     "system": "velobike_ru",
