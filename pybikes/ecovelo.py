@@ -11,7 +11,7 @@ class Ecovelo(Gbfs):
         'company': ['Ecovelo'],
     }
 
-    BASE_URL = "https://api.gbfs.v1.ecovelo.mobi/gbfs/{dataset}"
+    BASE_URL = "https://api.gbfs.v2.2.ecovelo.mobi/{dataset}/gbfs.json"
 
     def __init__(self, tag, dataset, meta):
         feed_url = Ecovelo.BASE_URL.format(dataset=dataset)
