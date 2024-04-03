@@ -13,8 +13,7 @@
                 "longitude": -0.1198244,
                 "latitude": 51.51121389999999
             },
-            "feed_url": "http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml",
-            "format": "xml"
+            "feed_url": "http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml"
         }
     ],
     "system": "bixi",
