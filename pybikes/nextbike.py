@@ -6,7 +6,7 @@ import re
 import json
 from lxml import etree
 
-from .base import BikeShareSystem, BikeShareStation
+from .base import BikeShareSystem, BikeShareStation, BikeShareRoamingBike
 from pybikes.utils import PyBikesScraper, filter_bounds
 from pybikes.contrib import TSTCache
 
@@ -54,11 +54,12 @@ class Nextbike(BikeShareSystem):
                 lat, lng = place.attrib['lat'], place.attrib['lng']
                 return (float(lat), float(lng))
             places = filter_bounds(places, getter, self.bbox)
-        # For now ignore bikes roaming around
-        places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
 
-        self.stations = list(map(NextbikeStation, places))
+        stations = filter(lambda p: p.attrib.get('spot', ''), places)
+        self.stations = list(map(NextbikeStation, stations))
 
+        roaming_bikes = filter(lambda p: not(p.attrib.get('spot', '')), places)
+        self.roaming_bikes = list(map(NextbikeRoamingBike, roaming_bikes))
 
 class NextbikeStation(BikeShareStation):
     def __init__(self, place):
@@ -104,3 +105,18 @@ class NextbikeStation(BikeShareStation):
 
         if 'bike_numbers' in place.attrib:
             self.extra['bike_uids'] = place.attrib['bike_numbers'].split(',')
+
+class NextbikeRoamingBike(BikeShareRoamingBike):
+    def __init__(self, place):
+        super(NextbikeRoamingBike, self).__init__()
+        self.name = place.attrib['name']
+        self.latitude = float(place.attrib['lat'])
+        self.longitude = float(place.attrib['lng'])
+        self.extra = {}
+
+        self.extra['uid'] = place.attrib['uid']
+        if 'number' in place.attrib:
+            self.extra['number'] = place.attrib['number']
+
+        if 'bike_numbers' in place.attrib:
+            self.extra['bike_uids'] = place.attrib['bike_numbers']

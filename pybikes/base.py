@@ -16,32 +16,18 @@ class GeneralPurposeEncoder(json.JSONEncoder):
         else:
             return {k: v for k, v in obj.__dict__.items() if not k.startswith('_')}
 
-class BikeShareStation(object):
-    """A base class to name a bike sharing Station. It can be:
-        - Specific (cities):
-            - BicingStation, VelibStation, ...
-        - General (companies):
-            - JCDecauxStation, ClearChannelStation
+class BikeShareInstance(object):
+    """A base class to name a bike sharing instance (either a station or roaming bike).
     """
 
     def __init__(self, name = None, latitude = None, longitude = None,
-                       bikes = None, free = None, extra = None):
+                       bikes = None, extra = None):
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.bikes = bikes
-        self.free = free
         self.timestamp = datetime.utcnow()     # Store timestamp in UTC!
         self.extra = extra or {}
-
-    def __str__(self):
-        return "--- {0} ---\n"\
-               "bikes: {1}\n"\
-               "free: {2}\n"\
-               "latlng: {3},{4}\n"\
-               "extra: {5}"\
-               .format(repr(self.name), self.bikes, self.free, self.latitude, \
-                       self.longitude,self.extra)
 
     def update(self, scraper = None):
         """ Base update method for BikeShareStation, any subclass can
@@ -87,6 +73,43 @@ class BikeShareStation(object):
         h.update(str_rep.encode('utf-8'))
         return h.hexdigest()
 
+class BikeShareStation(BikeShareInstance):
+    """A base class to name a bike sharing Station. It can be:
+        - Specific (cities):
+            - BicingStation, VelibStation, ...
+        - General (companies):
+            - JCDecauxStation, ClearChannelStation
+    """
+
+    def __init__(self, name = None, latitude = None, longitude = None,
+                       bikes = None, free = None, extra = None):
+        super(BikeShareStation, self).__init__(name, latitude, longitude, bikes, extra)
+        self.free = free
+
+    def __str__(self):
+        return "--- {0} ---\n"\
+               "bikes: {1}\n"\
+               "free: {2}\n"\
+               "latlng: {3},{4}\n"\
+               "extra: {5}"\
+               .format(repr(self.name), self.bikes, self.free, self.latitude, \
+                       self.longitude,self.extra)
+
+class BikeShareRoamingBike(BikeShareInstance):
+    """A base class to name a bike sharing roaming bike (a bike that is not parked
+       at a station.
+    """
+
+    def __init__(self, name = None, latitude = None, longitude = None, extra = None):
+        super(BikeShareRoamingBike, self).__init__(name, latitude, longitude, 1, extra)
+
+    def __str__(self):
+        return "--- {0} ---\n"\
+               "latlng: {1},{2}\n"\
+               "extra: {3}"\
+               .format(repr(self.name), self.latitude, self.longitude,self.extra)
+
+
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
         - Specific (cities):
@@ -119,6 +142,7 @@ class BikeShareSystem(object):
 
     def __init__(self, tag, meta):
         self.stations = []
+        self.roaming_bikes = []
         self.tag = tag
         basemeta = dict(BikeShareSystem.meta, **self.meta)
         self.meta = dict(basemeta, **meta)
