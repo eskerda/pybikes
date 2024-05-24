@@ -136,17 +136,6 @@
                     "contract": "Nancy"
                 },
                 {
-                    "tag": "cristolib",
-                    "meta": {
-                        "latitude": 48.790367,
-                        "country": "FR",
-                        "name": "Cristolib",
-                        "longitude": 2.455572,
-                        "city": "Cr\u00e9teil"
-                    },
-                    "contract": "Creteil"
-                },
-                {
                     "tag": "villo",
                     "meta": {
                         "latitude": 50.8503396,
