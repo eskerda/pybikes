@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 2.7
-      uses: MatteoH2O1999/setup-python@v3
+      uses: MatteoH2O1999/setup-python@v4
       with:
         python-version: '2.7'
         allow-build: info
