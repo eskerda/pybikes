@@ -254,28 +254,6 @@
             }
         },
         {
-            "tag": "clarksville",
-            "uid": "bcycle_clarksville",
-            "meta": {
-                "latitude": 36.5277,
-                "longitude": -87.3561,
-                "city": "Clarksville, TN",
-                "name": "Clarksville BCycle",
-                "country": "US"
-            }
-        },
-        {
-            "tag": "encinitas",
-            "uid": "bcycle_encinitas",
-            "meta": {
-                "latitude": 33.0365,
-                "longitude": -117.2912,
-                "city": "Encinitas, CA",
-                "name": "Encinitas BCycle",
-                "country": "US"
-            }
-        },
-        {
             "tag": "jackson",
             "uid": "bcycle_jacksoncounty",
             "meta": {
