@@ -23,14 +23,11 @@ class BCycle(Gbfs):
     station_cls = BCycleStation
     meta = {"system": "BCycle", "company": ["BCycle, LLC"]}
 
-    def __init__(self, tag, meta, uid, * args, ** kwargs):
+    def __init__(self, tag, meta, uid, bbox=None):
         # add company if json has additional companies
         if "company" in meta:
             meta["company"] += BCycle.meta["company"]
 
         feed_url = FEED_URL.format(uid=uid)
 
-        # bcycle known to miss stations in station_status
-        kwargs.setdefault('ignore_errors', True)
-
-        super(BCycle, self).__init__(tag, meta, feed_url, * args, ** kwargs)
+        super(BCycle, self).__init__(tag, meta, feed_url, bbox=bbox)
