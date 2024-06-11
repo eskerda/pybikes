@@ -8,7 +8,7 @@ from pybikes.gbfs import Gbfs
 from pybikes.contrib import TSTCache
 
 
-FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/2-2/de/{provider}/gbfs'
+FEED_URL = 'https://apis.deutschebahn.com/db-api-marketplace/apis/shared-mobility-gbfs/v2/de/{provider}/gbfs'
 
 
 class DB(Gbfs):
