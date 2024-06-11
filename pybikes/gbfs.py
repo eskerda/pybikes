@@ -184,9 +184,15 @@ class Gbfs(BikeShareSystem):
         # station_ids as station_information.
         station_information = {s['station_id']: s for s in station_information}
         station_status = {s['station_id']: s for s in station_status}
+
         # Any station not in station_information will be ignored
+        # Any station not in station_status will explicitly fail parsing if
+        # station_status contained any relevant information not in info
+        #
+        # Alternative would be to just parse intersection of keys, but that
+        # would miss possible complete stations from info.
         station_zip = (
-            (station_information[uid], station_status[uid])
+            (station_information[uid], station_status.get(uid, {}))
             for uid in station_information.keys()
         )
 
