@@ -11,7 +11,29 @@
                 "name": "BUGA"
             },
             "tag": "buga"
-        }
+        },
+        {
+            "uid": "13fe90d9a574fe5346914d76fee8466d711db3cd",
+            "meta": {
+                "city": "Pombal",
+                "country": "PT",
+                "latitude": 39.915278,
+                "longitude": -8.632222,
+                "name": "Pombike"
+            },
+            "tag": "pombike"
+        },
+        {
+            "uid": "d02d3e4962abd7483727c2ba12d253bc2d06c225",
+            "meta": {
+                "city": "CIM Viseu Dão-Lafões",
+                "country": "PT",
+                "latitude": 40.656392,
+                "longitude": -7.912545
+                "name": "Bora!"
+            },
+            "tag": "bora"
+        },
     ],
     "system": "soltrafego"
 }
