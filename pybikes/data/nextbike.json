@@ -2732,6 +2732,174 @@
                     "UTE BICIS SANTANDER"
                 ]
             }
+        },
+        {
+            "domain": "nh",
+            "tag": "nextbike-hodonin",
+            "city_uid": 1046,
+            "meta": {
+                "name": "nextbike Hodonín",
+                "city": "Hodonín",
+                "country": "CZ",
+                "latitude": 48.8489,
+                "longitude": 17.1327
+            }
+        },
+        {
+            "domain": "nt",
+            "tag": "nextbike-jicin",
+            "city_uid": 1032,
+            "meta": {
+                "name": "nextbike Jičín",
+                "city": "Jičín",
+                "country": "CZ",
+                "latitude": 50.4367,
+                "longitude": 15.3743
+            }
+        },
+        {
+            "domain": "kn",
+            "tag": "nextbike-novy-jicin",
+            "city_uid": 1045,
+            "meta": {
+                "name": "nextbike Nový Jičín",
+                "city": "Nový Jičín",
+                "country": "CZ",
+                "latitude": 49.5976,
+                "longitude": 18.008
+            }
+        },
+        {
+            "domain": "kn",
+            "tag": "nextbike-koprivnice",
+            "city_uid": 1035,
+            "meta": {
+                "name": "nextbike Kopřivnice",
+                "city": "Kopřivnice",
+                "country": "CZ",
+                "latitude": 49.5934,
+                "longitude": 18.1422
+            }
+        },
+        {
+            "domain": "uo",
+            "tag": "nextbike-most",
+            "city_uid": 1036,
+            "meta": {
+                "name": "nextbike Most",
+                "city": "Most",
+                "country": "CZ",
+                "latitude": 50.5014,
+                "longitude": 13.6361
+            }
+        },
+        {
+            "domain": "cu",
+            "tag": "nextbike-olbramovicevotice",
+            "city_uid": 1034,
+            "meta": {
+                "name": "nextbike OlbramoviceVotice",
+                "city": "Olbramovice/Votice",
+                "country": "CZ",
+                "latitude": 49.6525,
+                "longitude": 14.6355
+            }
+        },
+        {
+            "domain": "xb",
+            "tag": "nextbike-trutnov",
+            "city_uid": 792,
+            "meta": {
+                "name": "nextbike Trutnov",
+                "city": "Trutnov",
+                "country": "CZ",
+                "latitude": 50.5616,
+                "longitude": 15.9126
+            }
+        },
+        {
+            "domain": "rr",
+            "tag": "dcs-bike",
+            "city_uid": 860,
+            "meta": {
+                "name": "DCS Bike",
+                "city": "Mannheim",
+                "country": "DE",
+                "latitude": 49.5346,
+                "longitude": 8.47004
+            }
+        },
+        {
+            "domain": "mx",
+            "tag": "movemix-bike",
+            "city_uid": 943,
+            "meta": {
+                "name": "Movemix Bike",
+                "city": "Halle (Saale)",
+                "country": "DE",
+                "latitude": 51.4938,
+                "longitude": 11.9628
+            }
+        },
+        {
+            "domain": "we",
+            "tag": "westcargo-bristol",
+            "city_uid": 946,
+            "meta": {
+                "name": "WESTcargo Bristol",
+                "city": "Bristol",
+                "country": "GB",
+                "latitude": 51.4587,
+                "longitude": -2.57355
+            }
+        },
+        {
+            "domain": "we",
+            "tag": "westcargo-bath",
+            "city_uid": 947,
+            "meta": {
+                "name": "WESTcargo Bath",
+                "city": "Bath",
+                "country": "GB",
+                "latitude": 51.3814,
+                "longitude": -2.35519
+            }
+        },
+        {
+            "domain": "py",
+            "tag": "tychowski-rower-miejski",
+            "city_uid": 528,
+            "meta": {
+                "name": "Tychowski Rower Miejski",
+                "city": "Tychowo",
+                "country": "PL",
+                "latitude": 53.9288,
+                "longitude": 16.2568
+            }
+        },
+        {
+            "domain": "rv",
+            "tag": "slatina-velo-city",
+            "city_uid": 945,
+            "meta": {
+                "name": "Slatina Velo City",
+                "city": "Slatina",
+                "country": "RO",
+                "latitude": 44.4299,
+                "longitude": 24.3716
+            }
+        },
+        {
+            "domain": "av",
+            "tag": "senica-bajk",
+            "city_uid": 942,
+            "meta": {
+                "name": "SENICA BAJK",
+                "city": "Senica",
+                "country": "SK",
+                "latitude": 48.676,
+                "longitude": 17.3642
+            }
         }
     ],
     "system": "nextbike",

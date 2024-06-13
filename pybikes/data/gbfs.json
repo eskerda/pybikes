@@ -1184,7 +1184,51 @@
             },
             "bbox": [[34.8350, 135.5691], [35.1669, 136.0404]],
             "feed_url": "https://app.kotobike.jp/api/exposed/v2/gbfs/gbfs.json"
-        }
+        },
+        {
+                "tag": "aw-bike",
+                "meta": {
+                    "name": "AW-bike Ahrweiler",
+                    "city": "Ahrweiler",
+                    "country": "DE",
+                    "latitude": 50.5452,
+                    "longitude": 7.1212,
+                    "company": [
+                        "nextbike GmbH"
+                    ]
+                },
+                "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/gbfs.json"
+            },
+            {
+                "tag": "famose",
+                "meta": {
+                    "name": "Fa.Mo.Se",
+                    "city": "Senigallia",
+                    "country": "IT",
+                    "latitude": 43.7603,
+                    "longitude": 13.1139,
+                    "company": [
+                        "Comuni di Senigallia e Mondolfo",
+                        "TIER Mobility SE"
+                    ]
+                },
+                "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/gbfs.json"
+            },
+            {
+                "tag": "metrorower",
+                "meta": {
+                    "name": "Metrorower",
+                    "city": "Górnośląsko-Zagłębiowska Metropolia",
+                    "country": "PL",
+                    "latitude": 50.2664,
+                    "longitude": 19.0217,
+                    "company": [
+                        "Górnośląsko-Zagłębiowska Metropolia",
+                        "Nextbike GZM"
+                    ]
+                },
+                "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zz/gbfs.json"
+            }
     ],
     "system": "gbfs",
     "class": "Gbfs"
