@@ -440,8 +440,8 @@
                 "longitude":4.805833
             },
             "feed_url": "",
-            "station_information":"https://avignon-gbfs.klervi.net/gbfs/en/station_information.json",
-            "station_status":"https://avignon-gbfs.klervi.net/gbfs/en/station_status.json",
+            "station_information": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/station_information.json?key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2",
+            "station_status": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/station_status.json?key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2",
             "ignore_errors": true
         },
         {
