@@ -11,9 +11,9 @@
                         "name": "V'Lille",
                         "longitude": 3.057256,
                         "country": "FR",
-                        "source":  "https://opendata.lillemetropole.fr/explore/dataset/vlille-realtime/"
+                        "source":  "https://data.lillemetropole.fr/catalogue/dataset/c8166e8f-36a2-40ca-af1a-a00ab1fb20f7"
                     },
-                    "dataset": "vlille-realtime"
+                    "dataset": "vlille_temps_reel"
                 }
             ]
         },
