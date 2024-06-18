@@ -18,7 +18,7 @@ class KeolisIlevia(BikeShareSystem):
     }
 
     # Rows: -1 gives us all the results without the need to paginate
-    BASE_URL = "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset={dataset}&rows=-1"     # NOQA
+    BASE_URL = "https://data.lillemetropole.fr/data/ogcapi/collections/{dataset}/items?f=json&limit=-1"     # NOQA
 
     def __init__(self, tag, dataset, meta):
         super(KeolisIlevia, self).__init__(tag, meta)
@@ -27,23 +27,24 @@ class KeolisIlevia(BikeShareSystem):
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
         data = json.loads(scraper.request(self.feed_url))
-        records = map(lambda r: r['fields'], data['records'])
+        records = data['records']
         self.stations = list(map(KeolisIleviaStation, records))
 
 
 class KeolisIleviaStation(BikeShareStation):
     def __init__(self, fields):
         name = fields['nom']
-        latitude, longitude = map(float, fields['localisation'])
-        bikes = int(fields['nbvelosdispo'])
-        free = int(fields['nbplacesdispo'])
+        latitude = float(fields["y"])
+        longitude = float(fields["x"])
+        bikes = int(fields['nb_velos_dispo'])
+        free = int(fields['nb_places_dispo'])
         extra = {
             'status': fields['etat'],
-            'uid': str(fields['libelle']),
+            'uid': str(fields['id']),
             'city': fields['commune'],
             'address': fields['adresse'],
-            'last_update': fields['datemiseajour'],
-            'online': fields['etat'] == 'EN SERVICE',
+            'last_update': fields['date_modification'],
+            'online': fields['etat_connexion'] == 'CONNECTÉ',
             'payment-terminal': fields['type'] == 'AVEC TPE',
         }
         super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
