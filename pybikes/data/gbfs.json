@@ -474,20 +474,6 @@
             "feed_url": "https://monaco.publicbikesystem.net/customer/ube/gbfs/v1/"
         },
         {
-            "tag": "veloceo",
-            "meta": {
-                "city": "Vannes",
-                "name": "Vélocéo",
-                "country": "FR",
-                "company": [
-                    "Smoove"
-                ],
-                "latitude": 47.6559,
-                "longitude": -2.7603
-            },
-            "feed_url": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
-        },
-        {
             "tag": "mibicitubici",
             "meta": {
               "city": "Rosario",
