@@ -1228,21 +1228,6 @@
                 "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ae/gbfs.json"
             },
             {
-                "tag": "carvelo",
-                "meta": {
-                    "name": "carvelo eCargo-Bike Sharing",
-                    "city": "Switzerland",
-                    "country": "CH",
-                    "latitude": 46.9829,
-                    "longitude": 8.2331,
-                    "company": [
-                        "Mobilitätsakademie AG",
-                        "Touring Club Switzerland (TCS)"
-                    ]
-                },
-                "feed_url": "https://api.mobidata-bw.de/sharing/gbfs/carvelo2go_ch/gbfs"
-            },
-            {
                 "tag": "lastenvelo-freiburg",
                 "meta": {
                     "name": "LastenVelo Freiburg",
@@ -1256,48 +1241,6 @@
                 },
                 "bbox": [[47.8721, 7.5586], [48.2426, 8.1841]],
                 "feed_url": "https://api.mobidata-bw.de/sharing/gbfs/lastenvelo_fr/gbfs"
-            },
-            {
-                "tag": "pickebike-aubonne",
-                "meta": {
-                    "name": "PickeBike Aubonne",
-                    "city": "Aubonne",
-                    "country": "CH",
-                    "latitude": 46.4949,
-                    "longitude": 6.3963,
-                    "company": [
-                        "PickeBike"
-                    ]
-                },
-                "feed_url": "https://api.mobidata-bw.de/sharing/gbfs/pickebike_aubonne/gbfs"
-            },
-            {
-                "tag": "pickebike-basel",
-                "meta": {
-                    "name": "PickeBike Basel",
-                    "city": "Basel",
-                    "country": "CH",
-                    "latitude": 47.5579,
-                    "longitude": 7.5902,
-                    "company": [
-                        "PickeBike"
-                    ]
-                },
-                "feed_url": "https://api.mobidata-bw.de/sharing/gbfs/pickebike_basel/gbfs"
-            },
-            {
-                "tag": "pickebike-fribourg",
-                "meta": {
-                    "name": "PickeBike Fribourg",
-                    "city": "Fribourg",
-                    "country": "CH",
-                    "latitude": 46.8039,
-                    "longitude": 7.1505,
-                    "company": [
-                        "PickeBike"
-                    ]
-                },
-                "feed_url": "https://api.mobidata-bw.de/sharing/gbfs/pickebike_fribourg/gbfs"
             }
     ],
     "system": "gbfs",
