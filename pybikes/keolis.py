@@ -44,7 +44,7 @@ class KeolisIleviaStation(BikeShareStation):
             'city': fields['commune'],
             'address': fields['adresse'],
             'last_update': fields['date_modification'],
-            'online': fields['etat_connexion'] == 'CONNECTÉ',
+            'online': fields['etat_connexion'] == u'CONNECTÉ',
             'payment-terminal': fields['type'] == 'AVEC TPE',
         }
         super(KeolisIleviaStation, self).__init__(name, latitude, longitude,
