@@ -1226,6 +1226,20 @@
                     "company": ["Strasbourg Mobilités"]
                 },
                 "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ae/gbfs.json"
+            },
+            {
+                "tag": "nextbike-ortenaukreis",
+                "meta": {
+                    "name": "Nextbike Ortenaukreis",
+                    "city": "Ortenaukreis",
+                    "country": "DE",
+                    "latitude": 48.4721,
+                    "longitude": 7.94243,
+                    "company": [
+                        "nextbike GmbH"
+                    ]
+                },
+                "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json"
             }
     ],
     "system": "gbfs",

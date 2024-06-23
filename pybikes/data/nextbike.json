@@ -315,17 +315,6 @@
             }
         },
         {
-            "domain": "dl",
-            "tag": "nextbike-offenburg",
-            "city_uid": 155,
-            "meta": {
-                "city": "Offenburg",
-                "country": "DE",
-                "latitude": 48.4721,
-                "longitude": 7.94243
-            }
-        },
-        {
             "domain": "la",
             "tag": "nextbike-wrneustadt",
             "city_uid": 156,
@@ -1218,17 +1207,6 @@
                 "country": "BA",
                 "latitude": 44.775,
                 "longitude": 17.1994
-            }
-        },
-        {
-            "domain": "lr",
-            "tag": "lahr-pedelecs-lahr",
-            "city_uid": 505,
-            "meta": {
-                "city": "Lahr",
-                "country": "DE",
-                "latitude": 48.3396,
-                "longitude": 7.87376
             }
         },
         {
