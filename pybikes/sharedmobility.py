@@ -8,6 +8,14 @@ class SharedMobility(Gbfs):
 
     authed = True
 
+    meta = {
+        "license": {
+            "name": "Open Use",
+            "url": "https://opendata.swiss/en/dataset/standorte-und-verfugbarkeit-von-shared-mobility-angeboten",
+        },
+        "source": "https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md",
+    }
+
     def __init__(self, key, * args, ** kwargs):
         self.auth = key
         super(SharedMobility, self).__init__(* args, ** kwargs)
