@@ -13,8 +13,26 @@ class GeneralPurposeEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime):
             return obj.isoformat()
+        elif isinstance(obj, BikeShareSystem):
+            # naive include
+            k = ['tag', 'meta', 'stations']
+            # include anything else?
+            k += obj.__dict__.keys()
+            # exclude _
+            k = filter(lambda k: not k.startswith('_'), k)
+            return {k: getattr(obj, k) for k in k}
+
+        elif isinstance(obj, BikeShareStation):
+            # naive include
+            k = []
+            # include anything else?
+            k += obj.__dict__.keys()
+            # exclude _
+            k = filter(lambda k: not k.startswith('_'), k)
+            return {k: getattr(obj, k) for k in k}
         else:
-            return {k: v for k, v in obj.__dict__.items() if not k.startswith('_')}
+            super().default(obj)
+
 
 class BikeShareStation(object):
     """A base class to name a bike sharing Station. It can be:
