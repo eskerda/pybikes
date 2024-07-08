@@ -60,5 +60,6 @@ class BicingStation(BikeShareStation):
             self.extra['normal_bikes'] = int(data['mechanical_bikes'])
 
         if 'electrical_bikes' in data:
-            self.extra['has_ebikes'] = True
-            self.extra['ebikes'] = int(data['electrical_bikes'])
+            ebikes = int(data['electrical_bikes'])
+            self.extra['has_ebikes'] = ebikes > 0
+            self.extra['ebikes'] = ebikes
