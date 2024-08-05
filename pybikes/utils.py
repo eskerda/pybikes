@@ -19,18 +19,34 @@ from pybikes.base import BikeShareSystem, BikeShareStation
 
 
 class PyBikesScraper(object):
-    proxy_enabled = False
-    last_request = None
-    requests_timeout = 300
-    retry = False
 
-    def __init__(self, cachedict=None, headers=None):
+    last_request = None
+
+    def __init__(
+        self,
+        cachedict=None,
+        headers=None,
+        user_agent='PyBikes',
+        retry=False,
+        retry_opts=None,
+        proxy_enabled=False,
+        proxies=None,
+        session=None,
+        requests_timeout=300,
+    ):
         self.headers = headers if isinstance(headers, dict) else {}
-        self.headers.setdefault('User-Agent', 'PyBikes')
-        self.proxies = {}
-        self.session = requests.session()
+        self.headers.setdefault('User-Agent', user_agent)
+
+        self.proxy_enabled = proxy_enabled
+        self.proxies = proxies if isinstance(proxies, dict) else {}
+
+        self.retry = retry
+        self.retry_opts = retry_opts if isinstance(retry_opts, dict) else {}
+
         self.cachedict = cachedict
-        self.retry_opts = {}
+
+        self.session = session or requests.session()
+        self.requests_timeout = requests_timeout
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
