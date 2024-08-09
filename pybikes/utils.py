@@ -33,6 +33,7 @@ class PyBikesScraper(object):
         proxies=None,
         session=None,
         requests_timeout=300,
+        ssl_verification=True,
     ):
         self.headers = headers if isinstance(headers, dict) else {}
         self.headers.setdefault('User-Agent', user_agent)
@@ -47,6 +48,7 @@ class PyBikesScraper(object):
 
         self.session = session or requests.session()
         self.requests_timeout = requests_timeout
+        self.ssl_verification = ssl_verification
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
@@ -74,7 +76,7 @@ class PyBikesScraper(object):
                 headers=_headers,
                 # some endpoints might fail verification, so it's up to the spider
                 # to disable it
-                verify=ssl_verification,
+                verify=self.ssl_verification and ssl_verification,
                 timeout=self.requests_timeout,
             )
 
