@@ -36,13 +36,27 @@
                 "city": "Figueira da Foz",
                 "country": "PT",
                 "latitude": 40.1548,
-                "longitude":-8.8613,
+                "longitude": -8.8613,
                 "name": "Figas",
                 "company": [
                     "Município de Figueira da Foz"
                 ]
             },
             "tag": "figas"
+        },
+        {
+            "endpoint": "https://api.bike.infralobo.pt",
+            "meta": {
+                "city": "Vale do Lobo",
+                "country": "PT",
+                "latitude": 37.0550, 
+                "longitude":-8.0643,
+                "name": "Smart Bikes by Infralobo",
+                "company": [
+                    "Infralobo"
+                ]
+            },
+            "tag": "infralobo"
         },
         {
             "endpoint": "https://api.summitbikeshare.com",
