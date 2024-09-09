@@ -64,7 +64,7 @@ class PedaladaStation(BikeShareStation):
 
             docked_bikes_count = len(station_details_and_rides['rides'])
             self.bikes = docked_bikes_count
-            self.free = station['maximumNumberOfRides'] - docked_bikes_count
+            self.free = self.extra['slots'] - docked_bikes_count
 
             station_details = station_details_and_rides['details'][0]
             self.extra['online'] = station_details['state'] == 1
