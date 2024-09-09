@@ -35,14 +35,13 @@ class Pedalada(BikeShareSystem):
 
         stations = []
         for station in stations_data:
-            station_details_and_rides = scraper.request(station_details_and_rides_url(station['stationNumber']))
-            station = PedaladaStation(station, station_details_and_rides, self.endpoint)
+            station = PedaladaStation(station, self.endpoint)
             stations.append(station)
 
         self.stations = stations
 
 class PedaladaStation(BikeShareStation):
-    def __init__(self, station, station_details_and_rides, endpoint):
+    def __init__(self, data, endpoint):
         super(PedaladaStation, self).__init__()
         self.endpoint = endpoint
 
@@ -50,15 +49,24 @@ class PedaladaStation(BikeShareStation):
         self.latitude = station['latitude']
         self.longitude = station['longitude']
 
-        docked_bikes_count = len(station_details_and_rides['rides'])
-        self.bikes = docked_bikes_count
-        self.free = station['maximumNumberOfRides'] - docked_bikes_count
-
         self.extra = {
             'uid': station['stationNumber'],
             'slots': station['maximumNumberOfRides'],
             'online': station['state'] == 1,
             'photo': station_image_url(endpoint, station['stationNumber']),
-            'in_maintenance': station['stationInMaintenance'],
-            'open': station['stationIsOpen'] == 1
+            'open': station['stationIsOpen'] == 1,
+            'in_maintenance': station['stationInMaintenance'] == 1
         }
+
+        def update(self, scraper=None):
+            scraper = scraper or PyBikesScraper()
+            station_details_and_rides = scraper.request(station_details_and_rides_url(station['stationNumber']))
+
+            docked_bikes_count = len(station_details_and_rides['rides'])
+            self.bikes = docked_bikes_count
+            self.free = station['maximumNumberOfRides'] - docked_bikes_count
+
+            station_details = station_details_and_rides['details'][0]
+            self.extra['online'] = station_details['state'] == 1
+            self.extra['open'] = station_details['stationIsOpen'] == 1
+            self.extra['in_maintenance'] = station_details['stationInMaintenance'] == 1
