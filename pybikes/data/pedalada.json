@@ -7,8 +7,8 @@
             "meta": {
                 "city": "Fafe",
                 "country": "PT",
-                "latitude":41.4513,
-                "longitude":-8.1728,
+                "latitude": 41.4513,
+                "longitude": -8.1728,
                 "name": "Vitelinhas",
                 "ebikes": true,
                 "company": [
@@ -46,6 +46,21 @@
                 ]
             },
             "tag": "biclis"
+        },
+        {
+            "endpoint": "https://bia.cm-ovar.pt",
+            "meta": {
+                "city": "Ovar",
+                "country": "PT",
+                "latitude": 40.8599,
+                "longitude": -8.6246,
+                "name": "BIA",
+                "ebikes": true,
+                "company": [
+                    "Município de Ovar"
+                ]
+            },
+            "tag": "bia"
         }
     ]
 }
