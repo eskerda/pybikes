@@ -45,17 +45,17 @@ class PedaladaStation(BikeShareStation):
         super(PedaladaStation, self).__init__()
         self.endpoint = endpoint
 
-        self.name = station['stationName']
-        self.latitude = station['latitude']
-        self.longitude = station['longitude']
+        self.name = data['stationName']
+        self.latitude = data['latitude']
+        self.longitude = data['longitude']
 
         self.extra = {
-            'uid': station['stationNumber'],
-            'slots': station['maximumNumberOfRides'],
-            'online': station['state'] == 1,
-            'photo': station_image_url(endpoint, station['stationNumber']),
-            'open': station['stationIsOpen'] == 1,
-            'in_maintenance': station['stationInMaintenance'] == 1
+            'uid': data['stationNumber'],
+            'slots': data['maximumNumberOfRides'],
+            'online': data['state'] == 1,
+            'photo': station_image_url(endpoint, data['stationNumber']),
+            'open': data['stationIsOpen'] == 1,
+            'in_maintenance': data['stationInMaintenance'] == 1
         }
 
         def update(self, scraper=None):
