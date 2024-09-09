@@ -3,21 +3,6 @@
     "class": "Pedalada",
     "instances": [
         {
-            "endpoint": "https://campinas.cm-coruche.pt",
-            "meta": {
-                "city": "Coruche",
-                "country": "PT",
-                "latitude":38.9585,
-                "longitude":-8.5255,
-                "name": "Campinas",
-                "ebikes": true,
-                "company": [
-                    "Município de Coruche"
-                ]
-            },
-            "tag": "campinas"
-        },
-        {
             "endpoint": "https://vitelinhas.cm-fafe.pt",
             "meta": {
                 "city": "Fafe",
