@@ -60,7 +60,7 @@ class PedaladaStation(BikeShareStation):
 
         def update(self, scraper=None):
             scraper = scraper or PyBikesScraper()
-            station_details_and_rides = scraper.request(station_details_and_rides_url(station['stationNumber']))
+            station_details_and_rides = scraper.request(station_details_and_rides_url(self.extra['uid']))
 
             docked_bikes_count = len(station_details_and_rides['rides'])
             self.bikes = docked_bikes_count
