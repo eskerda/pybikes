@@ -33,6 +33,7 @@ class BiciFerrolTerra(BikeShareSystem):
 
 class BiciFerrolTerraStation(BikeShareStation):
     def __init__(self, coords, availability):
+        super(BiciFerrolTerraStation, self).__init__()
         self.name = re.search(r"title:'(.*?)'", coords).group(1)
 
         latitude, longitude = map(float, re.findall(r'-?\d+\.\d+', coords))

@@ -8,6 +8,8 @@ except ImportError:
 import os
 import re
 import json
+from datetime import datetime
+
 import pytest
 
 import pybikes
@@ -83,11 +85,14 @@ class BaseInstanceTest(object):
 
         for i in range(0, check_for):
             station = instance.stations[i]
-            station.update(scraper)
+
+            if not instance.sync:
+                station.update(scraper)
 
             assert isinstance(station.bikes, int)
             assert isinstance(station.latitude, float)
             assert isinstance(station.longitude, float)
+            assert isinstance(station.timestamp, datetime)
 
             if station.free is not None:
                 assert isinstance(station.free, int)

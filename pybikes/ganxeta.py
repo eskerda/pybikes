@@ -62,6 +62,7 @@ class Ganxeta(BikeShareSystem):
 
 class GanxetaStation(BikeShareStation):
     def __init__(self, data):
+        super(GanxetaStation, self).__init__()
         self.name = data["station_name"]
         self.latitude = float(data["latitude"])
         self.longitude = float(data["longitude"])
