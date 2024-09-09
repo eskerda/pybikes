@@ -20,9 +20,9 @@ class Pedalada(BikeShareSystem):
         ]
     }
 
-    def __init__(self, tag, meta, endpoint, bbox=None):
+    def __init__(self, tag, meta, endpoint):
         meta['company'] += Pedalada.meta['company']
-        super(Pedalada, self).__init__(tag, meta, bounds=bbox)
+        super(Pedalada, self).__init__(tag, meta)
         self.endpoint = endpoint
 
     @property
