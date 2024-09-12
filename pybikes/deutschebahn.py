@@ -38,6 +38,7 @@ class DB(Gbfs):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        scraper.parse_cookies = False
         scraper.headers.update(self.auth_headers)
         super(DB, self).update(scraper)
 

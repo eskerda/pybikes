@@ -34,6 +34,7 @@ class PyBikesScraper(object):
         session=None,
         requests_timeout=300,
         ssl_verification=True,
+        parse_cookies=True,
     ):
         self.headers = headers if isinstance(headers, dict) else {}
         self.headers.setdefault('User-Agent', user_agent)
@@ -49,6 +50,7 @@ class PyBikesScraper(object):
         self.session = session or requests.session()
         self.requests_timeout = requests_timeout
         self.ssl_verification = ssl_verification
+        self.parse_cookies = parse_cookies
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
@@ -92,8 +94,9 @@ class PyBikesScraper(object):
         if raw:
             data = response.content
 
-        if 'set-cookie' in response.headers:
+        if self.parse_cookies and 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
+
         self.last_request = response
 
         if self.cachedict is not None:
