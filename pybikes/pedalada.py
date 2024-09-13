@@ -58,15 +58,15 @@ class PedaladaStation(BikeShareStation):
             'in_maintenance': data['stationInMaintenance'] == 1
         }
 
-        def update(self, scraper=None):
-            scraper = scraper or PyBikesScraper()
-            station_details_and_rides = scraper.request(station_details_and_rides_url(self.extra['uid']))
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+        station_details_and_rides = scraper.request(station_details_and_rides_url(self.endpoint, self.extra['uid']))
 
-            docked_bikes_count = len(station_details_and_rides['rides'])
-            self.bikes = docked_bikes_count
-            self.free = self.extra['slots'] - docked_bikes_count
+        docked_bikes_count = len(station_details_and_rides['rides'])
+        self.bikes = docked_bikes_count
+        self.free = self.extra['slots'] - docked_bikes_count
 
-            station_details = station_details_and_rides['details'][0]
-            self.extra['online'] = station_details['state'] == 1
-            self.extra['open'] = station_details['stationIsOpen'] == 1
-            self.extra['in_maintenance'] = station_details['stationInMaintenance'] == 1
+        station_details = station_details_and_rides['details'][0]
+        self.extra['online'] = station_details['state'] == 1
+        self.extra['open'] = station_details['stationIsOpen'] == 1
+        self.extra['in_maintenance'] = station_details['stationInMaintenance'] == 1
