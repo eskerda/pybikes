@@ -89,7 +89,8 @@
                         "longitude": 4.835659,
                         "city": "Lyon"
                     },
-                    "contract": "Lyon"
+                    "contract": "Lyon",
+                    "bbox": [[45.6235, 4.6715], [45.8900, 5.0098]]
                 },
                 {
                     "tag": "bicikelj",
