@@ -1,19 +1,19 @@
 import re
 import json
 
-from pkg_resources import resource_string, resource_listdir
+from importlib import resources
 
 from pybikes.data import get, find, _datafile_traversor, _import
 from pybikes.exceptions import BikeShareSystemNotFound
 
 
 def get_data(schema):
-    resource = resource_string('pybikes', 'data/%s.json' % schema)
-    return json.loads(resource)
+    resource = resources.files('pybikes') / 'data/%sjson' % schema
+    return json.loads(resource.read_bytes())
 
 
 def get_all_data():
-    return resource_listdir('pybikes', 'data')
+    return [f.name for f in (resources.files('pybikes') / 'data').iterdir()]
 
 
 def get_schemas():

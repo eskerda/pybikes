@@ -21,6 +21,6 @@ setup(
         'lxml',
         'shapely>=1.5.13',
         'future',
-        'setuptools',
+        "importlib_resources; python_version < '3.9'",
     ],
 )

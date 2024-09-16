@@ -3,15 +3,12 @@ import json
 
 from pybikes.exceptions import BikeShareSystemNotFound
 
-from importlib import import_module
-
-from pkg_resources import resource_string, resource_listdir
+from importlib import import_module, resources
 
 
 def _iter_data():
-    for data_file in resource_listdir('pybikes', 'data'):
-        resource = resource_string('pybikes', 'data/%s' % data_file)
-        yield data_file, json.loads(resource)
+    for file in (resources.files('pybikes')/'data').iterdir():
+        yield file.name, json.loads(file.read_bytes())
 
 
 def _import(name):

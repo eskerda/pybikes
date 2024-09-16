@@ -7,12 +7,12 @@ import json
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.utils import Bounded
 
-from pkg_resources import resource_string
+from importlib import resources
 
 FEED_URL = "https://www.linkbike.my/linkbike_api/api_update_stationinfo.php"
 
 geojson = json.loads(
-    resource_string("pybikes", "geojson/penang.json")
+    (resources.files('pybikes')/'geojson/penang.json').read_bytes()
 )
 
 

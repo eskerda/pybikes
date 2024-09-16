@@ -6,12 +6,11 @@ import json
 
 from pybikes.gbfs import Gbfs
 
-from pkg_resources import resource_string
+from importlib import resources
 
 
-geojson = json.loads(
-    resource_string("pybikes", "geojson/japan_prefectures.json")
-)
+prefectures = resources.files('pybikes')/'geojson/japan_prefectures.json'
+geojson = json.loads(prefectures.read_bytes())
 
 
 class HelloCycling(Gbfs):
