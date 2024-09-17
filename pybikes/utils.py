@@ -4,18 +4,13 @@
 
 import os
 import re
-try:
-    # Python 2
-    from itertools import imap as map
-except ImportError:
-    # Python 3
-    pass
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
 from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.compat import map
 
 
 class PyBikesScraper(object):

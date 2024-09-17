@@ -4,15 +4,10 @@
 
 import json
 from warnings import warn
-try:
-    # Python 2
-    from urlparse import urljoin
-except ImportError:
-    # Python 3
-    from urllib.parse import urljoin
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
+from pybikes.compat import urljoin
 
 try:
     # Python 2

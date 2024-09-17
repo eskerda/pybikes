@@ -5,14 +5,9 @@
 import re
 import json
 
-try:
-    # Python 2
-    from urlparse import urljoin
-except ImportError:
-    # Python 3
-    from urllib.parse import urljoin
-
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.compat import urljoin
+
 
 
 class BicincittaMixin(object):
