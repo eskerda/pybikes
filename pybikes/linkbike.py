@@ -6,8 +6,8 @@ import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.utils import Bounded
+from pybikes.compat import resources
 
-from importlib import resources
 
 FEED_URL = "https://www.linkbike.my/linkbike_api/api_update_stationinfo.php"
 

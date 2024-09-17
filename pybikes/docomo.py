@@ -5,8 +5,7 @@
 import json
 
 from pybikes.gbfs import Gbfs
-
-from importlib import resources
+from pybikes.compat import resources
 
 
 prefectures = resources.files('pybikes')/'geojson/japan_prefectures.json'

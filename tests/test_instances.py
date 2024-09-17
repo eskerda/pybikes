@@ -1,10 +1,3 @@
-try:
-    # Python 3
-    from unittest.mock import Mock
-except ImportError:
-    # Python 2
-    from mock import Mock
-
 import os
 import re
 import json
@@ -15,6 +8,7 @@ import pytest
 import pybikes
 from pybikes.data import _traverse_lib
 from pybikes.utils import keys
+from pybikes.compat import mock
 
 
 def get_all_instances():
@@ -58,7 +52,7 @@ class BaseInstanceTest(object):
 
     def test_uses_scraper(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
-        request = Mock
+        request = mock.Mock
         scraper.request = request
         try:
             instance.update(scraper)

@@ -1,10 +1,10 @@
 import json
-from importlib import resources
 
 import pytest
 
 from pybikes import BikeShareSystem, BikeShareStation
 from pybikes.utils import filter_bounds, Bounded
+from pybikes.compat import resources
 
 barcelona = [
     BikeShareStation(latitude=41.38530363280023, longitude=2.1537750659833534),
