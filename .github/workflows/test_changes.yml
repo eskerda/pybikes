@@ -1,0 +1,41 @@
+name: networks that changed on this branch
+run-name: Check changes between branch and master
+
+env:
+  PYBIKES_CYCLOCITY: ${{ secrets.PYBIKES_CYCLOCITY }}
+  PYBIKES_BYSYKKEL: ${{ secrets.PYBIKES_BYSYKKEL }}
+  PYBIKES_WEELO_CLIENT_ID: ${{ secrets.PYBIKES_WEELO_CLIENT_ID }}
+  PYBIKES_WEELO_CLIENT_SECRET: ${{ secrets.PYBIKES_WEELO_CLIENT_SECRET }}
+  PYBIKES_DEUTSCHEBAHN_CLIENT_ID: ${{ secrets.PYBIKES_DEUTSCHEBAHN_CLIENT_ID }}
+  PYBIKES_DEUTSCHEBAHN_CLIENT_SECRET: ${{ secrets.PYBIKES_DEUTSCHEBAHN_CLIENT_SECRET }}
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: make install
+    - name: Test instance changes on this branch
+      run: make test-changes T_FLAGS+='-n 10 --json-report --json-report-file=report/report.json'
+    # Only run summary once
+    - name: summary
+      if: (success() || failure()) && matrix.python-version == '3.8'
+      run: |
+          make github-summary >> $GITHUB_STEP_SUMMARY
