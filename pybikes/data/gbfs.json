@@ -530,7 +530,12 @@
                 "company": [
                     "TaM",
                     "Fifteen"
-                ]
+                ],
+                "source": "https://transport.data.gouv.fr/datasets/disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier/",
+                "license": {
+                    "name": "Open Data Commons Open Database License (ODbL)",
+                    "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                }
             },
             "feed_url": "https://montpellier-fr.fifteen.site/gbfs/gbfs.json"
         },
@@ -878,8 +883,7 @@
                 }
             },
             "feed_url": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/gbfs.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
-            "station_information": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_information.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
-            "station_status": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/station_status.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0"
+            "append_feed_args_to_req": true
         },
         {
             "tag": "zoov-paris-sud",
@@ -899,9 +903,7 @@
                 }
             },
             "feed_url": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/gbfs.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1",
-            "station_information": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/station_information.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1",
-            "station_status": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/station_status.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1",
-            "vehicle_types": "https://gateway.prod.zoov.io/gbfs/2.2/saclay/en/vehicle_types.json?key=NGFlMjU3MDUtNDk5My00MTM4LTk1ZjctNmNlNDM1MWQ0NjE1"
+            "append_feed_args_to_req": true
         },
         {
             "tag": "velopartage-geneve",
@@ -1236,9 +1238,7 @@
                 "source": "https://www.data.gouv.fr/fr/datasets/velos-a-assistance-electrique-en-libre-service-velozef-sur-brest/"
             },
             "feed_url": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx",
-            "station_information": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/station_information.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx",
-            "station_status": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/station_status.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx",
-            "vehicle_types": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/vehicle_types.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx"
+            "append_feed_args_to_req": true
         },
         {
             "tag": "kotobike",
@@ -1333,6 +1333,28 @@
                     ]
                 },
                 "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json"
+            },
+            {
+                "tag": "le-velo",
+                "meta": {
+                    "city": "Marseille",
+                    "name": "LeVélo",
+                    "country": "FR",
+                    "company": [
+                        "LeVélo AMP Métropole",
+                        "Ville de Marseille",
+                        "Fifteen SAS"
+                    ],
+                    "longitude": 5.36978,
+                    "latitude": 43.296482,
+                    "source": "https://www.data.gouv.fr/fr/datasets/velos-a-assistance-electrique-en-libre-service-levelo-sur-marseille/",
+                    "license": {
+                        "name": "Open Data Commons Open Database License (ODbL)",
+                        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                    }
+                },
+                "append_feed_args_to_req": true,
+                "feed_url": "https://api.omega.fifteen.eu/gbfs/2.2/marseille/en/gbfs.json?&key=MjE0ZDNmMGEtNGFkZS00M2FlLWFmMWItZGNhOTZhMWQyYzM2"
             }
     ],
     "system": "gbfs",

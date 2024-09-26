@@ -7,7 +7,7 @@ from warnings import warn
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
-from pybikes.compat import urljoin
+from pybikes.compat import urljoin, urlparse, parse_qs
 
 try:
     # Python 2
@@ -33,6 +33,7 @@ class Gbfs(BikeShareSystem):
         ignore_errors=False,
         retry=None,
         bbox=None,
+        append_feed_args_to_req=False,
     ):
         # Add feed_url to meta in order to be exposed to the API
         meta['gbfs_href'] = feed_url
@@ -42,6 +43,12 @@ class Gbfs(BikeShareSystem):
         self.ignore_errors = ignore_errors
         self.retry = retry
         self.bbox = bbox
+
+        if append_feed_args_to_req:
+            purl = urlparse(feed_url)
+            self.req_args = parse_qs(purl.query)
+        else:
+            self.req_args = {}
 
         # Allow hardcoding feed urls on initialization
         self.feeds = {}
@@ -108,7 +115,7 @@ class Gbfs(BikeShareSystem):
         if self.feeds:
             return self.feeds
 
-        feed_data = scraper.request(url, raw=True)
+        feed_data = scraper.request(url, params=self.req_args, raw=True)
 
         # do not hide Unauthorized or Too many requests status codes
         if scraper.last_request.status_code in [401, 429]:
@@ -151,10 +158,10 @@ class Gbfs(BikeShareSystem):
 
         # Station Information and Station Status data retrieval
         station_information = json.loads(
-            scraper.request(feeds['station_information'])
+            scraper.request(feeds['station_information'], params=self.req_args)
         )['data']['stations']
         station_status = json.loads(
-            scraper.request(feeds['station_status'])
+            scraper.request(feeds['station_status'], params=self.req_args)
         )['data']['stations']
 
         if 'vehicle_types' in feeds:
@@ -163,7 +170,7 @@ class Gbfs(BikeShareSystem):
             def noop(s, v, i):
                 warn("Unhandled vehicle type %s with count %d" % (i, v['count']))
 
-            vehicle_info = json.loads(scraper.request(feeds['vehicle_types']))
+            vehicle_info = json.loads(scraper.request(feeds['vehicle_types'], params=self.req_args))
             # map vehicle id to vehicle info AND extra info resolver
             # for direct access
             vehicles = {
