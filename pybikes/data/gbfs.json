@@ -1333,6 +1333,28 @@
                     ]
                 },
                 "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json"
+            },
+            {
+                "tag": "le-velo",
+                "meta": {
+                    "city": "Marseille",
+                    "name": "LeVélo",
+                    "country": "FR",
+                    "company": [
+                        "LeVélo AMP Métropole",
+                        "Ville de Marseille",
+                        "Fifteen SAS"
+                    ],
+                    "longitude": 5.36978,
+                    "latitude": 43.296482,
+                    "source": "https://www.data.gouv.fr/fr/datasets/velos-a-assistance-electrique-en-libre-service-levelo-sur-marseille/",
+                    "license": {
+                        "name": "Open Data Commons Open Database License (ODbL)",
+                        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                    }
+                },
+                "append_feed_args_to_req": true,
+                "feed_url": "https://api.omega.fifteen.eu/gbfs/2.2/marseille/en/gbfs.json?&key=MjE0ZDNmMGEtNGFkZS00M2FlLWFmMWItZGNhOTZhMWQyYzM2"
             }
     ],
     "system": "gbfs",
