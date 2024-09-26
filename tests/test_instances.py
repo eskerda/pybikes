@@ -1,18 +1,14 @@
-try:
-    # Python 3
-    from unittest.mock import Mock
-except ImportError:
-    # Python 2
-    from mock import Mock
-
 import os
 import re
 import json
+from datetime import datetime
+
 import pytest
 
 import pybikes
 from pybikes.data import _traverse_lib
 from pybikes.utils import keys
+from pybikes.compat import mock
 
 
 def get_all_instances():
@@ -56,7 +52,7 @@ class BaseInstanceTest(object):
 
     def test_uses_scraper(self, instance, i_data, cls, mod):
         scraper = pybikes.PyBikesScraper()
-        request = Mock
+        request = mock.Mock
         scraper.request = request
         try:
             instance.update(scraper)
@@ -83,11 +79,14 @@ class BaseInstanceTest(object):
 
         for i in range(0, check_for):
             station = instance.stations[i]
-            station.update(scraper)
+
+            if not instance.sync:
+                station.update(scraper)
 
             assert isinstance(station.bikes, int)
             assert isinstance(station.latitude, float)
             assert isinstance(station.longitude, float)
+            assert isinstance(station.timestamp, datetime)
 
             if station.free is not None:
                 assert isinstance(station.free, int)

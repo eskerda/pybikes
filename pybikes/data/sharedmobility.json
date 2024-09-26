@@ -1,0 +1,63 @@
+{
+    "instances": [
+        {
+            "tag": "carvelo",
+            "meta": {
+                "name": "carvelo eCargo-Bike Sharing",
+                "city": "Switzerland",
+                "country": "CH",
+                "latitude": 46.9829,
+                "longitude": 8.2331,
+                "company": [
+                    "Mobilitätsakademie AG",
+                    "Touring Club Switzerland (TCS)"
+                ]
+            },
+            "feed_url": "https://gbfs.prod.sharedmobility.ch/v2/gbfs/carvelo2go/gbfs"
+        },
+        {
+            "tag": "pickebike-aubonne",
+            "meta": {
+                "name": "PickeBike Aubonne",
+                "city": "Aubonne",
+                "country": "CH",
+                "latitude": 46.4949,
+                "longitude": 6.3963,
+                "company": [
+                    "PickeBike"
+                ]
+            },
+            "feed_url": "https://gbfs.prod.sharedmobility.ch/v2/gbfs/pickebike_aubonne/gbfs"
+        },
+        {
+            "tag": "pickebike-basel",
+            "meta": {
+                "name": "PickeBike Basel",
+                "city": "Basel",
+                "country": "CH",
+                "latitude": 47.5579,
+                "longitude": 7.5902,
+                "company": [
+                    "PickeBike"
+                ]
+            },
+            "feed_url": "https://gbfs.prod.sharedmobility.ch/v2/gbfs/pickebike_basel/gbfs"
+        },
+        {
+            "tag": "pickebike-fribourg",
+            "meta": {
+                "name": "PickeBike Fribourg",
+                "city": "Fribourg",
+                "country": "CH",
+                "latitude": 46.8039,
+                "longitude": 7.1505,
+                "company": [
+                    "PickeBike"
+                ]
+            },
+            "feed_url": "https://gbfs.prod.sharedmobility.ch/v2/gbfs/pickebike_fribourg/gbfs"
+        }
+    ],
+    "system": "sharedmobility",
+    "class": "SharedMobility"
+}

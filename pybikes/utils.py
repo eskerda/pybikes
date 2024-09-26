@@ -4,33 +4,48 @@
 
 import os
 import re
-try:
-    # Python 2
-    from itertools import imap as map
-except ImportError:
-    # Python 3
-    pass
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
 from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.compat import map
 
 
 class PyBikesScraper(object):
-    proxy_enabled = False
-    last_request = None
-    requests_timeout = 300
-    retry = False
 
-    def __init__(self, cachedict=None, headers=None):
+    last_request = None
+
+    def __init__(
+        self,
+        cachedict=None,
+        headers=None,
+        user_agent='PyBikes',
+        retry=False,
+        retry_opts=None,
+        proxy_enabled=False,
+        proxies=None,
+        session=None,
+        requests_timeout=300,
+        ssl_verification=True,
+        parse_cookies=True,
+    ):
         self.headers = headers if isinstance(headers, dict) else {}
-        self.headers.setdefault('User-Agent', 'PyBikes')
-        self.proxies = {}
-        self.session = requests.session()
+        self.headers.setdefault('User-Agent', user_agent)
+
+        self.proxy_enabled = proxy_enabled
+        self.proxies = proxies if isinstance(proxies, dict) else {}
+
+        self.retry = retry
+        self.retry_opts = retry_opts if isinstance(retry_opts, dict) else {}
+
         self.cachedict = cachedict
-        self.retry_opts = {}
+
+        self.session = session or requests.session()
+        self.requests_timeout = requests_timeout
+        self.ssl_verification = ssl_verification
+        self.parse_cookies = parse_cookies
 
     def setUserAgent(self, user_agent):
         self.headers['User-Agent'] = user_agent
@@ -58,7 +73,7 @@ class PyBikesScraper(object):
                 headers=_headers,
                 # some endpoints might fail verification, so it's up to the spider
                 # to disable it
-                verify=ssl_verification,
+                verify=self.ssl_verification and ssl_verification,
                 timeout=self.requests_timeout,
             )
 
@@ -74,8 +89,9 @@ class PyBikesScraper(object):
         if raw:
             data = response.content
 
-        if 'set-cookie' in response.headers:
+        if self.parse_cookies and 'set-cookie' in response.headers:
             self.headers['Cookie'] = response.headers['set-cookie']
+
         self.last_request = response
 
         if self.cachedict is not None:

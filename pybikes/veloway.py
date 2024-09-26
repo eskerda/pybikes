@@ -5,17 +5,11 @@
 import re
 import json
 
-try:
-    # Python 2
-    from urllib import unquote_plus
-except ImportError:
-    # Python 3
-    from urllib.parse import unquote_plus
-
 from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.exceptions import InvalidStation
+from pybikes.compat import unquote_plus
 
 
 class BaseSystem(BikeShareSystem):

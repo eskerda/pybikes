@@ -1,0 +1,30 @@
+{
+    "instances": [
+        {
+            "tag": "lastenvelo-freiburg",
+            "meta": {
+                "name": "LastenVelo Freiburg",
+                "city": "Freiburg",
+                "country": "DE",
+                "latitude": 47.9981,
+                "longitude": 7.8439,
+                "company": [
+                    "LastenVelo Freiburg e.V."
+                ]
+            },
+            "bbox": [
+                [
+                    47.8721,
+                    7.5586
+                ],
+                [
+                    48.2426,
+                    8.1841
+                ]
+            ],
+            "feed_url": "https://www.lastenvelofreiburg.de/LVF_usage.csv"
+        }
+    ],
+    "system": "lastenvelo",
+    "class": "LastenVelo"
+}

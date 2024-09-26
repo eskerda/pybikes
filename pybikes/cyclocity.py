@@ -5,6 +5,7 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import Bounded
 
 
 api_root = "https://api.jcdecaux.com/vls/v3/"
@@ -16,7 +17,7 @@ endpoints = {
 }
 
 
-class Cyclocity(BikeShareSystem):
+class Cyclocity(Bounded, BikeShareSystem):
 
     sync = True
 
@@ -32,8 +33,8 @@ class Cyclocity(BikeShareSystem):
         'source': 'https://developer.jcdecaux.com'
     }
 
-    def __init__(self, tag, meta, contract, key):
-        super(Cyclocity, self).__init__(tag, meta)
+    def __init__(self, tag, meta, contract, key, bbox=None):
+        super(Cyclocity, self).__init__(tag, meta, bounds=bbox)
         self.contract = contract
         self.api_key = key
         self.stations_url = api_root + endpoints['stations'].format(

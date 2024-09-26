@@ -1,10 +1,10 @@
 import json
-from pkg_resources import resource_string
 
 import pytest
 
 from pybikes import BikeShareSystem, BikeShareStation
 from pybikes.utils import filter_bounds, Bounded
+from pybikes.compat import resources
 
 barcelona = [
     BikeShareStation(latitude=41.38530363280023, longitude=2.1537750659833534),
@@ -25,9 +25,10 @@ morpork = [
     BikeShareStation(latitude=180, longitude=90),
 ]
 
-shape = json.loads(resource_string('tests.fixtures', 'shape.json'))
-multipolygon = json.loads(resource_string('tests.fixtures', 'multipolygon.json'))
-hole = json.loads(resource_string('tests.fixtures', 'hole.json'))
+fixtures = resources.files('tests')/'fixtures'
+shape = json.loads((fixtures/'shape.json').read_bytes())
+multipolygon = json.loads((fixtures/'multipolygon.json').read_bytes())
+hole = json.loads((fixtures/'hole.json').read_bytes())
 
 filter_bounds_cases = [
     (

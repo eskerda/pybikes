@@ -40,7 +40,7 @@ class KeolisIleviaStation(BikeShareStation):
         free = int(fields['nb_places_dispo'])
         extra = {
             'status': fields['etat'],
-            'uid': str(fields['id']),
+            'uid': str(fields['@id']),
             'city': fields['commune'],
             'address': fields['adresse'],
             'last_update': fields['date_modification'],

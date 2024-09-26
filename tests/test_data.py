@@ -1,30 +1,24 @@
 import pytest
 
-try:
-    # python 3
-    from unittest.mock import patch, Mock
-except ImportError:
-    # python 2
-    from mock import patch, Mock
-
 from pybikes.data import find, get, _traverse_lib
 from pybikes.exceptions import BikeShareSystemNotFound
+from pybikes.compat import mock
 
 
 class foobar:
-    class Foobar(Mock):
+    class Foobar(mock.Mock):
         authed = False
 
 
 class barbaz:
-    class BarBaz(Mock):
+    class BarBaz(mock.Mock):
         authed = False
 
 
-    class BazBar(Mock):
+    class BazBar(mock.Mock):
         authed = False
 
-    class BazBarPremium(Mock):
+    class BazBarPremium(mock.Mock):
         authed = True
 
 
@@ -79,10 +73,10 @@ def _iter_data():
     return iter(mock_data)
 
 
-@patch('pybikes.data._import', _import)
-@patch('pybikes.data._iter_data', _iter_data)
-@patch('pybikes.data._t_cache', {})
-@patch('pybikes.data._traversor', _traverse_lib())
+@mock.patch('pybikes.data._import', _import)
+@mock.patch('pybikes.data._iter_data', _iter_data)
+@mock.patch('pybikes.data._t_cache', {})
+@mock.patch('pybikes.data._traversor', _traverse_lib())
 class TestData:
     def test_find_not_found(self):
         with pytest.raises(BikeShareSystemNotFound):

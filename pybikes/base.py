@@ -6,15 +6,17 @@ from datetime import datetime
 import json
 import hashlib
 
-__all__ = ['GeneralPurposeEncoder', 'BikeShareStation', 'BikeShareSystem' ]
 
 class GeneralPurposeEncoder(json.JSONEncoder):
-
     def default(self, obj):
         if isinstance(obj, datetime):
             return obj.isoformat()
-        else:
-            return {k: v for k, v in obj.__dict__.items() if not k.startswith('_')}
+        elif isinstance(obj, BikeShareSystem):
+            return obj.to_dict()
+        elif isinstance(obj, BikeShareStation):
+            return obj.to_dict()
+        return super().default(obj)
+
 
 class BikeShareStation(object):
     """A base class to name a bike sharing Station. It can be:
@@ -48,6 +50,19 @@ class BikeShareStation(object):
             override this method, and should/could call it from inside
         """
         self.timestamp = datetime.utcnow()
+
+    def to_dict(self):
+        """ explicit obj to dict method """
+        return {
+            'id': self.get_hash(),
+            'name': self.name,
+            'latitude': self.latitude,
+            'longitude': self.longitude,
+            'bikes': self.bikes,
+            'free': self.free,
+            'timestamp': self.timestamp,
+            'extra': self.extra,
+        }
 
     def to_json(self, **args):
         """ Dump a json string using the BikeShareStationEncoder with a
@@ -86,6 +101,7 @@ class BikeShareStation(object):
         h = hashlib.md5()
         h.update(str_rep.encode('utf-8'))
         return h.hexdigest()
+
 
 class BikeShareSystem(object):
     """A base class to name a bike sharing System. It can be:
@@ -127,6 +143,15 @@ class BikeShareSystem(object):
 
     def __str__(self):
         return "tag: %s\nmeta: %s" % (self.tag, str(self.meta))
+
+    def to_dict(self):
+        """ explicit obj to dict method """
+
+        return {
+            'tag': self.tag,
+            'meta': self.meta,
+            'stations': [s.to_dict() for s in self.stations],
+        }
 
     def to_json(self, **args):
         """ Dump a json string using the BikeShareSystemEncoder with a

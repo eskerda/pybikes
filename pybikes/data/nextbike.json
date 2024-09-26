@@ -2878,6 +2878,18 @@
                 "latitude": 48.676,
                 "longitude": 17.3642
             }
+        },
+        {
+            "domain": "kk",
+            "tag": "mein-konrad-konstanz",
+            "city_uid": 1042,
+            "meta": {
+                "name": "Mein konrad",
+                "city": "Konstanz",
+                "country": "DE",
+                "latitude": 47.6732,
+                "longitude": 9.1663
+            }
         }
     ],
     "system": "nextbike",
