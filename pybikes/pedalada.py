@@ -13,7 +13,19 @@ def station_details_and_rides_url(endpoint, station_number):
 def station_image_url(endpoint, station_number):
     return STATION_IMAGE_URL.format(endpoint=endpoint, station_number=station_number)
 
+def format_status(data):
+    if data['stationInMaintenance']:
+        return 'maintenance'
+    elif data['stationIsOpen']:
+        return 'open'
+    else:
+        return 'closed'
+
+
 class Pedalada(BikeShareSystem):
+
+    sync = False
+
     meta = {
         'company': [
             'Share2Go - Mobilidade Partilhada, Sociedade Unipessoal Lda'
@@ -31,6 +43,8 @@ class Pedalada(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        # they let ssl certificates to expire
+        scraper.ssl_verification = False
         stations_data = json.loads(scraper.request(self.stations_url))
 
         stations = []
@@ -54,12 +68,13 @@ class PedaladaStation(BikeShareStation):
             'slots': data['maximumNumberOfRides'],
             'online': data['state'] == 1,
             'photo': station_image_url(endpoint, data['stationNumber']),
-            'open': data['stationIsOpen'] == 1,
-            'in_maintenance': data['stationInMaintenance'] == 1
+            'status': format_status(data),
         }
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
+        # they let ssl certificates to expire
+        scraper.ssl_verification = False
         station_details_and_rides = json.loads(scraper.request(station_details_and_rides_url(self.endpoint, self.extra['uid'])))
 
         docked_bikes_count = len(station_details_and_rides['rides'])
@@ -67,6 +82,4 @@ class PedaladaStation(BikeShareStation):
         self.free = self.extra['slots'] - docked_bikes_count
 
         station_details = station_details_and_rides['details'][0]
-        self.extra['online'] = station_details['state'] == 1
-        self.extra['open'] = station_details['stationIsOpen'] == 1
-        self.extra['in_maintenance'] = station_details['stationInMaintenance'] == 1
+        self.extra['status'] = format_status(station_details)
