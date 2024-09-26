@@ -1,0 +1,66 @@
+{
+    "system": "pedalada",
+    "class": "Pedalada",
+    "instances": [
+        {
+            "endpoint": "https://vitelinhas.cm-fafe.pt",
+            "meta": {
+                "city": "Fafe",
+                "country": "PT",
+                "latitude": 41.4513,
+                "longitude": -8.1728,
+                "name": "Vitelinhas",
+                "ebikes": true,
+                "company": [
+                    "Município de Fafe"
+                ]
+            },
+            "tag": "vitelinhas"
+        },
+        {
+            "endpoint": "https://trofinetes.mun-trofa.pt",
+            "meta": {
+                "city": "Trofa",
+                "country": "PT",
+                "latitude": 41.3436,
+                "longitude": -8.5530,
+                "name": "Trofinetes",
+                "scooters": true,
+                "company": [
+                    "Município de Trofa"
+                ]
+            },
+            "tag": "trofinetes"
+        },
+        {
+            "endpoint": "https://biclis.cm-leiria.pt",
+            "meta": {
+                "city": "Leiria",
+                "country": "PT",
+                "latitude": 39.7495,
+                "longitude": -8.8074,
+                "name": "biclis",
+                "ebikes": true,
+                "company": [
+                    "Município de Leiria"
+                ]
+            },
+            "tag": "biclis"
+        },
+        {
+            "endpoint": "https://bia.cm-ovar.pt",
+            "meta": {
+                "city": "Ovar",
+                "country": "PT",
+                "latitude": 40.8599,
+                "longitude": -8.6246,
+                "name": "BIA",
+                "ebikes": true,
+                "company": [
+                    "Município de Ovar"
+                ]
+            },
+            "tag": "bia"
+        }
+    ]
+}
