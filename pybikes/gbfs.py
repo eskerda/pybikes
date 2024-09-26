@@ -86,20 +86,20 @@ class Gbfs(BikeShareSystem):
         # contains pairs of (vehicle query, resolver)
         return [
             (
-                lambda v: v['propulsion_type'] == 'human' and v['form_factor'] == 'bicycle',
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'human' and v['form_factor'] == 'bicycle',
                 update_normal_bikes
             ),
             (
-                lambda v: v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
                 update_ebikes
             ),
             (
-                lambda v: v['propulsion_type'] == 'human' and v['form_factor'] == 'cargo_bicycle',
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'human' and v['form_factor'] == 'cargo_bicycle',
                 update_cargo
             ),
 
             (
-                lambda v: v['propulsion_type'] == 'electric_assist' and v['form_factor'] == 'cargo_bicycle',
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric_assist' and v['form_factor'] == 'cargo_bicycle',
                 update_ecargo
             ),
         ]
