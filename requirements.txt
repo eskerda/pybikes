@@ -4,6 +4,7 @@
 pytest
 pytest-xdist
 mock; python_version < '3.3'
+gitpython
 
 # Lint
 flake8
