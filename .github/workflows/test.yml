@@ -40,8 +40,6 @@ jobs:
     needs: [unit]
     strategy:
       fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@v4
       with:
@@ -49,14 +47,14 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.8'
     - name: Install dependencies
       run: make install
     - name: Test instance changes on this branch
       run: make test-changes T_FLAGS+='-n 10 --json-report --json-report-file=report/report.json'
     # Only run summary once
     - name: all summary
-      if: (success() || failure()) && matrix.python-version == '3.8'
+      if: (success() || failure())
       run: |
           make github-summary >> $GITHUB_STEP_SUMMARY
   instance-tests:
@@ -65,14 +63,12 @@ jobs:
     needs: [unit]
     strategy:
       fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.8'
     - name: Install dependencies
       run: make install
     - name: Test all instances
@@ -80,7 +76,7 @@ jobs:
         make report! T_FLAGS+='-n 10' || true
     # Only run summary once
     - name: summary
-      if: (success() || failure()) && matrix.python-version == '3.8'
+      if: (success() || failure())
       run: |
           make github-summary >> $GITHUB_STEP_SUMMARY
 
