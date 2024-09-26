@@ -15,10 +15,11 @@ on:
     branches: [ "master" ]
 
 jobs:
-  test:
+  unit:
+    name: Unit tests
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
@@ -33,11 +34,74 @@ jobs:
       run: make lint
     - name: test
       run: make test
-    - name: test update
+  instance-changes:
+    name: Instance tests (only changes)
+    runs-on: ubuntu-latest
+    needs: [unit]
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: make install
+    - name: Test instance changes on this branch
+      run: make test-changes T_FLAGS+='-n 10 --json-report --json-report-file=report/report.json'
+    # Only run summary once
+    - name: all summary
+      if: (success() || failure()) && matrix.python-version == '3.8'
       run: |
-        make report T_FLAGS+='-n 10' || true
+          make github-summary >> $GITHUB_STEP_SUMMARY
+  instance-tests:
+    name: Instance tests (all)
+    runs-on: ubuntu-latest
+    needs: [unit]
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: make install
+    - name: Test all instances
+      run: |
+        make report! T_FLAGS+='-n 10' || true
     # Only run summary once
     - name: summary
       if: (success() || failure()) && matrix.python-version == '3.8'
       run: |
           make github-summary >> $GITHUB_STEP_SUMMARY
+
+  python2:
+    name: test (2.7)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 2.7
+      uses: MatteoH2O1999/setup-python@v4
+      with:
+        python-version: '2.7'
+        allow-build: info
+        cache-build: true
+    - name: Install dependencies
+      run: make install
+    - name: lint
+      run: make lint
+    - name: test
+      run: make test
+    - name: test update
+      run: |
+        # allowed to fail for test runs
+        make test-update T_FLAGS+='-n 10' || true

@@ -1,4 +1,5 @@
 T_FLAGS =
+R_FILE ?= report.json
 
 .PHONY: install
 install:
@@ -22,27 +23,30 @@ lint:
 	flake8 pybikes tests --count --select=E9,F63,F7,F82 --show-source --statistics
 	flake8 pybikes tests --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
 
-report/report.json:
-	pytest tests -m update --json-report --json-report-file=report/report.json $(T_FLAGS)
+report/$(R_FILE):
+	pytest tests -m update $(T_FLAGS) --json-report --json-report-file=report/$(R_FILE)
 
 .PHONY: report
-report: report/report.json
+report: report/$(R_FILE)
+
+.PHONY: report!
+report!: clean report
 
 .PHONY: summary
-summary: report/report.json
-	@./utils/report.py report/report.json
+summary: report/$(R_FILE)
+	@./utils/report.py report/$(R_FILE)
 
 .PHONY: map
-map: report/report.json
-	@./utils/report.py report/report.json --template utils/map.tpl.html > report/map.html
+map: report/$(R_FILE)
+	@./utils/report.py report/$(R_FILE) --template utils/map.tpl.html > report/map.html
 	@open report/map.html || xdg-open report/map.html
 
 .PHONY: map!
 map!: clean map
 
 .PHONY: github-summary
-github-summary: report/report.json
-	@./utils/report.py report/report.json --template utils/github-summary.tpl.md
+github-summary: report/$(R_FILE)
+	@./utils/report.py report/$(R_FILE) --template utils/github-summary.tpl.md
 
 .PHONY: clean
 clean: clean-report
