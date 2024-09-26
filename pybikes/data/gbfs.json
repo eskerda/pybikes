@@ -530,7 +530,12 @@
                 "company": [
                     "TaM",
                     "Fifteen"
-                ]
+                ],
+                "source": "https://transport.data.gouv.fr/datasets/disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier/",
+                "license": {
+                    "name": "Open Data Commons Open Database License (ODbL)",
+                    "url": "http://opendatacommons.org/licenses/odbl/summary/"
+                }
             },
             "feed_url": "https://montpellier-fr.fifteen.site/gbfs/gbfs.json"
         },
