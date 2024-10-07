@@ -4,17 +4,6 @@
         "Veloway": {
             "instances": [
                 {
-                    "tag": "velobleu",
-                    "meta": {
-                        "latitude": 43.695949,
-                        "city": "Nice",
-                        "name": "Vélo Bleu",
-                        "longitude": 7.271413,
-                        "country": "FR"
-                    },
-                    "feed_url": "https://velo-vision-prod.azurewebsites.net/nice/oybike/stands.nsf/getsite?site=nice&format=json"
-                },
-                {
                     "tag": "vel-in",
                     "meta": {
                         "latitude": 50.95,
