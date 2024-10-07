@@ -27,7 +27,6 @@ class Mobhis(BikeShareSystem):
         latlngs = re.findall(r'var marker = L\.marker\(\[(-?\d+\.\d+), (-?\d+\.\d+)\]', data)
         infos = re.findall(r'marker.bindPopup\("(.*)"\)', data)
         stations = zip(latlngs, infos)
-
         self.stations = list(map(lambda i: MobhisStation(*i), stations))
 
 
@@ -54,18 +53,18 @@ class MobhisStation(BikeShareStation):
 
         self.name = elems.pop(0)
 
-        # find ints on remaining elements
-        elems = list(map(lambda s: re.search(r'\d+', s).group(), elems))
+        fuzzle = " ".join(elems)
+        bikes = re.findall(r'(\d+) bikes', fuzzle)
+        slots = re.findall(r'(\d+) vagas', fuzzle)
 
-        # some systems have data for kid-sized bikes and spaces
-        if len(elems) > 2:
-            bikes, bikes_kids, free, free_kids = elems
+        # there's kids bikes info
+        if len(bikes) > 1 and len(slots) > 1:
             self.extra.update({
-                'kid_bikes': int(bikes_kids),
-                'kid_slots': int(free_kids),
+                'kid_bikes': int(bikes[1]),
+                'kid_slots': int(slots[1]),
             })
-        else:
-            bikes, free = elems
 
-        self.bikes = int(bikes)
-        self.free = int(free)
+        bikes, free = int(bikes[0]), int(slots[0])
+
+        self.bikes = bikes
+        self.free = free
