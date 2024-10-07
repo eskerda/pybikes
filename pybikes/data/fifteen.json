@@ -16,7 +16,7 @@
                 "longitude": 6.4508,
                 "latitude": 48.1833
             },
-            "feed_url": "https://vilvolt.cw.fifteen.eu/api/client/stations"
+            "feed_url": "https://vilvolt.cw.fifteen.eu/api/client/entities"
         },
         {
             "tag": "gijon",
@@ -31,7 +31,8 @@
                 "longitude": -5.6663604,
                 "latitude": 43.5396116
             },
-            "feed_url": "https://bici.gijon.es/api/client/stations"
+            "bbox": [[43.4024, -5.8008], [43.6527, -5.4591]],
+            "feed_url": "https://bici.gijon.es/api/client/entities"
         },
         {
             "tag": "auxrmlevelo",
@@ -45,7 +46,7 @@
                 "longitude": 3.572376,
                 "latitude": 47.797221
             },
-            "feed_url": "https://auxrmlevelo.com/api/client/stations"
+            "feed_url": "https://auxrmlevelo.com/api/client/entities"
         },
         {
             "tag": "velomodalis",
@@ -59,7 +60,7 @@
                 "longitude": -0.33,
                 "latitude": 45.7
             },
-            "feed_url": "https://www.velomodalis.fr/api/client/stations"
+            "feed_url": "https://www.velomodalis.fr/api/client/entities"
         }
     ]
 }
