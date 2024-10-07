@@ -89,17 +89,6 @@
             }
         },
         {
-            "tag": "houston",
-            "uid": "bcycle_houston",
-            "meta": {
-                "latitude": 29.75983,
-                "longitude": -95.36949,
-                "city": "Houston, TX",
-                "name": "Houston BCycle",
-                "country": "US"
-            }
-        },
-        {
             "tag": "madison",
             "uid": "bcycle_madison",
             "meta": {
