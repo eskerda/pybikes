@@ -1,0 +1,18 @@
+{
+    "instances":[
+        {
+            "tag": "meiob",
+            "meta":{
+                "city": "Médio Tejo",
+                "name": "meioB",
+                "latitude": 39.6024,
+                "longitude": -8.4069,
+                "country": "PT",
+                "company": ["CIM Médio Tejo"]
+            },
+            "endpoint": "https://meiob.pt/mapa-rede/"
+        }
+    ],
+    "system":"meiob",
+    "class":"Meiob"
+}
