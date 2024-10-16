@@ -22,5 +22,6 @@ setup(
         'shapely>=1.5.13',
         'future',
         "importlib_resources; python_version < '3.9'",
+        'cssselect'
     ],
 )
