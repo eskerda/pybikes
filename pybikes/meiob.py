@@ -2,7 +2,7 @@
 # Copyright (C) 2024, Martín González Gómez <m@martingonzalez.net>
 # Distributed under the AGPL license, see LICENSE.txt
 
-import re
+from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
@@ -19,46 +19,35 @@ class Meiob(BikeShareSystem):
 
         stations = []
         raw = scraper.request(self.endpoint)
-        data = zip(
-            re.findall(r'stationlat\">(.*?)</div>', raw, re.DOTALL),
-            re.findall(r'stationlon\">(.*?)</div>', raw, re.DOTALL),
-            re.findall(r'pe-xxl-3\">\n\s+<h2>(.*?)</h2>', raw, re.DOTALL),
-            re.findall(r'Bicicletas disponíveis</p>\n\s+<p class=\"mb-0 bike__available\">(.*?)</p>', raw, re.DOTALL),
-            re.findall(r'Docas disponíveis</p>\n\s+<p class=\"mb-0 bike__available\">(.*?)</p>', raw, re.DOTALL),
-            re.findall(r'<div class=\"w-100\">\n\s+<p class=\"mb-0 bike__distance__title text-center\">(.*?)</p>', raw, re.DOTALL),
-            re.findall(r'</p>\n\s+<p class=\"mb-0 bike__distance__title text-center\">(.*?)</p>', raw, re.DOTALL)
-        )
+        tree = html.fromstring(raw)
+        station_elements = tree.cssselect('.bikes > .bike')
 
-        for lat, lon, name, bikes, free, address, city in data:
-            latitude = float(lat)
-            longitude = float(lon)
-
-            # usually name is on the second element but not always
-            parsed_name = name.split(' - ')
-            if len(parsed_name) == 2:
-              name = parsed_name[1]
-            else:
-              name = parsed_name[0]
-
-            bikes = int(bikes)
-            free = int(free)
-
-            extra = {
-              'address': address,
-              'city': city
-            }
-
-            station = MeiobStation(name, latitude, longitude, bikes, free, extra)
+        for station_element in station_elements:
+            station = MeiobStation(station_element)
             stations.append(station)
+
         self.stations = stations
 
 class MeiobStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
+    def __init__(self, station):
         super(MeiobStation, self).__init__()
 
-        self.name = name
-        self.latitude = latitude
-        self.longitude = longitude
-        self.bikes = bikes
-        self.free = free
-        self.extra = extra
+        self.latitude = float(station.cssselect('.stationlat')[0].text_content())
+        self.longitude = float(station.cssselect('.stationlon')[0].text_content())
+
+        # usually name is on the second element but not always
+        parsed_name = station.cssselect('.stationlon + .border-right-blue > h2')[0].text_content().split(' - ')
+        if len(parsed_name) == 2:
+          self.name = parsed_name[1]
+        else:
+          self.name = parsed_name[0]
+
+        bikes, free = station.cssselect('.bike__available')
+        self.bikes = int(bikes.text_content())
+        self.free = int(free.text_content())
+
+        address, city = station.cssselect('.bike__distance__title')
+        self.extra = {
+          'address': address.text_content(),
+          'city': city.text_content()
+        }
