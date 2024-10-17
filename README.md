@@ -1,18 +1,36 @@
 pybikes [![Build Status](https://github.com/eskerda/pybikes/actions/workflows/test.yml/badge.svg)](https://github.com/eskerda/pybikes/actions/workflows/test.yml)
+![](https://img.shields.io/github/watchers/eskerda/pybikes)
 [![Chat on Matrix](https://matrix.to/img/matrix-badge.svg)](https://matrix.to/#/#citybikes:matrix.org)
+![](https://img.shields.io/github/stars/eskerda/pybikes)
 =======
+<a name="top"></a>
+
 ![pybikes](http://citybik.es/files/pybikes.png)
 
-pybikes provides a set of tools to scrape bike sharing data from different
+# A set of data collecting tools for bike sharing info.
+
+## Contents
+1. [Intro](#item1)
+1. [Installation](#item2)
+1. [Usage](#item3)
+1. [Tests](#item4)
+1. [Development](#item5)
+1. [Credits](#item6)
+
+<a name="item1"></a>
+## 1 Intro
+pybikes provides a python set of tools to scrape bike sharing data from different
 websites and APIs, thus providing a coherent and generalized set of classes
 and methods to access this sort of information.
 
-The library is distributed and intended mainly for statistics and data
-sharing projects. More importantly, it powers the [CityBikes][1] project, and
+The library is distributed and intended mainly for statistics and data-sharing projects. More importantly, it powers the [CityBikes][1] project, and
 is composed of a set of classes and a pack of data files that provide instances
 for all different systems.
 
-Installation
+[go up](#top)
+
+<a name="item2"></a>
+## 2 Installation
 ------------
 
 Install directly from GitHub:
@@ -32,7 +50,10 @@ sudo apt-get install python-setuptools
 sudo apt-get install libxml2 libxml2-dev libxslt1-dev libgeos-dev
 ```
 
-Usage
+[go up](#top)
+
+<a name="item3"></a>
+## 3 Usage
 -----
 ```python
 >>> import pybikes
@@ -114,7 +135,10 @@ using a proxy. This class uses [Requests][2] module internally.
 [1]: http://www.citybik.es              "CityBikes"
 [2]: http://docs.python-requests.org    "Requests"
 
-Tests
+[go up](#top)
+
+<a name="item4"></a>
+## 4 Tests
 -----
 Tests are separated between unit tests and integration tests with the different
 sources supported.
@@ -177,9 +201,29 @@ For more information on reports see [utils/README.md][4]
 [3]: https://pypi.org/project/pytest-xdist/
 [4]: utils/README.md
 
-Development
+[go up](#top)
+
+<a name="item5"></a>
+## 5 Development
 -----------
 We welcome contributions from the community! The best place to get started is
-by diving into the codebase or checking the issues list.
+by diving into the codebase or checking the issues list. 
+
+Make sure to dive into the [LGPL-3.0 license](https://github.com/eskerda/pybikes?tab=LGPL-3.0-1-ov-file#readme) to know about the terms and conditions about this library.
+
+>If you are a beginner, fork the repo, commit and pull request.
 
 Join our developer community on Matrix: [#citybikes:matrix.org](https://matrix.to/#/#citybikes:matrix.org)
+
+[go up](#top)
+
+<a name="item6"></a>
+### 6 Credits
+To [all the contributors](https://github.com/eskerda/pybikes/graphs/contributors), that share a same goal and interest : Bikeshare & Data.
+
+-General Bikeshare Feed Specification [GBFS](https://github.com/MobilityData/gbfs) is a standardized data feed for shared mobility system availability from [MobilityData](https://github.com/MobilityData).
+
+-To the many bikeshare systems that provide data on realtime.
+
+[go up](#top)
+
