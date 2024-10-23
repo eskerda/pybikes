@@ -863,6 +863,7 @@
                 "latitude": -34.630665,
                 "longitude": -58.411560
             },
+            "bbox": [[-35.1453, -59.0845], [-34.0791, -57.7991]],
             "feed_url": "https://buenosaires.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
