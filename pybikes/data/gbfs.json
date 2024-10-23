@@ -537,6 +537,7 @@
                     "url": "http://opendatacommons.org/licenses/odbl/summary/"
                 }
             },
+            "ignore_errors": true,
             "feed_url": "https://montpellier-fr.fifteen.site/gbfs/gbfs.json"
         },
         {
