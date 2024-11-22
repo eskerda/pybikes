@@ -61,6 +61,20 @@
                 "latitude": 45.7
             },
             "feed_url": "https://www.velomodalis.fr/api/client/entities"
+        },
+        {
+            "tag": "velomat",
+            "meta": {
+                "city": "Saint-Malo",
+                "name": "Vélo MAT",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "longitude": -2.0,
+                "latitude": 48.64
+            },
+            "feed_url": "https://velomat.stmalo-agglomeration.fr/api/client/entities"
         }
     ]
 }
