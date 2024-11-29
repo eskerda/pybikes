@@ -37,6 +37,7 @@ class OpenMove(BikeShareSystem):
 
 class OpenMoveStation(BikeShareStation):
     def __init__(self, data):
+        super(OpenMoveStation, self).__init__()
         self.name = data['name']
         self.latitude = float(data['y'])
         self.longitude = float(data['x'])

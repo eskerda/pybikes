@@ -1,60 +1,51 @@
-import re
-import json
+""" This module is to put any nonsense regarding python versions and import
+of compatible methods
 
-from pkg_resources import resource_string, resource_listdir
+It can be used like:
+    from pybikes.compat import urljoin
+    ...
+"""
 
-from pybikes.data import get, find, _datafile_traversor, _import
-from pybikes.exceptions import BikeShareSystemNotFound
+try:
+    from importlib import resources
+    if not hasattr(resources, 'files'):
+        raise ImportError()
+# Python 2.7, 3.8
+except ImportError:
+    import importlib_resources as resources
 
+try:
+    # Python 2
+    from urlparse import urljoin
+except ImportError:
+    # Python 3
+    from urllib.parse import urljoin
 
-def get_data(schema):
-    resource = resource_string('pybikes', 'data/%s.json' % schema)
-    return json.loads(resource)
+try:
+    # Python 2
+    from itertools import imap as map
+except ImportError:
+    # Python 3
+    map = map
 
+try:
+    # Python 2
+    from urllib import unquote_plus
+except ImportError:
+    # Python 3
+    from urllib.parse import unquote_plus
 
-def get_all_data():
-    return resource_listdir('pybikes', 'data')
-
-
-def get_schemas():
-    return [re.sub(r'\.json$', '', name) for name in get_all_data()]
-
-
-def get_instances(schema=None):
-    schemas = [schema] if schema else get_schemas()
-    for schema in schemas:
-        data = get_data(schema)
-        instances = data.get('instances')
-        for cls, instance in _datafile_traversor(data['class'], instances):
-            yield cls, instance
-
-
-def get_system_cls(schema, cname):
-    mod = _import('pybikes.%s' % schema)
-    return getattr(mod, cname)
-
-
-def get_instance(schema, tag):
-    for cname, instance in get_instances(schema):
-        if instance['tag'] == tag:
-            return cname, instance
-
-    msg = 'System %s not found in schema %s' % (tag, schema)
-    raise BikeShareSystemNotFound(msg)
-
-
-def find_system(tag):
-    mod_name, cls_name, i_data = find(tag)
-
-    return cls_name, i_data
-
-def getBikeShareSystem(system, tag, key=None):
-    return get(tag, key)
+try:
+    # python 3
+    import unittest.mock as mock
+except ImportError:
+    # python 2
+    import mock
 
 
-def getDataFile(schema):
-    return get_data(schema)
-
-
-def getDataFiles():
-    return get_all_data()
+try:
+    from urlparse import urlparse
+    from urlparse import parse_qs
+except ImportError:
+    from urllib.parse import urlparse
+    from urllib.parse import parse_qs

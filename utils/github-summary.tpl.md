@@ -1,5 +1,6 @@
 # systems status report (Python {{ version }})
 
+{% if systems %}
 | overall success rate | {{ int((health.passed / health.total) * 100) }}% |
 |-|-|
 | passed | {{ health.passed }} |
@@ -55,3 +56,6 @@
         {% endfor %}
     {% endfor %}
 {% endfor %}
+{% else %}
+No systems
+{% endif %}

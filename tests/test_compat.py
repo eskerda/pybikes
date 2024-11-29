@@ -1,7 +1,7 @@
 import pybikes
 
-from pybikes.compat import get_all_data, get_schemas, get_system_cls
-from pybikes.compat import get_instance
+from pybikes.data import get_all_data, get_schemas, get_system_cls
+from pybikes.data import get_instance
 
 from pybikes.data import find
 from pybikes.emovity import Emovity

@@ -3,65 +3,47 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import Bounded
 
-__all__ = ['Baksi', 'BaksiStation']
 
-ID_NAME_RGX = "([0-9]+)\-([\w\s.()-]+)\'"
-STATUS_RGX = "Durum\ [&nbsp;]+\ (\w+)"
-DOCKS_RGX = "Park[&nbsp;]+([0-9]+)"
-BIKES_RGX = "Bisiklet[&nbsp;]+([0-9]+)"
-LAT_LNG_RGX = "([\s0-9.]+)\',\ \'([\s0-9.]+)"
-
-class Baksi(BikeShareSystem):
+class Baksi(Bounded, BikeShareSystem):
 
     meta = {
         'system': 'Baksi',
         'company': ['Baksi Bike Sharing System']
     }
 
-    def __init__(self, tag, meta, feed_url):
-        super(Baksi, self).__init__(tag, meta)
+    def __init__(self, tag, meta, feed_url, bbox=None):
+        super(Baksi, self).__init__(tag, meta, bounds=bbox)
         self.feed_url = feed_url
 
-    def update(self, scraper = None):
-        if scraper is None:
-            scraper = utils.PyBikesScraper()
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
 
-        html_data=scraper.request(self.feed_url, raw = True).decode('iso-8859-9')
+        html_data = scraper.request(self.feed_url)
+        ex_data = re.search(r'var all = (\[.*\]);', html_data).group(1)
+        data = json.loads(ex_data)
 
-        # Fetch Data
-        id_name = re.findall(ID_NAME_RGX, html_data, re.UNICODE)
-        status = re.findall(STATUS_RGX, html_data, re.UNICODE)
-        docks = re.findall(DOCKS_RGX, html_data, re.UNICODE)
-        bikes = re.findall(BIKES_RGX, html_data, re.UNICODE)
-        geopoints = re.findall(LAT_LNG_RGX, html_data, re.UNICODE)
-
-        # Refine Output
-        station_id, name = zip(*id_name)
-        status = ["Active" if out == "Aktif" else "Inactive" for out in status]
-        docks = [int(i) for i in docks]
-        bikes = [int(i) for i in bikes]
-        latitude, longitude = zip(*geopoints)
-
-        fields = zip(station_id, name, status, docks, bikes, latitude,
-                     longitude)
-
-        self.stations = list(map(BaksiStation, fields))
+        self.stations = list(map(BaksiStation, data))
 
 
 class BaksiStation(BikeShareStation):
     def __init__(self, data):
         super(BaksiStation, self).__init__()
-        self.name = data[1]
-        self.bikes = data[3]
-        self.free = data[4]
+
+        uid, name = data[0].split('-', 1)
+
+        self.name = name
         self.latitude = float(data[5])
         self.longitude = float(data[6])
+
+        self.bikes = int(re.findall(r'\d+', data[2])[0])
+        self.free = int(re.findall(r'\d+', data[3])[0])
+
         self.extra = {
-                'uid': data[0],
-                'status': data[2],
-                'slots': int(data[3] + data[4])
+            'uid': uid,
+            'online': 'Aktif' in data[1],
         }

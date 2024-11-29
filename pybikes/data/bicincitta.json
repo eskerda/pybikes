@@ -901,19 +901,6 @@
         },
         {
             "city_ids": [
-                230
-            ],
-            "meta": {
-                "latitude": 42.8116631,
-                "city": "Pamplona",
-                "name": "nbici",
-                "longitude": -1.6482653,
-                "country": "ES"
-            },
-            "tag": "nbici"
-        },
-        {
-            "city_ids": [
                 179
             ],
             "meta": {

@@ -3,16 +3,11 @@
 # Distributed under the AGPL license, see LICENSE.txt
 import re
 import json
-try:
-    # Python 2
-    from urlparse import urljoin
-except ImportError:
-    # Python 3
-    from urllib.parse import urljoin
 
 from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.compat import urljoin
 
 REGEX = "setConfig\('StationsData',(\[.*\])\);"
 
@@ -38,15 +33,6 @@ class Bikeu(BikeShareSystem):
         scraper = scraper or PyBikesScraper()
         body = scraper.request(self.url)
         markers = self.parse_map(body)
-        if not markers:
-            # Map data is on an iframe
-            _html = html.fromstring(body)
-            map_src = next(iter(_html.xpath('id("MapData")/@src')), None)
-            if not map_src:
-                raise Exception('No marker data found')
-            map_src = urljoin(self.url, map_src)
-            map_body = scraper.request(map_src)
-            markers = self.parse_map(map_body)
         self.stations = list(map(BikeuStation, markers))
 
 
@@ -59,13 +45,6 @@ class BikeuStation(BikeShareStation):
         self.name = info['Name']
         self.bikes = int(info['TotalAvailableBikes'])
         self.free = int(info['TotalLocks']) - self.bikes
-        # Assumedly there's bike info too
-        bike_info = info['Stations']['TKStation'][0]['AvailableBikes']
-        bikes = bike_info.get('TKBike', [])
-        bike_uids = map(lambda b: b.get('BikeIdentifier'), bikes)
-        bike_uids = filter(None, bike_uids)
         self.extra = {
             'uid': info['id'],
         }
-        if bike_uids:
-            self.extra['bike_uids'] = list(bike_uids)
