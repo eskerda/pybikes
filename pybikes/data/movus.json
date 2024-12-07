@@ -8,8 +8,8 @@
                 "city": "Valencia, área metropolitana",
                 "country": "ES",
                 "name": "MIBISI",
-                "latitude": 39.4364,
-                "longitude": -0.4647,
+                "latitude": 39.4745,
+                "longitude": -0.4189,
                 "instances": [
                     {
                         "tag": "horta-sud-en-bici",
@@ -19,16 +19,6 @@
                             "name": "Horta Sud en bici",
                             "latitude": 39.4696,
                             "longitude": -0.4605
-                        }
-                    },
-                    {
-                        "tag": "torrentbici",
-                        "meta": {
-                            "city": "Torrent",
-                            "country": "ES",
-                            "name": "TorrentBici",
-                            "latitude": 39.4319,
-                            "longitude": -0.4730
                         }
                     },
                     {
