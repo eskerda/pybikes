@@ -143,17 +143,6 @@
                 "name": "BiciNRivas"
             },
             "tag": "bicinrivas"
-        },
-        {
-            "endpoint": "https://gestion.bicilog.net/prodwservice",
-            "meta": {
-                "city": "Logroño",
-                "country": "ES",
-                "latitude": 42.4658,
-                "longitude": -2.4402,
-                "name": "BiciLog"
-            },
-            "tag": "bicilog"
         }
     ],
     "system": "bicicard"
