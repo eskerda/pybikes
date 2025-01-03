@@ -175,8 +175,8 @@
                 "city": "Worcester",
                 "name": "Beryl - Worcester",
                 "country": "GB",
-                "latitude": 52.4798,
-                "longitude": -1.9014
+                "latitude": 52.1912,
+                "longitude": -2.2206
             },
             "feed_url": "https://gbfs.beryl.cc/v2_2/Worcester/gbfs.json"
         }
