@@ -2890,6 +2890,30 @@
                 "latitude": 47.6732,
                 "longitude": 9.1663
             }
+        },
+        {
+            "domain": "en",
+            "tag": "torrentbici",
+            "city_uid": 1056,
+            "meta": {
+                "city": "Torrent",
+                "country": "ES",
+                "name": "TorrentBici",
+                "latitude": 39.4319,
+                "longitude": -0.4730
+            }
+        },
+        {
+            "domain": "ej",
+            "tag": "bicilog",
+            "city_uid": 1052,
+            "meta": {
+                "city": "Logroño",
+                "country": "ES",
+                "latitude": 42.4658,
+                "longitude": -2.4402,
+                "name": "BiciLog"
+            }
         }
     ],
     "system": "nextbike",
