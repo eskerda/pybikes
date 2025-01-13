@@ -12,17 +12,6 @@
             }
         },
         {
-            "organization": 2,
-            "tag": "twisto-velo",
-            "meta": {
-                "name": "Twisto vélo",
-                "city": "Caen",
-                "country": "FR",
-                "latitude": 49.1813403,
-                "longitude": -0.3635615
-            }
-        },
-        {
             "organization": 3,
             "tag": "idecycle",
             "meta": {

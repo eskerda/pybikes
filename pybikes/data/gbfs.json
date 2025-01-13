@@ -1,6 +1,20 @@
 {
     "instances": [
         {
+            "tag": "twisto-velo",
+            "meta": {
+                "latitude": 49.1813403,
+                "longitude": -0.3635615,
+                "city": "Caen",
+                "name": "Twisto vélo",
+                "country": "FR",
+                "company": [
+                    "Fifteen"
+                ]
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/caen/en/gbfs.json"
+        },
+        {
             "tag": "bixi-montreal",
             "meta": {
                 "latitude": 45.508693,
