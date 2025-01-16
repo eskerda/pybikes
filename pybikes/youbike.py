@@ -8,7 +8,6 @@ from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
 
 class YouBikeTw(BikeShareSystem):
-    FEED_URL_V1 = "https://apis.youbike.com.tw/json/station-yb1.json"
     FEED_URL_V2 = "https://apis.youbike.com.tw/json/station-yb2.json"
 
     unifeed = True
@@ -26,10 +25,7 @@ class YouBikeTw(BikeShareSystem):
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-        v1 = json.loads(scraper.request(self.FEED_URL_V1))
-        v2 = json.loads(scraper.request(self.FEED_URL_V2))
-
-        data = v1 + v2
+        data = json.loads(scraper.request(self.FEED_URL_V2))
         data = filter(
             lambda item: item.get("area_code") == self.uid
             and item.get("lat") != ""
