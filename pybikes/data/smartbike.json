@@ -3,17 +3,6 @@
     "class": "SmartBike",
     "instances": [
         {
-            "tag": "bizi",
-            "meta": {
-                "latitude": 41.6487908,
-                "city": "Zaragoza",
-                "name": "Bizi",
-                "longitude": -0.8895811,
-                "country": "ES"
-            },
-            "endpoint": "https://cc-smartbike-opendata.s3.eu-west-1.amazonaws.com/zaragoza"
-        },
-        {
             "tag": "malmobybike",
             "meta": {
                 "latitude": 55.6050,
