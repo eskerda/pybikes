@@ -4,12 +4,11 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.utils import Bounded
 
 
-class Joco(Bounded, BikeShareSystem):
-    def __init__(self, tag, meta, bbox, feed_url):
-        super(Joco, self).__init__(tag, meta, bounds=bbox)
+class Joco(BikeShareSystem):
+    def __init__(self, tag, meta, feed_url):
+        super(Joco, self).__init__(tag, meta)
 
         self.feed_url = feed_url
 
@@ -27,21 +26,22 @@ class Joco(Bounded, BikeShareSystem):
 
 class JocoStation(BikeShareStation):
     def __init__(self, data):
-        self.name = data["name"]
-        self.latitude = float(data["lat"])
-        self.longitude = float(data["lng"])
+        super(JocoStation, self).__init__()
 
-        slots = int(data["totalcapacity"])
-        bikes = int(data["availabilty"])
+        self.name = data["name"]
+        self.latitude = float(data["info"]["position"]["coordinates"][1])
+        self.longitude = float(data["info"]["position"]["coordinates"][0])
+
+        bikes = int(data["slots"]["withAvailableVehicle"])
 
         self.bikes = bikes
-        self.free = slots - bikes
+        self.free = int(data["slots"]["free"])
 
         self.extra = {
             "uid": data["id"],
             'has_ebikes': True,
             "ebikes": bikes,
-            "address": data["address"],
-            "postal_code": data["postal"],
-            "slots": slots
+            "address": data["info"]["address"],
+            "slots": int(data["slots"]["total"]),
+            'online': data["state"] == "OPEN",
         }

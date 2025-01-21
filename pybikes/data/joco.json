@@ -2,7 +2,6 @@
     "instances": [
         {
             "tag": "joco-new-york",
-            "bbox": [[40.528083, -74.206935],[40.942386, -73.725738]],
             "meta": {
                 "city": "New York",
                 "name": "JOCO New York",
@@ -15,7 +14,7 @@
                 "longitude": -73.9859,
                 "ebikes": true
             },
-            "feed_url": "https://ridejoco.com/locationinfo.json"
+            "feed_url": "https://platform.api.gourban.services/v1/joco/front/physical-stations"
         }
     ],
     "system": "joco",
