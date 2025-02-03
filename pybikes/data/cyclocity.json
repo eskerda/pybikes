@@ -12,7 +12,8 @@
                         "longitude": 1.444209,
                         "city": "Toulouse"
                     },
-                    "contract": "Toulouse"
+                    "contract": "Toulouse",
+                    "bbox": [[43.4585, 1.2317], [43.7076, 1.5820]]
                 },
                 {
                     "tag": "veloh",
