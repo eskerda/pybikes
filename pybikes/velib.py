@@ -14,19 +14,15 @@ class VelibStation(GbfsStation):
         # new payment-terminal field
         self.extra['payment-terminal'] = self.extra['banking']
 
-        # electric bikes. So far I have not seen this field on other GBFS
-        # systems, so we must investigate. These according to specs go to a
         # vehicle_types_available field. Here, we have them under a list
-        # of { "name-vehicle": num }.
+        # of { "name-vehicle": num }, like [{"mechanical": 5}, {"ebike": 3}]
+        # just awesome
 
         for bt in info.get('num_bikes_available_types', []):
-
-            if next(iter(bt)) != 'ebike':
-                continue
-
-            self.extra['ebikes'] = int(bt['ebike'])
-
-            break
+            if 'ebike' in bt:
+                self.extra['ebikes'] = int(bt['ebike'])
+            if 'mechanical' in bt:
+                self.extra['normal_bikes'] = int(bt['mechanical'])
 
 
 class Velib(Gbfs):
