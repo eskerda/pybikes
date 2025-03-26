@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
+# Copyright (C) 2010-2025, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
-from datetime import datetime
 import json
+import inspect
 import hashlib
+
+from datetime import datetime
+from dataclasses import dataclass
 
 from pybikes.compat import utcnow
 
@@ -16,6 +19,8 @@ class GeneralPurposeEncoder(json.JSONEncoder):
         elif isinstance(obj, BikeShareSystem):
             return obj.to_dict()
         elif isinstance(obj, BikeShareStation):
+            return obj.to_dict()
+        elif isinstance(obj, Vehicle):
             return obj.to_dict()
         return super().default(obj)
 
@@ -89,6 +94,7 @@ class BikeShareStation(object):
                 "bikes": self.bikes,
                 "free": self.free,
                 "extra": self.extra,
+                "type": "station",
                 # ...
             },
         }
@@ -136,7 +142,9 @@ class BikeShareSystem(object):
     unifeed = False
 
     def __init__(self, tag, meta):
+        self.vehicles = []
         self.stations = []
+
         self.tag = tag
         basemeta = dict(BikeShareSystem.meta, **self.meta)
         self.meta = dict(basemeta, **meta)
@@ -153,6 +161,7 @@ class BikeShareSystem(object):
             'tag': self.tag,
             'meta': self.meta,
             'stations': [s.to_dict() for s in self.stations],
+            'vehicles': [e.to_dict() for e in self.vehicles],
         }
 
     def to_json(self, **args):
@@ -169,5 +178,121 @@ class BikeShareSystem(object):
             "type": "FeatureCollection",
             "features": [
                 station.to_geojson() for station in self.stations
+            ] + [
+                vehicle.to_geojson() for vehicle in self.vehicles
             ],
+        }
+
+
+@dataclass
+class VehicleType:
+    # These are mostly an homonym on GBFS vehicle types.
+    # You know, dead batteries sometimes leak
+
+    # One of: human|electric|assist
+    power: str
+    # Name
+    name: str
+    # Short name
+    alias: str
+
+
+class VehicleTypes:
+    bicycle = VehicleType(power="human", name="Humble bike", alias="bike")
+    ebike = VehicleType(power="electric", name="Electric Bike", alias="ebike")
+    # as in: What an ass bike
+    ass_bike = VehicleType(power="assist", name="Electric Assisted Bike",
+                           alias="ass_bike")
+    scooter = VehicleType(power="electric", name="Scooter", alias="scooter")
+    default = bicycle
+
+
+class Vehicle:
+    vehicle_type: VehicleType
+    latitude: float
+    longitude: float
+    extra: dict
+    timestamp: str
+
+    def __init__(self, latitude, longitude, vehicle_type=None, extra=None,
+                 system=None):
+        self.latitude = float(latitude)
+        self.longitude = float(longitude)
+        self._system = system
+        self.kind = vehicle_type or VehicleTypes.default
+
+        # Any network specific extra info that might go in here:
+        # - battery level
+        # - ... ?
+        self.extra = extra or {}
+
+        self.timestamp = utcnow()
+
+
+    @property
+    def system(self):
+        if not self._system:
+            # Careful, somewhat expensive
+            from pybikes.utils import introspect_network
+            self._system = introspect_network()
+        return self._system
+
+    @property
+    def uid(self):
+        return self.extra.get('uid', None)
+
+    @property
+    def hash(self):
+        """ Return a unique hash representing this entity
+            Try to get a uid, if that fails use lat/lng
+            Add parent system tag to the mix and any other info to make it
+            unique
+        """
+        cmps = []
+
+        if self.system:
+            cmps += [self.system.tag]
+
+        cmps += [self.kind.alias]
+
+        if self.uid:
+            cmps += [self.uid]
+        else:
+            cmps += [
+                int(self.latitude * 1E6),
+                int(self.longitude * 1E6),
+            ]
+
+        str_rep = ",".join(map(str, cmps))
+
+        h = hashlib.md5()
+        h.update(str_rep.encode('utf-8'))
+        return h.hexdigest()
+
+    def to_dict(self):
+        return {
+            "id": self.hash,
+            "latitude": self.latitude,
+            "longitude": self.longitude,
+            "kind": self.kind.alias,
+            "extra": self.extra,
+            "timestamp": self.timestamp,
+        }
+
+    def to_geojson(self, **args):
+        return {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [self.longitude, self.latitude],
+            },
+            "properties": {
+                "id": self.hash,
+                "latitude": self.latitude,
+                "longitude": self.longitude,
+                "extra": self.extra,
+                "type": "vehicle",
+                "kind": self.kind.alias,
+                # ...
+            },
         }

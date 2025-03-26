@@ -70,7 +70,7 @@ class BaseInstanceTest(object):
         )
         scraper.requests_timeout = 11
         instance.update(scraper)
-        assert len(instance.stations) > 0
+        assert len(instance.stations) > 0 or len(instance.vehicles) > 0
 
         if instance.sync:
             check_for = len(instance.stations)
