@@ -44,6 +44,7 @@ class Gbfs(BikeShareSystem):
         ignore_errors=False,
         retry=None,
         bbox=None,
+        region_id=None,
         append_feed_args_to_req=False,
     ):
         # Add feed_url to meta in order to be exposed to the API
@@ -54,6 +55,7 @@ class Gbfs(BikeShareSystem):
         self.ignore_errors = ignore_errors
         self.retry = retry
         self.bbox = bbox
+        self.region_id = region_id
 
         if append_feed_args_to_req:
             purl = urlparse(feed_url)
@@ -191,6 +193,13 @@ class Gbfs(BikeShareSystem):
             }
         else:
             vehicles = {}
+
+        # Filter station information by region_id if set
+        if self.region_id:
+            station_information = filter(
+                lambda s: s.get('region_id') == self.region_id,
+                station_information
+            )
 
         # Aggregate status and information by uid
         # Note there's no guarantee that station_status has the same
