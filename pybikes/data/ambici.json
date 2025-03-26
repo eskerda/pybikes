@@ -3,6 +3,16 @@
     "class": "Ambici",
     "instances": [
         {
+            "tag": "ambici-amb",
+            "region_id": "833",
+            "meta": {
+                "city": "Barcelona",
+                "country": "ES",
+                "latitude": 41.44584,
+                "longitude": 2.19902
+            }
+        },
+        {
             "tag": "ambici-badalona",
             "region_id": "840",
             "meta": {
@@ -10,6 +20,16 @@
                 "country": "ES",
                 "latitude": 41.4470,
                 "longitude": 2.2450
+            }
+        },
+        {
+            "tag": "ambici-hospitalet-de-llobregat",
+            "region_id": "841",
+            "meta": {
+                "city": "Hospitalet de Llobregat",
+                "country": "ES",
+                "latitude": 41.3631,
+                "longitude": 2.1126
             }
         },
         {
@@ -63,6 +83,16 @@
             }
         },
         {
+            "tag": "ambici-sant-feliu-de-llobregat",
+            "region_id": "847",
+            "meta": {
+                "city": "Sant Feliu de Llobregat",
+                "country": "ES",
+                "latitude": 41.38333,
+                "longitude": 2.05
+            }
+        },
+        {
             "tag": "ambici-esplugues-de-llobregat",
             "region_id": "848",
             "meta": {
@@ -80,6 +110,16 @@
                 "country": "ES",
                 "latitude": 41.303,
                 "longitude": 2.00269
+            }
+        },
+        {
+            "tag": "ambici-sant-adria-de-besos",
+            "region_id": "850",
+            "meta": {
+                "city": "Sant Adri\u00e0 de Bes\u00f2s",
+                "country": "ES",
+                "latitude": 41.43073,
+                "longitude": 2.21855
             }
         },
         {
