@@ -49,3 +49,11 @@ try:
 except ImportError:
     from urllib.parse import urlparse
     from urllib.parse import parse_qs
+
+
+try:
+    from datetime import datetime, timezone
+    utcnow = lambda: datetime.now(timezone.utc)
+except ImportError:  # python < 3.2
+    from datetime import datetime
+    utcnow = datetime.utcnow

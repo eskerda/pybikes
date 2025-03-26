@@ -6,6 +6,8 @@ from datetime import datetime
 import json
 import hashlib
 
+from pybikes.compat import utcnow
+
 
 class GeneralPurposeEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -33,7 +35,7 @@ class BikeShareStation(object):
         self.longitude = longitude
         self.bikes = bikes
         self.free = free
-        self.timestamp = datetime.utcnow()     # Store timestamp in UTC!
+        self.timestamp = utcnow()     # Store timestamp in UTC!
         self.extra = extra or {}
 
     def __str__(self):
@@ -49,7 +51,7 @@ class BikeShareStation(object):
         """ Base update method for BikeShareStation, any subclass can
             override this method, and should/could call it from inside
         """
-        self.timestamp = datetime.utcnow()
+        self.timestamp = utcnow()
 
     def to_dict(self):
         """ explicit obj to dict method """
