@@ -938,20 +938,6 @@
             "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/gbfs.json"
         },
         {
-            "tag": "lelocleroule",
-            "meta": {
-                "city": "Le Locle",
-                "name": "LeLocleroule",
-                "country": "CH",
-                "company": [
-                    "Donkey Republic"
-                ],
-                "latitude": 47.0554,
-                "longitude": 6.7466
-            },
-            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_le_locle/gbfs.json"
-        },
-        {
             "tag": "neuchatelroule",
             "meta": {
                 "city": "Neuchâtel",
