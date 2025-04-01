@@ -1160,54 +1160,6 @@
             "feed_url": "https://santana.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "nicosia",
-            "meta": {
-                "latitude": 35.1886,
-                "longitude": 33.3570,
-                "city": "Nicosia",
-                "name": "Nicosia Bike Share",
-                "country": "CY",
-                "company": [
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "bbox": [
-                [
-                    35.044749,
-                    33.175679
-                ],
-                [
-                    35.293126,
-                    33.538914
-                ]
-            ],
-            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
-            "tag": "famagusta",
-            "meta": {
-                "latitude": 35.1230,
-                "longitude": 33.9346,
-                "city": "Famagusta",
-                "name": "Famagusta Bike Share",
-                "country": "CY",
-                "company": [
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "bbox": [
-                [
-                    35.049682,
-                    33.793569
-                ],
-                [
-                    35.205207,
-                    34.061976
-                ]
-            ],
-            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
             "tag": "dbizi",
             "meta": {
                 "latitude": 43.3186,
