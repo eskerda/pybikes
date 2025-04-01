@@ -597,20 +597,6 @@
             "feed_url": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "velocity-aachen",
-            "meta": {
-                "latitude": 50.776667,
-                "city": "Aachen",
-                "name": "Velocity",
-                "longitude": 6.083611,
-                "country": "DE",
-                "company": [
-                    "Velocity Region Aachen GmbH"
-                ]
-            },
-            "feed_url": "https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json"
-        },
-        {
             "tag": "avelo-quebec",
             "meta": {
                 "latitude": 46.81305,
@@ -1103,21 +1089,6 @@
                 "ebikes": true
             },
             "feed_url": "https://detroit.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
-            "tag": "green-bike-aruba",
-            "meta": {
-                "latitude": 12.5524,
-                "longitude": -70.0491,
-                "city": "Aruba",
-                "name": "Green Bike",
-                "country": "AW",
-                "company": [
-                    "Friendly Green Bike Company Aruba, V.B.A.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://aru.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
             "tag": "biketown-whq",
