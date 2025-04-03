@@ -22,7 +22,7 @@ def get_text(text):
         return text
     if isinstance(text, list):
         return next(iter(text))['text']
-    return ""
+    return None
 
 
 class Gbfs(BikeShareSystem):
