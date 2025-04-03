@@ -2,6 +2,9 @@
 # Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
+# XXX: break this parser into different implementations for GBFS 2 and 3
+# it's a mess as it is
+
 import json
 from warnings import warn
 
