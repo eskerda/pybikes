@@ -11,6 +11,7 @@ from warnings import warn
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
 from pybikes.compat import urljoin, urlparse, parse_qs
+from pybikes.base import Vehicle, VehicleTypes
 
 try:
     # Python 2
@@ -41,6 +42,7 @@ class Gbfs(BikeShareSystem):
         station_information=False,
         station_status=False,
         vehicle_types=False,
+        free_bike_status=False,
         ignore_errors=False,
         retry=None,
         bbox=None,
@@ -74,6 +76,9 @@ class Gbfs(BikeShareSystem):
         if vehicle_types:
             self.feeds['vehicle_types'] = vehicle_types
 
+        if free_bike_status:
+            self.feeds['free_bike_status'] = free_bike_status
+
     @property
     def default_feeds(self):
         url = self.feed_url
@@ -82,46 +87,55 @@ class Gbfs(BikeShareSystem):
             "station_status": urljoin(url, 'station_status.json'),
         }
 
+    def resolve_vehicles(self, vehicle_info):
+        def snoop(s, v, i):
+            warn("Unhandled station vehicle type %s with count %d" % (i, v['count']))
+
+        def vnoop(s, v, i):
+            raise exceptions.UnhandledVehicleException("unhandled vehicle type %s" % (i))
+
+        resolvers = {}
+        for v in vehicle_info['data'].get('vehicle_types', []):
+            sr, vr = next(iter(((sr, vr) for q, sr, vr in self.vehicle_taxonomy if q(v))), (snoop, vnoop))
+            vid = v.get('vehicle_type_id', 'err')
+            resolvers[vid] = (v, sr or snoop, vr or vnoop)
+
+        return resolvers
+
+
+    # XXX Move this to Station, since Vehicle will have its own taxonomy
     @property
     def vehicle_taxonomy(self):
-        def update_normal_bikes(station, vehicle, info):
-            station.extra.setdefault('normal_bikes', 0)
-            station.extra['normal_bikes'] += vehicle['count']
-
-        def update_ebikes(station, vehicle, info):
-            station.extra.setdefault('ebikes', 0)
-            station.extra['ebikes'] += vehicle['count']
-            station.extra['has_ebikes'] = True
-
-        def update_ecargo(station, vehicle, info):
-            station.extra.setdefault('ecargo', 0)
-            station.extra['ecargo'] += vehicle['count']
-            station.extra['has_ecargo'] = True
-
-        def update_cargo(station, vehicle, info):
-            station.extra.setdefault('cargo', 0)
-            station.extra['cargo'] += vehicle['count']
-            station.extra['has_cargo'] = True
 
         # contains pairs of (vehicle query, resolver)
         return [
             (
                 lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'human' and v['form_factor'] == 'bicycle',
-                update_normal_bikes
+                GbfsStation.update_normal_bikes,
+                GbfsVehicle.update_normal_bikes,
             ),
             (
                 lambda v: 'propulsion_type' in v and v['propulsion_type'] in ['electric_assist', 'electric'] and v['form_factor'] == 'bicycle',
-                update_ebikes
+                GbfsStation.update_ebikes,
+                GbfsVehicle.update_ebikes,
             ),
             (
                 lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'human' and v['form_factor'] == 'cargo_bicycle',
-                update_cargo
+                GbfsStation.update_cargo,
+                GbfsVehicle.update_cargo,
             ),
 
             (
                 lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric_assist' and v['form_factor'] == 'cargo_bicycle',
-                update_ecargo
+                GbfsStation.update_ecargo,
+                GbfsVehicle.update_ecargo
             ),
+            (
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric' and v['form_factor'] == 'scooter',
+                None,
+                GbfsVehicle.update_scooter,
+            ),
+
         ]
 
     def get_feeds(self, url, scraper, force_https):
@@ -178,21 +192,17 @@ class Gbfs(BikeShareSystem):
         )['data']['stations']
 
         if 'vehicle_types' in feeds:
-            # Useful for warning possible interesting types of vehicles that
-            # we do not support
-            def noop(s, v, i):
-                warn("Unhandled vehicle type %s with count %d" % (i, v['count']))
-
             vehicle_info = json.loads(scraper.request(feeds['vehicle_types'], params=self.req_args))
-            # map vehicle id to vehicle info AND extra info resolver
-            # for direct access
-            vehicles = {
-                # TODO: ungrok this line
-                v.get('vehicle_type_id', 'err'): (v, next(iter((r for q, r in self.vehicle_taxonomy if q(v))), noop))
-                    for v in vehicle_info['data'].get('vehicle_types', [])
-            }
+            vehicles = self.resolve_vehicles(vehicle_info)
         else:
             vehicles = {}
+
+        if 'free_bike_status' in feeds:
+            feral_bikes = json.loads(
+                scraper.request(feeds['free_bike_status'], params=self.req_args)
+            )['data']['bikes']
+        else:
+            feral_bikes = []
 
         # Filter station information by region_id if set
         if self.region_id:
@@ -240,8 +250,30 @@ class Gbfs(BikeShareSystem):
 
             stations.append(station)
 
-        self.stations = stations
+        ##### Vehicles #####
 
+        # XXX ignore vehicles that are in a station
+        # are we interested in this information?
+        feral_bikes = filter(lambda v: 'station_id' not in v, feral_bikes)
+
+        if self.bbox:
+            feral_bikes = filter_bounds(feral_bikes, lambda b: (b['lat'], b['lon']), self.bbox)
+
+        # XXX Some feeds add vehicles regardless of station_id. These are probably
+        # a station overflow. If we want to filter them out untoggle this, or
+        # add them to the station count
+        # latlngset = set([(s.latitude, s.longitude) for s in stations])
+        # feral_bikes = filter(lambda v: (v['lat'], v['lon']) not in latlngset, feral_bikes)
+
+        self.stations = stations
+        self.vehicles = list(self.parse_vehicles(feral_bikes, vehicles))
+
+    def parse_vehicles(self, vehicles, vehicles_info):
+        for vehicle in vehicles:
+            try:
+                yield GbfsVehicle(vehicle, vehicles_info, self)
+            except exceptions.UnhandledVehicleException as e:
+                warn(e)
 
 class GbfsStation(BikeShareStation):
 
@@ -313,8 +345,8 @@ class GbfsStation(BikeShareStation):
             for vehicle in info['vehicle_types_available']:
                 if vehicle['vehicle_type_id'] not in vehicles_info:
                     continue
-                vi, resolve = vehicles_info[vehicle['vehicle_type_id']]
-                resolve(self, vehicle, vi)
+                vi, resolve_s, _ = vehicles_info[vehicle['vehicle_type_id']]
+                resolve_s(self, vehicle, vi)
 
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
@@ -325,6 +357,58 @@ class GbfsStation(BikeShareStation):
             if 'web' in info['rental_uris']:
                 self.extra['rental_uris']['web'] = info['rental_uris']['web']
 
+        if info.get('is_virtual_station', False):
+            self.extra['virtual'] = True
+
+    def update_normal_bikes(self, vehicle, info):
+        self.extra.setdefault('normal_bikes', 0)
+        self.extra['normal_bikes'] += vehicle['count']
+
+    def update_ebikes(self, vehicle, info):
+        self.extra.setdefault('ebikes', 0)
+        self.extra['ebikes'] += vehicle['count']
+        self.extra['has_ebikes'] = True
+
+    def update_ecargo(self, vehicle, info):
+        self.extra.setdefault('ecargo', 0)
+        self.extra['ecargo'] += vehicle['count']
+        self.extra['has_ecargo'] = True
+
+    def update_cargo(self, vehicle, info):
+        self.extra.setdefault('cargo', 0)
+        self.extra['cargo'] += vehicle['count']
+        self.extra['has_cargo'] = True
 
 
 Gbfs.station_cls = GbfsStation
+
+class GbfsVehicle(Vehicle):
+    def __init__(self, data, vehicle_types, system):
+        extra = {
+            "uid": data["bike_id"],
+            "online": not data["is_disabled"],
+        }
+        super().__init__(data["lat"], data["lon"], extra=extra, system=system)
+        if 'vehicle_type_id' in data:
+            vi, _, r = vehicle_types[data['vehicle_type_id']]
+            r(self, data, vi)
+        else:
+            self.kind = VehicleTypes.default
+
+        if 'current_fuel_percent' in data:
+            self.extra['battery'] = float(data['current_fuel_percent'])
+
+    def update_normal_bikes(self, vehicle, info):
+        self.kind = VehicleTypes.bicycle
+
+    def update_ebikes(self, vehicle, info):
+        self.kind = VehicleTypes.ebike
+
+    def update_ecargo(self, vehicle, info):
+        self.kind = VehicleTypes.ebike
+
+    def update_cargo(self, vehicle, info):
+        self.kind = VehicleTypes.bicycle
+
+    def update_scooter(self, vehicle, info):
+        self.kind = VehicleTypes.scooter
