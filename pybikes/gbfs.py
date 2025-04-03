@@ -17,6 +17,14 @@ except NameError:
     unicode = str
 
 
+def get_text(text):
+    if isinstance(text, str):
+        return text
+    if isinstance(text, list):
+        return next(iter(text))['text']
+    return ""
+
+
 class Gbfs(BikeShareSystem):
 
     station_cls = None
@@ -242,7 +250,7 @@ class GbfsStation(BikeShareStation):
         if not info['is_installed']:
             raise exceptions.StationPlannedException()
 
-        self.name = unicode(info['name'])
+        self.name = unicode(get_text(['name']))
         if 'num_bikes_available' in info:
             self.bikes = int(info['num_bikes_available'])
         elif 'num_vehicles_available' in info:
