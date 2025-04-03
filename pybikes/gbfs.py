@@ -243,7 +243,10 @@ class GbfsStation(BikeShareStation):
             raise exceptions.StationPlannedException()
 
         self.name = unicode(info['name'])
-        self.bikes = int(info['num_bikes_available'])
+        if 'num_bikes_available' in info:
+            self.bikes = int(info['num_bikes_available'])
+        elif 'num_vehicles_available' in info:
+            self.bikes = int(info['num_vehicles_available']) # In GBFS 3.0, num_bikes_available is replaced by num_vehicles_available https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md#station_statusjson
 
         if 'num_docks_available' in info:
             self.free = int(info['num_docks_available'])

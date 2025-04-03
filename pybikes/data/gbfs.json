@@ -597,20 +597,6 @@
             "feed_url": "https://acoruna.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "velocity-aachen",
-            "meta": {
-                "latitude": 50.776667,
-                "city": "Aachen",
-                "name": "Velocity",
-                "longitude": 6.083611,
-                "country": "DE",
-                "company": [
-                    "Velocity Region Aachen GmbH"
-                ]
-            },
-            "feed_url": "https://nitro.openvelo.org/aachen/velocity/v2/gbfs.json"
-        },
-        {
             "tag": "avelo-quebec",
             "meta": {
                 "latitude": 46.81305,
@@ -952,20 +938,6 @@
             "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_kreuzlingen/gbfs.json"
         },
         {
-            "tag": "lelocleroule",
-            "meta": {
-                "city": "Le Locle",
-                "name": "LeLocleroule",
-                "country": "CH",
-                "company": [
-                    "Donkey Republic"
-                ],
-                "latitude": 47.0554,
-                "longitude": 6.7466
-            },
-            "feed_url": "https://stables.donkey.bike/api/public/gbfs/2/donkey_le_locle/gbfs.json"
-        },
-        {
             "tag": "neuchatelroule",
             "meta": {
                 "city": "Neuchâtel",
@@ -1105,21 +1077,6 @@
             "feed_url": "https://detroit.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "green-bike-aruba",
-            "meta": {
-                "latitude": 12.5524,
-                "longitude": -70.0491,
-                "city": "Aruba",
-                "name": "Green Bike",
-                "country": "AW",
-                "company": [
-                    "Friendly Green Bike Company Aruba, V.B.A.",
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "feed_url": "https://aru.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
             "tag": "biketown-whq",
             "meta": {
                 "latitude": 45.5087,
@@ -1158,54 +1115,6 @@
                 ]
             },
             "feed_url": "https://santana.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
-            "tag": "nicosia",
-            "meta": {
-                "latitude": 35.1886,
-                "longitude": 33.3570,
-                "city": "Nicosia",
-                "name": "Nicosia Bike Share",
-                "country": "CY",
-                "company": [
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "bbox": [
-                [
-                    35.044749,
-                    33.175679
-                ],
-                [
-                    35.293126,
-                    33.538914
-                ]
-            ],
-            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
-            "tag": "famagusta",
-            "meta": {
-                "latitude": 35.1230,
-                "longitude": 33.9346,
-                "city": "Famagusta",
-                "name": "Famagusta Bike Share",
-                "country": "CY",
-                "company": [
-                    "PBSC Urban Solutions"
-                ]
-            },
-            "bbox": [
-                [
-                    35.049682,
-                    33.793569
-                ],
-                [
-                    35.205207,
-                    34.061976
-                ]
-            ],
-            "feed_url": "https://nicosia.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
             "tag": "dbizi",
@@ -1386,6 +1295,18 @@
                     ]
                 },
                 "feed_url": "https://zaragoza.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+            },
+            {
+                "tag": "v3-bordeaux",
+                "meta": {
+                    "country": "FR",
+                    "city": "Bordeaux",
+                    "latitude": 44.837789,
+                    "longitude": -0.57918,
+                    "company": ["Keolis Bordeaux Métropole"],
+                    "name": "V³"
+                },
+                "feed_url": "https://bdx.mecatran.com/utw/ws/gbfs/bordeaux/v3/gbfs.json?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt"
             }
     ],
     "system": "gbfs",
