@@ -250,7 +250,7 @@ class GbfsStation(BikeShareStation):
         if not info['is_installed']:
             raise exceptions.StationPlannedException()
 
-        self.name = unicode(get_text(['name']))
+        self.name = unicode(get_text(info['name']))
         if 'num_bikes_available' in info:
             self.bikes = int(info['num_bikes_available'])
         elif 'num_vehicles_available' in info:
