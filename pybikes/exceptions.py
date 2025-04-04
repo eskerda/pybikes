@@ -6,3 +6,6 @@ class BikeShareSystemNotFound(Exception):
 
 class InvalidStation(Exception):
     pass
+
+class UnhandledVehicleException(Exception):
+    pass
