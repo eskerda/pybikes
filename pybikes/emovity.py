@@ -40,6 +40,8 @@ class EmovityStation(BikeShareStation):
         text = dom.xpath('//div/text()')
         name = text[0]
         uid = next(iter(re.findall(r'(\d+)\s*-', name)))
+        latitude = latitude.replace(',', '.')
+        longitude = longitude.replace(',', '.')
 
         super(EmovityStation, self).__init__(
             name=text[0],
