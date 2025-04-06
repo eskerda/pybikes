@@ -2,7 +2,7 @@
     "instances": [
         {
             "tag": "cork",
-            "system_id": "cork",
+            "system_id": "2",
             "meta": {
                 "latitude": 51.893604,
                 "longitude": -8.494174,
@@ -12,7 +12,7 @@
         },
         {
             "tag": "limerick",
-            "system_id": "limerick",
+            "system_id": "3",
             "meta": {
                 "latitude": 52.668746,
                 "longitude": -8.627809,
@@ -22,7 +22,7 @@
         },
         {
             "tag": "galway",
-            "system_id": "galway",
+            "system_id": "4",
             "meta": {
                 "latitude": 53.2783491544,
                 "longitude": -9.05069143207,
@@ -32,7 +32,7 @@
         },
         {
             "tag": "waterford",
-            "system_id": "waterford",
+            "system_id": "1",
             "meta": {
                 "latitude": 52.2475049,
                 "longitude": -7.1130299,
