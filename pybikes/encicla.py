@@ -7,12 +7,13 @@ import json
 
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import Bounded
 
 
 FEED_URL = 'https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas'
 
 
-class Encicla(BikeShareSystem):
+class Encicla(Bounded, BikeShareSystem):
 
     sync = True
 
