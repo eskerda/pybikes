@@ -66,6 +66,7 @@
                         "latitude": 37.9846,
                         "longitude": 23.7056,
                         "city": "Athens",
+                        "name": "Γεωπονικό Πανεπιστήμιο Αθηνών (Agricultural University of Athens)",
                         "country": "GR"
                     },
                     "feed_url": "https://aua.cyclopolis.gr/api/stop/"
