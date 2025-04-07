@@ -1326,6 +1326,21 @@
                 ]
             },
             "feed_url": "https://austin.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "fortworth",
+            "meta": {
+                "latitude": 32.7516,
+                "longitude": -97.32888,
+                "city": "Fort Worth, TX",
+                "name": "Trinity Metro Bikes",
+                "country": "US",
+                "company": [
+                    "Trinity Metro",
+                    "Lyft Inc."
+                ]
+            },
+            "feed_url": "https://fortworth.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",

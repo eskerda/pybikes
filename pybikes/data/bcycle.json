@@ -45,17 +45,6 @@
             }
         },
         {
-            "tag": "fortworth",
-            "uid": "bcycle_fortworth",
-            "meta": {
-                "latitude": 32.7516,
-                "longitude": -97.32888,
-                "city": "Fort Worth, TX",
-                "name": "Fort Worth Bike Sharing",
-                "country": "US"
-            }
-        },
-        {
             "tag": "omaha",
             "uid": "bcycle_heartland",
             "meta": {
