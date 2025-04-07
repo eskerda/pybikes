@@ -194,3 +194,6 @@ keys.deutschebahn = {
     'client_id': keys.deutschebahn_client_id,
     'client_secret': keys.deutschebahn_client_secret,
 }
+keys.bikeshare_ie = {
+    'token': keys.bikeshare_ie_token,
+}
