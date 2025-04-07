@@ -34,6 +34,17 @@
                     },
                     "mapstyle": "mapbox",
                     "feed_url": "https://edessa.cyclopolis.gr/index.php/en/stations"
+                },
+                 {
+                    "tag": "cyclopolis-poros",
+                    "meta": {
+                        "latitude": 37.4995,
+                        "longitude": 23.4546,
+                        "city": "Poros",
+                        "country": "GR"
+                    },
+                    "mapstyle": "mapbox",
+                    "feed_url": "https://poros.cyclopolis.gr/index.php/en/stations"
                 }
             ]
         },
@@ -48,6 +59,16 @@
                         "country": "GR"
                     },
                     "feed_url": "https://chania.cyclopolis.gr/api/stop/"
+                },
+                {
+                    "tag": "cyclopolis-aua",
+                    "meta": {
+                        "latitude": 37.9846,
+                        "longitude": 23.7056,
+                        "city": "Athens",
+                        "country": "GR"
+                    },
+                    "feed_url": "https://aua.cyclopolis.gr/api/stop/"
                 }
             ]
         }
