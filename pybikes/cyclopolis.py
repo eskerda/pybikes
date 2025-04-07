@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
+# Copyright (C) 2025, Martín González Gómez <m@martingonzalez.net.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
-
-__all__ = ['Cyclopolis', 'CyclopolisStation']
+from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
 LAT_LNG_RGX_GOOGLE = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
 LAT_LNG_RGX_MAPBOX = r'"lat":\s?"(\d+.\d+).*?"lon":\s?"(\d+.\d+)'
@@ -34,14 +34,13 @@ In other systems, e.g., aigialeia, it is shorter, there is no 'div' tag:
         </span>"
 """
 
-class Cyclopolis(BikeShareSystem):
+class BaseSystem(BikeShareSystem):
+    meta = {"system": "Cyclopolis", "company": ["Cyclopolis Systems"]}
+
+
+class Cyclopolis(BaseSystem):
 
     sync = True
-
-    meta = {
-        'system': 'Cyclopolis',
-        'company': ['Cyclopolis Systems']
-    }
 
     def __init__(self, tag, mapstyle, feed_url, meta):
         super(Cyclopolis, self).__init__(tag, meta)
@@ -50,7 +49,7 @@ class Cyclopolis(BikeShareSystem):
 
     def update(self, scraper = None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = PyBikesScraper()
 
         stations = []
 
@@ -83,18 +82,40 @@ class Cyclopolis(BikeShareSystem):
                 free = 0
             if status == 'offline':
                 extra['closed'] = True
-            station = CyclopolisStation(name, latitude, longitude,
-                                        bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
         self.stations = stations
 
-class CyclopolisStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(CyclopolisStation, self).__init__()
 
-        self.name      = name
-        self.latitude  = latitude
-        self.longitude = longitude
-        self.bikes     = bikes
-        self.free      = free
-        self.extra     = extra
+class CyclopolisApi(BaseSystem):
+    sync = True
+
+    def __init__(self, tag, meta, feed_url):
+        super(CyclopolisApi, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+
+        data = json.loads(scraper.request(self.feed_url))
+
+        stations = []
+
+        self.stations = []
+        for station in data:
+            name = station["name"]
+            latitude = float(station["location"]["coordinates"][1])
+            longitude = float(station["location"]["coordinates"][0])
+            bikes = sum(map(lambda vd: vd['count'], station["vehicle_types_available"]))
+            free = sum(map(lambda vd: vd['count'], station["vehicle_docks_available"]))
+            extra = {
+                "uid": station["id"],
+                "is_renting": station["is_renting"],
+                "is_returning": station["is_returning"],
+                "online": station["is_renting"] or station["is_returning"],
+            }
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
+            stations.append(station)
+        self.stations = stations
