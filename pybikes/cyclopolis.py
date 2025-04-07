@@ -9,8 +9,6 @@ import json
 from pybikes import BikeShareSystem, BikeShareStation
 from pybikes.utils import PyBikesScraper
 
-__all__ = ['Cyclopolis', 'CyclopolisStation']
-
 LAT_LNG_RGX_GOOGLE = r'latLng:\[(\d+.\d+).*?(\d+.\d+)\]'
 LAT_LNG_RGX_MAPBOX = r'"lat":\s?"(\d+.\d+).*?"lon":\s?"(\d+.\d+)'
 DATA_RGX = r'data"?\:.*?<span.*?>(.*?)<\\?/span>'
@@ -84,21 +82,10 @@ class Cyclopolis(BaseSystem):
                 free = 0
             if status == 'offline':
                 extra['closed'] = True
-            station = CyclopolisStation(name, latitude, longitude,
-                                        bikes, free, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
         self.stations = stations
-
-class CyclopolisStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, free, extra):
-        super(CyclopolisStation, self).__init__()
-
-        self.name      = name
-        self.latitude  = latitude
-        self.longitude = longitude
-        self.bikes     = bikes
-        self.free      = free
-        self.extra     = extra
 
 
 class CyclopolisApi(BaseSystem):
@@ -120,25 +107,15 @@ class CyclopolisApi(BaseSystem):
             name = station["name"]
             latitude = float(station["location"]["coordinates"][1])
             longitude = float(station["location"]["coordinates"][0])
-            bikes = station["vehicle_docks_available"][0]["count"]
+            bikes = sum(map(lambda vd: vd['count'], station["vehicle_types_available"]))
+            free = sum(map(lambda vd: vd['count'], station["vehicle_docks_available"]))
             extra = {
                 "uid": station["id"],
                 "is_renting": station["is_renting"],
                 "is_returning": station["is_returning"],
                 "online": station["is_renting"] or station["is_returning"],
             }
-            station = CyclopolisApiStation(name, latitude, longitude,
-                                        bikes, extra)
+            station = BikeShareStation(name, latitude, longitude, bikes, free,
+                                       extra)
             stations.append(station)
         self.stations = stations
-
-class CyclopolisApiStation(BikeShareStation):
-    def __init__(self, name, latitude, longitude, bikes, extra):
-        super(CyclopolisApiStation, self).__init__()
-
-        self.name      = name
-        self.latitude  = latitude
-        self.longitude = longitude
-        self.bikes     = bikes
-        self.extra     = extra
-
