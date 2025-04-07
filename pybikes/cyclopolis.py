@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2015, Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
+# Copyright (C) 2025, Martín González Gómez <m@martingonzalez.net.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
+import json
 
-from .base import BikeShareSystem, BikeShareStation
-from . import utils, exceptions
+from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.utils import PyBikesScraper
 
 __all__ = ['Cyclopolis', 'CyclopolisStation']
 
@@ -34,14 +36,13 @@ In other systems, e.g., aigialeia, it is shorter, there is no 'div' tag:
         </span>"
 """
 
-class Cyclopolis(BikeShareSystem):
+class BaseSystem(BikeShareSystem):
+    meta = {"system": "Cyclopolis", "company": ["Cyclopolis Systems"]}
+
+
+class Cyclopolis(BaseSystem):
 
     sync = True
-
-    meta = {
-        'system': 'Cyclopolis',
-        'company': ['Cyclopolis Systems']
-    }
 
     def __init__(self, tag, mapstyle, feed_url, meta):
         super(Cyclopolis, self).__init__(tag, meta)
@@ -50,7 +51,7 @@ class Cyclopolis(BikeShareSystem):
 
     def update(self, scraper = None):
         if scraper is None:
-            scraper = utils.PyBikesScraper()
+            scraper = PyBikesScraper()
 
         stations = []
 
@@ -98,3 +99,46 @@ class CyclopolisStation(BikeShareStation):
         self.bikes     = bikes
         self.free      = free
         self.extra     = extra
+
+
+class CyclopolisApi(BaseSystem):
+    sync = True
+
+    def __init__(self, tag, meta, feed_url):
+        super(CyclopolisApi, self).__init__(tag, meta)
+        self.feed_url = feed_url
+
+    def update(self, scraper=None):
+        scraper = scraper or PyBikesScraper()
+
+        data = json.loads(scraper.request(self.feed_url))
+
+        stations = []
+
+        self.stations = []
+        for station in data:
+            name = station["name"]
+            latitude = float(station["location"]["coordinates"][1])
+            longitude = float(station["location"]["coordinates"][0])
+            bikes = station["vehicle_docks_available"][0]["count"]
+            extra = {
+                "uid": station["id"],
+                "is_renting": station["is_renting"],
+                "is_returning": station["is_returning"],
+                "online": station["is_renting"] or station["is_returning"],
+            }
+            station = CyclopolisApiStation(name, latitude, longitude,
+                                        bikes, extra)
+            stations.append(station)
+        self.stations = stations
+
+class CyclopolisApiStation(BikeShareStation):
+    def __init__(self, name, latitude, longitude, bikes, extra):
+        super(CyclopolisApiStation, self).__init__()
+
+        self.name      = name
+        self.latitude  = latitude
+        self.longitude = longitude
+        self.bikes     = bikes
+        self.extra     = extra
+
