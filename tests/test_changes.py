@@ -55,7 +55,8 @@ def generate_tests_from_changes(branch):
             [clss.add(cls) for cls, _ in get_instances(schema)]
         elif re.match(r'pybikes/.*\.py', file):
             # Extract bike share classes from file
-            spec = spec_from_file_location('some.mod', file)
+            name = re.search(r'pybikes/(.*)\.py', file).groups()[0]
+            spec = spec_from_file_location("pybikes." + name, file)
             mod = module_from_spec(spec)
             spec.loader.exec_module(mod)
             systems = filter(lambda m: is_system(mod, m[1]), inspect.getmembers(mod))
