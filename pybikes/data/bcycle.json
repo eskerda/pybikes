@@ -12,17 +12,6 @@
             }
         },
         {
-            "tag": "austin",
-            "uid": "bcycle_austin",
-            "meta": {
-                "latitude": 30.26408,
-                "longitude": -97.74355,
-                "city": "Austin, TX",
-                "name": "ATX MetroBike",
-                "country": "US"
-            }
-        },
-        {
             "tag": "boulder",
             "uid": "bcycle_boulder",
             "meta": {

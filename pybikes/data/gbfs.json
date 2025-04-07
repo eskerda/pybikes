@@ -1311,6 +1311,21 @@
                 "name": "V³"
             },
             "feed_url": "https://bdx.mecatran.com/utw/ws/gbfs/bordeaux/v3/gbfs.json?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt"
+        },
+        {
+            "tag": "capmetro-austin",
+            "meta": {
+                "latitude": 30.26408,
+                "longitude": -97.74355,
+                "city": "Austin, TX",
+                "name": "CapMetro Bikeshare",
+                "country": "US",
+                "company": [
+                    "CapMetro",
+                    "City of Austin"
+                ]
+            },
+            "feed_url": "https://austin.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
