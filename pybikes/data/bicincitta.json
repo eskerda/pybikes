@@ -531,25 +531,6 @@
         },
         {
             "city_ids": [
-                22,
-                61,
-                62,
-                63,
-                64,
-                65
-            ],
-            "meta": {
-                "latitude": 45.07098200000001,
-                "city": "Torino",
-                "name": "[TO]BIKE",
-                "longitude": 7.685676,
-                "country": "IT"
-            },
-            "tag": "to-bike",
-            "endpoint": "http://www.tobike.it/"
-        },
-        {
-            "city_ids": [
                 144
             ],
             "meta": {
