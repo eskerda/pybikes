@@ -87,7 +87,7 @@
 
 
       div#controls {
-          height: 5%;
+
       }
 
       div#console {
@@ -167,6 +167,12 @@
             </div>
             <div id='controls'>
                 <div class='control'>
+                    <input type="checkbox" id='toggleStations' checked/>
+                    <label for="toggleStations">Stations</label>
+                    <input type="checkbox" id='toggleVehicles' checked/>
+                    <label for="toggleVehicles">Vehicles</label>
+                </div>
+                <div class='control'>
                     <label for="hullEdge">Hull Edge</label>
                     <input type='number' id='hullEdge' min=0 value=2000 /> m
                     <input type='range' id='hullEdgeR' min=0 max=50000 value=2000 step=100 />
@@ -222,7 +228,7 @@
                 [point.x + 5, point.y + 5]
             ]
             const selectedFeatures = map.queryRenderedFeatures(bbox, {
-                layers: ['stations', 'networks']
+                layers: ['stations', 'networks', 'vehicles']
             });
 
             const selHull = map.queryRenderedFeatures(bbox, {
@@ -249,6 +255,7 @@
             }
 
             map.removeFeatureState({source: 'stations'})
+            map.removeFeatureState({source: 'vehicles'})
 
             if (elem) {
                 var std = elem.properties
@@ -349,6 +356,12 @@
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'station'),
         }
+
+        let vehicles = {
+            'type': 'FeatureCollection',
+            'features': allthethings.features.filter(elem => elem.properties.type == 'vehicle'),
+        }
+
         let networks = {
             'type': 'FeatureCollection',
             'features': allthethings.features.filter(elem => elem.properties.type == 'network'),
@@ -431,6 +444,27 @@
                     ],
                 }
             },
+            vehicles: {
+                id: 'vehicles',
+                type: 'circle',
+                source: 'vehicles',
+                paint: {
+                    'circle-radius': [
+                        'let', 'selected',
+                            ['case', ['boolean', ['feature-state', 'selected'], false], 2, 1],
+                        [
+                          // XXX Maybe tune these
+                          'interpolate', ['linear'], ['zoom'],
+                          8,    ['*', ['var', 'selected'], 0.5 ] ,
+                          10,   ['*', ['var', 'selected'], 2   ] ,
+                          12,   ['*', ['var', 'selected'], 4   ] ,
+                          15,   ['*', ['var', 'selected'], 8   ] ,
+                          22,   ['*', ['var', 'selected'], 40  ] ,
+                        ]
+                    ],
+                    'circle-color': 'rgba(190, 7, 200, 0.7)',
+                }
+            },
             hulls: {
               id: 'hulls',
               type: 'fill',
@@ -445,10 +479,12 @@
 
         map.on('load', function() {
             map.addSource('stations', {'type': 'geojson', data: stations, generateId: true});
+            map.addSource('vehicles', {'type': 'geojson', data: vehicles, generateId: true});
             map.addSource('networks', {'type': 'geojson', data: networks});
             map.addSource('hulls', {'type': 'geojson', data: hulls});
             map.addLayer(layers.networks)
             map.addLayer(layers.stations)
+            map.addLayer(layers.vehicles)
             map.addLayer(layers.hulls)
             map.on('mousemove', (e) => {
                 if (anchored_event) return
@@ -535,6 +571,16 @@
             elem.addEventListener("click", (e) => {
                 console.log(e.target.dataset.tag)
             })
+        })
+
+        document.querySelector('input#toggleStations').addEventListener('change', e => {
+            const checked = e.target.checked
+            map.setLayoutProperty('stations', 'visibility', checked ? 'visible' : 'none')
+        })
+
+        document.querySelector('input#toggleVehicles').addEventListener('change', e => {
+            const checked = e.target.checked
+            map.setLayoutProperty('vehicles', 'visibility', checked ? 'visible' : 'none')
         })
     </script>
   </body>
