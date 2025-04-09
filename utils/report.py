@@ -169,7 +169,6 @@ def generate_report(report, template):
 
                 features = instance['report']['user_properties'][0]['geojson']['features']
                 for feature in features:
-                    feature['properties']['type'] = 'station'
                     feature['properties']['tag'] = instance['tag']
 
                     networks['features'].append(feature)
