@@ -208,6 +208,31 @@
             document.getElementById('theconsole').innerHTML = ''
         }
 
+        const debugElem = (elem) => {
+            var data = ""
+            var std = elem.properties
+            var traceback
+
+            if (std.extra && typeof std.extra === 'string') {
+                // nested properties get stringified in mapbox-gl
+                std.extra = JSON.parse(std.extra)
+            }
+
+            if (std.traceback) {
+                traceback = std.traceback
+                delete std.traceback
+            }
+
+            data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
+
+            if (traceback) data += '\n==== Traceback ====\n\n' + traceback + '\n'
+
+            if (elem.id !== undefined)
+                map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
+
+            return data
+        }
+
         const debugZone = ({point, lngLat}) => {
             // XXX Hack
             if (point == undefined && lngLat !== undefined) {
@@ -247,39 +272,14 @@
                 data += `bbox: [[${hullBbox[1]}, ${hullBbox[0]}], [${hullBbox[3]}, ${hullBbox[2]}]]\n`
             }
 
-            let elem
-
-            if (selectedFeatures.length) {
-                elem = selectedFeatures[0]
-            } else if (last_selected) {
-                elem = last_selected
-            }
-
             map.removeFeatureState({source: 'stations'})
             map.removeFeatureState({source: 'vehicles'})
 
-            if (elem) {
-                var std = elem.properties
-                var traceback
-
-                if (std.extra && typeof std.extra === 'string') {
-                    // nested properties get stringified in mapbox-gl
-                    std.extra = JSON.parse(std.extra)
-                }
-
-                if (std.traceback) {
-                    traceback = std.traceback
-                    delete std.traceback
-                }
-
-                data += '\n' + JSON.stringify(std, (k, v) => v, 2) + '\n'
-
-                if (traceback) data += '\n==== Traceback ====\n\n' + traceback + '\n'
-
-                if (elem.id !== undefined)
-                    map.setFeatureState({source: elem.source, id: elem.id}, {selected: true})
-
-                last_selected = elem
+            if (selectedFeatures.length) {
+                selectedFeatures.forEach(elem => data+=debugElem(elem))
+                last_selected = selectedFeatures
+            } else if (last_selected) {
+                last_selected.forEach(elem => data+=debugElem(elem))
             }
 
             document.getElementById('theconsole').innerHTML = data;
