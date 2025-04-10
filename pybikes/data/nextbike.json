@@ -635,17 +635,6 @@
             }
         },
         {
-            "domain": "mt",
-            "tag": "nextbike-malta",
-            "city_uid": 302,
-            "meta": {
-                "city": "Malta",
-                "country": "MT",
-                "latitude": 35.9192,
-                "longitude": 14.4889
-            }
-        },
-        {
             "domain": "kc",
             "tag": "grad-karlovac-karlovac",
             "city_uid": 305,
