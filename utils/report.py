@@ -187,6 +187,8 @@ def generate_report(report, template):
         format_duration=format_duration,
         format_outcome=format_outcome,
         format_traceback=format_traceback,
+        stations=lambda ff: list(filter(lambda f: f['properties']['type'] == 'station', ff)),
+        vehicles=lambda ff: list(filter(lambda f: f['properties']['type'] == 'vehicle', ff)),
     )
 
 
