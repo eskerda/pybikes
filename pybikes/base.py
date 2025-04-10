@@ -253,14 +253,13 @@ class Vehicle:
         if self.system:
             cmps += [self.system.tag]
 
-        cmps += [self.kind.alias]
-
         if self.uid:
             cmps += [self.uid]
         else:
             cmps += [
                 int(self.latitude * 1E6),
                 int(self.longitude * 1E6),
+                self.kind.alias,
             ]
 
         str_rep = ",".join(map(str, cmps))
