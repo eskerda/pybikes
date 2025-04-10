@@ -15,6 +15,7 @@
             "domain": "dx",
             "tag": "mobibike-dresden",
             "city_uid": 685,
+            "bbox": [[50.8507, 13.4066], [51.2698, 14.0906]],
             "meta": {
                 "name": "MOBIbike",
                 "city": "Dresden",
