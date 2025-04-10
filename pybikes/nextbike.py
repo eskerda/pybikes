@@ -6,7 +6,8 @@ import re
 import json
 from lxml import etree
 
-from .base import BikeShareSystem, BikeShareStation
+from pybikes.base import BikeShareSystem, BikeShareStation
+from pybikes.base import Vehicle, VehicleTypes
 from pybikes.utils import PyBikesScraper, filter_bounds
 from pybikes.contrib import TSTCache
 
@@ -54,10 +55,12 @@ class Nextbike(BikeShareSystem):
                 lat, lng = place.attrib['lat'], place.attrib['lng']
                 return (float(lat), float(lng))
             places = filter_bounds(places, getter, self.bbox)
-        # For now ignore bikes roaming around
-        places = filter(lambda p: p.attrib.get('bike', '') != '1', places)
 
-        self.stations = list(map(NextbikeStation, places))
+        stations = filter(lambda p: p.attrib.get('spot', '') == '1', places)
+        roaming = filter(lambda p: p.attrib.get('bike', '') == '1', places)
+
+        self.stations = list(map(NextbikeStation, stations))
+        self.vehicles = list(map(lambda p: NextbikeVehicle(p, self), roaming))
 
 
 class NextbikeStation(BikeShareStation):
@@ -103,4 +106,21 @@ class NextbikeStation(BikeShareStation):
             self.free = None
 
         if 'bike_numbers' in place.attrib:
-            self.extra['bike_uids'] = place.attrib['bike_numbers'].split(',')
+            bike_uids = place.attrib['bike_numbers'].split(',')
+            self.extra['bike_uids'] = list(filter(None, bike_uids))
+
+        self.extra['virtual'] = place.attrib.get('place_type') == "17"
+
+
+class NextbikeVehicle(Vehicle):
+    def __init__(self, place, system):
+
+        lat = float(place.attrib['lat'])
+        lng = float(place.attrib['lng'])
+
+        extra = {
+            'uid': place.xpath('./bike/@number')[0],
+            'online': place.xpath('./bike/@active')[0] == '1',
+        }
+
+        super().__init__(lat, lng, extra=extra, system=system)
