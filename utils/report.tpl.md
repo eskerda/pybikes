@@ -21,13 +21,13 @@
     {% for cls in system.classes %}
 ## <a name="user-content-cls-{{cls.name|lower}}-{{version}}">{{system.name}}.{{ cls.name }}</a>
 
-| | instance | outcome | duration | stations |
-|-|----------|---------|----------|----------|
+| | instance | outcome | duration | stations | vehicles |
+|-|----------|---------|----------|----------|----------|
         {% for instance in cls.instances %}
 |{{format_outcome(instance.report.outcome)}}|[{{system.name}}.{{cls.name}}::{{instance.tag}}](#user-content-tag-{{instance.tag|lower}}-{{version}})|{{instance.report.outcome}}|{{format_duration(instance.report.call.duration)}}|
 {%- if instance.report.user_properties -%}
-{{len(instance.report.user_properties[0].geojson.features)}}
-{%- else -%}0{%- endif -%}|
+{{len(stations(instance.report.user_properties[0].geojson.features))}}|{{len(vehicles(instance.report.user_properties[0].geojson.features))}}
+{%- else -%}0|0{%- endif -%}|
         {% endfor %}
     {% endfor %}
 {% endfor %}

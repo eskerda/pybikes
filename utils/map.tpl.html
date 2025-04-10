@@ -150,7 +150,8 @@
                         {{format_outcome(instance.report.outcome)}}
                         {{instance.tag}}
                         {% if instance.report.user_properties %}
-                            ({{len(instance.report.user_properties[0].geojson.features)}})
+                            ({{len(stations(instance.report.user_properties[0].geojson.features))}})
+                            ({{len(vehicles(instance.report.user_properties[0].geojson.features))}})
                         {% else %}
                             (error)
                         {% endif %}
