@@ -11,7 +11,6 @@ from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
 from pybikes import BikeShareSystem, BikeShareStation
-from pybikes.compat import map
 
 
 class PyBikesScraper(object):
@@ -185,23 +184,9 @@ def introspect_network():
     # or really, just include the parent on the init call which would be
     # way faster.
 
-    def get_frame(entry):
-        """ python 2 and 3 compatible frame getter """
-        if isinstance(entry, tuple):
-            return entry[0]
-        else:
-            return entry.frame
-
-    def get_function(finfo):
-        """ python 2 and 3 compatible function getter """
-        if isinstance(finfo, tuple):
-            return finfo[3]
-        else:
-            return finfo.function
-
     valid_types = (BikeShareSystem, )
     stack = inspect.stack()
-    selfs = map(lambda f: (get_frame(f).f_locals.get('self'), f), stack)
+    selfs = map(lambda f: (f.frame.f_locals.get('self'), f), stack)
     bss = filter(lambda f: isinstance(f[0], valid_types), selfs)
 
     some_bikeshare, frame_info = next(iter(bss), (None, None))

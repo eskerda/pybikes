@@ -88,23 +88,3 @@ jobs:
       if: (success() || failure())
       run: |
           make github-summary >> $GITHUB_STEP_SUMMARY
-
-  # This is more like a watchdog to know if the library still works with
-  # python 2 or not. Not that it really matters
-  python2:
-    name: Unit tests (2.7)
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 2.7
-      uses: MatteoH2O1999/setup-python@v4
-      with:
-        python-version: '2.7'
-        allow-build: info
-        cache-build: true
-    - name: Install dependencies
-      run: make install
-    - name: lint
-      run: make lint
-    - name: test
-      run: make test

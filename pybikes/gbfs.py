@@ -7,18 +7,11 @@
 
 import json
 from warnings import warn
+from urllib.parse import urljoin, urlparse, parse_qs
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
-from pybikes.compat import urljoin, urlparse, parse_qs
 from pybikes.base import Vehicle, VehicleTypes
-
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str
 
 
 def get_text(text):
@@ -294,7 +287,7 @@ class GbfsStation(BikeShareStation):
         if not info['is_installed']:
             raise exceptions.StationPlannedException()
 
-        self.name = unicode(get_text(info['name']))
+        self.name = get_text(info['name'])
         if 'num_bikes_available' in info:
             self.bikes = int(info['num_bikes_available'])
         elif 'num_vehicles_available' in info:
@@ -331,7 +324,7 @@ class GbfsStation(BikeShareStation):
                 self.extra['normal_bikes'] = int(bike_types['mechanical'])
 
         if 'rental_methods' in info:
-            payment = list(map(unicode.lower, info['rental_methods']))
+            payment = list(map(str.lower, info['rental_methods']))
             self.extra['payment'] = payment
             self.extra['payment-terminal'] = 'creditcard' in payment
 

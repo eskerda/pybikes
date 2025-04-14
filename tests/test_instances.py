@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import unittest.mock as mock
 from datetime import datetime
 
 import pytest
@@ -8,7 +9,6 @@ import pytest
 import pybikes
 from pybikes.data import _traverse_lib
 from pybikes.utils import keys
-from pybikes.compat import mock
 
 
 def get_all_instances():

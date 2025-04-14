@@ -4,22 +4,20 @@
 
 import re
 import json
+from urllib.parse import unquote_plus
 
 from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.exceptions import InvalidStation
-from pybikes.compat import unquote_plus
 
 
-class BaseSystem(BikeShareSystem):
+class Veloway(BikeShareSystem):
     meta = {
         'system': 'Veloway',
-        'company': ['Veolia']
+        'company': ['Veolia'],
     }
 
-
-class Veloway(BaseSystem):
     def __init__(self, tag, meta, feed_url):
         super(Veloway, self).__init__(tag, meta)
         self.feed_url = feed_url

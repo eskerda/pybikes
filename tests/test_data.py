@@ -1,8 +1,9 @@
+import unittest.mock as mock
+
 import pytest
 
 from pybikes.data import find, get, _traverse_lib
 from pybikes.exceptions import BikeShareSystemNotFound
-from pybikes.compat import mock
 
 
 class foobar:
