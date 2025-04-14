@@ -124,7 +124,7 @@ class Gbfs(BikeShareSystem):
                 GbfsVehicle.update_ecargo
             ),
             (
-                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric' and v['form_factor'] == 'scooter',
+                lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric' and 'scooter' in v['form_factor'],
                 None,
                 GbfsVehicle.update_scooter,
             ),
@@ -390,6 +390,16 @@ class GbfsVehicle(Vehicle):
 
         if 'current_fuel_percent' in data:
             self.extra['battery'] = float(data['current_fuel_percent'])
+
+        # undocumented field found in the wild, usually on GBFS 1.1 Lyft feeds
+        # XXX move these feeds to GBFS 2.3
+        if 'type' in data:
+            if data['type'] == 'electric_bike':
+                self.kind = VehicleTypes.ebike
+            elif data['type'] == 'electric_scooter':
+                self.kind = VehicleTypes.scooter
+            else:
+                warn("Unhandled vehicle type '%s'" % data['type'])
 
     def update_normal_bikes(self, vehicle, info):
         self.kind = VehicleTypes.bicycle
