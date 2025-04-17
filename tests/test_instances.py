@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import unittest.mock as mock
 from datetime import datetime
 
 import pytest
@@ -8,7 +9,6 @@ import pytest
 import pybikes
 from pybikes.data import _traverse_lib
 from pybikes.utils import keys
-from pybikes.compat import mock
 
 
 def get_all_instances():
@@ -70,7 +70,7 @@ class BaseInstanceTest(object):
         )
         scraper.requests_timeout = 11
         instance.update(scraper)
-        assert len(instance.stations) > 0
+        assert len(instance.stations) > 0 or len(instance.vehicles) > 0
 
         if instance.sync:
             check_for = len(instance.stations)

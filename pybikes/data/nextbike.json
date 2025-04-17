@@ -15,6 +15,7 @@
             "domain": "dx",
             "tag": "mobibike-dresden",
             "city_uid": 685,
+            "bbox": [[50.8507, 13.4066], [51.2698, 14.0906]],
             "meta": {
                 "name": "MOBIbike",
                 "city": "Dresden",
@@ -631,17 +632,6 @@
                 "country": "AT",
                 "latitude": 47.0387,
                 "longitude": 10.6048
-            }
-        },
-        {
-            "domain": "mt",
-            "tag": "nextbike-malta",
-            "city_uid": 302,
-            "meta": {
-                "city": "Malta",
-                "country": "MT",
-                "latitude": 35.9192,
-                "longitude": 14.4889
             }
         },
         {

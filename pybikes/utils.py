@@ -4,13 +4,13 @@
 
 import os
 import re
+import inspect
 
 import requests
 from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
-from pybikes.base import BikeShareSystem, BikeShareStation
-from pybikes.compat import map
+from pybikes import BikeShareSystem, BikeShareStation
 
 
 class PyBikesScraper(object):
@@ -175,6 +175,22 @@ class Bounded(object):
         if self.bounds:
             value = list(filter_bounds(value, None, self.bounds))
         self._stations = value
+
+
+def introspect_network():
+    # hack: try to introspect and find the parent network inspecting the
+    # stack call. Probably _not_ what we want
+    # we could make this more efficient with some memoization
+    # or really, just include the parent on the init call which would be
+    # way faster.
+
+    valid_types = (BikeShareSystem, )
+    stack = inspect.stack()
+    selfs = map(lambda f: (f.frame.f_locals.get('self'), f), stack)
+    bss = filter(lambda f: isinstance(f[0], valid_types), selfs)
+
+    some_bikeshare, frame_info = next(iter(bss), (None, None))
+    return some_bikeshare
 
 
 class Keys:

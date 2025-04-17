@@ -3,11 +3,12 @@
 # Distributed under the AGPL license, see LICENSE.txt
 import re
 import json
+from urllib.parse import urljoin
 
 from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
-from pybikes.compat import urljoin
+
 
 REGEX = "setConfig\('StationsData',(\[.*\])\);"
 
