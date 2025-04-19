@@ -1353,6 +1353,42 @@
                 "name": "Pony"
             },
             "feed_url": "https://gbfs.getapony.com/v1/Nice/en/gbfs.json"
+        },
+        {
+            "tag": "dott-murcia",
+            "meta": {
+                "country": "ES",
+                "city": "Murcia",
+                "latitude": 37.9872,
+                "longitude": -1.1287,
+                "company": ["Dott"],
+                "name": "Dott"
+            },
+            "feed_url": "https://gbfs.api.ridedott.com/public/v2/murcia/gbfs.json"
+        },
+        {
+            "tag": "dott-ibiza",
+            "meta": {
+                "country": "ES",
+                "city": "Ibiza",
+                "latitude": 38.9100,
+                "longitude": 1.4334,
+                "company": ["Dott"],
+                "name": "Dott Ibiza"
+            },
+            "feed_url": "https://gbfs.api.ridedott.com/public/v2/ibiza/gbfs.json"
+        },
+        {
+            "tag": "dott-tarragona",
+            "meta": {
+                "country": "ES",
+                "city": "Tarragona",
+                "latitude": 41.1178,
+                "longitude": 1.2553,
+                "company": ["Dott"],
+                "name": "Dott Tarragona"
+            },
+            "feed_url": "https://gbfs.api.ridedott.com/public/v2/tarragona/gbfs.json"
         }
     ],
     "system": "gbfs",
