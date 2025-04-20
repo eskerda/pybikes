@@ -341,6 +341,14 @@ class GbfsStation(BikeShareStation):
                 vi, resolve_s, _ = vehicles_info[vehicle['vehicle_type_id']]
                 resolve_s(self, vehicle, vi)
 
+            # dott feeds set num_bikes_available=0 but contain the information
+            # on vehicle_types_available ...
+            # XXX on a 2.3 and 3 parser we could only trust these
+            if not self.bikes:
+                self.bikes = sum([
+                    self.extra.get('normal_bikes', 0),
+                    self.extra.get('ebikes', 0),
+                ])
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
             if 'android' in info['rental_uris']:
@@ -350,8 +358,7 @@ class GbfsStation(BikeShareStation):
             if 'web' in info['rental_uris']:
                 self.extra['rental_uris']['web'] = info['rental_uris']['web']
 
-        if info.get('is_virtual_station', False):
-            self.extra['virtual'] = True
+        self.extra['virtual'] = info.get('is_virtual_station', False)
 
     def update_normal_bikes(self, vehicle, info):
         self.extra.setdefault('normal_bikes', 0)
