@@ -3,7 +3,6 @@
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
-import inspect
 import hashlib
 
 from datetime import datetime
