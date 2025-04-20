@@ -125,7 +125,7 @@ class Gbfs(BikeShareSystem):
             ),
             (
                 lambda v: 'propulsion_type' in v and v['propulsion_type'] == 'electric' and 'scooter' in v['form_factor'],
-                None,
+                GbfsStation.update_scooter,
                 GbfsVehicle.update_scooter,
             ),
 
@@ -349,6 +349,7 @@ class GbfsStation(BikeShareStation):
                     self.extra.get('normal_bikes', 0),
                     self.extra.get('ebikes', 0),
                 ])
+
         if 'rental_uris' in info and isinstance(info['rental_uris'], dict):
             self.extra['rental_uris'] = {}
             if 'android' in info['rental_uris']:
@@ -378,6 +379,11 @@ class GbfsStation(BikeShareStation):
         self.extra.setdefault('cargo', 0)
         self.extra['cargo'] += vehicle['count']
         self.extra['has_cargo'] = True
+
+    def update_scooter(self, vehicle, info):
+        self.extra.setdefault('scooters', 0)
+        self.extra['scooters'] += vehicle['count']
+        self.extra['has_scooters'] = True
 
 
 Gbfs.station_cls = GbfsStation
