@@ -4,11 +4,12 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.utils import Bounded
 
 ENDPOINT = "https://bks-api.ganxeta.cat/rms-bike-sharing-real-time/graphql"
 
 
-class Ganxeta(BikeShareSystem):
+class Ganxeta(Bounded, BikeShareSystem):
     headers = {
         "Content-Type": "application/json; charset=utf-8",
     }
@@ -38,9 +39,6 @@ class Ganxeta(BikeShareSystem):
             }
         }""",
     }
-
-    def __init__(self, tag, meta):
-        super(Ganxeta, self).__init__(tag, meta)
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()

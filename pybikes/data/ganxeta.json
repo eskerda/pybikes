@@ -2,6 +2,7 @@
     "instances": [
         {
             "tag": "ganxeta-reus",
+            "bounds": [[41.0760, 1.0072], [41.2281, 1.2064]],
             "meta": {
                 "city": "Reus",
                 "name": "Ganxeta",
