@@ -15,6 +15,12 @@ for all different systems.
 Installation
 ------------
 
+Install from PyPI:
+
+```bash
+pip install pybikes
+```
+
 Install directly from GitHub:
 ```bash
 pip install git+https://github.com/eskerda/pybikes.git
@@ -22,7 +28,7 @@ pip install git+https://github.com/eskerda/pybikes.git
 
 Or after downloading/cloning the source:
 ```bash
-python setup.py install
+pip install .
 ```
 
 The following dependencies are required (example using Ubuntu package manager):
