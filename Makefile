@@ -62,7 +62,7 @@ build:
 
 .PHONY: test-upload
 test-upload: clean build
-	twine upload -r testpypi dist/*
+	twine upload -r testpypi dist/* --verbose
 
 .PHONY: upload
 upload: clean build

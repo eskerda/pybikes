@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -81,6 +81,7 @@ exclude = ["tests*"]
 [tool.setuptools.package-data]
 pybikes = ["data/*.json", "data/*.geojson"]
 
-# So much for declarative, eh
-[tool.setuptools.dynamic]
-version = {attr = "pybikes.__version__"}
+[tool.setuptools_scm]
+# can be empty if no extra settings are needed, presence enables setuptools-scm
+# version_scheme = "only-version"
+local_scheme = "no-local-version"
