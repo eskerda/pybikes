@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-# Copyright (C) 2010-2012, eskerda <eskerda@gmail.com>
-# Distributed under the AGPL license, see LICENSE.txt
-
-__author__ = "eskerda (eskerda@gmail.com)"
-__version__ = "2.0"
-__copyright__ = "Copyright (c) 2010-2012 eskerda"
-__license__ = "AGPL"
+__version__ = "1.0.0.dev0"
 
 # Top class shortcuts #####################
 from pybikes.data import get

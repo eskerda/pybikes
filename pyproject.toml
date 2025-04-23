@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pybikes"
+description = "A python library for scraping bike sharing data"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "LGPL-3.0-or-later"
+
+
+authors = [
+    {name = "Lluis Esquerda", email = "eskerda@gmail.com"},
+]
+
+maintainers = [
+    {name = "Lluis Esquerda", email = "eskerda@gmail.com"},
+]
+
+keywords = [
+    "transport",
+    "open data",
+    "bike share",
+    "bike sharing",
+]
+
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+
+dependencies = [
+    'requests',
+    'lxml',
+    'shapely>=1.5.13',
+    "importlib_resources; python_version < '3.9'",
+    'cssselect',
+]
+
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://www.citybik.es"
+Documentation = "https://docs.citybik.es"
+Source = "https://github.com/eskerda/pybikes"
+Tracker = "https://github.com/eskerda/pybikes/issues"
+
+[project.optional-dependencies]
+test = [
+    # tests
+    "pytest",
+    "pytest-xdist",
+    "gitpython",
+    # lint
+    "flake8",
+    # reports:
+    "jinja2",
+    # pin pytest-metadata until https://github.com/numirias/pytest-json-report/issues/89
+    "pytest-metadata==2.0.4",
+    "pytest-json-report",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pybikes*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+pybikes = ["data/*.json", "data/*.geojson"]
+
+# So much for declarative, eh
+[tool.setuptools.dynamic]
+version = {attr = "pybikes.__version__"}

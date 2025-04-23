@@ -50,7 +50,20 @@ github-summary: report/$(R_FILE)
 
 .PHONY: clean
 clean: clean-report
+	rm -rf dist pybikes.egg-info
 
 .PHONY: clean-report
 clean-report:
 	rm -rf report/
+
+.PHONY: build
+build:
+	python -m build
+
+.PHONY: test-upload
+test-upload: clean build
+	twine upload -r testpypi dist/*
+
+.PHONY: upload
+upload: clean build
+	twine upload dist/*
