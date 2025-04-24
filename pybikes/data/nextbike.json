@@ -1108,18 +1108,6 @@
         },
         {
             "domain": "vn",
-            "tag": "vrn-hockenheim",
-            "city_uid": 477,
-            "meta": {
-                "name": "VRN",
-                "city": "Hockenheim",
-                "country": "DE",
-                "latitude": 49.3227,
-                "longitude": 8.54258
-            }
-        },
-        {
-            "domain": "vn",
             "tag": "vrn-schwetzingen",
             "city_uid": 480,
             "meta": {
