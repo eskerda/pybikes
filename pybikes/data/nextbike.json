@@ -61,10 +61,10 @@
         },
         {
             "domain": "fg",
-            "tag": "facherrad-karlsruhe",
+            "tag": "nextbike-karlsruhe",
             "city_uid": 21,
             "meta": {
-                "name": "Fächerrad",
+                "name": "KVV.nextbike",
                 "city": "Karlsruhe",
                 "country": "DE",
                 "latitude": 49.0102,
