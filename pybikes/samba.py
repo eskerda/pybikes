@@ -2,7 +2,7 @@
 # Original work Copyright (C) 2014, iomartin <iomartin@iomartin.net>
 # Modified work Copyright (C) 2015 Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Modified work Copyright (C) 2023 Martín González Gómez <m@martingonzalez.net>
-# Distributed under the LGPL license, see LICENSE.txt
+# Distributed under the AGPL license, see LICENSE.txt
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.utils import Bounded
