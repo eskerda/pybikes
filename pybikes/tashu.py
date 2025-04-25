@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Distributed under the LGPL license, see LICENSE.txt
+# Distributed under the AGPL license, see LICENSE.txt
 # Copyright (C) 2024, Martín González Gómez <m@martingonzalez.net>
 
 import json

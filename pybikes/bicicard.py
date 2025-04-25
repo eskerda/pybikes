@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2023, eskerda <eskerda@gmail.com>
-# Distributed under the LGPL license, see LICENSE.txt
+# Distributed under the AGPL license, see LICENSE.txt
 
 import json
 
