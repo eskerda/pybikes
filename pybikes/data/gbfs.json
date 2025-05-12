@@ -1389,6 +1389,18 @@
                 "name": "Dott Tarragona"
             },
             "feed_url": "https://gbfs.api.ridedott.com/public/v2/tarragona/gbfs.json"
+        },
+        {
+            "tag": "dott-tubingen",
+            "meta": {
+                "country": "DE",
+                "city": "Tübingen",
+                "company": ["Dott"],
+                "name": "Dott Tübingen",
+                "latitude": 48.5210,
+                "longitude": 9.0534
+            },
+            "feed_url": "https://gbfs.api.ridedott.com/public/v2/tubingen/gbfs.json"
         }
     ],
     "system": "gbfs",
