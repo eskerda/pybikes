@@ -1401,6 +1401,18 @@
                 "longitude": 9.0534
             },
             "feed_url": "https://gbfs.api.ridedott.com/public/v2/tubingen/gbfs.json"
+        },
+        {
+            "tag": "bicinrivas",
+            "meta": {
+                "city": "Rivas-Vaciamadrid",
+                "country": "ES",
+                "latitude": 40.35353,
+                "longitude": -3.53095,
+                "name": "BiciNRivas",
+                "company": ["Lyft Inc."]
+            },
+            "feed_url": "https://rivas.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
