@@ -132,17 +132,6 @@
                 "name": "BiciBur"
             },
             "tag": "bicibur"
-        },
-        {
-            "endpoint": "https://services.bicinrivas.bicicard.es",
-            "meta": {
-                "city": "Rivas-Vaciamadrid",
-                "country": "ES",
-                "latitude": 40.35353,
-                "longitude": -3.53095,
-                "name": "BiciNRivas"
-            },
-            "tag": "bicinrivas"
         }
     ],
     "system": "bicicard"
