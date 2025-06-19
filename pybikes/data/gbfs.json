@@ -1413,6 +1413,18 @@
                 "company": ["Lyft Inc."]
             },
             "feed_url": "https://rivas.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "bilbon-bizi",
+            "meta": {
+                "name": "Bilbaobizi",
+                "city": "Bilbao",
+                "country": "ES",
+                "latitude": 43.2630,
+                "longitude": -2.9350,
+                "company": ["Lyft Inc."]
+            },
+            "feed_url": "https://bilbao.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         }
     ],
     "system": "gbfs",
