@@ -1223,18 +1223,6 @@
             }
         },
         {
-            "domain": "bo",
-            "tag": "bilbon-bizi",
-            "city_uid": 532,
-            "meta": {
-                "name": "BilbonBizi",
-                "city": "Bilbao",
-                "country": "ES",
-                "latitude": 43.2752,
-                "longitude": -2.93528
-            }
-        },
-        {
             "domain": "cn",
             "tag": "nomagobikes-lasko",
             "city_uid": 535,
