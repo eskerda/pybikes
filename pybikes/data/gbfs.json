@@ -1425,6 +1425,21 @@
                 "company": ["Lyft Inc."]
             },
             "feed_url": "https://bilbao.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
+        },
+        {
+            "tag": "aqta",
+            "meta": {
+                "latitude": 32.7516,
+                "longitude": -97.32888,
+                "city": "Auray-Quiberon",
+                "name": "VLS AQTAs",
+                "country": "FR",
+                "company": [
+                    "Fifteen",
+                    "Veloc'Ouest"
+                ]
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/auray-quiberon/en/gbfs.json"
         }
     ],
     "system": "gbfs",
