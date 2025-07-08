@@ -450,10 +450,7 @@
                 "latitude": 43.943689,
                 "longitude": 4.805833
             },
-            "feed_url": "",
-            "station_information": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/station_information.json?key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2",
-            "station_status": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/avignon/station_status.json?key=NWNiMjc5YmQtMzVlOC00MmJiLTkyYTItNzZkMDViMzA2MzA2",
-            "ignore_errors": true
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/avignon/gbfs.json"
         },
         {
             "tag": "c-velo",
@@ -636,9 +633,7 @@
                 "longitude": -2.765,
                 "latitude": 48.514
             },
-            "feed_url": "",
-            "station_information": "https://www.data.gouv.fr/fr/datasets/r/407ae361-d196-45e1-ba9a-0b34997dad25",
-            "station_status": "https://www.data.gouv.fr/fr/datasets/r/6aba2959-4200-4404-a707-b4954df29fb4"
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/saintbrieuc/gbfs.json"
         },
         {
             "tag": "donkey-gh",
@@ -866,8 +861,7 @@
                     "url": "http://opendatacommons.org/licenses/odbl/summary/"
                 }
             },
-            "feed_url": "https://gateway.prod.partners-fs37hd8.zoov.site/gbfs/2.2/landerneau/en/gbfs.json?&key=M2RjMTgyODYtZDM0OS00NjI0LWJiMjMtYzhmYjVlMDI0MzM0",
-            "append_feed_args_to_req": true
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/landerneau/gbfs.json"
         },
         {
             "tag": "velopartage-geneve",
@@ -1124,8 +1118,7 @@
                 ],
                 "source": "https://www.data.gouv.fr/fr/datasets/velos-a-assistance-electrique-en-libre-service-velozef-sur-brest/"
             },
-            "feed_url": "https://api.prod.partners-fs37hd8.zoov.eu/gbfs/2.2/brest/en/gbfs.json?&key=OGNhZDNjMDQtYTA0Yi00NzU2LWE0MTItOGJlYzE1Y2E4NGEx",
-            "append_feed_args_to_req": true
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/brest/gbfs.json"
         },
         {
             "tag": "kotobike",
