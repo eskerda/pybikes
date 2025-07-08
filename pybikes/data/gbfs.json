@@ -1181,21 +1181,6 @@
             "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/gbfs.json"
         },
         {
-            "tag": "metrorower",
-            "meta": {
-                "name": "Metrorower",
-                "city": "Górnośląsko-Zagłębiowska Metropolia",
-                "country": "PL",
-                "latitude": 50.2664,
-                "longitude": 19.0217,
-                "company": [
-                    "Górnośląsko-Zagłębiowska Metropolia",
-                    "Nextbike GZM"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_zz/gbfs.json"
-        },
-        {
             "tag": "velhop",
             "meta": {
                 "latitude": 48.583611,

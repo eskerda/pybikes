@@ -304,18 +304,6 @@
             }
         },
         {
-            "domain": "pl",
-            "tag": "wrm-wroclaw",
-            "city_uid": 148,
-            "meta": {
-                "name": "WRM",
-                "city": "Wrocław",
-                "country": "PL",
-                "latitude": 51.1097,
-                "longitude": 17.0485
-            }
-        },
-        {
             "domain": "la",
             "tag": "nextbike-wrneustadt",
             "city_uid": 156,
@@ -1268,126 +1256,6 @@
             }
         },
         {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-koluszki",
-            "city_uid": 562,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Koluszki",
-                "country": "PL",
-                "latitude": 51.7401,
-                "longitude": 19.835
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-lask",
-            "city_uid": 563,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Łask",
-                "country": "PL",
-                "latitude": 51.5893,
-                "longitude": 19.142
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-lowicz",
-            "city_uid": 564,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Łowicz",
-                "country": "PL",
-                "latitude": 52.1057,
-                "longitude": 19.9381
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-pabianice",
-            "city_uid": 565,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Pabianice",
-                "country": "PL",
-                "latitude": 51.6651,
-                "longitude": 19.3548
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-sieradz",
-            "city_uid": 566,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Sieradz",
-                "country": "PL",
-                "latitude": 51.5902,
-                "longitude": 18.7382
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-skierniewice",
-            "city_uid": 567,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Skierniewice",
-                "country": "PL",
-                "latitude": 51.9539,
-                "longitude": 20.1469
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-zdunska-wola",
-            "city_uid": 568,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Zduńska Wola",
-                "country": "PL",
-                "latitude": 51.6011,
-                "longitude": 18.938
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-zgierz",
-            "city_uid": 569,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Zgierz",
-                "country": "PL",
-                "latitude": 51.8551,
-                "longitude": 19.4068
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-kutno",
-            "city_uid": 570,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Kutno",
-                "country": "PL",
-                "latitude": 52.2317,
-                "longitude": 19.3564
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "rowerowe-lodzkie-rl-lodz-rl",
-            "city_uid": 571,
-            "meta": {
-                "name": "Rowerowe Łódzkie",
-                "city": "Łódź",
-                "country": "PL",
-                "latitude": 51.7674,
-                "longitude": 19.4575
-            }
-        },
-        {
             "domain": "df",
             "tag": "frelo-freiburg",
             "city_uid": 619,
@@ -1487,18 +1355,6 @@
             }
         },
         {
-            "domain": "pu",
-            "tag": "pobiedziski-rower-gminny-pobiedziska",
-            "city_uid": 504,
-            "meta": {
-                "name": "Pobiedziski Rower Gminny Poland",
-                "city": "Pobiedziska",
-                "country": "PL",
-                "latitude": 52.4765,
-                "longitude": 17.2866
-            }
-        },
-        {
             "domain": "ds",
             "tag": "sap-walldorf",
             "city_uid": 592,
@@ -1532,18 +1388,6 @@
                 "country": "SI",
                 "latitude": 46.0577,
                 "longitude": 14.5013
-            }
-        },
-        {
-            "domain": "pg",
-            "tag": "system-roweru-gminnego-pielgrzymka",
-            "city_uid": 593,
-            "meta": {
-                "name": "System Roweru Gminnego Poland",
-                "city": "Pielgrzymka",
-                "country": "PL",
-                "latitude": 51.1185,
-                "longitude": 15.8153
             }
         },
         {
@@ -2198,18 +2042,6 @@
             }
         },
         {
-            "domain": "rq",
-            "tag": "rower-powiatowy-sokolow-podlaski",
-            "city_uid": 727,
-            "meta": {
-                "name": "Rower Powiatowy Soko\u0142\u00f3w Podlaski",
-                "city": "Soko\u0142\u00f3w Podlaski",
-                "country": "PL",
-                "latitude": 52.4082,
-                "longitude": 22.2525
-            }
-        },
-        {
             "domain": "ib",
             "tag": "nextbike-bergamo",
             "city_uid": 728,
@@ -2342,18 +2174,6 @@
                 "country": "AT",
                 "latitude": 47.5134,
                 "longitude": 12.3025
-            }
-        },
-        {
-            "domain": "cw",
-            "tag": "ski-rower-chelm",
-            "city_uid": 776,
-            "meta": {
-                "name": "Che\u0142mski Rower",
-                "city": "Che\u0142m",
-                "country": "PL",
-                "latitude": 51.1318,
-                "longitude": 23.4755
             }
         },
         {
@@ -2543,18 +2363,6 @@
                 "company": [
                     "Mainzer Verkehrsgesellschaft mbH"
                 ]
-            }
-        },
-        {
-            "domain": "vw",
-            "tag": "veturilo-nextbike-warsaw",
-            "city_uid": 812,
-            "meta": {
-                "name": "VETURILO 3.0",
-                "city": "Warsaw",
-                "country": "PL",
-                "latitude": 52.2581,
-                "longitude": 20.9949
             }
         },
         {
@@ -2759,18 +2567,6 @@
                 "country": "GB",
                 "latitude": 51.3814,
                 "longitude": -2.35519
-            }
-        },
-        {
-            "domain": "py",
-            "tag": "tychowski-rower-miejski",
-            "city_uid": 528,
-            "meta": {
-                "name": "Tychowski Rower Miejski",
-                "city": "Tychowo",
-                "country": "PL",
-                "latitude": 53.9288,
-                "longitude": 16.2568
             }
         },
         {
