@@ -72,18 +72,6 @@
             }
         },
         {
-            "domain": "na",
-            "tag": "burgenland-neusiedler-see",
-            "city_uid": 23,
-            "meta": {
-                "name": "Burgenland",
-                "city": "Neusiedler See",
-                "country": "AT",
-                "latitude": 47.839,
-                "longitude": 16.761
-            }
-        },
-        {
             "domain": "dd",
             "tag": "nextbike-dusseldorf",
             "city_uid": 50,
