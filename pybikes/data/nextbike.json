@@ -83,28 +83,6 @@
             }
         },
         {
-            "domain": "la",
-            "tag": "nextbike-stpolten",
-            "city_uid": 57,
-            "meta": {
-                "city": "St.Pölten",
-                "country": "AT",
-                "latitude": 48.2058,
-                "longitude": 15.6232
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-modling",
-            "city_uid": 64,
-            "meta": {
-                "city": "Mödling",
-                "country": "AT",
-                "latitude": 48.1047,
-                "longitude": 16.3202
-            }
-        },
-        {
             "domain": "ch",
             "tag": "nextbike-sursee",
             "city_uid": 88,
@@ -259,50 +237,6 @@
             }
         },
         {
-            "domain": "la",
-            "tag": "nextbike-wachau",
-            "city_uid": 142,
-            "meta": {
-                "city": "Wachau",
-                "country": "AT",
-                "latitude": 48.3188,
-                "longitude": 15.4166
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-tulln",
-            "city_uid": 143,
-            "meta": {
-                "city": "Tulln",
-                "country": "AT",
-                "latitude": 48.3269,
-                "longitude": 16.0569
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-thermenregion",
-            "city_uid": 146,
-            "meta": {
-                "city": "Thermenregion",
-                "country": "AT",
-                "latitude": 47.9892,
-                "longitude": 16.2646
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-wrneustadt",
-            "city_uid": 156,
-            "meta": {
-                "city": "Wr.Neustadt",
-                "country": "AT",
-                "latitude": 47.8167,
-                "longitude": 16.2426
-            }
-        },
-        {
             "domain": "dc",
             "tag": "nextbike-potsdam",
             "city_uid": 158,
@@ -322,17 +256,6 @@
                 "country": "DE",
                 "latitude": 51.9049,
                 "longitude": 8.39275
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-10vorwien",
-            "city_uid": 174,
-            "meta": {
-                "city": "10vorWien",
-                "country": "AT",
-                "latitude": 48.3403,
-                "longitude": 16.279
             }
         },
         {
@@ -437,28 +360,6 @@
                 "country": "CY",
                 "latitude": 35.1728,
                 "longitude": 33.3653
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-hollabrunn",
-            "city_uid": 212,
-            "meta": {
-                "city": "Hollabrunn",
-                "country": "AT",
-                "latitude": 48.562,
-                "longitude": 16.0785
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-wienerwald",
-            "city_uid": 213,
-            "meta": {
-                "city": "WienerWald",
-                "country": "AT",
-                "latitude": 48.1926,
-                "longitude": 16.141
             }
         },
         {
@@ -817,17 +718,6 @@
                 "country": "DE",
                 "latitude": 49.6461,
                 "longitude": 8.44917
-            }
-        },
-        {
-            "domain": "la",
-            "tag": "nextbike-gross-enzersdorf",
-            "city_uid": 395,
-            "meta": {
-                "city": "Groß Enzersdorf",
-                "country": "AT",
-                "latitude": 48.1986,
-                "longitude": 16.5496
             }
         },
         {
@@ -2615,6 +2505,16 @@
                 "latitude": 42.4658,
                 "longitude": -2.4402,
                 "name": "BiciLog"
+            }
+        },
+        {
+            "domain": "la",
+            "tag": "nextbike-niederosterreich",
+            "meta": {
+                "latitude": 48.2515,
+                "longitude": 16.0993,
+                "city": "Niederösterreich",
+                "country": "AT"
             }
         }
     ],
