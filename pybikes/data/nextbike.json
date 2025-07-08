@@ -543,18 +543,6 @@
             }
         },
         {
-            "domain": "ln",
-            "tag": "lrm-lublin-lublin",
-            "city_uid": 251,
-            "meta": {
-                "name": "LRM Lublin",
-                "city": "Lublin",
-                "country": "PL",
-                "latitude": 51.2469,
-                "longitude": 22.5697
-            }
-        },
-        {
             "domain": "vn",
             "tag": "vrn-ludwigshafen",
             "city_uid": 266,
@@ -1511,18 +1499,6 @@
             }
         },
         {
-            "domain": "dp",
-            "tag": "piotrkowski-rower-miejski-piotrkow-trybunalski",
-            "city_uid": 518,
-            "meta": {
-                "name": "Piotrkowski Rower Miejski Poland",
-                "city": "Piotrk\u00f3w Trybunalski",
-                "country": "PL",
-                "latitude": 51.3975,
-                "longitude": 19.6779
-            }
-        },
-        {
             "domain": "ds",
             "tag": "sap-walldorf",
             "city_uid": 592,
@@ -1802,18 +1778,6 @@
             }
         },
         {
-            "domain": "pa",
-            "tag": "komornicki-system-rowerowy-komorniki",
-            "city_uid": 630,
-            "meta": {
-                "name": "Komornicki System Rowerowy Poland",
-                "city": "Komorniki",
-                "country": "PL",
-                "latitude": 52.3347,
-                "longitude": 16.8094
-            }
-        },
-        {
             "domain": "th",
             "tag": "nextbike-havirov",
             "city_uid": 637,
@@ -1847,18 +1811,6 @@
                 "country": "DE",
                 "latitude": 51.1242,
                 "longitude": 10.8984
-            }
-        },
-        {
-            "domain": "pf",
-            "tag": "oleski-rower-miejski-olesno",
-            "city_uid": 650,
-            "meta": {
-                "name": "Oleski Rower Miejski Poland",
-                "city": "Olesno",
-                "country": "PL",
-                "latitude": 50.8773,
-                "longitude": 18.4212
             }
         },
         {
