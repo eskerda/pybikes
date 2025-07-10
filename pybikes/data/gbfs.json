@@ -1407,7 +1407,7 @@
                     "Lime"
                 ]
             },
-            "feed_url": "https://data.lime.bike/api/partners/v1/gbfs/seattle/gbfs.json"
+            "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
         }
     ],
     "system": "gbfs",
