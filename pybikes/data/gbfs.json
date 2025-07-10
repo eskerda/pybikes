@@ -1478,6 +1478,34 @@
                 ]
             },
             "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/san_francisco/gbfs.json"
+        },
+        {
+            "tag": "bird-los-angeles",
+            "meta": {
+                "latitude": 34.0522,
+                "longitude": -118.2437,
+                "city": "Los Angeles, CA",
+                "name": "Bird Los Angeles",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/los-angeles/gbfs.json"
+        },
+        {
+            "tag": "spin-los-angeles",
+            "meta": {
+                "latitude": 34.0522,
+                "longitude": -118.2437,
+                "city": "Los Angeles, CA",
+                "name": "Spin Los Angeles",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/los_angeles/gbfs.json"
         }
     ],
     "system": "gbfs",
