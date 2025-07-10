@@ -1452,20 +1452,6 @@
             "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/gbfs.json"
         },
         {
-            "tag": "revel-san-francisco",
-            "meta": {
-                "latitude": 37.7749,
-                "longitude": -122.4194,
-                "city": "San Francisco, CA",
-                "name": "Revel San Francisco",
-                "country": "US",
-                "company": [
-                    "Revel"
-                ]
-            },
-            "feed_url": "https://gbfs.gorevel.com/gbfs/v2/sanfrancisco/en/gbfs.json"
-        },
-        {
             "tag": "spin-san-francisco",
             "meta": {
                 "latitude": 37.7749,
