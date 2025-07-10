@@ -1380,6 +1380,34 @@
                 ]
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/auray-quiberon/en/gbfs.json"
+        },
+        {
+            "tag": "bird-seattle",
+            "meta": {
+                "latitude": 47.6062,
+                "longitude": -122.3321,
+                "city": "Seattle, WA",
+                "name": "Bird Seattle",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/seattle-washington/gbfs.json"
+        },
+        {
+            "tag": "lime-seattle",
+            "meta": {
+                "latitude": 47.6062,
+                "longitude": -122.3321,
+                "city": "Seattle, WA",
+                "name": "Lime Seattle",
+                "country": "US",
+                "company": [
+                    "Lime"
+                ]
+            },
+            "feed_url": "https://data.lime.bike/api/partners/v1/gbfs/seattle/gbfs.json"
         }
     ],
     "system": "gbfs",
