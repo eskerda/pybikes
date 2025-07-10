@@ -1408,6 +1408,34 @@
                 ]
             },
             "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
+        },
+        {
+            "tag": "bird-portland",
+            "meta": {
+                "latitude": 45.5152,
+                "longitude": -122.6784,
+                "city": "Portland, OR",
+                "name": "Bird Portland",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/portland/gbfs.json"
+        },
+        {
+            "tag": "lime-portland",
+            "meta": {
+                "latitude": 45.5152,
+                "longitude": -122.6784,
+                "city": "Portland, OR",
+                "name": "Lime Portland",
+                "country": "US",
+                "company": [
+                    "Lime"
+                ]
+            },
+            "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/portland/gbfs.json"
         }
     ],
     "system": "gbfs",
