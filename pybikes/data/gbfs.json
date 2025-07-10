@@ -140,22 +140,6 @@
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
         },
         {
-            "tag": "cogo",
-            "meta": {
-                "latitude": 39.983333,
-                "longitude": -82.983333,
-                "city": "Columbus, OH",
-                "name": "CoGo",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ],
-                "ebikes": true
-            },
-            "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
-        },
-        {
             "tag": "denver",
             "meta": {
                 "latitude": 39.72055,

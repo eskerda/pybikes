@@ -62,9 +62,6 @@ class BaseInstanceTest(object):
 
     @pytest.mark.update
     def test_update(self, instance, i_data, cls, mod, record_property):
-        if instance.tag == "cogo":  # Cogo is currently broken
-            return
-
         scraper = pybikes.PyBikesScraper(
             # use a simple dict cache for systems that use a single endpoint
             cachedict=cache if instance.unifeed else None,
