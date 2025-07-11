@@ -140,22 +140,6 @@
             "feed_url": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
         },
         {
-            "tag": "cogo",
-            "meta": {
-                "latitude": 39.983333,
-                "longitude": -82.983333,
-                "city": "Columbus, OH",
-                "name": "CoGo",
-                "country": "US",
-                "company": [
-                    "Motivate International, Inc.",
-                    "PBSC Urban Solutions"
-                ],
-                "ebikes": true
-            },
-            "feed_url": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
-        },
-        {
             "tag": "denver",
             "meta": {
                 "latitude": 39.72055,
@@ -1380,6 +1364,118 @@
                 ]
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/auray-quiberon/en/gbfs.json"
+        },
+        {
+            "tag": "bird-seattle",
+            "meta": {
+                "latitude": 47.6062,
+                "longitude": -122.3321,
+                "city": "Seattle, WA",
+                "name": "Bird Seattle",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/seattle-washington/gbfs.json"
+        },
+        {
+            "tag": "lime-seattle",
+            "meta": {
+                "latitude": 47.6062,
+                "longitude": -122.3321,
+                "city": "Seattle, WA",
+                "name": "Lime Seattle",
+                "country": "US",
+                "company": [
+                    "Lime"
+                ]
+            },
+            "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
+        },
+        {
+            "tag": "bird-portland",
+            "meta": {
+                "latitude": 45.5152,
+                "longitude": -122.6784,
+                "city": "Portland, OR",
+                "name": "Bird Portland",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/portland/gbfs.json"
+        },
+        {
+            "tag": "lime-portland",
+            "meta": {
+                "latitude": 45.5152,
+                "longitude": -122.6784,
+                "city": "Portland, OR",
+                "name": "Lime Portland",
+                "country": "US",
+                "company": [
+                    "Lime"
+                ]
+            },
+            "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/portland/gbfs.json"
+        },
+        {
+            "tag": "lime-san-francisco",
+            "meta": {
+                "latitude": 37.7749,
+                "longitude": -122.4194,
+                "city": "San Francisco, CA",
+                "name": "Lime San Francisco",
+                "country": "US",
+                "company": [
+                    "Lime"
+                ]
+            },
+            "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/san_francisco/gbfs.json"
+        },
+        {
+            "tag": "spin-san-francisco",
+            "meta": {
+                "latitude": 37.7749,
+                "longitude": -122.4194,
+                "city": "San Francisco, CA",
+                "name": "Spin San Francisco",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/san_francisco/gbfs.json"
+        },
+        {
+            "tag": "bird-los-angeles",
+            "meta": {
+                "latitude": 34.0522,
+                "longitude": -118.2437,
+                "city": "Los Angeles, CA",
+                "name": "Bird Los Angeles",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/los-angeles/gbfs.json"
+        },
+        {
+            "tag": "spin-los-angeles",
+            "meta": {
+                "latitude": 34.0522,
+                "longitude": -118.2437,
+                "city": "Los Angeles, CA",
+                "name": "Spin Los Angeles",
+                "country": "US",
+                "company": [
+                    "Bird Rides, Inc."
+                ]
+            },
+            "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/los_angeles/gbfs.json"
         }
     ],
     "system": "gbfs",
