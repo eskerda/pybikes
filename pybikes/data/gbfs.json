@@ -1402,6 +1402,18 @@
                 ]
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/auray-quiberon/en/gbfs.json"
+        },
+        {
+            "tag": "lemarcel",
+            "meta": {
+                "latitude": 48.2971626,
+                "longitude": 4.0746257,
+                "city": "Troyes",
+                "name": "Le Marcel",
+                "country": "FR",
+                "company": ["Ecovélo"]
+            },
+            "feed_url": "https://api.gbfs.ecovelo.mobi/lemarcel/gbfs.json"
         }
     ],
     "system": "gbfs",
