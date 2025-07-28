@@ -276,6 +276,18 @@
                         "country": "FR"
                     },
                     "dataset": "choletbus"
+                },
+                {
+                    "tag": "altervelo",
+                    "meta": {
+                        "city": "Saint-Pierre",
+                        "name": "alterVélo libre service",
+                        "ebikes": true,
+                        "latitude": -21.3414,
+                        "longitude": 55.4777,
+                        "country": "FR"
+                    },
+                    "dataset": "altervelo"
                 }
             ]
         }
