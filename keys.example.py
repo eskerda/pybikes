@@ -18,3 +18,8 @@ deutschebahn = {
 sharedmobility = 'a-valid@email-address'
 
 bikeshare_ie = {'token': '<some token>'}
+
+# See https://github.com/cyklokoalicia/OpenSourceBikeShare/blob/main/Access%20the%20data.md
+open_source_bike_share = {
+    'token': '<some token>'
+}

@@ -213,3 +213,6 @@ keys.deutschebahn = {
 keys.bikeshare_ie = {
     'token': keys.bikeshare_ie_token,
 }
+keys.open_source_bike_share = {
+    'token': keys.open_source_bike_share_token,
+}
