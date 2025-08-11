@@ -32,7 +32,7 @@ class BikeshareIE(BikeShareSystem):
         stations = []
 
         headers = {
-            'Authorization': 'Basic ' + str(self.key['token']),
+            'Authorization': 'Basic %s' % self.key,
             'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 11; ROCINANTE FIRE Build/9001',
         }
 
