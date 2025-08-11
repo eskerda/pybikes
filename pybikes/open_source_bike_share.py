@@ -32,7 +32,7 @@ class OpenSourceBikeShare(BikeShareSystem):
 
             name = station['standName']
             free = None
-            bikes = int(station['bikecount'])
+            bikes = int(station.get('bikecount') or station['bikeCount'])
 
             if 'slotcount' in station:
                 free = int(station['slotcount'])
