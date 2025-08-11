@@ -1,28 +1,28 @@
 {
-  "instances": [
-    {
-      "tag": "cykl",
-      "meta": {
-        "latitude": 51.974000,
-        "city": "Wageningen",
-        "name": "Cykl",
-        "longitude": 5.667100,
-        "country": "NL"
-      },
-      "feed_url": "https://www.cykl.nl/command.php?action=map:markers"
-    },
-    {
-      "tag": "bicyklezadobreskutky",
-      "meta": {
-        "latitude": 48.996275,
-        "city": "Prešov",
-        "name": "Bicykle za dobré skutky",
-        "longitude": 21.234341,
-        "country": "SK"
-      },
-      "feed_url": "https://app.bicyklezadobreskutky.sk/command.php?action=map:markers"
-    }
-  ],
-  "system": "open_source_bike_share",
-  "class": "OpenSourceBikeShare"
+    "instances": [
+        {
+            "tag": "cykl",
+            "meta": {
+                "latitude": 51.974000,
+                "city": "Wageningen",
+                "name": "Cykl",
+                "longitude": 5.667100,
+                "country": "NL"
+            },
+            "feed_url": "https://www.cykl.nl/command.php?action=map:markers"
+        },
+        {
+            "tag": "bicyklezadobreskutky",
+            "meta": {
+                "latitude": 48.996275,
+                "city": "Prešov",
+                "name": "Bicykle za dobré skutky",
+                "longitude": 21.234341,
+                "country": "SK"
+            },
+            "feed_url": "https://app.bicyklezadobreskutky.sk/command.php?action=map:markers"
+        }
+    ],
+    "system": "open_source_bike_share",
+    "class": "OpenSourceBikeShare"
 }

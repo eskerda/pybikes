@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) Eduardo Mucelli Rezende Oliveira <edumucelli@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import json
@@ -17,6 +16,7 @@ class OpenSourceBikeShareV2(OpenSourceBikeShare):
 
     def update(self, scraper=None):
         scraper = scraper or utils.PyBikesScraper()
+        scraper.parse_cookies = False
         scraper.headers.update({
             'Authorization': 'Bearer %s' % self.key,
         })
