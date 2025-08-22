@@ -1478,18 +1478,6 @@
             "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/los_angeles/gbfs.json"
         },
         {
-            "tag": "le-marcel",
-            "meta": {
-                "latitude": 48.2971626,
-                "longitude": 4.0746257,
-                "city": "Troyes",
-                "name": "Le Marcel",
-                "country": "FR",
-                "company": ["Ecovélo"]
-            },
-            "feed_url": "https://api.gbfs.ecovelo.mobi/lemarcel/gbfs.json"
-        },
-        {
             "tag": "Vélonecy",
             "meta": {
                 "latitude": 45.8997,
