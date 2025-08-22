@@ -17,4 +17,7 @@ deutschebahn = {
 # See https://github.com/SFOE/sharedmobility/blob/main/Access%20the%20data.md
 sharedmobility = 'a-valid@email-address'
 
-bikeshare_ie = {'token': '<some token>'}
+bikeshare_ie = '<some token>'
+
+# See https://github.com/cyklokoalicia/OpenSourceBikeShare/blob/main/Access%20the%20data.md
+open_source_bike_share_v2 = '<some token>'
