@@ -1476,6 +1476,22 @@
                 ]
             },
             "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/los_angeles/gbfs.json"
+        },
+        {
+            "tag": "velonecy",
+            "meta": {
+                "latitude": 45.8997,
+                "longitude": 6.1233,
+                "city": "Annecy",
+                "name": "Vélonecy",
+                "country": "FR",
+                "company": [
+                    "Communauté d'Agglomération du Grand Annecy",
+                    "Fifteen SAS",
+                    "Mobil'éco"
+                ]
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/annecy/en/gbfs.json"
         }
     ],
     "system": "gbfs",
