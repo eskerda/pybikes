@@ -1067,14 +1067,13 @@
             }
         },
         {
-            "domain": "li",
-            "tag": "nextbike-lippstadt",
-            "city_uid": 536,
+            "domain": "hb",
+            "tag": "nextbike-helbi",
             "meta": {
-                "city": "Lippstadt",
+                "city": "Kreis Soest",
                 "country": "DE",
-                "latitude": 51.6755,
-                "longitude": 8.34394
+                "latitude": 51.5632,
+                "longitude": 8.11451
             }
         },
         {
