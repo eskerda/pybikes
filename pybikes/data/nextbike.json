@@ -1454,18 +1454,6 @@
             }
         },
         {
-            "domain": "ei",
-            "tag": "ibizi-ibiza-city",
-            "city_uid": 629,
-            "meta": {
-                "name": "ibizi",
-                "city": "Ibiza-City",
-                "country": "ES",
-                "latitude": 38.9066,
-                "longitude": 1.42046
-            }
-        },
-        {
             "domain": "dh",
             "tag": "sprintrad",
             "city_uid": 87,
