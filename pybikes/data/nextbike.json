@@ -1902,25 +1902,12 @@
         {
             "domain": "um",
             "tag": "mvrad-hq",
-            "city_uid": 775,
             "meta": {
                 "name": "MV-Rad",
                 "city": "MV-Rad",
                 "country": "DE",
                 "latitude": 53.6707,
                 "longitude": 12.4255
-            }
-        },
-        {
-            "domain": "um",
-            "tag": "mvrad-anklam",
-            "city_uid": 787,
-            "meta": {
-                "name": "MV-Rad",
-                "city": "Anklam",
-                "country": "DE",
-                "latitude": 53.8614,
-                "longitude": 13.6907
             }
         },
         {
