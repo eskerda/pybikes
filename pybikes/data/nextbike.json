@@ -996,17 +996,6 @@
             }
         },
         {
-            "domain": "ef",
-            "tag": "nextbike-erfurt",
-            "city_uid": 493,
-            "meta": {
-                "city": "Erfurt",
-                "country": "DE",
-                "latitude": 50.9785,
-                "longitude": 11.0334
-            }
-        },
-        {
             "domain": "bj",
             "tag": "bl-bike-banja-luka",
             "city_uid": 494,
