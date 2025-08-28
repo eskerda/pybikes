@@ -305,17 +305,6 @@
             }
         },
         {
-            "domain": "nz",
-            "tag": "nextbike-christchurch",
-            "city_uid": 193,
-            "meta": {
-                "city": "Christchurch",
-                "country": "NZ",
-                "latitude": -43.5341,
-                "longitude": 172.621
-            }
-        },
-        {
             "domain": "vn",
             "tag": "vrn-heidelberg",
             "city_uid": 194,
@@ -627,17 +616,6 @@
                 "country": "GB",
                 "latitude": 50.7272,
                 "longitude": -3.53605
-            }
-        },
-        {
-            "domain": "nz",
-            "tag": "nextbike-auckland-waterfront",
-            "city_uid": 361,
-            "meta": {
-                "city": "Auckland Waterfront",
-                "country": "NZ",
-                "latitude": -36.841,
-                "longitude": 174.763
             }
         },
         {
