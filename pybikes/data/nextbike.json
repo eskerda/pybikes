@@ -1656,30 +1656,6 @@
             }
         },
         {
-            "domain": "yp",
-            "tag": "yoy-san-luis-potosi",
-            "city_uid": 664,
-            "meta": {
-                "name": "YOY - San Luis Potosi",
-                "city": "San Luis Potosi",
-                "country": "MX",
-                "latitude": 22.438,
-                "longitude": -100.514
-            }
-        },
-        {
-            "domain": "yp",
-            "tag": "yoy-san-luis-potosi-cancun",
-            "city_uid": 695,
-            "meta": {
-                "name": "YOY - San Luis Potosi",
-                "city": "Canc\u00fan",
-                "country": "MX",
-                "latitude": 21.1675,
-                "longitude": -86.8498
-            }
-        },
-        {
             "domain": "ac",
             "tag": "bergisches-e-bike",
             "city_uid": 676,
