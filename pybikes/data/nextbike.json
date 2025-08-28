@@ -630,11 +630,10 @@
             }
         },
         {
-            "domain": "wk",
+            "domain": "bq",
             "tag": "wk-bike-bremen-bremen",
-            "city_uid": 379,
             "meta": {
-                "name": "WK-Bike",
+                "name": "Bre.Bike",
                 "city": "Bremen",
                 "country": "DE",
                 "latitude": 53.0781,
