@@ -1681,18 +1681,6 @@
             }
         },
         {
-            "domain": "dz",
-            "tag": "oeynrad-bad-oeynhausen",
-            "city_uid": 689,
-            "meta": {
-                "name": "Oeynrad",
-                "city": "Bad Oeynhausen",
-                "country": "DE",
-                "latitude": 52.2051,
-                "longitude": 8.80074
-            }
-        },
-        {
             "domain": "rb",
             "tag": "rsvg-bike",
             "city_uid": 691,
