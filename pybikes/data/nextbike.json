@@ -282,18 +282,6 @@
             }
         },
         {
-            "domain": "ag",
-            "tag": "swa-rad-augsburg",
-            "city_uid": 178,
-            "meta": {
-                "name": "SWA Rad",
-                "city": "Augsburg",
-                "country": "DE",
-                "latitude": 48.3647,
-                "longitude": 10.8916
-            }
-        },
-        {
             "domain": "cy",
             "tag": "nextbike-limassol",
             "city_uid": 190,
@@ -467,28 +455,6 @@
             }
         },
         {
-            "domain": "dt",
-            "tag": "nextbike-wurzburg",
-            "city_uid": 281,
-            "meta": {
-                "city": "Würzburg",
-                "country": "DE",
-                "latitude": 49.8,
-                "longitude": 9.93333
-            }
-        },
-        {
-            "domain": "ta",
-            "tag": "nextbike-serfaus",
-            "city_uid": 286,
-            "meta": {
-                "city": "Serfaus",
-                "country": "AT",
-                "latitude": 47.0387,
-                "longitude": 10.6048
-            }
-        },
-        {
             "domain": "kc",
             "tag": "grad-karlovac-karlovac",
             "city_uid": 305,
@@ -604,18 +570,6 @@
                 "country": "BA",
                 "latitude": 43.85,
                 "longitude": 18.39
-            }
-        },
-        {
-            "domain": "eu",
-            "tag": "co-bikes-exeter",
-            "city_uid": 354,
-            "meta": {
-                "name": "Co-bikes",
-                "city": "Exeter",
-                "country": "GB",
-                "latitude": 50.7272,
-                "longitude": -3.53605
             }
         },
         {
@@ -959,17 +913,6 @@
                 "country": "DE",
                 "latitude": 49.4025,
                 "longitude": 8.6331
-            }
-        },
-        {
-            "domain": "su",
-            "tag": "nextbike-university-of-surrey",
-            "city_uid": 485,
-            "meta": {
-                "city": "Surrey",
-                "country": "GB",
-                "latitude": 51.2422,
-                "longitude": -0.590594
             }
         },
         {
@@ -1576,18 +1519,6 @@
             }
         },
         {
-            "domain": "rd",
-            "tag": "velopark-drobeta",
-            "city_uid": 693,
-            "meta": {
-                "name": "Drobeta Velopark",
-                "city": "Drobeta",
-                "country": "RO",
-                "latitude": 44.6326,
-                "longitude": 22.6564
-            }
-        },
-        {
             "domain": "ce",
             "tag": "nomago-gorica",
             "city_uid": 688,
@@ -1597,18 +1528,6 @@
                 "country": "SI",
                 "latitude": 45.9576,
                 "longitude": 13.6406
-            }
-        },
-        {
-            "domain": "rs",
-            "tag": "saturn",
-            "city_uid": 697,
-            "meta": {
-                "name": "Saturn",
-                "city": "Saturn",
-                "country": "RO",
-                "latitude": 43.82,
-                "longitude": 28.7445
             }
         },
         {
