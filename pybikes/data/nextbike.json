@@ -502,18 +502,6 @@
             }
         },
         {
-            "domain": "ma",
-            "tag": "grad-makarska-makarska",
-            "city_uid": 324,
-            "meta": {
-                "name": "Grad Makarska",
-                "city": "Makarska",
-                "country": "HR",
-                "latitude": 43.2992,
-                "longitude": 17.0184
-            }
-        },
-        {
             "domain": "br",
             "tag": "opcina-brinje-brinje",
             "city_uid": 325,
