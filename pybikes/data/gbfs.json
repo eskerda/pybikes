@@ -1129,63 +1129,6 @@
             "feed_url": "https://app.kotobike.jp/api/exposed/v2/gbfs/gbfs.json"
         },
         {
-            "tag": "aw-bike",
-            "meta": {
-                "name": "AW-bike Ahrweiler",
-                "city": "Ahrweiler",
-                "country": "DE",
-                "latitude": 50.5452,
-                "longitude": 7.1212,
-                "company": [
-                    "nextbike GmbH"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/gbfs.json"
-        },
-        {
-            "tag": "famose",
-            "meta": {
-                "name": "Fa.Mo.Se",
-                "city": "Senigallia",
-                "country": "IT",
-                "latitude": 43.7603,
-                "longitude": 13.1139,
-                "company": [
-                    "Comuni di Senigallia e Mondolfo",
-                    "TIER Mobility SE"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/gbfs.json"
-        },
-        {
-            "tag": "velhop",
-            "meta": {
-                "latitude": 48.583611,
-                "city": "Strasbourg",
-                "name": "Vélhop",
-                "longitude": 7.748056,
-                "country": "FR",
-                "company": [
-                    "Strasbourg Mobilités"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ae/gbfs.json"
-        },
-        {
-            "tag": "nextbike-ortenaukreis",
-            "meta": {
-                "name": "Nextbike Ortenaukreis",
-                "city": "Ortenaukreis",
-                "country": "DE",
-                "latitude": 48.4721,
-                "longitude": 7.94243,
-                "company": [
-                    "nextbike GmbH"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json"
-        },
-        {
             "tag": "le-velo",
             "meta": {
                 "city": "Marseille",
