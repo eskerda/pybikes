@@ -927,17 +927,6 @@
             }
         },
         {
-            "domain": "uc",
-            "tag": "nextbike-cardiff",
-            "city_uid": 476,
-            "meta": {
-                "city": "Cardiff",
-                "country": "GB",
-                "latitude": 51.4848,
-                "longitude": -3.19062
-            }
-        },
-        {
             "domain": "vn",
             "tag": "vrn-schwetzingen",
             "city_uid": 480,
