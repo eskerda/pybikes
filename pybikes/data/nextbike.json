@@ -2290,6 +2290,17 @@
                 "latitude": 49.7601,
                 "longitude": 16.6573
             }
+        },
+        {
+            "domain": "af",
+            "tag": "velocite-mulhouse",
+            "meta": {
+                "latitude": 47.750839,
+                "country": "FR",
+                "name": "V\u00e9loCit\u00e9",
+                "longitude": 7.335888,
+                "city": "Mulhouse"
+            }
         }
     ],
     "system": "nextbike",
