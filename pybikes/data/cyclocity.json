@@ -71,17 +71,6 @@
                     "contract": "Lillestrom"
                 },
                 {
-                    "tag": "velocite-mulhouse",
-                    "meta": {
-                        "latitude": 47.750839,
-                        "country": "FR",
-                        "name": "V\u00e9loCit\u00e9",
-                        "longitude": 7.335888,
-                        "city": "Mulhouse"
-                    },
-                    "contract": "Mulhouse"
-                },
-                {
                     "tag": "velov",
                     "meta": {
                         "latitude": 45.764043,
