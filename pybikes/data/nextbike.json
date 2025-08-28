@@ -1138,18 +1138,6 @@
             }
         },
         {
-            "domain": "cz",
-            "tag": "nextbike-prostejov",
-            "city_uid": 549,
-            "meta": {
-                "name": "nextbike Prostejov",
-                "city": "Prostejov",
-                "country": "CZ",
-                "latitude": 49.4722,
-                "longitude": 17.1055
-            }
-        },
-        {
             "domain": "nw",
             "tag": "nextbike-focsani",
             "city_uid": 510,
@@ -1407,37 +1395,12 @@
         {
             "domain": "to",
             "tag": "nextbike-ostrava",
-            "city_uid": 271,
             "meta": {
                 "name": "nextbike Ostrava",
                 "city": "Ostrava",
                 "country": "CZ",
                 "latitude": 49.8344,
                 "longitude": 18.2823
-            }
-        },
-        {
-            "domain": "to",
-            "tag": "nextbike-ostrava-hlucin",
-            "city_uid": 752,
-            "meta": {
-                "name": "nextbike Ostrava",
-                "city": "Hlu\u010d\u00edn",
-                "country": "CZ",
-                "latitude": 49.898,
-                "longitude": 18.1923
-            }
-        },
-        {
-            "domain": "to",
-            "tag": "nextbike-ostrava-vresina",
-            "city_uid": 758,
-            "meta": {
-                "name": "nextbike Ostrava",
-                "city": "V\u0159esina",
-                "country": "CZ",
-                "latitude": 49.825,
-                "longitude": 18.1206
             }
         },
         {
@@ -1453,21 +1416,8 @@
             }
         },
         {
-            "domain": "th",
-            "tag": "nextbike-havirov",
-            "city_uid": 637,
-            "meta": {
-                "name": "nextbike Hav\u00ed\u0159ov",
-                "city": "Hav\u00ed\u0159ov",
-                "country": "CZ",
-                "latitude": 49.7799,
-                "longitude": 18.4328
-            }
-        },
-        {
             "domain": "td",
             "tag": "nextbike-berounsko",
-            "city_uid": 655,
             "meta": {
                 "name": "nextbike Berounsko",
                 "city": "Berounsko",
@@ -1515,7 +1465,6 @@
         {
             "domain": "te",
             "tag": "nextbike-brno",
-            "city_uid": 660,
             "meta": {
                 "name": "nextbike Brno",
                 "city": "Brno",
@@ -1525,21 +1474,8 @@
             }
         },
         {
-            "domain": "te",
-            "tag": "nextbike-brno-kurim",
-            "city_uid": 767,
-            "meta": {
-                "name": "nextbike Brno",
-                "city": "Ku\u0159im",
-                "country": "CZ",
-                "latitude": 49.2994,
-                "longitude": 16.5368
-            }
-        },
-        {
             "domain": "tg",
             "tag": "nextbike-praha",
-            "city_uid": 661,
             "meta": {
                 "name": "nextbike Praha",
                 "city": "Praha",
@@ -1549,21 +1485,8 @@
             }
         },
         {
-            "domain": "tg",
-            "tag": "nextbike-praha-ricany",
-            "city_uid": 736,
-            "meta": {
-                "name": "nextbike Praha",
-                "city": "\u0158\u00ed\u010dany",
-                "country": "CZ",
-                "latitude": 49.9976,
-                "longitude": 14.6685
-            }
-        },
-        {
             "domain": "ti",
             "tag": "nextbike-olomouc",
-            "city_uid": 663,
             "meta": {
                 "name": "nextbike Olomouc",
                 "city": "Olomouc",
@@ -1575,7 +1498,6 @@
         {
             "domain": "tk",
             "tag": "nextbike-kladno",
-            "city_uid": 659,
             "meta": {
                 "name": "nextbike Kladno",
                 "city": "Kladno",
@@ -1587,13 +1509,12 @@
         {
             "domain": "tj",
             "tag": "nextbike-opava",
-            "city_uid": 662,
             "meta": {
                 "name": "nextbike Opava",
                 "city": "Opava",
                 "country": "CZ",
-                "latitude": 49.9289,
-                "longitude": 18.2634
+                "latitude": 49.9447,
+                "longitude": 17.8907
             }
         },
         {
@@ -1621,21 +1542,8 @@
             }
         },
         {
-            "domain": "tm",
-            "tag": "nextbike-pardubice",
-            "city_uid": 680,
-            "meta": {
-                "name": "nextbike Pardubice",
-                "city": "Pardubice",
-                "country": "CZ",
-                "latitude": 50.0343,
-                "longitude": 15.7812
-            }
-        },
-        {
             "domain": "tl",
             "tag": "nextbike-hradec-kralove",
-            "city_uid": 682,
             "meta": {
                 "name": "nextbike Hradec Kr\u00e1lov\u00e9",
                 "city": "Hradec Kr\u00e1lov\u00e9",
@@ -1646,26 +1554,12 @@
         },
         {
             "domain": "tq",
-            "tag": "nextbike-mladoboleslavsko-mlada-boleslav",
-            "city_uid": 681,
+            "tag": "nextbike-mladoboleslavsko",
             "meta": {
-                "name": "nextbike Mladoboleslavsko",
                 "city": "Mlad\u00e1 Boleslav",
                 "country": "CZ",
                 "latitude": 50.4278,
                 "longitude": 14.8999
-            }
-        },
-        {
-            "domain": "tq",
-            "tag": "nextbike-mladoboleslavsko-mnichovo-hradiste",
-            "city_uid": 704,
-            "meta": {
-                "name": "nextbike Mladoboleslavsko",
-                "city": "Mnichovo Hradi\u0161t\u011b",
-                "country": "CZ",
-                "latitude": 50.5218,
-                "longitude": 14.9741
             }
         },
         {
@@ -1731,9 +1625,7 @@
         {
             "domain": "ts",
             "tag": "nextbike-frydek-mistek",
-            "city_uid": 700,
             "meta": {
-                "name": "nextbike Fr\u00fddek-M\u00edstek",
                 "city": "Fr\u00fddek-M\u00edstek",
                 "country": "CZ",
                 "latitude": 49.6832,
@@ -1743,7 +1635,6 @@
         {
             "domain": "tt",
             "tag": "nextbike-uherske-hradiste",
-            "city_uid": 702,
             "meta": {
                 "name": "nextbike Uhersk\u00e9 Hradi\u0161t\u011b",
                 "city": "Uhersk\u00e9 Hradi\u0161t\u011b",
@@ -1755,25 +1646,12 @@
         {
             "domain": "tv",
             "tag": "nextbike-zlin",
-            "city_uid": 703,
             "meta": {
                 "name": "nextbike Zl\u00edn",
                 "city": "Zl\u00edn",
                 "country": "CZ",
                 "latitude": 49.238,
                 "longitude": 17.6788
-            }
-        },
-        {
-            "domain": "tw",
-            "tag": "nextbike-krnov",
-            "city_uid": 707,
-            "meta": {
-                "name": "nextbike Krnov",
-                "city": "Krnov",
-                "country": "CZ",
-                "latitude": 50.0703,
-                "longitude": 17.8837
             }
         },
         {
@@ -1791,7 +1669,6 @@
         {
             "domain": "tx",
             "tag": "nextbike-rychnovsko",
-            "city_uid": 708,
             "meta": {
                 "name": "nextbike Rychnovsko",
                 "city": "Rychnovsko",
@@ -1803,25 +1680,12 @@
         {
             "domain": "ty",
             "tag": "nextbike-pisek",
-            "city_uid": 709,
             "meta": {
                 "name": "nextbike P\u00edsek",
                 "city": "P\u00edsek",
                 "country": "CZ",
                 "latitude": 49.3051,
                 "longitude": 14.1463
-            }
-        },
-        {
-            "domain": "tz",
-            "tag": "nextbike-jihlava",
-            "city_uid": 719,
-            "meta": {
-                "name": "nextbike Jihlava",
-                "city": "Jihlava",
-                "country": "CZ",
-                "latitude": 49.4078,
-                "longitude": 15.6061
             }
         },
         {
@@ -1925,7 +1789,6 @@
         {
             "domain": "tf",
             "tag": "nextbike-dvur-kralove",
-            "city_uid": 768,
             "meta": {
                 "name": "nextbike Dv\u016fr Kr\u00e1lov\u00e9",
                 "city": "Dv\u016fr Kr\u00e1lov\u00e9",
@@ -1961,7 +1824,6 @@
         {
             "domain": "vr",
             "tag": "nextbike-vrchlabi",
-            "city_uid": 769,
             "meta": {
                 "name": "nextbike Vrchlab\u00ed",
                 "city": "Vrchlab\u00ed",
@@ -2150,7 +2012,6 @@
         {
             "domain": "nr",
             "tag": "nextbike-prerov",
-            "city_uid": 917,
             "meta": {
                 "name": "nextbike Prerov",
                 "city": "Prerov",
@@ -2222,7 +2083,6 @@
         {
             "domain": "nh",
             "tag": "nextbike-hodonin",
-            "city_uid": 1046,
             "meta": {
                 "name": "nextbike Hodonín",
                 "city": "Hodonín",
@@ -2234,7 +2094,6 @@
         {
             "domain": "nt",
             "tag": "nextbike-jicin",
-            "city_uid": 1032,
             "meta": {
                 "name": "nextbike Jičín",
                 "city": "Jičín",
@@ -2244,33 +2103,8 @@
             }
         },
         {
-            "domain": "kn",
-            "tag": "nextbike-novy-jicin",
-            "city_uid": 1045,
-            "meta": {
-                "name": "nextbike Nový Jičín",
-                "city": "Nový Jičín",
-                "country": "CZ",
-                "latitude": 49.5976,
-                "longitude": 18.008
-            }
-        },
-        {
-            "domain": "kn",
-            "tag": "nextbike-koprivnice",
-            "city_uid": 1035,
-            "meta": {
-                "name": "nextbike Kopřivnice",
-                "city": "Kopřivnice",
-                "country": "CZ",
-                "latitude": 49.5934,
-                "longitude": 18.1422
-            }
-        },
-        {
             "domain": "uo",
             "tag": "nextbike-most",
-            "city_uid": 1036,
             "meta": {
                 "name": "nextbike Most",
                 "city": "Most",
@@ -2282,7 +2116,6 @@
         {
             "domain": "cu",
             "tag": "nextbike-olbramovicevotice",
-            "city_uid": 1034,
             "meta": {
                 "name": "nextbike OlbramoviceVotice",
                 "city": "Olbramovice/Votice",
@@ -2294,7 +2127,6 @@
         {
             "domain": "xb",
             "tag": "nextbike-trutnov",
-            "city_uid": 792,
             "meta": {
                 "name": "nextbike Trutnov",
                 "city": "Trutnov",
@@ -2419,6 +2251,136 @@
                 "longitude": 16.0993,
                 "city": "Niederösterreich",
                 "country": "AT"
+            }
+        },
+        {
+            "domain": "co",
+            "tag": "nextbike-benesov",
+            "meta": {
+                "city": "Bene\u0161ov",
+                "country": "CZ",
+                "latitude": 49.7827,
+                "longitude":  14.6867
+            }
+        },
+        {
+            "domain": "cq",
+            "tag": "nextbike-pelhrimov",
+            "meta": {
+                "city": "Pelh\u0159imov",
+                "country": "CZ",
+                "latitude": 49.4295,
+                "longitude":  15.2239
+            }
+        },
+        {
+            "domain": "ko",
+            "tag": "nextbike-klasterec-nad-ohri",
+            "meta": {
+                "city": "Kl\u00e1\u0161terec nad Oh\u0159\u00ed",
+                "country": "CZ",
+                "latitude": 50.3861,
+                "longitude": 13.1771
+            }
+        },
+        {
+            "domain": "lo",
+            "tag": "nextbike-lovosice",
+            "meta": {
+                "city": "Lovosice",
+                "country": "CZ",
+                "latitude": 50.5147,
+                "longitude": 14.0542
+            }
+        },
+        {
+            "domain": "nc",
+            "tag": "nextbike-ceska-trebova",
+            "meta": {
+                "city": "\u010cesk\u00e1 T\u0159ebov\u00e1",
+                "country": "CZ",
+                "latitude": 49.9021,
+                "longitude": 16.4458
+            }
+        },
+        {
+            "domain": "ni",
+            "tag": "nextbike-kolin",
+            "meta": {
+                "city": "Kol\u00edn",
+                "country": "CZ",
+                "latitude": 50.0269,
+                "longitude": 15.21
+            }
+        },
+        {
+            "domain": "oc",
+            "tag": "nextbike-kahan",
+            "meta": {
+                "city": "Mikroregion Kahan",
+                "country": "CZ",
+                "latitude": 49.188,
+                "longitude": 16.3631
+            }
+        },
+        {
+            "domain": "tu",
+            "tag": "nextbike-trebic",
+            "meta": {
+                "city": "T\u0159eb\u00ed\u010d",
+                "country": "CZ",
+                "latitude": 49.2149,
+                "longitude": 15.8794
+            }
+        },
+        {
+            "domain": "ud",
+            "tag": "nextbike-jablonec",
+            "meta": {
+                "city": "Jablonec nad Nisou",
+                "country": "CZ",
+                "latitude": 50.7225,
+                "longitude": 15.1681
+            }
+        },
+        {
+            "domain": "uf",
+            "tag": "nextbike-horice",
+            "meta": {
+                "city": "Ho\u0159ice",
+                "country": "CZ",
+                "latitude": 50.3704,
+                "longitude": 15.6327
+            }
+        },
+        {
+            "domain": "vm",
+            "tag": "nextbike-valassko",
+            "meta": {
+                "city": "Vala\u0161sk\u00e9 Mezi\u0159\u00ed\u010d\u00ed - Za\u0161ov\u00e1 - Vset\u00edn - Ro\u017enov pod Radho\u0161t\u011bm",
+                "country": "CZ",
+                "latitude": 49.4725,
+                "longitude": 17.9765
+            }
+        },
+        {
+            "domain": "xa",
+            "tag": "nextbike-liberec",
+            "meta": {
+                "city": "Liberec",
+                "country": "CZ",
+                "latitude": 50.7646,
+                "longitude": 15.0531
+            }
+        },
+        {
+            "domain": "xc",
+            "tag": "nextbike-moravska-trebova",
+            "meta": {
+                "city": "Moravsk\u00e1 T\u0159ebov\u00e1",
+                "country": "CZ",
+                "latitude": 49.7601,
+                "longitude": 16.6573
             }
         }
     ],
