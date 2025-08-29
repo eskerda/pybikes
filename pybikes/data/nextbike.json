@@ -340,9 +340,8 @@
             }
         },
         {
-            "domain": "hr",
+            "domain": "hd",
             "tag": "nextbike-zagreb",
-            "city_uid": 220,
             "meta": {
                 "city": "Zagreb",
                 "country": "HR",
@@ -1218,98 +1217,12 @@
         },
         {
             "domain": "gt",
-            "tag": "grad-split",
-            "city_uid": 617,
+            "tag": "nextbike-grad-split",
             "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Split",
+                "city": "Grad Split",
                 "country": "HR",
                 "latitude": 43.5162,
                 "longitude": 16.4637
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-solin",
-            "city_uid": 740,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Solin",
-                "country": "HR",
-                "latitude": 43.5441,
-                "longitude": 16.4833
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-opcina-klis",
-            "city_uid": 741,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Op\u0107ina Klis",
-                "country": "HR",
-                "latitude": 43.5605,
-                "longitude": 16.5269
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-opcina-hrvace",
-            "city_uid": 742,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Op\u0107ina Hrvace",
-                "country": "HR",
-                "latitude": 43.7553,
-                "longitude": 16.6197
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-opcina-otok-dalmatinski",
-            "city_uid": 743,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Op\u0107ina Otok Dalmatinski",
-                "country": "HR",
-                "latitude": 43.6889,
-                "longitude": 16.7361
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-sinj",
-            "city_uid": 744,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Sinj",
-                "country": "HR",
-                "latitude": 43.7031,
-                "longitude": 16.6364
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-podstrana",
-            "city_uid": 766,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Podstrana",
-                "country": "HR",
-                "latitude": 43.4934,
-                "longitude": 16.5598
-            }
-        },
-        {
-            "domain": "gt",
-            "tag": "grad-split-trogir",
-            "city_uid": 802,
-            "meta": {
-                "name": "Grad Split (Croatia)",
-                "city": "Trogir",
-                "country": "HR",
-                "latitude": 43.5234,
-                "longitude": 16.2476
             }
         },
         {
@@ -1695,26 +1608,13 @@
         },
         {
             "domain": "vt",
-            "tag": "vvtregiorad-kufstein",
-            "city_uid": 773,
+            "tag": "vvt-regiorad",
             "meta": {
-                "name": "VVT REGIORAD Tirol",
-                "city": "Kufstein",
+                "name": "VVT REGIORAD",
+                "city": "Tirol",
                 "country": "AT",
-                "latitude": 47.583,
-                "longitude": 12.1692
-            }
-        },
-        {
-            "domain": "vt",
-            "tag": "vvtregiorad-ellmau",
-            "city_uid": 774,
-            "meta": {
-                "name": "VVT REGIORAD Tirol",
-                "city": "Ellmau",
-                "country": "AT",
-                "latitude": 47.5134,
-                "longitude": 12.3025
+                "latitude": 47.2,
+                "longitude": 11.532
             }
         },
         {
