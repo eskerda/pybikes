@@ -2289,6 +2289,17 @@
                 "longitude": 7.335888,
                 "city": "Mulhouse"
             }
+        },
+        {
+            "domain": "ah",
+            "tag": "velo2",
+            "meta": {
+                "latitude": 49.03561699999999,
+                "country": "FR",
+                "name": "V\u00e9lO2",
+                "longitude": 2.060325,
+                "city": "Cergy"
+            }
         }
     ],
     "system": "nextbike",

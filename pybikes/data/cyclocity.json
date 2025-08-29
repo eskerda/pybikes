@@ -138,17 +138,6 @@
                     "contract": "Bruxelles"
                 },
                 {
-                    "tag": "velo2",
-                    "meta": {
-                        "latitude": 49.03561699999999,
-                        "country": "FR",
-                        "name": "Velo2",
-                        "longitude": 2.060325,
-                        "city": "Cergy"
-                    },
-                    "contract": "Cergy-Pontoise"
-                },
-                {
                     "tag": "vilnius-cyclocity",
                     "meta": {
                         "latitude": 54.6871555,
