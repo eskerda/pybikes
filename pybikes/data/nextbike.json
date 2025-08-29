@@ -698,18 +698,6 @@
             }
         },
         {
-            "domain": "cm",
-            "tag": "grad-metkovic-metkovic",
-            "city_uid": 424,
-            "meta": {
-                "name": "Grad Metković",
-                "city": "Metković",
-                "country": "HR",
-                "latitude": 43.0654,
-                "longitude": 17.642
-            }
-        },
-        {
             "domain": "cj",
             "tag": "jastrebarsko-jastrebarsko",
             "city_uid": 425,
@@ -740,18 +728,6 @@
                 "country": "BA",
                 "latitude": 44.5392,
                 "longitude": 18.675
-            }
-        },
-        {
-            "domain": "as",
-            "tag": "arriva-nitra",
-            "city_uid": 430,
-            "meta": {
-                "name": "Arriva",
-                "city": "Nitra",
-                "country": "SK",
-                "latitude": 48.3088,
-                "longitude": 18.0783
             }
         },
         {
@@ -1057,18 +1033,6 @@
             }
         },
         {
-            "domain": "nw",
-            "tag": "nextbike-focsani",
-            "city_uid": 510,
-            "meta": {
-                "name": "nextbike Romania",
-                "city": "Foc\u0219ani",
-                "country": "RO",
-                "latitude": 45.6947,
-                "longitude": 27.1851
-            }
-        },
-        {
             "domain": "vu",
             "tag": "grad-vukovar",
             "city_uid": 328,
@@ -1114,18 +1078,6 @@
                 "country": "DE",
                 "latitude": 49.2945,
                 "longitude": 8.62324
-            }
-        },
-        {
-            "domain": "se",
-            "tag": "opcina-pitomaca",
-            "city_uid": 574,
-            "meta": {
-                "name": "Op\u0107ina Pitoma\u010da (Croatia)",
-                "city": "Pitoma\u010da",
-                "country": "HR",
-                "latitude": 45.9077,
-                "longitude": 17.2622
             }
         },
         {
@@ -1638,18 +1590,6 @@
                 "country": "DE",
                 "latitude": 53.3547,
                 "longitude": 10.2067
-            }
-        },
-        {
-            "domain": "cl",
-            "tag": "nomago-portoroz",
-            "city_uid": 806,
-            "meta": {
-                "name": "Nomago Bikes - PORTOROZ",
-                "city": "Portoro\u017e",
-                "country": "SI",
-                "latitude": 45.5054,
-                "longitude": 13.5979
             }
         },
         {
