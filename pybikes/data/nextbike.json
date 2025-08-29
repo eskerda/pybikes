@@ -15,7 +15,16 @@
             "domain": "dx",
             "tag": "mobibike-dresden",
             "city_uid": 685,
-            "bbox": [[50.8507, 13.4066], [51.2698, 14.0906]],
+            "bbox": [
+                [
+                    50.8507,
+                    13.4066
+                ],
+                [
+                    51.2698,
+                    14.0906
+                ]
+            ],
             "meta": {
                 "name": "MOBIbike",
                 "city": "Dresden",
@@ -53,7 +62,7 @@
             "city_uid": 14,
             "meta": {
                 "name": "KVB Rad",
-                "city": "Köln",
+                "city": "K\u00f6ln",
                 "country": "DE",
                 "latitude": 50.9429,
                 "longitude": 6.95649
@@ -76,7 +85,7 @@
             "tag": "nextbike-dusseldorf",
             "city_uid": 50,
             "meta": {
-                "city": "Düsseldorf",
+                "city": "D\u00fcsseldorf",
                 "country": "DE",
                 "latitude": 51.2243,
                 "longitude": 6.77204
@@ -110,7 +119,7 @@
             "city_uid": 128,
             "meta": {
                 "name": "SiXT",
-                "city": "Rīga",
+                "city": "R\u012bga",
                 "country": "LV",
                 "latitude": 56.9453,
                 "longitude": 24.1033
@@ -218,7 +227,7 @@
             "city_uid": 137,
             "meta": {
                 "name": "metropolradruhr",
-                "city": "Mülheim a.d.R.",
+                "city": "M\u00fclheim a.d.R.",
                 "country": "DE",
                 "latitude": 51.4308,
                 "longitude": 6.87401
@@ -252,7 +261,7 @@
             "tag": "nextbike-gutersloh",
             "city_uid": 160,
             "meta": {
-                "city": "Gütersloh",
+                "city": "G\u00fctersloh",
                 "country": "DE",
                 "latitude": 51.9049,
                 "longitude": 8.39275
@@ -388,8 +397,8 @@
             "tag": "grad-sibenik-sibenik",
             "city_uid": 248,
             "meta": {
-                "name": "Grad Šibenik",
-                "city": "Šibenik",
+                "name": "Grad \u0160ibenik",
+                "city": "\u0160ibenik",
                 "country": "HR",
                 "latitude": 43.733,
                 "longitude": 15.8982
@@ -505,7 +514,7 @@
             "tag": "opcina-brinje-brinje",
             "city_uid": 325,
             "meta": {
-                "name": "Općina Brinje",
+                "name": "Op\u0107ina Brinje",
                 "city": "Brinje",
                 "country": "HR",
                 "latitude": 44.9977,
@@ -541,7 +550,7 @@
             "tag": "grad-ivanic-grad-ivanic-grad",
             "city_uid": 337,
             "meta": {
-                "name": "Grad Ivanić-Grad",
+                "name": "Grad Ivani\u0107-Grad",
                 "city": "Ivanic Grad",
                 "country": "HR",
                 "latitude": 45.7062,
@@ -632,7 +641,7 @@
             "city_uid": 392,
             "meta": {
                 "name": "VRN",
-                "city": "Bürstadt",
+                "city": "B\u00fcrstadt",
                 "country": "DE",
                 "latitude": 49.6461,
                 "longitude": 8.44917
@@ -713,7 +722,7 @@
             "tag": "grad-drnis-drnis",
             "city_uid": 426,
             "meta": {
-                "city": "Drniš",
+                "city": "Drni\u0161",
                 "country": "HR",
                 "latitude": 43.8425,
                 "longitude": 16.1197
@@ -758,7 +767,7 @@
             "tag": "nextbike-russelsheim-am-main",
             "city_uid": 439,
             "meta": {
-                "city": "Rüsselsheim am Main",
+                "city": "R\u00fcsselsheim am Main",
                 "country": "DE",
                 "latitude": 49.9881,
                 "longitude": 8.42142
@@ -825,7 +834,7 @@
             "tag": "nextbike-giessen",
             "city_uid": 467,
             "meta": {
-                "city": "Gießen",
+                "city": "Gie\u00dfen",
                 "country": "DE",
                 "latitude": 50.5943,
                 "longitude": 8.68097
@@ -918,8 +927,8 @@
             "tag": "santander-monchengladbach",
             "city_uid": 530,
             "meta": {
-                "name": "Santander Mönchengladbach",
-                "city": "Mönchengladbach",
+                "name": "Santander M\u00f6nchengladbach",
+                "city": "M\u00f6nchengladbach",
                 "country": "DE",
                 "latitude": 51.1817,
                 "longitude": 6.43578
@@ -943,7 +952,7 @@
             "city_uid": 535,
             "meta": {
                 "name": "NomagoBikes",
-                "city": "Laško",
+                "city": "La\u0161ko",
                 "country": "SI",
                 "latitude": 46.1458,
                 "longitude": 15.2312
@@ -965,7 +974,7 @@
             "city_uid": 538,
             "meta": {
                 "name": "BikeKia",
-                "city": "Žilina",
+                "city": "\u017dilina",
                 "country": "SK",
                 "latitude": 49.2217,
                 "longitude": 18.7572
@@ -1507,7 +1516,7 @@
                 "country": "DE",
                 "latitude": 53.1448,
                 "longitude": 8.22485,
-                "company":[
+                "company": [
                     "Bremer Tageszeitungen AG"
                 ]
             }
@@ -1614,7 +1623,7 @@
                 "country": "DE",
                 "latitude": 50.1387,
                 "longitude": 8.94429,
-                "company":[
+                "company": [
                     "Heraeus Holding GmbH"
                 ]
             }
@@ -1641,7 +1650,7 @@
                 "country": "DE",
                 "latitude": 50.8493,
                 "longitude": 6.6687,
-                "company":[
+                "company": [
                     "Rhein-Erft-Verkehrsgesellschaft mbH"
                 ]
             }
@@ -1739,7 +1748,7 @@
                 "city": "Mainz",
                 "country": "DE",
                 "latitude": 50.0153,
-                "longitude": 8.2520,
+                "longitude": 8.252,
                 "company": [
                     "Mainzer Verkehrsgesellschaft mbH"
                 ]
@@ -1795,7 +1804,7 @@
                 "city": "Ontinyent",
                 "country": "ES",
                 "latitude": 38.8211,
-                "longitude": -0.6090,
+                "longitude": -0.609,
                 "company": [
                     "Movilidad Urbana Sostenible S.L."
                 ]
@@ -1820,8 +1829,8 @@
             "domain": "nh",
             "tag": "nextbike-hodonin",
             "meta": {
-                "name": "nextbike Hodonín",
-                "city": "Hodonín",
+                "name": "nextbike Hodon\u00edn",
+                "city": "Hodon\u00edn",
                 "country": "CZ",
                 "latitude": 48.8489,
                 "longitude": 17.1327
@@ -1831,8 +1840,8 @@
             "domain": "nt",
             "tag": "nextbike-jicin",
             "meta": {
-                "name": "nextbike Jičín",
-                "city": "Jičín",
+                "name": "nextbike Ji\u010d\u00edn",
+                "city": "Ji\u010d\u00edn",
                 "country": "CZ",
                 "latitude": 50.4367,
                 "longitude": 15.3743
@@ -1964,7 +1973,7 @@
                 "country": "ES",
                 "name": "TorrentBici",
                 "latitude": 39.4319,
-                "longitude": -0.4730
+                "longitude": -0.473
             }
         },
         {
@@ -1972,7 +1981,7 @@
             "tag": "bicilog",
             "city_uid": 1052,
             "meta": {
-                "city": "Logroño",
+                "city": "Logro\u00f1o",
                 "country": "ES",
                 "latitude": 42.4658,
                 "longitude": -2.4402,
@@ -1985,7 +1994,7 @@
             "meta": {
                 "latitude": 48.2515,
                 "longitude": 16.0993,
-                "city": "Niederösterreich",
+                "city": "Nieder\u00f6sterreich",
                 "country": "AT"
             }
         },
@@ -1996,7 +2005,7 @@
                 "city": "Bene\u0161ov",
                 "country": "CZ",
                 "latitude": 49.7827,
-                "longitude":  14.6867
+                "longitude": 14.6867
             }
         },
         {
@@ -2006,7 +2015,7 @@
                 "city": "Pelh\u0159imov",
                 "country": "CZ",
                 "latitude": 49.4295,
-                "longitude":  15.2239
+                "longitude": 15.2239
             }
         },
         {
