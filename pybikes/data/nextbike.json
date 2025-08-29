@@ -2151,6 +2151,266 @@
                 "latitude": 40.4125,
                 "longitude": -3.8909
             }
+        },
+        {
+            "domain": "ai",
+            "tag": "nextbike-velo-city-alba-iulia",
+            "meta": {
+                "name": "Velo City",
+                "city": "Alba Iulia",
+                "country": "RO",
+                "latitude": 46.0687,
+                "longitude": 23.5746
+            }
+        },
+        {
+            "domain": "bv",
+            "tag": "nextbike-velo-city-buzau",
+            "meta": {
+                "name": "Velo City",
+                "city": "Buz\u0103u",
+                "country": "RO",
+                "latitude": 45.1504,
+                "longitude": 26.8188
+            }
+        },
+        {
+            "domain": "bx",
+            "tag": "nextbike-tubabike-barcelos",
+            "meta": {
+                "name": "Tuba Bike",
+                "city": "Barcelos",
+                "country": "PT",
+                "latitude": 41.5616,
+                "longitude": -8.56778
+            }
+        },
+        {
+            "domain": "cv",
+            "tag": "nextbike-porec-bike-share-croatia",
+            "meta": {
+                "name": "Porec bike share",
+                "city": "Pore\u010d",
+                "country": "HR",
+                "latitude": 45.2276,
+                "longitude": 13.5972
+            }
+        },
+        {
+            "domain": "cx",
+            "tag": "nextbike-nomago-bikes-slovenia",
+            "meta": {
+                "name": "Nomago Bikes",
+                "city": "Radlje ob Dravi",
+                "country": "SI",
+                "latitude": 46.052,
+                "longitude": 14.5116
+            }
+        },
+        {
+            "domain": "eq",
+            "tag": "nextbike-eventbike-austria",
+            "meta": {
+                "name": "EVENTbike",
+                "city": "Austria",
+                "country": "AT",
+                "latitude": 47.8583,
+                "longitude": 16.7706
+            }
+        },
+        {
+            "domain": "ev",
+            "tag": "nextbike-flux-bikesharing",
+            "meta": {
+                "name": "flux Bikesharing",
+                "city": "Friedrichsdorf - Neu-Anspach - Usingen",
+                "country": "DE",
+                "latitude": 50.3033,
+                "longitude": 8.56041
+            }
+        },
+        {
+            "domain": "gk",
+            "tag": "nextbike-grad-krizevci",
+            "meta": {
+                "name": "Grad Kri\u017eevci",
+                "city": "Kri\u017eevci",
+                "country": "HR",
+                "latitude": 46.0225,
+                "longitude": 16.5482
+            }
+        },
+        {
+            "domain": "gs",
+            "tag": "nextbike-prishtina-bike",
+            "meta": {
+                "name": "Prishtina bike",
+                "city": "Prishtina",
+                "country": "XK",
+                "latitude": 42.6729,
+                "longitude": 21.1907
+            }
+        },
+        {
+            "domain": "gu",
+            "tag": "nextbike-bike-sharing-elliniko-argyroupoli",
+            "meta": {
+                "name": "Bike Sharing Elliniko \u2013 Argyroupoli",
+                "city": "Elliniko",
+                "country": "GR",
+                "latitude": 37.8925,
+                "longitude": 23.7479
+            }
+        },
+        {
+            "domain": "gv",
+            "tag": "nextbike-bike-sharing-alimos",
+            "meta": {
+                "name": "Bike Sharing Alimos",
+                "city": "Alimos",
+                "country": "GR",
+                "latitude": 37.917,
+                "longitude": 23.7188
+            }
+        },
+        {
+            "domain": "gy",
+            "tag": "nextbike-bike-sharing-palaio-faliro",
+            "meta": {
+                "name": "Bike Sharing Palaio Faliro",
+                "city": "Palaio Faliro",
+                "country": "GR",
+                "latitude": 37.9281,
+                "longitude": 23.7014
+            }
+        },
+        {
+            "domain": "hf",
+            "tag": "nextbike-vlaamse-rand",
+            "meta": {
+                "city": "Vlaamse Rand",
+                "country": "BE",
+                "latitude": 50.646,
+                "longitude": 4.62524
+            }
+        },
+        {
+            "domain": "lc",
+            "tag": "nextbike-landkreis-nordsachsen",
+            "meta": {
+                "city": "Schkeuditz",
+                "country": "DE",
+                "latitude": 51.3941,
+                "longitude": 12.2456
+            }
+        },
+        {
+            "domain": "ma",
+            "tag": "nextbike-bike-share-lanterna",
+            "meta": {
+                "name": "BIKE SHARE LANTERNA",
+                "city": "Camp Lanterna",
+                "country": "HR",
+                "latitude": 45.298,
+                "longitude": 13.5927
+            }
+        },
+        {
+            "domain": "ms",
+            "tag": "nextbike-mooinz",
+            "meta": {
+                "name": "MOOINZ",
+                "city": "Chur",
+                "country": "CH",
+                "latitude": 46.8542,
+                "longitude": 9.52676
+            }
+        },
+        {
+            "domain": "rc",
+            "tag": "nextbike-bikecity-campia-turzii",
+            "meta": {
+                "name": "BikeCity",
+                "city": "Campia Turzii",
+                "country": "RO",
+                "latitude": 46.5459,
+                "longitude": 23.8832
+            }
+        },
+        {
+            "domain": "rt",
+            "tag": "nextbike-topoloveni-bike",
+            "meta": {
+                "name": "Topoloveni Bike",
+                "city": "Topoloveni",
+                "country": "RO",
+                "latitude": 44.8082,
+                "longitude": 25.084
+            }
+        },
+        {
+            "domain": "rw",
+            "tag": "nextbike-bike-city-slobozia",
+            "meta": {
+                "name": "Bike City",
+                "city": "Slobozia",
+                "country": "RO",
+                "latitude": 44.5653,
+                "longitude": 27.3629
+            }
+        },
+        {
+            "domain": "zc",
+            "tag": "e-cargobike-goteborg",
+            "meta": {
+                "name": "e-Cargobike Sharing",
+                "city": "G\u00f6teborg",
+                "country": "SE",
+                "latitude": 57.7005,
+                "longitude": 11.9504
+            }
+        },
+        {
+            "domain": "as",
+            "tag": "nextbike-arriva-bike",
+            "meta": {
+                "name": "Arriva Bike",
+                "city": "Senec",
+                "country": "SK",
+                "latitude": 48.3091,
+                "longitude": 18.0862
+            }
+        },
+        {
+            "domain": "cm",
+            "tag": "nextbike-vinkovci",
+            "meta": {
+                "city": "Vinkovci",
+                "country": "HR",
+                "latitude": 45.3082,
+                "longitude": 18.823
+            }
+        },
+        {
+            "domain": "hr",
+            "tag": "nextbike-croatia",
+            "meta": {
+                "city": "Croatia",
+                "country": "HR",
+                "latitude": 45.213,
+                "longitude": 16.1499
+            }
+        },
+        {
+            "domain": "se",
+            "city_uid": 977,
+            "tag": "nextbike-dalmacija-stankovci",
+            "meta": {
+                "city": "Stankovci",
+                "country": "HR",
+                "latitude": 43.9071,
+                "longitude": 15.6950
+            }
         }
     ],
     "system": "nextbike",
