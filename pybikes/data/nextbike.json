@@ -2140,6 +2140,17 @@
                 "longitude": 2.060325,
                 "city": "Cergy"
             }
+        },
+        {
+            "domain": "by",
+            "tag": "bibo",
+            "meta": {
+                "name": "bibo",
+                "city": "Boadilla del Monte",
+                "country": "ES",
+                "latitude": 40.4125,
+                "longitude": -3.8909
+            }
         }
     ],
     "system": "nextbike",
