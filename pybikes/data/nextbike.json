@@ -992,17 +992,6 @@
             }
         },
         {
-            "domain": "bf",
-            "tag": "nextbike-bonn",
-            "city_uid": 547,
-            "meta": {
-                "city": "Bonn",
-                "country": "DE",
-                "latitude": 50.7367,
-                "longitude": 7.09541
-            }
-        },
-        {
             "domain": "df",
             "tag": "frelo-freiburg",
             "city_uid": 619,
@@ -1354,18 +1343,6 @@
                 "country": "CZ",
                 "latitude": 50.4278,
                 "longitude": 14.8999
-            }
-        },
-        {
-            "domain": "rb",
-            "tag": "rsvg-bike",
-            "city_uid": 691,
-            "meta": {
-                "name": "RSVG-Bike",
-                "city": "RSVG",
-                "country": "DE",
-                "latitude": 50.7669,
-                "longitude": 7.37457
             }
         },
         {
@@ -2418,7 +2395,18 @@
                 "city": "Stankovci",
                 "country": "HR",
                 "latitude": 43.9071,
-                "longitude": 15.6950
+                "longitude": 15.695
+            }
+        },
+        {
+            "domain": "wa",
+            "tag": "nextbike-welo",
+            "meta": {
+                "name": "welo",
+                "city": "Welo",
+                "country": "DE",
+                "latitude": 50.7147,
+                "longitude": 7.12875
             }
         }
     ],
