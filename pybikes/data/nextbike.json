@@ -2194,17 +2194,6 @@
             }
         },
         {
-            "domain": "cx",
-            "tag": "nextbike-nomago-bikes-slovenia",
-            "meta": {
-                "name": "Nomago Bikes",
-                "city": "Radlje ob Dravi",
-                "country": "SI",
-                "latitude": 46.052,
-                "longitude": 14.5116
-            }
-        },
-        {
             "domain": "eq",
             "tag": "nextbike-eventbike-austria",
             "meta": {
