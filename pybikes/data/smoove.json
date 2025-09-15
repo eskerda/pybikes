@@ -1,21 +1,6 @@
 {
     "system":"smoove",
     "class":{
-        "Smoove":{
-            "instances":[
-                {
-                    "tag":"batumvelo",
-                    "meta":{
-                        "latitude":41.660906,
-                        "city":"Batumi",
-                        "name":"Batumvelo",
-                        "longitude":41.678835,
-                        "country":"GE"
-                    },
-                    "feed_url":"http://cli-velo-batumi.gir.fr/sag_map.html"
-                }
-            ]
-        },
         "CityBikeLima": {
             "instances": [
                 {
