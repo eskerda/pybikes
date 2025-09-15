@@ -1,17 +1,6 @@
 {
     "instances": [
         {
-            "tag": "charlotte",
-            "uid": "bcycle_charlotte",
-            "meta": {
-                "latitude": 35.22716,
-                "longitude": -80.83855,
-                "city": "Charlotte, NC",
-                "name": "Charlotte Joyrides",
-                "country": "US"
-            }
-        },
-        {
             "tag": "boulder",
             "uid": "bcycle_boulder",
             "meta": {
