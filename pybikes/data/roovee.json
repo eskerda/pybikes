@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "torvelo",
+            "tenant": "torun",
+            "meta": {
+                "latitude": 53.0138,
+                "city": "Toruń",
+                "name": "Torvelo",
+                "longitude": 18.5984,
+                "country": "PL"
+            }
+        }
+    ],
+    "system": "roovee",
+    "class": "Roovee"
+}
