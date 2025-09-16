@@ -75,6 +75,21 @@
                 "latitude": 48.64
             },
             "feed_url": "https://velomat.stmalo-agglomeration.fr/api/client/entities"
+        },
+        {
+            "tag": "graoulib",
+            "meta": {
+                "city": "Metz",
+                "name": "Graoulib",
+                "country": "FR",
+                "company": [
+                    "Metz Métropole",
+                    "Fifteen SAS"
+                ],
+                "longitude": 6.1667,
+                "latitude": 49.1167
+            },
+            "feed_url": "https://graoulib.cw.fifteen.eu/api/client/entities"
         }
     ]
 }
