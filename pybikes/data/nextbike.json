@@ -370,18 +370,6 @@
             }
         },
         {
-            "domain": "bu",
-            "tag": "belfastbikes-belfast",
-            "city_uid": 238,
-            "meta": {
-                "name": "BelfastBikes",
-                "city": "Belfast",
-                "country": "GB",
-                "latitude": 54.5969,
-                "longitude": -5.92918
-            }
-        },
-        {
             "domain": "uk",
             "tag": "nextbike-stirling",
             "city_uid": 243,
