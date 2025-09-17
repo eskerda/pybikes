@@ -8,7 +8,7 @@ from pybikes.base import Vehicle, VehicleTypes
 class Roovee(BikeShareSystem):
     endpoint = "https://api.roovee.eu"
 
-    meta = {"company": ["ROOVEE S.A."]}
+    meta = {"name": "Roovee", "company": ["ROOVEE S.A."]}
 
     def __init__(self, tag, meta, tenant):
         super().__init__(tag, meta)
