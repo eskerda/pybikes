@@ -2640,17 +2640,6 @@
             }
         },
         {
-            "domain": "rq",
-            "tag": "rower-powiatowy-sokolow-podlaski",
-            "meta": {
-                "name": "Rower Powiatowy Soko\u0142\u00f3w Podlaski",
-                "city": "Soko\u0142\u00f3w Podlaski",
-                "country": "PL",
-                "latitude": 52.4093,
-                "longitude": 22.2526
-            }
-        },
-        {
             "domain": "tn",
             "tag": "nextbike-tarnowski-rower-miejski",
             "meta": {
