@@ -1,0 +1,25 @@
+{
+    "system": "digitransit",
+    "class": "Digitransit",
+    "instances": [
+        {
+            "tag": "citybikes-helsinki",
+            "bbox": [[60.0551, 24.5352], [60.3269, 25.3456]],
+            "meta": {
+                "city": "Helsinki",
+                "name": "City bikes",
+                "country": "FI",
+                "company": [
+                    "Helsinki City Transport",
+                    "Helsinki Regional Transport",
+                    "CityBikeFinland",
+                    "Smoove SAS",
+                    "Moventia",
+                    "Alepa"
+                ],
+                "latitude": 60.1698,
+                "longitude": 24.9384
+            }
+        }
+    ]
+}
