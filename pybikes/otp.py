@@ -1,44 +1,103 @@
-# -*- coding: utf-8 -*-
+"""Parser implementation for OpenTripPlanner 2"""
+
 import json
 
-from .base import BikeShareSystem, BikeShareStation
-from .utils import PyBikesScraper
+from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 
-# Documented at
-# http://dev.opentripplanner.org/apidoc/0.15.0/ns0_bikeRentalStationList.html
+BLERGH_QUERY = """
+query {
+  rentalVehicles {
+    allowPickupNow
+    availableUntil
+    fuel {
+      percent
+      range
+    }
+    id
+    lat
+    lon
+    name
+    operative
+    rentalNetwork {
+      networkId
+      url
+    }
+    rentalUris {
+      android
+      ios
+      web
+    }
+    vehicleId
+    vehicleType {
+      formFactor
+      propulsionType
+    }
+  }
+
+  vehicleRentalStations {
+    allowDropoff
+    allowDropoffNow
+    allowOverloading
+    allowPickup
+    allowPickupNow
+    availableSpaces {
+      total
+    }
+    availableVehicles {
+      total
+    }
+    capacity
+    id
+    lat
+    lon
+    name
+    operative
+    realtime
+    rentalNetwork {
+      networkId
+      url
+    }
+    rentalUris {
+      android
+      ios
+      web
+    }
+    stationId
+  }
+}
+"""
 
 
 class OTP(BikeShareSystem):
-    # Please note company is not provided by this class and should be added on
-    # the metadata JSON, as OTP implementation is generic for different systems
-    meta = {
-        'system': 'OTP',
-    }
-
-    authed = True
-
-    def __init__(self, tag, feed_url, meta, key):
+    def __init__(self, tag, meta, feed_url, bbox=None):
         super(OTP, self).__init__(tag, meta)
         self.feed_url = feed_url
-        self.key = key
+        self.bbox = bbox
 
     def update(self, scraper=None):
         scraper = scraper or PyBikesScraper()
-        scraper.headers['Accept'] = 'application/json'
-        scraper.headers['digitransit-subscription-key'] = self.key
+        headers = {"content-type": "application/json"}
+        payload = {"query": BLERGH_QUERY, "variables": {}}
 
-        data = json.loads(scraper.request(self.feed_url))
-        stations = []
-        for st in data['stations']:
-            name = st['name']
-            bikes = st['bikesAvailable']
-            free = st['spacesAvailable']
-            lat = st['y']
-            lng = st['x']
-            extra = {
-                'uid': st['id']
-            }
-            station = BikeShareStation(name, lat, lng, bikes, free, extra)
-            stations.append(station)
+        data = scraper.request(
+            self.feed_url,
+            method="POST",
+            data=json.dumps(payload),
+            headers=headers,
+        )
+        data = json.loads(data)
 
-        self.stations = stations
+        self.stations = [
+            BikeShareStation(
+                name=st["name"],
+                latitude=st["lat"],
+                longitude=st["lon"],
+                bikes=st["availableVehicles"]["total"],
+                free=st["availableSpaces"]["total"],
+                extra={
+                    "uid": st["id"],
+                    "online": st["operative"],
+                },
+            )
+            for st in data["data"]["vehicleRentalStations"]
+        ]
