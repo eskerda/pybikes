@@ -20,6 +20,48 @@
                 "latitude": 60.1698,
                 "longitude": 24.9384
             }
+        },
+        {
+            "tag": "kaakau-lappeenranta",
+            "bbox": [[60.9552, 27.9492], [61.1705, 28.4009]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 61.0586,
+                "longitude": 28.1862,
+                "city": "Lappeenranta",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "kaakau-kotka",
+            "bbox": [[60.3554, 26.5430], [60.6103, 27.1509]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 60.4679,
+                "longitude": 26.9452,
+                "city": "Kotka",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "freebike-kuopio",
+            "bbox": [[62.7359, 27.4032], [62.9952, 27.9085]],
+            "meta": {
+                "name": "Vilkku-fillarit",
+                "company": [
+                    "freebike"
+                ],
+                "latitude": 62.8923,
+                "longitude": 27.6791,
+                "city": "Kuopio",
+                "country": "FI"
+            }
         }
     ]
 }
