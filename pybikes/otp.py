@@ -3,6 +3,7 @@
 import json
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
+from pybikes.base import Vehicle, VehicleTypes
 
 BLERGH_QUERY = """
 query {
@@ -100,4 +101,13 @@ class OTP(BikeShareSystem):
                 },
             )
             for st in data["data"]["vehicleRentalStations"]
+        ]
+
+        self.vehicles = [
+            Vehicle(
+                latitude=vh["lat"],
+                longitude=vh["lon"],
+                extra={},
+                system=self,
+            ) for vh in data["data"]["rentalVehicles"]
         ]
