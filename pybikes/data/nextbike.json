@@ -1090,18 +1090,6 @@
             }
         },
         {
-            "domain": "dr",
-            "tag": "rvk",
-            "city_uid": 648,
-            "meta": {
-                "name": "RVK",
-                "city": "RVK e-Bike",
-                "country": "DE",
-                "latitude": 50.7069,
-                "longitude": 6.87607
-            }
-        },
-        {
             "domain": "dw",
             "tag": "wupsi",
             "city_uid": 607,
@@ -2753,6 +2741,17 @@
                 "company": [
                     "nextbike GmbH"
                 ]
+            }
+        },
+        {
+            "domain": "gx",
+            "tag": "nextbike-bike-sharing-glyfada",
+            "meta": {
+                "name": "Bike Sharing Glyfada",
+                "city": "Glyfada",
+                "country": "GR",
+                "latitude": 37.8762,
+                "longitude": 23.7566
             }
         }
     ],
