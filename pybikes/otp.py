@@ -133,25 +133,25 @@ class OtpStation(BikeShareStation):
     def bike_counts(self, data):
         counts = {}
         for vt in data["availableVehicles"]["byType"]:
-            match vt["vehicleType"]:
-                case {"formFactor": "BICYCLE", "propulsionType": "HUMAN"}:
-                    counts.setdefault("normal_bikes", 0)
-                    counts["normal_bikes"] += vt["count"]
+            # XXX replace with match once py 3.9 dies
+            if vt["vehicleType"] == {"formFactor": "BICYCLE", "propulsionType": "HUMAN"}:
+                counts.setdefault("normal_bikes", 0)
+                counts["normal_bikes"] += vt["count"]
 
-                case {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
-                    counts.setdefault("ebikes", 0)
-                    counts["ebikes"] += vt["count"]
+            elif vt["vehicleType"] == {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+                counts.setdefault("ebikes", 0)
+                counts["ebikes"] += vt["count"]
 
-                case {"formFactor": "CARGO_BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
-                    counts.setdefault("ecargo", 0)
-                    counts["ecargo"] += vt["count"]
+            elif vt["vehicleType"] == {"formFactor": "CARGO_BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+                counts.setdefault("ecargo", 0)
+                counts["ecargo"] += vt["count"]
 
-                case {"formFactor": "CARGO_BICYCLE", "propulsionType": "HUMAN"}:
-                    counts.setdefault("cargo", 0)
-                    counts["cargo"] += vt["count"]
-
-                case _:
-                    warn("Unhandled station vehicle type %s with count %d" % (vt["vehicleType"], vt["count"]))
+            elif vt["vehicleType"] == {"formFactor": "CARGO_BICYCLE", "propulsionType": "HUMAN"}:
+                counts.setdefault("cargo", 0)
+                counts["cargo"] += vt["count"]
+            else:
+                warn("Unhandled station vehicle type %s with count %d" %
+                     (vt["vehicleType"], vt["count"]))
 
         return counts
 
@@ -178,8 +178,8 @@ class OtpVehicle(Vehicle):
         )
 
     def vehicle_type(self, vehicle):
-        match vehicle["vehicleType"]:
-            case {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
-                return VehicleTypes.ebike
-            case _:
-                return VehicleTypes.default
+        # XXX replace with match once py 3.9 dies
+        if vehicle["vehicleType"] == {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+            return VehicleTypes.ebike
+        else:
+            return VehicleTypes.default
