@@ -4,7 +4,6 @@
     "instances": [
         {
             "tag": "citybikes-helsinki",
-            "bbox": [[60.0551, 24.5352], [60.3269, 25.3456]],
             "meta": {
                 "city": "Helsinki",
                 "name": "City bikes",
@@ -19,7 +18,8 @@
                 ],
                 "latitude": 60.1698,
                 "longitude": 24.9384
-            }
+            },
+            "feed_url": "https://api.digitransit.fi/routing/v2/hsl/gtfs/v1"
         },
         {
             "tag": "kaakau-lappeenranta",
