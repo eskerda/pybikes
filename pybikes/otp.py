@@ -2,8 +2,11 @@
 
 import json
 
+from warnings import warn
+
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
 from pybikes.base import Vehicle, VehicleTypes
+
 
 BLERGH_QUERY = """
 query {
@@ -46,6 +49,13 @@ query {
     }
     availableVehicles {
       total
+      byType {
+        count
+        vehicleType {
+          formFactor
+          propulsionType
+        }
+      }
     }
     capacity
     id
@@ -88,26 +98,88 @@ class OTP(BikeShareSystem):
         )
         data = json.loads(data)
 
-        self.stations = [
-            BikeShareStation(
-                name=st["name"],
-                latitude=st["lat"],
-                longitude=st["lon"],
-                bikes=st["availableVehicles"]["total"],
-                free=st["availableSpaces"]["total"],
-                extra={
-                    "uid": st["id"],
-                    "online": st["operative"],
-                },
-            )
-            for st in data["data"]["vehicleRentalStations"]
-        ]
+        self.stations = [OtpStation(st) for st in data["data"]["vehicleRentalStations"]]
+        self.vehicles = [OtpVehicle(vh, self) for vh in data["data"]["rentalVehicles"]]
 
-        self.vehicles = [
-            Vehicle(
-                latitude=vh["lat"],
-                longitude=vh["lon"],
-                extra={},
-                system=self,
-            ) for vh in data["data"]["rentalVehicles"]
-        ]
+
+class OtpStation(BikeShareStation):
+    def __init__(self, st):
+        extra = {
+            "uid": st["stationId"],
+            "online": st["operative"],
+        }
+
+        if st["capacity"] is not None:
+            extra["slots"] = st["capacity"]
+
+        if "rentalUris" in st and st["rentalUris"]:
+            extra["rental_uris"] = st["rentalUris"]
+
+        # XXX max int32, meaning always can be dropped, clamp it to 32
+        free = st["availableSpaces"]["total"]
+        free = 32 if free == 2147483647 else free
+
+        extra.update(self.bike_counts(st))
+
+        super().__init__(
+            name=st["name"],
+            latitude=st["lat"],
+            longitude=st["lon"],
+            bikes=st["availableVehicles"]["total"],
+            free=free,
+            extra=extra,
+        )
+
+    def bike_counts(self, data):
+        counts = {}
+        for vt in data["availableVehicles"]["byType"]:
+            match vt["vehicleType"]:
+                case {"formFactor": "BICYCLE", "propulsionType": "HUMAN"}:
+                    counts.setdefault("normal_bikes", 0)
+                    counts["normal_bikes"] += vt["count"]
+
+                case {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+                    counts.setdefault("ebikes", 0)
+                    counts["ebikes"] += vt["count"]
+
+                case {"formFactor": "CARGO_BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+                    counts.setdefault("ecargo", 0)
+                    counts["ecargo"] += vt["count"]
+
+                case {"formFactor": "CARGO_BICYCLE", "propulsionType": "HUMAN"}:
+                    counts.setdefault("cargo", 0)
+                    counts["cargo"] += vt["count"]
+
+                case _:
+                    warn("Unhandled station vehicle type %s with count %d" % (vt["vehicleType"], vt["count"]))
+
+        return counts
+
+
+class OtpVehicle(Vehicle):
+    def __init__(self, data, system):
+        extra = {
+            "uid": data["vehicleId"],
+            "online": data["operative"],
+        }
+
+        if "rentalUris" in data and data["rentalUris"]:
+            extra["rental_uris"] = data["rentalUris"]
+
+        if data["fuel"]["percent"]:
+            extra["battery"] = float(data["fuel"]["percent"])
+
+        super().__init__(
+            latitude=data["lat"],
+            longitude=data["lon"],
+            extra=extra,
+            vehicle_type=self.vehicle_type(data),
+            system=system,
+        )
+
+    def vehicle_type(self, vehicle):
+        match vehicle["vehicleType"]:
+            case {"formFactor": "BICYCLE", "propulsionType": "ELECTRIC_ASSIST"}:
+                return VehicleTypes.ebike
+            case _:
+                return VehicleTypes.default
