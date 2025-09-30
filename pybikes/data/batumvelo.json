@@ -1,0 +1,19 @@
+{
+    "instances": [
+        {
+            "tag": "batumvelo",
+            "meta": {
+                "latitude": 41.6478,
+                "city": "Batumi",
+                "name": "Batumvelo",
+                "longitude": 41.6355,
+                "country": "GE",
+                "company": [
+                    "BatumVelo"
+                ]
+            }
+        }
+    ],
+    "system": "batumvelo",
+    "class": "Batumvelo"
+}
