@@ -100,7 +100,9 @@
                     "freebike"
                 ],
                 "latitude": 60.9846,
-                "longitude": 25.6567
+                "longitude": 25.6567,
+                "city": "Lahti",
+                "country": "FI"
             }
         },
         {
