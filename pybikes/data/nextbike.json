@@ -2463,17 +2463,6 @@
             }
         },
         {
-            "domain": "kr",
-            "tag": "nextbike-kolobrzeski-rower-nextbike",
-            "meta": {
-                "name": "Ko\u0142obrzeski Rower Nextbike",
-                "city": "Ko\u0142obrzeg",
-                "country": "PL",
-                "latitude": 54.1756,
-                "longitude": 15.5702
-            }
-        },
-        {
             "domain": "lp",
             "tag": "nextbike-lodzki-rower-publiczny",
             "meta": {
@@ -2493,17 +2482,6 @@
                 "country": "PL",
                 "latitude": 53.1733,
                 "longitude": 22.0726
-            }
-        },
-        {
-            "domain": "or",
-            "tag": "nextbike-pruszkowski-rower-miejski",
-            "meta": {
-                "name": "Pruszkowski Rower Miejski",
-                "city": "Pruszk\u00f3w",
-                "country": "PL",
-                "latitude": 52.1617,
-                "longitude": 20.8071
             }
         },
         {
@@ -2573,17 +2551,6 @@
             }
         },
         {
-            "domain": "po",
-            "tag": "nextbike-rower-miejski-w-ostrowie-wielkopolskim",
-            "meta": {
-                "name": "Rower Miejski w Ostrowie Wielkopolskim",
-                "city": "Ostr\u00f3w Wielkopolski",
-                "country": "PL",
-                "latitude": 51.6368,
-                "longitude": 17.7958
-            }
-        },
-        {
             "domain": "ps",
             "tag": "nextbike-koszalinski-rower-miejski-poland",
             "meta": {
@@ -2625,17 +2592,6 @@
                 "country": "PL",
                 "latitude": 53.9262,
                 "longitude": 16.2591
-            }
-        },
-        {
-            "domain": "tn",
-            "tag": "nextbike-tarnowski-rower-miejski",
-            "meta": {
-                "name": "Tarnowski Rower Miejski",
-                "city": "Tarn\u00f3w",
-                "country": "PL",
-                "latitude": 50.0133,
-                "longitude": 20.9856
             }
         },
         {
@@ -2752,6 +2708,17 @@
                 "country": "GR",
                 "latitude": 37.8762,
                 "longitude": 23.7566
+            }
+        },
+        {
+            "domain": "cb",
+            "tag": "nextbike-campus-berlin-buch",
+            "meta": {
+                "name": "Campus Berlin-Buch",
+                "city": "Berlin-Buch",
+                "country": "DE",
+                "latitude": 52.6325,
+                "longitude": 13.5015
             }
         }
     ],
