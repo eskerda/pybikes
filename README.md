@@ -113,6 +113,32 @@ using a proxy. This class uses [Requests][2] module internally.
 [1]: http://www.citybik.es              "CityBikes"
 [2]: http://docs.python-requests.org    "Requests"
 
+Adding a new system
+-------------------
+You can scaffold a new bike share system by running
+
+```bash
+$ python -m pybikes/scaffold example
+
+================================================
+Here is your 'Example' implementation
+
+System: pybikes/example.py
+Data: pybikes/data/example.json
+
+Run tests by:
+$ pytest -k Example
+
+Visualize result:
+$ make map! T_FLAGS+='-k Example'
+
+Happy hacking :)
+================================================
+
+```
+
+Check [docs](https://docs.citybik.es/pybikes/new-system) for more information
+
 Tests
 -----
 Tests are separated between unit tests and integration tests with the different
