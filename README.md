@@ -118,7 +118,7 @@ Adding a new system
 You can scaffold a new bike share system by running
 
 ```bash
-$ python -m pybikes/scaffold example
+$ python -m utils.scaffold example
 
 ================================================
 Here is your 'Example' implementation
