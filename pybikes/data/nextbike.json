@@ -2267,17 +2267,6 @@
             }
         },
         {
-            "domain": "ma",
-            "tag": "nextbike-bike-share-lanterna",
-            "meta": {
-                "name": "BIKE SHARE LANTERNA",
-                "city": "Camp Lanterna",
-                "country": "HR",
-                "latitude": 45.298,
-                "longitude": 13.5927
-            }
-        },
-        {
             "domain": "ms",
             "tag": "nextbike-mooinz",
             "meta": {
@@ -2570,17 +2559,6 @@
                 "country": "PL",
                 "latitude": 52.4116,
                 "longitude": 16.9258
-            }
-        },
-        {
-            "domain": "pw",
-            "tag": "nextbike-rowerowe-lodzkie",
-            "meta": {
-                "name": "Rowerowe \u0141\u00f3dzkie",
-                "city": "\u0141\u00f3dzkie",
-                "country": "PL",
-                "latitude": 51.7406,
-                "longitude": 19.3151
             }
         },
         {
