@@ -2,7 +2,7 @@
     "instances": [
         {
             "tag": "nubija-changwon",
-            "endpoint": "https://nubija.com/v1/list.do",
+            "area": "changwon",
             "meta":{
                 "name": "누비자 (Nubija)",
                 "latitude": 35.22369091380072,
