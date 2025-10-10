@@ -2170,17 +2170,6 @@
             }
         },
         {
-            "domain": "eq",
-            "tag": "nextbike-eventbike-austria",
-            "meta": {
-                "name": "EVENTbike",
-                "city": "Austria",
-                "country": "AT",
-                "latitude": 47.8583,
-                "longitude": 16.7706
-            }
-        },
-        {
             "domain": "ev",
             "tag": "nextbike-flux-bikesharing",
             "meta": {
