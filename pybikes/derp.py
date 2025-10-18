@@ -1,0 +1,3 @@
+from pybikes.gbfs import Gbfs
+
+class Derp(Gbfs): ...
