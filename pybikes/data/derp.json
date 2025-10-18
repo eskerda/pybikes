@@ -1,0 +1,114 @@
+{
+    "instances": [
+        {
+            "tag": "scbikes-biciklanc",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_biciklanc/gbfs.json",
+            "meta": {
+                "latitude": 45.9704,
+                "longitude": 14.299,
+                "name": "Biciklanc",
+                "company": ["SC bikes"],
+                "city": "Vrhnika",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-gonm",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_gonm/gbfs.json",
+            "meta": {
+                "latitude": 45.773,
+                "longitude": 15.1253,
+                "name": "Dolenjska in Bela Krajina Bike",
+                "company": ["SC bikes"],
+                "city": "Novo mesto",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-posbikes",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_posbikes/gbfs.json",
+            "meta": {
+                "latitude": 45.7616,
+                "longitude": 14.1888,
+                "name": "Postojna Bikes",
+                "company": ["SC bikes"],
+                "city": "Postojna",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-pokolo",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_pokolo/gbfs.json",
+            "meta": {
+                "latitude": 46.0628,
+                "longitude": 14.772,
+                "name": "Pokolo",
+                "company": ["SC bikes"],
+                "city": "Litija",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-kras",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_kras/gbfs.json",
+            "meta": {
+                "latitude": 45.7243,
+                "longitude": 13.8776,
+                "name": "Kras Brkini Bikes",
+                "company": ["SC bikes"],
+                "city": "Sežana",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-pors",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_pors/gbfs.json",
+            "meta": {
+                "latitude": 46.2323,
+                "longitude": 15.6375,
+                "name": "Mobilno Obsotelje",
+                "company": ["SC bikes"],
+                "city": "Rogaška Slatina",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-kulu",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_kulu/gbfs.json",
+            "meta": {
+                "latitude": 45.8922,
+                "longitude": 13.8827,
+                "name": "Kulu Valley Bikes",
+                "company": ["SC bikes"],
+                "city": "Ajdovščina",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "scbikes-sobota",
+            "feed_url": "https://gbfs.derp.si/gbfs/scbikes_sobota/gbfs.json",
+            "meta": {
+                "latitude": 46.6573,
+                "longitude": 16.216,
+                "name": "Pomurje bike",
+                "company": ["SC bikes"],
+                "city": "Murska Sobota",
+                "country": "SI"
+            }
+        },
+        {
+            "tag": "micikel",
+            "feed_url": "https://gbfs.derp.si/gbfs/micikel/gbfs.json",
+            "meta": {
+                "latitude": 46.1661,
+                "longitude": 15.166,
+                "name": "MICikel",
+                "company": ["CULT d.o.o."],
+                "city": "Laško",
+                "country": "SI"
+            }
+        }
+    ],
+    "system": "derp",
+    "class": "Derp"
+}
