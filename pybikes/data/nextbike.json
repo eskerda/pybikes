@@ -359,17 +359,6 @@
             }
         },
         {
-            "domain": "gg",
-            "tag": "nextbike-glasgow",
-            "city_uid": 237,
-            "meta": {
-                "city": "Glasgow",
-                "country": "GB",
-                "latitude": 55.8589,
-                "longitude": -4.25549
-            }
-        },
-        {
             "domain": "uk",
             "tag": "nextbike-stirling",
             "city_uid": 243,
@@ -1051,18 +1040,6 @@
                 "country": "HR",
                 "latitude": 45.8622,
                 "longitude": 15.8049
-            }
-        },
-        {
-            "domain": "ub",
-            "tag": "santander-brunel",
-            "city_uid": 487,
-            "meta": {
-                "name": "Santander Cycles - Brunel",
-                "city": "Brunel University",
-                "country": "GB",
-                "latitude": 51.5463,
-                "longitude": -0.48048
             }
         },
         {
@@ -2170,17 +2147,6 @@
             }
         },
         {
-            "domain": "eq",
-            "tag": "nextbike-eventbike-austria",
-            "meta": {
-                "name": "EVENTbike",
-                "city": "Austria",
-                "country": "AT",
-                "latitude": 47.8583,
-                "longitude": 16.7706
-            }
-        },
-        {
             "domain": "ev",
             "tag": "nextbike-flux-bikesharing",
             "meta": {
@@ -2364,28 +2330,6 @@
             }
         },
         {
-            "domain": "ap",
-            "tag": "nextbike-system-rowerow-miejskich-w-pszczynie",
-            "meta": {
-                "name": "System Rower\u00f3w Miejskich w Pszczynie",
-                "city": "Pszczyna",
-                "country": "PL",
-                "latitude": 49.9778,
-                "longitude": 18.9423
-            }
-        },
-        {
-            "domain": "bp",
-            "tag": "nextbike-biker-bialystok",
-            "meta": {
-                "name": "BIKER Bia\u0142ystok",
-                "city": "Bia\u0142ystok",
-                "country": "PL",
-                "latitude": 53.1299,
-                "longitude": 23.1564
-            }
-        },
-        {
             "domain": "cw",
             "tag": "ski-rower-chelm",
             "meta": {
@@ -2408,50 +2352,6 @@
             }
         },
         {
-            "domain": "gp",
-            "tag": "nextbike-grm-grodzisk-poland",
-            "meta": {
-                "name": "GRM Grodzisk Poland",
-                "city": "Grodzisk Mazowiecki",
-                "country": "PL",
-                "latitude": 52.113,
-                "longitude": 20.6265
-            }
-        },
-        {
-            "domain": "jp",
-            "tag": "nextbike-czestochowski-rower-miejski-poland",
-            "meta": {
-                "name": "Cz\u0119stochowski Rower Miejski Poland",
-                "city": "Cz\u0119stochowa",
-                "country": "PL",
-                "latitude": 50.8116,
-                "longitude": 19.1176
-            }
-        },
-        {
-            "domain": "jr",
-            "tag": "nextbike-veloyou-jozefowski-rower-miejski",
-            "meta": {
-                "name": "Veloyou - J\u00f3zefowski Rower Miejski",
-                "city": "J\u00f3zef\u00f3w",
-                "country": "PL",
-                "latitude": 52.1348,
-                "longitude": 21.2361
-            }
-        },
-        {
-            "domain": "km",
-            "tag": "nextbike-ok-bike",
-            "meta": {
-                "name": "OK Bike",
-                "city": "K\u0119dzierzyn-Ko\u017ale",
-                "country": "PL",
-                "latitude": 50.3436,
-                "longitude": 18.2104
-            }
-        },
-        {
             "domain": "lp",
             "tag": "nextbike-lodzki-rower-publiczny",
             "meta": {
@@ -2460,28 +2360,6 @@
                 "country": "PL",
                 "latitude": 51.7591,
                 "longitude": 19.456
-            }
-        },
-        {
-            "domain": "oa",
-            "tag": "nextbike-loker-lomza",
-            "meta": {
-                "name": "\u0141oKeR - \u0141om\u017ca",
-                "city": "\u0141om\u017ca",
-                "country": "PL",
-                "latitude": 53.1733,
-                "longitude": 22.0726
-            }
-        },
-        {
-            "domain": "os",
-            "tag": "nextbike-otwocki-rower-miejski",
-            "meta": {
-                "name": "Otwocki Rower Miejski",
-                "city": "Otwock",
-                "country": "PL",
-                "latitude": 52.1042,
-                "longitude": 21.2538
             }
         },
         {
@@ -2551,28 +2429,6 @@
             }
         },
         {
-            "domain": "pu",
-            "tag": "pobiedziski-rower-gminny-pobiedziska",
-            "meta": {
-                "name": "Pobiedziski Rower Gminny",
-                "city": "Pobiedziska",
-                "country": "PL",
-                "latitude": 52.4116,
-                "longitude": 16.9258
-            }
-        },
-        {
-            "domain": "py",
-            "tag": "tychowski-rower-miejski",
-            "meta": {
-                "name": "Tychowski Rower Miejski",
-                "city": "Tychowo",
-                "country": "PL",
-                "latitude": 53.9262,
-                "longitude": 16.2591
-            }
-        },
-        {
             "domain": "vw",
             "tag": "veturilo-nextbike-warsaw",
             "meta": {
@@ -2581,28 +2437,6 @@
                 "country": "PL",
                 "latitude": 52.2581,
                 "longitude": 20.9949
-            }
-        },
-        {
-            "domain": "wf",
-            "tag": "nextbike-wlower-wloclawski-rower-miejski",
-            "meta": {
-                "name": "W\u0142ower - W\u0142oc\u0142awski Rower Miejski",
-                "city": "W\u0142oc\u0142awek",
-                "country": "PL",
-                "latitude": 52.6639,
-                "longitude": 19.0681
-            }
-        },
-        {
-            "domain": "zy",
-            "tag": "nextbike-zyrardowski-rower-miejski",
-            "meta": {
-                "name": "\u017byrardowski Rower Miejski",
-                "city": "\u017byrard\u00f3w",
-                "country": "PL",
-                "latitude": 52.054,
-                "longitude": 20.4414
             }
         },
         {
