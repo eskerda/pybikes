@@ -1421,6 +1421,18 @@
                 ]
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/annecy/en/gbfs.json"
+        },
+        {
+            "tag": "graoulib",
+            "meta": {
+                "latitude": 49.1167,
+                "longitude": 6.1667,
+                "city": "Metz",
+                "name": "Graoulib",
+                "country": "FR",
+                "company": ["Metz Métropole", "Fifteen SAS"]
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/metz/gbfs.json"
         }
     ],
     "system": "gbfs",
