@@ -179,6 +179,17 @@
                 "longitude": -2.2206
             },
             "feed_url": "https://gbfs.beryl.cc/v2_2/Worcester/gbfs.json"
+        },
+        {
+            "tag": "belfastbikes-belfast",
+            "meta": {
+                "name": "BelfastBikes",
+                "city": "Belfast",
+                "country": "GB",
+                "latitude": 54.5969,
+                "longitude": -5.92918
+            },
+            "feed_url": "https://gbfs.beryl.cc/v2_2/Belfast/gbfs.json"
         }
     ]
 }

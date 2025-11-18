@@ -11,6 +11,7 @@ from requests.adapters import HTTPAdapter, Retry
 from shapely.geometry import Point, box, shape
 
 from pybikes import BikeShareSystem, BikeShareStation
+from pybikes.base import Vehicle
 
 
 class PyBikesScraper(object):
@@ -123,6 +124,8 @@ def filter_bounds(things, key, *point_bounds):
     def default_getter(thing):
         if isinstance(thing, BikeShareStation):
             return (thing.latitude, thing.longitude)
+        if isinstance(thing, Vehicle):
+            return (thing.latitude, thing.longitude)
         return (thing[0], thing[1])
 
     key = key or default_getter
@@ -158,9 +161,11 @@ class Bounded(object):
     """ Class mixin providing automatic bound filtering to stations """
     bounds = None
     _stations = None
+    _vehicles = None
 
     def __init__(self, * args, ** kwargs):
         self._stations = []
+        self._vehicles = []
         self.bounds = kwargs.pop('bounds', None)
         super(Bounded, self).__init__(* args, ** kwargs)
 
@@ -175,6 +180,18 @@ class Bounded(object):
         if self.bounds:
             value = list(filter_bounds(value, None, self.bounds))
         self._stations = value
+
+    @property
+    def vehicles(self):
+        return self._vehicles
+
+    @vehicles.setter
+    def vehicles(self, value):
+        # XXX: note that any list method applied to self.vehicles will
+        # circumvent this method (such as append)
+        if self.bounds:
+            value = list(filter_bounds(value, None, self.bounds))
+        self._vehicles = value
 
 
 def introspect_network():

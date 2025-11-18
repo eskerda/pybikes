@@ -1,0 +1,123 @@
+{
+    "system": "digitransit",
+    "class": "Digitransit",
+    "instances": [
+        {
+            "tag": "citybikes-helsinki",
+            "meta": {
+                "city": "Helsinki",
+                "name": "City bikes",
+                "country": "FI",
+                "company": [
+                    "Helsinki City Transport",
+                    "Helsinki Regional Transport",
+                    "CityBikeFinland",
+                    "Smoove SAS",
+                    "Moventia",
+                    "Alepa"
+                ],
+                "latitude": 60.1698,
+                "longitude": 24.9384
+            },
+            "feed_url": "https://api.digitransit.fi/routing/v2/hsl/gtfs/v1"
+        },
+        {
+            "tag": "kaakau-lappeenranta",
+            "bbox": [[60.9552, 27.9492], [61.1705, 28.4009]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 61.0586,
+                "longitude": 28.1862,
+                "city": "Lappeenranta",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "kaakau-kotka",
+            "bbox": [[60.3554, 26.5430], [60.6103, 27.1509]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 60.4679,
+                "longitude": 26.9452,
+                "city": "Kotka",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "kaakau-kouvola",
+            "bbox": [[60.8449, 25.8398], [61.0752, 26.8945]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 60.8702,
+                "longitude": 26.7031,
+                "city": "Kouvola",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "kaakau-turku",
+            "bbox": [[60.2964, 21.8966], [60.5896, 22.5613]],
+            "meta": {
+                "name": "Kaakau",
+                "company": [
+                    "Donkey Republic"
+                ],
+                "latitude": 60.4514,
+                "longitude": 22.267,
+                "city": "Turku",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "freebike-kuopio",
+            "bbox": [[62.7359, 27.4032], [62.9952, 27.9085]],
+            "meta": {
+                "name": "Vilkku-fillarit",
+                "company": [
+                    "freebike"
+                ],
+                "latitude": 62.8923,
+                "longitude": 27.6791,
+                "city": "Kuopio",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "freebike-lahti",
+            "bbox": [[60.8877, 25.5762], [61.1187, 25.9561]],
+            "meta": {
+                "name": "Mankeli",
+                "company": [
+                    "freebike"
+                ],
+                "latitude": 60.9846,
+                "longitude": 25.6567,
+                "city": "Lahti",
+                "country": "FI"
+            }
+        },
+        {
+            "tag": "city-bikes-tampere",
+            "bbox": [[61.3967, 23.4668], [61.6268, 23.9941]],
+            "meta": {
+                "name": "City bikes",
+                "company": [
+                    "Inurba Mobility"
+                ],
+                "latitude": 61.4985,
+                "longitude": 23.7605,
+                "city": "Tampere",
+                "country": "FI"
+            }
+        }
+    ]
+}

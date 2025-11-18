@@ -1,0 +1,17 @@
+{
+    "instances": [
+        {
+            "tag": "velobike",
+            "meta": {
+                "city": "Astana",
+                "name": "Astana Bike",
+                "country": "KZ",
+                "longitude": 71.4305,
+                "latitude": 51.1283
+            },
+            "feed_url": "https://velobike.kz/velostation"
+        }
+    ],
+    "system": "velobike_kz",
+    "class": "VelobikeKZ"
+}

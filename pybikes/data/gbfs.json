@@ -1141,63 +1141,6 @@
             "feed_url": "https://app.kotobike.jp/api/exposed/v2/gbfs/gbfs.json"
         },
         {
-            "tag": "aw-bike",
-            "meta": {
-                "name": "AW-bike Ahrweiler",
-                "city": "Ahrweiler",
-                "country": "DE",
-                "latitude": 50.5452,
-                "longitude": 7.1212,
-                "company": [
-                    "nextbike GmbH"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_rh/gbfs.json"
-        },
-        {
-            "tag": "famose",
-            "meta": {
-                "name": "Fa.Mo.Se",
-                "city": "Senigallia",
-                "country": "IT",
-                "latitude": 43.7603,
-                "longitude": 13.1139,
-                "company": [
-                    "Comuni di Senigallia e Mondolfo",
-                    "TIER Mobility SE"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_fa/gbfs.json"
-        },
-        {
-            "tag": "velhop",
-            "meta": {
-                "latitude": 48.583611,
-                "city": "Strasbourg",
-                "name": "Vélhop",
-                "longitude": 7.748056,
-                "country": "FR",
-                "company": [
-                    "Strasbourg Mobilités"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_ae/gbfs.json"
-        },
-        {
-            "tag": "nextbike-ortenaukreis",
-            "meta": {
-                "name": "Nextbike Ortenaukreis",
-                "city": "Ortenaukreis",
-                "country": "DE",
-                "latitude": 48.4721,
-                "longitude": 7.94243,
-                "company": [
-                    "nextbike GmbH"
-                ]
-            },
-            "feed_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_eh/gbfs.json"
-        },
-        {
             "tag": "le-velo",
             "meta": {
                 "city": "Marseille",
@@ -1406,20 +1349,6 @@
             "feed_url": "https://data.lime.bike/api/partners/v2/gbfs/seattle/gbfs.json"
         },
         {
-            "tag": "bird-portland",
-            "meta": {
-                "latitude": 45.5152,
-                "longitude": -122.6784,
-                "city": "Portland, OR",
-                "name": "Bird Portland",
-                "country": "US",
-                "company": [
-                    "Bird Rides, Inc."
-                ]
-            },
-            "feed_url": "https://mds.bird.co/gbfs/v2/public/portland/gbfs.json"
-        },
-        {
             "tag": "lime-portland",
             "meta": {
                 "latitude": 45.5152,
@@ -1490,16 +1419,20 @@
             "feed_url": "https://mds.bird.co/gbfs/v2/public/provider/spin/los_angeles/gbfs.json"
         },
         {
-            "tag": "le-marcel",
+            "tag": "velonecy",
             "meta": {
-                "latitude": 48.2971626,
-                "longitude": 4.0746257,
-                "city": "Troyes",
-                "name": "Le Marcel",
+                "latitude": 45.8997,
+                "longitude": 6.1233,
+                "city": "Annecy",
+                "name": "Vélonecy",
                 "country": "FR",
-                "company": ["Ecovélo"]
+                "company": [
+                    "Communauté d'Agglomération du Grand Annecy",
+                    "Fifteen SAS",
+                    "Mobil'éco"
+                ]
             },
-            "feed_url": "https://api.gbfs.ecovelo.mobi/lemarcel/gbfs.json"
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/annecy/en/gbfs.json"
         }
     ],
     "system": "gbfs",

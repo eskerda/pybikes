@@ -124,17 +124,6 @@
                     "city_uid": "anatoliki_mani"
                 },
                 {
-                    "tag": "easybike-irakleio",
-                    "meta": {
-                        "latitude": 35.338735,
-                        "city": "Irakleio",
-                        "name": "EasyBike",
-                        "longitude": 25.144213,
-                        "country": "GR"
-                    },
-                    "city_uid": "irakleio"
-                },
-                {
                     "tag": "athens-bikes",
                     "meta": {
                         "latitude": 37.9838,

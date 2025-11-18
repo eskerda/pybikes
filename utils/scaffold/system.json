@@ -1,0 +1,17 @@
+{
+  "class": "SYSTEM_CLASS",
+  "system": "SYSTEM_FILENAME",
+  "instances": [
+    {
+      "tag": "SYSTEM_TAG-foo",
+      "endpoint": "https://gist.githubusercontent.com/eskerda/919bb934b999f296ec189c4b33ef5d59/raw/6ad847524666a16104a0e750cf90ef06ece0d8b5/feed.json",
+      "meta": {
+        "name": "Some name",
+        "city": "City or region of the system",
+        "latitude": 1.1,
+        "longitude": 1.1,
+        "country": "Two letter country code"
+      }
+    }
+  ]
+}

@@ -65,18 +65,6 @@
                 "latitude": 38.39611,
                 "longitude": -0.5236
             }
-        },
-        {
-            "tag": "bibo",
-            "ebikes": false,
-            "feed_url": "https://www.biciboadilla.com/mapa.php",
-            "meta": {
-                "city": "Boadilla del Monte",
-                "country": "ES",
-                "name": "BIBO",
-                "latitude": 40.4125,
-                "longitude": -3.8909
-            }
         }
     ],
     "system": "movus",

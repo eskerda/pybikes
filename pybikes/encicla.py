@@ -55,7 +55,7 @@ class EnciclaStation(BikeShareStation):
         self.extra = {
             'uid': item['id'],
             'slots': slots,
-            'address': item['address'].strip(),
+            'address': item['address'].strip() if item.get('address') else '',
             'description': item['description'],
             'online': item['closed'] == '0',
         }

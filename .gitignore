@@ -8,3 +8,5 @@ keys.py
 .env
 
 .idea/
+
+report/

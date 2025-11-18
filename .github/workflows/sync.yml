@@ -1,0 +1,29 @@
+name: Sync networks
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 10 * * *'
+jobs:
+  sync-nextbike:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SYNC_TOKEN }}
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - name: Install dependencies
+        run: make install
+      - name: Sync nextbike
+        run: |
+          python utils/sync_nextbike.py > nextbike.json
+          mv nextbike.json pybikes/data/nextbike.json
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.SYNC_TOKEN }}
+          commit-message: update nextbike feeds
+          title: update nextbike feeds
+          branch: sync/nextbike

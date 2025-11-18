@@ -29,7 +29,7 @@ class Nextbike(BikeShareSystem):
         'company': ['Nextbike GmbH']
     }
 
-    def __init__(self, tag, meta, domain, city_uid, hostname='maps.nextbike.net',
+    def __init__(self, tag, meta, domain, city_uid=None, hostname='maps.nextbike.net',
                  bbox=None):
         super(Nextbike, self).__init__(tag, meta)
         self.url = BASE_URL.format(hostname=hostname, domain=domain)
@@ -43,9 +43,16 @@ class Nextbike(BikeShareSystem):
         domain_xml = etree.fromstring(
             scraper.request(self.url).encode('utf-8')
         )
-        places = domain_xml.xpath(
-            '/markers/country/city[@uid="{uid}"]/place'.format(uid=self.uid)
-        )
+
+        if self.uid:
+            places = domain_xml.xpath(
+                '/markers/country/city[@uid="{uid}"]/place'.format(uid=self.uid)
+            )
+        else:
+            places = domain_xml.xpath("""
+                /markers/country//city//place
+            """)
+
         # We want to raise an error if a uid is invalid, right?
         assert places, "Not found: uid {!r}, domain {!r}, url {}".format(
             self.uid, self.domain, self.url

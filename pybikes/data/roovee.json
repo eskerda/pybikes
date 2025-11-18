@@ -1,0 +1,245 @@
+{
+    "instances": [
+        {
+            "tag": "torvelo",
+            "tenant": "torun",
+            "meta": {
+                "latitude": 53.0138,
+                "city": "Toru\u0144",
+                "name": "Torvelo",
+                "longitude": 18.5984,
+                "country": "PL"
+            }
+        },
+        {
+            "tag": "chromek",
+            "meta": {
+                "latitude": 52.992356972,
+                "longitude": 16.926923576,
+                "name": "CHROMEK",
+                "country": "PL",
+                "city": "Chodzie\u017c"
+            },
+            "tenant": "chromek"
+        },
+        {
+            "tag": "roovee-ciechanow",
+            "meta": {
+                "latitude": 52.86992476,
+                "longitude": 20.617345352,
+                "country": "PL",
+                "city": "Ciechan\u00f3w"
+            },
+            "tenant": "ciechanow"
+        },
+        {
+            "tag": "roovee-czeladz",
+            "meta": {
+                "latitude": 50.31445755,
+                "longitude": 19.077203902,
+                "country": "PL",
+                "city": "Czelad\u017a"
+            },
+            "tenant": "czeladz"
+        },
+        {
+            "tag": "roovee-gniezno",
+            "meta": {
+                "latitude": 52.527823832,
+                "longitude": 17.601563168,
+                "country": "PL",
+                "city": "Gniezno"
+            },
+            "tenant": "gniezno"
+        },
+        {
+            "tag": "roovee-kielce",
+            "meta": {
+                "latitude": 50.860978658,
+                "longitude": 20.608948314,
+                "country": "PL",
+                "city": "Kielce"
+            },
+            "tenant": "kielce"
+        },
+        {
+            "tag": "krotower",
+            "meta": {
+                "latitude": 51.695079658,
+                "longitude": 17.441078438,
+                "name": "KROTOWER",
+                "country": "PL",
+                "city": "Krotoszyn"
+            },
+            "tenant": "krotower"
+        },
+        {
+            "tag": "roovee-naklo-nad-notecia",
+            "meta": {
+                "latitude": 53.140674703,
+                "longitude": 17.60146548,
+                "country": "PL",
+                "city": "Nak\u0142o nad Noteci\u0105"
+            },
+            "tenant": "naklo"
+        },
+        {
+            "tag": "roovee-olesnica",
+            "meta": {
+                "latitude": 51.206325602,
+                "longitude": 17.383480081,
+                "country": "PL",
+                "city": "Ole\u015bnica"
+            },
+            "tenant": "olesnica"
+        },
+        {
+            "tag": "ostro-bike",
+            "meta": {
+                "latitude": 53.080390797,
+                "longitude": 21.587760143,
+                "name": "ostro.bike",
+                "country": "PL",
+                "city": "Ostro\u0142\u0119ka"
+            },
+            "tenant": "ostro"
+        },
+        {
+            "tag": "roovee-plock",
+            "meta": {
+                "latitude": 52.525296616,
+                "longitude": 19.760503197,
+                "country": "PL",
+                "city": "P\u0142ock"
+            },
+            "tenant": "plock"
+        },
+        {
+            "tag": "roovee-pniewy",
+            "meta": {
+                "latitude": 52.510388844,
+                "longitude": 16.261345768,
+                "name": "Pniewy",
+                "country": "PL",
+                "city": "Pniewy"
+            },
+            "tenant": "pniewy"
+        },
+        {
+            "tag": "prm-szprychy",
+            "meta": {
+                "latitude": 51.502710002,
+                "longitude": 16.063157801,
+                "name": "PRM Szprychy",
+                "country": "PL",
+                "city": "Polkowice"
+            },
+            "tenant": "polkowice"
+        },
+        {
+            "tag": "roovee-pultusk",
+            "meta": {
+                "latitude": 52.706523832,
+                "longitude": 21.082556221,
+                "country": "PL",
+                "city": "Pu\u0142tusk"
+            },
+            "tenant": "pultusk"
+        },
+        {
+            "tag": "roovee-rawicz",
+            "meta": {
+                "latitude": 51.609308994,
+                "longitude": 16.951024748,
+                "country": "PL",
+                "city": "Rawicz"
+            },
+            "tenant": "rawicz"
+        },
+        {
+            "tag": "roovee-skarzysko-kamienna",
+            "meta": {
+                "latitude": 51.119959411,
+                "longitude": 20.858462632,
+                "country": "PL",
+                "city": "Skar\u017cysko-Kamienna"
+            },
+            "tenant": "skarzysko"
+        },
+        {
+            "tag": "sremski-rower-miejski",
+            "meta": {
+                "latitude": 52.086502492,
+                "longitude": 17.020360879,
+                "name": "\u015aremski Rower Miejski",
+                "country": "PL",
+                "city": "\u015arem"
+            },
+            "tenant": "srem"
+        },
+        {
+            "tag": "roovee-stalowa-wola",
+            "meta": {
+                "latitude": 50.561969276,
+                "longitude": 22.030243226,
+                "country": "PL",
+                "city": "Stalowa Wola"
+            },
+            "tenant": "swmr"
+        },
+        {
+            "tag": "roovee-starachowice",
+            "meta": {
+                "latitude": 51.040186137,
+                "longitude": 21.079107833,
+                "country": "PL",
+                "city": "Starachowice"
+            },
+            "tenant": "starachowice"
+        },
+        {
+            "tag": "roovee-suwalki",
+            "meta": {
+                "latitude": 54.099941497,
+                "longitude": 22.931711608,
+                "country": "PL",
+                "city": "Suwa\u0142ki"
+            },
+            "tenant": "suwalki"
+        },
+        {
+            "tag": "roovee-szczecin",
+            "meta": {
+                "latitude": 53.428473692,
+                "longitude": 14.540275071,
+                "country": "PL",
+                "city": "Szczecin"
+            },
+            "tenant": "bikes"
+        },
+        {
+            "tag": "roovee-wrm-wagrowiec",
+            "meta": {
+                "latitude": 52.809527618,
+                "longitude": 17.202642676,
+                "name": "WRM",
+                "country": "PL",
+                "city": "W\u0105growiec"
+            },
+            "tenant": "wagrowiec"
+        },
+        {
+            "tag": "zarskie-rowery",
+            "meta": {
+                "latitude": 51.626511425,
+                "longitude": 15.150176567,
+                "name": "\u017barskie Rowery",
+                "country": "PL",
+                "city": "\u017bary"
+            },
+            "tenant": "zary"
+        }
+    ],
+    "system": "roovee",
+    "class": "Roovee"
+}
