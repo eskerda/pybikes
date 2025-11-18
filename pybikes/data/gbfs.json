@@ -1212,18 +1212,6 @@
             "feed_url": "https://fortworth.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
         },
         {
-            "tag": "pony-nice",
-            "meta": {
-                "country": "FR",
-                "city": "Nice",
-                "latitude": 43.695949,
-                "longitude": 7.271413,
-                "company": ["Pony"],
-                "name": "Pony"
-            },
-            "feed_url": "https://gbfs.getapony.com/v1/Nice/en/gbfs.json"
-        },
-        {
             "tag": "dott-murcia",
             "meta": {
                 "country": "ES",
