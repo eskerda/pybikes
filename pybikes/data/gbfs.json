@@ -527,7 +527,7 @@
                 }
             },
             "ignore_errors": true,
-            "feed_url": "https://montpellier-fr.fifteen.site/gbfs/gbfs.json"
+            "feed_url": "https://gbfs.theta.fifteen.eu/gbfs/2.2/montpellier/en/gbfs.json"
         },
         {
             "tag": "bikebrasilia",
@@ -555,7 +555,7 @@
                     "SMTC 90"
                 ]
             },
-            "feed_url": "https://belfort-fr.fifteen.site/gbfs/gbfs.json"
+            "feed_url": "https://data.optymo.fr/vls/gbfs.json"
         },
         {
             "tag": "bicicorunha",
