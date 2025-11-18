@@ -213,6 +213,7 @@ class Gbfs(BikeShareSystem):
         station_zip = (
             (station_information[uid], station_status[uid])
             for uid in station_information.keys()
+            if uid in station_status
         )
 
         # Filter station by bbox before parsing and appending to a list.
