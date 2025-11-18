@@ -509,27 +509,6 @@
             "feed_url": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
         },
         {
-            "tag": "velomagg",
-            "meta": {
-                "city": "Montpellier",
-                "name": "Vélomagg",
-                "country": "FR",
-                "latitude": 43.6119,
-                "longitude": 3.8772,
-                "company": [
-                    "TaM",
-                    "Fifteen"
-                ],
-                "source": "https://transport.data.gouv.fr/datasets/disponibilite-en-temps-reel-des-velos-en-libre-service-velomagg-de-montpellier/",
-                "license": {
-                    "name": "Open Data Commons Open Database License (ODbL)",
-                    "url": "http://opendatacommons.org/licenses/odbl/summary/"
-                }
-            },
-            "ignore_errors": true,
-            "feed_url": "https://gbfs.theta.fifteen.eu/gbfs/2.2/montpellier/en/gbfs.json"
-        },
-        {
             "tag": "bikebrasilia",
             "meta": {
                 "city": "Brasília",
@@ -1220,18 +1199,6 @@
                 ]
             },
             "feed_url": "https://fortworth.publicbikesystem.net/customer/gbfs/v2/gbfs.json"
-        },
-        {
-            "tag": "pony-nice",
-            "meta": {
-                "country": "FR",
-                "city": "Nice",
-                "latitude": 43.695949,
-                "longitude": 7.271413,
-                "company": ["Pony"],
-                "name": "Pony"
-            },
-            "feed_url": "https://gbfs.getapony.com/v1/Nice/en/gbfs.json"
         },
         {
             "tag": "dott-murcia",
