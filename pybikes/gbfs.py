@@ -209,11 +209,12 @@ class Gbfs(BikeShareSystem):
         # station_ids as station_information.
         station_information = {s['station_id']: s for s in station_information}
         station_status = {s['station_id']: s for s in station_status}
-        # Any station not in station_information will be ignored
+
+        station_ids = set(station_information.keys()) & set(station_status.keys())
+        # Any station not in both sets will be ignored
         station_zip = (
             (station_information[uid], station_status[uid])
-            for uid in station_information.keys()
-            if uid in station_status
+            for uid in station_ids
         )
 
         # Filter station by bbox before parsing and appending to a list.
