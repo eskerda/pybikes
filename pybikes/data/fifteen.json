@@ -3,22 +3,6 @@
     "class": "FifteenAPI",
     "instances": [
         {
-            "tag": "vilvolt",
-            "meta": {
-                "city": "Epinal",
-                "name": "Vilvolt",
-                "country": "FR",
-                "company": [
-                    "Vilvolt CA Épinal",
-                    "Communauté d'agglomération Épinal",
-                    "Fifteen SAS"
-                ],
-                "longitude": 6.4508,
-                "latitude": 48.1833
-            },
-            "feed_url": "https://vilvolt.cw.fifteen.eu/api/client/entities"
-        },
-        {
             "tag": "gijon",
             "meta": {
                 "city": "Gijón",
