@@ -1221,7 +1221,7 @@
                 "company": ["Pony"],
                 "name": "Pony"
             },
-            "feed_url": "https://gbfs.getapony.com/v1/Nice/en/gbfs.json"
+            "feed_url": "https://gbfs.getapony.com/v1/Nice/en/gbfs.json?key=AIzaSyBMkR2fCYvZZC22Ls5A5wJQRwDERao07Nc"
         },
         {
             "tag": "dott-murcia",
