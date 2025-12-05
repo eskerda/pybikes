@@ -268,18 +268,6 @@
             }
         },
         {
-            "domain": "ur",
-            "tag": "usedomrad-usedom",
-            "city_uid": 176,
-            "meta": {
-                "name": "UsedomRad",
-                "city": "Usedom",
-                "country": "DE",
-                "latitude": 53.9779,
-                "longitude": 13.9925
-            }
-        },
-        {
             "domain": "nn",
             "tag": "nextbike-norderstedt",
             "city_uid": 177,
@@ -415,28 +403,6 @@
                 "country": "DE",
                 "latitude": 49.1975,
                 "longitude": 8.11693
-            }
-        },
-        {
-            "domain": "nu",
-            "tag": "nextbike-lviv",
-            "city_uid": 280,
-            "meta": {
-                "city": "Lviv",
-                "country": "UA",
-                "latitude": 49.8402,
-                "longitude": 24.0182
-            }
-        },
-        {
-            "domain": "nu",
-            "tag": "nextbike-ivano-frankivsk",
-            "city_uid": 525,
-            "meta": {
-                "city": "Ivano Frankivsk",
-                "country": "UA",
-                "latitude": 48.9281,
-                "longitude": 24.7103
             }
         },
         {
@@ -889,17 +855,6 @@
             }
         },
         {
-            "domain": "nu",
-            "tag": "lviv-odessa",
-            "city_uid": 525,
-            "meta": {
-                "city": "Odessa",
-                "country": "UA",
-                "latitude": 46.463,
-                "longitude": 30.7042
-            }
-        },
-        {
             "domain": "sn",
             "tag": "santander-monchengladbach",
             "city_uid": 530,
@@ -955,17 +910,6 @@
                 "country": "SK",
                 "latitude": 49.2217,
                 "longitude": 18.7572
-            }
-        },
-        {
-            "domain": "uv",
-            "tag": "nextbike-vinnytsia",
-            "city_uid": 546,
-            "meta": {
-                "city": "Vinnytsia",
-                "country": "UA",
-                "latitude": 49.2328,
-                "longitude": 28.4625
             }
         },
         {
@@ -1436,18 +1380,6 @@
             }
         },
         {
-            "domain": "ia",
-            "tag": "arval-scandicci",
-            "city_uid": 746,
-            "meta": {
-                "name": "ARVAL",
-                "city": "Scandicci",
-                "country": "IT",
-                "latitude": 43.7701,
-                "longitude": 11.1592
-            }
-        },
-        {
             "domain": "wo",
             "tag": "nextbike-oldenburg",
             "city_uid": 754,
@@ -1483,18 +1415,6 @@
                 "country": "DE",
                 "latitude": 53.6707,
                 "longitude": 12.4255
-            }
-        },
-        {
-            "domain": "ug",
-            "tag": "greifswald",
-            "city_uid": 759,
-            "meta": {
-                "name": "StadtRad Greifswald",
-                "city": "Greifswald (StadtRad)",
-                "country": "DE",
-                "latitude": 54.0961,
-                "longitude": 13.3787
             }
         },
         {
@@ -2330,61 +2250,6 @@
             }
         },
         {
-            "domain": "cw",
-            "tag": "ski-rower-chelm",
-            "meta": {
-                "name": "Che\u0142mski Rower",
-                "city": "Che\u0142m",
-                "country": "PL",
-                "latitude": 51.1344,
-                "longitude": 23.4729
-            }
-        },
-        {
-            "domain": "fp",
-            "tag": "nextbike-wolsztynski-rower-miejski",
-            "meta": {
-                "name": "Wolszty\u0144ski Rower Miejski",
-                "city": "Wolsztyn",
-                "country": "PL",
-                "latitude": 52.113,
-                "longitude": 16.1166
-            }
-        },
-        {
-            "domain": "lp",
-            "tag": "nextbike-lodzki-rower-publiczny",
-            "meta": {
-                "name": "\u0141\u00f3dzki Rower Publiczny",
-                "city": "\u0141\u00f3d\u017a - \u0141\u00f3dzki Rower Publiczny",
-                "country": "PL",
-                "latitude": 51.7591,
-                "longitude": 19.456
-            }
-        },
-        {
-            "domain": "pi",
-            "tag": "nextbike-piaseczynski-rower-miejski",
-            "meta": {
-                "name": "Piaseczy\u0144ski Rower Miejski",
-                "city": "Piaseczno",
-                "country": "PL",
-                "latitude": 52.0733,
-                "longitude": 21.0269
-            }
-        },
-        {
-            "domain": "pj",
-            "tag": "nextbike-jaskolka",
-            "meta": {
-                "name": "JasK\u00f3\u0142ka",
-                "city": "Jastrz\u0119bie-Zdr\u00f3j",
-                "country": "PL",
-                "latitude": 49.9537,
-                "longitude": 18.6005
-            }
-        },
-        {
             "domain": "pl",
             "tag": "wrm-wroclaw",
             "meta": {
@@ -2393,50 +2258,6 @@
                 "country": "PL",
                 "latitude": 51.1093,
                 "longitude": 17.0372
-            }
-        },
-        {
-            "domain": "pm",
-            "tag": "nextbike-zielonogorski-rower-miejski",
-            "meta": {
-                "name": "Zielonog\u00f3rski Rower Miejski",
-                "city": "Zielona G\u00f3ra",
-                "country": "PL",
-                "latitude": 51.9337,
-                "longitude": 15.5097
-            }
-        },
-        {
-            "domain": "pn",
-            "tag": "nextbike-koninski-rower-miejski-poland",
-            "meta": {
-                "name": "Koni\u0144ski Rower Miejski Poland",
-                "city": "Konin",
-                "country": "PL",
-                "latitude": 52.2328,
-                "longitude": 18.2538
-            }
-        },
-        {
-            "domain": "ps",
-            "tag": "nextbike-koszalinski-rower-miejski-poland",
-            "meta": {
-                "name": "Koszali\u0144ski Rower Miejski Poland",
-                "city": "Koszalin",
-                "country": "PL",
-                "latitude": 54.1866,
-                "longitude": 16.1877
-            }
-        },
-        {
-            "domain": "vw",
-            "tag": "veturilo-nextbike-warsaw",
-            "meta": {
-                "name": "VETURILO 3.0",
-                "city": "Warszawa",
-                "country": "PL",
-                "latitude": 52.2581,
-                "longitude": 20.9949
             }
         },
         {
