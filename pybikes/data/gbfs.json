@@ -1451,6 +1451,22 @@
                 "latitude": 48.1833
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/epinal/gbfs.json"
+        },
+        {
+            "tag": "mugibike",
+            "meta": {
+                "city": "Vitoria-Gasteiz",
+                "name": "MugiBIKE",
+                "country": "ES",
+                "company": [
+                    "UTE MoFIf Vitoria",
+                    "Movilidad Urbana Sostenible SLU",
+                    "Fifteen SAS"
+                ],
+                "latitude": 42.8465,
+                "longitude": -2.6724
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/vitoria/gbfs.json"
         }
     ],
     "system": "gbfs",
