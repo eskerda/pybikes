@@ -167,6 +167,7 @@ class Bounded(object):
         self._stations = []
         self._vehicles = []
         self.bounds = kwargs.pop('bounds', None)
+        self.mbounds = kwargs.pop('mbounds', None)
         super(Bounded, self).__init__(* args, ** kwargs)
 
     @property
@@ -179,6 +180,8 @@ class Bounded(object):
         # circumvent this method (such as append)
         if self.bounds:
             value = list(filter_bounds(value, None, self.bounds))
+        elif self.mbounds:
+            value = list(filter_bounds(value, None, * self.mbounds))
         self._stations = value
 
     @property
