@@ -1,72 +1,127 @@
 {
-    "instances": [
-        {
-            "city_uid": 6,
-            "tag": "publibike-zuerich",
-            "meta": {
-                "latitude": 47.38728,
-                "city": "Z\u00fcrich",
-                "name": "PubliBike Z\u00fcrich",
-                "longitude": 8.53767,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 9,
-            "tag": "publibike-region-de-nyon",
-            "meta": {
-                "latitude": 46.381706,
-                "city": "Nyon",
-                "name": "PubliBike R\u00e9gion de Nyon",
-                "longitude": 6.240311,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 5,
-            "tag": "publibike-bern",
-            "meta": {
-                "latitude": 46.94841,
-                "city": "Bern",
-                "name": "PubliBike Bern",
-                "longitude": 7.43767,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 3,
-            "tag": "publibike-sottoceneri-ti",
-            "meta": {
-                "latitude": 46.00491,
-                "city": "Lugano",
-                "name": "PubliBike Sottoceneri (TI)",
-                "longitude": 8.95244,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 8,
-            "tag": "publibike-fribourg",
-            "meta": {
-                "latitude": 46.805708,
-                "city": "Fribourg",
-                "name": "PubliBike Fribourg",
-                "longitude": 7.160339,
-                "country": "CH"
-            }
-        },
-        {
-            "city_uid": 2,
-            "tag": "publibike-lausanne-morges",
-            "meta": {
-                "latitude": 46.516649,
-                "city": "Lausanne",
-                "name": "PubliBike Lausanne-Morges",
-                "longitude": 6.62948,
-                "country": "CH"
-            }
-        }
-    ], 
-    "system": "publibike", 
-    "class": "Publibike"
+  "instances": [
+    {
+      "tag": "publibike-bern",
+      "canton": [
+        "Bern"
+      ],
+      "meta": {
+        "city": "Bern",
+        "country": "CH",
+        "latitude": 46.9482,
+        "longitude": 7.4527
+      }
+    },
+    {
+      "tag": "publibike-valais",
+      "canton": [
+        "Valais"
+      ],
+      "meta": {
+        "city": "Valais",
+        "country": "CH",
+        "latitude": 46.25526565861761,
+        "longitude": 7.425476146627048
+      }
+    },
+    {
+      "tag": "publibike-vaud",
+      "canton": [
+        "Vaud"
+      ],
+      "meta": {
+        "city": "Vaud",
+        "country": "CH",
+        "latitude": 46.514554,
+        "longitude": 6.619263
+      }
+    },
+    {
+      "tag": "publibike-ticino",
+      "canton": [
+        "Ticino"
+      ],
+      "meta": {
+        "city": "Ticino",
+        "country": "CH",
+        "latitude": 45.988659433005196,
+        "longitude": 8.94531544336032
+      }
+    },
+    {
+      "tag": "publibike-zurich",
+      "canton": [
+        "Zürich"
+      ],
+      "meta": {
+        "city": "Zürich",
+        "country": "CH",
+        "latitude": 47.3729,
+        "longitude": 8.5409
+      }
+    },
+    {
+      "tag": "publibike-fribourg",
+      "canton": [
+        "Fribourg"
+      ],
+      "meta": {
+        "city": "Fribourg",
+        "country": "CH",
+        "latitude": 46.8045,
+        "longitude": 7.1479
+      }
+    },
+    {
+      "tag": "publibike-aargau",
+      "canton": [
+        "Aargau"
+      ],
+      "meta": {
+        "city": "Aargau",
+        "country": "CH",
+        "latitude": 47.53504962855389,
+        "longitude": 8.230456807479072
+      }
+    },
+    {
+      "tag": "publibike-uri",
+      "canton": [
+        "Uri"
+      ],
+      "meta": {
+        "city": "Uri",
+        "country": "CH",
+        "latitude": 46.6336,
+        "longitude": 8.5922
+      }
+    },
+    {
+      "tag": "publibike-neuchatel",
+      "canton": [
+        "Neuchâtel"
+      ],
+      "meta": {
+        "city": "Neuchâtel",
+        "country": "CH",
+        "latitude": 47.1043199,
+        "longitude": 6.831407
+      }
+    },
+    {
+      "tag": "publibike-basel",
+      "canton": [
+        "Basel-Landschaft",
+        "Basel-Stadt"
+      ],
+      "meta": {
+        "city": "Basel",
+        "country": "CH",
+        "latitude": 47.5578,
+        "longitude": 7.5872
+      }
+    }
+  ],
+  "system": "publibike",
+  "class": "Publibike"
 }
