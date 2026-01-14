@@ -132,6 +132,39 @@
                 "name": "BiciBur"
             },
             "tag": "bicibur"
+        },
+        {
+            "endpoint": "https://services.villarcayo.bicicard.es",
+            "meta": {
+                "city": "Villarcayo",
+                "country": "ES",
+                "latitude": 42.9384,
+                "longitude":  -3.5724,
+                "name": "Vive Villarcayo"
+            },
+            "tag": "vive-villarcayo"
+        },
+        {
+            "endpoint": "https://services.cenicientos.bicicard.es",
+            "meta": {
+                "city": "Cenicientos",
+                "country": "ES",
+                "latitude": 40.2623,
+                "longitude": -4.4661,
+                "name": "Cenibici"
+            },
+            "tag": "cenibici"
+        },
+        {
+            "endpoint": "https://services.castro.bicicard.es",
+            "meta": {
+                "city": "Castro-Urdiales",
+                "country": "ES",
+                "latitude": 43.3849,
+                "longitude": -3.2181,
+                "name": "BiciCastro"
+            },
+            "tag": "bicicastro"
         }
     ],
     "system": "bicicard"
