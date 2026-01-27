@@ -1665,7 +1665,7 @@
             "feed_url": "https://api.cyclocity.fr/contracts/toyama/gbfs/gbfs.json"
         },
         {
-            "tag": "Naolib",
+            "tag": "naolib",
             "meta": {
                 "city": "Nantes",
                 "name": "Naolib",
