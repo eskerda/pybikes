@@ -1679,10 +1679,10 @@
             "feed_url": "https://api.cyclocity.fr/contracts/nantes/gbfs/gbfs.json"
         },
         {
-            "tag": "ginko-velocite",
+            "tag": "velocite",
             "meta": {
                 "city": "Besançon",
-                "name": "Ginko VéloCitén",
+                "name": "VéloCité",
                 "country": "FR",
                 "company": [
                     "JCDecaux"
@@ -1719,6 +1719,20 @@
                 "longitude": 15.6459
             },
             "feed_url": "https://api.cyclocity.fr/contracts/maribor/gbfs/gbfs.json"
+        },
+        {
+            "tag": "vel02",
+            "meta": {
+                "city": "Cergy",
+                "name": "Vél02",
+                "country": "FR",
+                "company": [
+                    "JCDecaux"
+                ],
+                "latitude": 49.052753,
+                "longitude": 2.038874
+            },
+            "feed_url": "https://api.cyclocity.fr/contracts/cergy/gbfs/gbfs.json"
         }
     ],
     "system": "gbfs",
