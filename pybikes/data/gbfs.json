@@ -1720,9 +1720,6 @@
             },
             "feed_url": "https://api.cyclocity.fr/contracts/maribor/gbfs/gbfs.json"
         }
-        
-
-
     ],
     "system": "gbfs",
     "class": "Gbfs"
