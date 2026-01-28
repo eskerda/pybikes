@@ -8,6 +8,7 @@
 import json
 from warnings import warn
 from urllib.parse import urljoin, urlparse, parse_qs
+from datetime import datetime
 
 from pybikes import BikeShareSystem, BikeShareStation, exceptions
 from pybikes.utils import PyBikesScraper, filter_bounds
@@ -270,6 +271,24 @@ class Gbfs(BikeShareSystem):
             except exceptions.UnhandledVehicleException as e:
                 warn(e)
 
+    @staticmethod
+    def parse_date(in_data):
+        # Can be POSIX time (gbfs <= 2.3) or RFC3339 strings (>= 3.0)
+        if isinstance(in_data, int):
+            try:
+                dt = datetime.fromtimestamp(in_data)
+            except ValueError:
+                return None
+        elif isinstance(in_data, str):
+            try:
+                dt = datetime.fromisoformat(in_data)
+            except ValueError:
+                return None
+        else:
+            return None
+
+        return dt.isoformat()
+
 class GbfsStation(BikeShareStation):
 
     def __init__(self, info, vehicles_info):
@@ -307,7 +326,7 @@ class GbfsStation(BikeShareStation):
         }
 
         if 'last_reported' in info:
-            self.extra["last_updated"] = info['last_reported']
+            self.extra["last_updated"] = Gbfs.parse_date(info['last_reported'])
 
         if 'address' in info:
             self.extra['address'] = info['address']
