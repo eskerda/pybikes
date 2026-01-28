@@ -35,7 +35,8 @@
                         "longitude": -0.3762881,
                         "city": "Valencia"
                     },
-                    "contract": "Valence"
+                    "contract": "Valence",
+                    "bbox": [[39.3751, -0.5102], [39.5660, -0.2637]]
                 },
                 {
                     "tag": "lundahoj",
@@ -179,7 +180,8 @@
                         "longitude": 6.024053899999999,
                         "city": "Besan\u00e7on"
                     },
-                    "contract": "Besancon"
+                    "contract": "Besancon",
+                    "bbox": [[47.1943, 5.9326], [47.2858, 6.0906]]
                 },
                 {
                     "meta": {
