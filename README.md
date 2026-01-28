@@ -74,12 +74,12 @@ extra: {
 }
 ```
 
-Some systems might require an API key to work (for instance, Cyclocity). In
+Some systems might require an API key to work (for instance, Digitranist). In
 these cases, the instance factory can take an extra API key parameter.
 
 ```python
 >>> key = "This is not an API key"
->>> dublinbikes = pybikes.get('dublinbikes', key)
+>>> helsinki = pybikes.get('citybikes-helsinki', key=key)
 ```
 
 Note that pybikes works as an instance factory and, choicely, instances can be
@@ -160,7 +160,7 @@ Note that some systems require authorization keys, tests expect these to be
 set as environment variables like:
 
 ```bash
-PYBIKES_CYCLOCITY='some-api-key'
+PYBIKES_DIGITRANSIT='some-api-key'
 PYBIKES_DEUTSCHEBAHN_CLIENT_ID='some-client-id'
 PYBIKES_DEUTSCHEBAHN_CLIENT_SECRET='some-client-secret'
 
