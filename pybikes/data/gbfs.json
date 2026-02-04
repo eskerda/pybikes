@@ -1467,6 +1467,20 @@
                 "longitude": -2.6724
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/vitoria/gbfs.json"
+        },
+        {
+            "tag": "idecycle",
+            "meta": {
+                "name": "IDEcycle",
+                "city": "Pau",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 43.2957547,
+                "longitude": -0.3685668
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/pau/gbfs.json"
         }
     ],
     "system": "gbfs",
