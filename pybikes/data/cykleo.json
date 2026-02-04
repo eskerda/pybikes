@@ -12,17 +12,6 @@
             }
         },
         {
-            "organization": 3,
-            "tag": "idecycle",
-            "meta": {
-                "name": "IDEcycle",
-                "city": "Pau",
-                "country": "FR",
-                "latitude": 43.2957547,
-                "longitude": -0.3685668
-            }
-        },
-        {
             "organization": 5,
             "tag": "veloplus-velotao",
             "meta": {
