@@ -268,18 +268,6 @@
             }
         },
         {
-            "domain": "ur",
-            "tag": "usedomrad-usedom",
-            "city_uid": 176,
-            "meta": {
-                "name": "UsedomRad",
-                "city": "Usedom",
-                "country": "DE",
-                "latitude": 53.9779,
-                "longitude": 13.9925
-            }
-        },
-        {
             "domain": "nn",
             "tag": "nextbike-norderstedt",
             "city_uid": 177,
@@ -418,28 +406,6 @@
             }
         },
         {
-            "domain": "nu",
-            "tag": "nextbike-lviv",
-            "city_uid": 280,
-            "meta": {
-                "city": "Lviv",
-                "country": "UA",
-                "latitude": 49.8402,
-                "longitude": 24.0182
-            }
-        },
-        {
-            "domain": "nu",
-            "tag": "nextbike-ivano-frankivsk",
-            "city_uid": 525,
-            "meta": {
-                "city": "Ivano Frankivsk",
-                "country": "UA",
-                "latitude": 48.9281,
-                "longitude": 24.7103
-            }
-        },
-        {
             "domain": "kc",
             "tag": "grad-karlovac-karlovac",
             "city_uid": 305,
@@ -461,18 +427,6 @@
                 "country": "HR",
                 "latitude": 45.1656,
                 "longitude": 18.0183
-            }
-        },
-        {
-            "domain": "ku",
-            "tag": "santander-cycles-mk-milton-keynes",
-            "city_uid": 320,
-            "meta": {
-                "name": "Santander Cycles MK",
-                "city": "Milton Keynes",
-                "country": "GB",
-                "latitude": 52.0406,
-                "longitude": -0.759417
             }
         },
         {
@@ -657,18 +611,6 @@
                 "country": "ES",
                 "latitude": 28.1236,
                 "longitude": -15.4366
-            }
-        },
-        {
-            "domain": "cg",
-            "tag": "grad-velika-gorica-velika-gorica",
-            "city_uid": 415,
-            "meta": {
-                "name": "Grad Velika Gorica",
-                "city": "Velika Gorica",
-                "country": "HR",
-                "latitude": 45.7161,
-                "longitude": 16.0683
             }
         },
         {
@@ -889,17 +831,6 @@
             }
         },
         {
-            "domain": "nu",
-            "tag": "lviv-odessa",
-            "city_uid": 525,
-            "meta": {
-                "city": "Odessa",
-                "country": "UA",
-                "latitude": 46.463,
-                "longitude": 30.7042
-            }
-        },
-        {
             "domain": "sn",
             "tag": "santander-monchengladbach",
             "city_uid": 530,
@@ -955,17 +886,6 @@
                 "country": "SK",
                 "latitude": 49.2217,
                 "longitude": 18.7572
-            }
-        },
-        {
-            "domain": "uv",
-            "tag": "nextbike-vinnytsia",
-            "city_uid": 546,
-            "meta": {
-                "city": "Vinnytsia",
-                "country": "UA",
-                "latitude": 49.2328,
-                "longitude": 28.4625
             }
         },
         {
@@ -1334,16 +1254,6 @@
             }
         },
         {
-            "domain": "ts",
-            "tag": "nextbike-frydek-mistek",
-            "meta": {
-                "city": "Fr\u00fddek-M\u00edstek",
-                "country": "CZ",
-                "latitude": 49.6832,
-                "longitude": 18.3457
-            }
-        },
-        {
             "domain": "tt",
             "tag": "nextbike-uherske-hradiste",
             "meta": {
@@ -1436,33 +1346,6 @@
             }
         },
         {
-            "domain": "ia",
-            "tag": "arval-scandicci",
-            "city_uid": 746,
-            "meta": {
-                "name": "ARVAL",
-                "city": "Scandicci",
-                "country": "IT",
-                "latitude": 43.7701,
-                "longitude": 11.1592
-            }
-        },
-        {
-            "domain": "wo",
-            "tag": "nextbike-oldenburg",
-            "city_uid": 754,
-            "meta": {
-                "name": "OLi-Bike",
-                "city": "Oldenburg",
-                "country": "DE",
-                "latitude": 53.1448,
-                "longitude": 8.22485,
-                "company": [
-                    "Bremer Tageszeitungen AG"
-                ]
-            }
-        },
-        {
             "domain": "ey",
             "tag": "nextbike-urdaibai",
             "city_uid": 772,
@@ -1483,18 +1366,6 @@
                 "country": "DE",
                 "latitude": 53.6707,
                 "longitude": 12.4255
-            }
-        },
-        {
-            "domain": "ug",
-            "tag": "greifswald",
-            "city_uid": 759,
-            "meta": {
-                "name": "StadtRad Greifswald",
-                "city": "Greifswald (StadtRad)",
-                "country": "DE",
-                "latitude": 54.0961,
-                "longitude": 13.3787
             }
         },
         {
@@ -1552,21 +1423,6 @@
                 "name": "Bicipalma",
                 "longitude": 2.646634,
                 "country": "ES"
-            }
-        },
-        {
-            "domain": "hg",
-            "tag": "heraeus-hanau",
-            "city_uid": 301,
-            "meta": {
-                "name": "Heraeus Hanau",
-                "city": "Hanau",
-                "country": "DE",
-                "latitude": 50.1387,
-                "longitude": 8.94429,
-                "company": [
-                    "Heraeus Holding GmbH"
-                ]
             }
         },
         {
@@ -1786,17 +1642,6 @@
                 "country": "CZ",
                 "latitude": 50.4367,
                 "longitude": 15.3743
-            }
-        },
-        {
-            "domain": "uo",
-            "tag": "nextbike-most",
-            "meta": {
-                "name": "nextbike Most",
-                "city": "Most",
-                "country": "CZ",
-                "latitude": 50.5014,
-                "longitude": 13.6361
             }
         },
         {
@@ -2330,61 +2175,6 @@
             }
         },
         {
-            "domain": "cw",
-            "tag": "ski-rower-chelm",
-            "meta": {
-                "name": "Che\u0142mski Rower",
-                "city": "Che\u0142m",
-                "country": "PL",
-                "latitude": 51.1344,
-                "longitude": 23.4729
-            }
-        },
-        {
-            "domain": "fp",
-            "tag": "nextbike-wolsztynski-rower-miejski",
-            "meta": {
-                "name": "Wolszty\u0144ski Rower Miejski",
-                "city": "Wolsztyn",
-                "country": "PL",
-                "latitude": 52.113,
-                "longitude": 16.1166
-            }
-        },
-        {
-            "domain": "lp",
-            "tag": "nextbike-lodzki-rower-publiczny",
-            "meta": {
-                "name": "\u0141\u00f3dzki Rower Publiczny",
-                "city": "\u0141\u00f3d\u017a - \u0141\u00f3dzki Rower Publiczny",
-                "country": "PL",
-                "latitude": 51.7591,
-                "longitude": 19.456
-            }
-        },
-        {
-            "domain": "pi",
-            "tag": "nextbike-piaseczynski-rower-miejski",
-            "meta": {
-                "name": "Piaseczy\u0144ski Rower Miejski",
-                "city": "Piaseczno",
-                "country": "PL",
-                "latitude": 52.0733,
-                "longitude": 21.0269
-            }
-        },
-        {
-            "domain": "pj",
-            "tag": "nextbike-jaskolka",
-            "meta": {
-                "name": "JasK\u00f3\u0142ka",
-                "city": "Jastrz\u0119bie-Zdr\u00f3j",
-                "country": "PL",
-                "latitude": 49.9537,
-                "longitude": 18.6005
-            }
-        },
-        {
             "domain": "pl",
             "tag": "wrm-wroclaw",
             "meta": {
@@ -2393,50 +2183,6 @@
                 "country": "PL",
                 "latitude": 51.1093,
                 "longitude": 17.0372
-            }
-        },
-        {
-            "domain": "pm",
-            "tag": "nextbike-zielonogorski-rower-miejski",
-            "meta": {
-                "name": "Zielonog\u00f3rski Rower Miejski",
-                "city": "Zielona G\u00f3ra",
-                "country": "PL",
-                "latitude": 51.9337,
-                "longitude": 15.5097
-            }
-        },
-        {
-            "domain": "pn",
-            "tag": "nextbike-koninski-rower-miejski-poland",
-            "meta": {
-                "name": "Koni\u0144ski Rower Miejski Poland",
-                "city": "Konin",
-                "country": "PL",
-                "latitude": 52.2328,
-                "longitude": 18.2538
-            }
-        },
-        {
-            "domain": "ps",
-            "tag": "nextbike-koszalinski-rower-miejski-poland",
-            "meta": {
-                "name": "Koszali\u0144ski Rower Miejski Poland",
-                "city": "Koszalin",
-                "country": "PL",
-                "latitude": 54.1866,
-                "longitude": 16.1877
-            }
-        },
-        {
-            "domain": "vw",
-            "tag": "veturilo-nextbike-warsaw",
-            "meta": {
-                "name": "VETURILO 3.0",
-                "city": "Warszawa",
-                "country": "PL",
-                "latitude": 52.2581,
-                "longitude": 20.9949
             }
         },
         {
@@ -2531,6 +2277,39 @@
                 "country": "DE",
                 "latitude": 52.6325,
                 "longitude": 13.5015
+            }
+        },
+        {
+            "domain": "tw",
+            "tag": "nextbike-krnov",
+            "meta": {
+                "name": "nextbike Krnov",
+                "city": "Krnov",
+                "country": "CZ",
+                "latitude": 50.09,
+                "longitude": 17.7027
+            }
+        },
+        {
+            "domain": "wp",
+            "tag": "nextbike-bikesharing-amprion",
+            "meta": {
+                "name": "Bikesharing Amprion",
+                "city": "Amprion",
+                "country": "DE",
+                "latitude": 51.0055,
+                "longitude": 6.7511
+            }
+        },
+        {
+            "domain": "xp",
+            "tag": "nextbike-velo-antwerpen",
+            "meta": {
+                "name": "Velo Antwerpen",
+                "city": "Antwerp",
+                "country": "BE",
+                "latitude": 51.255,
+                "longitude": 4.40277
             }
         }
     ],
