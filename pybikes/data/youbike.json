@@ -122,6 +122,36 @@
                         "latitude": 22.6830,
                         "longitude": 120.4879
                     }
+                },
+                {
+                    "tag": "youbike-chiayi-county",
+                    "uid": "11",
+                    "meta": {
+                        "city": "嘉義縣 Chiayi County",
+                        "country": "TW",
+                        "latitude": 23.4592,
+                        "longitude": 120.2927
+                    }
+                },
+                {
+                    "tag": "youbike-taitung-county",
+                    "uid": "15",
+                    "meta": {
+                        "city": "臺東縣 Taitung County",
+                        "country": "TW",
+                        "latitude": 22.7557,
+                        "longitude": 121.1503
+                    }
+                },
+                {
+                    "tag": "youbike-guangfu-township",
+                    "uid": "16",
+                    "meta": {
+                        "city": "光復鄉 Guangfu Township",
+                        "country": "TW",
+                        "latitude": 23.6661,
+                        "longitude": 121.4215
+                    }
                 }
             ]
         },
