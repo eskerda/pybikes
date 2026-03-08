@@ -288,6 +288,18 @@
                         "country": "FR"
                     },
                     "dataset": "altervelo"
+                },
+                {
+                    "tag": "nemovelo",
+                    "meta": {
+                        "city": "Nîmes",
+                        "name": "NemoVélo",
+                        "ebikes": true,
+                        "latitude": 43.83819,
+                        "longitude": 4.35997,
+                        "country": "FR"
+                    },
+                    "dataset": "nemovelo"
                 }
             ]
         }
