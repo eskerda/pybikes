@@ -7,11 +7,11 @@ jobs:
   sync-nextbike:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.SYNC_TOKEN }}
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: 3.12
       - name: Install dependencies
@@ -21,7 +21,7 @@ jobs:
           python utils/sync_nextbike.py > nextbike.json
           mv nextbike.json pybikes/data/nextbike.json
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.SYNC_TOKEN }}
           commit-message: update nextbike feeds
