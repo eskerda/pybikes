@@ -1481,6 +1481,60 @@
                 "longitude": -0.3685668
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/pau/gbfs.json"
+        },
+        {
+            "tag": "auxrm",
+            "meta": {
+                "name": "AuxR_M",
+                "city": "Auxerre",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 47.796054,
+                "longitude": 3.571375
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/auxerre/gbfs.json"
+        },
+        {
+            "tag": "velofluo",
+            "meta": {
+                "name": "Vélo Fluo",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 48.484322,
+                "longitude": 6.114004
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/velo-fluo/gbfs.json"
+        },
+        {
+            "tag": "modalis",
+            "meta": {
+                "name": "Modalis",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 45.403896,
+                "longitude": 0.376046
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/velo-modalis/gbfs.json"
+        },
+        {
+            "tag": "brennus",
+            "meta": {
+                "name": "Brennus à vélo",
+                "city": "Sens",
+                "country": "FR",
+                "company": [
+                    "Fifteen SAS"
+                ],
+                "latitude": 48.197815,
+                "longitude": 3.282785
+            },
+            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/sens/gbfs.json"
         }
     ],
     "system": "gbfs",
