@@ -1483,7 +1483,7 @@
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/pau/gbfs.json"
         },
         {
-            "tag": "auxrm",
+            "tag": "auxrmlevelo",
             "meta": {
                 "name": "AuxR_M",
                 "city": "Auxerre",
@@ -1499,6 +1499,7 @@
         {
             "tag": "velofluo",
             "meta": {
+				"city": "Grand Est",
                 "name": "Vélo Fluo",
                 "country": "FR",
                 "company": [
@@ -1508,19 +1509,6 @@
                 "longitude": 6.114004
             },
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/velo-fluo/gbfs.json"
-        },
-        {
-            "tag": "modalis",
-            "meta": {
-                "name": "Modalis",
-                "country": "FR",
-                "company": [
-                    "Fifteen SAS"
-                ],
-                "latitude": 45.403896,
-                "longitude": 0.376046
-            },
-            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/velo-modalis/gbfs.json"
         },
         {
             "tag": "brennus",
