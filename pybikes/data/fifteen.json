@@ -19,20 +19,6 @@
             "feed_url": "https://bici.gijon.es/api/client/entities"
         },
         {
-            "tag": "auxrmlevelo",
-            "meta": {
-                "city": "Auxerre",
-                "name": "AuxR_M le vélo",
-                "country": "FR",
-                "company": [
-                    "Fifteen SAS"
-                ],
-                "longitude": 3.572376,
-                "latitude": 47.797221
-            },
-            "feed_url": "https://auxrmlevelo.com/api/client/entities"
-        },
-        {
             "tag": "velomodalis",
             "meta": {
                 "city": "Ligne TER Royan - Angoulême",
