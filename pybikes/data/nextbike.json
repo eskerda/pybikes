@@ -169,30 +169,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-heidelberg",
-            "city_uid": 194,
-            "meta": {
-                "name": "VRN",
-                "city": "Heidelberg",
-                "country": "DE",
-                "latitude": 49.4023,
-                "longitude": 8.67577
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-mannheim",
-            "city_uid": 195,
-            "meta": {
-                "name": "VRN",
-                "city": "Mannheim",
-                "country": "DE",
-                "latitude": 49.4869,
-                "longitude": 8.45638
-            }
-        },
-        {
             "domain": "si",
             "tag": "stadtrad-innsbruck",
             "city_uid": 199,
@@ -246,42 +222,6 @@
                 "country": "HR",
                 "latitude": 43.733,
                 "longitude": 15.8982
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-ludwigshafen",
-            "city_uid": 266,
-            "meta": {
-                "name": "VRN",
-                "city": "Ludwigshafen",
-                "country": "DE",
-                "latitude": 49.4741,
-                "longitude": 8.43287
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-speyer",
-            "city_uid": 278,
-            "meta": {
-                "name": "VRN",
-                "city": "Speyer",
-                "country": "DE",
-                "latitude": 49.3126,
-                "longitude": 8.45295
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-landau",
-            "city_uid": 678,
-            "meta": {
-                "name": "VRN",
-                "city": "Landau in der Pfalz",
-                "country": "DE",
-                "latitude": 49.1975,
-                "longitude": 8.11693
             }
         },
         {
@@ -344,18 +284,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-bensheim",
-            "city_uid": 332,
-            "meta": {
-                "name": "VRN",
-                "city": "Bensheim",
-                "country": "DE",
-                "latitude": 49.6803,
-                "longitude": 8.6189
-            }
-        },
-        {
             "domain": "ig",
             "tag": "grad-ivanic-grad-ivanic-grad",
             "city_uid": 337,
@@ -401,18 +329,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-worms",
-            "city_uid": 382,
-            "meta": {
-                "name": "VRN",
-                "city": "Worms",
-                "country": "DE",
-                "latitude": 49.6394,
-                "longitude": 8.34618
-            }
-        },
-        {
             "domain": "ch",
             "tag": "nextbike-stans",
             "city_uid": 383,
@@ -446,18 +362,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-burstadt",
-            "city_uid": 392,
-            "meta": {
-                "name": "VRN",
-                "city": "B\u00fcrstadt",
-                "country": "DE",
-                "latitude": 49.6461,
-                "longitude": 8.44917
-            }
-        },
-        {
             "domain": "ka",
             "tag": "nextbike-klagenfurt",
             "city_uid": 396,
@@ -466,18 +370,6 @@
                 "country": "AT",
                 "latitude": 46.6335,
                 "longitude": 14.3085
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-kaiserslautern",
-            "city_uid": 398,
-            "meta": {
-                "name": "VRN",
-                "city": "Kaiserslautern",
-                "country": "DE",
-                "latitude": 49.4413,
-                "longitude": 7.75566
             }
         },
         {
@@ -560,18 +452,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-heppenheim",
-            "city_uid": 448,
-            "meta": {
-                "name": "VRN",
-                "city": "Heppenheim",
-                "country": "DE",
-                "latitude": 49.6431,
-                "longitude": 8.63889
-            }
-        },
-        {
             "domain": "dk",
             "tag": "nextbike-kassel",
             "city_uid": 462,
@@ -627,30 +507,6 @@
             }
         },
         {
-            "domain": "vn",
-            "tag": "vrn-weinheim",
-            "city_uid": 469,
-            "meta": {
-                "name": "VRN",
-                "city": "Weinheim",
-                "country": "DE",
-                "latitude": 49.545,
-                "longitude": 8.66027
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-schwetzingen",
-            "city_uid": 480,
-            "meta": {
-                "name": "VRN",
-                "city": "Schwetzingen",
-                "country": "DE",
-                "latitude": 49.3863,
-                "longitude": 8.5756
-            }
-        },
-        {
             "domain": "ch",
             "tag": "nextbike-ennetmoos",
             "city_uid": 483,
@@ -659,18 +515,6 @@
                 "country": "CH",
                 "latitude": 46.9573,
                 "longitude": 8.3377
-            }
-        },
-        {
-            "domain": "vn",
-            "tag": "vrn-eppelheim",
-            "city_uid": 484,
-            "meta": {
-                "name": "VRN",
-                "city": "Eppelheim",
-                "country": "DE",
-                "latitude": 49.4025,
-                "longitude": 8.6331
             }
         },
         {
@@ -2393,6 +2237,17 @@
                 "country": "DE",
                 "latitude": 51.4577,
                 "longitude": 7.0161
+            }
+        },
+        {
+            "domain": "vn",
+            "tag": "vrn-nextbike",
+            "meta": {
+                "name": "VRNnextbike",
+                "city": "Rhein-Neckar",
+                "country": "DE",
+                "latitude": 49.4,
+                "longitude": 8.5
             }
         }
     ],
