@@ -2383,6 +2383,17 @@
                 "latitude": 52.054,
                 "longitude": 20.4414
             }
+        },
+        {
+            "domain": "mr",
+            "tag": "stadtlastenrad-essen",
+            "meta": {
+                "name": "StadtLastenRad",
+                "city": "Essen",
+                "country": "DE",
+                "latitude": 51.4577,
+                "longitude": 7.0161
+            }
         }
     ],
     "system": "nextbike",
