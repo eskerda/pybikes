@@ -2249,6 +2249,17 @@
                 "latitude": 49.4,
                 "longitude": 8.5
             }
+        },
+        {
+            "domain": "or",
+            "tag": "nextbike-pruszkowski-rower-miejski",
+            "meta": {
+                "name": "Pruszkowski Rower Miejski",
+                "city": "Pruszk\u00f3w",
+                "country": "PL",
+                "latitude": 52.1617,
+                "longitude": 20.8071
+            }
         }
     ],
     "system": "nextbike",
