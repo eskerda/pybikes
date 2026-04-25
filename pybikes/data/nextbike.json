@@ -2260,6 +2260,39 @@
                 "latitude": 52.1617,
                 "longitude": 20.8071
             }
+        },
+        {
+            "domain": "eq",
+            "tag": "nextbike-eventbike-austria",
+            "meta": {
+                "name": "EVENTbike - Austria",
+                "city": "EVENTbike - Austria",
+                "country": "AT",
+                "latitude": 47.8583,
+                "longitude": 16.7706
+            }
+        },
+        {
+            "domain": "ky",
+            "tag": "nextbike-kyjov",
+            "meta": {
+                "name": "nextbike Kyjov",
+                "city": "Kyjov",
+                "country": "CZ",
+                "latitude": 49.0092,
+                "longitude": 17.1209
+            }
+        },
+        {
+            "domain": "ns",
+            "tag": "nextbike-sumperk",
+            "meta": {
+                "name": "nextbike \u0160umperk",
+                "city": "\u0160umperk",
+                "country": "CZ",
+                "latitude": 49.9726,
+                "longitude": 16.9994
+            }
         }
     ],
     "system": "nextbike",
