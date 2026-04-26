@@ -2265,8 +2265,8 @@
             "domain": "eq",
             "tag": "nextbike-eventbike-austria",
             "meta": {
-                "name": "EVENTbike - Austria",
-                "city": "EVENTbike - Austria",
+                "name": "EVENTbike",
+                "city": "Neusiedler See",
                 "country": "AT",
                 "latitude": 47.8583,
                 "longitude": 16.7706
