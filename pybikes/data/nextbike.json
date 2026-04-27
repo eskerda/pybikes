@@ -2293,6 +2293,17 @@
                 "latitude": 49.9726,
                 "longitude": 16.9994
             }
+        },
+        {
+            "domain": "ml",
+            "tag": "nextbike-myradl",
+            "meta": {
+                "name": "MyRadl ",
+                "city": "F\u00fcrstenfeldbruck - Germering - Grafrath - Gr\u00f6benzell - Landsberied - Maisach - Mammendorf - Olching - Puchheim - Sch\u00f6ngeising - Eching - Hallbergmoos - Neufahrn b. Freising - Garching b. M\u00fcnchen - Ismaning - Oberschlei\u00dfheim - Unterf\u00f6hring - Unterschlei\u00dfheim - Gr\u00e4felfing - Gr\u00fcnwald - Haar - Hohenbrunn - H\u00f6henkirchen-Siegertsbrunn - Kirchheim b. M\u00fcnchen - Neubiberg - Neuried - Oberhaching - Planegg - Pullach i. Isartal - Unterhaching - Holzkirchen - Otterfing - Gilching - Aschheim - Brunnthal - Feldkirchen - M\u00fcnchen",
+                "country": "DE",
+                "latitude": 48.0891,
+                "longitude": 11.7114
+            }
         }
     ],
     "system": "nextbike",
