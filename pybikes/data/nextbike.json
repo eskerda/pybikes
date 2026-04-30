@@ -2301,8 +2301,30 @@
                 "name": "MyRadl ",
                 "city": "M\u00fcnchen",
                 "country": "DE",
-                "latitude": 48.1390,
+                "latitude": 48.139,
                 "longitude": 11.5746
+            }
+        },
+        {
+            "domain": "ap",
+            "tag": "nextbike-system-rowerow-miejskich-w-pszczynie",
+            "meta": {
+                "name": "System Rower\u00f3w Miejskich w Pszczynie",
+                "city": "Pszczyna",
+                "country": "PL",
+                "latitude": 49.9778,
+                "longitude": 18.9423
+            }
+        },
+        {
+            "domain": "pj",
+            "tag": "nextbike-jaskolka",
+            "meta": {
+                "name": "JasK\u00f3\u0142ka",
+                "city": "Jastrz\u0119bie-Zdr\u00f3j",
+                "country": "PL",
+                "latitude": 49.9537,
+                "longitude": 18.6005
             }
         }
     ],
