@@ -2326,6 +2326,83 @@
                 "latitude": 49.9537,
                 "longitude": 18.6005
             }
+        },
+        {
+            "domain": "kr",
+            "tag": "kolobrzeski-rower-nextbike",
+            "meta": {
+                "name": "Ko\u0142obrzeski Rower Nextbike",
+                "city": "Ko\u0142obrzeg",
+                "country": "PL",
+                "latitude": 54.1756,
+                "longitude": 15.5702
+            }
+        },
+        {
+            "domain": "nl",
+            "tag": "nextbike-litovel",
+            "meta": {
+                "name": "nextbike Litovel",
+                "city": "Litovel",
+                "country": "CZ",
+                "latitude": 49.6999,
+                "longitude": 17.0788
+            }
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-unicov",
+            "meta": {
+                "name": "nextbike Uni\u010dov",
+                "city": "Uni\u010dov",
+                "country": "CZ",
+                "latitude": 49.7708,
+                "longitude": 17.1164
+            }
+        },
+        {
+            "domain": "oa",
+            "tag": "nextbike-loker-lomza",
+            "meta": {
+                "name": "\u0141oKeR - \u0141om\u017ca",
+                "city": "\u0141om\u017ca",
+                "country": "PL",
+                "latitude": 53.1733,
+                "longitude": 22.0726
+            }
+        },
+        {
+            "domain": "oe",
+            "tag": "nextbike-mlawskie-rowery-miejskie",
+            "meta": {
+                "name": "M\u0142awskie Rowery Miejskie",
+                "city": "M\u0142awa",
+                "country": "PL",
+                "latitude": 53.1188,
+                "longitude": 20.3831
+            }
+        },
+        {
+            "domain": "os",
+            "tag": "nextbike-otwocki-rower-miejski",
+            "meta": {
+                "name": "Otwocki Rower Miejski",
+                "city": "Otwock",
+                "country": "PL",
+                "latitude": 52.1042,
+                "longitude": 21.2538
+            }
+        },
+        {
+            "domain": "rq",
+            "tag": "nextbike-rower-powiatowy-sokolow-podlaski",
+            "meta": {
+                "name": "Rower Powiatowy Soko\u0142\u00f3w Podlaski",
+                "city": "Soko\u0142\u00f3w Podlaski",
+                "country": "PL",
+                "latitude": 52.4093,
+                "longitude": 22.2526
+            }
         }
     ],
     "system": "nextbike",
