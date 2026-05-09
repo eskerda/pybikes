@@ -9,7 +9,7 @@
         "longitude": 17.113922,
         "country": "SK"
       },
-      "feed_url": "https://whitebikes.info/api/stand/markers"
+      "feed_url": "https://whitebikes.info/gbfs.json"
     }
   ],
   "system": "open_source_bike_share_v2",
