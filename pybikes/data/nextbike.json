@@ -2392,6 +2392,50 @@
                 "latitude": 52.4093,
                 "longitude": 22.2526
             }
+        },
+        {
+            "domain": "cg",
+            "tag": "nextbike-grad-velika-gorica-croatia",
+            "meta": {
+                "name": "Grad Velika Gorica (Croatia)",
+                "city": "Velika Gorica",
+                "country": "HR",
+                "latitude": 45.7119,
+                "longitude": 16.0689
+            }
+        },
+        {
+            "domain": "fp",
+            "tag": "nextbike-wolsztynski-rower-miejski",
+            "meta": {
+                "name": "Wolszty\u0144ski Rower Miejski",
+                "city": "Wolsztyn",
+                "country": "PL",
+                "latitude": 52.113,
+                "longitude": 16.1166
+            }
+        },
+        {
+            "domain": "nu",
+            "tag": "nextbike-unicov",
+            "meta": {
+                "name": "nextbike Uni\u010dov",
+                "city": "Uni\u010dov",
+                "country": "CZ",
+                "latitude": 49.7708,
+                "longitude": 17.1164
+            }
+        },
+        {
+            "domain": "vo",
+            "tag": "nextbike-vmobil-rad",
+            "meta": {
+                "name": "VMOBIL Rad",
+                "city": "Dornbirn",
+                "country": "AT",
+                "latitude": 47.4121,
+                "longitude": 9.74456
+            }
         }
     ],
     "system": "nextbike",
