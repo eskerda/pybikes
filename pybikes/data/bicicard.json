@@ -177,6 +177,17 @@
                 "name": "Aduriz en Bici"
             },
             "tag": "aduriz"
+        },
+        {
+            "endpoint": "https://services.betanzos.bicicard.es",
+            "meta": {
+                "city": "Betanzos",
+                "country": "ES",
+                "latitude": 43.2810597,
+                "longitude": -8.2113155,
+                "name": "Betanzos"
+            },
+            "tag": "betanzos"
         }
     ],
     "system": "bicicard"
