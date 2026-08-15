@@ -79,17 +79,6 @@
             "tag": "tallinja-bike"
         },
         {
-            "endpoint": "https://servicesgbici.avanzagrupo.com",
-            "meta": {
-                "city": "Getafe",
-                "country": "ES",
-                "latitude": 40.3080,
-                "longitude": -3.7301,
-                "name": "Gbici"
-            },
-            "tag": "gbici"
-        },
-        {
             "endpoint": "https://enbici.aviles.es/prodws",
             "meta": {
                 "city": "Avilés",
