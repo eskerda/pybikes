@@ -155,6 +155,28 @@
                 "name": "BiciCastro"
             },
             "tag": "bicicastro"
+        },
+        {
+            "endpoint": "https://services.enkartur.bicicard.es",
+            "meta": {
+                "city": "Enkarterri",
+                "country": "ES",
+                "latitude": 43.2,
+                "longitude": -3.2,
+                "name": "ENKbike"
+            },
+            "tag": "enkbike"
+        },
+        {
+            "endpoint": "https://services.aduriz.bicicard.es",
+            "meta": {
+                "city": "Medina de Pomar",
+                "country": "ES",
+                "latitude": 42.9294,
+                "longitude": -3.4880,
+                "name": "Aduriz en Bici"
+            },
+            "tag": "aduriz"
         }
     ],
     "system": "bicicard"
