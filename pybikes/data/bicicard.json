@@ -113,7 +113,7 @@
             "tag": "biba"
         },
         {
-            "endpoint": "https://prodwservice.bicibur.es",
+            "endpoint": "https://services.bicibur.bicicard.es",
             "meta": {
                 "city": "Burgos",
                 "country": "ES",
