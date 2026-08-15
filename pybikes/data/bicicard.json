@@ -188,6 +188,17 @@
                 "name": "Betanzos"
             },
             "tag": "betanzos"
+        },
+        {
+            "endpoint": "https://services.dpb.bicicard.es",
+            "meta": {
+                "city": "Peñalba de Castro",
+                "country": "ES",
+                "latitude": 41.7840,
+                "longitude": -3.3656,
+                "name": "Clunia Volve"
+            },
+            "tag": "clunia-volve"
         }
     ],
     "system": "bicicard"
