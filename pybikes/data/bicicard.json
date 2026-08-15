@@ -58,7 +58,7 @@
             "tag": "albabici"
         },
         {
-            "endpoint": "https://bicialcazar.es/ProdWService",
+            "endpoint": "https://services.alcazar.bicicard.es",
             "meta": {
                 "city": "Alcázar de San Juan",
                 "country": "ES",
@@ -69,7 +69,7 @@
             "tag": "bicialcazar"
         },
         {
-            "endpoint": "https://bikews.publictransport.com.mt/ProdWService",
+            "endpoint": "https://bikews.publictransport.com.mt/prodws2",
             "meta": {
                 "city": "Valletta - Malta - Gozo",
                 "country": "MT",
@@ -102,7 +102,7 @@
             "tag": "verdeciclos"
         },
         {
-            "endpoint": "https://bicibadajoz.aytobadajoz.es/ProdWService",
+            "endpoint": "https://bicibadajoz.aytobadajoz.es/prodwservice",
             "meta": {
                 "city": "Badajoz",
                 "country": "ES",
