@@ -19,7 +19,8 @@
                 "country": "ES",
                 "latitude": 42.9995,
                 "longitude": -4.1393,
-                "name": "BikEnmedio"
+                "name": "BikEnmedio",
+                "status": "suspended"
             },
             "tag": "bikenmedio"
         },
