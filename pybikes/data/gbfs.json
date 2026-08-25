@@ -1549,6 +1549,18 @@
                 "longitude": 6.083856
             },
             "feed_url": "https://gbfs.api.ridedott.com/public/v2/aachen/gbfs.json"
+        },
+        {
+            "tag": "vlille",
+            "meta": {
+                "latitude": 50.62925,
+                "city": "Lille",
+                "name": "V'Lille",
+                "longitude": 3.057256,
+                "company": ["Keolis", "ilévia"],
+                "country": "FR"
+            },
+            "feed_url":  "https://media.ilevia.fr/opendata/gbfs.json"
         }
     ],
     "system": "gbfs",
