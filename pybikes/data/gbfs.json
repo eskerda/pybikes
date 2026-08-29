@@ -1107,30 +1107,6 @@
             "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/brest/gbfs.json"
         },
         {
-            "tag": "kotobike",
-            "meta": {
-                "latitude": 35.0115,
-                "longitude": 135.7518,
-                "city": "京都 (Kyoto)",
-                "name": "Kotobike",
-                "country": "JP",
-                "company": [
-                    "QBEI.inc"
-                ]
-            },
-            "bbox": [
-                [
-                    34.8350,
-                    135.5691
-                ],
-                [
-                    35.1669,
-                    136.0404
-                ]
-            ],
-            "feed_url": "https://app.kotobike.jp/api/exposed/v2/gbfs/gbfs.json"
-        },
-        {
             "tag": "le-velo",
             "meta": {
                 "city": "Marseille",
