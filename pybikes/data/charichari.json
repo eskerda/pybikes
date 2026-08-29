@@ -1,0 +1,106 @@
+{
+    "system": "charichari",
+    "class": "Charichari",
+    "instances": [
+        {
+            "region_id": "KMJ",
+            "tag": "charichari-kumamoto-kikuyo",
+            "meta": {
+                "city": "Kumamoto",
+                "country": "JP",
+                "latitude": 32.7985,
+                "longitude": 130.7183
+            }
+        },
+        {
+            "region_id": "YBK",
+            "tag": "charichari-yobuko",
+            "meta": {
+                "city": "Yobuko",
+                "country": "JP",
+                "latitude": 33.5382,
+                "longitude": 129.8957
+            }
+        },
+        {
+            "region_id": "FUK",
+            "tag": "charichari-fukuoka",
+            "meta": {
+                "city": "Fukuoka",
+                "country": "JP",
+                "latitude": 33.5897,
+                "longitude": 130.4030
+            }
+        },
+        {
+            "region_id": "HSG",
+            "tag": "charichari-saga",
+            "meta": {
+                "city": "Saga",
+                "country": "JP",
+                "latitude": 33.2615,
+                "longitude": 130.2989
+            }
+        },
+        {
+            "region_id": "KRM",
+            "tag": "charichari-kurume",
+            "meta": {
+                "city": "Kurume",
+                "country": "JP",
+                "latitude": 33.3201,
+                "longitude": 130.5105
+            }
+        },
+        {
+            "region_id": "AXJ",
+            "tag": "charichari-amakusa",
+            "meta": {
+                "city": "Amakusa",
+                "country": "JP",
+                "latitude": 32.4582,
+                "longitude": 130.1922
+            }
+        },
+        {
+            "region_id": "UKY",
+            "tag": "charichari-kyoto-otsu",
+            "meta": {
+                "city": "Kyoto/Otsu",
+                "country": "JP",
+                "latitude": 35.0191,
+                "longitude": 135.7551
+            }
+        },
+        {
+            "region_id": "KWN",
+            "tag": "charichari-kuwana",
+            "meta": {
+                "city": "Kuwana",
+                "country": "JP",
+                "latitude": 35.0651,
+                "longitude": 136.6934
+            }
+        },
+        {
+            "region_id": "NGO",
+            "tag": "charichari-nagoya",
+            "meta": {
+                "city": "Nagoya",
+                "country": "JP",
+                "latitude": 35.1847,
+                "longitude": 136.9000
+            }
+        },
+        {
+            "region_id": "TYO",
+            "tag": "charichari-tokyo",
+            "meta": {
+                "city": "Tokyo",
+                "country": "JP",
+                "latitude": 35.7003,
+                "longitude": 139.8002
+            }
+        }
+    ]
+}
