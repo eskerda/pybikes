@@ -1,0 +1,19 @@
+{
+    "instances": [
+        {
+            "tag": "gyorbike",
+            "meta": {
+                "city": "Győr",
+                "name": "GyőrBike",
+                "country": "HU",
+                "latitude": 47.6875,
+                "longitude": 17.6504,
+                "company": [
+                  "Győr Projekt Kft."
+                ]
+            }
+        }
+    ],
+    "system": "gyorbike",
+    "class": "GyorBike"
+}
