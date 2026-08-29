@@ -1566,6 +1566,31 @@
                 }
             },
             "feed_url":  "https://media.ilevia.fr/opendata/gbfs.json"
+        },
+        {
+            "tag": "mevo",
+            "meta": {
+                "country": "PL",
+                "city": "Tricity",
+                "company": ["Inurba Gdańsk", "City Bike Global, S.A"],
+                "name": "Mevo",
+                "latitude": 54.3476,
+                "longitude": 18.6522,
+                "source": "https://rowermevo.pl/en/open-data/realtime"
+            },
+            "feed_url": "https://gbfs.urbansharing.com/rowermevo.pl/gbfs.json"
+        },
+        {
+            "tag": "mol-bubi",
+            "meta": {
+                "country": "HU",
+                "city": "Budapest",
+                "company": ["BKK Centre for Budapest Transport", "Citybike Global S.A."],
+                "name": "MOL Bubi",
+                "latitude": 47.4998,
+                "longitude": 19.0492
+            },
+            "feed_url": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json"
         }
     ],
     "system": "gbfs",
