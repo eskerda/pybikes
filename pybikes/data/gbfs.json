@@ -1558,7 +1558,12 @@
                 "name": "V'Lille",
                 "longitude": 3.057256,
                 "company": ["Keolis", "ilévia"],
-                "country": "FR"
+                "country": "FR",
+                "source": "https://transport.data.gouv.fr/datasets/ilevia-vlille-disponibilite-en-temps-reel",
+                "license": {
+                    "name": "Licence Ouverte 2.0",
+                    "url": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0"
+                }
             },
             "feed_url":  "https://media.ilevia.fr/opendata/gbfs.json"
         }
