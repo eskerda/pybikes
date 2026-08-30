@@ -58,12 +58,12 @@ class GyorbikeStation(BikeShareStation):
         text = element.cssselect('[data-title="Station name"] .inner')[0].text_content()
         # remove "offline" suffix in station name
         return text.split('Offline')[0].strip()
-    
+
     def __init__(self, data, station_element):
         super(GyorbikeStation, self).__init__()
 
         self.latitude = float(data["lat"])
-        self.longitude = float(data["lng"]) 
+        self.longitude = float(data["lng"])
         self.name = self._get_name(station_element)
 
         mechanical_bikes = self._get_int_field(station_element, "Standard bike")
