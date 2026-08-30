@@ -76,8 +76,7 @@ class GyorbikeStation(BikeShareStation):
         self.extra = {
             'uid': data["station_num"],
             'slots': data["docks"],
-            'mechanical_bikes': mechanical_bikes,
-            'has_ebikes': ebikes > 0,
+            'normal_bikes': mechanical_bikes,
             'ebikes': ebikes,
             'online': 'offline' not in station_element.get('class', '')
         }
