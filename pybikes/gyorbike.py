@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2026, Martín González Gómez <m@martingonzalez.net>
+# Copyright (C) 2026, eskerda <eskerda@gmail.com>
 # Distributed under the AGPL license, see LICENSE.txt
 
 import re
 import json
+from warnings import warn
+
 from lxml import html
 
 from pybikes import BikeShareSystem, BikeShareStation, PyBikesScraper
@@ -27,12 +30,18 @@ class GyorBike(BikeShareSystem):
 
         stations = []
 
+        rows = tree.xpath('//table[@id="cmeStationInfo"]/tr')
+        row_id_map = {
+            re.sub(r'tr-', '', row.xpath('./@id')[0]): row
+            for row in rows
+        }
+
         for station in data:
-          # find the station element in the table
-          selector = '#tr-{station_num}'.format(station_num=station["station_num"])
-          station_element = tree.cssselect(selector)[0]
-          if station_element is not None:
-            stations.append(GyorbikeStation(station, station_element))
+            uid = str(station["station_num"])
+            if uid not in row_id_map:
+                warn("Station %s not found in html table", station)
+                continue
+            stations.append(GyorbikeStation(station, row_id_map[uid]))
 
         self.stations = stations
 
