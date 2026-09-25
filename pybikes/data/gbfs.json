@@ -1410,7 +1410,11 @@
                 "country": "FR",
                 "company": ["Metz Métropole", "Fifteen SAS"]
             },
-            "feed_url": "https://gbfs.partners.fifteen.eu/gbfs/2.2/metz/gbfs.json"
+            "feed_url": "https://gbfs.graoulib.fifteen.eu/gbfs/metz/gbfs.json",
+            "station_information": "https://gbfs.graoulib.fifteen.eu/gbfs/metz/station_information.json",
+            "station_status": "https://gbfs.graoulib.fifteen.eu/gbfs/metz/station_status.json",
+            "vehicle_types": "https://gbfs.graoulib.fifteen.eu/gbfs/metz/vehicle_types.json",
+            "free_bike_status": "https://gbfs.graoulib.fifteen.eu/gbfs/metz/free_bike_status.json"
         },
         {
             "tag": "vilvolt",
