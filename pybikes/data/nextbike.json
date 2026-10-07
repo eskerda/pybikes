@@ -863,17 +863,6 @@
             }
         },
         {
-            "domain": "ti",
-            "tag": "nextbike-olomouc",
-            "meta": {
-                "name": "nextbike Olomouc",
-                "city": "Olomouc",
-                "country": "CZ",
-                "latitude": 49.5929,
-                "longitude": 17.2459
-            }
-        },
-        {
             "domain": "tk",
             "tag": "nextbike-kladno",
             "meta": {
@@ -1144,18 +1133,6 @@
                 "name": "Bicipalma",
                 "longitude": 2.646634,
                 "country": "ES"
-            }
-        },
-        {
-            "domain": "ol",
-            "tag": "stari-grad-hvar",
-            "city_uid": 745,
-            "meta": {
-                "name": "Hvar",
-                "city": "Stari Grad",
-                "country": "HR",
-                "latitude": 43.1841,
-                "longitude": 16.5886
             }
         },
         {
@@ -2119,17 +2096,6 @@
             }
         },
         {
-            "domain": "po",
-            "tag": "nextbike-rower-miejski-w-ostrowie-wielkopolskim",
-            "meta": {
-                "name": "Rower Miejski w Ostrowie Wielkopolskim",
-                "city": "Ostr\u00f3w Wielkopolski",
-                "country": "PL",
-                "latitude": 51.6368,
-                "longitude": 17.7958
-            }
-        },
-        {
             "domain": "py",
             "tag": "nextbike-tychowski-rower-miejski",
             "meta": {
@@ -2149,28 +2115,6 @@
                 "country": "CZ",
                 "latitude": 50.4235,
                 "longitude": 14.2571
-            }
-        },
-        {
-            "domain": "sv",
-            "tag": "nextbike-s11-bike",
-            "meta": {
-                "name": "S11-Bike",
-                "city": "S11-Bike",
-                "country": "DE",
-                "latitude": 50.9817,
-                "longitude": 7.07107
-            }
-        },
-        {
-            "domain": "tn",
-            "tag": "nextbike-tarnowski-rower-miejski",
-            "meta": {
-                "name": "Tarnowski Rower Miejski",
-                "city": "Tarn\u00f3w",
-                "country": "PL",
-                "latitude": 50.0133,
-                "longitude": 20.9856
             }
         },
         {
@@ -2251,17 +2195,6 @@
             }
         },
         {
-            "domain": "or",
-            "tag": "nextbike-pruszkowski-rower-miejski",
-            "meta": {
-                "name": "Pruszkowski Rower Miejski",
-                "city": "Pruszk\u00f3w",
-                "country": "PL",
-                "latitude": 52.1617,
-                "longitude": 20.8071
-            }
-        },
-        {
             "domain": "eq",
             "tag": "nextbike-eventbike-austria",
             "meta": {
@@ -2328,17 +2261,6 @@
             }
         },
         {
-            "domain": "kr",
-            "tag": "kolobrzeski-rower-nextbike",
-            "meta": {
-                "name": "Ko\u0142obrzeski Rower Nextbike",
-                "city": "Ko\u0142obrzeg",
-                "country": "PL",
-                "latitude": 54.1756,
-                "longitude": 15.5702
-            }
-        },
-        {
             "domain": "nl",
             "tag": "nextbike-litovel",
             "meta": {
@@ -2383,17 +2305,6 @@
             }
         },
         {
-            "domain": "rq",
-            "tag": "nextbike-rower-powiatowy-sokolow-podlaski",
-            "meta": {
-                "name": "Rower Powiatowy Soko\u0142\u00f3w Podlaski",
-                "city": "Soko\u0142\u00f3w Podlaski",
-                "country": "PL",
-                "latitude": 52.4093,
-                "longitude": 22.2526
-            }
-        },
-        {
             "domain": "cg",
             "tag": "nextbike-grad-velika-gorica-croatia",
             "meta": {
@@ -2435,6 +2346,171 @@
                 "country": "AT",
                 "latitude": 47.4121,
                 "longitude": 9.74456
+            }
+        },
+        {
+            "domain": "bi",
+            "tag": "nextbike-bratislava",
+            "meta": {
+                "name": "nextbike Bratislava",
+                "city": "Bratislava",
+                "country": "SK",
+                "latitude": 48.1503,
+                "longitude": 17.1138
+            }
+        },
+        {
+            "domain": "bk",
+            "tag": "nextbike-bizkaibizi-4-0",
+            "meta": {
+                "name": "bizkaibizi 4.0",
+                "city": "Bilbao (bk 4.0)",
+                "country": "ES",
+                "latitude": 43.2931,
+                "longitude": -2.98163
+            }
+        },
+        {
+            "domain": "bp",
+            "tag": "nextbike-biker-bialystok",
+            "meta": {
+                "name": "BIKER Bia\u0142ystok",
+                "city": "Bia\u0142ystok",
+                "country": "PL",
+                "latitude": 53.1299,
+                "longitude": 23.1564
+            }
+        },
+        {
+            "domain": "cx",
+            "tag": "nextbike-korobajk-nomago-bikes",
+            "meta": {
+                "name": "KOROBAJK - Nomago Bikes",
+                "city": "Ravne na Koro\u0161kem - Prevalje",
+                "country": "SI",
+                "latitude": 46.5617,
+                "longitude": 15.0925
+            }
+        },
+        {
+            "domain": "lh",
+            "tag": "nextbike-libike",
+            "meta": {
+                "name": "LiBike",
+                "city": "Nenzing - Bludenz",
+                "country": "AT",
+                "latitude": 47.177,
+                "longitude": 9.75705
+            }
+        },
+        {
+            "domain": "lr",
+            "tag": "nextbike-lvr-bike",
+            "meta": {
+                "name": "LVR Bike",
+                "city": "Langenfeld",
+                "country": "DE",
+                "latitude": 51.1056,
+                "longitude": 6.95841
+            }
+        },
+        {
+            "domain": "ma",
+            "tag": "nextbike-bike-share-lanterna-croatia",
+            "meta": {
+                "name": "BIKE SHARE LANTERNA(Croatia)",
+                "city": "Camp Lanterna",
+                "country": "HR",
+                "latitude": 45.298,
+                "longitude": 13.5927
+            }
+        },
+        {
+            "domain": "nv",
+            "tag": "nextbike-chomutov",
+            "meta": {
+                "name": "nextbike Chomutov",
+                "city": "Chomutov",
+                "country": "CZ",
+                "latitude": 50.4631,
+                "longitude": 13.4096
+            }
+        },
+        {
+            "domain": "pm",
+            "tag": "nextbike-zielonogorski-rower-miejski",
+            "meta": {
+                "name": "Zielonog\u00f3rski Rower Miejski",
+                "city": "Zielona G\u00f3ra",
+                "country": "PL",
+                "latitude": 51.9337,
+                "longitude": 15.5097
+            }
+        },
+        {
+            "domain": "ra",
+            "tag": "nextbike-roquebike",
+            "meta": {
+                "name": "Roquebike",
+                "city": "Roquetas de Mar",
+                "country": "ES",
+                "latitude": 36.7638,
+                "longitude": -2.61455
+            }
+        },
+        {
+            "domain": "tr",
+            "tag": "nextbike-torunski-rower-miejski",
+            "meta": {
+                "name": "Toru\u0144ski Rower Miejski",
+                "city": "Toru\u0144",
+                "country": "PL",
+                "latitude": 53.0142,
+                "longitude": 18.6014
+            }
+        },
+        {
+            "domain": "uo",
+            "tag": "nextbike-most",
+            "meta": {
+                "name": "nextbike Most",
+                "city": "Most",
+                "country": "CZ",
+                "latitude": 50.503,
+                "longitude": 13.6362
+            }
+        },
+        {
+            "domain": "xp",
+            "tag": "nextbike-malagabici",
+            "meta": {
+                "name": "M\u00e1lagaBici",
+                "city": "M\u00e1laga",
+                "country": "ES",
+                "latitude": 36.7197,
+                "longitude": -4.44511
+            }
+        },
+        {
+            "domain": "xy",
+            "tag": "nextbike-cco-testing",
+            "meta": {
+                "name": "CCO Testing",
+                "city": "CCO Testing",
+                "country": "DE",
+                "latitude": 53.6153,
+                "longitude": 7.20497
+            }
+        },
+        {
+            "domain": "zu",
+            "tag": "nextbike-bajk-trnavskej-zupy",
+            "meta": {
+                "name": "Bajk Trnavskej \u017eupy",
+                "city": "Pie\u0161\u0165any - Vrbov\u00e9 - Krakovany - Trebatice",
+                "country": "SK",
+                "latitude": 48.5957,
+                "longitude": 17.7683
             }
         }
     ],
