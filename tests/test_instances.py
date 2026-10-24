@@ -105,8 +105,8 @@ classes = {
 # even if pytest does not like it, generate test classes on runtime, so
 # instance tests are grouped by their class
 
-def get_test_cls(cls):
-    cls_instances = list(classes[cls])
+def get_test_cls(cls, tags=None):
+    cls_instances = [x for x in classes[cls] if tags is None or x[1]['tag'] in tags]
     ids = ['%s.%s::%s' % (mod, cls, i['tag']) for _, i, cls, mod in cls_instances]
 
     @pytest.mark.parametrize(('instance', 'i_data', 'cls', 'mod'), cls_instances, ids=ids)

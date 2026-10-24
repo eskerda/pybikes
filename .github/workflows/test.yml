@@ -26,7 +26,7 @@ on:
 jobs:
   unit:
     name: Unit tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: true
       matrix:
@@ -45,7 +45,7 @@ jobs:
       run: make test
   instance-changes:
     name: Instance tests (only changes)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [unit]
     strategy:
       fail-fast: false
@@ -68,7 +68,7 @@ jobs:
           make github-summary >> $GITHUB_STEP_SUMMARY
   instance-tests:
     name: Instance tests (all)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [unit]
     strategy:
       fail-fast: false

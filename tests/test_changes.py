@@ -9,13 +9,14 @@ import re
 import os
 import git
 import inspect
+import json
+from pathlib import Path
 
 from pytest import mark
 from warnings import warn
 
 from pybikes import BikeShareSystem
-from pybikes.data import get_instances
-from pybikes.compat import resources
+from pybikes.data import _datafile_traversor
 
 from tests.test_instances import get_test_cls
 
@@ -37,6 +38,19 @@ def is_system(mod, obj):
     return True
 
 
+def changed_instances(before, after):
+    old = {
+        (cls, instance['tag']): instance
+        for cls, instance in _datafile_traversor(
+            before.get('class', {}), before.get('instances', [])
+        )
+    }
+    for cls, instance in _datafile_traversor(after['class'], after.get('instances', [])):
+        key = cls, instance['tag']
+        if before.get('system') != after.get('system') or old.get(key) != instance:
+            yield key
+
+
 def generate_tests_from_changes(branch):
 
     # this will fail in python < 3.8
@@ -46,13 +60,19 @@ def generate_tests_from_changes(branch):
     g = git.cmd.Git(os.getcwd())
     changed_files = g.diff('--name-only', branch).splitlines()
     clss = set()
+    selected = {}
 
     for file in changed_files:
+        if not Path(file).is_file():
+            continue
         if re.match(r'pybikes/data/.*\.json', file):
-            # Extract classes from json file
-            match = re.search(r'pybikes/data/(.*)\.json', file)
-            schema = match.group(1)
-            [clss.add(cls) for cls, _ in get_instances(schema)]
+            after = json.loads(Path(file).read_text())
+            try:
+                before = json.loads(g.show('%s:%s' % (branch, file)))
+            except git.exc.GitCommandError:
+                before = {}  # new data file
+            for cls, tag in changed_instances(before, after):
+                selected.setdefault(cls, set()).add(tag)
         elif re.match(r'pybikes/.*\.py', file):
             # Extract bike share classes from file
             name = re.search(r'pybikes/(.*)\.py', file).groups()[0]
@@ -62,8 +82,8 @@ def generate_tests_from_changes(branch):
             systems = filter(lambda m: is_system(mod, m[1]), inspect.getmembers(mod))
             [clss.add(cls) for cls, _ in systems]
 
-    for cls in sorted(clss):
-        test_cls = get_test_cls(cls)
+    for cls in sorted(clss | selected.keys()):
+        test_cls = get_test_cls(cls, tags=None if cls in clss else selected[cls])
         # decorate with pytest mark 'changes'
         test_cls = mark.changes(test_cls)
         globals()[test_cls.__name__] = test_cls
