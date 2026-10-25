@@ -1,5 +1,6 @@
 T_FLAGS =
 R_FILE ?= report.json
+REF ?= origin/master
 
 .PHONY: install
 install:
@@ -8,7 +9,7 @@ install:
 
 .PHONY: test
 test: install
-	pytest tests -m 'not update and not changes' $(T_FLAGS)
+	pytest tests -m 'not update' $(T_FLAGS)
 
 .PHONY: test-update
 test-update: install
@@ -16,7 +17,7 @@ test-update: install
 
 .PHONY: test-changes
 test-changes: install
-	pytest tests -m changes $(T_FLAGS)
+	pytest tests --diff=$(REF) $(T_FLAGS) || [ $$? -eq 5 ]
 
 .PHONY: lint
 lint:
