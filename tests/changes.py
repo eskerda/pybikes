@@ -51,19 +51,3 @@ def get_diff(ref_a, ref_b):
             clss.update(mod_clss)
 
     return tags, clss
-
-
-def select_items(items, ref_a, ref_b):
-    """return a list of selected and unselected conftest parametrized items"""
-    tags, clss = get_diff(ref_a, ref_b)
-
-    def include(item):
-        params = getattr(getattr(item, "callspec", None), "params", {})
-        tag = getattr(params.get("instance"), "tag", None)
-        cls = params.get("cls")
-        return bool(tag and cls and (cls in clss or tag in tags))
-
-    selected = [i for i in items if include(i)]
-    deselected = [i for i in items if not include(i)]
-
-    return selected, deselected

@@ -25,8 +25,18 @@ def instance_diff(ref, config, items):
     if not ref:
         return
 
-    from tests.changes import select_items
+    from tests.changes import get_diff
 
-    selected, deselected = select_items(items, ref, "HEAD")
+    tags, clss = get_diff(ref, "HEAD")
+
+    def include(item):
+        params = getattr(getattr(item, "callspec", None), "params", {})
+        tag = getattr(params.get("instance"), "tag", None)
+        cls = params.get("cls")
+        return bool(tag and cls and (cls in clss or tag in tags))
+
+    selected = [i for i in items if include(i)]
+    deselected = [i for i in items if not include(i)]
+
     config.hook.pytest_deselected(items=deselected)
     items[:] = selected
