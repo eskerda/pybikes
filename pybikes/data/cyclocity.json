@@ -161,17 +161,6 @@
                     "contract": "Toyama"
                 },
                 {
-                    "tag": "bicloo",
-                    "meta": {
-                        "latitude": 47.218371,
-                        "country": "FR",
-                        "name": "Bicloo",
-                        "longitude": -1.553621,
-                        "city": "Nantes"
-                    },
-                    "contract": "Nantes"
-                },
-                {
                     "tag": "velocite-besancon",
                     "meta": {
                         "latitude": 47.237829,

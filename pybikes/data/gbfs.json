@@ -1571,6 +1571,21 @@
                 "longitude": 19.0492
             },
             "feed_url": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json"
+        },
+        {
+            "tag": "voi-nantes",
+            "meta": {
+                "latitude": 47.218371,
+                "longitude": -1.553621,
+                "city": "Nantes",
+                "name": "Voi Nantes",
+                "country": "FR",
+                "company": ["Voi Technology"],
+                "ebikes": true,
+                "source": "https://transport.data.gouv.fr/datasets/gbfs-nantes"
+            },
+            "bbox": [[47.05, -1.90], [47.40, -1.30]],
+            "feed_url": "https://api.voiapp.io/gbfs/fr/6bb6b5dc-1cda-4da7-9216-d3023a0bc54a/v2/421/gbfs.json"
         }
     ],
     "system": "gbfs",
